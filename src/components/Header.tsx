@@ -1,9 +1,11 @@
 interface HeaderProps {
-  title: string;
-  lead: string;
+//  title: string;
+//  lead: string;
 }
 
 export function Header({ title, lead }: HeaderProps) {
+if (!title?.trim() && !lead?.trim()) return null;
+
   return (
     <header className="bg-hero py-5 mb-5">
       <div className="container h-100">
