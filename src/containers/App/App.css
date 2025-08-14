@@ -1,5 +1,14 @@
+
+
+html, body, .fp-section, .fp-tableCell {
+  background-color: #faf6f2 !important;
+}
+
+
+
 body {
   padding-top: 56px;
+  background-color: #faf6f2;
 }
 
 .left-aligned {
@@ -22,6 +31,11 @@ body {
   border: 1px solid #e9ecef;
   border-left-width: 0.25rem;
   border-radius: 0.25rem;
+}
+
+.section,
+.fp-section {
+  background-color: #faf6f2 !important; /* Match the body color */
 }
 
 .bd-callout h4 {
@@ -62,4 +76,48 @@ footer a {
 footer a:hover {
   color: white;
   text-decoration: underline;
+}
+
+
+/* Montserrat Bold (700) — your exact URL */
+@font-face {
+  font-family: "Montserrat";
+  src: url("https://static.igem.wiki/teams/5649/montserrat/montserrat-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* If you upload Regular to the same folder, use this too */
+@font-face {
+  font-family: "Montserrat";
+  src: url("https://static.igem.wiki/teams/5649/montserrat/montserrat-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Optional: set as site font */
+:root { --brand-font: "Montserrat", ui-sans-serif, system-ui; }
+html, body { font-family: var(--brand-font); }
+
+/* Your “to the top” label */
+.toTopLabel {
+  font-family: var(--brand-font);
+  font-weight: 700;      /* uses Bold */
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+
+
+.heroCaption {
+  font-family: "Montserrat", ui-sans-serif, system-ui; /* your self-hosted font */
+  font-weight: 700;     /* 700 = Bold; change to 400 for Regular */
+  font-size: 40px;      /* tweak size */
+  letter-spacing: 0.02em;
+  color: #014458;       /* your teal; change if needed */
+  text-transform: none; /* or 'uppercase' if you want */
 }
