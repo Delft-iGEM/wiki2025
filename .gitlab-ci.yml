@@ -1,26 +1,30 @@
 image: node:18.20.0
 
+stages:
+  - build
+  - deploy
+
 pages:
-  stage: build
+  stage: deploy
   cache:
-    - key:
-        files:
-          - yarn.lock
-      paths:
-        - .yarn-cache/
+    key: "yarn-1"
+    paths:
+      - .yarn-cache/
+    policy: pull-push
   before_script:
     - echo 'yarn-offline-mirror ".yarn-cache/"' >> .yarnrc
     - echo 'yarn-offline-mirror-pruning true' >> .yarnrc
     - yarn install --frozen-lockfile
   script:
     - yarn build
-    - cp -a dist/. public/
-    - echo '/* /index.html 200' > public/_redirects
+    - rm -rf public
+    - mv dist public
+    # SPA fallback: serve index for deep links
+    - cp public/index.html public/404.html
   artifacts:
     paths:
       - public
   rules:
-    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
-      when: never # No runners will run on branches other than main
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       when: always
+    - when: never
