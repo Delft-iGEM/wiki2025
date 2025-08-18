@@ -1,5 +1,5 @@
 // src/contents/home.tsx
-import React, { useEffect, useRef, useState } from "react";
+
 import fullpage from "fullpage.js/dist/fullpage.js";
 import "fullpage.js/dist/fullpage.css";
 
