@@ -1,30 +1,48 @@
 image: node:18.20.0
 
-stages:
-  - build
-  - deploy
-
-pages:
-  stage: deploy
+# Common setup for all jobs
+default:
   cache:
-    key: "yarn-1"
+    key:
+      files:
+        - yarn.lock
     paths:
       - .yarn-cache/
-    policy: pull-push
   before_script:
     - echo 'yarn-offline-mirror ".yarn-cache/"' >> .yarnrc
     - echo 'yarn-offline-mirror-pruning true' >> .yarnrc
     - yarn install --frozen-lockfile
+
+stages:
+  - build
+
+# CI build for merge requests (no deploy)
+build_site:
+  stage: build
   script:
     - yarn build
-    - rm -rf public
-    - mv dist public
-    # SPA fallback: serve index for deep links
-    - cp public/index.html public/404.html
+  artifacts:
+    when: on_failure
+    expire_in: 1 week
+  rules:
+    # Run when the pipeline is for a Merge Request
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    # Do not run on random branch pushes
+    - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
+      when: never
+
+# Actual Pages deploy (only from main/default branch)
+pages:
+  stage: build
+  script:
+    - yarn build
+    - mkdir -p public
+    - cp -a dist/. public/
+    - echo '/* /index.html 200' > public/_redirects
   artifacts:
     paths:
       - public
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       when: always
-    - when: never
