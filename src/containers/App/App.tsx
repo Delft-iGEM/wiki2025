@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { getPathMapping, stringToSlug } from "../../utils";
 import { useEffect } from "react";
 import { Navbar } from "../../components/Navbar";
-import { Header } from "../../components/Header";
+// import { Header } from "../../components/Header";
 import { NotFound } from "../../components/NotFound";
 import { Footer } from "../../components/Footer";
 
@@ -30,17 +30,14 @@ const App = () => {
       {/* Header and PageContent */}
       <Routes>
         {Object.entries(pathMapping).map(
-          ([path, { title, lead, component: Component }]) => (
+          ([path, {component: Component }]) => (
             <Route
               key={path}
               path={path}
               element={
-                <>
-                  <Header title={title || ""} lead={lead || ""} />
                   <div className="container">
                     <Component />
                   </div>
-                </>
               }
             />
           ),
@@ -48,19 +45,10 @@ const App = () => {
         <Route
           path="*"
           element={
-            <>
-              <Header
-                title="Not Found"
-                lead="The requested URL was not found on this server."
-              />
               <NotFound />
-            </>
           }
         />
       </Routes>
-
-      {/* Footer */}
-      {/* MUST mention license AND have a link to team wiki's repository on gitlab.igem.org */}
       <Footer />
     </>
   );
