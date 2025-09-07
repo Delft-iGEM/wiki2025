@@ -67,7 +67,7 @@
     /* --muted: 0 0% 96.1%; */
     /* --muted-foreground: 0 0% 45.1%; */
     /* --accent: 0 0% 96.1%; */
-     --accent-foreground: hsl(0, 100%, 50%);
+    --accent-foreground: hsl(0, 100%, 50%);
     /* --destructive: 0 84.2% 60.2%; */
     /* --destructive-foreground: 0 0% 98%;  */
     --border: hsl(193, 100%, 50%);
@@ -78,7 +78,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%; */
-    --radius:0.5rem;
+    --radius: 0.5rem;
     --selection: hsl(170 80% 65%);
   }
 
@@ -97,7 +97,7 @@
     /* --muted: 0 0% 14.9%; */
     /* --muted-foreground: 0 0% 63.9%; */
     /* --accent: 0 0% 14.9%; */
-     --accent-foreground: hsl(0 0% 98%);
+    --accent-foreground: hsl(0 0% 98%);
     /* --destructive: 0 62.8% 30.6%; */
     /* --destructive-foreground: 0 0% 98%;  */
     --border: hsl(0 0% 20%);
@@ -110,15 +110,462 @@
     --chart-5: 340 75% 55%; */
     --selection: hsl(170 80% 35%);
   }
-
 }
 
 /* Utility aliases for brand and theme tokens */
 @layer utilities {
-  .text-brand { color: var(--color-brand); }
-  .bg-brand { background-color: var(--color-brand); }
-  .ring-brand { --tw-ring-color: var(--color-brand); }
-  .hover\:bg-accent:hover { background-color: var(--color-accent); }
-  .text-muted-foreground { color: var(--color-muted-foreground); }
-  .bg-background { background-color: var(--color-background); }
+  .text-brand {
+    color: var(--color-brand);
+  }
+  .bg-brand {
+    background-color: var(--color-brand);
+  }
+  .ring-brand {
+    --tw-ring-color: var(--color-brand);
+  }
+  .hover\:bg-accent:hover {
+    background-color: var(--color-accent);
+  }
+  .text-muted-foreground {
+    color: var(--color-muted-foreground);
+  }
+  .bg-background {
+    background-color: var(--color-background);
+  }
+}
+
+/** =================== MONTSERRAT =================== **/
+
+/** Montserrat Thin **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 100;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-thin.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-thin.woff")
+      format("woff");
+}
+
+/** Montserrat Thin-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 100;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-thinitalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-thinitalic.woff")
+      format("woff");
+}
+
+/** Montserrat ExtraLight **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 200;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-extralight.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-extralight.woff")
+      format("woff");
+}
+
+/** Montserrat ExtraLight-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 200;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-extralightitalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-extralightitalic.woff")
+      format("woff");
+}
+
+/** Montserrat Light **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-light.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-light.woff")
+      format("woff");
+}
+
+/** Montserrat Light-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-lightitalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-lightitalic.woff")
+      format("woff");
+}
+
+/** Montserrat Regular **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-regular.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-regular.woff")
+      format("woff");
+}
+
+/** Montserrat Regular-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-italic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-italic.woff")
+      format("woff");
+}
+
+/** Montserrat Medium **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-medium.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-medium.woff")
+      format("woff");
+}
+
+/** Montserrat Medium-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-mediumitalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-mediumitalic.woff")
+      format("woff");
+}
+
+/** Montserrat SemiBold **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-semibold.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-semibold.woff")
+      format("woff");
+}
+
+/** Montserrat SemiBold-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-semibolditalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-semibolditalic.woff")
+      format("woff");
+}
+
+/** Montserrat Bold **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-bold.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-bold.woff")
+      format("woff");
+}
+
+/** Montserrat Bold-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-bolditalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-bolditalic.woff")
+      format("woff");
+}
+
+/** Montserrat ExtraBold **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-extrabold.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-extrabold.woff")
+      format("woff");
+}
+
+/** Montserrat ExtraBold-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-extrabolditalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-extrabolditalic.woff")
+      format("woff");
+}
+
+/** Montserrat Black **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-black.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-black.woff")
+      format("woff");
+}
+
+/** Montserrat Black-Italic **/
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-blackitalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserrat-blackitalic.woff")
+      format("woff");
+}
+
+/** =================== MONTSERRAT ALTERNATES =================== **/
+
+/** Montserrat Alternates Thin **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 100;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-thin.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-thin.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates Thin-Italic **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 100;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-thinitalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-thinitalic.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates ExtraLight **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 200;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-extralight.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-extralight.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates ExtraLight-Italic **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 200;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-extralightitalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-extralightitalic.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates Light **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 300;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-light.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-light.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates Light-Italic **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 300;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-lightitalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-lightitalic.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates Regular **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 400;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-regular.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-regular.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates Regular-Italic **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 400;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-italic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-italic.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates Medium **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 500;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-medium.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-medium.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates Medium-Italic **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 500;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-mediumitalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-mediumitalic.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates SemiBold **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 600;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-semibold.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-semibold.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates SemiBold-Italic **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 600;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-semibolditalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-semibolditalic.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates Bold **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 700;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-bold.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-bold.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates Bold-Italic **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 700;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-bolditalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-bolditalic.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates ExtraBold **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 800;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-extrabold.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-extrabold.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates ExtraBold-Italic **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 800;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-extrabolditalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-extrabolditalic.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates Black **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 900;
+  font-style: normal;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-black.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-black.woff")
+      format("woff");
+}
+
+/** Montserrat Alternates Black-Italic **/
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-weight: 900;
+  font-style: italic;
+  src:
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-blackitalic.woff2")
+      format("woff2"),
+    url("https://static.igem.wiki/teams/5649/montserrat/montserratalternates-blackitalic.woff")
+      format("woff");
 }
