@@ -146,7 +146,6 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
                     <DropdownMenu
                       modal={false}
                       open={desktopDropdownOpen === pageIndex}
-                      onOpenChange={(o) => setDesktopDropdownOpen(o ? pageIndex : null)}
                     >
                       <DropdownMenuTrigger asChild>
                         <button

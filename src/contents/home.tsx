@@ -4,7 +4,7 @@ export function Home() {
   return (
     <div>
       <AccentLine/>
-      <span className="text-5xl font-bold">Snaccine </span>
+      <span className="text-5xl font-bold">snaccine </span>
    </div>
   );
 }
