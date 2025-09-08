@@ -1,14 +1,18 @@
 import { useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Pages from "../pages.ts";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "./ui/dropdown-menu";
 
-export function Navbar() {
+interface BaseItem { name?: string }
+interface PageItem extends BaseItem { path?: string; title?: string; component?: React.FC; lead?: string }
+interface FolderItem extends BaseItem { folder?: PageItem[] }
+type NavItem = PageItem | FolderItem;
+
+export function Navbar({ pages }: { readonly pages: NavItem[] }) {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -130,7 +134,7 @@ export function Navbar() {
             id="primary-nav"
             className="hidden lg:flex items-center gap-x-4"
           >
-            {Pages.map((item, pageIndex) => {
+            {pages.map((item, pageIndex) => {
               if ("folder" in item && item.folder) {
                 return (
                   <li
@@ -219,7 +223,7 @@ export function Navbar() {
       {/* Mobile menu */}
       <div className={`lg:hidden ${mobileOpen ? "block" : "hidden"}`}>
         <div className="space-y-1 px-4 pb-4 pt-2">
-          {Pages.map((item, pageIndex) => {
+          {pages.map((item, pageIndex) => {
             if ("folder" in item && item.folder) {
               const expanded = openDropdown === pageIndex;
               return (

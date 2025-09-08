@@ -1,12 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./containers/App/App.tsx";
-import { BrowserRouter } from "react-router-dom";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { stringToSlug } from './utils';
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter basename={`/${stringToSlug(import.meta.env.VITE_TEAM_NAME)}`}> 
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
+  </StrictMode>
 );

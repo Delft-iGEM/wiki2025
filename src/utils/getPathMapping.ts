@@ -1,6 +1,10 @@
-import pages from "../pages.ts";
+// Minimal type shapes to avoid circular imports; the full definitions will live in App after inlining.
+interface BaseItem { name?: string; }
+interface PageItem extends BaseItem { path?: string; title?: string; component?: React.FC; lead?: string }
+interface FolderItem extends BaseItem { folder?: PageItem[] }
+type NavItem = PageItem | FolderItem;
 
-export const getPathMapping = () => {
+export const getPathMapping = (pages: NavItem[]) => {
   return pages.reduce<{
     [key: string]: {
       name: string | undefined;
@@ -17,7 +21,7 @@ export const getPathMapping = () => {
         lead: item.lead,
       };
     } else if ("folder" in item && item.folder) {
-      item.folder.forEach((page) => {
+      item.folder.forEach((page: PageItem) => {
         if (page.path && page.component) {
           map[page.path] = {
             name: page.name,
