@@ -7,29 +7,17 @@ import { NotFound } from "./components/NotFound";
 import { Footer } from "./components/Footer";
 
 // Content components 
+import { Home } from "./contents/home.tsx";
 import Test from "./mdx/test.mdx";
-import {
-  Attributions,
-  Contribution,
-  Description,
-  Engineering,
-  Experiments,
-  Home,
-  HumanPractices,
-  Notebook,
-  Results,
-  SafetyAndSecurity,
-  Members,
-  Education,
-  Entrepreneurship,
-  Hardware,
-  Inclusivity,
-  Measurement,
-  Model,
-  Plant,
-  Software,
-  Sustainability,
-} from "./contents";
+import Todo from "./mdx/pages_todo.mdx";
+//wetlab
+import  Experiments  from "./mdx/wetlab/experiments.mdx";
+import  Parts  from "./mdx/wetlab/parts.mdx";
+import  Protocols  from "./mdx/wetlab/protocols.mdx";
+import  Results  from "./mdx/wetlab/results.mdx";
+import  Safety  from "./mdx/wetlab/safety.mdx";
+
+
 
 // Types formerly in pages.ts
 interface BaseItem { name?: string }
@@ -46,42 +34,100 @@ const Pages: NavItem[] = [
     component: Home,
   },
   {
-    name: "Team",
+    name: "TODO",
     folder: [
+      {
+        name: "TODO",
+        title: "Pages To Do List",
+        path: "/todo",
+        component: Todo,
+      },
       {
         name: "Test",
         title: "test",
         path: "/test",
         component: Test,
       },
-      {
-        name: "Members",
-        title: "Meet Our Team",
-        path: "/team",
-        component: Members,
-      },
-      {
-        name: "Attributions",
-        title: "Attributions",
-        path: "/attributions",
-        component: Attributions,
-      },
     ],
   },
+  // {
+  //   name: "Team",
+  //   folder: [
+  //     {
+  //       name: "Test",
+  //       title: "test",
+  //       path: "/test",
+  //       component: Test,
+  //     },
+  //     {
+  //       name: "Members",
+  //       title: "Meet Our Team",
+  //       path: "/team",
+  //       component: Members,
+  //     },
+  //     {
+  //       name: "Attributions",
+  //       title: "Attributions",
+  //       path: "/attributions",
+  //       component: Attributions,
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Project",
+  //   folder: [
+  //     {
+  //       name: "Description",
+  //       title: "Project Description",
+  //       path: "/description",
+  //       component: Description,
+  //     },
+  //     {
+  //       name: "Engineering",
+  //       title: "Engineering Success",
+  //       path: "/engineering",
+  //       component: Engineering,
+  //     },
+  //     {
+  //       name: "Results",
+  //       title: "Results",
+  //       path: "/results",
+  //       component: Results,
+  //     },
+  //     {
+  //       name: "Contribution",
+  //       title: "Contribution",
+  //       path: "/contribution",
+  //       component: Contribution,
+  //     },
+  //   ],
+  // },
   {
-    name: "Project",
+    name: "Wet Lab",
     folder: [
       {
-        name: "Description",
-        title: "Project Description",
-        path: "/description",
-        component: Description,
+        name: "Experiment Design",
+        title: "Experiment Design",
+        path: "/experiment-design",
+        component: Experiments,
       },
       {
-        name: "Engineering",
-        title: "Engineering Success",
-        path: "/engineering",
-        component: Engineering,
+        name: "Safety and Security",
+        title: "Safety and Security",
+        path: "/safety-and-security",
+        component: Safety,
+      },
+      {
+        name: "Parts",
+        title: "Parts",
+        path: "/parts",
+        component: Parts,
+      },
+      {
+        name: "Protocols",
+        title: "Protocols",
+        path: "/protocols",
+        component: Protocols,
       },
       {
         name: "Results",
@@ -89,114 +135,91 @@ const Pages: NavItem[] = [
         path: "/results",
         component: Results,
       },
-      {
-        name: "Contribution",
-        title: "Contribution",
-        path: "/contribution",
-        component: Contribution,
-      },
+      // {
+      //   name: "Notebook",
+      //   title: "Notebook",
+      //   path: "/notebook",
+      //   component: Notebook,
+      // },
+      // {
+      //   name: "Measurement",
+      //   title: "Measurement",
+      //   path: "/measurement",
+      //   component: Measurement,
+      // },
+      // {
+      //   name: "Plant",
+      //   title: "Plant",
+      //   path: "/plant",
+      //   component: Plant,
+      // },
     ],
   },
-  {
-    name: "Wet Lab",
-    folder: [
-      {
-        name: "Experiments",
-        title: "Experiments",
-        path: "/experiments",
-        component: Experiments,
-      },
-      {
-        name: "Notebook",
-        title: "Notebook",
-        path: "/notebook",
-        component: Notebook,
-      },
-      {
-        name: "Measurement",
-        title: "Measurement",
-        path: "/measurement",
-        component: Measurement,
-      },
-      {
-        name: "Plant",
-        title: "Plant",
-        path: "/plant",
-        component: Plant,
-      },
-      {
-        name: "Safety and Security",
-        title: "Safety and Security",
-        path: "/safety-and-security",
-        component: SafetyAndSecurity,
-      },
-    ],
-  },
-  {
-    name: "Dry Lab",
-    folder: [
-      {
-        name: "Model",
-        title: "Model",
-        path: "/model",
-        component: Model,
-      },
-      {
-        name: "Software",
-        title: "Software",
-        path: "/software",
-        component: Software,
-      },
-      {
-        name: "Hardware",
-        title: "Hardware",
-        path: "/hardware",
-        component: Hardware,
-      },
-    ],
-  },
-  {
-    name: "Engagement",
-    folder: [
-      {
-        name: "Entrepreneurship",
-        title: "Entrepreneurship",
-        path: "/entrepreneurship",
-        component: Entrepreneurship,
-      },
-      {
-        name: "Human Practices",
-        title: "Human Practices",
-        path: "/human-practices",
-        component: HumanPractices,
-      },
-      {
-        name: "Education",
-        title: "Education",
-        path: "/education",
-        component: Education,
-      },
-      {
-        name: "Inclusivity",
-        title: "Diversity and Inclusion",
-        path: "/inclusivity",
-        component: Inclusivity,
-      },
-      {
-        name: "Sustainability",
-        title: "Sustainability",
-        path: "/sustainability",
-        component: Sustainability,
-      },
-    ],
-  },
+  // {
+  //   name: "Dry Lab",
+  //   folder: [
+  //     {
+  //       name: "Model",
+  //       title: "Model",
+  //       path: "/model",
+  //       component: Model,
+  //     },
+  //     {
+  //       name: "Software",
+  //       title: "Software",
+  //       path: "/software",
+  //       component: Software,
+  //     },
+  //     {
+  //       name: "Hardware",
+  //       title: "Hardware",
+  //       path: "/hardware",
+  //       component: Hardware,
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Engagement",
+  //   folder: [
+  //     {
+  //       name: "Entrepreneurship",
+  //       title: "Entrepreneurship",
+  //       path: "/entrepreneurship",
+  //       component: Entrepreneurship,
+  //     },
+  //     {
+  //       name: "Human Practices",
+  //       title: "Human Practices",
+  //       path: "/human-practices",
+  //       component: HumanPractices,
+  //     },
+  //     {
+  //       name: "Education",
+  //       title: "Education",
+  //       path: "/education",
+  //       component: Education,
+  //     },
+  //     {
+  //       name: "Inclusivity",
+  //       title: "Diversity and Inclusion",
+  //       path: "/inclusivity",
+  //       component: Inclusivity,
+  //     },
+  //     {
+  //       name: "Sustainability",
+  //       title: "Sustainability",
+  //       path: "/sustainability",
+  //       component: Sustainability,
+  //     },
+  //   ],
+  // },
 ];
 
 
 function App() {
   // Use React Router's useLocation to get reactive pathname
   const location = useLocation();
-  
+
   // Memoize mapping to avoid recalculating every render
   const pathMapping = useMemo(() => getPathMapping(Pages), []);
 

@@ -1,10 +1,13 @@
 import { AccentLine } from "../components/ui/accent-line";
+import { Content,Header } from "../components";
 
+<Content items="left">
+![Art](https://static.igem.wiki/teams/5649/frontpagelogo/chicken-apoca-better-diff-colours-min.webp)
 <AccentLine/>
 
 # MDX Feature Showcase
 
-This MDX file demonstrates all the enhanced features we've added!
+*This MDX file demonstrates all the enhanced features we've added!*
 
 <AccentLine/>
 
@@ -27,8 +30,11 @@ This MDX file demonstrates all the enhanced features we've added!
 ### Strikethrough
 ~~This text has been crossed out~~
 
-### Autolinks
+### Links
+#### *Autolinks*
 Visit https://github.com/mdx-js/mdx for more information!
+#### Link with title
+[MDX on GitHub^](https://github.com/mdx-js/mdx)
 
 <AccentLine/>
 
@@ -83,6 +89,7 @@ plt.show()
 ```
 
 ### TypeScript
+<div className="flex content-center-safe">
 ```typescript
 interface User {
   id: number;
@@ -111,31 +118,7 @@ class UserService {
   }
 }
 ```
-
-### JavaScript
-```javascript
-// Modern JavaScript features
-const fetchData = async (url) => {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.error('Fetch error:', error);
-    return null;
-  }
-};
-
-// Using destructuring and spread operator
-const processUserData = ({ users, filters, ...options }) => {
-  return users
-    .filter(user => filters.includes(user.role))
-    .map(({ id, name, email }) => ({ id, name, email }))
-    .sort((a, b) => a.name.localeCompare(b.name));
-};
-```
+</div>
 
 ### SQL
 ```sql
@@ -155,13 +138,12 @@ HAVING COUNT(o.id) > 0
 ORDER BY total_spent DESC
 LIMIT 10;
 ```
-
+<br/>
 <AccentLine/>
 
 ## React Components in MDX
 
 You can embed React components directly in your MDX content!
-
 <AccentLine/>
 
 ## Blockquotes
@@ -169,10 +151,11 @@ You can embed React components directly in your MDX content!
 > "Mathematics is the language with which God has written the universe."
 > — Galileo Galilei
 
-> **Note:** This MDX file demonstrates the full power of combining Markdown, 
-> React components, mathematical notation, and syntax-highlighted code blocks 
-> all in one document!
+**Note:** This MDX file demonstrates the full power of combining Markdown, 
+React components, mathematical notation, and syntax-highlighted code blocks 
+all in one document!
 
+<br/>
 <AccentLine/>
 
 ## Footnotes (GFM Extension)
@@ -200,3 +183,5 @@ const fetchData = async () => {
   const response = await fetch('/api/data');
   return response.json();
 };
+```
+</Content>
