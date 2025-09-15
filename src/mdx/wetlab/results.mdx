@@ -1,4 +1,4 @@
-import { Content,Header } from "@/components";
+import { Content, Header, AccentLine } from "@/components";
 
 <Header>
 # Results
@@ -6,6 +6,53 @@ Results and findings from our wetlab experiments.
 </Header>
 
 <Content items="left">
+
+<AccentLine/>
+
+## Overview
+We evaluated whether our synthetic plasmid construct could produce MS2 virus-like particles (VLPs) in *E. coli* BL21(DE3).  
+Our experiments confirmed this: bacteria expressed the MS2 coat protein, which folded correctly and self-assembled into complete VLPs. This validates the feasibility of our vaccine platform.
+
+---
+
+## SDS-PAGE Analysis of MS2 Expression
+SDS-PAGE results confirmed successful expression of the MS2 coat protein:  
+- A distinct ~14 kDa band appeared in the induced supernatant (Lane 1), absent in uninduced controls.  
+- The majority of protein remained soluble, indicating correct folding.  
+- Only faint amounts were observed in the pellet, suggesting minimal aggregation.  
+
+This demonstrates robust IPTG induction and protein solubility.
+
+**Figure 1.** SDS-PAGE analysis of MS2 coat protein expression.  
+Lane 1: Induced supernatant; Lane 2: Uninduced supernatant; Lane 3: Induced pellet; Lane 4: Uninduced pellet.  
+A clear band at ~14 kDa confirms expression of the MS2 coat protein.
+
+---
+
+## TEM Imaging of MS2 VLPs
+Transmission electron microscopy (TEM) validated that the expressed proteins assembled into VLPs:  
+- Particles of ~25–30 nm diameter were observed.  
+- Averaged images confirmed icosahedral symmetry typical of MS2 capsids.  
+
+**Figure 2.**  
+(a) TEM image of purified MS2 VLPs (~25–30 nm).  
+(b) Averaged TEM image showing icosahedral capsid organization.
+
+---
+
+## Summary
+- MS2 coat protein was successfully expressed in *E. coli*.  
+- SDS-PAGE confirmed soluble protein at ~14 kDa.  
+- TEM validated proper folding and capsid assembly into VLPs.  
+
+Next steps: engineering plasmids with RNA cargo (e.g., GFP or H5N1 mRNA vaccine insert) to test encapsulation, stability, and delivery efficiency.  
+
+This module demonstrates the successful production of recombinant MS2 VLPs, establishing a foundation for their use as customizable RNA delivery platforms.
+
+</Content>
+
+
+
 ## Overview
 This section presents the results obtained from our wetlab experiments.
 
