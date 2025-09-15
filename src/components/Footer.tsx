@@ -10,14 +10,14 @@ export function Footer() {
   const teamSlug = stringToSlug(teamName);
 
   return (
-    <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-gradient-to-t from-accent-foreground  to-secondary text-secondary-foreground mt-16">
+      <div className="max-container py-12">
         {/* Main footer content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {/* About section */}
           <div className="lg:col-span-1">
             <FooterSection title="About Our Project">
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-secondary-foreground leading-relaxed">
                 We are developing innovative solutions in synthetic biology to address real-world challenges. 
                 Our team combines cutting-edge research with practical applications to make a positive impact.
               </p>
@@ -43,14 +43,14 @@ export function Footer() {
             <FooterSection title="Contact">
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-secondary-foreground opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <p className="text-gray-300">TU Delft, Netherlands</p>
+                  <p className="text-secondary-foreground">TU Delft, Netherlands</p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-secondary-foreground opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <FooterLink href="mailto:igem@tudelft.nl">igem@tudelft.nl</FooterLink>
@@ -61,12 +61,12 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700"></div>
+  <div className="border-t border-border"></div>
 
         {/* The following MUST be on every page: license information and link to the repository on gitlab.igem.org */}
         <div className="mt-8 space-y-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
-            <div className="text-sm text-gray-400">
+            <div className="text-sm text-secondary-foreground opacity-80">
               <p>
                 © {new Date().getFullYear()} - Content on this site is licensed under a{" "}
                 <FooterLink 
@@ -83,7 +83,7 @@ export function Footer() {
               <FooterLink href="./attributions">Attributions</FooterLink>
             </div>
           </div>
-          <div className="text-sm text-gray-400">
+          <div className="text-sm text-secondary-foreground opacity-80">
             <p>
               The repository used to create this website is available at{" "}
               <FooterLink 

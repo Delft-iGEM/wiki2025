@@ -32,7 +32,7 @@ export function Content({ children, items = 'right', className }: ContentProps) 
   return (
     <div
       id="content"
-      className={`flex flex-col px-50 pt-5 content-start-safe ${itemsClass} ${className ?? ''}`.trim()}
+      className={`max-container flex flex-col pt-5 content-start-safe ${itemsClass} ${className ?? ''}`.trim()}
     >
       {children}
     </div>

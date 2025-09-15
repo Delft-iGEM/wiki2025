@@ -60,13 +60,13 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
   };
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 border-b bg-white/80 backdrop-blur" style={{ overflowAnchor: "none" }}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-14 items-center justify-between">
+  <nav className="fixed top-0 inset-x-0 z-50 border-b-2 border-border bg-popover/70 backdrop-blur" style={{ overflowAnchor: "none" }}>
+      <div className="max-container">
+        <div className="flex h-15 items-center justify-between">
           {/* Brand */}
           <Link
             to="/"
-            className="text-base font-semibold tracking-wide text-gray-900 hover:text-gray-700"
+            className="text-base font-semibold tracking-wide text-foreground hover:text-primary"
             onClick={closeMobile}
           >
             <svg className="h-13" viewBox="0 0 513.5 240.63" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +90,7 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
           {/* Mobile toggle */}
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 lg:hidden"
+            className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-muted focus:outline-none focus:ring-2 focus:ring-ring lg:hidden"
             aria-controls="primary-nav"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
@@ -150,13 +150,13 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
                       <DropdownMenuTrigger asChild>
                         <button
                           type="button"
-                          className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
+                          className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                           aria-haspopup="menu"
                           aria-expanded={desktopDropdownOpen === pageIndex}
                         >
                           {item.name}
                           <svg
-                            className="h-4 w-4 text-gray-500"
+                            className="h-4 w-4 text-muted-foreground"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             aria-hidden="true"
@@ -189,7 +189,7 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
                               key={`subpage-${getItemName(item) ?? pageIndex}-${subpage.path ?? subpageIndex}`}
                               asChild
                               className={isActive(subpage.path)
-                                ? "text-green-700 font-semibold"
+                                ? "text-primary font-semibold"
                                 : ""}
                             >
                               <Link to={subpage.path!}>{subpage.name}</Link>
@@ -204,9 +204,9 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
                   <li key={getItemPath(item) ?? String(pageIndex)}>
                     <Link
                       to={item.path}
-                      className={`rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-100 ${isActive(item.path)
-                        ? "text-green-700"
-                        : "text-gray-700"
+                      className={`rounded-md px-3 py-2 text-sm font-medium hover:bg-muted ${isActive(item.path)
+                        ? "text-primary"
+                        : "text-foreground"
                         }`}
                     >
                       {item.name}
@@ -228,7 +228,7 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
               return (
                 <div key={`m-folder-${getItemName(item) ?? pageIndex}`} className="border-b pb-2">
                   <button
-                    className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm font-medium text-gray-800 hover:bg-gray-100"
+                    className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm font-medium text-foreground hover:bg-muted"
                     onClick={() =>
                       setOpenDropdown((v) => (v === pageIndex ? null : pageIndex))
                     }
@@ -257,9 +257,9 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
                           key={`m-subpage-${getItemName(item) ?? pageIndex}-${subpage.path ?? subpageIndex}`}
                           to={subpage.path!}
                           onClick={closeMobile}
-                          className={`block rounded-md px-6 py-2 text-sm hover:bg-gray-100 ${isActive(subpage.path)
-                            ? "text-green-700 font-semibold"
-                            : "text-gray-700"
+                          className={`block rounded-md px-6 py-2 text-sm hover:bg-muted ${isActive(subpage.path)
+                            ? "text-primary font-semibold"
+                            : "text-foreground"
                             }`}
                         >
                           {subpage.name}
@@ -274,7 +274,7 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
                   key={getItemPath(item) ?? String(pageIndex)}
                   to={item.path}
                   onClick={closeMobile}
-                  className={`block rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-100 ${isActive(item.path) ? "text-green-700" : "text-gray-700"
+                  className={`block rounded-md px-3 py-2 text-sm font-medium hover:bg-muted ${isActive(item.path) ? "text-primary" : "text-foreground"
                     }`}
                 >
                   {item.name}

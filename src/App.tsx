@@ -6,10 +6,14 @@ import { Navbar } from "./components/Navbar";
 import { NotFound } from "./components/NotFound";
 import { Footer } from "./components/Footer";
 
-// Content components 
+// Content components TSX
 import { Home } from "./contents/home.tsx";
+import  ColorPalette  from "./contents/pallette.tsx";
+
+// Content components MDX
 import Test from "./mdx/test.mdx";
 import Todo from "./mdx/pages_todo.mdx";
+
 //wetlab
 import  Experiments  from "./mdx/wetlab/experiments.mdx";
 import  Parts  from "./mdx/wetlab/parts.mdx";
@@ -48,6 +52,12 @@ const Pages: NavItem[] = [
         path: "/test",
         component: Test,
       },
+      {
+        name: "Color Palette",
+        title: "Color Palette",
+        path: "/color-palette",
+        component: ColorPalette,
+      }
     ],
   },
   // {

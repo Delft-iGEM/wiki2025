@@ -8,7 +8,7 @@ export function FooterLink({ href, children, external = false }: FooterLinkProps
     return (
         <a
             href={href}
-            className="text-gray-300 hover:text-white transition-colors duration-200 inline-flex items-center-safe gap-1"
+            className="text-secondary-foreground hover:text-brand transition-colors duration-200 inline-flex items-center-safe gap-1"
             {...(external && { target: "_blank", rel: "noopener noreferrer" })}
         >
             {children}

@@ -6,7 +6,7 @@ interface FooterSectionProps {
 export function FooterSection({ title, children }: FooterSectionProps) {
   return (
     <div className="space-y-4">
-      <h4 className="text-lg font-semibold text-white">{title}</h4>
+      <p className="text-lg font-semibold text-secondnary-foreground-complement drop-shadow-[0_2px_0_rgba(0,0,0,1)]">{title}</p>
       {children}
     </div>
   );

@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# we use yarn instead of npm and pnpm
+package-lock.json
+pnpm-lock.yaml
