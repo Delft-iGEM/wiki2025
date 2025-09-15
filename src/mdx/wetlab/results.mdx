@@ -58,6 +58,50 @@ This section presents the results obtained from our wetlab experiments.
 
 ## Experimental Results
 
+  <AccentLine />
+
+  ## Results – Module C
+  To test our synthetic plasmid construct, we wanted to see if it could produce MS2 virus-like particles (VLPs) in *E. coli* BL21(DE3). Our experiments showed exactly that: not only did the bacteria synthesize the MS2 coat protein subunits, but the protein complexes also folded correctly and assembled into complete virus-like particles. This is a big step forward for our project and supports the potential of our vaccine platform.
+
+  > <!-- Optional: replace the note below with an actual image once ready -->
+  > **Add:** a PyMOL image of the subunits/dimers, maybe also how it interacts with the MS2 loop.
+
+  <AccentLine />
+
+  ## SDS-PAGE Analysis of MS2 Expression
+  The SDS-PAGE results provide clear evidence of successful expression of the MS2 coat protein. Based on the molecular weight ladder, the MS2 protein is expected to migrate at approximately 14 kDa. A distinct band at this molecular weight is visible in the induced supernatant sample (lane 1), while the same band is absent in the uninduced supernatant (lane 2). This strongly indicates that IPTG induction triggered expression of the MS2 protein.
+
+  The localization of the protein in the supernatant fraction suggests that the majority of the expressed MS2 protein remains soluble rather than aggregating into inclusion bodies. This is a favorable outcome, as solubility implies that the protein is likely folded correctly, which is essential for its role in RNA encapsulation and transport. In the induced pellet fraction (lane 3), faint protein bands are visible across a range of molecular weights, consistent with cellular debris and aggregated proteins. Importantly, only a minor fraction of the MS2 coat protein is observed here, further supporting that most of the protein remains in the soluble fraction. The uninduced pellet (lane 4) shows no band at ~14 kDa, confirming the absence of MS2 expression in uninduced conditions.
+
+  The comparison between induced and uninduced samples highlights successful recombinant expression. The induced supernatant (lane 1) clearly shows the ~14 kDa band absent from uninduced controls, ruling out the possibility that it corresponds to an endogenous *E. coli* protein. The relatively strong intensity of the induced supernatant band also suggests robust expression levels, although additional faint bands in all samples represent background host proteins.
+
+  Interestingly, a very faint band is also observed in the induced pellet fraction at ~14 kDa. This could indicate that a small proportion of MS2 protein is present in the insoluble fraction, possibly as virus-like particles (VLPs) that either aggregated or remained trapped in cells that were not fully lysed. Future optimization could help clarify this point. Adjusting IPTG concentrations, induction times, and incubation temperatures may influence expression levels and folding efficiency, thereby altering the balance between soluble and insoluble protein. Comparing the relative abundance of the 14 kDa protein across fractions under different conditions would provide useful insights into solubility and aggregation tendencies.
+
+  Additionally, improvements in lysis methods may help distinguish whether the pellet-associated protein reflects incomplete lysis or genuine aggregation. For example, enzymatic lysis with lysozyme or modifications to sonication protocols could enhance protein recovery. Lysozyme was initially avoided due to its similar molecular weight to the MS2 coat protein, which complicates interpretation of SDS-PAGE gels; however, its use in combination with alternative approaches could still be informative if paired with complementary protein detection methods such as Western blotting.
+
+  In summary, the SDS-PAGE analysis confirms that IPTG induction successfully triggers expression of the MS2 coat protein, which is predominantly soluble and therefore likely folded in a functional state. The faint pellet-associated band warrants further investigation through optimization of induction and lysis conditions. Together, these future efforts will ensure that the expressed MS2 protein can be produced in a form suitable for downstream applications, including RNA encapsulation and transport studies.
+
+  **Figure 1.** SDS-PAGE analysis of MS2 coat protein expression. Lane 1: Induced supernatant; Lane 2: Uninduced supernatant; Lane 3: Induced pellet; Lane 4: Uninduced pellet. A clear band at ~14 kDa confirms expression of the MS2 coat protein.
+
+  <AccentLine />
+
+  ## TEM Imaging of MS2 VLPs
+  The SDS-PAGE results provided strong evidence that the MS2 coat protein was successfully expressed upon IPTG induction, qualifying the sample for further structural analysis using transmission electron microscopy (TEM). Examination of the purified induced fraction revealed numerous uniform particles with diameters of approximately 25–30 nm, consistent with the expected size range of MS2 virus-like particles (VLPs). To further validate these observations, TEM image averaging was performed, which revealed an icosahedral—rather than perfectly spherical—structure characteristic of MS2 capsids. This additional analysis confirmed that the observed particles were indeed MS2 VLPs and not unrelated protein aggregates present in the bacterial lysate.
+
+  The TEM results therefore provide critical structural validation, showing that the coat proteins were not only expressed and soluble but also capable of self-assembling into complete VLPs. Taken together, SDS-PAGE confirmed successful expression of soluble coat protein, while TEM demonstrated that these proteins formed correctly folded capsid complexes with the expected icosahedral symmetry.
+
+  **Figure 2.** (a) TEM image of purified MS2 VLPs. Uniform spherical particles (~25–30 nm) confirm correct assembly of virus-like particles. (b) TEM average of MS2 VLPs showing spherical morphology with distinct capsid density and radial symmetry consistent with icosahedral organization.
+
+  <AccentLine />
+
+  ## Summary
+  Looking forward, we have successfully produced properly folded MS2 VLPs in bacteria by incorporating a small RNA stem–loop to trigger assembly. The next logical step will be to engineer a plasmid that includes functional RNA cargo. This could involve inserting an mRNA sequence encoding a model “dummy protein” such as GFP, or ultimately a relevant therapeutic sequence like an H5N1 mRNA vaccine insert. Such constructs would allow us to test whether MS2 VLPs can efficiently package, protect, and transport RNA molecules. Furthermore, these experiments would reveal whether RNA encapsulation affects the proper folding and stability of the VLP capsids. By systematically exploring these aspects, we can establish whether recombinant MS2 VLPs are suitable for use as customizable RNA delivery platforms.
+
+
+
+
+
+
 ### Data Collection
 
 ### Analysis
@@ -83,4 +127,5 @@ This section presents the results obtained from our wetlab experiments.
 ### Future Work
 
 ## Supporting Data
+
 </Content>
