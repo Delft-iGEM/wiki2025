@@ -13,13 +13,28 @@ import  ColorPalette  from "./contents/pallette.tsx";
 // Content components MDX
 import Test from "./mdx/test.mdx";
 import Todo from "./mdx/pages_todo.mdx";
+import HumanPractices from "./mdx/human_practices.mdx";
+import Inclusivity from "./mdx/inclusivity.mdx";
+
+
+// Team
+import Members from "./mdx/team/members.mdx";
+import Attributions from "./mdx/team/attributions.mdx";
+
+//Project
+import Description from "./mdx/project/description.mdx";
+import Engineering from "./mdx/project/engineering.mdx";
+import Results from "./mdx/project/results.mdx";
+import Contribution from "./mdx/project/contribution.mdx";
 
 //wetlab
 import  Experiments  from "./mdx/wetlab/experiments.mdx";
 import  Parts  from "./mdx/wetlab/parts.mdx";
 import  Protocols  from "./mdx/wetlab/protocols.mdx";
-import  Results  from "./mdx/wetlab/results.mdx";
 import  Safety  from "./mdx/wetlab/safety.mdx";
+import  Notebook  from "./mdx/wetlab/notebook.mdx";
+
+
 
 
 
@@ -38,8 +53,19 @@ const Pages: NavItem[] = [
     component: Home,
   },
   {
-    name: "TODO",
-    folder: [
+    name: "Team",
+    folder: [{
+        name: "Members",
+        title: "Meet Our Team",
+        path: "/team",
+        component: Members,
+      },
+      {
+        name: "Attributions",
+        title: "Attributions",
+        path: "/attributions",
+        component: Attributions,
+      },
       {
         name: "TODO",
         title: "Pages To Do List",
@@ -60,58 +86,35 @@ const Pages: NavItem[] = [
       }
     ],
   },
-  // {
-  //   name: "Team",
-  //   folder: [
-  //     {
-  //       name: "Test",
-  //       title: "test",
-  //       path: "/test",
-  //       component: Test,
-  //     },
-  //     {
-  //       name: "Members",
-  //       title: "Meet Our Team",
-  //       path: "/team",
-  //       component: Members,
-  //     },
-  //     {
-  //       name: "Attributions",
-  //       title: "Attributions",
-  //       path: "/attributions",
-  //       component: Attributions,
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: "Project",
-  //   folder: [
-  //     {
-  //       name: "Description",
-  //       title: "Project Description",
-  //       path: "/description",
-  //       component: Description,
-  //     },
-  //     {
-  //       name: "Engineering",
-  //       title: "Engineering Success",
-  //       path: "/engineering",
-  //       component: Engineering,
-  //     },
-  //     {
-  //       name: "Results",
-  //       title: "Results",
-  //       path: "/results",
-  //       component: Results,
-  //     },
-  //     {
-  //       name: "Contribution",
-  //       title: "Contribution",
-  //       path: "/contribution",
-  //       component: Contribution,
-  //     },
-  //   ],
-  // },
+  {
+    name: "Project",
+    folder: [
+      {
+        name: "Description",
+        title: "Project Description",
+        path: "/description",
+        component: Description,
+      },
+      {
+        name: "Engineering",
+        title: "Engineering Success",
+        path: "/engineering",
+        component: Engineering,
+      },
+      {
+        name: "Results",
+        title: "Results",
+        path: "/results",
+        component: Results,
+      },
+      {
+        name: "Contribution",
+        title: "Contribution",
+        path: "/contribution",
+        component: Contribution,
+      },
+    ],
+  },
   {
     name: "Wet Lab",
     folder: [
@@ -140,29 +143,11 @@ const Pages: NavItem[] = [
         component: Protocols,
       },
       {
-        name: "Results",
-        title: "Results",
-        path: "/results",
-        component: Results,
+        name: "Notebook",
+        title: "Notebook",
+        path: "/notebook",
+        component: Notebook,
       },
-      // {
-      //   name: "Notebook",
-      //   title: "Notebook",
-      //   path: "/notebook",
-      //   component: Notebook,
-      // },
-      // {
-      //   name: "Measurement",
-      //   title: "Measurement",
-      //   path: "/measurement",
-      //   component: Measurement,
-      // },
-      // {
-      //   name: "Plant",
-      //   title: "Plant",
-      //   path: "/plant",
-      //   component: Plant,
-      // },
     ],
   },
   // {
@@ -188,6 +173,18 @@ const Pages: NavItem[] = [
   //     },
   //   ],
   // },
+  {
+        name: "Human Practices",
+        title: "Human Practices",
+        path: "/human-practices",
+        component: HumanPractices,
+  },
+        {
+        name: "Inclusivity",
+        title: "Diversity and Inclusion",
+        path: "/inclusivity",
+        component: Inclusivity,
+      },
   // {
   //   name: "Engagement",
   //   folder: [
