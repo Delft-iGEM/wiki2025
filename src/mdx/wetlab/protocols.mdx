@@ -1,47 +1,79 @@
-import { Content,Header } from "@/components";
+import { Content, Header } from "@/components";
 
 <Header>
-# Protocols
-Detailed protocols and procedures for our wetlab work.
+  <h1>Protocols</h1>
+  <p>Detailed protocols and procedures for our wetlab work.</p>
 </Header>
 
 <Content items="left">
-## Overview
-This section contains detailed protocols for our wetlab procedures.
 
-## Standard Protocols
+  <details>
+    <summary><strong>Module A</strong></summary>
 
-### DNA Preparation
+    <details>
+      <summary><strong>Protocols for Module A</strong></summary>
 
-### Transformation
+      <h3>Materials</h3>
 
-### PCR
+      <h3>Methods</h3>
+    </details>
 
-### Gel Electrophoresis
+  </details>
 
-### Cloning
+  <hr />
 
-## Specialized Protocols
+  <details>
+    <summary><strong>Module B</strong></summary>
+    <p>Protocols for Module B go here.</p>
+  </details>
 
-### Custom Procedures
+  <hr />
 
-### Modified Protocols
+  <details>
+    <summary><strong>Module C</strong></summary>
 
-## Quality Control
+    <details>
+      <summary><strong>Pouring LB Agar Plates</strong></summary>
 
-### Verification Steps
+      <h3>Materials</h3>
+      <ul>
+        <li>Petri dishes</li>
+        <li>400 mL LB agar medium</li>
+        <li>Water bath at 100 °C</li>
+        <li>Water bath at 60 °C</li>
+        <li>400 µL kanamycin (50 mg/mL stock), pipette tips</li>
+        <li>70% ethanol</li>
+        <li>Bunsen burner</li>
+      </ul>
 
-### Troubleshooting
+      <h3>Methods</h3>
+      <ol>
+        <li>
+          <strong>Melt agar:</strong> Place LB agar in a 100 °C water bath until fully liquefied.
+          Transfer to a 60 °C water bath and cool until pourable (not solidified).
+        </li>
+        <li>
+          <strong>Set up sterile field:</strong> Label each plate (date, antibiotic, “iGEM”). Sterilize bench
+          with 70% ethanol. Create a sterile area with a Bunsen burner; stage plates, molten agar, and kanamycin near the flame.
+        </li>
+        <li>
+          <strong>Add antibiotic:</strong> To <strong>400 mL</strong> molten LB agar add <strong>400 µL</strong>
+          kanamycin stock (50 mg/mL) → final <strong>50 µg/mL</strong>. Mix thoroughly.
+        </li>
+        <li>
+          <strong>Pour plates:</strong> Under flame, pour ~<strong>20 mL</strong> per dish to cover the bottom.
+          Close lids and let solidify on the bench.
+        </li>
+      </ol>
+    </details>
 
-## Materials and Equipment
+  </details>
 
-### Required Materials
+  <hr />
 
-### Equipment List
+  <details>
+    <summary><strong>Module D</strong></summary>
+    <p>Protocols for Module D go here.</p>
+  </details>
 
-### Suppliers
-
-## Safety Notes
-
-## References
 </Content>
