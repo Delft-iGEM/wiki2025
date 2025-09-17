@@ -1,79 +1,53 @@
-import { Content, Header } from "@/components";
+import { Content, Header, Dropdown } from "@/components";
 
 <Header>
-  <h1>Protocols</h1>
-  <p>Detailed protocols and procedures for our wetlab work.</p>
+ # Protocols
+ Detailed protocols and procedures for our wetlab work.
 </Header>
 
 <Content items="left">
 
-  <details>
-    <summary><strong>Module A</strong></summary>
+  <Dropdown header="Module A">
+    <Dropdown header="Protocols for Module A">
 
-    <details>
-      <summary><strong>Protocols for Module A</strong></summary>
+      ### Materials
 
-      <h3>Materials</h3>
+      ### Methods
+    </Dropdown>
+  </Dropdown>
 
-      <h3>Methods</h3>
-    </details>
+  <Dropdown header="Module B">
+    Protocols for Module B go here.
+  </Dropdown>
 
-  </details>
 
-  <hr />
 
-  <details>
-    <summary><strong>Module B</strong></summary>
-    <p>Protocols for Module B go here.</p>
-  </details>
+  <Dropdown header="Module C">
+    <Dropdown header="Pouring LB Agar Plates">
+      ### Materials
+      - Petri dishes
+      - 400 mL LB agar medium
+      - Water bath at 100 °C
+      - Water bath at 60 °C
+      - 400 µL kanamycin (50 mg/mL stock), pipette tips
+      - 70% ethanol
+      - Bunsen burner
 
-  <hr />
+      ### Methods
+      1. **Melt agar:** Place LB agar in a 100 °C water bath until fully liquefied.
+         Transfer to a 60 °C water bath and cool until pourable (not solidified).
+      2. **Set up sterile field:** Label each plate (date, antibiotic, "iGEM"). Sterilize bench
+         with 70% ethanol. Create a sterile area with a Bunsen burner; stage plates, molten agar, and kanamycin near the flame.
+      3. **Add antibiotic:** To **400 mL** molten LB agar add **400 µL**
+         kanamycin stock (50 mg/mL) → final **50 µg/mL**. Mix thoroughly.
+      4. **Pour plates:** Under flame, pour ~**20 mL** per dish to cover the bottom.
+         Close lids and let solidify on the bench.
+    </Dropdown>
+  </Dropdown>
 
-  <details>
-    <summary><strong>Module C</strong></summary>
 
-    <details>
-      <summary><strong>Pouring LB Agar Plates</strong></summary>
-
-      <h3>Materials</h3>
-      <ul>
-        <li>Petri dishes</li>
-        <li>400 mL LB agar medium</li>
-        <li>Water bath at 100 °C</li>
-        <li>Water bath at 60 °C</li>
-        <li>400 µL kanamycin (50 mg/mL stock), pipette tips</li>
-        <li>70% ethanol</li>
-        <li>Bunsen burner</li>
-      </ul>
-
-      <h3>Methods</h3>
-      <ol>
-        <li>
-          <strong>Melt agar:</strong> Place LB agar in a 100 °C water bath until fully liquefied.
-          Transfer to a 60 °C water bath and cool until pourable (not solidified).
-        </li>
-        <li>
-          <strong>Set up sterile field:</strong> Label each plate (date, antibiotic, “iGEM”). Sterilize bench
-          with 70% ethanol. Create a sterile area with a Bunsen burner; stage plates, molten agar, and kanamycin near the flame.
-        </li>
-        <li>
-          <strong>Add antibiotic:</strong> To <strong>400 mL</strong> molten LB agar add <strong>400 µL</strong>
-          kanamycin stock (50 mg/mL) → final <strong>50 µg/mL</strong>. Mix thoroughly.
-        </li>
-        <li>
-          <strong>Pour plates:</strong> Under flame, pour ~<strong>20 mL</strong> per dish to cover the bottom.
-          Close lids and let solidify on the bench.
-        </li>
-      </ol>
-    </details>
-
-  </details>
-
-  <hr />
-
-  <details>
-    <summary><strong>Module D</strong></summary>
-    <p>Protocols for Module D go here.</p>
-  </details>
+  <Dropdown header="Module D">
+    Protocols for Module D go here.
+  </Dropdown>
 
 </Content>
