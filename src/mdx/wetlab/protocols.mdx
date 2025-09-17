@@ -1,4 +1,4 @@
-import { Content, Header, AccentLine, Dropdown } from "@/components";
+import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem } from "@/components";
 
 
 <Header>
@@ -8,227 +8,248 @@ import { Content, Header, AccentLine, Dropdown } from "@/components";
 
 <Content items="left">
 
-
-  <Dropdown header="Module A">
-    <Dropdown header="Protocols for Module A">
-      ### Materials
-
-      ### Methods
-    </Dropdown>
+  <Dropdown header="Module A" level={0}>
+    <p>Protocols and procedures for Module A research and development.</p>
+    
+    <DropdownGroup multiple className="mt-4">
+      <DropdownItem value="module-a-protocols" header="Protocols for Module A" level={1}>
+        ### Materials
+        
+        *Materials list for Module A protocols will be detailed here.*
+        
+        ### Methods
+        
+        *Detailed methods and procedures for Module A will be documented here.*
+      </DropdownItem>
+    </DropdownGroup>
   </Dropdown>
 
-  <Dropdown header="Module B">
-    Protocols for Module B go here.
+  <Dropdown header="Module B" level={0}>
+    <p>Protocols and procedures for Module B research and development.</p>
+    
+    <DropdownGroup multiple className="mt-4">
+      <DropdownItem value="module-b-protocols" header="Protocols for Module B" level={1}>
+        *Detailed protocols for Module B will be documented here.*
+      </DropdownItem>
+    </DropdownGroup>
   </Dropdown>
 
-  <Dropdown header="Module C">
+  <Dropdown header="Module C" level={0}>
+    <p>Comprehensive protocols for Module C including bacterial transformation, protein expression, and VLP production.</p>
+    
+    <DropdownGroup single className="mt-4">
+      <DropdownItem value="lb-agar-plates" header="Pouring LB Agar Plates" level={1}>
+        ### Materials
+        - Petri dishes
+        - 400 mL LB agar medium
+        - Water bath at 100 °C
+        - Water bath at 60 °C
+        - 400 µL kanamycin (50 mg/mL stock), pipette tips
+        - 70% ethanol
+        - Bunsen burner
 
-    <Dropdown header="Pouring LB Agar Plates">
-      ### Materials
-      - Petri dishes
-      - 400 mL LB agar medium
-      - Water bath at 100 °C
-      - Water bath at 60 °C
-      - 400 µL kanamycin (50 mg/mL stock), pipette tips
-      - 70% ethanol
-      - Bunsen burner
+        ### Methods
+        1. **Melt agar:** Liquefy at **100 °C**, then hold at **60 °C** until pourable.
+        2. **Sterile field:** Label plates; clean bench with **70% EtOH**; work by flame.
+        3. **Add antibiotic:** Add **400 µL** of **50 mg/mL** kanamycin to **400 mL** agar → **50 µg/mL** final; mix.
+        4. **Pour plates:** ~**20 mL** per dish; close lids; let solidify.
+      </DropdownItem>
 
-      ### Methods
-      1. **Melt agar:** Liquefy at **100 °C**, then hold at **60 °C** until pourable.
-      2. **Sterile field:** Label plates; clean bench with **70% EtOH**; work by flame.
-      3. **Add antibiotic:** Add **400 µL** of **50 mg/mL** kanamycin to **400 mL** agar → **50 µg/mL** final; mix.
-      4. **Pour plates:** ~**20 mL** per dish; close lids; let solidify.
-    </Dropdown>
+      <DropdownItem value="dna-resuspension" header="Resuspension of Dried DNA (Plasmid)" level={1}>
+        ### Materials
+        - Ordered DNA plasmid (tube)
+        - Centrifuge
+        - Milli-Q water
+        - Spectrophotometer / Nanodrop
 
-    <Dropdown header="Resuspension of Dried DNA (Plasmid)">
-      ### Materials
-      - Ordered DNA plasmid (tube)
-      - Centrifuge
-      - Milli-Q water
-      - Spectrophotometer / Nanodrop
+        ### Methods
+        1. Spin at **13,000 rpm for 20 s** to collect DNA.
+        2. Add **20 µL** Milli-Q to the bottom; flick to wet/dissolve.
+        3. Incubate **RT, 2 h**; flick again.
+        4. Verify concentration (**~50 ng/µL**) by spectrophotometer.
+      </DropdownItem>
 
-      ### Methods
-      1. Spin at **13,000 rpm for 20 s** to collect DNA.
-      2. Add **20 µL** Milli-Q to the bottom; flick to wet/dissolve.
-      3. Incubate **RT, 2 h**; flick again.
-      4. Verify concentration (**~50 ng/µL**) by spectrophotometer.
-    </Dropdown>
+      <DropdownItem value="transformation" header="Plasmid Transformation into BL21(DE3)" level={1}>
+        ### Materials
+        - LB + Kan (50 µg/mL) agar plates
+        - 2 mL tubes
+        - **40 µL** BL21(DE3) competent cells
+        - **1.6 µL** plasmid DNA
+        - **770 µL** SOC
+        - 42 °C water bath, 37 °C incubator/shaker
 
-    <Dropdown header="Plasmid Transformation into BL21(DE3)">
-      ### Materials
-      - LB + Kan (50 µg/mL) agar plates
-      - 2 mL tubes
-      - **40 µL** BL21(DE3) competent cells
-      - **1.6 µL** plasmid DNA
-      - **770 µL** SOC
-      - 42 °C water bath, 37 °C incubator/shaker
+        ### Methods
+        1. On ice, mix **40 µL** cells + **1.6 µL** plasmid; incubate **30 min**.
+        2. Heat-shock **42 °C, 30 s**; place on ice **5 min**.
+        3. Add **770 µL** SOC; shake **37 °C, 150 rpm, 60 min**.
+        4. Plate **10/20/50/100 µL** and include a negative control.
+        5. Incubate inverted **37 °C, 16 h**.
+      </DropdownItem>
 
-      ### Methods
-      1. On ice, mix **40 µL** cells + **1.6 µL** plasmid; incubate **30 min**.
-      2. Heat-shock **42 °C, 30 s**; place on ice **5 min**.
-      3. Add **770 µL** SOC; shake **37 °C, 150 rpm, 60 min**.
-      4. Plate **10/20/50/100 µL** and the remainder; include a negative control.
-      5. Incubate inverted **37 °C, 16 h**.
-    </Dropdown>
+      <DropdownItem value="glycerol-stock" header="Preparation of a Glycerol Stock (50% working)" level={1}>
+        ### Materials
+        - **25 mL** 95% glycerol solution
+        - **31.5 mL** Milli-Q water
+        - **50 mL** flask
 
-    <Dropdown header="Preparation of a Glycerol Stock (50% working)">
-      ### Materials
-      - **25 mL** 95% glycerol solution
-      - **31.5 mL** Milli-Q water
-      - **50 mL** flask
+        ### Methods
+        1. Mix to make **56.5 mL** of **50%** glycerol.
+        2. Transfer to a flask, label with autoclave tape, **autoclave**.
+      </DropdownItem>
 
-      ### Methods
-      1. Mix to make **56.5 mL** of **50%** glycerol.
-      2. Transfer to a flask, label with autoclave tape, **autoclave**.
-    </Dropdown>
+      <DropdownItem value="kanamycin-stock" header="Preparation of 1000× Kanamycin Stock (50 mg/mL)" level={1}>
+        ### Materials
+        - Kanamycin sulfate powder
+        - Sterile Milli-Q water
+        - 0.22 µm syringe filter
+        - Sterile 50 mL tube
 
-    <Dropdown header="Preparation of 1000× Kanamycin Stock (50 mg/mL)">
-      ### Materials
-      - Kanamycin sulfate powder
-      - Sterile Milli-Q water
-      - 0.22 µm syringe filter
-      - Sterile 50 mL tube
+        ### Methods
+        1. Dissolve **250 mg** kanamycin sulfate to **50 mL** (→ **50 mg/mL**).
+        2. Filter-sterilize (**0.22 µm**) into a sterile tube.
+        3. Aliquot (e.g., **3 mL**), label; **store −20 °C**.
+      </DropdownItem>
 
-      ### Methods
-      1. Dissolve **250 mg** kanamycin sulfate to **50 mL** (→ **50 mg/mL**).
-      2. Filter-sterilize (**0.22 µm**) into a sterile tube.
-      3. Aliquot (e.g., **3 mL**), label; **store −20 °C**.
-    </Dropdown>
+      <DropdownItem value="iptg-induction" header="Induction with IPTG" level={1}>
+        ### Materials
+        - **50 mL** overnight culture (BL21(DE3) + MS2 VLP plasmid)
+        - **1 L** LB + **1 mL** 1000× kanamycin
+        - **1 M** IPTG
+        - 2.5 L baffled flask, shaker/incubator
+        - OD₆₀₀ spectrophotometer & cuvettes
 
-    <Dropdown header="Induction with IPTG">
-      ### Materials
-      - **50 mL** overnight culture (BL21(DE3) + MS2 VLP plasmid)
-      - **1 L** LB + **1 mL** 1000× kanamycin
-      - **1 M** IPTG
-      - 2.5 L baffled flask, shaker/incubator
-      - OD₆₀₀ spectrophotometer & cuvettes
+        ### Methods
+        1. In a **2.5 L** flask add **10 mL** ON culture; bring to **1 L** LB+Kan.
+        2. Grow **30 °C, 150 rpm** for **2–4 h**.
+        3. Monitor **OD₆₀₀** to **0.5**; remove **50 mL** for *uninduced control*.
+        4. Add **0.4 mL** **1 M IPTG**; incubate **17 °C, 150 rpm, 16 h** (control same conditions without IPTG).
+      </DropdownItem>
 
-      ### Methods
-      1. In a **2.5 L** flask add **10 mL** ON culture; bring to **1 L** LB+Kan.
-      2. Grow **30 °C, 150 rpm** for **2–4 h**.
-      3. Monitor **OD₆₀₀** to **0.5**; remove **50 mL** for *uninduced control*.
-      4. Add **0.4 mL** **1 M IPTG**; incubate **17 °C, 150 rpm, 16 h** (control same conditions without IPTG).
-    </Dropdown>
+      <DropdownItem value="harvest-lysis" header="Harvest and Lysis" level={1}>
+        ### Materials
+        - **1 L** induced + **1 L** uninduced cultures
+        - **2 L** LB (no antibiotic)
+        - Large centrifuge bottles, 300 mL & 50 mL tubes
+        - **1 mM NaNO₃**, pH 8 (≥500 mL)
+        - PMSF (100 mM), Lysozyme (**10 mg/sample**)
+        - 0.22 µm filters, sonicator, ice
+        - SDS-PAGE loading dye
 
-    <Dropdown header="Harvest and Lysis">
-      ### Materials
-      - **1 L** induced + **1 L** uninduced cultures
-      - **2 L** LB (no antibiotic)
-      - Large centrifuge bottles, 300 mL & 50 mL tubes
-      - **1 mM NaNO₃**, pH 8 (≥500 mL)
-      - PMSF (100 mM), Lysozyme (**10 mg/sample**)
-      - 0.22 µm filters, sonicator, ice
-      - SDS-PAGE loading dye
+        ### Methods
+        1. Spin two rounds per culture: fill to **750 mL** with LB, **4000×g, 20 min, 4 °C**; discard supernatant.
+        2. Save **50 mL** supernatant from each (store **4 °C**).
+        3. Resuspend pellets in **200 mL** NaNO₃; adjust to **300 mL**.
+        4. Add **10 mg** lysozyme; **30 min RT**. Add **PMSF to 0.3 mM**.
+        5. **Sonicate** **3 min** (10 s on/20 s off) at **~50 W**.
+        6. Take **50 mL** total lysate from each; high-speed spin later; keep remainder **4 °C**.
+        7. **13,500×g, 20 min, 4 °C**; collect supernatant and **0.22 µm** filter.
+        8. Resuspend pellets in **50 mL** NaNO₃; store fractions **4 °C**.
 
-      ### Methods
-      1. Spin two rounds per culture: fill to **750 mL** with LB, **4000×g, 20 min, 4 °C**; discard supernatant.
-      2. Save **50 mL** supernatant from each (store **4 °C**).
-      3. Resuspend pellets in **200 mL** NaNO₃; adjust to **300 mL**.
-      4. Add **10 mg** lysozyme; **30 min RT**. Add **PMSF to 0.3 mM**.
-      5. **Sonicate** **3 min** (10 s on/20 s off) at **~50 W**.
-      6. Take **50 mL** total lysate from each; high-speed spin later; keep remainder **4 °C**.
-      7. **13,500×g, 20 min, 4 °C**; collect supernatant and **0.22 µm** filter.
-      8. Resuspend pellets in **50 mL** NaNO₃; store fractions **4 °C**.
+        #### SDS-PAGE samples (example loading)
+        | Lane | Sample                          | Load                 |
+        | ---: | -------------------------------- | -------------------- |
+        | 1    | Induced supernatant              | 10 µL + 2.5 µL dye   |
+        | 2    | Control supernatant              | 10 µL + 2.5 µL dye   |
+        | 3    | Induced total lysate             | 10 µL + 2.5 µL dye   |
+        | 4    | Control total lysate             | 10 µL + 2.5 µL dye   |
+        | 5    | Induced pellet                   | 10 µL + 2.5 µL dye   |
+        | 6    | Control pellet                   | 10 µL + 2.5 µL dye   |
+        | 7    | Induced pre-lysis supernatant    | 10 µL + 2.5 µL dye   |
+        | 8    | Control pre-lysis supernatant    | 10 µL + 2.5 µL dye   |
+      </DropdownItem>
 
-      #### SDS-PAGE samples (example loading)
-      | Lane | Sample                          | Load                 |
-      | ---: | -------------------------------- | -------------------- |
-      | 1    | Induced supernatant              | 10 µL + 2.5 µL dye   |
-      | 2    | Control supernatant              | 10 µL + 2.5 µL dye   |
-      | 3    | Induced total lysate             | 10 µL + 2.5 µL dye   |
-      | 4    | Control total lysate             | 10 µL + 2.5 µL dye   |
-      | 5    | Induced pellet                   | 10 µL + 2.5 µL dye   |
-      | 6    | Control pellet                   | 10 µL + 2.5 µL dye   |
-      | 7    | Induced pre-lysis supernatant    | 10 µL + 2.5 µL dye   |
-      | 8    | Control pre-lysis supernatant    | 10 µL + 2.5 µL dye   |
-    </Dropdown>
+      <DropdownItem value="sds-page-prep" header="SDS-PAGE Sample Preparation" level={1}>
+        ### Materials
+        - 4× SDS buffer
+        - Samples (supernatant, pellet, total lysate)
+        - Milli-Q water
+        - DTT
 
-    <Dropdown header="SDS-PAGE Sample Preparation">
-      ### Materials
-      - 4× SDS buffer
-      - Samples (supernatant, pellet, total lysate)
-      - Milli-Q water
-      - DTT
+        ### Prepare (examples)
+        - **Induced supernatant:** 3.333 µL 4× buffer + 1.27 µL sample + 8.73 µL H₂O + 3.333 µL DTT  
+        - **Uninduced supernatant:** 3.333 µL buffer + 1.6 µL sample + 8.4 µL H₂O + 3.333 µL DTT  
+        - **Induced pellet:** 3.333 µL buffer + 10 µL sample + 3.333 µL DTT  
+        - **Uninduced pellet:** 3.333 µL buffer + 1.2 µL sample + 8.8 µL H₂O + 3.333 µL DTT  
+        - **Total lysate (induced):** 3.333 µL buffer + 10 µL sample + 3.333 µL DTT  
+        - **Total lysate (uninduced):** 3.333 µL buffer + 10 µL sample + 3.333 µL DTT  
 
-      ### Prepare (examples)
-      - **Induced supernatant:** 3.333 µL 4× buffer + 1.27 µL sample + 8.73 µL H₂O + 3.333 µL DTT  
-      - **Uninduced supernatant:** 3.333 µL buffer + 1.6 µL sample + 8.4 µL H₂O + 3.333 µL DTT  
-      - **Induced pellet:** 3.333 µL buffer + 10 µL sample + 3.333 µL DTT  
-      - **Uninduced pellet:** 3.333 µL buffer + 1.2 µL sample + 8.8 µL H₂O + 3.333 µL DTT  
-      - **Total lysate (induced):** 3.333 µL buffer + 10 µL sample + 3.333 µL DTT  
-      - **Total lysate (uninduced):** 3.333 µL buffer + 10 µL sample + 3.333 µL DTT  
+        **Heat all samples at 95 °C for 5 min.**
+      </DropdownItem>
 
-      **Heat all samples at 95 °C for 5 min.**
-    </Dropdown>
+      <DropdownItem value="sds-page-gel" header="Loading & Running SDS-PAGE Gel" level={1}>
+        ### Materials
+        - Precast SDS-PAGE gel (e.g., Bio-Rad 4568021)
+        - Electrophoresis cell
+        - 1× Tris-Glycine-SDS running buffer
+        - Protein ladder
 
-    <Dropdown header="Loading & Running SDS-PAGE Gel">
-      ### Materials
-      - Precast SDS-PAGE gel (e.g., Bio-Rad 4568021)
-      - Electrophoresis cell
-      - 1× Tris-Glycine-SDS running buffer
-      - Protein ladder
+        ### Methods
+        1. Mount gel; remove bottom tape; assemble in gel box.  
+           Fill inner chamber to top and outer to "2 gels" line with running buffer.
+        2. Load **5 µL** ladder and samples (record lane map).
+        3. Run **180 V for 30 min**.
+      </DropdownItem>
 
-      ### Methods
-      1. Mount gel; remove bottom tape; assemble in gel box.  
-         Fill inner chamber to top and outer to “2 gels” line with running buffer.
-      2. Load **5 µL** ladder and samples (record lane map).
-      3. Run **180 V for 30 min**.
-    </Dropdown>
+      <DropdownItem value="coomassie-staining" header="Coomassie Staining & Imaging" level={1}>
+        ### Materials
+        - Coomassie Brilliant Blue R-250 stain
+        - Destain (MeOH/AcOH/H₂O)
+        - Tray/rocker
+        - Imaging system
 
-    <Dropdown header="Coomassie Staining & Imaging">
-      ### Materials
-      - Coomassie Brilliant Blue R-250 stain
-      - Destain (MeOH/AcOH/H₂O)
-      - Tray/rocker
-      - Imaging system
+        ### Methods
+        1. Stain **1–2 h** (or overnight) with gentle rocking.
+        2. Destain, changing solution every **30–60 min** until background clears (**~2–6 h**).
+        3. Rinse **15–30 min** in water; image; store gel hydrated at **4 °C**.
+      </DropdownItem>
 
-      ### Methods
-      1. Stain **1–2 h** (or overnight) with gentle rocking.
-      2. Destain, changing solution every **30–60 min** until background clears (**~2–6 h**).
-      3. Rinse **15–30 min** in water; image; store gel hydrated at **4 °C**.
-    </Dropdown>
+      <DropdownItem value="peg-precipitation" header="PEG Precipitation of MS2 VLPs" level={1}>
+        ### Materials
+        - PEG-6000, NaCl
+        - 0.45 µm & 0.22 µm filters
+        - Centrifuge (≥10,000×g)
+        - Fresh buffer (e.g., **400 mM NaNO₃**)
 
-    <Dropdown header="PEG Precipitation of MS2 VLPs">
-      ### Materials
-      - PEG-6000, NaCl
-      - 0.45 µm & 0.22 µm filters
-      - Centrifuge (≥10,000×g)
-      - Fresh buffer (e.g., **400 mM NaNO₃**)
+        ### Methods
+        1. Filter VLP suspension through **0.45 µm**.
+        2. Add PEG/NaCl to **10% PEG** + **0.5 M NaCl**  
+           *(for 30 mL: 3 g PEG 6000 + 0.88 g NaCl)*.
+        3. Incubate **4 °C, 18 h**; spin **10,000×g, 1 h, 4 °C**.
+        4. Resuspend pellet in **1/10** initial volume buffer; filter **0.22 µm**; store **4 °C**.
+      </DropdownItem>
 
-      ### Methods
-      1. Filter VLP suspension through **0.45 µm**.
-      2. Add PEG/NaCl to **10% PEG** + **0.5 M NaCl**  
-         *(for 30 mL: 3 g PEG 6000 + 0.88 g NaCl)*.
-      3. Incubate **4 °C, 18 h**; spin **10,000×g, 1 h, 4 °C**.
-      4. Resuspend pellet in **1/10** initial volume buffer; filter **0.22 µm**; store **4 °C**.
-    </Dropdown>
+      <DropdownItem value="tem-imaging" header="TEM Imaging of MS2 VLPs" level={1}>
+        ### Materials
+        - Induced & uninduced VLPs
+        - Carbon-coated copper grids (400-mesh)
+        - Milli-Q water; **1–2%** uranyl acetate (negative stain)
+        - Glow-discharge unit
+        - TEM (80–120 kV), tweezers, dust-free drying box
 
-    <Dropdown header="TEM Imaging of MS2 VLPs">
-      ### Materials
-      - Induced & uninduced VLPs
-      - Carbon-coated copper grids (400-mesh)
-      - Milli-Q water; **1–2%** uranyl acetate (negative stain)
-      - Glow-discharge unit
-      - TEM (80–120 kV), tweezers, dust-free drying box
+        ### Grid Preparation
+        1. Glow-discharge grids **60 s** in air; store dust-free.
 
-      ### Grid Preparation
-      1. Glow-discharge grids **60 s** in air; store dust-free.
+        ### Sample & Stain
+        1. Place **3 µL** sample on Parafilm; place grid (carbon side down) **60 s**; blot.
+        2. Float on **10 µL** **2%** uranyl acetate **60 s**; wick; air-dry.
+        3. Repeat for uninduced sample.
 
-      ### Sample & Stain
-      1. Place **3 µL** sample on Parafilm; place grid (carbon side down) **60 s**; blot.
-      2. Float on **10 µL** **2%** uranyl acetate **60 s**; wick; air-dry.
-      3. Repeat for uninduced sample.
-
-      ### Imaging
-      1. Load grid; operate TEM at **~100 kV** (bright-field).
-      2. Optimize apertures & astigmatism; focus on thin stain film.
-      3. Capture overviews (**10–20k×**) and details (**50–100k×**) for both samples.
-    </Dropdown>
-
+        ### Imaging
+        1. Load grid; operate TEM at **~100 kV** (bright-field).
+        2. Optimize apertures & astigmatism; focus on thin stain film.
+        3. Capture overviews (**10–20k×**) and details (**50–100k×**) for both samples.
+      </DropdownItem>
+    </DropdownGroup>
   </Dropdown>
 
-  <Dropdown header="Module D">
-    Protocols for Module D go here.
+  <Dropdown header="Module D" level={0}>
+    <p>Protocols and procedures for Module D research and development.</p>
+    
+    <DropdownGroup multiple className="mt-4">
+      <DropdownItem value="module-d-protocols" header="Protocols for Module D" level={1}>
+        *Detailed protocols for Module D will be documented here.*
+      </DropdownItem>
+    </DropdownGroup>
   </Dropdown>
 
 </Content>

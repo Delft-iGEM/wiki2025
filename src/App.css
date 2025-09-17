@@ -138,6 +138,52 @@
       }
     }
   }
+  
+  /* Nested Accordion/Dropdown Styling for hierarchical lists */
+  .dropdown-level-0 {
+    @apply mb-4;
+  }
+  
+  .dropdown-level-0 .accordion-trigger {
+    @apply text-3xl font-semibold;
+  }
+  
+  .dropdown-level-1 {
+    @apply ml-4 mb-3 border-l-2 border-border pl-4;
+  }
+  
+  .dropdown-level-1 .accordion-trigger {
+    @apply text-2xl font-medium;
+  }
+  
+  .dropdown-level-2 {
+    @apply ml-6 mb-2 border-l border-muted-foreground/30 pl-3;
+  }
+  
+  .dropdown-level-2 .accordion-trigger {
+    @apply text-xl font-normal;
+  }
+  
+  .dropdown-level-3 {
+    @apply ml-8 mb-1 border-l border-muted-foreground/20 pl-2;
+  }
+  
+  .dropdown-level-3 .accordion-trigger {
+    @apply text-lg font-normal text-muted-foreground;
+  }
+  
+  /* Multiple item dropdown container */
+  .dropdown-group {
+    @apply space-y-2;
+  }
+  
+  .dropdown-group .dropdown-item {
+    @apply border border-border rounded-md overflow-hidden;
+  }
+  
+  .dropdown-group .dropdown-item .accordion-trigger {
+    @apply px-4 py-3 bg-muted/30 hover:bg-muted/50 transition-colors;
+  }
 }
 
 @layer base {
