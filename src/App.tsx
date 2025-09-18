@@ -2,9 +2,9 @@ import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { getPathMapping, stringToSlug } from "./utils";
 import { useEffect, useMemo } from "react";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./components/basic/Navbar";
 import { NotFound } from "./components/NotFound";
-import { Footer } from "./components/Footer";
+import { Footer } from "./components/basic/Footer";
 
 // Content components TSX
 import { Home } from "./contents/home.tsx";

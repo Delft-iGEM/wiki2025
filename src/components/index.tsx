@@ -1,5 +1,6 @@
 // For .mdx
-export * from "./Header.tsx";
+export * from "./basic/Header.tsx";
 export * from "./Content.tsx";
 export * from "./ui/accent-line.tsx";
 export * from "./Dropdown.tsx";
+export * from "./members/MembersGrid.tsx";

@@ -1,6 +1,6 @@
 /* Footer */
 /* MUST mention license AND have a link to team wiki's repository on gitlab.igem.org */
-import { stringToSlug } from "../utils";
+import { stringToSlug } from "../../utils";
 import { FooterSection } from "./FooterSection";
 import { FooterLink } from "./FooterLink";
 

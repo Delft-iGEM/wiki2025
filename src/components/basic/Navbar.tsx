@@ -5,7 +5,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
+} from "../ui/dropdown-menu";
 
 interface BaseItem { name?: string }
 interface PageItem extends BaseItem { path?: string; title?: string; component?: React.FC; lead?: string }
