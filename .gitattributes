@@ -4,14 +4,11 @@
 *.ttf binary
 *.otf binary
 *.eot binary
-
 # Other binary file types that might be relevant
-*.png binary
-*.jpg binary
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
 *.jpeg binary
 *.gif binary
 *.ico binary
 *.pdf binary
-*.jpg filter=lfs diff=lfs merge=lfs -text
 *.JPG filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
