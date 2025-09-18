@@ -1,11 +1,6 @@
 import * as React from "react";
-
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "./ui/accordion";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { ChevronDownIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export type DropdownProps = {
@@ -30,6 +25,8 @@ export type DropdownGroupProps = {
   readonly className?: string;
   /** Allow multiple items to be open at once */
   readonly multiple?: boolean;
+  /** Alternatively specify single mode (alias to !multiple) for ergonomics in MDX */
+  readonly single?: boolean;
   /** Default open values when multiple is true */
   readonly defaultOpen?: string[];
 };
@@ -60,29 +57,24 @@ export function Dropdown({
   const itemValue = value ?? "item";
 
   return (
-    <Accordion
+    <AccordionPrimitive.Root
       type="single"
       collapsible
       defaultValue={defaultOpen ? itemValue : undefined}
-      className={cn(
-        "w-full",
-        `dropdown-level-${level}`,
-        className
-      )}
+      className={cn("dropdown-root dropdown-single", `dropdown-level-${level}`, className)}
     >
-      <AccordionItem value={itemValue}>
-        <AccordionTrigger className={cn(
-          "accordion-trigger",
-          level === 0 && "text-3xl font-semibold",
-          level === 1 && "text-2xl font-medium", 
-          level === 2 && "text-xl font-normal",
-          level === 3 && "text-lg font-normal text-muted-foreground"
-        )}>
-          {header}
-        </AccordionTrigger>
-        <AccordionContent>{children}</AccordionContent>
-      </AccordionItem>
-    </Accordion>
+      <AccordionPrimitive.Item value={itemValue} className={cn("dropdown-item", `dropdown-level-${level}`)}>
+        <AccordionPrimitive.Header className="flex">
+          <AccordionPrimitive.Trigger className={cn("accordion-trigger")}> 
+            {header}
+            <ChevronDownIcon className="dropdown-icon" />
+          </AccordionPrimitive.Trigger>
+        </AccordionPrimitive.Header>
+        <AccordionPrimitive.Content className={cn("accordion-content")}>
+          <div className={cn("accordion-content-inner")}>{children}</div>
+        </AccordionPrimitive.Content>
+      </AccordionPrimitive.Item>
+    </AccordionPrimitive.Root>
   );
 }
 
@@ -94,29 +86,32 @@ export function DropdownGroup({
   children,
   className,
   multiple = false,
+  single,
   defaultOpen = [],
 }: DropdownGroupProps) {
-  if (multiple) {
+  const isMultiple = typeof single === "boolean" ? !single : multiple;
+
+  if (isMultiple) {
     return (
-      <Accordion
+      <AccordionPrimitive.Root
         type="multiple"
         defaultValue={defaultOpen}
-        className={cn("w-full dropdown-group", className)}
+        className={cn("dropdown-root dropdown-group", className)}
       >
         {children}
-      </Accordion>
+      </AccordionPrimitive.Root>
     );
   }
 
   return (
-    <Accordion
+    <AccordionPrimitive.Root
       type="single"
       collapsible
       defaultValue={defaultOpen[0]}
-      className={cn("w-full dropdown-group", className)}
+      className={cn("dropdown-root dropdown-group", className)}
     >
       {children}
-    </Accordion>
+    </AccordionPrimitive.Root>
   );
 }
 
@@ -131,24 +126,20 @@ export function DropdownItem({
   level = 0,
 }: DropdownItemProps) {
   return (
-    <AccordionItem 
-      value={value} 
-      className={cn(
-        "dropdown-item",
-        `dropdown-level-${level}`
-      )}
+    <AccordionPrimitive.Item
+      value={value}
+      className={cn("dropdown-item", `dropdown-level-${level}`)}
     >
-      <AccordionTrigger className={cn(
-        "accordion-trigger",
-        level === 0 && "text-xl font-medium",
-        level === 1 && "text-lg font-medium", 
-        level === 2 && "text-base font-normal",
-        level === 3 && "text-sm font-normal text-muted-foreground"
-      )}>
-        {header}
-      </AccordionTrigger>
-      <AccordionContent>{children}</AccordionContent>
-    </AccordionItem>
+      <AccordionPrimitive.Header className="flex">
+        <AccordionPrimitive.Trigger className={cn("accordion-trigger")}>
+          {header}
+          <ChevronDownIcon className="dropdown-icon" />
+        </AccordionPrimitive.Trigger>
+      </AccordionPrimitive.Header>
+      <AccordionPrimitive.Content className={cn("accordion-content")}>
+        <div className={cn("accordion-content-inner")}>{children}</div>
+      </AccordionPrimitive.Content>
+    </AccordionPrimitive.Item>
   );
 }
 

@@ -140,6 +140,11 @@
   }
   
   /* Nested Accordion/Dropdown Styling for hierarchical lists */
+  /* Root containers */
+  .dropdown-root {
+    @apply w-full;
+  }
+
   .dropdown-level-0 {
     @apply mb-4;
   }
@@ -184,6 +189,39 @@
   .dropdown-group .dropdown-item .accordion-trigger {
     @apply px-4 py-3 bg-muted/30 hover:bg-muted/50 transition-colors;
   }
+
+  /* Generic pieces applied to both single and grouped items */
+  .dropdown-item {
+    @apply border-b last:border-b-0;
+  }
+
+  .accordion-trigger {
+    @apply flex flex-1 items-center justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .accordion-content {
+    @apply overflow-hidden text-sm data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up;
+  }
+
+  .accordion-content-inner {
+    @apply pt-0 pb-4;
+  }
+
+  .dropdown-icon {
+    @apply text-muted-foreground pointer-events-none size-4 shrink-0 transition-transform duration-200;
+  }
+
+  /* rotate icon when open */
+  [data-state="open"] > .dropdown-icon {
+    @apply rotate-180;
+  }
+
+ #container .dropdown-item>h3
+ {
+  @apply pt-0;
+  font-size: inherit;
+  font-weight: inherit;
+ }
 }
 
 @layer base {
