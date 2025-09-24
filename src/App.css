@@ -51,14 +51,45 @@
     "Maple Mono", ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas",
     "Liberation Mono", "Courier New", monospace;
   --font-family-montserrat: "Montserrat", sans-serif;
+  --font-family-montserrat-alt: "Montserrat Alternates", sans-serif;
 }
 
 @layer components {
   * {
     @apply print:text-foreground! print:drop-shadow-none! print:shadow-none!;
   }
+  /* Hexagonal avatar utility: apply to an element with equal width/height */
+  .hex-avatar {
+    /* Ensure the element itself controls the shape */
+    -webkit-clip-path: polygon(41.31759% 0.75961%, 88.30222% 17.86062%, 96.98463% 67.10101%, 58.68241% 99.24039%, 11.69778% 82.13938%, 3.01537% 32.89899%);
+    clip-path: polygon(41.31759% 0.75961%, 88.30222% 17.86062%, 96.98463% 67.10101%, 58.68241% 99.24039%, 11.69778% 82.13938%, 3.01537% 32.89899%);
+  }
+
+  /* Optional bordered variant (wrap your <img> in a div.hex-avatar-border) */
+  .hex-avatar-border {
+    position: relative;
+    display: inline-block;
+  }
+  .hex-avatar-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,var(--color-brand),var(--color-accent));
+    -webkit-clip-path: polygon(25% 6.69873%, 75% 6.69873%, 100% 50%, 75% 93.30127%, 25% 93.30127%, 0% 50%);
+    clip-path: polygon(25% 6.69873%, 75% 6.69873%, 100% 50%, 75% 93.30127%, 25% 93.30127%, 0% 50%);
+  }
+  .hex-avatar-border > .hex-avatar {
+    position: relative;
+    z-index: 1;
+    /* Shrink slightly so gradient becomes a visible border */
+    width: 100%;
+    height: 100%;
+    padding: 4px; /* controls border thickness */
+    box-sizing: border-box;
+    background: var(--color-background);
+  }
   .max-container {
-    @apply w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8;
+    @apply w-full max-w-7xl mx-auto px-6 sm:px-20 lg:px-60;
   }
 
   #container {

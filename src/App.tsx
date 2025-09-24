@@ -47,21 +47,21 @@ export type NavItem = PageItem | FolderItem;
 // Pages array formerly in pages.ts
 const Pages: NavItem[] = [
   {
-    name: "Home",
+    name: "home",
     title: "Home",
     path: "/",
     component: Home,
   },
   {
-    name: "Team",
+    name: "team",
     folder: [{
-        name: "Members",
+        name: "members",
         title: "Meet Our Team",
         path: "/team",
         component: Members,
       },
       {
-        name: "Attributions",
+        name: "attributions",
         title: "Attributions",
         path: "/attributions",
         component: Attributions,
@@ -73,13 +73,13 @@ const Pages: NavItem[] = [
         component: Todo,
       },
       {
-        name: "Test",
+        name: "test",
         title: "test",
         path: "/test",
         component: Test,
       },
       {
-        name: "Color Palette",
+        name: "color palette",
         title: "Color Palette",
         path: "/color-palette",
         component: ColorPalette,
@@ -87,28 +87,28 @@ const Pages: NavItem[] = [
     ],
   },
   {
-    name: "Project",
+    name: "project",
     folder: [
       {
-        name: "Description",
+        name: "description",
         title: "Project Description",
         path: "/description",
         component: Description,
       },
       {
-        name: "Engineering",
+        name: "engineering",
         title: "Engineering Success",
         path: "/engineering",
         component: Engineering,
       },
       {
-        name: "Results",
+        name: "results",
         title: "Results",
         path: "/results",
         component: Results,
       },
       {
-        name: "Contribution",
+        name: "contribution",
         title: "Contribution",
         path: "/contribution",
         component: Contribution,
@@ -116,34 +116,34 @@ const Pages: NavItem[] = [
     ],
   },
   {
-    name: "Wet Lab",
+    name: "wet lab",
     folder: [
       {
-        name: "Experiment Design",
+        name: "experiment design",
         title: "Experiment Design",
         path: "/experiment-design",
         component: Experiments,
       },
       {
-        name: "Safety and Security",
+        name: "safety and security",
         title: "Safety and Security",
         path: "/safety-and-security",
         component: Safety,
       },
       {
-        name: "Parts",
+        name: "parts",
         title: "Parts",
         path: "/parts",
         component: Parts,
       },
       {
-        name: "Protocols",
+        name: "protocols",
         title: "Protocols",
         path: "/protocols",
         component: Protocols,
       },
       {
-        name: "Notebook",
+        name: "notebook",
         title: "Notebook",
         path: "/notebook",
         component: Notebook,
@@ -174,13 +174,13 @@ const Pages: NavItem[] = [
   //   ],
   // },
   {
-        name: "Human Practices",
+        name: "human practices",
         title: "Human Practices",
         path: "/human-practices",
         component: HumanPractices,
   },
         {
-        name: "Inclusivity",
+        name: "inclusion",
         title: "Diversity and Inclusion",
         path: "/inclusivity",
         component: Inclusivity,
