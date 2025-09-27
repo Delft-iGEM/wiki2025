@@ -19,7 +19,7 @@ import Inclusivity from "./mdx/inclusivity.mdx";
 
 // Team
 import Members from "./mdx/team/members.mdx";
-import Attributions from "./mdx/team/attributions.mdx";
+import Attributions from "./contents/attributions.tsx";
 
 //Project
 import Description from "./mdx/project/description.mdx";

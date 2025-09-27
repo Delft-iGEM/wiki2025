@@ -11,6 +11,6 @@ export function MembersGrid() {
   <MemberCard firstName="Tessa" lastName="Ernst" src={pathBase+"tessa"+ext} alt="Tessa" role="Human Practices Manager" />
   <MemberCard firstName="Krzysztof" lastName="Zabłocki" src={pathBase+"krzysztof"+ext} alt="Krzysztof" role="Wet Lab Manager"/>
   <MemberCard firstName="Viktor" lastName="Gilin" src={pathBase+"viktor"+ext} alt="Viktor" role="Dry Lab Manager"/>
-  <MemberCard firstName="Franek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role="Graphical Design" />
+  <MemberCard firstName="Franciszek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role="Graphical Design" />
 </div>)
 }
