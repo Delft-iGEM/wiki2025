@@ -28,8 +28,51 @@ import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem } fr
     <p>Protocols and procedures for Module B research and development.</p>
     
     <DropdownGroup multiple className="mt-4">
-      <DropdownItem value="module-b-protocols" header="Protocols for Module B" level={1}>
-        *Detailed protocols for Module B will be documented here.*
+      <DropdownItem value="ph-acid-baths" header="Preparation of Acid Baths (pH 1.5, 2.0, 3.0)" level={1}>
+        ###### Materials
+        - Clean glassware
+        - DI water
+        - 50 mL tubes / small flasks
+        - Analytical balance
+        - 0.2% NaCl solution (2.0 g/L → 0.06 g/30 mL)
+        - 1 M HCl
+        - pH meter (calibrated at 4/7/10)
+        - 37 °C water bath
+        - 0.22 µm filter (if storing overnight)
+
+        ###### Methods
+        1. **Weigh & dissolve:** Add **0.06 g NaCl** to ~**25 mL DI water**.
+        2. **Add HCl (approximate volumes):**  
+           - pH **1.5** → **0.57 mL**  
+           - pH **2.0** → **0.18 mL**  
+           - pH **3.0** → **18 µL**  
+        3. **Adjust volume:** Bring final to **30 mL** with DI water.  
+        4. **Check pH:** Fine-tune if necessary.  
+        5. **Warm:** Place at **37 °C**, re-check pH before use.  
+        6. **Sterilize:** Filter (**0.22 µm**) if storing overnight.  
+      </DropdownItem>
+
+      <DropdownItem value="ph-neutral-basic-baths" header="Preparation of Neutral/Basic Baths (pH 6.0, 6.8, 7.4)" level={1}>
+        ###### Materials
+        - Clean glassware
+        - DI water
+        - 50 mL tubes / bottles
+        - 0.5 M KH₂PO₄ (acid stock)
+        - 0.5 M K₂HPO₄ (base stock)
+        - pH meter (calibrated at 4/7/10)
+        - 37 °C water bath
+        - 0.22 µm filter (prepare in advance)
+
+        ###### Methods
+        1. **Combine phosphate stocks (per 30 mL, 0.05 M buffer):**  
+           - pH **6.0** → **0.175 mL K₂HPO₄** + **2.825 mL KH₂PO₄**  
+           - pH **6.8** → **0.84 mL K₂HPO₄** + **2.16 mL KH₂PO₄**  
+           - pH **7.4** → **1.825 mL K₂HPO₄** + **1.175 mL KH₂PO₄**  
+        2. Add ~**25 mL DI water**, mix gently.  
+        3. **Check pH:** Adjust with drops of acid/base stock as needed.  
+        4. **Adjust volume:** Bring to **30 mL** with DI water.  
+        5. **Warm:** Place at **37 °C**, re-check pH before use.  
+        6. **Sterilize:** Filter (**0.22 µm**) if storing overnight.  
       </DropdownItem>
     </DropdownGroup>
   </Dropdown>
