@@ -26,3 +26,6 @@ dist-ssr
 # we use yarn instead of npm and pnpm
 package-lock.json
 pnpm-lock.yaml
+
+# file no longer used
+attributions.mdx

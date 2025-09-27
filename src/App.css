@@ -272,67 +272,63 @@
   :root {
     /* Light theme based on provided palette */
     /* Base */
-    --background: hsl(193, 67%, 95%); /* Light Background */
-    --foreground: hsl(193, 96%, 10%); /* Overlay Dark for high-contrast text */
-    --card: hsl(0, 0%, 100%);
-    --card-foreground: hsl(193, 96%, 10%);
-    --popover: hsl(0, 0%, 100%);
-    --popover-foreground: hsl(193, 96%, 10%);
+    --background: oklch(96.75% 0.015 227.5); /* Light Background */
+    --foreground: oklch(25.42% 0.0456 227.5); /* Overlay Dark for high-contrast text */
+    --card: oklch(100% 0 none);
+    --card-foreground: oklch(25.42% 0.0456 227.5);
+    --popover: oklch(100% 0 none);
+    --popover-foreground: oklch(25.42% 0.0456 227.5);
 
     /* Brand & roles */
-    --brand: hsl(193, 100%, 42%); /* Sky Blue */
-    --brand-foreground: hsl(0, 0%, 100%);
-    --primary: hsl(193, 100%, 30%); /* Medium Teal */
-    --primary-foreground: hsl(0, 0%, 100%);
-    --secondary: hsl(193, 100%, 14%); /* Deep Blue */
-    --secondary-foreground: hsl(
-      193,
-      100%,
-      95%
-    ); /* very light cyan for subtle contrast */
-    --secondnary-foreground-complement: hsl(193, 100%, 67%); /* Soft Teal */
-    --muted: hsl(193, 40%, 92%); /* Card/Panel Shade */
-    --muted-foreground: hsl(193, 100%, 19%); /* Muted Deep Blue */
-    --accent: hsl(193, 88%, 61%); /* Soft Teal */
-    --accent-foreground: hsl(193, 100%, 10%);
-    --destructive: hsl(360, 68%, 43%);
-    --destructive-foreground: hsl(0, 0%, 100%);
+    --brand: oklch(0.6767 0.1313 227.5); /* Sky Blue */
+    --brand-foreground: oklch(100% 0 none);
+    --primary: oklch(53.27% 0.1015 227.5); /* Medium Teal */
+    --primary-foreground: oklch(100% 0 none);
+    --secondary: oklch(31.59% 0.0588 227.5); /* Deep Blue */
+    --secondary-foreground: oklch(97.05% 0.0222 227.5); /* very light cyan for subtle contrast */
+    --secondnary-foreground-complement: oklch(83.17% 0.1242 227.5); /* Soft Teal */
+    --muted: oklch(94.43% 0.0144 227.5); /* Card/Panel Shade */
+    --muted-foreground: oklch(38.68% 0.0728 227.5); /* Muted Deep Blue */
+    --accent: oklch(79.12% 0.1261 227.5); /* Soft Teal */
+    --accent-foreground: oklch(25.62% 0.047 227.5);
+    --destructive: oklch(50.92% 0.1847 27.5);
+    --destructive-foreground: oklch(100% 0 none);
 
     /* UI tokens */
-    --border: hsl(192, 100%, 50%); /* Border Accent */
-    --input: hsl(193, 9%, 91%); /* Subtle Gray */
-    --ring: hsl(193, 100%, 42%); /* Sky Blue */
+    --border: oklch(78.56% 0.1479 227.5); /* Border Accent */
+    --input: oklch(93.25% 0.0037 227.5); /* Subtle Gray */
+    --ring: oklch(68.11% 0.1308 227.5); /* Sky Blue */
     --radius: 0.5rem;
-    --selection: hsl(193, 100%, 50%); /* Hover Blue */
+    --selection: oklch(77.57% 0.1494 227.5); /* Hover Blue */
   }
 
   .dark {
     /* Dark theme tuned from palette */
-    --background: hsl(193, 96%, 10%); /* Overlay Dark */
-    --foreground: hsl(193, 100%, 95%); /* very light cyan */
-    --card: hsl(193, 100%, 10%);
-    --card-foreground: hsl(193, 100%, 95%);
-    --popover: hsl(193, 100%, 10%);
-    --popover-foreground: hsl(193, 100%, 95%);
+    --background: oklch(25.42% 0.0456 227.5); /* Overlay Dark */
+    --foreground: oklch(97.05% 0.0222 227.5); /* very light cyan */
+    --card: oklch(25.62% 0.047 227.5);
+    --card-foreground: oklch(97.05% 0.0222 227.5);
+    --popover: oklch(25.62% 0.047 227.5);
+    --popover-foreground: oklch(97.05% 0.0222 227.5);
 
-    --brand: hsl(193, 100%, 42%);
-    --brand-foreground: hsl(193, 100%, 5%);
-    --primary: hsl(193, 92%, 53%); /* brighter for dark */
-    --primary-foreground: hsl(193, 100%, 5%);
-    --secondary: hsl(193, 100%, 17%); /* Dark Teal */
-    --secondary-foreground: hsl(193, 100%, 94%);
-    --secondnary-foreground-complement: hsl(193, 73%, 70%);
-    --muted: hsl(193, 100%, 13%);
-    --muted-foreground: hsl(193, 32%, 76%);
-    --accent: hsl(193, 55%, 51%);
-    --accent-foreground: hsl(193, 100%, 5%);
-    --destructive: hsl(358, 74%, 32%);
-    --destructive-foreground: hsl(210, 67%, 96%);
+    --brand: oklch(68.11% 0.1308 227.5);
+    --brand-foreground: oklch(17.61% 0.0313 227.5);
+    --primary: oklch(76.78% 0.1408 227.5); /* brighter for dark */
+    --primary-foreground: oklch(17.61% 0.0313 227.5);
+    --secondary: oklch(35.89% 0.0673 227.5); /* Dark Teal */
+    --secondary-foreground: oklch(96.48% 0.0266 227.5);
+    --secondnary-foreground-complement: oklch(81.79% 0.0908 227.5);
+    --muted: oklch(30.13% 0.0559 227.5);
+    --muted-foreground: oklch(82.81% 0.0349 227.5);
+    --accent: oklch(68.6% 0.105 227.5);
+    --accent-foreground: oklch(17.61% 0.0313 227.5);
+    --destructive: oklch(41.81% 0.1547 27.5);
+    --destructive-foreground: oklch(96.64% 0.0117 227.5);
 
-    --border: hsl(193, 100%, 19%);
-    --input: hsl(193, 100%, 15%);
-    --ring: hsl(193, 100%, 42%);
-    --selection: hsl(193, 100%, 33%); /* Button Blue */
+    --border: oklch(38.68% 0.0728 227.5);
+    --input: oklch(33.04% 0.0617 227.5);
+    --ring: oklch(68.11% 0.1308 227.5);
+    --selection: oklch(57.07% 0.109 227.5); /* Button Blue */
   }
 }
 
@@ -358,36 +354,36 @@
   }
   /* From https://github.com/wooorm/starry-night/blob/main/style/both.css on MIT License adapted by us, so can be used under CC4.0 */
   :root {
-    --color-prettylights-syntax-brackethighlighter-angle: #9198a1;
-    --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
-    --color-prettylights-syntax-carriage-return-bg: #b62324;
-    --color-prettylights-syntax-carriage-return-text: #f0f6fc;
-    --color-prettylights-syntax-comment: #9198a1;
-    --color-prettylights-syntax-constant: #79c0ff;
-    --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
-    --color-prettylights-syntax-entity: #d2a8ff;
-    --color-prettylights-syntax-entity-tag: #7ee787;
-    --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
-    --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
-    --color-prettylights-syntax-keyword: #ff7b72;
-    --color-prettylights-syntax-markup-bold: #f0f6fc;
-    --color-prettylights-syntax-markup-changed-bg: #5a1e02;
-    --color-prettylights-syntax-markup-changed-text: #ffdfb6;
-    --color-prettylights-syntax-markup-deleted-bg: #67060c;
-    --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
-    --color-prettylights-syntax-markup-heading: #1f6feb;
-    --color-prettylights-syntax-markup-ignored-bg: #1158c7;
-    --color-prettylights-syntax-markup-ignored-text: #f0f6fc;
-    --color-prettylights-syntax-markup-inserted-bg: #033a16;
-    --color-prettylights-syntax-markup-inserted-text: #aff5b4;
-    --color-prettylights-syntax-markup-italic: #f0f6fc;
-    --color-prettylights-syntax-markup-list: #f2cc60;
-    --color-prettylights-syntax-meta-diff-range: #d2a8ff;
-    --color-prettylights-syntax-storage-modifier-import: #f0f6fc;
-    --color-prettylights-syntax-string: #a5d6ff;
-    --color-prettylights-syntax-string-regexp: #7ee787;
-    --color-prettylights-syntax-sublimelinter-gutter-mark: #3d444d;
-    --color-prettylights-syntax-variable: #ffa657;
+    --color-prettylights-syntax-brackethighlighter-angle: oklch(88% 0.02 254.6);
+    --color-prettylights-syntax-brackethighlighter-unmatched: oklch(78% 0.205 27.5);
+    --color-prettylights-syntax-carriage-return-bg: oklch(50.51% 0.1826 26.53);
+    --color-prettylights-syntax-carriage-return-text: oklch(97.03% 0.0103 247.9);
+    --color-prettylights-syntax-comment: oklch(78% 0 0);
+    --color-prettylights-syntax-constant: oklch(78% 0.1153 246.7);
+    --color-prettylights-syntax-constant-other-reference-link: oklch(85.6% 0.0768 244.1);
+    --color-prettylights-syntax-entity: oklch(78% 0.1275 305.9);
+    --color-prettylights-syntax-entity-tag: oklch(78% 0.1641 145.8);
+    --color-prettylights-syntax-invalid-illegal-bg: oklch(41.79% 0.1549 25.96);
+    --color-prettylights-syntax-invalid-illegal-text: oklch(97.03% 0.0103 247.9);
+    --color-prettylights-syntax-keyword: oklch(78% 0.16 25.78);
+    --color-prettylights-syntax-markup-bold: oklch(97.03% 0.0103 247.9);
+    --color-prettylights-syntax-markup-changed-bg: oklch(32.43% 0.0956 41.81);
+    --color-prettylights-syntax-markup-changed-text: oklch(92.02% 0.0641 73.74);
+    --color-prettylights-syntax-markup-deleted-bg: oklch(32.77% 0.1273 25.92);
+    --color-prettylights-syntax-markup-deleted-text: oklch(92.23% 0.0397 27.49);
+    --color-prettylights-syntax-markup-heading: oklch(86% 0.2 259.7);
+    --color-prettylights-syntax-markup-ignored-bg: oklch(49.02% 0.1857 260.1);
+    --color-prettylights-syntax-markup-ignored-text: oklch(97.03% 0.0103 247.9);
+    --color-prettylights-syntax-markup-inserted-bg: oklch(30.54% 0.0826 149.3);
+    --color-prettylights-syntax-markup-inserted-text: oklch(90.72% 0.1123 146.3);
+    --color-prettylights-syntax-markup-italic: oklch(97.03% 0.0103 247.9);
+    --color-prettylights-syntax-markup-list: oklch(85.74% 0.1331 89.95);
+    --color-prettylights-syntax-meta-diff-range: oklch(80.05% 0.1275 305.9);
+    --color-prettylights-syntax-storage-modifier-import: oklch(97.03% 0.0103 247.9);
+    --color-prettylights-syntax-string: oklch(85.6% 0.0768 244.1);
+    --color-prettylights-syntax-string-regexp: oklch(84.16% 0.1641 145.8);
+    --color-prettylights-syntax-sublimelinter-gutter-mark: oklch(38.37% 0.0179 254.7);
+    --color-prettylights-syntax-variable: oklch(78% 0.1412 60.1);
   }
 
   /* MDX Code block styling */
