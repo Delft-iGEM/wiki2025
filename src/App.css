@@ -228,7 +228,7 @@
   }
 
   .accordion-trigger {
-    @apply flex items-center gap-2 rounded-md py-2 px-4 text-left text-sm font-medium transition-all outline-none hover:underline disabled:pointer-events-none disabled:opacity-50;
+    @apply flex w-full items-center gap-2 rounded-md py-2 px-4 text-left text-sm font-medium transition-all outline-none hover:underline disabled:pointer-events-none disabled:opacity-50;
   }
 
   .accordion-content {
@@ -255,10 +255,10 @@
     @apply text-left text-base px-6 py-4 border border-border align-top;
   }
 
-  .comparison-table tbody tr:nth-child(even) th,
+  /*.comparison-table tbody tr:nth-child(even) th,
   .comparison-table tbody tr:nth-child(even) td {
     @apply bg-muted/20;
-  }
+  }*/
 
   .dropdown-icon {
     @apply text-muted-foreground pointer-events-none size-4 shrink-0 transition-transform duration-200 ml-2;

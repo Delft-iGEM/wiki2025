@@ -5,3 +5,4 @@ export * from "./ui/accent-line.tsx";
 export * from "./Dropdown.tsx";
 export * from "./members/MembersGrid.tsx";
 export * from "./Temperature.tsx";
+export { default as fourStepsSvg } from "./svg/foursteps.svg";
