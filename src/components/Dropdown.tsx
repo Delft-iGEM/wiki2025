@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export type DropdownProps = {
   /** Header shown in the collapsed/expanded bar */
-  readonly header: string;
+  readonly header: React.ReactNode; // Changed from string to ReactNode
   /** Contents rendered when expanded */
   readonly children: React.ReactNode;
   /** Whether the dropdown starts opened */
@@ -16,6 +16,8 @@ export type DropdownProps = {
   readonly value?: string;
   /** Nesting level (0-3) for hierarchical styling */
   readonly level?: 0 | 1 | 2 | 3;
+  /** CSS variable for dropdown background color (e.g., "--section") */
+  readonly color?: string;
 };
 
 export type DropdownGroupProps = {
@@ -40,6 +42,8 @@ export type DropdownItemProps = {
   readonly value: string;
   /** Nesting level (0-3) for hierarchical styling */
   readonly level?: 0 | 1 | 2 | 3;
+  /** CSS variable for dropdown background color (e.g., "--section") */
+  readonly color?: string;
 };
 
 /**
@@ -53,6 +57,7 @@ export function Dropdown({
   className,
   value,
   level = 0,
+  color = "--section",
 }: DropdownProps) {
   const itemValue = value ?? "item";
 
@@ -63,9 +68,18 @@ export function Dropdown({
       defaultValue={defaultOpen ? itemValue : undefined}
       className={cn("dropdown-root dropdown-single", `dropdown-level-${level}`, className)}
     >
-      <AccordionPrimitive.Item value={itemValue} className={cn("dropdown-item", `dropdown-level-${level}`)}>
+      <AccordionPrimitive.Item 
+        value={itemValue} 
+        className={cn("dropdown-item", `dropdown-level-${level}`)}
+        style={{ "--dropdown-color": `var(${color})` } as React.CSSProperties}
+      >
         <AccordionPrimitive.Header className="flex">
-          <AccordionPrimitive.Trigger className={cn("accordion-trigger")}> 
+          <AccordionPrimitive.Trigger
+            className={cn(
+              "accordion-trigger",
+              "data-[state=open]:",
+            )}
+          >
             {header}
             <ChevronDownIcon className="dropdown-icon" />
           </AccordionPrimitive.Trigger>
@@ -80,7 +94,7 @@ export function Dropdown({
 
 /**
  * Container for multiple dropdown items.
- * Use: <DropdownGroup><DropdownItem>…</DropdownItem><DropdownItem>…</DropdownItem></DropdownGroup>
+ * Use: <DropdownGroup><DropdownItem>…</DropdownItem><DropdownItem>…</DropdownGroup>
  */
 export function DropdownGroup({
   children,
@@ -124,11 +138,13 @@ export function DropdownItem({
   children,
   value,
   level = 0,
+  color = "--section",
 }: DropdownItemProps) {
   return (
     <AccordionPrimitive.Item
       value={value}
       className={cn("dropdown-item", `dropdown-level-${level}`)}
+      style={{ "--dropdown-color": `var(${color})` } as React.CSSProperties}
     >
       <AccordionPrimitive.Header className="flex">
         <AccordionPrimitive.Trigger className={cn("accordion-trigger")}>

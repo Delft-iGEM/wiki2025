@@ -1,6 +1,16 @@
-export function AccentLine() {
+import { cn } from "@/lib/utils";
+
+interface AccentLineProps {
+  readonly className?: string;
+}
+
+export function AccentLine({ className }: AccentLineProps) {
   return (
-    <div className="bg-gradient-to-r from-brand via-primary to-secondary h-2 w-[20%] my-0.5 rounded-full">
-    </div>
+    <div
+      className={cn(
+        "my-0.5 h-2 w-[20%] rounded-full bg-gradient-to-r from-brand via-primary to-secondary",
+        className,
+      )}
+    />
   );
 }
