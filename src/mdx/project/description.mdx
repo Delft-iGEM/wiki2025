@@ -1,1 +1,358 @@
-import { Content, Header, AccentLine, Dropdown } from "@/components";
+import { Content, Header, AccentLine, Dropdown, Temperature } from "@/components";
+
+<Header>
+# description
+an introduction to our project
+</Header>
+
+
+<Content items="left">
+
+
+
+{/*don't want it all the way at the top.
+> I want to leave the hook below up top on the page. Maybe at the side I'm thinking? Or after
+> the first section. Or as a folded-up section?*/}
+<Dropdown header="abstract" level={0}>
+
+{/*<div className="md:mx-8 md:p-6">*/}
+*Snaccine* is a novel type of vaccine, ideal for vaccinating chickens
+against avian influenza (bird flu). Genetically edited bacteriophages
+are taken orally, in a stomach acid-resistant pill. They reproduce
+inside gut bacteria, while also producing RNA packaged within armour,
+an MS2 VLP with cell-penetrating peptides. The armoured RNA enters
+(eukaryotic) host cells and works like an mRNA vaccine. It tricks the
+cell into producing an antigen. This antigen is detected by the immune
+system and teaches it to recognise and fight the original pathogen.
+Snaccines share the same advantages mRNA technology has over
+traditional vaccines. But where typical mRNA vaccines have to be kept
+in freezers, *Snaccines* can be stored and transported at room
+temperature. Together with their cheaper production and oral
+administration, *Snaccine* is an ideal technology for fighting bird
+flu.
+
+{/*</div>*/}
+</Dropdown>
+
+
+A single vaccine against all types of flu.
+
+A vaccine against a new virus, done in a week.
+
+A vaccine against allergies, or diabetes, or even cancer.
+
+Since the successful debut of mRNA vaccines in the COVID-19 pandemic,
+ambitious predictions have been made about potential uses.
+
+But the mRNA vaccine rollout also laid bare many drawbacks. The vaccines
+are kept at <Temperature celsius="−20 °C to −80 °C" fahrenheit="−4 °F to −112 °F" />. This made it hard to transport them to remote
+or less-developed regions. mRNA vaccines cost more, too.
+And the logistical challenge of injecting everyone also came at
+great cost.
+
+As a solution, we present *Snaccine*, a new type of vaccine which uses
+bacteriophages to hijack gut bacteria to produce armoured mRNA.
+
+<Dropdown header="what are bacteriophages?" level={0}>
+
+Bacteriophages, or phages, are viruses which infect bacteria. There are
+more phages in the world than all other organisms combined. There is
+great diversity among phages, but the best known are ones that look like
+little moon landers with geometric heads like the one in our logo.
+
+In the lab, we use a species of phage called T7, which was isolated from
+sewers in 1945 and infects *E. coli* bacteria. The 'armour' we use for
+our mRNA is the coat of a smaller phage called MS2. Since this armour
+isn't a full phage by itself, it's called a *virus-like particle* or
+*VLP*.
+
+Phages attack bacteria, and they can be used to fight bacterial
+infections in humans. This 'phage therapy' is used in Russia, Georgia,
+and Poland, and in experimental settings in other countries. It's a
+possible solution to the growing problem of drug-resistant bacteria.
+
+Vaccines based on phages aren't a new idea. After the Nobel
+Prize-winning discovery of how to engineer phages to display peptides on
+their surface, many studies investigated the idea of using phages (or
+VLPs) to masquerade as a human virus. None of these are approved
+anywhere, as of yet. Our method is different still: the (infectious)
+phages in turn produce an mRNA vaccine.
+
+</Dropdown>
+
+<Dropdown header="mRNA vaccines: a recap" level={0}>
+
+!!!!!!!!!!!!!!!imagevirus
+
+!!!!!!!!!!!!!!!image of rna
+
+Most traditional vaccines contain the targeted virus, or a part of it.
+Your body recognises the foreign material and your immune system learns
+to recognise and to fight it. When the real virus tries to infect you,
+your immune system will be primed to quickly take it out.
+
+mRNA vaccines instead trick your own body into making a part of the
+virus. If DNA is the grand blueprint for an organism, mRNA or 'messenger
+RNA' is a photocopy of part of it. This photocopy is handed to the
+ribosomes, the builders of the cell. In the case of the existing mRNA
+vaccines, this injected mRNA hijacks your cell to make the
+characteristic 'spikes' of the coronavirus. After their production, the
+body recognises them as foreign material, and rest proceeds similarly to
+traditional vaccines.
+
+The mRNA, packaged within a membrane called a liposome, starts with a
+short cap made of two (modified) nucleotides allowing it to be read and
+keeping it from being degraded. It is followed by a 'prologue' called
+the 5' UTR, and then the nucleotides AUG. These tell the ribosome to
+start building the following spike protein, with a short flag telling
+the cell to dump the protein outside the cell. Finally, after an
+'epilogue' called the 3' UTR, a very long sequence of A's protects the
+mRNA from being degraded from this end.\[b\]
+
+The adaptability of this method allowed Moderna to design its vaccine in
+just two days after the SARS-CoV-2 genome was put online. It then takes
+only a couple weeks to produce the encapsulated mRNA. Also, since the
+mRNA only contains a (non-infectious) part of the virus, there is no
+risk of the vaccine infecting the patient. Some traditional vaccines,
+such as inactivated or attenuated vaccines, can lead the patient to
+spread a vaccine-derived virus, such as with the poliovirus vaccine.
+With mRNA vaccines, this is impossible.
+
+</Dropdown>
+
+<Dropdown header="caveats" level={0}>
+
+Despite all the advantages, mRNA vaccines come with some big caveats.
+
+The liposomes are much less stable than traditional vaccines, and have
+to be kept very cold. The Pfizer vaccine has to be kept at <Temperature celsius="−60 °C" fahrenheit="−76 °F" />,
+though it can be kept at regular freezer temperatures for the last two weeks,
+and the Moderna vaccine has to be kept at <Temperature celsius="−20 °C" fahrenheit="−4 °F" />.
+Many developing and/or remote regions do not have the 'cold chain'
+necessary to transport and store vaccines at these temperatures. Doing
+that is quite costly, and also an obstacle to using mRNA vaccines to
+combat bird flu.
+
+The first mRNA vaccines have proven quite costly so far. Traditional
+vaccines are usually a virus in some form, and can be grown in a cell
+culture. mRNA vaccines are made by transforming bacteria, growing them,
+and harvesting (and purifying) the mRNA. The mRNA then undergoes
+chemical steps, such as the creation of the cap, the replacement of all
+uridine nucleotides with N1-methylpseudouridine and the packaging of the
+mRNA inside liposomes. This makes governments choose the cheaper option
+of killing all birds on an infected farm instead.
+
+</Dropdown>
+
+<table className="comparison-table">
+	<thead>
+		<tr>
+			<th scope="col" style={{ borderLeft: "none", borderTop: "none" }}>Comparison</th>
+			<th scope="col" style={{ borderTop: "none" }}>Traditional</th>
+			<th scope="col" style={{ borderTop: "none" }}>mRNA</th>
+			<th scope="col" style={{ borderRight: "none", borderTop: "none" }}>Snaccine</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row" style={{ textAlign: "right", borderLeft: "none", borderTop: "none" }}>Development</th>
+			<td style={{ textAlign: "center", borderTop: "none" }}>Years</td>
+			<td colSpan={2} style={{ textAlign: "center", fontWeight: 600, borderRight: "none", borderTop: "none" }}>Days</td>
+		</tr>
+		<tr>
+			<th scope="row" style={{ textAlign: "right", borderLeft: "none" }}>Infection risk</th>
+			<td style={{ textAlign: "center" }}>Some</td>
+			<td colSpan={2} style={{ textAlign: "center", fontWeight: 600, borderRight: "none" }}>None</td>
+		</tr>
+		<tr>
+			<th scope="row" style={{ textAlign: "right", borderLeft: "none" }}>Storage &amp; transport</th>
+			<td style={{ textAlign: "center" }}>Generally fridge</td>
+			<td style={{ textAlign: "center" }}>Ultra-cold</td>
+			<td style={{ textAlign: "center", fontWeight: 600, borderRight: "none" }}>Room temperature</td>
+		</tr>
+		<tr>
+			<th scope="row" style={{ textAlign: "right", borderLeft: "none" }}>Production cost</th>
+			<td style={{ textAlign: "center" }}>Low to high</td>
+			<td style={{ textAlign: "center" }}>High</td>
+			<td style={{ textAlign: "center", fontWeight: 600, borderRight: "none" }}>Low</td>
+		</tr>
+		<tr>
+			<th scope="row" style={{ textAlign: "right", borderLeft: "none", borderBottom: "none" }}>Administration</th>
+			<td style={{ textAlign: "center", borderBottom: "none" }}>Various, some oral</td>
+			<td style={{ textAlign: "center", borderBottom: "none" }}>Injection</td>
+			<td style={{ textAlign: "center", fontWeight: 600, borderRight: "none", borderBottom: "none" }}>Oral</td>
+		</tr>
+	</tbody>
+</table>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!main snaccine svg-esque image
+
+## snaccine
+
+This is where our vaccine comes in. At heart Snaccines are mRNA
+vaccines, but the factory is inside the gut.
+
+Phages can be chosen to be very specific to a certain strain of bacteria
+in the gut of a certain animal. This prevents the synthetic genetic code
+spreading into the wild. Though the lab-friendly phage we used in our
+proof of concept, T7, isn't stable for long outside of a fridge, there
+are many varieties of phages which can survive at room temperature or
+above.
+
+Most phages can't survive the low pH of the chicken's 'gizzard', its
+second stomach, which is actually an advantage. Phages released from one
+chicken wouldn't be able to spread to another, but phages inside a pill
+go through the gizzard without a problem.
+
+The presence of lots of phages and lots of lysed (destroyed) bacteria in
+the gut would trigger the immune system. This too is actually an
+advantage. Many vaccines include so-called 'adjuvants' to trigger the
+immune system on purpose, but here that comes for free with the phages.
+This strengthened immune response makes the vaccine more effective.
+
+As Snaccines are taken as pills, they are much more practical to
+administer. For chickens in specific, the pills could be added to their
+feed or to their water supply. Against human viruses, Snaccines could be
+sold at pharmacies or delivered by mail.
+
+<Dropdown header="overcoming challenges, in detail" level={0}>
+
+!!!!!!!!!!!!!!!!!!!image of D plasmid
+
+Phages can be grown in bacterial cultures and then filtered out. This
+requires fewer chemical processing steps than mRNA vaccines, and saves a
+lot on cost.
+
+But where did those non-biological processing steps go?
+
+First, the liposome. Though liposomes are very common in cells, there
+isn't enough space in the phage's genome to add everything necessary to
+envelop our mRNA in liposomes. That's why instead we chose the coat
+protein of the MS2 phage. The MS2 phage has a very short genome, just
+3569 nucleotides. In fact, it was the first genome ever to be sequenced.
+Its coat protein is just 510 nucleotides long. In the presence of a
+certain RNA sequence in the shape of a hairpin, 180 coat proteins come
+together to form an icosahedron 27 nm in diameter, the VLP. By adding a
+short, very positively charged peptide to the outside of the coat
+proteins, it can enter the eukaryotic cells of the gut lining. Through a
+process that is not yet fully understood, the VLP then disassembles and
+the mRNA escapes.
+
+Then, the cap. mRNA vaccines, and in fact any normal strand of mRNA
+produced by a eukaryote, start with a few heavily modified nucleotides.
+Bacteria don't make these modifications, and the machinery to do so is
+much too large to fit inside the limited space we have available in the
+T7 genome. That's why we need to tackle two of the cap's functions,
+stability against degradation and the initiation of ribosome
+translation, separately.
+
+To initiate translation, we took a leaf from the book of many eukaryotic
+viruses. They have a so-called *internal ribosome entry site* or IRES.
+IRESes are sequences of a couple hundred nucleotides which form all
+sorts of folds (secondary structures) and which allow the ribosome to
+attach to the mRNA without a proper cap.
+
+To prevent the cell from degrading the RNA at the 'beginning' (the 5'
+end), we propose using hairpin loops, as proposed and tested by
+Solodushko et al.\[c\]. In our proof-of-concept experiments in
+the lab, we didn't want to add too many possible points of failure, so
+we decided to forgo this step and to accept the faster degradation.
+Further research could confirm the viability of this approach.
+
+Next up is the replacement of uridine (U) with N1-methylpseudouridine
+(m^1^Ψ). This nucleotide, which behaves identically to U in translation,
+greatly reduces detection of the mRNA by the internal immune system of
+the cell. Bacteria do naturally have pseudouridine (Ψ), for example in
+tRNA, but there is no mechanism to replace all U with (m^1^)Ψ. Here
+again, we use a combination of solutions.
+
+The positively charged peptide which helps the VLP get into eukaryotic
+cells in the first place also helps destabilise the endocytosis
+membrane. This already bypasses some immune sensors like Toll-like
+receptors 7 and 8, which detect uridine-rich RNA. To fight internal
+immune sensors, we can take the exact same approach as the virus we're
+trying to stop. Influenza viruses have a protein called NS1, whose job
+it is to obstruct the immune sensor RIG-I.\[d\] This protein is short
+enough (693 nt) to fit into the MS2 capsid (wild-type genome: 3569 nt),
+though it does reduce space for the actual antigenic protein somewhat.
+In our lab work we didn't include the influenza NS1 protein as we
+decided to use a fluorescent protein as the payload, and also to
+simplify the proof of concept.
+
+Finally, eukaryotes generally have a long tail of just adenosine
+nucleotides at the end of mRNA transcripts to prevent degradation.
+Bacteria don't do this; in fact, they use these 'poly-A tails' to
+actively *encourage* degradation. Generally, eukaryotes add poly-A tails
+after transcription from the DNA. Since we can't do this in the bacteria
+and since eukaryotes only add this tail in the nucleus, we want to
+directly encode the poly-A tail into the engineered phage's DNA so it is
+transcribed right away. This introduces the problem of polymerase
+slippage. The two existing mRNA vaccines prefer to add this poly-A tail
+right away too, and they achieve this by putting a 10-nucleotide
+'linker' (GCAUAUGACU) inside the poly-A tail. (Trepotec et al.
+\[e\]
+
+We made a couple more modifications to our genetic code beyond those
+necessary for mRNA vaccines. Though wild MS2 phages contain only one
+copy of the coat protein (CP), most studies use two CPs fused together
+(by removing the second amino acid of the second CP, a serine). Only the
+first CP is fused with the very positive cell-penetrating peptide (CPP)
+with a GGGS linker. With only one copy, the 180 CPs with their CPPs
+might interfere with each other and not form the VLP. With one CPP-CP
+and one CP, not fused, different VLPs would have different numbers of
+CPP-CP, possibly avoiding them all together. By fusing them together
+(CPP-CP-CP), we ensure exactly 90 CPPs per VLP.
+
+We used DNA synthesis to test just the parts we want to add to the phage
+by themselves, as a plasmid. Practical issues mean that we can't
+synthesise two somewhat similar sequences in a row, which would be the
+case with the two CPs. To this end, we wrote a Python programme which
+can generate the two least-alike synonymous DNA sequences for a given
+amino acid sequence, as well as the least-alike DNA sequence given a
+fixed DNA sequence. We used the latter to create a functional, but in
+nucleotides dissimilar CP copy. After changing some base pairs to avoid
+restriction sites and to make our construct BioBrick RFC\[10\] and
+RFC\[1000\] compatible. We also included a His-tag in the AB loop of the
+second CP for easy purification. After the stop codon we placed two more
+redundant stop codons, similar to the Pfizer vaccine. An Esp3I site in
+between was intended to allow us easy excision of the CPP-CP-CP in case
+it didn't form, and we wanted to test just the payload mRNA on a
+eukaryote by electroporation.
+
+Like the COVID-19 vaccines, we use the 5' and 3' UTRs from human beta
+globin for the vaccine itself, both followed by a MS2 packaging signal
+hairpin ('pac site'), again slightly varied to allow easy DNA synthesis.
+Following the 5' UTR and its pac site we immediately place the IRES,
+itself directly followed by the payload, eGFP. For our plasmids which
+emulate what would be the T7's payload, we use T7 promoters and a strain
+of *E. coli* with T7 polymerase, BL21(DE3), which fortunately for our
+ends is a very common expression system in the lab.
+
+</Dropdown>
+
+<Dropdown header="References" level={0}>
+
+todo: cleanup
+
+\[a\]
+https://annalsmicrobiology.biomedcentral.com/articles/10.1186/s13213-024-01754-x
+
+\[b\] WHO 11889
+
+\[c\] A capless hairpin-protected mRNA vaccine encoding the full-length
+Influenza A hemagglutinin protects mice against a lethal Influenza A
+infection
+
+\[d\] Webster et al Lethal H5N1 influenza viruses escape host anti-viral
+cytokine responses
+
+\[e\] Trepotec et al Segmented poly(A) tails significantly reduce
+recombination of plasmid DNA without affecting mRNA translation
+efficiency or half-life
+
+\[f\]
+https://colab.research.google.com/drive/1av17FdclJXtKxNVF7RjD3_3Mi5GmXhmm?usp=sharing
+
+</Dropdown>
+
+</Content>

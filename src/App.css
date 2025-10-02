@@ -29,6 +29,7 @@
   /* Brand: project-specific accent color used for highlights and emphasis */
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
+  --color-section: var(--section);
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -94,46 +95,46 @@
 
   #container {
     h1 {
-      @apply text-5xl font-bold pt-4;
+      @apply text-5xl font-bold pt-4 pb-4;
     }
 
     h2 {
-      @apply text-4xl font-bold pt-3.5;
+      @apply text-4xl font-bold pt-3.5 pb-4;
     }
 
     h3 {
-      @apply text-2xl font-bold pt-3;
+      @apply text-2xl font-bold pt-3 pb-4;
     }
 
     h4 {
-      @apply text-xl font-bold pt-2.5;
+      @apply text-xl font-bold pt-2.5 pb-4;
     }
 
     h5 {
-      @apply text-lg font-bold pt-2;
+      @apply text-lg font-bold pt-2 pb-4;
     }
 
     h6 {
-      @apply text-base font-bold pt-1.5;
+      @apply text-base font-bold pt-1.5 pb-4;
     }
 
     p {
-      @apply text-base;
+      @apply text-base mb-4;
     }
 
     ul {
-      @apply list-disc;
+      @apply list-disc mb-4;
     }
 
     .contains-task-list {
-      @apply list-none;
+      @apply list-none mb-4;
     }
 
-    .task-list-item > input {
+    /*.task-list-item > input {*/
       /* nice checkbox styling its disabled by default */
-    }
+    /*}*/
     ol {
-      @apply list-decimal;
+      @apply list-decimal mb-4;
     }
 
     li {
@@ -141,7 +142,7 @@
     }
 
     blockquote {
-      @apply text-base border-l-4  pl-4 pr-4;
+      @apply text-base border-l-4  pl-4 pr-4 mb-4;
     }
 
     table {
@@ -177,7 +178,7 @@
   }
 
   .dropdown-level-0 {
-    @apply mb-4;
+    @apply mb-2;
   }
   
   .dropdown-level-0 .accordion-trigger {
@@ -223,11 +224,11 @@
 
   /* Generic pieces applied to both single and grouped items */
   .dropdown-item {
-    @apply border-b last:border-b-0;
+    @apply border-b last:border-b-0 bg-section rounded-md overflow-hidden mb-2;
   }
 
   .accordion-trigger {
-    @apply flex flex-1 items-center justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline disabled:pointer-events-none disabled:opacity-50;
+    @apply flex items-center gap-2 rounded-md py-2 px-4 text-left text-sm font-medium transition-all outline-none hover:underline disabled:pointer-events-none disabled:opacity-50;
   }
 
   .accordion-content {
@@ -235,24 +236,38 @@
   }
 
   .accordion-content-inner {
-    @apply pt-0 pb-4;
+    @apply pt-0 pb-4 px-4;
+  }
+
+  .comparison-table {
+    @apply w-full border-collapse overflow-hidden rounded-xl bg-card shadow-md my-8;
+  }
+
+  .comparison-table thead th {
+    @apply bg-muted/60 text-left text-lg font-semibold tracking-wide px-6 py-4 border border-border;
+  }
+
+  .comparison-table tbody th {
+    @apply bg-muted/40 text-left text-base font-semibold px-6 py-4 border border-border align-top;
+  }
+
+  .comparison-table td {
+    @apply text-left text-base px-6 py-4 border border-border align-top;
+  }
+
+  .comparison-table tbody tr:nth-child(even) th,
+  .comparison-table tbody tr:nth-child(even) td {
+    @apply bg-muted/20;
   }
 
   .dropdown-icon {
-    @apply text-muted-foreground pointer-events-none size-4 shrink-0 transition-transform duration-200;
+    @apply text-muted-foreground pointer-events-none size-4 shrink-0 transition-transform duration-200 ml-2;
   }
 
   /* rotate icon when open */
   [data-state="open"] > .dropdown-icon {
     @apply rotate-180;
   }
-
- #container .dropdown-item>h3
- {
-  @apply pt-0;
-  font-size: inherit;
-  font-weight: inherit;
- }
 }
 
 @layer base {
@@ -291,6 +306,7 @@
     --muted-foreground: oklch(38.68% 0.0728 227.5); /* Muted Deep Blue */
     --accent: oklch(79.12% 0.1261 227.5); /* Soft Teal */
     --accent-foreground: oklch(25.62% 0.047 227.5);
+    --section: oklch(92.5% 0.012 227.5); /* Slightly darker than background for sections */
     --destructive: oklch(50.92% 0.1847 27.5);
     --destructive-foreground: oklch(100% 0 none);
 
@@ -322,6 +338,7 @@
     --muted-foreground: oklch(82.81% 0.0349 227.5);
     --accent: oklch(68.6% 0.105 227.5);
     --accent-foreground: oklch(17.61% 0.0313 227.5);
+    --section: oklch(28% 0.05 227.5); /* Slightly lighter than background for sections in dark mode */
     --destructive: oklch(41.81% 0.1547 27.5);
     --destructive-foreground: oklch(96.64% 0.0117 227.5);
 
@@ -351,6 +368,9 @@
   }
   .bg-background {
     background-color: var(--color-background);
+  }
+  .bg-section {
+    background-color: var(--color-section);
   }
   /* From https://github.com/wooorm/starry-night/blob/main/style/both.css on MIT License adapted by us, so can be used under CC4.0 */
   :root {

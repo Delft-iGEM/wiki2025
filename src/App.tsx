@@ -57,7 +57,7 @@ const Pages: NavItem[] = [
     folder: [{
         name: "members",
         title: "Meet Our Team",
-        path: "/team",
+        path: "/members",
         component: Members,
       },
       {

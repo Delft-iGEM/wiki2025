@@ -12,9 +12,9 @@ export default function MemberCard({ firstName, lastName, role, src, alt, border
     <img
       src={src}
       alt={alt ?? `${firstName} ${lastName}`}
-      width={320}
-      height={320}
-      className="hex-avatar h-40 w-40 object-cover"
+      width={640}
+      height={640}
+      className="hex-avatar h-70 w-70 object-cover"
       loading="lazy"
     />
   );
