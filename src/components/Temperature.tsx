@@ -33,10 +33,10 @@ const detectPreferredUnit = (): 'celsius' | 'fahrenheit' => {
       }
     }
     
-    // Fallback: check locale string directly
+    /*// Fallback: check locale string directly
     if (locale.includes('-US') || locale.includes('_US')) {
       return 'fahrenheit';
-    }
+    }*/
     
     // Additional check using timezone as backup
     if (typeof Intl !== 'undefined' && Intl.DateTimeFormat) {
