@@ -9,7 +9,7 @@ interface TemperatureProps {
 // Countries/regions that primarily use Fahrenheit
 // US = United States, LR = Liberia, MM = Myanmar, BS = Bahamas, 
 // BZ = Belize, KY = Cayman Islands, PW = Palau
-const FAHRENHEIT_COUNTRIES = ['US', 'LR', 'MM', 'BS', 'BZ', 'KY', 'PW'];
+//const FAHRENHEIT_COUNTRIES = ['US', 'LR', 'MM', 'BS', 'BZ', 'KY', 'PW'];
 
 const detectPreferredUnit = (): 'celsius' | 'fahrenheit' => {
   try {
@@ -19,9 +19,9 @@ const detectPreferredUnit = (): 'celsius' | 'fahrenheit' => {
     }
     
     // Try to get country from locale
-    const locale = navigator.language || navigator.languages?.[0] || 'en-US';
+    // const locale = navigator.language || navigator.languages?.[0] || 'en-US';
     
-    // Use Intl.Locale if available (modern browsers)
+    /*// Use Intl.Locale if available (modern browsers)
     if (typeof Intl !== 'undefined' && Intl.Locale) {
       try {
         const region = new Intl.Locale(locale).region;
@@ -31,7 +31,7 @@ const detectPreferredUnit = (): 'celsius' | 'fahrenheit' => {
       } catch {
         // Fallback if Intl.Locale fails
       }
-    }
+    }*/
     
     /*// Fallback: check locale string directly
     if (locale.includes('-US') || locale.includes('_US')) {
@@ -39,7 +39,7 @@ const detectPreferredUnit = (): 'celsius' | 'fahrenheit' => {
     }*/
     
     // Additional check using timezone as backup
-    if (typeof Intl !== 'undefined' && Intl.DateTimeFormat) {
+    /*if (typeof Intl !== 'undefined' && Intl.DateTimeFormat) {
       try {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         if (timezone.includes('America/New_York') || 
@@ -54,7 +54,7 @@ const detectPreferredUnit = (): 'celsius' | 'fahrenheit' => {
       } catch {
         // Fallback if timezone detection fails
       }
-    }
+    }*/
     
     return 'celsius';
   } catch {
