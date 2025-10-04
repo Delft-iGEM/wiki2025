@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import InteractiveSchematic from "@/components/Interactive_schematic";
-import fourStepsSvg from "@/components/svg/foursteps.svg";
 import { AccentLine } from "@/components/ui/accent-line";
 
 const featureHighlights = [
@@ -155,7 +154,7 @@ export function Home() {
           </div>
           <div className="flex-1">
             <img
-              src={fourStepsSvg}
+              src='https://static.igem.wiki/teams/5649/svg/4step-min.svg'
               alt="Four illustrated steps showing the Snaccine workflow from phage to immune response"
               className="mx-auto w-full max-w-xl drop-shadow-lg"
             />
