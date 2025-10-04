@@ -90,6 +90,10 @@
     background: var(--color-background);
   }
   .max-container {
+    @apply w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-30;
+  }
+
+  .narrow-container {
     @apply w-full max-w-7xl mx-auto px-6 sm:px-20 lg:px-60;
   }
 
@@ -224,7 +228,8 @@
 
   /* Generic pieces applied to both single and grouped items */
   .dropdown-item {
-    @apply border-b last:border-b-0 bg-section rounded-md overflow-hidden mb-2;
+    @apply border-b last:border-b-0 rounded-md overflow-hidden mb-2;
+    background-color: var(--dropdown-color, var(--section));
   }
 
   .accordion-trigger {

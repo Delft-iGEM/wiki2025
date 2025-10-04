@@ -1,1 +1,135 @@
 import { Content, Header, AccentLine, Dropdown } from "@/components";
+
+<Header>
+# engineering
+the engineering cycle of our project
+</Header>
+
+<Content items="left">
+<AccentLine/>
+
+# Engineering
+
+<details>
+<summary><strong>Introduction</strong></summary>
+
+The Engineering section describes how we applied the iGEM Design–Build–Test–Learn (DBTL) cycle across all modules of the Snaccine platform. Each module represents a specific stage in developing an accessible and modular RNA vaccine system—from phage genome engineering and stability testing to virus-like particle (VLP) production, delivery, and immunogenicity.
+
+By dividing the project into parallel yet interconnected modules, we were able to iterate rapidly, troubleshoot effectively, and leverage progress in one area to accelerate development in others. This section outlines the rationale behind our design choices, the technical challenges encountered, and the engineering strategies that guided us toward our overarching goal: building a flexible RNA vaccine platform capable of adapting to fast-evolving viral threats such as avian influenza.
+
+</details>
+
+---
+
+<details>
+<summary><strong>Module A – Phage Genome Engineering</strong></summary>
+
+### Overview
+This module focused on establishing a rapid and flexible bacteriophage genome engineering workflow as the foundation of the Snaccine vaccine platform. Our goal was to design phages capable of colonizing the gut microbiome and driving in situ production of antigen mRNA encapsulated within MS2 virus-like particles (VLPs). By leveraging the natural biology of bacteriophages, we sought to develop a vaccine strategy that could be administered orally and updated quickly in response to emerging avian influenza (AI) variants.
+
+To achieve this, our methodology had to be **accessible**, **adaptable**, and **efficient**—allowing new vaccine variants to be produced at a pace matching the virus’s evolution.
+
+### Selecting the Phage
+Phage selection was one of the earliest and most critical design choices. Initially, we evaluated highly stable species such as PIN1 and PIN2, which can remain viable at room temperature for extended periods (Jati et al.). However, discussions with **Prof. Stan Brouns** (TU Delft) emphasized that robust genetic characterization and engineering feasibility were more essential for our purpose. Based on this, we chose the **T7 bacteriophage**, a well-characterized model with extensive literature, established engineering methods, and reliable performance in laboratory settings.
+
+### Evaluating Engineering Approaches
+Many iGEM teams have explored phage genome editing. The **Bacteriophage Recombineering of Electroporated DNA (BRED)** method, used by iGEM Delft 2020 (*PHOCUS*), offers flexible site targeting through homologous recombination but suffers from low yield and labor-intensive screening \[citation\]. These limitations would hinder rapid design iteration, so we sought alternative strategies.
+
+Recent studies (Levrier et al.; Vu et al.) describe **in vitro genome assembly** as a faster, more accessible alternative. These methods combine PCR amplification and DNA assembly to reconstruct full phage genomes, which can then be rebooted in host cells or cell-free systems. No iGEM team had implemented this approach before, making it an innovative opportunity to improve efficiency and modularity in phage engineering.
+
+Given its technical flexibility and minimal reliance on selection procedures, we adopted and optimized this **in vitro assembly strategy** for T7.
+
+### Implementation and Optimization
+Consultations with **Dr. Ana Rita Costa** (Stan Brouns Lab) and **Dr. Sam van Beljouw** (University of Basel) guided our implementation. While cell-free TXTL systems offer precision and control, their high cost and optimization challenges make them less suitable for accessible vaccine development. Instead, we pursued a **cell-based reboot** by transforming competent *E. coli* BL21(DE3) cells with in vitro assembled T7 genomes, a method supported by recent literature (Vu et al.).
+
+To streamline the workflow, Dr. Costa advised extending the PCR denaturation step (5 min) to lyse phage particles directly, eliminating the need for separate DNA extraction.
+
+For the insertion site, we initially considered substituting the non-essential **gene 4.3** (as in PHOCUS 2020) but ultimately selected the region downstream of **gene 10**, which encodes the major capsid protein and offers strong expression potential. This decision was supported by expression analyses from Levrier et al. and expert feedback from Prof. Brouns.
+
+### Research Goals
+1. **Assemble the full T7 phage genome entirely in vitro.**  
+   *Rationale:* Enables high-efficiency genome editing without time-consuming selection steps, providing modularity and precise control.
+2. **Generate viable phages from the engineered T7 genome.**  
+   *Rationale:* Ensures that genetic modifications maintain phage viability, supporting scalable vaccine production in vivo.
+
+### Engineering Cycle and Challenges
+The workflow involved three major steps:  
+1. PCR amplification of the T7 genome into overlapping fragments with 50 bp homology arms.  
+2. DNA assembly using a HiFi DNA assembly reaction.  
+3. Transformation of *E. coli* BL21(DE3) cells to reboot phage production.
+
+While conceptually simple, this approach presented technical challenges: long primers reduced PCR efficiency, multi-fragment assembly required careful optimization, and the transformation of large (~40 kb) genomes pushed standard competence limits.
+
+### Experimental Results and Troubleshooting
+Using primers from Levrier et al., we amplified both wild-type (wt) and minimized (mini) T7 genome fragments, confirming success by gel electrophoresis. Assemblies were performed using the **NEB HiFi DNA Assembly Kit**, though low DNA concentration (30–60 ng/µL) likely reduced efficiency.
+
+PCR validation with long-range **RepliQa polymerase** indicated incomplete assembly. Following advice from **Ing. Esengül Yildirim** and **Dr. Theo van Laar**, we introduced precautions for handling large DNA molecules—using cut pipette tips to prevent shear stress—and developed a secondary screening method using intermediate fragment primers. This allowed us to verify partial assembly with standard **Q5 polymerase**, simplifying troubleshooting.
+
+We also tripled PCR reaction volumes and minimized elution volume to increase DNA concentration in subsequent assemblies.
+
+### Insertion Design and Testing
+To validate genome modification, we planned two insertion variants:  
+- **Gene 10 insertion** (wild-type genome)  
+- **Gene 4.3 substitution** (minimized genome)
+
+We selected **mCherry** as a visible reporter for easy verification. PCR primers were designed with orthogonal homology sequences (OHOs) adapted from Levrier et al. and Subramanian et al. After optimizing annealing temperatures, all fragments were successfully produced.
+
+Subsequent assemblies were transformed via both heat shock and electroporation. While the **plaque assay** confirmed assay functionality, no plaques formed from the assembled genome, indicating inefficiencies during transformation rather than a flaw in design.
+
+### Future Outlook
+Although full phage reboot was not achieved in this iteration, existing studies confirm the feasibility of this approach. Further optimization of DNA assembly ratios, fragment handling, and transformation efficiency is expected to yield success. Once established, this in vitro assembly workflow could significantly accelerate phage-based vaccine engineering, offering a scalable, modular foundation for synthetic biology applications.
+
+</details>
+
+---
+
+<details>
+<summary><strong>Module B – Phage Stability Testing (placeholder)</strong></summary>
+
+This module will evaluate environmental and storage stability of the engineered phage formulations (e.g., temperature, pH, and GI-tract mimic conditions), define acceptable operating windows, and inform formulation choices for field deployment. *(Content to be added.)*
+
+</details>
+
+---
+
+<details>
+<summary><strong>Module C – MS2 Capsid Expression in <em>E. coli</em></strong></summary>
+
+### Overview
+In parallel with phage genome engineering, we validated our DNA construct in plasmid form before integrating it into the phage system. This intermediate step allowed us to test expression and folding of MS2 VLPs in *E. coli*, confirming that the design functioned as intended before advancing to full phage implementation. The objective of this module was to establish a reliable workflow for expressing, purifying, and validating MS2 capsid assembly—core components of the Snaccine vaccine platform.
+
+### Design
+We designed a synthetic plasmid (**pET-Kan-T7lac-mat-MS2cp**) containing a T7/lac promoter, the MS2 maturase gene, the MS2 coat protein gene, and an RNA stem loop. This design mimics the genetic organization that will eventually be carried by the engineered phage.
+
+To validate function, we planned a workflow including IPTG induction in *E. coli* BL21(DE3), cell lysis, SDS-PAGE analysis, PEG precipitation, and transmission electron microscopy (TEM).
+
+Before experimentation, we consulted a protein expression specialist, whose guidance led us to adopt **low-temperature, long-duration induction** (0.4 mM IPTG at 17 °C for 16 h) to enhance solubility and add a **sequencing checkpoint** to verify plasmid integrity prior to expression.
+
+### Build and Test
+Our initial expression used a combined lysozyme + sonication lysis protocol. However, SDS-PAGE analysis revealed a strong band at ~14 kDa in both induced and control samples. Upon investigation, we realized this band corresponded to lysozyme (14.3 kDa), masking the MS2 coat protein signal (13.7 kDa).
+
+After removing lysozyme and relying solely on **sonication**, the revised experiment yielded a clear 13.7 kDa band exclusively in the induced supernatant fraction—confirming successful, soluble expression of MS2 coat protein.
+
+### Learn and Iterate
+With expression validated, we advanced to purification and structural confirmation. PEG precipitation concentrated soluble VLPs into a visible pellet, and TEM imaging of negatively stained samples revealed discrete spherical particles approximately 27 nm in diameter—consistent with MS2 morphology.
+
+This confirmed that the expressed proteins correctly self-assembled into VLPs, validating both the plasmid design and the optimized expression protocol.
+
+### Future Development
+Encouraged by these results, we initiated the design of a second-generation construct to demonstrate system modularity. This version aimed to encapsulate a “dummy vaccine RNA” encoding a eukaryotic reporter gene, testing the platform’s ability to deliver and express payloads in target cells. The same validated workflow—expression, PEG purification, and TEM characterization—will be applied to this construct.
+
+Through iterative application of the Design–Build–Test–Learn cycle, we established a robust and reproducible method for expressing functional MS2 VLPs in *E. coli*. These results provide a strong foundation for the Snaccine platform’s future evolution into a customizable RNA vaccine delivery system.
+
+</details>
+
+---
+
+<details>
+<summary><strong>Module D – Delivery and Immunogenicity (placeholder)</strong></summary>
+
+This module will evaluate delivery strategies, cellular uptake, and immunogenicity of VLP-packaged RNA payloads in relevant models, and benchmark responses against existing vaccine baselines. *(Content to be added.)*
+
+</details>
+
+</Content>
+

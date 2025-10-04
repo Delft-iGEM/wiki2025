@@ -1,4 +1,4 @@
-import { Content, Header, AccentLine, Dropdown, Temperature, fourStepsSvg } from "@/components";
+import { Content, Header, AccentLine, Dropdown, Temperature, fourStepsSvg, mainLogoWithSubtitleSvg } from "@/components";
 
 <Header>
 # description
@@ -6,9 +6,8 @@ an introduction to our project
 </Header>
 
 
-<Content items="left">
-
-
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+<div className="space-y-4">
 
 {/*don't want it all the way at the top.
 > I want to leave the hook below up top on the page. Maybe at the side I'm thinking? Or after
@@ -53,13 +52,20 @@ great cost.
 As a solution, we present *Snaccine*, a new type of vaccine which uses
 bacteriophages to hijack gut bacteria to produce armoured mRNA.
 
+</div>
+
+<div className="space-y-4 flex flex-col justify-start">
 <img
 	src={fourStepsSvg}
 	alt="Diagram showing the four-step Snaccine workflow"
-	className="mx-auto my-10 w-full max-w-4xl"
+	className="w-full max-w-2xl"
 />
+</div>
 
+</div>
 
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mt-8">
+<div className="space-y-4">
 
 <Dropdown header="what are bacteriophages?" level={0}>
 
@@ -89,10 +95,6 @@ phages in turn produce an mRNA vaccine.
 </Dropdown>
 
 <Dropdown header="mRNA vaccines: a recap" level={0}>
-
-!!!!!!!!!!!!!!!imagevirus
-
-!!!!!!!!!!!!!!!image of rna
 
 Most traditional vaccines contain the targeted virus, or a part of it.
 Your body recognises the foreign material and your immune system learns
@@ -152,6 +154,15 @@ of killing all birds on an infected farm instead.
 
 </Dropdown>
 
+</div>
+
+<div className="space-y-4 flex flex-col justify-start">
+{/* Add images here for this section */}
+</div>
+
+</div>
+
+<div className="w-full mt-8">
 <table className="comparison-table">
 	<thead>
 		<tr>
@@ -192,10 +203,14 @@ of killing all birds on an infected farm instead.
 		</tr>
 	</tbody>
 </table>
+</div>
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!main snaccine svg-esque image
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mt-8">
+<div className="space-y-4">
 
-## snaccine
+<Dropdown header={
+	<span>snaccine</span>
+} level={0} defaultOpen color="--primary">
 
 This is where our vaccine comes in. At heart Snaccines are mRNA
 vaccines, but the factory is inside the gut.
@@ -223,7 +238,9 @@ administer. For chickens in specific, the pills could be added to their
 feed or to their water supply. Against human viruses, Snaccines could be
 sold at pharmacies or delivered by mail.
 
-<Dropdown header="overcoming challenges, in detail" level={0}>
+</Dropdown>
+
+<Dropdown header="challenges, in detail" level={0}>
 
 !!!!!!!!!!!!!!!!!!!image of D plasmid
 
@@ -268,10 +285,10 @@ we decided to forgo this step and to accept the faster degradation.
 Further research could confirm the viability of this approach.
 
 Next up is the replacement of uridine (U) with N1-methylpseudouridine
-(m^1^Ψ). This nucleotide, which behaves identically to U in translation,
+(m<sup>1</sup>Ψ). This nucleotide, which behaves identically to U in translation,
 greatly reduces detection of the mRNA by the internal immune system of
 the cell. Bacteria do naturally have pseudouridine (Ψ), for example in
-tRNA, but there is no mechanism to replace all U with (m^1^)Ψ. Here
+tRNA, but there is no mechanism to replace all U with (m<sup>1</sup>)Ψ. Here
 again, we use a combination of solutions.
 
 The positively charged peptide which helps the VLP get into eukaryotic
@@ -338,6 +355,15 @@ ends is a very common expression system in the lab.
 
 </Dropdown>
 
+</div>
+
+<div className="space-y-4 flex flex-col justify-start">
+{/* Add images here for this section */}
+</div>
+
+</div>
+
+<div className="w-full mt-8">
 <Dropdown header="References" level={0}>
 
 todo: cleanup
@@ -354,7 +380,7 @@ infection
 \[d\] Webster et al Lethal H5N1 influenza viruses escape host anti-viral
 cytokine responses
 
-\[e\] Trepotec et al Segmented poly(A) tails significantly reduce
+\[e\]: Trepotec et al Segmented poly(A) tails significantly reduce
 recombination of plasmid DNA without affecting mRNA translation
 efficiency or half-life
 
@@ -362,5 +388,4 @@ efficiency or half-life
 https://colab.research.google.com/drive/1av17FdclJXtKxNVF7RjD3_3Mi5GmXhmm?usp=sharing
 
 </Dropdown>
-
-</Content>
+</div>

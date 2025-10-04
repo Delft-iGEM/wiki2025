@@ -22,7 +22,7 @@ export function Content({ children, items = 'right', className }: ContentProps) 
   return (
     <div
       id="content"
-      className={`max-container flex flex-col pt-5 ${itemsClass} ${className ?? ''}`.trim()}
+      className={`narrow-container flex flex-col pt-5 ${itemsClass} ${className ?? ''}`.trim()}
     >
       {children}
     </div>
