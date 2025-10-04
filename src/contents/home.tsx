@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import InteractiveSchematic from "@/components/Interactive_schematic";
 import { AccentLine } from "@/components/ui/accent-line";
 
 const featureHighlights = [
@@ -92,10 +91,12 @@ export function Home() {
             <div className="absolute -top-6 right-12 hidden h-14 w-14 rotate-12 rounded-xl border border-accent/60 bg-accent/10 md:block" />
             <div className="absolute -bottom-8 left-10 hidden h-16 w-16 -rotate-6 rounded-full border border-primary/40 bg-primary/10 md:block" />
             <figure className="relative flex flex-col gap-4">
-              <InteractiveSchematic />
+              <img
+                src='https://static.igem.wiki/teams/5649/homegraphics/jar-of-snacks-2.webp'
+                alt="Four illustrated steps showing the Snaccine workflow from phage to immune response"
+              />
               <figcaption className="text-sm text-muted-foreground">
-                Our modular blueprint shows how phages deliver genetically coded instructions that assemble protective
-                mRNA inside the gut.
+                Our vaccine will be delivered in  for of ready to use capsules.
               </figcaption>
             </figure>
           </div>
