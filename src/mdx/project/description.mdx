@@ -1,4 +1,4 @@
-import { Content, Header, AccentLine, Dropdown, Temperature, fourStepsSvg, mainLogoWithSubtitleSvg } from "@/components";
+import { Content, Header, AccentLine, Dropdown, Temperature } from "@/components";
 
 <Header>
 # description
@@ -6,8 +6,7 @@ an introduction to our project
 </Header>
 
 
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-<div className="space-y-4">
+<Content>
 
 {/*don't want it all the way at the top.
 > I want to leave the hook below up top on the page. Maybe at the side I'm thinking? Or after
@@ -52,20 +51,13 @@ great cost.
 As a solution, we present *Snaccine*, a new type of vaccine which uses
 bacteriophages to hijack gut bacteria to produce armoured mRNA.
 
-</div>
-
-<div className="space-y-4 flex flex-col justify-start">
 <img
-	src={fourStepsSvg}
+	src='https://static.igem.wiki/teams/5649/svg/4step-min.svg'
 	alt="Diagram showing the four-step Snaccine workflow"
 	className="w-full max-w-2xl"
 />
-</div>
 
-</div>
 
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mt-8">
-<div className="space-y-4">
 
 <Dropdown header="what are bacteriophages?" level={0}>
 
@@ -154,59 +146,13 @@ of killing all birds on an infected farm instead.
 
 </Dropdown>
 
-</div>
-
-<div className="space-y-4 flex flex-col justify-start">
-{/* Add images here for this section */}
-</div>
-
-</div>
-
-<div className="w-full mt-8">
-<table className="comparison-table">
-	<thead>
-		<tr>
-			<th scope="col" style={{ borderLeft: "none", borderTop: "none" }}>Comparison</th>
-			<th scope="col" style={{ borderTop: "none" }}>Traditional</th>
-			<th scope="col" style={{ borderTop: "none" }}>mRNA</th>
-			<th scope="col" style={{ borderRight: "none", borderTop: "none" }}>Snaccine</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th scope="row" style={{ textAlign: "right", borderLeft: "none", borderTop: "none" }}>Development</th>
-			<td style={{ textAlign: "center", borderTop: "none" }}>Years</td>
-			<td colSpan={2} style={{ textAlign: "center", fontWeight: 600, borderRight: "none", borderTop: "none" }}>Days</td>
-		</tr>
-		<tr>
-			<th scope="row" style={{ textAlign: "right", borderLeft: "none" }}>Infection risk</th>
-			<td style={{ textAlign: "center" }}>Some</td>
-			<td colSpan={2} style={{ textAlign: "center", fontWeight: 600, borderRight: "none" }}>None</td>
-		</tr>
-		<tr>
-			<th scope="row" style={{ textAlign: "right", borderLeft: "none" }}>Storage &amp; transport</th>
-			<td style={{ textAlign: "center" }}>Generally fridge</td>
-			<td style={{ textAlign: "center" }}>Ultra-cold</td>
-			<td style={{ textAlign: "center", fontWeight: 600, borderRight: "none" }}>Room temperature</td>
-		</tr>
-		<tr>
-			<th scope="row" style={{ textAlign: "right", borderLeft: "none" }}>Production cost</th>
-			<td style={{ textAlign: "center" }}>Low to high</td>
-			<td style={{ textAlign: "center" }}>High</td>
-			<td style={{ textAlign: "center", fontWeight: 600, borderRight: "none" }}>Low</td>
-		</tr>
-		<tr>
-			<th scope="row" style={{ textAlign: "right", borderLeft: "none", borderBottom: "none" }}>Administration</th>
-			<td style={{ textAlign: "center", borderBottom: "none" }}>Various, some oral</td>
-			<td style={{ textAlign: "center", borderBottom: "none" }}>Injection</td>
-			<td style={{ textAlign: "center", fontWeight: 600, borderRight: "none", borderBottom: "none" }}>Oral</td>
-		</tr>
-	</tbody>
-</table>
-</div>
-
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mt-8">
-<div className="space-y-4">
+| Comparison | Traditional | mRNA | Snaccine |
+|---:|:---:|:---:|:---:|
+| Development | Years | **Days**  | **Days**  |
+| Infection risk | Some | **None** | **None** |
+| Storage & transport | Generally fridge | Ultra-cold | **Room temperature** |
+| Production cost | Low to high | High | **Low** |
+| Administration | Various, some oral | Injection | **Oral** |
 
 <Dropdown header={
 	<span>snaccine</span>
@@ -355,15 +301,6 @@ ends is a very common expression system in the lab.
 
 </Dropdown>
 
-</div>
-
-<div className="space-y-4 flex flex-col justify-start">
-{/* Add images here for this section */}
-</div>
-
-</div>
-
-<div className="w-full mt-8">
 <Dropdown header="References" level={0}>
 
 todo: cleanup
@@ -388,4 +325,5 @@ efficiency or half-life
 https://colab.research.google.com/drive/1av17FdclJXtKxNVF7RjD3_3Mi5GmXhmm?usp=sharing
 
 </Dropdown>
-</div>
+
+</Content>

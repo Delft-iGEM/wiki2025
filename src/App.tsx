@@ -14,7 +14,7 @@ import  ColorPalette  from "./contents/pallette.tsx";
 import Test from "./mdx/test.mdx";
 import Todo from "./mdx/pages_todo.mdx";
 import HumanPractices from "./mdx/human_practices.mdx";
-import Inclusivity from "./mdx/inclusivity.mdx";
+import DryLab from "./mdx/dry_lab.mdx";
 
 
 // Team
@@ -180,10 +180,10 @@ const Pages: NavItem[] = [
         component: HumanPractices,
   },
         {
-        name: "inclusion",
-        title: "Diversity and Inclusion",
-        path: "/inclusivity",
-        component: Inclusivity,
+        name: "dry lab",
+        title: "Dry Lab",
+        path: "/dry-lab",
+        component: DryLab,
       },
   // {
   //   name: "Engagement",
