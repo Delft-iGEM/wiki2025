@@ -90,6 +90,10 @@
     background: var(--color-background);
   }
   .max-container {
+    @apply w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-30;
+  }
+
+  .narrow-container {
     @apply w-full max-w-7xl mx-auto px-6 sm:px-20 lg:px-60;
   }
 
@@ -230,18 +234,6 @@
 
   .accordion-trigger {
     @apply flex w-full items-center gap-2 rounded-md py-2 px-4 text-left text-sm font-medium transition-all outline-none hover:underline disabled:pointer-events-none disabled:opacity-50;
-  }
-  /* Snaccine dropdown: full-width trigger styling */
-  .dropdown-snaccine .accordion-trigger {
-    @apply bg-blue-100 text-blue-800 hover:bg-blue-200;
-  }
-  /* Snaccine dropdown open state trigger */
-  .dropdown-snaccine .accordion-trigger[data-state="open"] {
-    @apply bg-blue-200;
-  }
-  /* Snaccine dropdown content background */
-  .dropdown-snaccine .accordion-content {
-    @apply bg-blue-50;
   }
 
   .accordion-content {
