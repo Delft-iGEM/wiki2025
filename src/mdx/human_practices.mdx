@@ -1,4 +1,4 @@
-import { Content, Header, AccentLine, Dropdown } from "@/components";
+import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem } from "@/components";
 
 <Header>
 # human practices
@@ -23,6 +23,9 @@ innovation begins with understanding
 
     ---
     <Dropdown header="Human Practices" level={0}>
+
+        <DropdownGroup multiple className="mt-4">
+        <DropdownItem value="introduction" header="INTRODUCTION" level={1}>
 
         ## INTRODUCTION 
 
@@ -57,7 +60,9 @@ innovation begins with understanding
 
         ---
 
-        <Dropdown header="Our Methodological framework" level={1}>
+                </DropdownItem>
+
+        <DropdownItem value="methodological-framework" header="Our Methodological framework" level={1}>
 
 
         From the start, our project was guided by a clear philosophy of responsible innovation. To put this philosophy into practice, we integrated two key methodologies: **Value Sensitive Design** to align our project with human values, and **Safe-by-Design** to proactively manage its risks. This section outlines the theoretical groundwork that formed our stakeholder engagement. 
@@ -102,9 +107,9 @@ innovation begins with understanding
         4. **Indeterminacy (Human Action):** dependent on user behavior; mitigated by shared responsibility and clear instructional design (pictograms, dosing scoops).  
         5. **Normative Ambiguity (Value Conflicts):** balancing animal welfare vs. productivity; managed via transparent documentation of trade-offs and governance conditions.  
 
-        </Dropdown> 
-        ---
-        <Dropdown header="Stakeholder Engagement: An Integrated Approach " level={1}>
+        </DropdownItem>
+
+        <DropdownItem value="stakeholder-engagement-integrated" header="Stakeholder Engagement: An Integrated Approach" level={1}>
 
         ### Upstream Engagement: Navigating Regulation and Refining Science 
 
@@ -132,9 +137,9 @@ innovation begins with understanding
         - **Johannis Florid (Farmer):** advised powder format and simple, pictogram-based instructions.  
         - **Charlotte Koster (Science Communicator):** guided public outreach using storytelling and two-way communication, focusing on the “undecided” public.  
 
-        </Dropdown>
+        </DropdownItem>
 
-        <Dropdown header="STtakeholder Mapping and Engagement" level={1}> 
+        <DropdownItem value="stakeholder-mapping" header="Stakeholder Mapping and Engagement" level={1}> 
 
         ### A. Upstream Stakeholders (Policy, Regulation, and High-Level Science) 
 
@@ -165,11 +170,15 @@ innovation begins with understanding
         - **Trust:** farmers rely on veterinarians and peers.  
         - **Communication:** transparent, simple leaflets with clear guidance.  
         - **Public Perception:** address GMO sensitivities through clear, balanced outreach.
-        </Dropdown>   
+        </DropdownItem>
+        </DropdownGroup>
     </Dropdown> 
 
 
     <Dropdown header="Integrated Human Practices: How the World Designs Snaccine" level={0}>
+
+        <DropdownGroup multiple className="mt-4">
+        <DropdownItem value="ihp-introduction" header="Introduction" level={1}>
 
         ## Introduction
 
@@ -183,9 +192,9 @@ innovation begins with understanding
 
         This Integrated Human Practices section is the story of the second, crucial part: **how the world affects your work**. It documents how we moved from analysis to action, translating stakeholder insights into meaningful changes.
 
-        ---
+        </DropdownItem>
 
-        <Dropdown header="How we iterated" level={1}>
+        <DropdownItem value="how-we-iterated" header="How we iterated" level={1}>
 
         Our project's development was an iterative cycle of design, consultation, and adaptation. To ensure this process was systematic, we followed a structured feedback loop for every major decision:
 
@@ -193,9 +202,9 @@ innovation begins with understanding
 
         What follows is a detailed account of our project's key iteration cycles. Each one demonstrates a closed feedback loop, according to the schematic above.
 
-        </Dropdown>
+        </DropdownItem>
 
-        <Dropdown header="The Stakeholder Map and the Stakeholder Cards" level={1}>
+        <DropdownItem value="stakeholder-map-cards" header="The Stakeholder Map and the Stakeholder Cards" level={1}>
 
         **Stakeholder Engagement: The story of our Integrated Approach**
 
@@ -229,9 +238,9 @@ innovation begins with understanding
 
         To address public perception and ensure our message was clear and accessible, we consulted with science communicator **Dr. Charlotte Koster**. She advised us to frame Snaccine within a clear storytelling arc and to segment our audience, focusing our efforts on providing "proper information" to the large, undecided group of the public that is open to hearing both the pros and the cons. She also recommended a **two-way communication** approach. Taking her advice, we implemented an iterative feedback loop to test public perception. We interviewed **15** members of the general public from diverse backgrounds about their views on Snaccine and what questions it raised. We collected those questions and provide clear answers in the Integrated Human Practices (iHP) section.
 
-        </Dropdown>
+        </DropdownItem>
 
-        <Dropdown header="Our Project's Design Pivots: The Listen, Interpret, Implementation part" level={1}>
+        <DropdownItem value="design-pivots" header="Our Project's Design Pivots: The Listen, Interpret, Implementation part" level={1}>
 
         Our project evolved through a series of critical design pivots, driven by integrating feedback from multiple sources.
 
@@ -329,10 +338,9 @@ innovation begins with understanding
 
         **Pivotal Change:** We shifted our focus from creating content to listening to the public's actual questions. We engaged with **12** members of the general public and asked for their unfiltered concerns, which included practical and safety-oriented questions. These questions now form the structure of our communication materials, such as a **FAQ**. Furthermore, these materials can be designed for use by trusted intermediaries, such as veterinarians, to facilitate conversations with farmers.
 
-        </Dropdown>
+        </DropdownItem>
 
-
-        <Dropdown header="Putting Two-Way Communication into Practice: Listening to the Public" level={1}>
+        <DropdownItem value="two-way-communication-practice" header="Putting Two-Way Communication into Practice: Listening to the Public" level={1}>
 
         Here we put the insights from Iteration Loop 6 into direct practice. We engaged with **12** members of the general public from diverse backgrounds, presenting them with the core concept of Snaccine. Instead of simply providing information, our primary goal was to listen and gather their unfiltered questions and concerns. This exercise illustrated the public's perspective and highlighted key areas of our project that required clearer explanation.
 
@@ -376,9 +384,9 @@ innovation begins with understanding
         - **Can a dose of mRNA accidentally ingested by another animal lead to undesirable side effects?**
         - **Is the mRNA vaccine absorbed into the human body through the consumption of meat, and can it cause undesirable side effects?**
 
-        </Dropdown>
+        </DropdownItem>
 
-        <Dropdown header="Future Outlook, Conclusion, Limitation" level={1}>
+        <DropdownItem value="future-outlook" header="Future Outlook, Conclusion, Limitation" level={1}>
 
         The preceding iterative loops demonstrate how stakeholder feedback drove concrete pivots in Snaccine's technical. While each of these loops closed with a clear solution, we were also confronted with a challenge of a different nature: **Socio-Economic Hurdles.** It transcends technical design and determines the project's path forward.
 
@@ -410,10 +418,9 @@ innovation begins with understanding
 
         Ultimately, our project successfully created a vaccine designed for the world as it is. The next, essential phase of this work must be to help shape vaccination into a **cornerstone of global food security**, not a barrier to trade.
 
-        ---
-        </Dropdown>
+        </DropdownItem>
 
-        <Dropdown header="Reflection" level={1}>
+        <DropdownItem value="reflection" header="Reflection" level={1}>
 
         ### Snaccine: A Platform Demonstrated
 
@@ -427,8 +434,9 @@ innovation begins with understanding
         However, the true power of this platform lies in its inherent **modularity**. The bacteriophage, the bacterial host, and the mRNA insert can all be exchanged. This makes Snaccine a versatile vaccination platform with the potential to be adapted for nearly any animal and for any disease for which an mRNA vaccine exists.
 
         Ultimately, the development of the Snaccine platform became a parallel journey in developing our own **framework as responsible innovators**. The future of this technology depends not only on the science we engineer into it, but on the dialogue, trust, and ethical stewardship we build around it.
-        </Dropdown>
+        </DropdownItem>
 
+        </DropdownGroup>
     </Dropdown>
 
 </Content>
