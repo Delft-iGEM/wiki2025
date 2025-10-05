@@ -14,7 +14,6 @@ To build the **Snaccine** platform, we split our experimental workflow into para
 
 Each module has a distinct focus:
 
----
 
 ### **Module A – T7 Genome Engineering**
 This module aims to establish an accessible workflow for engineering the genome of the **T7 phage**.  
@@ -23,7 +22,7 @@ This module aims to establish an accessible workflow for engineering the genome 
 
   <Dropdown header="VLP Production in bacteria - experiments" level={0}>
 
-  ### **PCR Primer Design**
+  #### **PCR Primer Design**
   PCR primer sequences for both T7 phage genome production and screening of DNA products were designed with **SnapGene³**.  
   - Primer sequences for Wild Type Assembly were taken from *Levrier et al.*¹  
   - Screening PCR primers were designed with a melting temperature of ~60 °C and a G/C 3’ end, which supports a more stable initiation of DNA replication (*ref. needed*).  
@@ -31,69 +30,69 @@ This module aims to establish an accessible workflow for engineering the genome 
   - Primers included an **orthogonal homologous sequence (oho)** to minimize unintended homology to the T7 genome.  
   - Primers were ordered dissolved in water (100 μM), then diluted to 10 μM for PCR use.  
 
-  ---
 
-  ### **Q5 PCR**
+
+  #### **Q5 PCR**
   A modified protocol for **Q5® High-Fidelity 2X Master Mix⁵** was used to produce T7 genome assembly fragments (wild-type and mCherry insertion genomes).  
   - Starting DNA: 1 μL of T7 bacteriophage solution (~0.7 PFU/μL) per 50 μL PCR reaction.  
   - Primer and master mix ratios followed NEB guidelines.  
   - **NEB Tm calculator⁴** was used to estimate primer annealing temperatures for PCR cycling design.  
 
-  ---
+  
 
-  ### **1% Agarose Gel Electrophoresis for DNA**
+  #### **1% Agarose Gel Electrophoresis for DNA**
   Used to verify DNA length.  
   - 1× TAE buffer was used for gel and electrophoresis.  
   - Run: 1 h at 100 V.  
   - **SYBR Safe** for DNA staining and **NEB Purple Gel Loading Dye** for sample loading.  
   - Gels were analyzed after electrophoresis.  
 
-  ---
+  
 
-  ### **T7 Genome Assembly**
+  #### **T7 Genome Assembly**
   The **NEBuilder® HiFi DNA Assembly Kit⁶** was used to assemble the T7 genome.  
   - Equimolar fragment amounts were calculated using the **NEBuilder Protocol Calculator**.  
   - Fragments: A, B, C, D, Coho1, Coho2, and oho1_mCherry_oho2.  
   - Concentrations and volumes were determined based on DNA measurements (see *Results*).  
 
-  ---
+  
 
-  ### **Column Precipitation of PCR Products**
+  #### **Column Precipitation of PCR Products**
   PCR products were purified using the **NEB Monarch Spin PCR Cleanup Kit⁷**, which:  
   1. Binds DNA to a selection column.  
   2. Washes away oligos and enzymes.  
   3. Elutes purified DNA with a specialized buffer.  
 
-  ---
+  
 
-  ### **Heat Shock Transformation and Phage Reboot**
+  #### **Heat Shock Transformation and Phage Reboot**
   A modified **NEB transformation protocol** was used to reboot T7 phages in **BL21(DE3)** cells.  
   - Main change: longer SOC outgrowth followed by transfer to **liquid LB medium** for overnight culture instead of plating.  
 
-  ---
+  
 
-  ### **Electrocompetent Cell Preparation**
+  #### **Electrocompetent Cell Preparation**
   **BL21(DE3)** cells were made electrocompetent following the **Baricklab protocol¹⁰**.  
 
-  ---
+  
 
-  ### **Transformation via Electroporation**
+  #### **Transformation via Electroporation**
   Standard **electroporation** protocol (Baricklab¹⁰) used to reboot T7 phage production.  
   - Main change: longer SOC outgrowth followed by transfer to **liquid LB** medium.  
 
-  ---
+  
 
-  ### **T7 Phage Filtration**
+  #### **T7 Phage Filtration**
   Filtration step removes **E. coli** host cells from the rebooted T7 phage solution, ensuring a pure phage stock.  
 
-  ---
+  
 
-  ### **T7 Phage Concentration**
+  #### **T7 Phage Concentration**
   Phages were concentrated using a **protein purification filter**, enabling detection even from low-yield productions.  
 
-  ---
+  
 
-  ### **T7 Phage Plaque Assay**
+  #### **T7 Phage Plaque Assay**
   Used to test phage presence and quantify concentration.  
   - *E. coli* cells are plated in 0.6% LB agarose.  
   - Phage solution is added.  
@@ -118,53 +117,39 @@ Expression and folding are confirmed by **SDS-PAGE** and **TEM imaging**. Succes
 
   <Dropdown header="VLP Production in bacteria - experiments" level={0}>
 
-  ### **1. Plasmid Design and Construction**
+  #### **1. Plasmid Design and Construction**
   We engineered a plasmid construct **(pET-Kan-T7lac-mat-MS2cp)** encoding the MS2 maturase fused to the coat protein under a **T7 promoter**.  
   This construct validates expression of **MS2 virus-like particles (VLPs)** in *E. coli*.  
 
   **Figure 1.** Plasmid map of our engineered construct (pET-Kan-T7lac-mat-MS2cp) showing promoter, maturase, coat protein, and MS2 RNA stem loop.  
   **Figure 2.** Linear schematic of the synthetic insert prior to backbone insertion.  
 
-  ---
-
-  ### **2. Transformation into BL21(DE3) Cells**
+  #### **2. Transformation into BL21(DE3) Cells**
   The construct was introduced into **BL21(DE3)** cells, enabling T7-driven expression.  
   Successful transformants were selected on **kanamycin plates** for downstream studies.  
 
-  ---
-
-  ### **3. Protein Expression Induction**
+  #### **3. Protein Expression Induction**
   Cultures were induced with **IPTG** under various concentrations and temperatures.  
   Optimal condition: **0.4 mM IPTG**, **17 °C**, **16 h** — yielding soluble VLP expression and minimal aggregation.  
 
-  ---
-
-  ### **4. Harvest and Lysis**
+  #### **4. Harvest and Lysis**
   Cells were harvested and lysed via **sonication**.  
   Soluble **MS2 VLP proteins** were detected in the supernatant; uninduced and pellet fractions showed no expression.  
 
-  ---
-
-  ### **5. SDS-PAGE Gel Electrophoresis**
+  #### **5. SDS-PAGE Gel Electrophoresis**
   Induced and uninduced fractions were analyzed via SDS-PAGE.  
   A **13.7 kDa band** corresponding to the MS2 coat protein was observed, confirming soluble expression.  
 
-  ---
-
-  ### **6. PEG Precipitation of VLPs**
+  #### **6. PEG Precipitation of VLPs**
   **PEG precipitation** was used to selectively enrich assembled VLPs from soluble fractions, preparing them for structural analysis.  
 
-  ---
-
-  ### **7. TEM Imaging**
+  #### **7. TEM Imaging**
   Purified particles were imaged using **Transmission Electron Microscopy (TEM)** with negative staining.  
   Micrographs revealed **icosahedral VLPs (~27 nm)**, confirming correct assembly.  
 
-  ---
-
-  ### **8. TEM Average Projection**
-  To obtain an average projection of MS2 VLPs and confirm geometry, we used the **RELION** software package (*citation*). 
-  ---
+  #### **8. TEM Average Projection**
+  To obtain an average projection of MS2 VLPs and confirm geometry, we used the **RELION** software package. 
+  
   </Dropdown>
 
 ### **Module D – VLP Delivery to Mammalian Cells**
