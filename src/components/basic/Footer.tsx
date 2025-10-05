@@ -78,10 +78,10 @@ export function Footer() {
                 .
               </p>
             </div>
-            <div className="flex space-x-6">
+            {/*<div className="flex space-x-6">
               <FooterLink href="./safety-and-security">Safety</FooterLink>
               <FooterLink href="./attributions">Attributions</FooterLink>
-            </div>
+            </div>*/}
           </div>
           <div className="text-sm text-secondary-foreground opacity-80">
             <p>
