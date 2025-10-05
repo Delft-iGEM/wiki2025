@@ -62,8 +62,22 @@
   /* Hexagonal avatar utility: apply to an element with equal width/height */
   .hex-avatar {
     /* Ensure the element itself controls the shape */
-    -webkit-clip-path: polygon(41.31759% 0.75961%, 88.30222% 17.86062%, 96.98463% 67.10101%, 58.68241% 99.24039%, 11.69778% 82.13938%, 3.01537% 32.89899%);
-    clip-path: polygon(41.31759% 0.75961%, 88.30222% 17.86062%, 96.98463% 67.10101%, 58.68241% 99.24039%, 11.69778% 82.13938%, 3.01537% 32.89899%);
+    -webkit-clip-path: polygon(
+      41.31759% 0.75961%,
+      88.30222% 17.86062%,
+      96.98463% 67.10101%,
+      58.68241% 99.24039%,
+      11.69778% 82.13938%,
+      3.01537% 32.89899%
+    );
+    clip-path: polygon(
+      41.31759% 0.75961%,
+      88.30222% 17.86062%,
+      96.98463% 67.10101%,
+      58.68241% 99.24039%,
+      11.69778% 82.13938%,
+      3.01537% 32.89899%
+    );
   }
 
   /* Optional bordered variant (wrap your <img> in a div.hex-avatar-border) */
@@ -75,9 +89,27 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg,var(--color-brand),var(--color-accent));
-    -webkit-clip-path: polygon(25% 6.69873%, 75% 6.69873%, 100% 50%, 75% 93.30127%, 25% 93.30127%, 0% 50%);
-    clip-path: polygon(25% 6.69873%, 75% 6.69873%, 100% 50%, 75% 93.30127%, 25% 93.30127%, 0% 50%);
+    background: linear-gradient(
+      135deg,
+      var(--color-brand),
+      var(--color-accent)
+    );
+    -webkit-clip-path: polygon(
+      25% 6.69873%,
+      75% 6.69873%,
+      100% 50%,
+      75% 93.30127%,
+      25% 93.30127%,
+      0% 50%
+    );
+    clip-path: polygon(
+      25% 6.69873%,
+      75% 6.69873%,
+      100% 50%,
+      75% 93.30127%,
+      25% 93.30127%,
+      0% 50%
+    );
   }
   .hex-avatar-border > .hex-avatar {
     position: relative;
@@ -134,9 +166,6 @@
       @apply list-none mb-4;
     }
 
-    /*.task-list-item > input {*/
-      /* nice checkbox styling its disabled by default */
-    /*}*/
     ol {
       @apply list-decimal mb-4;
     }
@@ -163,18 +192,72 @@
     th {
       @apply border;
     }
+    /* Table cell styles */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px 16px;
+      border: 1px solid black;
+    }
+
+    .comparison-table th:first-child,
+    .comparison-table td:first-child {
+      border-left: none;
+    }
+
+    .comparison-table th:last-child,
+    .comparison-table td:last-child {
+      border-right: none;
+    }
+
+    .comparison-table thead tr:first-child th {
+      border-top: none;
+    }
+
+    .comparison-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .redcell {
+      background-color: #ffcccc;
+      text-align: center;
+    }
+
+    .orangecell {
+      background-color: #ffe6cc;
+      text-align: center;
+    }
+
+    .greencell {
+      background-color: #ccffcc;
+      text-align: center;
+    }
+
+    .toprowcell {
+      background-color: white;
+      padding: 12px 16px;
+    }
+
+    .advantagecell {
+      text-align: right;
+      background-color: white;
+    }
 
     header > div {
       h1 {
         @apply text-4xl sm:text-7xl font-bold tracking-tight text-white;
       }
-      
+
       p {
         @apply mt-3 text-xl text-secondary-foreground max-w-3xl;
       }
     }
   }
-  
+
   /* Nested Accordion/Dropdown Styling for hierarchical lists */
   /* Root containers */
   .dropdown-root {
@@ -184,44 +267,44 @@
   .dropdown-level-0 {
     @apply mb-2;
   }
-  
+
   .dropdown-level-0 .accordion-trigger {
     @apply text-3xl font-semibold;
   }
-  
+
   .dropdown-level-1 {
     @apply ml-4 mb-3 border-l-2 border-border pl-4;
   }
-  
+
   .dropdown-level-1 .accordion-trigger {
     @apply text-2xl font-medium;
   }
-  
+
   .dropdown-level-2 {
     @apply ml-6 mb-2 border-l border-muted-foreground/30 pl-3;
   }
-  
+
   .dropdown-level-2 .accordion-trigger {
     @apply text-xl font-normal;
   }
-  
+
   .dropdown-level-3 {
     @apply ml-8 mb-1 border-l border-muted-foreground/20 pl-2;
   }
-  
+
   .dropdown-level-3 .accordion-trigger {
     @apply text-lg font-normal text-muted-foreground;
   }
-  
+
   /* Multiple item dropdown container */
   .dropdown-group {
     @apply space-y-2;
   }
-  
+
   .dropdown-group .dropdown-item {
     @apply border border-border rounded-md overflow-hidden;
   }
-  
+
   .dropdown-group .dropdown-item .accordion-trigger {
     @apply px-4 py-3 bg-muted/30 hover:bg-muted/50 transition-colors;
   }
@@ -293,7 +376,9 @@
     /* Light theme based on provided palette */
     /* Base */
     --background: oklch(96.75% 0.015 227.5); /* Light Background */
-    --foreground: oklch(25.42% 0.0456 227.5); /* Overlay Dark for high-contrast text */
+    --foreground: oklch(
+      25.42% 0.0456 227.5
+    ); /* Overlay Dark for high-contrast text */
     --card: oklch(100% 0 none);
     --card-foreground: oklch(25.42% 0.0456 227.5);
     --popover: oklch(100% 0 none);
@@ -305,13 +390,19 @@
     --primary: oklch(53.27% 0.1015 227.5); /* Medium Teal */
     --primary-foreground: oklch(100% 0 none);
     --secondary: oklch(31.59% 0.0588 227.5); /* Deep Blue */
-    --secondary-foreground: oklch(97.05% 0.0222 227.5); /* very light cyan for subtle contrast */
-    --secondnary-foreground-complement: oklch(83.17% 0.1242 227.5); /* Soft Teal */
+    --secondary-foreground: oklch(
+      97.05% 0.0222 227.5
+    ); /* very light cyan for subtle contrast */
+    --secondnary-foreground-complement: oklch(
+      83.17% 0.1242 227.5
+    ); /* Soft Teal */
     --muted: oklch(94.43% 0.0144 227.5); /* Card/Panel Shade */
     --muted-foreground: oklch(38.68% 0.0728 227.5); /* Muted Deep Blue */
     --accent: oklch(79.12% 0.1261 227.5); /* Soft Teal */
     --accent-foreground: oklch(25.62% 0.047 227.5);
-    --section: oklch(92.5% 0.012 227.5); /* Slightly darker than background for sections */
+    --section: oklch(
+      92.5% 0.012 227.5
+    ); /* Slightly darker than background for sections */
     --destructive: oklch(50.92% 0.1847 27.5);
     --destructive-foreground: oklch(100% 0 none);
 
@@ -343,7 +434,9 @@
     --muted-foreground: oklch(82.81% 0.0349 227.5);
     --accent: oklch(68.6% 0.105 227.5);
     --accent-foreground: oklch(17.61% 0.0313 227.5);
-    --section: oklch(28% 0.05 227.5); /* Slightly lighter than background for sections in dark mode */
+    --section: oklch(
+      28% 0.05 227.5
+    ); /* Slightly lighter than background for sections in dark mode */
     --destructive: oklch(41.81% 0.1547 27.5);
     --destructive-foreground: oklch(96.64% 0.0117 227.5);
 
@@ -380,16 +473,24 @@
   /* From https://github.com/wooorm/starry-night/blob/main/style/both.css on MIT License adapted by us, so can be used under CC4.0 */
   :root {
     --color-prettylights-syntax-brackethighlighter-angle: oklch(88% 0.02 254.6);
-    --color-prettylights-syntax-brackethighlighter-unmatched: oklch(78% 0.205 27.5);
+    --color-prettylights-syntax-brackethighlighter-unmatched: oklch(
+      78% 0.205 27.5
+    );
     --color-prettylights-syntax-carriage-return-bg: oklch(50.51% 0.1826 26.53);
-    --color-prettylights-syntax-carriage-return-text: oklch(97.03% 0.0103 247.9);
+    --color-prettylights-syntax-carriage-return-text: oklch(
+      97.03% 0.0103 247.9
+    );
     --color-prettylights-syntax-comment: oklch(78% 0 0);
     --color-prettylights-syntax-constant: oklch(78% 0.1153 246.7);
-    --color-prettylights-syntax-constant-other-reference-link: oklch(85.6% 0.0768 244.1);
+    --color-prettylights-syntax-constant-other-reference-link: oklch(
+      85.6% 0.0768 244.1
+    );
     --color-prettylights-syntax-entity: oklch(78% 0.1275 305.9);
     --color-prettylights-syntax-entity-tag: oklch(78% 0.1641 145.8);
     --color-prettylights-syntax-invalid-illegal-bg: oklch(41.79% 0.1549 25.96);
-    --color-prettylights-syntax-invalid-illegal-text: oklch(97.03% 0.0103 247.9);
+    --color-prettylights-syntax-invalid-illegal-text: oklch(
+      97.03% 0.0103 247.9
+    );
     --color-prettylights-syntax-keyword: oklch(78% 0.16 25.78);
     --color-prettylights-syntax-markup-bold: oklch(97.03% 0.0103 247.9);
     --color-prettylights-syntax-markup-changed-bg: oklch(32.43% 0.0956 41.81);
@@ -400,14 +501,20 @@
     --color-prettylights-syntax-markup-ignored-bg: oklch(49.02% 0.1857 260.1);
     --color-prettylights-syntax-markup-ignored-text: oklch(97.03% 0.0103 247.9);
     --color-prettylights-syntax-markup-inserted-bg: oklch(30.54% 0.0826 149.3);
-    --color-prettylights-syntax-markup-inserted-text: oklch(90.72% 0.1123 146.3);
+    --color-prettylights-syntax-markup-inserted-text: oklch(
+      90.72% 0.1123 146.3
+    );
     --color-prettylights-syntax-markup-italic: oklch(97.03% 0.0103 247.9);
     --color-prettylights-syntax-markup-list: oklch(85.74% 0.1331 89.95);
     --color-prettylights-syntax-meta-diff-range: oklch(80.05% 0.1275 305.9);
-    --color-prettylights-syntax-storage-modifier-import: oklch(97.03% 0.0103 247.9);
+    --color-prettylights-syntax-storage-modifier-import: oklch(
+      97.03% 0.0103 247.9
+    );
     --color-prettylights-syntax-string: oklch(85.6% 0.0768 244.1);
     --color-prettylights-syntax-string-regexp: oklch(84.16% 0.1641 145.8);
-    --color-prettylights-syntax-sublimelinter-gutter-mark: oklch(38.37% 0.0179 254.7);
+    --color-prettylights-syntax-sublimelinter-gutter-mark: oklch(
+      38.37% 0.0179 254.7
+    );
     --color-prettylights-syntax-variable: oklch(78% 0.1412 60.1);
   }
 
@@ -993,59 +1100,4 @@
   font-style: italic;
   src: url("https://static.igem.wiki/teams/5649/maplemono/maplemono-italic-wght-vf.woff2")
     format("woff2");
-}
-
-/* Table cell styles */
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.comparison-table th,
-.comparison-table td {
-  padding: 12px 16px;
-  border: 1px solid black;
-}
-
-.comparison-table th:first-child,
-.comparison-table td:first-child {
-  border-left: none;
-}
-
-.comparison-table th:last-child,
-.comparison-table td:last-child {
-  border-right: none;
-}
-
-.comparison-table thead tr:first-child th {
-  border-top: none;
-}
-
-.comparison-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.redcell {
-  background-color: #ffcccc;
-  text-align: center;
-}
-
-.orangecell {
-  background-color: #ffe6cc;
-  text-align: center;
-}
-
-.greencell {
-  background-color: #ccffcc;
-  text-align: center;
-}
-
-.toprowcell {
-  background-color: white;
-  padding: 12px 16px;
-}
-
-.advantagecell {
-  text-align: right;
-  background-color: white;
 }
