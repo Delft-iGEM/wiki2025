@@ -9,35 +9,143 @@ biological parts and BioBricks used in our project
 ## Overview
 This section documents the biological parts used in our project.
 
-## BioBricks
 
-### Basic Parts
+<Dropdown header="MS2 Capsid" level={0}>
 
-### Composite Parts
+## Design Justification & Novelty
 
-### Part Collection
+Our composite part was designed to encode the **MS2 bacteriophage coat protein**, enabling the production of **virus-like particles (VLPs)** in *E. coli* alongside an RNA molecule bearing the **MS2 hairpin packaging signal**. The coat proteins recognize this hairpin and spontaneously assemble into a hollow capsid around it. By linking the cargo RNA to the hairpin, the capsid automatically packages and protects the cargo inside.
 
-## Part Characterization
+This system goes beyond simple protein expression—it establishes a **customizable RNA delivery platform** with broad utility in synthetic biology and therapeutic applications. Future iGEM teams can directly adapt this platform to encapsulate engineered mRNA (e.g., GFP reporters, pathway regulators, or therapeutic vaccine inserts), making it a **versatile and reusable tool for the community**.
 
-### Testing Methods
+---
 
-### Results
+## Construct Validation
 
-### Validation
+The composite part design was verified by sequencing.
 
-## Part Registry
+**→ Sequencing Result:**  
+*(Insert sequencing data here)*
 
-### Submissions
+---
 
-### Documentation
+## Genetic Elements and Functions
 
-## Design Considerations
+This composite part includes the following functional elements:
 
-### Compatibility
+| Element | Function |
+|----------|-----------|
+| **RBS (Ribosome Binding Site)** | Initiates efficient ribosome recruitment for downstream protein translation. |
+| **T7 Promoter** | Strong IPTG-inducible promoter recognized by T7 RNA polymerase, ensuring high-level transcription in *E. coli* BL21(DE3). |
+| **MS2 Stem Loop** | RNA hairpin recognized by the MS2 coat protein; acts as a packaging signal to direct RNA encapsulation into VLPs. |
+| **T7 Terminator** | Terminates transcription, preventing readthrough and insulating the expression cassette. |
+| **RBS (second instance)** | Ensures efficient translation initiation for maturase and coat protein expression. |
+| **Maturase** | MS2 phage protein that assists in capsid assembly and stability. |
+| **MS2 Coat Protein** | Structural protein that self-assembles into icosahedral VLPs (~25–30 nm), responsible for RNA encapsulation. |
 
-### Function
+---
 
-### Assembly
+## Functional Testing
 
-## References
+### Bradford Assay (Performed Prior to SDS–PAGE)
+
+| Sample | Protein Concentration (mg/mL) |
+|---------|-------------------------------|
+| Induced supernatant | 2.85 |
+| Uninduced supernatant | 2.28 |
+| Induced pellet | 0.36 |
+| Uninduced pellet | 2.95 |
+
+We first quantified total protein using the **Bradford assay**. The induced supernatant contained **2.85 mg/mL**, higher than the uninduced supernatant (**2.28 mg/mL**), consistent with IPTG-dependent expression enriching protein in the soluble fraction.
+
+In contrast, pellet samples showed counterintuitive results: the induced pellet measured only **0.36 mg/mL**, whereas the uninduced pellet measured **2.95 mg/mL**. This likely reflects **incomplete or uneven resuspension** of insoluble pellet material, leading to sampling bias and underestimation of protein concentration in the induced sample. Generally, induced and uninduced pellets should contain similar total protein when fully solubilized.
+
+All samples were normalized to equivalent protein concentrations before SDS–PAGE loading to ensure that differences in band intensity reflect true expression and solubility, not loading variance.
+
+> **Note:** For future repeats, pellets will be fully resuspended using vortexing/sonication and measured in technical triplicates. A detergent-compatible assay (e.g., BCA) may also be used to improve accuracy.
+
+---
+
+### SDS–PAGE (Expression & Solubility)
+
+- Expression of a distinct **~14 kDa protein** was detected in the induced supernatant fraction.  
+- No corresponding band was present in uninduced controls, confirming **IPTG-dependent expression**.  
+- Localization of the protein in the **soluble fraction** demonstrates correct folding and minimal aggregation.
+
+---
+
+### TEM (VLP Assembly)
+
+- **Transmission Electron Microscopy (TEM)** revealed uniform particles of **~25–30 nm diameter**, consistent with expected MS2 VLP dimensions.  
+- **Class-averaging** confirmed the **icosahedral morphology** characteristic of MS2 capsids.  
+- No similar particles were present in uninduced controls, confirming that VLP assembly is **construct-dependent**.
+
+---
+
+## Quantitative Performance & Robustness
+
+*(To be determined in future iterations.)*
+
+---
+
+## Limitations & Iteration
+
+**Protein aggregation:**  
+A faint band at ~14 kDa was occasionally observed in pellet fractions, suggesting minor coat protein aggregation. Future work will optimize **induction conditions** (temperature, IPTG concentration, induction time) and refine **lysis protocols** to reduce aggregation.
+
+**Lysis interference (Lysozyme):**  
+Early experiments used a lysozyme + sonication lysis protocol. However, lysozyme (~14.3 kDa) overlaps with the expected MS2 coat protein (~13.7 kDa), creating misleading SDS–PAGE bands. After troubleshooting, we adopted **sonication-only lysis**, eliminating interference and clearly resolving the MS2-specific band. This adjustment was crucial for unambiguous confirmation of coat protein expression. *(See Engineering Wiki: Module C for troubleshooting details.)*
+
+**Optimization of induction conditions:**  
+Initially, we planned a systematic screen of IPTG concentrations and temperatures. However, following consultation with an external protein expression expert, we adopted an optimized condition: **0.4 mM IPTG induction at 17 °C for 16 h**. This approach prioritized soluble expression and minimized time spent on trial-and-error optimization.
+
+**Next iterations (functional RNA packaging):**  
+With soluble coat protein expression and VLP assembly validated, our next step is to test **encapsulation of functional RNA cargo**. We have designed a **second-generation plasmid** encoding VLPs that package **EGFP RNA** containing eukaryotic expression machinery. This construct will allow VLPs produced in *E. coli* to package EGFP RNA, which can then be taken up by eukaryotic cells and express EGFP.  
+Although experimental testing remains pending, this plasmid is fully designed and provides a clear roadmap toward **cross-kingdom RNA delivery**.
+
+---
+
+## Why This Part Is Useful for Future iGEM Teams
+
+This composite part offers a **plug-and-play platform** for RNA encapsulation into stable MS2-based VLPs. Unlike most structural protein parts, it directly enables **functional downstream applications**, such as:
+
+- **Synthetic vaccines:** Packaging engineered mRNA inserts.  
+- **Diagnostics:** Encapsulating RNA biosensor circuits.  
+- **Synthetic biology research:** Protecting labile RNAs from degradation inside cells or in extracellular environments.
+
+By validating **expression**, **solubility**, and **VLP assembly**, we have provided a robust foundation for future teams to adapt this system to their specific goals. The **modular design** ensures that only the RNA cargo needs to be exchanged, making this a **widely reusable community resource**.
+
+### Documented Protocols
+
+To ensure accessibility and reproducibility, we have documented every step—from transformation to final TEM validation—under:
+
+<Link
+to="/protocols"
+className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+>
+protocols
+</Link>
+
+This includes:
+
+1. Plasmid transformation into *E. coli* BL21(DE3)  
+2. IPTG induction and protein expression  
+3. Cell lysis and protein extraction  
+4. SDS–PAGE analysis for coat protein expression  
+5. PEG precipitation and purification of VLPs  
+6. TEM imaging for structural validation
+
+Following these protocols will allow future teams to reproduce our results and adapt the platform for their own RNA payloads.
+
+---
+
+## Future Directions
+
+Building on this composite part, we have designed a **next-generation plasmid** encoding MS2 VLPs that encapsulate **EGFP RNA** alongside eukaryotic expression elements. This construct should enable VLPs produced in *E. coli* to package EGFP RNA, be internalized by eukaryotic cells, and express the fluorescent protein intracellularly.
+
+Although time constraints prevented experimental validation, the plasmid is **fully designed, ordered, and ready to use**, providing a direct roadmap for future iGEM teams. This effort demonstrates how our system can be extended into a **functional RNA delivery and expression platform** across biological kingdoms.
+
+</Dropdown>
+
+
 </Content>
