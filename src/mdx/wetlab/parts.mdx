@@ -12,7 +12,7 @@ This section documents the biological parts used in our project.
 
 <Dropdown header="MS2 Capsid" level={0}>
 
-## Design Justification & Novelty
+### Design Justification & Novelty
 
 Our composite part was designed to encode the **MS2 bacteriophage coat protein**, enabling the production of **virus-like particles (VLPs)** in *E. coli* alongside an RNA molecule bearing the **MS2 hairpin packaging signal**. The coat proteins recognize this hairpin and spontaneously assemble into a hollow capsid around it. By linking the cargo RNA to the hairpin, the capsid automatically packages and protects the cargo inside.
 
@@ -20,7 +20,7 @@ This system goes beyond simple protein expression—it establishes a **customiza
 
 ---
 
-## Construct Validation
+### Construct Validation
 
 The composite part design was verified by sequencing.
 
@@ -29,7 +29,7 @@ The composite part design was verified by sequencing.
 
 ---
 
-## Genetic Elements and Functions
+### Genetic Elements and Functions
 
 This composite part includes the following functional elements:
 
@@ -45,9 +45,9 @@ This composite part includes the following functional elements:
 
 ---
 
-## Functional Testing
+### Functional Testing
 
-### Bradford Assay (Performed Prior to SDS–PAGE)
+#### Bradford Assay (Performed Prior to SDS–PAGE)
 
 | Sample | Protein Concentration (mg/mL) |
 |---------|-------------------------------|
@@ -66,29 +66,35 @@ All samples were normalized to equivalent protein concentrations before SDS–PA
 
 ---
 
-### SDS–PAGE (Expression & Solubility)
+#### SDS–PAGE (Expression & Solubility)
 
+![alt text](https://static.igem.wiki/teams/5649/figures/sds-page-2.webp)
 - Expression of a distinct **~14 kDa protein** was detected in the induced supernatant fraction.  
 - No corresponding band was present in uninduced controls, confirming **IPTG-dependent expression**.  
 - Localization of the protein in the **soluble fraction** demonstrates correct folding and minimal aggregation.
 
 ---
 
-### TEM (VLP Assembly)
+#### TEM (VLP Assembly)
 
-- **Transmission Electron Microscopy (TEM)** revealed uniform particles of **~25–30 nm diameter**, consistent with expected MS2 VLP dimensions.  
+
+![alt text](https://static.igem.wiki/teams/5649/figures/vlp-comparison.webp)
+
+- **Transmission Electron Microscopy (TEM)** revealed uniform particles of **~25–30 nm diameter**, consistent with expected MS2 VLP dimensions. 
+![alt text](https://static.igem.wiki/teams/5649/figures/class-average-induced.webp)
 - **Class-averaging** confirmed the **icosahedral morphology** characteristic of MS2 capsids.  
+![alt text](https://static.igem.wiki/teams/5649/figures/vlp-comparison-2.webp)
 - No similar particles were present in uninduced controls, confirming that VLP assembly is **construct-dependent**.
 
 ---
 
-## Quantitative Performance & Robustness
+### Quantitative Performance & Robustness
 
 *(To be determined in future iterations.)*
 
 ---
 
-## Limitations & Iteration
+### Limitations & Iteration
 
 **Protein aggregation:**  
 A faint band at ~14 kDa was occasionally observed in pellet fractions, suggesting minor coat protein aggregation. Future work will optimize **induction conditions** (temperature, IPTG concentration, induction time) and refine **lysis protocols** to reduce aggregation.
@@ -105,7 +111,7 @@ Although experimental testing remains pending, this plasmid is fully designed an
 
 ---
 
-## Why This Part Is Useful for Future iGEM Teams
+### Why This Part Is Useful for Future iGEM Teams
 
 This composite part offers a **plug-and-play platform** for RNA encapsulation into stable MS2-based VLPs. Unlike most structural protein parts, it directly enables **functional downstream applications**, such as:
 
@@ -115,7 +121,7 @@ This composite part offers a **plug-and-play platform** for RNA encapsulation in
 
 By validating **expression**, **solubility**, and **VLP assembly**, we have provided a robust foundation for future teams to adapt this system to their specific goals. The **modular design** ensures that only the RNA cargo needs to be exchanged, making this a **widely reusable community resource**.
 
-### Documented Protocols
+#### Documented Protocols
 
 To ensure accessibility and reproducibility, we have documented every step—from transformation to final TEM validation—under:
 
@@ -134,7 +140,7 @@ Following these protocols will allow future teams to reproduce our results and a
 
 ---
 
-## Future Directions
+### Future Directions
 
 Building on this composite part, we have designed a **next-generation plasmid** encoding MS2 VLPs that encapsulate **EGFP RNA** alongside eukaryotic expression elements. This construct should enable VLPs produced in *E. coli* to package EGFP RNA, be internalized by eukaryotic cells, and express the fluorescent protein intracellularly.
 
