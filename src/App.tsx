@@ -8,11 +8,8 @@ import { Footer } from "./components/basic/Footer";
 
 // Content components TSX
 import { Home } from "./contents/home.tsx";
-import  ColorPalette  from "./contents/pallette.tsx";
 
 // Content components MDX
-import Test from "./mdx/test.mdx";
-import Todo from "./mdx/pages_todo.mdx";
 import HumanPractices from "./mdx/human_practices.mdx";
 import DryLab from "./mdx/dry_lab.mdx";
 
@@ -65,24 +62,6 @@ const Pages: NavItem[] = [
         title: "Attributions",
         path: "/attributions",
         component: Attributions,
-      },
-      {
-        name: "TODO",
-        title: "Pages To Do List",
-        path: "/todo",
-        component: Todo,
-      },
-      {
-        name: "test",
-        title: "test",
-        path: "/test",
-        component: Test,
-      },
-      {
-        name: "color palette",
-        title: "Color Palette",
-        path: "/color-palette",
-        component: ColorPalette,
       }
     ],
   },
@@ -119,9 +98,9 @@ const Pages: NavItem[] = [
     name: "wet lab",
     folder: [
       {
-        name: "experiment design",
-        title: "Experiment Design",
-        path: "/experiment-design",
+        name: "experiments",
+        title: "Experiments",
+        path: "/experiments",
         component: Experiments,
       },
       {
