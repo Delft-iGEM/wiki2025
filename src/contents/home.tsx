@@ -96,7 +96,7 @@ export function Home() {
                 alt="Four illustrated steps showing the Snaccine workflow from phage to immune response"
               />
               <figcaption className="text-sm text-muted-foreground">
-                Our vaccine will be delivered in  for of ready to use capsules.
+                Our vaccine will be delivered in ready-to-use capsules
               </figcaption>
             </figure>
           </div>
