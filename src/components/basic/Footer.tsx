@@ -13,34 +13,37 @@ export function Footer() {
     <footer className="bg-gradient-to-t from-accent-foreground  to-secondary text-secondary-foreground mt-16">
       <div className="max-container py-12">
         {/* Main footer content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-8">
           {/* About section */}
-          <div className="lg:col-span-1">
-            <FooterSection title="About Our Project">
+          <div className="lg:col-span-3">
+            <FooterSection title="about our project">
               <p className="text-secondary-foreground leading-relaxed">
-                We are developing innovative solutions in synthetic biology to address real-world challenges. 
-                Our team combines cutting-edge research with practical applications to make a positive impact.
+                <em>Snaccine</em> is a phage-based edible vaccine. 
+                Using bacteriophages in acid-resistant pills, we hijack
+                gut bacteria to produce an mRNA vaccine. <em>Snaccines</em> can be stored
+                at room temperature, where mRNA vaccines need ultra-cold storage.
+              <FooterLink href="./description"><b>Learn more...</b></FooterLink>
               </p>
             </FooterSection>
           </div>
 
           {/* Quick links */}
-          <div>
-            <FooterSection title="Quick Links">
-              <ul className="space-y-3">
-                <li><FooterLink href="./project">Project Overview</FooterLink></li>
-                <li><FooterLink href="./results">Results</FooterLink></li>
-                <li><FooterLink href="./safety-and-security">Safety</FooterLink></li>
-                <li><FooterLink href="./human-practices">Human Practices</FooterLink></li>
-                <li><FooterLink href="./members">Team Members</FooterLink></li>
-                <li><FooterLink href="./notebook">Lab Notebook</FooterLink></li>
+          <div className="lg:col-span-2">
+            <FooterSection title="quick links">
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-1">
+                <li><FooterLink href="./">home</FooterLink></li>
+                <li><FooterLink href="./description">project overview</FooterLink></li>
+                <li><FooterLink href="./results">results</FooterLink></li>
+                <li><FooterLink href="./safety-and-security">safety</FooterLink></li>
+                <li><FooterLink href="./human-practices">human practices</FooterLink></li>
+                <li><FooterLink href="./members">team members</FooterLink></li>
               </ul>
             </FooterSection>
           </div>
 
           {/* Contact information */}
-          <div>
-            <FooterSection title="Contact">
+          <div className="lg:col-span-1">
+            <FooterSection title="contact">
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <svg className="w-5 h-5 text-secondary-foreground opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,7 +64,7 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-  <div className="border-t border-border"></div>
+        <div className="border-t border-border"></div>
 
         {/* The following MUST be on every page: license information and link to the repository on gitlab.igem.org */}
         <div className="mt-8 space-y-4">
@@ -69,7 +72,7 @@ export function Footer() {
             <div className="text-sm text-secondary-foreground opacity-80">
               <p>
                 © {new Date().getFullYear()} - Content on this site is licensed under a{" "}
-                <FooterLink 
+                <FooterLink
                   href="https://creativecommons.org/licenses/by/4.0/"
                   external
                 >
@@ -86,7 +89,7 @@ export function Footer() {
           <div className="text-sm text-secondary-foreground opacity-80">
             <p>
               The repository used to create this website is available at{" "}
-              <FooterLink 
+              <FooterLink
                 href={`https://gitlab.igem.org/${teamYear}/${teamSlug}`}
                 external
               >

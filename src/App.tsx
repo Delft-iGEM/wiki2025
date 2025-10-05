@@ -17,6 +17,7 @@ import DryLab from "./mdx/dry_lab.mdx";
 // Team
 import Members from "./mdx/team/members.mdx";
 import Attributions from "./contents/attributions.tsx";
+import Sponsors from "./mdx/team/sponsors.mdx";
 
 //Project
 import Description from "./mdx/project/description.mdx";
@@ -48,22 +49,6 @@ const Pages: NavItem[] = [
     title: "Home",
     path: "/",
     component: Home,
-  },
-  {
-    name: "team",
-    folder: [{
-      name: "members",
-      title: "Meet Our Team",
-      path: "/members",
-      component: Members,
-    },
-    {
-      name: "attributions",
-      title: "Attributions",
-      path: "/attributions",
-      component: Attributions,
-    }
-    ],
   },
   {
     name: "project",
@@ -199,6 +184,28 @@ const Pages: NavItem[] = [
   //     },
   //   ],
   // },
+
+  {
+    name: "team",
+    folder: [{
+      name: "members",
+      title: "Meet Our Team",
+      path: "/members",
+      component: Members,
+    },
+    {
+      name: "attributions",
+      title: "Attributions",
+      path: "/attributions",
+      component: Attributions,
+    },
+    {
+      name: "sponsors",
+      title: "Our Sponsors",
+      path: "/sponsors",
+      component: Sponsors,
+    },],
+  },
 ];
 
 

@@ -134,7 +134,7 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
             id="primary-nav"
             className="hidden lg:flex items-center gap-x-4"
           >
-            {pages.map((item, pageIndex) => {
+            {pages.filter((item) => !("path" in item && item.path === "/")).map((item, pageIndex) => {
               if ("folder" in item && item.folder) {
                 return (
                   <li
@@ -222,7 +222,7 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
       {/* Mobile menu */}
       <div className={`lg:hidden ${mobileOpen ? "block" : "hidden"}`}>
         <div className="space-y-1 px-4 pb-4 pt-2">
-          {pages.map((item, pageIndex) => {
+          {pages.filter((item) => !("path" in item && item.path === "/")).map((item, pageIndex) => {
             if ("folder" in item && item.folder) {
               const expanded = openDropdown === pageIndex;
               return (
