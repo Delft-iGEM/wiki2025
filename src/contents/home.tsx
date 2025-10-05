@@ -51,7 +51,7 @@ export function Home() {
           <div className="space-y-6 text-balance">
             <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">TU Delft iGEM 2025</p>
             <h1 className="text-4xl font-semibold tracking-tight text-primary sm:text-5xl lg:text-6xl">
-              Snaccine: oral mRNA vaccines grown by phages
+              Snaccine: oral mRNA vaccines synthesized by phages
             </h1>
             <p className="max-w-2xl text-lg text-muted-foreground">
               We harness engineered bacteriophages living in the gut to grow protected mRNA vaccines right where
