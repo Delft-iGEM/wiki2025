@@ -249,7 +249,7 @@
   }
 
   .comparison-table thead th {
-    @apply bg-muted/60 text-left text-lg font-semibold tracking-wide px-6 py-4 border border-border;
+    @apply bg-muted/60 text-left text-lg tracking-wide px-6 py-4 border border-border font-normal;
   }
 
   .comparison-table tbody th {
@@ -993,4 +993,59 @@
   font-style: italic;
   src: url("https://static.igem.wiki/teams/5649/maplemono/maplemono-italic-wght-vf.woff2")
     format("woff2");
+}
+
+/* Table cell styles */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 12px 16px;
+  border: 1px solid black;
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  border-left: none;
+}
+
+.comparison-table th:last-child,
+.comparison-table td:last-child {
+  border-right: none;
+}
+
+.comparison-table thead tr:first-child th {
+  border-top: none;
+}
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.redcell {
+  background-color: #ffcccc;
+  text-align: center;
+}
+
+.orangecell {
+  background-color: #ffe6cc;
+  text-align: center;
+}
+
+.greencell {
+  background-color: #ccffcc;
+  text-align: center;
+}
+
+.toprowcell {
+  background-color: white;
+  padding: 12px 16px;
+}
+
+.advantagecell {
+  text-align: right;
+  background-color: white;
 }

@@ -144,17 +144,50 @@ of killing all birds on an infected farm instead.
 
 </Dropdown>
 
-| Comparison | Traditional | mRNA | Snaccine |
-|---:|:---:|:---:|:---:|
-| Development | Years | **Days**  | **Days**  |
-| Infection risk | Some | **None** | **None** |
-| Storage & transport | Generally fridge | Ultra-cold | **Room temperature** |
-| Production cost | Low to high | High | **Low** |
-| Administration | Various, some oral | Injection | **Oral** |
+<table className="comparison-table">
+	<thead>
+	<tr className="header">
+	<th className="toprowcell" style={{textAlign: "left", fontWeight: "bold"}}>Advantages</th>
+	<th className="toprowcell">traditional</th>
+	<th className="toprowcell">mRNA</th>
+	<th className="toprowcell" style={{fontWeight: "bold"}}>snaccine</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td className="advantagecell">Development</td>
+	<td className="redcell">Years</td>
+	<td colSpan="2" className="greencell">Days</td>
+	</tr>
+	<tr>
+	<td className="advantagecell">Infection risk</td>
+	<td className="redcell">Some</td>
+	<td colSpan="2" className="greencell">None</td>
+	</tr>
+	<tr>
+	<td className="advantagecell">Storage & transport</td>
+	<td className="orangecell">Mostly fridge</td>
+	<td className="redcell">Ultra-cold</td>
+	<td className="greencell">Room temperature</td>
+	</tr>
+	<tr>
+	<td className="advantagecell">Production cost</td>
+	<td className="orangecell">Some low</td>
+	<td className="redcell">High</td>
+	<td className="greencell">Low</td>
+	</tr>
+	<tr>
+	<td className="advantagecell">Administration</td>
+	<td className="orangecell">Some oral</td>
+	<td className="redcell">Injection</td>
+	<td className="greencell">Oral, at home</td>
+	</tr>
+	</tbody>
+</table>
 
 <Dropdown header={
 	<span>snaccine</span>
-} level={0} defaultOpen color="--primary">
+} level={0} defaultOpen border="5px solid var(--primary)" color="--background">
 
 This is where our vaccine comes in. At heart Snaccines are mRNA
 vaccines, but the factory is inside the gut.

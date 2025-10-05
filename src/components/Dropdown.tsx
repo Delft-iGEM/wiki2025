@@ -18,6 +18,8 @@ export type DropdownProps = {
   readonly level?: 0 | 1 | 2 | 3;
   /** CSS variable for dropdown background color (e.g., "--section") */
   readonly color?: string;
+  /** Border style properties for the dropdown */
+  readonly border?: React.CSSProperties['border'];
 };
 
 export type DropdownGroupProps = {
@@ -44,6 +46,8 @@ export type DropdownItemProps = {
   readonly level?: 0 | 1 | 2 | 3;
   /** CSS variable for dropdown background color (e.g., "--section") */
   readonly color?: string;
+  /** Border style properties for the dropdown */
+  readonly border?: React.CSSProperties['border'];
 };
 
 /**
@@ -58,8 +62,14 @@ export function Dropdown({
   value,
   level = 0,
   color = "--section",
+  border,
 }: DropdownProps) {
   const itemValue = value ?? "item";
+
+  const itemStyle: React.CSSProperties & { [key: string]: any } = {
+    "--dropdown-color": `var(${color})`,
+    ...(border && { border }),
+  };
 
   return (
     <AccordionPrimitive.Root
@@ -71,17 +81,18 @@ export function Dropdown({
       <AccordionPrimitive.Item 
         value={itemValue} 
         className={cn("dropdown-item", `dropdown-level-${level}`)}
-        style={{ "--dropdown-color": `var(${color})` } as React.CSSProperties}
+        style={itemStyle}
       >
         <AccordionPrimitive.Header className="flex">
           <AccordionPrimitive.Trigger
             className={cn(
               "accordion-trigger",
+              "flex justify-between items-center w-full",
               "data-[state=open]:",
             )}
           >
             {header}
-            <ChevronDownIcon className="dropdown-icon" />
+            <ChevronDownIcon className="dropdown-icon w-6 h-6" />
           </AccordionPrimitive.Trigger>
         </AccordionPrimitive.Header>
         <AccordionPrimitive.Content className={cn("accordion-content")}>
@@ -139,17 +150,23 @@ export function DropdownItem({
   value,
   level = 0,
   color = "--section",
+  border,
 }: DropdownItemProps) {
+  const itemStyle: React.CSSProperties & { [key: string]: any } = {
+    "--dropdown-color": `var(${color})`,
+    ...(border && { border }),
+  };
+
   return (
     <AccordionPrimitive.Item
       value={value}
       className={cn("dropdown-item", `dropdown-level-${level}`)}
-      style={{ "--dropdown-color": `var(${color})` } as React.CSSProperties}
+      style={itemStyle}
     >
       <AccordionPrimitive.Header className="flex">
-        <AccordionPrimitive.Trigger className={cn("accordion-trigger")}>
+        <AccordionPrimitive.Trigger className={cn("accordion-trigger", "flex justify-between items-center w-full")}>
           {header}
-          <ChevronDownIcon className="dropdown-icon" />
+          <ChevronDownIcon className="dropdown-icon w-6 h-6" />
         </AccordionPrimitive.Trigger>
       </AccordionPrimitive.Header>
       <AccordionPrimitive.Content className={cn("accordion-content")}>
