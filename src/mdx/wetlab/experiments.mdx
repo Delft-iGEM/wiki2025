@@ -8,154 +8,216 @@ experimental design and methodology for our wetlab work
 
 <Content items="left">
 <AccentLine/>
-## Introduction
+# Experiment Design: Introduction
 
-To build the **Snaccine platform**, we split our experimental workflow into parallel modules. This modular approach allows us to answer specific scientific questions independently, while also creating interlinked pipelines where progress in one module accelerates development in others. By doing so, we can optimize efficiency, reduce dependencies, and generate reliable data at different stages of phage engineering, stability testing, VLP production, delivery, and immunogenicity. 
+To build the **Snaccine** platform, we split our experimental workflow into **parallel modules**. This modular approach allows us to answer specific scientific questions independently, while also creating interlinked pipelines where progress in one module accelerates development in others. By doing so, we can optimize efficiency, reduce dependencies, and generate reliable data at different stages of **phage engineering, stability testing, VLP production, delivery, and immunogenicity**.
 
-### Module A – T7 Engineering via PHEIGES
-Here we establish the foundations of working with bacteriophage T7.  
+Each module has a distinct focus:
 
-- **A1 (Phage Training):** Master plaque assays, quantification (PFU/mL), and DNA purification—skills essential for later experiments.  
-- **A2 (eGFP Tagging):** Insert an eGFP reporter into the T7 genome using the PHEIGES workflow. This demonstrates that genome engineering is possible without compromising infectivity, while also producing fluorescently labeled phages for downstream tracking.  
+---
 
-<Dropdown header="Read more" level={4}>
-    Experiments for module A
-  </Dropdown>
+## Module A – T7 Engineering via PHEIGES
 
+Here we establish the foundations of working with bacteriophage **T7**.  
+- **A1 (Phage Training):** master plaque assays, quantification (**PFU/mL**), and DNA purification—skills essential for later experiments.  
+- **A2 (eGFP Tagging):** insert an **eGFP** reporter into the T7 genome using the **PHEIGES** workflow. This demonstrates that genome engineering is possible without compromising infectivity, while also producing fluorescently labeled phages for downstream tracking.
 
-### Module B – Storage & Stability
-This module explores how T7 behaves in environments that mimic food storage and the gastrointestinal tract.  
+---
 
-- **B1:** Test viability across conditions of salinity, temperature, and moisture to see if encapsulation is necessary.  
-- **B2:** Investigate survival in simulated gastric and intestinal fluids, revealing whether protective coatings are required for oral delivery.  
+## Module B – Storage & Stability
 
-*Both depend on plaque assay techniques from Module A1.*  
+Explore how **T7** behaves in environments that mimic food storage and the gastrointestinal tract.  
+- **B1:** test viability across **salinity, temperature, and moisture** to see if encapsulation is necessary.  
+- **B2:** investigate survival in **simulated gastric and intestinal fluids**, revealing whether protective coatings are required for oral delivery.  
+Both depend on plaque assay techniques from **Module A1**.
 
-<Dropdown header="Read more" level={4}>
-    Experiments for module B
-  </Dropdown>
+---
 
-### Module C – VLP Production with Plasmid
-Test whether *E. coli* can express and assemble MS2 virus-like particles (VLPs) from a synthetic plasmid under T7 promoter control.  
+## Module C – VLP Production with Plasmid
 
-- Confirm expression and folding via **SDS-PAGE** and **TEM imaging**.  
-- Successful results validate plasmid design and establish a foundation for transferring VLP production into engineered phages.  
+Test whether **_E. coli_** can express and assemble **MS2 virus-like particles (VLPs)** from a synthetic plasmid under **T7 promoter** control. Expression and folding are confirmed by **SDS-PAGE** and **TEM** imaging. Successful results validate our plasmid design and establish a foundation for transferring VLP production into engineered phages.
 
-<Dropdown header="Read more" level={4}>
-    ##### Validation of Vaccine Platform Design
+---
 
-    To validate our vaccine platform design, we first needed to demonstrate that *E. coli* can express MS2 virus-like particles (VLPs) from a synthetic plasmid construct.  
-    This plasmid encodes a fusion of the **MS2 maturase (A protein)** and **coat protein** under control of a **T7 promoter**.  
+## Module D – VLP Delivery to Mammalian Cells
 
-    Ultimately, this design will be integrated into the genome of our engineered bacteriophage for vaccine production in the gut.  
-    However, before taking this step, it was essential to establish a proof-of-concept: that the genetic design is functional in a standard *E. coli* expression system.  
+VLPs from **Module C** are tested for their ability to **deliver genetic cargo into eukaryotic cells**. This step evaluates uptake efficiency and expression, bridging microbial engineering with mammalian immunology.
 
-    ---
+---
 
-    #### 1. Plasmid Design and Construction
+## Module AC – Phage/VLP Co-Production
 
-    *Trwa wstawianie obrazu…*  
+Combine **Modules A and C** by equipping engineered **T7** phages with **VLP cargo genes**. The goal is to demonstrate that **phage infection** can drive bacterial production of VLPs with packaged mRNA, confirming that the two modular strategies can converge into a single workflow.
 
-    **Figure 1.** Plasmid map of our engineered construct (**pET-Kan-T7lac-mat-MS2cp**) containing the promoter, maturase gene, MS2 coat protein, and MS2 RNA stem loop.  
+---
 
-    **Figure 2.** Linear schematic of the synthetic insert we designed, showing the promoter, maturase, MS2 coat protein, and RNA loop before insertion into the plasmid backbone.  
+## Module E – Immunogenicity Assays
 
-    ---
+With purified VLPs (and eventually phage-driven VLPs), assess immune responses.  
+- **E1:** do APC maturation assays upon exposure.  
+- **E2:** examine **cytokine/chemokine release**, ensuring safety by defining tolerable doses and identifying risks of unwanted inflammation.
 
-    #### 2. Transformation into BL21(DE3) Cells
+---
 
-    - **Host choice:** BL21(DE3) cells carry the T7 RNA polymerase gene under the lacUV5 promoter, enabling strong expression with IPTG induction.  
-    - **Method:** Heat shock transformation. Competent *E. coli* cells were briefly exposed to a temperature shock to allow plasmid entry.  
-    - **Selection:** Cells were plated on **LB + kanamycin**, ensuring only plasmid-bearing colonies survived.  
-    - **Outcome:** Colonies were picked for overnight culture and subsequent protein expression.  
+## Module F – Vaccine Extension (Bird Flu Case Study)
 
-    ---
+Apply insights from all modules to design a practical **avian influenza** vaccine candidate. This demonstrates the translational potential of Snaccine beyond proof-of-concept, while addressing **manufacturability, safety, and immunogenicity**.
 
-    #### 3. Overnight Culture and Protein Expression Induction
+---
 
-    - Single colony grown overnight in **LB + kanamycin** (16 h, 37 °C).  
-    - Plasmid DNA isolated and sequenced to confirm construct integrity.  
-    - Culture diluted 1:50 into fresh LB + kanamycin until **OD₆₀₀ ≈ 0.4–0.6**.  
-    - **Protein expression induced with IPTG.**
+By progressing through these modules in parallel, we created a **flexible and scalable experimental platform**. Each module generated independent insights while also feeding into the broader Snaccine pipeline—from **phage engineering** to **real-world vaccine applications**.
 
-    #### Table 2. Proposed Induction Conditions for MS2 CP–A Fusion
+---
 
-    | Culture ID | IPTG Conc. (mM) | Temp (°C) | Induction Time | Notes |
-    |------------|-----------------|-----------|----------------|-------|
-    | NC (no IPTG) | 0.0 | 37 | 4 h | Negative control |
-    | Standard | 0.5 | 37 | 4 h | Positive control |
-    | 1 | 0.1 | 37 | 4 h | Lower inducer (test folding) |
-    | 2 | 1.0 | 37 | 4 h | High inducer |
-    | 3 | 0.5 | 30 | 6 h | Moderate IPTG, lower temp |
-    | 4 | 0.5 | 18 | ~16 h | Overnight induction |
+# Module A
 
-    **Chosen condition (Suggested by an expert):** *0.4 mM IPTG, 17 °C, 16 h (overnight).*  
-    This slower expression strategy reduced aggregation and improved folding.  
+## Keywords
+- **PCR**
+- **Gibson Assembly**
+- **BL21 _E. coli_ transformation**
+- **mCherry**
 
-    ---
+## General goal of the module (for Project Description section)
 
-    #### 4. Harvest and Lysis
+### Link to motivation for the project
+Phage engineering has a long history and remains challenging. Most methods rely on **homologous recombination**, which can be inefficient and difficult.
 
-    - Cultures (induced + uninduced) harvested by centrifugation.  
-    - Cells resuspended in **NaNO₃ + PMSF** buffer.  
-    - Initial lysis with lysozyme + sonication → false-positive band (~40 kDa) from lysozyme.  
-    - Revised method: **sonication only** → clear detection of MS2 VLP proteins in the induced supernatant, absent in controls.  
+**For the aim of the project, we need to:**
+- Show we can **engineer phages**.  
+- Demonstrate **functional insertions** of a gene of interest.  
+- Establish freedom to add **larger constructs** into the phage genome, reflecting bigger antigen size and potential regulatory factors.
 
-    ---
+### Link to previous iGEM projects aims
+We build on prior work—**Phocus** and **Phaccine**—as prime inspirations.
 
-    #### 5. SDS-PAGE Gel Electrophoresis
+**What we took from them**
+- Identification of **two insertion sites** for gene integration.  
+- Refined via research on **PHEIGES**; consultation with **Rita (SB Lab)** suggested **Gibson Assembly** with a modified transformation protocol to engineer phages.
 
-    - Samples: total lysate, supernatant (soluble), pellet (insoluble).  
-    - Normalized protein concentrations via **Bradford assay**.  
-    - **Expected band:** 13.7 kDa (MS2 coat protein).  
-    - Results: clear band at 13.7 kDa in **induced supernatant only**, showing soluble protein expression.  
+## Results (for Project Results section)
+- **Fragment production:** PCR of T7 → gel.  
+- **Assembly with GA:** PCR analysis, sequencing, and plaque assay.  
+- **Functionality of mini vs. WT.**  
+- **Functionality of mCherry-inserted constructs.**  
+- **Confirmation of mCherry fluorescence.**
 
-    ---
+## Lab details (for Wet Lab section)
 
-    #### 6. PEG Precipitation of VLPs
+### PCR
+- **Primer design**  
+- **Q5** and **RepliQa** polymerase protocols  
+- **General workflow description**  
+- **Example pipetting scheme**  
+- **Example thermocycler scheme**  
+- **Table** of all primers and polymerases used for each fragment (modeled on **PHEIGES** supplementary)
 
-    - PEG used to precipitate and enrich assembled VLPs from supernatant.  
-    - Centrifugation yielded visible protein pellet enriched in capsids.  
-    - Pellet resuspended in buffer for downstream analysis.  
+### Additional comments
 
-    ---
+#### Gibson Assembly
+- **Protocol**  
+- **General workflow description**  
+- **Pipetting scheme example**  
+- **Table** of assembly variants tested
 
-    #### 7. TEM Imaging
+#### Phage rebooting (modified heat-shock transformation of BL21)
+- **General workflow**  
+- **Biorender figure** showing all steps
 
-    - Samples from PEG-precipitated supernatant prepared on carbon-coated copper grids.  
-    - Negative staining with uranyl acetate for contrast.  
-    - TEM confirmed **spherical/icosahedral VLPs (~27 nm diameter)**, consistent with correctly assembled MS2 particles.  
+#### DNA AGE
+- **General workflow**  
+- **Software imaging**
 
-    ---
+#### Plaque Assays (confirm phage rebooting)
+- **Workflow description**  
+- **Method to count number of phages**
 
-  </Dropdown>
+#### Fluorescence Assays
+- (Details to be added)
 
-### Module D – VLP Delivery to Mammalian Cells
-VLPs from Module C are tested for their ability to deliver genetic cargo into eukaryotic cells.  
+---
 
-- Evaluate uptake efficiency and expression.  
-- Bridge microbial engineering with mammalian immunology.  
+# Module B
+_To be added…_
 
-<Dropdown header="Read more" level={4}>
-    Experiments for module A
-  </Dropdown>
+---
 
-### Module A+C – Phage/VLP Co-Production
-This integrative module combines Modules A and C by equipping engineered T7 phages with VLP cargo genes.  
+# Module C
+_*Idea: make each step clickable to reveal a detailed explanation/results._
 
-- Demonstrate that phage infection can drive bacterial production of VLPs with packaged mRNA.  
-- Confirm that the two modular strategies converge into a single workflow.  
+## Introduction to Module C
+To validate our vaccine platform design, we first needed to demonstrate that **_E. coli_** can express **MS2 VLPs** from a synthetic plasmid construct. This plasmid encodes a **fusion of the MS2 maturase (A protein) and coat protein** under control of a **T7 promoter**. Ultimately, this design will be **integrated into the genome** of our engineered bacteriophage for vaccine production in the gut. Before that, we established a **proof-of-concept** in a standard _E. coli_ expression system.
 
+---
 
-### Module E – Immunogenicity Assays
-With purified VLPs (and eventually phage-driven VLPs), we assess immune responses.  
+## 1. Plasmid Design and Construction
+*(Duncan will add the design process description)*
 
-- **E1:** Investigate whether antigen-presenting cells (APCs) mature upon exposure.  
-- **E2:** Examine cytokine and chemokine release, ensuring safety by defining tolerable doses and identifying risks of unwanted inflammation.  
+_Trwa wstawianie obrazu…_
 
-<AccentLine/>
+**Figure 1.** Plasmid map of engineered construct (**pET-Kan-T7lac-mat-MS2cp**) containing promoter, maturase gene, MS2 coat protein, and MS2 RNA stem loop.
 
-By progressing through these modules in parallel, we create a **flexible and scalable experimental platform**. Each module generates independent insights while also feeding into the broader Snaccine pipeline - from phage engineering to real-world vaccine applications.
+**Figure 2.** Linear schematic of the synthetic insert (promoter, maturase, MS2 coat protein, RNA loop) before insertion into the plasmid backbone.
+
+---
+
+## 2. Transformation into BL21(DE3) Cells
+We chose **BL21(DE3)** as host because they carry **T7 RNA polymerase** under **lacUV5** control, enabling high-level expression upon **IPTG** induction.
+
+The plasmid **pET-MS2 (Kan^R)** was introduced via **heat-shock transformation**. Transformants were selected on **LB + kanamycin** plates. Colonies were picked for **overnight cultures** and downstream expression.
+
+---
+
+## 3. Overnight Culture and Protein Expression Induction
+- Single colony → **LB + kanamycin**, **16 h**, **37 °C**.  
+- Plasmid miniprep → **sequencing** to confirm integrity.  
+- Dilute **1:50** into fresh LB + Kan, grow to **OD₆₀₀ ≈ 0.4–0.6**.  
+- Induce with **IPTG** under multiple conditions.
+
+**Table 2. Proposed Induction Conditions (example for MS2 CP–A fusion)**
+
+| Culture ID | IPTG Conc. (mM) | Induction Temp (°C) | Induction Time | Notes |
+| --- | ---: | ---: | --- | --- |
+| NC (no IPTG) | 0 | 37 | 4 h | Negative control |
+| standard | 0.5 | 37 | 4 h (OD ~2–3) | Positive control |
+| 1 | 0.1 | 37 | 4 h | Lower inducer (folding test) |
+| 2 | 1.0 | 37 | 4 h | High inducer (max expression) |
+| 3 | 0.5 | 30 | 6 h | Lower temp |
+| 4 | 0.5 | 18 | ~16 h (ON) | Low temp, overnight |
+
+**Chosen condition (expert-guided):** **0.4 mM IPTG**, **17 °C**, **16 h (overnight)** to favor soluble, correctly folded VLP proteins.
+
+---
+
+## 4. Harvest and Lysis
+- Harvest induced & control cultures; resuspend in **NaNO₃ + PMSF**.  
+- Initial lysis: **lysozyme + sonication** → **confounded SDS-PAGE** (lysozyme band ~40 kDa overlapped signals).  
+- Revised lysis: **sonication-only** → clear detection of **MS2 VLP** band in **induced supernatant** (absent in controls/pellet).  
+- Conclusion: successful **soluble expression** suitable for PEG precipitation & **TEM**.
+
+---
+
+## 5. SDS-PAGE Gel Electrophoresis
+- Analyze **total lysate**, **supernatant**, **pellet**; normalize by **Bradford**.  
+- Target band: **MS2 coat protein ~13.7 kDa**.  
+- Result: **distinct 13.7 kDa band** in **induced supernatant only** → majority of protein is **soluble**, supporting proper folding/assembly.
+
+---
+
+## 6. PEG Precipitation of VLPs
+- Apply **PEG** to clarified supernatant to **concentrate/enrich** VLPs.  
+- Collect precipitate by **centrifugation**; resuspend in buffer.  
+- Outcome: visible **protein pellet** consistent with VLP enrichment → ready for **TEM** analysis.
+
+---
+
+## 7. TEM Imaging
+Confirm assembly via **Transmission Electron Microscopy**:
+
+- Grid: **carbon-coated copper**, **negative stain** (e.g., uranyl acetate).  
+- Expect **spherical/icosahedral** particles, **~27 nm** diameter.  
+- Direct visualization of morphology validates correct **VLP assembly**.
+
+these modules in parallel, we create a **flexible and scalable experimental platform**. Each module generates independent insights while also feeding into the broader Snaccine pipeline - from phage engineering to real-world vaccine applications.
 
 </Content>
 
