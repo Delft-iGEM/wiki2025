@@ -228,7 +228,7 @@
 
   /* Generic pieces applied to both single and grouped items */
   .dropdown-item {
-    @apply border-b last:border-b-0 rounded-md overflow-hidden mb-2;
+    @apply rounded-md overflow-hidden mb-2;
     background-color: var(--dropdown-color, var(--section));
   }
 
