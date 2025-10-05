@@ -54,7 +54,7 @@ export function Home() {
               Snaccine: oral mRNA vaccines synthesized by phages
             </h1>
             <p className="max-w-2xl text-lg text-muted-foreground">
-              We harness engineered bacteriophages living in the gut to grow protected mRNA vaccines right where
+              We harness engineered bacteriophages living in the gut to produce protected mRNA vaccines right where
               they are needed. The result is a stable, low-cost, needle-free platform to shield poultry and people
               from fast-moving influenza outbreaks.
             </p>
