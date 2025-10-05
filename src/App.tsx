@@ -25,11 +25,11 @@ import Results from "./mdx/project/results.mdx";
 import Contribution from "./mdx/project/contribution.mdx";
 
 //wetlab
-import  Experiments  from "./mdx/wetlab/experiments.mdx";
-import  Parts  from "./mdx/wetlab/parts.mdx";
-import  Protocols  from "./mdx/wetlab/protocols.mdx";
-import  Safety  from "./mdx/wetlab/safety.mdx";
-import  Notebook  from "./mdx/wetlab/notebook.mdx";
+import Experiments from "./mdx/wetlab/experiments.mdx";
+import Parts from "./mdx/wetlab/parts.mdx";
+import Protocols from "./mdx/wetlab/protocols.mdx";
+import Safety from "./mdx/wetlab/safety.mdx";
+import Notebook from "./mdx/wetlab/notebook.mdx";
 
 
 
@@ -52,17 +52,17 @@ const Pages: NavItem[] = [
   {
     name: "team",
     folder: [{
-        name: "members",
-        title: "Meet Our Team",
-        path: "/members",
-        component: Members,
-      },
-      {
-        name: "attributions",
-        title: "Attributions",
-        path: "/attributions",
-        component: Attributions,
-      }
+      name: "members",
+      title: "Meet Our Team",
+      path: "/members",
+      component: Members,
+    },
+    {
+      name: "attributions",
+      title: "Attributions",
+      path: "/attributions",
+      component: Attributions,
+    }
     ],
   },
   {
@@ -129,6 +129,12 @@ const Pages: NavItem[] = [
       },
     ],
   },
+  {
+    name: "dry lab",
+    title: "Dry Lab",
+    path: "/dry-lab",
+    component: DryLab,
+  },
   // {
   //   name: "Dry Lab",
   //   folder: [
@@ -153,17 +159,11 @@ const Pages: NavItem[] = [
   //   ],
   // },
   {
-        name: "human practices",
-        title: "Human Practices",
-        path: "/human-practices",
-        component: HumanPractices,
+    name: "human practices",
+    title: "Human Practices",
+    path: "/human-practices",
+    component: HumanPractices,
   },
-        {
-        name: "dry lab",
-        title: "Dry Lab",
-        path: "/dry-lab",
-        component: DryLab,
-      },
   // {
   //   name: "Engagement",
   //   folder: [
