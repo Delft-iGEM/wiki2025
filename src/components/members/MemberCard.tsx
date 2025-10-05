@@ -1,11 +1,11 @@
-type Props = {
+type Props = Readonly<{
   firstName: string;
   lastName: string;
   role?: string;
   src: string;     // e.g. "/team/alice.jpg"
   alt?: string;
   bordered?: boolean; // new optional prop to show gradient border
-};
+}>;
 
 export default function MemberCard({ firstName, lastName, role, src, alt, bordered }: Props) {
   const image = (
