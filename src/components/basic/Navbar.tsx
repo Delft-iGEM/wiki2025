@@ -6,6 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { Console } from "console";
 
 interface BaseItem { name?: string }
 interface PageItem extends BaseItem { path?: string; title?: string; component?: React.FC; lead?: string }
@@ -65,7 +66,7 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
         <div className="flex h-15 items-center justify-between">
           {/* Brand */}
           <Link
-            to="/"
+            to="/../tu-delft/"
             className="text-base font-semibold tracking-wide text-foreground hover:text-primary"
             onClick={closeMobile}
           >
