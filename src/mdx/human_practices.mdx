@@ -1,4 +1,6 @@
 import { Content, Header, AccentLine, Dropdown, IHPTimeline } from "@/components";
+import DownstreamPurificationFlow from "../components/text/downstream_purification_flow";
+
 
 <Header>
 # human practices
@@ -214,7 +216,9 @@ innovation begins with understanding
 
     To address public perception and ensure our message was clear and accessible, we consulted with science communicator **Dr. Charlotte Koster**. She advised us to frame Snaccine within a clear storytelling arc and to segment our audience, focusing our efforts on providing "proper information" to the large, undecided group of the public that is open to hearing both the pros and cons. She also recommended a two-way communication approach. Taking her advice, we implemented an iterative feedback loop to test public perception. We interviewed 12 members of the general public from diverse backgrounds about their views on Snaccine and what questions it raised. We collected those questions and provide clear answers in the Iteration Loop 6 of our iHP section.
     </Dropdown>
-    
+
+    <IHPTimeline />
+
     ## **Our Project's Design Pivots**
 
     Our project evolved through a series of critical design pivots, driven by integrating feedback from multiple sources.
@@ -272,7 +276,7 @@ innovation begins with understanding
     **Pivotal Change: From Theoretical Design to a Proactive Manufacturing Blueprint**
 
     Based on this input, we outlined a multi-step downstream purification process to achieve a safe and pure final product:
-    !!Add Purification Process!!
+    <DownstreamPurificationFlow />
 
     </Dropdown>
     <Dropdown header = "Iteration Loop 5: From a Product Concept to a User-Defined Formulation Challenge" level={0}>
@@ -412,5 +416,5 @@ innovation begins with understanding
     Ultimately, the development of the Snaccine platform became a parallel journey in developing our own framework as responsible innovators. The future of this technology depends not only on the science we engineer into it, but on the dialogue, trust, and ethical stewardship we build around it.
     </Dropdown>
 </Content>
-<IHPTimeline />
+
 
