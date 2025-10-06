@@ -60,6 +60,17 @@ export const sponsors = [
         url: "https://www.snapmaker.com",
         logo: "https://static.igem.wiki/teams/5649/sponsorlogos/snapmaker-logo.webp",
         description: "Snapmaker is a technology company best known for its modular, multifunctional desktop fabrication machines. Their 3-in-1 devices combine 3D printing, laser engraving, and CNC carving into one system, allowing users to switch toolheads quickly. Snapmaker's hardware is all-metal and designed to be extendable, and they offer accompanying software (Luban) to control all functions in a unified workflow."
+    },
+    {
+        name: "Our generous donors",
+        url: "https://www.supporttudelft.nl/project/title-2",
+        logo: "https://static.igem.wiki/teams/5649/svg/mainlogowithsubtitle.svg",
+        description:
+        <>We are deeply grateful to everyone who supported our crowdfunding campaign.
+        Your contributions made our project possible - thank you for believing in us!<br />
+        <b>€583</b> raised from:<br />Jeffrel Hermias, Teco Energy, Arent Kievits, Linde Kapinga,
+        Jakub Pietrzak, Jaap Overal, Lotte Zwart, Karel As, Maarten Lugt, Roy Meijer,
+        Esther van Kan, Lewis S., Josh Flack, and 3 anonymous donors.</>,
     }
 ];
 
@@ -69,62 +80,58 @@ supporting innovation in synthetic biology
 </Header>
 
 <Content items="center" wide>
+    {/* Hero Section */}
+    <div className="relative overflow-hidden pb-8 text-center">
+    
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Partnership & Innovation
+        </h2>
+        <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            We are deeply grateful to our sponsors whose generous support makes our research and innovation possible. 
+            Their commitment to advancing synthetic biology and supporting student-driven research is invaluable to the success of Team TU Delft.
+        </p>
+        <AccentLine className="mx-auto" />
+        
+    </div>
 
-    <div className="space-y-16">
-        {/* Hero Section */}
-        <div className="relative overflow-hidden  p-12 text-center">
-            <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
-            <div className="relative space-y-6">
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    Partnership & Innovation
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-                    We are deeply grateful to our sponsors whose generous support makes our research and innovation possible. 
-                    Their commitment to advancing synthetic biology and supporting student-driven research is invaluable to the success of Team TU Delft.
-                </p>
-                <AccentLine className="mx-auto" />
-            </div>
-        </div>
-
-        {/* Sponsors Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {sponsors.map((sponsor, index) => (
-                <a 
-                    key={index}
-                    href={sponsor.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="group relative overflow-hidden flex flex-col items-center p-8 bg-card rounded-3xl border border-border transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:border-primary/30 hover:bg-gradient-to-br hover:from-primary/5 hover:to-accent/5"
-                >
-                    {/* Decorative elements */}
-                    <div className="absolute -top-6 -right-6 h-20 w-20 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12"></div>
-                    <div className="absolute -bottom-4 -left-4 h-12 w-12 rounded-full bg-gradient-to-br from-accent/10 to-primary/10 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12"></div>
-                    
-                    <div className="relative flex items-center justify-center h-28 w-full mb-6 rounded-2xl bg-gradient-to-br from-background/50 to-card/50 backdrop-blur-sm border border-border/50 group-hover:border-primary/20 transition-all duration-300">
-                        <img
-                            src={sponsor.logo}
-                            alt={sponsor.name}
-                            className="max-h-20 w-auto object-contain transition-all duration-300 group-hover:scale-110 filter group-hover:brightness-110"
-                        />
+    {/* Sponsors Grid */}
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {sponsors.map((sponsor, index) => (
+            <a 
+                key={index}
+                href={sponsor.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden flex flex-col items-center p-8 bg-card rounded-3xl border border-border transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:border-primary/30 hover:bg-gradient-to-br hover:from-primary/5 hover:to-accent/5"
+            >
+                {/* Decorative elements */}
+                <div className="absolute -top-6 -right-6 h-20 w-20 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12"></div>
+                <div className="absolute -bottom-4 -left-4 h-12 w-12 rounded-full bg-gradient-to-br from-accent/10 to-primary/10 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12"></div>
+                
+                <div className="relative flex items-center justify-center h-28 w-full mb-6 rounded-2xl bg-gradient-to-br from-background/50 to-card/50 backdrop-blur-sm border border-border/50 group-hover:border-primary/20 transition-all duration-300">
+                    <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        className="max-h-20 w-auto object-contain transition-all duration-300 group-hover:scale-110 filter group-hover:brightness-110"
+                    />
+                </div>
+                <div className="relative text-center space-y-3">
+                    <h3 className="font-bold text-xl group-hover:text-primary transition-all duration-300 group-hover:scale-105">{sponsor.name}</h3>
+                    <p className="text-sm text-muted-foreground text-balance leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                        {sponsor.description}
+                    </p>
+                </div>
+                
+                {/* Hover indicator */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-100 scale-75">
+                    <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center">
+                        <svg className="h-3 w-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
                     </div>
-                    <div className="relative text-center space-y-3">
-                        <h3 className="font-bold text-xl group-hover:text-primary transition-all duration-300 group-hover:scale-105">{sponsor.name}</h3>
-                        <p className="text-sm text-muted-foreground text-balance leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
-                            {sponsor.description}
-                        </p>
-                    </div>
-                    
-                    {/* Hover indicator */}
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-100 scale-75">
-                        <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center">
-                            <svg className="h-3 w-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            ))}
-        </div>
+                </div>
+            </a>
+        ))}
     </div>
 
 </Content>
