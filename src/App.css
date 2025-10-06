@@ -18,8 +18,8 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondnary-foreground-complement: var(
-    --secondnary-foreground-complement
+  --color-secondary-foreground-complement: var(
+    --secondary-foreground-complement
   );
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
@@ -370,7 +370,7 @@
     --secondary-foreground: oklch(
       97.05% 0.0222 227.5
     ); /* very light cyan for subtle contrast */
-    --secondnary-foreground-complement: oklch(
+    --secondary-foreground-complement: oklch(
       83.17% 0.1242 227.5
     ); /* Soft Teal */
     --muted: oklch(94.43% 0.0144 227.5); /* Card/Panel Shade */
@@ -406,7 +406,7 @@
     --primary-foreground: oklch(17.61% 0.0313 227.5);
     --secondary: oklch(35.89% 0.0673 227.5); /* Dark Teal */
     --secondary-foreground: oklch(96.48% 0.0266 227.5);
-    --secondnary-foreground-complement: oklch(81.79% 0.0908 227.5);
+    --secondary-foreground-complement: oklch(81.79% 0.0908 227.5);
     --muted: oklch(30.13% 0.0559 227.5);
     --muted-foreground: oklch(82.81% 0.0349 227.5);
     --accent: oklch(68.6% 0.105 227.5);
