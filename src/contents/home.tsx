@@ -66,58 +66,7 @@ export function Home() {
         </div>
       </section>
       
-      <section className="mx-auto flex w-full max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 w-full">
-          <Link
-            to="/description"
-            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
-          >
-            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Project Description</h3>
-            <p className="text-sm text-muted-foreground text-balance">How Snaccine works and our scientific approach</p>
-          </Link>
-          
-          <Link
-            to="/engineering"
-            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
-          >
-            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Engineering</h3>
-            <p className="text-sm text-muted-foreground text-balance">Our design process and technical implementation</p>
-          </Link>
-          
-          <Link
-            to="/dry-lab"
-            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
-          >
-            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Dry Lab</h3>
-            <p className="text-sm text-muted-foreground text-balance">Computational modeling and bioinformatics analysis</p>
-          </Link>
-          
-          <Link
-            to="/parts"
-            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
-          >
-            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Parts</h3>
-            <p className="text-sm text-muted-foreground text-balance">BioBrick parts and genetic components</p>
-          </Link>
-          
-          <Link
-            to="/human-practices"
-            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
-          >
-            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Human Practices</h3>
-            <p className="text-sm text-muted-foreground text-balance">Stakeholder engagement and responsible innovation</p>
-          </Link>
-          
-          <Link
-            to="/members"
-            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
-          >
-            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Our Team</h3>
-            <p className="text-sm text-muted-foreground text-balance">Meet the people behind Snaccine</p>
-          </Link>
-
-        </div>
-      </section>
+      
       
       <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6">
         <div className="space-y-4 text-center">
@@ -130,19 +79,23 @@ export function Home() {
           <AccentLine className="mx-auto" />
         </div>
 
-        <div className="relative overflow-hidden rounded-3xl">
+        <div className="relative overflow-hidden rounded-3xl" 
+            style={{
+              maskImage:       'linear-gradient(to bottom, transparent 0%, black 100%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)'
+            }}>
           <img
-            src="https://static.igem.wiki/teams/5649/images/imagegoeshere.jpg"
+            src="https://static.igem.wiki/teams/5649/members/svh-0259-lowercaseextension.webp"
             alt="Don't know what to put here (has to be Creative Commons, not disturbing)"
             className="w-full h-96 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
             <p className="text-lg font-semibold">
-              lowercase title which goes over image
+              placeholder image
             </p>
             <p className="text-sm opacity-90 mt-2">
-              blah blah text below
+              Don't know what to put here (has to be Creative Commons, not disturbing). sth w chickens
             </p>
           </div>
         </div>
@@ -165,7 +118,7 @@ export function Home() {
           </div>
           
           <div className="rounded-2xl border border-border bg-card p-6 text-center">
-            <div className="mb-4 text-4xl font-bold text-destructive">8M</div>
+            <div className="mb-4 text-4xl font-bold text-destructive">8 million</div>
             <h3 className="mb-2 text-lg font-semibold">Birds culled in four months</h3>
             <p className="text-sm text-muted-foreground text-balance">
               Birds killed to stop the spread of HPAI, 24 European countries, March 8 &ndash; June 6 2025
