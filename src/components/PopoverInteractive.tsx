@@ -11,7 +11,7 @@ import JohannisFlorid from '@/mdx/stakeholders/johannis_florid.mdx';
 import ElineKamerik from '@/mdx/stakeholders/eline_kamerik.mdx';
 import ErikDeJonge from '@/mdx/stakeholders/erik_de_jonge.mdx';
 
-// Mapping of path element IDs to their corresponding MDX content
+// Mapping of class names to their corresponding MDX content
 const popoverContentMap: Record<string, React.FC> = {
   'prof_brouns': ProfBrouns,
   'field_test_experts': FieldTestExperts,
@@ -32,51 +32,62 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
 
   const handleSvgClick = (e: React.MouseEvent<SVGElement>) => {
     const target = e.target as SVGElement;
-    const pathElement = target.closest('path[id], g[id]');
-    
-    if (pathElement?.id && popoverContentMap[pathElement.id]) {
-      e.stopPropagation();
-      setActivePopover(pathElement.id);
+
+    // Check if the clicked element or its parent has any of our popover classes
+    for (const className of Object.keys(popoverContentMap)) {
+      if (target.classList.contains(className) || target.closest(`.${className}`)) {
+        e.stopPropagation();
+        setActivePopover(className);
+        return;
+      }
     }
   };
 
-  // Clone the SVG and add click handlers to path elements with IDs
-  const enhancedChildren = React.cloneElement(children as React.ReactElement<{onClick?: (e: React.MouseEvent<SVGElement>) => void; style?: React.CSSProperties}>, {
+  // Clone the SVG and add click handlers
+  const enhancedChildren = React.cloneElement(children as React.ReactElement<{ onClick?: (e: React.MouseEvent<SVGElement>) => void; style?: React.CSSProperties }>, {
     onClick: handleSvgClick,
     style: {
-      ...(children.props as {style?: React.CSSProperties}).style,
-      cursor: 'pointer',
+      ...(children.props as { style?: React.CSSProperties }).style,
     },
   });
 
-  // Add hover effects to interactive paths
+  // Add hover effects and cursor to interactive elements
   React.useEffect(() => {
     const svg = document.querySelector('svg');
     if (!svg) return;
 
-    const paths = svg.querySelectorAll('path[id], g[id]');
-    paths.forEach((path) => {
-      if (popoverContentMap[path.id]) {
-        (path as SVGElement).style.cursor = 'pointer';
-        (path as SVGElement).style.transition = 'opacity 0.2s';
-        
+    const cleanupFunctions: (() => void)[] = [];
+
+    // For each class name in the map, find all matching elements
+    Object.keys(popoverContentMap).forEach((className) => {
+      const elements = svg.querySelectorAll(`.${className}`);
+
+      elements.forEach((element) => {
+        const svgElement = element as SVGElement;
+        svgElement.style.cursor = 'pointer';
+        svgElement.style.transition = 'opacity 0.2s';
+
         const handleMouseEnter = () => {
-          (path as SVGElement).style.opacity = '0.7';
+          svgElement.style.opacity = '0.7';
         };
-        
+
         const handleMouseLeave = () => {
-          (path as SVGElement).style.opacity = '1';
+          svgElement.style.opacity = '1';
         };
-        
-        path.addEventListener('mouseenter', handleMouseEnter);
-        path.addEventListener('mouseleave', handleMouseLeave);
-        
-        return () => {
-          path.removeEventListener('mouseenter', handleMouseEnter);
-          path.removeEventListener('mouseleave', handleMouseLeave);
-        };
-      }
+
+        element.addEventListener('mouseenter', handleMouseEnter);
+        element.addEventListener('mouseleave', handleMouseLeave);
+
+        cleanupFunctions.push(() => {
+          element.removeEventListener('mouseenter', handleMouseEnter);
+          element.removeEventListener('mouseleave', handleMouseLeave);
+        });
+      });
     });
+
+    return () => {
+      cleanupFunctions.forEach(cleanup => cleanup());
+    };
   }, []);
 
   const ContentComponent = activePopover ? popoverContentMap[activePopover] : null;
@@ -84,11 +95,11 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
   return (
     <div className="relative w-full h-full">
       {enhancedChildren}
-      
+
       {activePopover && ContentComponent && (
         <>
           {/* Overlay backdrop */}
-          <button 
+          <button
             className="fixed inset-0 bg-black/50 z-50 cursor-default"
             onClick={() => setActivePopover(null)}
             onKeyDown={(e) => {
@@ -99,9 +110,8 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
           />
           {/* Popover content */}
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
-            <div 
+            <div
               className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl max-w-3xl w-full max-h-[80vh] overflow-y-auto relative pointer-events-auto"
-              role="dialog"
               aria-modal="true"
             >
               <button
