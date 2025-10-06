@@ -114,10 +114,8 @@ Ensure any raw data, figures, or spreadsheets referenced on the wiki are mirrore
   | lucide-react | ISC | Icon system |
   | react / react-dom | MIT | Core UI framework |
   | react-router-dom | MIT | Client-side routing |
-  | rehype-katex | MIT | KaTeX rendering for inline and block math |
   | rehype-starry-night | MIT | Syntax highlighting for code fences |
   | remark-gfm | MIT | GitHub-flavored Markdown extensions |
-  | remark-math | MIT | Math syntax parsing for MDX |
   | shadcn | MIT | Component scaffolding CLI used by the design system |
   | tailwind-merge | MIT | Tailwind class deduplication |
   | tailwindcss | MIT | Utility-first styling framework |
