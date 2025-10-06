@@ -4,49 +4,36 @@ import { AccentLine } from "@/components/ui/accent-line";
 export function Home() {
   return (
     <div className="flex flex-col gap-6">
-      <section className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-section via-background to-section px-6 pb-5 shadow-lg sm:px-12">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <div className="space-y-6 text-balance">
+      <section className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-section via-background to-section px-6 pb-8 shadow-lg sm:px-12">
+        <div className="mx-15 grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:items-center">
+          <div className="text-balance">
             <img
               src='https://static.igem.wiki/teams/5649/svg/mainlogowithsubtitle.svg'
               alt="Snaccine: a phage-based edible vaccine"
-              className="w-full max-w-2xl -ml-6"
+              className="w-full max-w-2xl -ml-6 mb-0 -mt-3"
             />
-            <p className="max-w-2xl text-2xl font-bold text-foreground ml-4">
-              Bacteriophages inside Snaccine capsules hijack bacteria in the gut to produce an mRNA vaccine.
+            <p className="max-w-3xl text-2xl font-bold text-foreground ml-4">
+              Bacteriophages inside our <i>Snaccine</i> capsules hijack bacteria in the gut to produce an mRNA vaccine.
             </p>
-            <p className="max-w-2xl text-xl text-muted-foreground ml-4">
+            <img
+                src='https://static.igem.wiki/teams/5649/svg/4step-min.svg'
+                alt="Four illustrated steps showing the Snaccine workflow from phage to immune response"
+                className="mx-auto w-full max-w-lg" 
+              />
+            <p className="max-w-3xl text-lg text-muted-foreground ml-4">
               mRNA vaccines can be developed in days, making them ideal for responding to fast-evolving viruses.
               Unlike traditional mRNA vaccines, Snaccines can be stored at room temperature, are cheaper to produce, and can be delivered orally.
             </p>
-            {/*<dl className="grid gap-6 sm:grid-cols-3">
-              <div>
-                <dt className="text-sm text-muted-foreground">Storage & transport</dt>
-                <dd className="text-2xl font-semibold">20&nbsp;°C, not −80°C</dd>
-              </div>
-              <div>
-                <dt className="text-sm text-muted-foreground">Delivery route</dt>
-                <dd className="text-2xl font-semibold">Oral capsules</dd>
-              </div>
-              <div>
-                <dt className="text-sm text-muted-foreground">Vaccine design timeline</dt>
-                <dd className="text-2xl font-semibold">Days</dd>
-              </div>
-            </dl>*/}
           </div>
-          <div className="mx-auto w-full max-w-2xl space-y-6">
-            <figure className="relative rounded-3xl border border-border bg-card/60 p-8 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-lg">
-              {/*<div className="absolute -top-6 right-12 hidden h-14 w-14 rotate-12 rounded-xl border border-accent/60 bg-accent/10 md:block" />
-              <div className="absolute -bottom-8 left-10 hidden h-16 w-16 -rotate-6 rounded-full border border-primary/40 bg-primary/10 md:block" />*/}
-
+          <div className="mx-auto w-full max-w-lg space-y-6 mt-20">
+            <figure className="relative rounded-3xl border border-border bg-card/60 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="absolute -top-6 right-12 hidden h-14 w-14 rotate-12 rounded-xl border border-accent/60 bg-accent/10 md:block" />
+              <div className="absolute -bottom-8 left-10 hidden h-16 w-16 -rotate-6 rounded-full border border-primary/40 bg-primary/10 md:block" />
               <img
-                src='https://static.igem.wiki/teams/5649/svg/4step-min.svg'
-                alt="Four illustrated steps showing the Snaccine workflow from phage to immune response"
-                className="mx-auto w-full" 
-              />{/*drop-shadow-lg*/}
-              <figcaption className="text-sm text-muted-foreground text-center mt-4">
-                caption here?
-              </figcaption>
+                  src='https://static.igem.wiki/teams/5649/homegraphics/jar-of-snacks-2.webp'
+                  alt="A jar of snack capsules representing Snaccine, one capsule is open with phages spilling out"
+                  className="w-full h-auto drop-shadow-lg"
+                />
             </figure>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
