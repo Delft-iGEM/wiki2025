@@ -17,12 +17,12 @@ export function Footer() {
           {/* About section */}
           <div className="lg:col-span-3">
             <FooterSection title="about our project">
-              <p className="text-secondary-foreground leading-relaxed">
+              <p className="text-secondary-foreground leading-relaxed text-balance">
                 <em>Snaccine</em> is a phage-based edible vaccine. 
                 Using bacteriophages in acid-resistant pills, we hijack
                 gut bacteria to produce an mRNA vaccine. <em>Snaccines</em> can be stored
                 at room temperature, where mRNA vaccines need ultra-cold storage.
-              <FooterLink href="./description"><b>Learn more...</b></FooterLink>
+              <FooterLink href="./description"><b>&nbsp;Learn more...</b></FooterLink>
               </p>
             </FooterSection>
           </div>
