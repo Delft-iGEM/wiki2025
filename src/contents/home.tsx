@@ -1,6 +1,44 @@
 import { Link } from "react-router-dom";
 import { AccentLine } from "@/components/ui/accent-line";
 
+const quickLinks = [
+  {
+    title: "Project Description",
+    copy: "Dive into the science behind Snaccine and the engineering choices that make it possible.",
+    to: "/description",
+    image: "https://static.igem.wiki/teams/5649/roundicons/descriptionnew.webp",
+    iconStyle: "h-50 w-50 -translate-y-15 scale-105",
+  },
+  {
+    title: "Engineering Success",
+    copy: "See how we iterated on our designs, validated parts, and built a robust experimental framework.",
+    to: "/engineering",
+    image: "https://static.igem.wiki/teams/5649/roundicons/engineeringnew.webp",
+    iconStyle: "h-43 w-43 -translate-y-23",
+  },
+  {
+    title: "Meet the Team",
+    copy: "Get to know the multidisciplinary group of students making Snaccine a reality.",
+    to: "/members",
+    image: "https://static.igem.wiki/teams/5649/roundicons/teamnew.webp",
+    iconStyle: "h-45 w-45 -translate-y-20 rotate-6",
+  },
+  {
+    title: "Results",
+    copy: "Explore the data and outcomes of our experiments that demonstrate the potential of Snaccine.",
+    to: "/results",
+    image: "https://static.igem.wiki/teams/5649/roundicons/resultsnew.webp",
+    iconStyle: "h-50 w-50 -translate-y-22 scale-95",
+  },
+  {
+    title: "Human Practices",
+    copy: "Learn how we integrated ethics, inclusivity, and global perspectives into our project.",
+    to: "/human-practices",
+    image: "https://static.igem.wiki/teams/5649/roundicons/humanpracticesnew.webp",
+    iconStyle: "h-43 w-43 -translate-y-20",
+  },
+];
+
 export function Home() {
   return (
     <div className="flex flex-col gap-6">
@@ -205,7 +243,55 @@ export function Home() {
             </div>
           </div>
         </div>
+
+        {/* --- NEW: Quick Links grid (from code 2) --- */}
+        <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-24 sm:px-6">
+          <div className="space-y-4 text-center">
+            <AccentLine className="mx-auto" />
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Jump into the details
+            </h2>
+            <p className="mx-auto max-w-3xl text-base text-muted-foreground">
+              From wet lab notebooks to inclusive design, our documentation
+              captures the story of Snaccine. Pick a page to start exploring.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {quickLinks.map((link) => (
+              <Link
+                key={link.title}
+                to={link.to}
+                className="group relative flex h-full flex-col justify-between rounded-2xl border border-border bg-card/80 p-6 pt-20 shadow-sm transition hover:-translate-y-1 hover:border-accent hover:shadow-lg"
+              >
+                {/* Floating Image Icon */}
+                <img
+                  src={link.image}
+                  alt={link.title}
+                  className={`absolute left-1/2 -translate-x-1/2 object-contain transition-transform duration-300 ${link.iconStyle}`}
+                />
+
+                {/* Text Content */}
+                <div className="space-y-4 text-center mt-12">
+                  <h3 className="text-xl font-semibold text-primary group-hover:text-accent">
+                    {link.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{link.copy}</p>
+                </div>
+
+                {/* Read more CTA */}
+                <span className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-semibold text-accent group-hover:gap-3">
+                  Read more →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+        {/* --- END Quick Links --- */}
+
       </section>
     </div>
   );
 }
+
+
