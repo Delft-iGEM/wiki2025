@@ -13,7 +13,7 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
     <div className="group relative mx-auto h-[27rem] w-[20rem] flex-none [perspective:1200px]">
       <div className="h-full w-full transition-transform duration-500 group-hover:-translate-y-3">
         <div className="relative grid h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-          <div className="row-start-1 col-start-1 flex h-full w-full flex-col items-center gap-3 rounded-2xl p-4 shadow-lg [backface-visibility:hidden]">
+          <div className="row-start-1 col-start-1 flex h-full w-full flex-col items-center gap-3 rounded-5xl p-4 shadow-lg [backface-visibility:hidden]">
             <img
               src={src}
               alt={alt ?? `${firstName} ${lastName}`}
