@@ -100,7 +100,7 @@
     );
   }
   .max-container {
-    @apply w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-30;
+    @apply w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-10;
   }
 
   .narrow-container {

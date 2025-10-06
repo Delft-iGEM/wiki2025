@@ -4,9 +4,10 @@ interface ContentProps {
   readonly children: React.ReactNode;
   readonly items?: FriendlyItems;
   readonly className?: string;
+  readonly wide?: boolean;
 }
 
-export function Content({ children, items = 'right', className }: ContentProps) {
+export function Content({ children, items = 'right', className, wide }: ContentProps) {
   // Map friendly words to complete Tailwind class names
   const itemsClassMap: Record<FriendlyItems, string> = {
     left: 'items-start',
@@ -22,7 +23,7 @@ export function Content({ children, items = 'right', className }: ContentProps) 
   return (
     <div
       id="content"
-      className={`narrow-container flex flex-col pt-5 ${itemsClass} ${className ?? ''}`.trim()}
+      className={`${wide ? 'max-container' : 'narrow-container'} flex flex-col pt-5 ${itemsClass} ${className ?? ''}`.trim()}
     >
       {children}
     </div>
