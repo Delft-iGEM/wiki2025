@@ -1,3 +1,5 @@
+import { useCallback, useState } from "react";
+
 type Props = Readonly<{
   firstName: string;
   lastName: string;
@@ -9,11 +11,52 @@ type Props = Readonly<{
 }>;
 
 export default function MemberCard({ firstName, lastName, role, src, bio, alt, flipped }: Props) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handlePointerEnter = useCallback((event: React.PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== "touch") {
+      setIsFlipped(true);
+    }
+  }, []);
+
+  const handlePointerLeave = useCallback((event: React.PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== "touch") {
+      setIsFlipped(false);
+    }
+  }, []);
+
+  const handleToggle = useCallback(() => {
+    setIsFlipped((prev) => !prev);
+  }, []);
+
+  const handleKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        handleToggle();
+      }
+    },
+    [handleToggle],
+  );
+
+  const isBackVisible = isFlipped;
+
   return (
-    <div className="group relative mx-auto h-[27rem] w-[20rem] flex-none [perspective:1200px]">
-      <div className="h-full w-full transition-transform duration-500 group-hover:-translate-y-3">
-        <div className="relative grid h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-          <div className="row-start-1 col-start-1 flex h-full w-full flex-col items-center gap-3 rounded-5xl p-4 shadow-lg [backface-visibility:hidden]">
+    <div
+      className="group relative mx-auto h-[27rem] w-[20rem] flex-none cursor-pointer select-none [perspective:1200px]"
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+      onClick={handleToggle}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-pressed={isBackVisible}
+    >
+      <div className={`h-full w-full transition-transform duration-500 group-hover:-translate-y-3 ${isBackVisible ? "-translate-y-3" : ""}`}>
+        <div
+          className={`relative grid h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] ${isBackVisible ? "shadow-xl [transform:rotateY(180deg)]" : ""}`}
+        >
+          <div className="row-start-1 col-start-1 flex h-full w-full flex-col items-center gap-3 rounded-2xl p-4 shadow-lg  [backface-visibility:hidden]">
             <img
               src={src}
               alt={alt ?? `${firstName} ${lastName}`}
