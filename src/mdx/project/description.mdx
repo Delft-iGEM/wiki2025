@@ -11,7 +11,26 @@ an introduction to our project
 {/*don't want it all the way at the top.
 > I want to leave the hook below up top on the page. Maybe at the side I'm thinking? Or after
 > the first section. Or as a folded-up section?*/}
-<Dropdown header="abstract" level={0} defaultOpen>
+
+<span className="space-y-1">
+A single vaccine against all types of flu.
+
+A vaccine against a new virus, done in a week.
+
+A vaccine against allergies, or diabetes, or even cancer.
+</span>
+
+Since the successful debut of mRNA vaccines in the COVID-19 pandemic,
+ambitious predictions have been made about its potential.
+But the mRNA vaccine rollout also laid bare many drawbacks. The vaccines
+are kept at <Temperature celsius="−20 °C to −80 °C" fahrenheit="−4 °F to −112 °F" />. This made it hard to transport them to remote
+or less-developed regions. mRNA vaccines are more expensive to produce, too.
+And the logistical challenge of injecting everyone came at great cost.
+
+As a solution, we present *Snaccine*, a new type of vaccine which uses
+bacteriophages to hijack gut bacteria to produce armoured mRNA.
+
+<Dropdown header="abstract" level={0}>
 
 {/*<div className="md:mx-8 md:p-6">*/}
 *Snaccine* is a novel type of vaccine, ideal for vaccinating chickens
@@ -32,27 +51,10 @@ flu.
 {/*</div>*/}
 </Dropdown>
 
-A single vaccine against all types of flu.
-
-A vaccine against a new virus, done in a week.
-
-A vaccine against allergies, or diabetes, or even cancer.
-
-Since the successful debut of mRNA vaccines in the COVID-19 pandemic,
-ambitious predictions have been made about potential uses.
-But the mRNA vaccine rollout also laid bare many drawbacks. The vaccines
-are kept at <Temperature celsius="−20 °C to −80 °C" fahrenheit="−4 °F to −112 °F" />. This made it hard to transport them to remote
-or less-developed regions. mRNA vaccines cost more, too.
-And the logistical challenge of injecting everyone also came at
-great cost.
-
-As a solution, we present *Snaccine*, a new type of vaccine which uses
-bacteriophages to hijack gut bacteria to produce armoured mRNA.
-
 <img
 	src='https://static.igem.wiki/teams/5649/svg/4step-min.svg'
 	alt="Diagram showing the four-step Snaccine workflow"
-	className="w-full max-w-2xl"
+	className="w-full max-w-2xl pb-4"
 />
 
 
@@ -183,13 +185,19 @@ of killing all birds on an infected farm instead.
 	</tbody>
 </table>
 
-### snaccine
+<img
+	src='https://static.igem.wiki/teams/5649/svg/mainlogowithsubtitle.svg'
+	alt="Snaccine: a phage-based edible vaccine"
+	className="w-full max-w-md mr-auto -mt-21 -ml-13 z-30"
+/>
 
-This is where our vaccine comes in. At heart Snaccines are mRNA
+This is where our vaccine comes in.
+
+At heart Snaccines are mRNA
 vaccines, but the factory is inside the gut.
 
-Phages can be chosen to be very specific to a certain strain of bacteria
-in the gut of a certain animal. This prevents the synthetic genetic code
+Phages can be chosen to specifically infect one strain of bacteria
+in the gut of one animal. This prevents the modified genetic code
 spreading into the wild. Though the lab-friendly phage we used in our
 proof of concept, T7, isn't stable for long outside of a fridge, there
 are many varieties of phages which can survive at room temperature or
@@ -213,7 +221,8 @@ sold at pharmacies or delivered by mail.
 
 ### challenges, in detail
 
-<img src="https://static.igem.wiki/teams/5649/figures/moduled-final-map.webp" />
+{/*<img src="https://static.igem.wiki/teams/5649/figures/moduled-final-map.webp" />*/}
+<img src="https://static.igem.wiki/teams/5649/moduledplasmidbiorender/module-d-plasmid-biorender.webp" />
 
 Phages can be grown in bacterial cultures and then filtered out. This
 requires fewer chemical processing steps than mRNA vaccines, and saves a
