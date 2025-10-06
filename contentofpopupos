@@ -1,0 +1,84 @@
+INTEGRATED HUMAN PRACTICES
+1. Prof. Dr. Stan J. J. Brouns 
+Who? 
+Prof. Dr. Stan Brouns is an expert in phage–host interactions and bacterial defence systems.
+Why? 
+We wanted to explore which phages and bacterial hosts would be most practical for our oral vaccine. Moreover, we discussed the feasibility of our experiments. 
+Impact on Snaccine: 
+Prof. Brouns discussed the options for bacterial hosts and phages with us. He highlighted the importance of tailoring our host to the gut, and working with well-established display systems. With his input, we could move from an initial idea to more concrete plans. We settled on the well-established bacterial host E. Coli, and the display phages T7 and MS2. He also connected us with his colleague, Rita Martins Costa, who became an ongoing technical mentor for our experimental work. This first stakeholder meeting ensured that our design ideas could be translated into feasible plans.  
+2. Avian Influenza Field Test Experts
+Who?
+Two European experts in HPAI vaccination field trials and surveillance.
+Why? 
+We wanted to gain insight into the real-world challenges of HPAI vaccination. We were also interested to learn about their interactions with farmer during the field trials. 
+Impact on Snaccine: 
+The insights from this meeting directly influenced our project's strategy. Based on their feedback, we designed our mRNA to express only the Hemagglutinin (HA) protein, which aligns with existing ELISA and PCR surveillance methods. This allows Snaccine to fit into DIVA diagnostics. 
+We also learned that farmers are generally open to HPAI vaccination to prevent the culling of their flocks. However, their main concern is the marketing of vaccinated animal products, which hinders participation in field trials. This feedback made us aware of the economic constraints for successful implementation.
+3. Dr. Charlotte Koster 
+Who? 
+Dr. Charlotte Koster is a post-doctoral researcher at Wageningen University and a science communicator. Her expertise lies in molecular microbiology and in translating scientific concepts into clear information for a diverse audience.
+Why? 
+We sought her advice on how to present Snaccine to different audiences and how to balance technical accuracy with accessibility.
+Impact on Snaccine: 
+She recommended presenting Snaccine through a clear storytelling arc. We also segmented our audience into three key groups: the scientific community, the undecided public, and vaccine-hesitant groups. Based on that, we set the goal to bridge the communication gap between the undecided public, and scientific information. 
+Charlotte also recommended a two-way communication approach. We explained Snaccine to 12 members of the general public, and listened to their questions and concerns. These questions are answered in our Iteration Loop 6. Moreover, we committed to transparent communication, acknowledging both benefits and uncertainties.
+
+4. Dr. ir. Luuk van Oosten 
+Who? 
+Dr. ir. Luuk van Oosten is a Quality & Manufacturing specialist at Batavia Biosciences. He scales lab concepts to compliant clinical/commercial products.
+Why? 
+We consulted Luuk twice to translate Snaccine from concept to a viable product.
+Impact on Snaccine: 
+In the first meeting Dr. van Oosten informed us about Good Manufacturing Practices (GMP) and surrounding regulations. We iterated over this material in a second meeting, where we addressed challenges of manufacturing such as genetic stability, scale-up variability, and downstream processing. To address this, we outlined a downstream purification process to ensure product purity, specifically focusing on endotoxins. This is described in our Iteration Loop 4. 
+A key decision stemming from this meeting was changing the plan for formulation and phage stability. Instead of pre-selecting a method like freeze-drying or oil encapsulation, we decided that input from end-users must inform the final choice, such that external conditions are integrated. 
+5. RIVM, GMO Office
+Who? 
+Two specialists from the Dutch National Institute for Public Health and the Environment (RIVM), particularly the GMO Office. Their expertise covers risk assessment of laboratory work, biocontainment, and environmental release of GMOs.
+Why? 
+We consulted RIVM to understand how Snaccine would be classified under Dutch and EU GMO law, which hazards to prioritize, and which Safe-by-Design measures would be most impactful.
+Impact on Snaccine: 
+RIVM confirmed that the entire product, including the virus-like particles (VLPs), will be regulated as a single GMO. We also learned that environmental shedding of phages is the primary hazard. For this, we must prove that Snaccine is either fully contained or clears from the environment within a specific timeframe. This influenced our SbD principles, leading us to prioritize host-specific and non-replicative bacteriophages to minimize shedding. Since the project was initially designed for replicative phages, we created a large discussion of pros and cons in the integrated human practices section, to address the biocontainment and efficiency of either platform. This is addressed in Iteration Loop 2.
+Furthermore, they advised using an existing HVT vaccine as a foundation for a comparative Environmental Risk Assessment (ERA). This allows us to benchmark our novel technology against an approved, related product.
+6. Johannis Florid 
+Who? 
+Johannis Florid is a farmer near Rotterdam who manages a mixed flock of chickens and ducks. He represents the crucial perspective of an end-user.
+Why? 
+We consulted Johannis to understand the practical needs, and communication preferences for a product like Snaccine.
+Impact on Snaccine:
+Johannis provided clear feedback on real-world use. He told us that a pill format is unsuitable because birds will peck and crush it. Instead, a powder or mix-in format for feed or water would be far more practical and effective. He also wants a simple, clear leaflet specifying the dose, mixing instructions, and potential side effects, with guidance for both chickens and ducks. He places his trust primarily in his veterinarian and fellow farmers, rather than government authorities or complex scientific reports, which he feels do not reflect everyday farm life.
+His input directly shaped the end-user aspects of our project. We defined the information on instruction pamphlet, decided to add pictograms, and a pre-measured scoop. This consultation also reinforced our plan to share information through trusted channels such as veterinary endorsements.
+7. Eline Kamerik 
+Who? 
+Eline Kamerik is a veterinarian with practical experience in the poultry sector, including laying hens and backyard chickens.
+Why? 
+We wanted to gain a veterinarian's perspective on the realities of poultry vaccination to ensure Snaccine aligns with established field practices. We focused on administration routes, dosing at scale, and standard HPAI communication protocols.
+What?
+Impact on Sanccine: 
+Eline told us that drinking water administration is the preferred and most practical standard, since it is far more scalable than injections. She also confirmed that the epithelial lining of chicken gut is exceptionally good at absorbing vaccination. This input validated our general design choice to administer the vaccine orally. 
+However, Eline also noted that the dilution of the vaccination is far easier and more reliable in water than in feed applications. The dilution ensures that a good flock-result can be achieved, although individual animals consume different amounts. To help farmers track consumption, a dye is sometimes added to the water, which temporarily tints the birds' beaks as a visual confirmation of intake. 
+To take this into consideration, our team would have to assess the homogeneity and effectiveness of mixing Snaccine into the feed; or change formulation methods to adjust Snaccine for water delivery. Nonetheless, Eline successfully confirmed our application of oral delivery, and herd based immunity. 
+8. Erik de Jonge (AVINED, National Trade Organization, 22.09.2025)
+Who? 
+Erik de Jonge is a Policy Advisor for poultry health and antibiotic use at AVINED, the Dutch national trade organization representing the poultry and egg sector. They act as the voice of the industry, focusing on economic viability, market access, and policy influence.
+Why? 
+We consulted with them to understand the economic barriers that prevent the adoption of a new avian influenza vaccine, regardless of its technical merits. Moreover, we wanted to gain insights into the industries opinion on culling and vaccination. 
+Impact on Snaccine: 
+We learned that the biggest obstacle is trade. Erik estimated that 90% of the vaccination hurdle is caused by trade constraints, especially with non-EU partners.  The uncertain reaction of importers creates major economic risk. In this regard, Erik highlighted France’s experience after starting duck vaccination as a clear warning for the EU poultry sector. Erik also confirmed that surveillance requirements for vaccinated flocks, such as weekly checks, add significant pressure on producers. 
+
+Quotes from all Stakeholders, that allow quotation, that underline their impact: 
+Erik van Jongen: 
+"The fact that they killed the animals was mainly because we did not want this field trial to have influence on our trade. We have the biggest problem with vaccination at the moment is the reaction from trading partners, especially outside of Europe." 
+"Yeah, for 90% it's trait because we do not see any problems with the chickens... But especially trade, you see that, and it's not only in the Netherlands, also in other countries, you see that they are starting to think about vaccination, but they are very concerned about the effects on trade." 
+"Because every poultry farm or every poultry flock that has been vaccinated must be tested weekly on dead animals on the farm, monthly samples of live animals and monthly visits by the official veterinarians. So that's quite an extensive survey." 
+Charlotte Koster: 
+"if you start again immediately with we must have edible vaccines, people will be like, but I can just inject them right or but... But if you first really kind of [paint a picture of what the world could be]... Then there's immediately like a really clear picture of why it would be so cool." 
+"...in between, there's a really big group of people who are not really sure where the OK, I hear pros, I hear cons. And those are the people you really need to reach with just proper information..." 
+"Well, if you just are transparent also about the risks or the things you don't know yet... And that these are tested and how these are tested... most people are completely fine with that. So just try to be really neutral and transparent in the way that you that you write this." 
+Johannis Florid: 
+"Chickens are smart and efficient: they grab bigger pieces and peck at them until they're small enough to swallow. So, they would definitely want to crush a pill first, which means a vaccine in that form would need to be ground up." 
+"If a vaccine were to become available, safety would be my top priority. I want to be sure it has no side effects and that it truly works. I would therefore study the instruction leaflet carefully and expect clear information on the dosage, how to mix it, and any potential side effects." 
+"The government, which makes the rules in The Hague, is far removed from the daily reality of a farmer's life. I prefer to listen to the experiences of other farmers and the advice of a veterinarian." 
+
+
+
+
