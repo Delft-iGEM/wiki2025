@@ -36,8 +36,8 @@ export function Home() {
           </div>
           <div className="mx-auto w-full max-w-2xl space-y-6">
             <figure className="relative rounded-3xl border border-border bg-card/60 p-8 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <div className="absolute -top-6 right-12 hidden h-14 w-14 rotate-12 rounded-xl border border-accent/60 bg-accent/10 md:block" />
-              <div className="absolute -bottom-8 left-10 hidden h-16 w-16 -rotate-6 rounded-full border border-primary/40 bg-primary/10 md:block" />
+              {/*<div className="absolute -top-6 right-12 hidden h-14 w-14 rotate-12 rounded-xl border border-accent/60 bg-accent/10 md:block" />
+              <div className="absolute -bottom-8 left-10 hidden h-16 w-16 -rotate-6 rounded-full border border-primary/40 bg-primary/10 md:block" />*/}
 
               <img
                 src='https://static.igem.wiki/teams/5649/svg/4step-min.svg'

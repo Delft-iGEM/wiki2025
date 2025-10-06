@@ -11,7 +11,7 @@ an introduction to our project
 {/*don't want it all the way at the top.
 > I want to leave the hook below up top on the page. Maybe at the side I'm thinking? Or after
 > the first section. Or as a folded-up section?*/}
-<Dropdown header="abstract" level={0}>
+<Dropdown header="abstract" level={0} defaultOpen>
 
 {/*<div className="md:mx-8 md:p-6">*/}
 *Snaccine* is a novel type of vaccine, ideal for vaccinating chickens
@@ -120,7 +120,7 @@ With mRNA vaccines, this is impossible.
 
 </Dropdown>
 
-<Dropdown header="caveats" level={0}>
+### caveats of mRNA vaccines
 
 Despite all the advantages, mRNA vaccines come with some big caveats.
 
@@ -142,12 +142,10 @@ uridine nucleotides with N1-methylpseudouridine and the packaging of the
 mRNA inside liposomes. This makes governments choose the cheaper option
 of killing all birds on an infected farm instead.
 
-</Dropdown>
-
 <table className="comparison-table">
 	<thead>
 	<tr className="header">
-	<th className="toprowcell" style={{textAlign: "left", fontWeight: "bold"}}>Advantages</th>
+	<th className="toprowcell" style={{textAlign: "left", fontWeight: "bold"}}>advantages</th>
 	<th className="toprowcell">traditional</th>
 	<th className="toprowcell">mRNA</th>
 	<th className="toprowcell" style={{fontWeight: "bold"}}>snaccine</th>
@@ -185,9 +183,7 @@ of killing all birds on an infected farm instead.
 	</tbody>
 </table>
 
-<Dropdown header={
-	<span>snaccine</span>
-} level={0} defaultOpen border="3px solid var(--primary)" color="--background">
+### snaccine
 
 This is where our vaccine comes in. At heart Snaccines are mRNA
 vaccines, but the factory is inside the gut.
@@ -215,9 +211,7 @@ administer. For chickens in specific, the pills could be added to their
 feed or to their water supply. Against human viruses, Snaccines could be
 sold at pharmacies or delivered by mail.
 
-</Dropdown>
-
-<Dropdown header="challenges, in detail" level={0}>
+### challenges, in detail
 
 <img src="https://static.igem.wiki/teams/5649/figures/moduled-final-map.webp" />
 
@@ -330,7 +324,7 @@ emulate what would be the T7's payload, we use T7 promoters and a strain
 of *E. coli* with T7 polymerase, BL21(DE3), which fortunately for our
 ends is a very common expression system in the lab.
 
-</Dropdown>
+
 
 <Dropdown header="references" level={0}>
 
