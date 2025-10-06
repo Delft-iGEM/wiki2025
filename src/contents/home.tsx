@@ -11,14 +11,16 @@ export function Home() {
               src='https://static.igem.wiki/teams/5649/svg/mainlogowithsubtitle.svg'
               alt="Snaccine: a phage-based edible vaccine"
               className="w-full max-w-2xl -ml-6 mb-0 -mt-3"
+              loading="lazy"
             />
-            <p className="max-w-3xl text-2xl font-bold text-foreground ml-4">
+            <p className="max-w-3xl text-2xl font-bold text-primary ml-4">
               Bacteriophages inside our <i>Snaccine</i> capsules hijack bacteria in the gut to produce an mRNA vaccine.
             </p>
             <img
                 src='https://static.igem.wiki/teams/5649/svg/4step-min.svg'
                 alt="Four illustrated steps showing the Snaccine workflow from phage to immune response"
                 className="mx-auto w-full max-w-lg" 
+                loading="lazy"
               />
             <p className="max-w-3xl text-lg text-muted-foreground ml-4">
               mRNA vaccines can be developed in days, making them ideal for responding to fast-evolving viruses.
@@ -33,6 +35,7 @@ export function Home() {
                   src='https://static.igem.wiki/teams/5649/homegraphics/jar-of-snacks-2.webp'
                   alt="A jar of snack capsules representing Snaccine, one capsule is open with phages spilling out"
                   className="w-full h-auto drop-shadow-lg"
+                  loading="lazy"
                 />
             </figure>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -75,6 +78,7 @@ export function Home() {
             src="https://static.igem.wiki/teams/5649/members/svh-0259-lowercaseextension.webp"
             alt="Don't know what to put here (has to be Creative Commons, not disturbing)"
             className="w-full h-96 object-cover"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
@@ -170,6 +174,7 @@ export function Home() {
                   src='https://static.igem.wiki/teams/5649/homegraphics/jar-of-snacks-2.webp'
                   alt="A jar of snack capsules representing Snaccine, one capsule is open with phages spilling out"
                   className="w-full h-auto"
+                  loading="lazy"
                 />
                 
               </div>
