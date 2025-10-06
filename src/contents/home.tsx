@@ -1,197 +1,203 @@
 import { Link } from "react-router-dom";
 import { AccentLine } from "@/components/ui/accent-line";
 
-const featureHighlights = [
-  {
-    title: "Room-temperature stable",
-    description:
-      "Snaccines can be shipped and stored without an expensive cold chain, unlocking access for remote communities.",
-  },
-  {
-    title: "Oral, painless delivery",
-    description:
-      "Our bacteriophage capsules survive the gut to deliver mRNA right where it is needed—no needles required.",
-  },
-  {
-    title: "Rapid reprogramming",
-    description:
-      "From genome to pill in days. Tailor vaccines quickly to new influenza strains or emerging pathogens.",
-  },
-  {
-    title: "Affordable production",
-    description:
-      "Bacteria grow the payload for us, reducing complex chemistry steps and putting mass immunisation within reach.",
-  },
-];
-
-const quickLinks = [
-  {
-    title: "Project Description",
-    copy: "Dive into the science behind Snaccine and the engineering choices that make it possible.",
-    to: "/description",
-  },
-  {
-    title: "Engineering Success",
-    copy: "See how we iterated on our designs, validated parts, and built a robust experimental framework.",
-    to: "/engineering",
-  },
-  {
-    title: "Meet the Team",
-    copy: "Get to know the multidisciplinary group of students making Snaccine a reality.",
-    to: "/members",
-  },
-];
-
 export function Home() {
   return (
     <div className="flex flex-col gap-24">
-      <section className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-section via-background to-section px-6 py-20 shadow-lg sm:px-12">
-        <AccentLine className="mb-6" />
-        <div className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+      <section className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-section via-background to-section px-6 pb-20 shadow-lg sm:px-12">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div className="space-y-6 text-balance">
-            <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">TU Delft iGEM 2025</p>
-            <h1 className="text-4xl font-semibold tracking-tight text-primary sm:text-5xl lg:text-6xl">
-              Snaccine: oral mRNA vaccines synthesized by phages
-            </h1>
-            <p className="max-w-2xl text-lg text-muted-foreground">
-              We harness engineered bacteriophages living in the gut to produce protected mRNA vaccines right where
-              they are needed. The result is a stable, low-cost, needle-free platform to shield poultry and people
-              from fast-moving influenza outbreaks.
+            <img
+              src='https://static.igem.wiki/teams/5649/svg/mainlogowithsubtitle.svg'
+              alt="Snaccine: a phage-based edible vaccine"
+              className="w-full max-w-2xl -ml-6"
+            />
+            <p className="max-w-2xl text-2xl font-bold text-foreground ml-4">
+              Bacteriophages inside Snaccine capsules hijack bacteria in the gut to produce an mRNA vaccine.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                to="/description"
-                className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-              >
-                Explore the science
-              </Link>
-              <Link
-                to="/members"
-                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-border px-6 py-3 text-base font-semibold text-foreground transition hover:border-accent hover:text-accent"
-              >
-                Meet the team
-              </Link>
-            </div>
-            <dl className="grid gap-6 sm:grid-cols-3">
+            <p className="max-w-2xl text-xl text-muted-foreground ml-4">
+              mRNA vaccines can be developed in days, making them ideal for responding to fast-evolving viruses.
+              But unlike traditional mRNA vaccines, Snaccines can be stored at room temperature, are cheaper to produce, and can be delivered orally.
+            </p>
+            {/*<dl className="grid gap-6 sm:grid-cols-3">
               <div>
-                <dt className="text-sm text-muted-foreground">Cold-chain savings</dt>
-                <dd className="text-2xl font-semibold">−80&nbsp;°C → 20&nbsp;°C</dd>
+                <dt className="text-sm text-muted-foreground">Storage & transport</dt>
+                <dd className="text-2xl font-semibold">20&nbsp;°C, not −80°C</dd>
               </div>
               <div>
                 <dt className="text-sm text-muted-foreground">Delivery route</dt>
                 <dd className="text-2xl font-semibold">Oral capsules</dd>
               </div>
               <div>
-                <dt className="text-sm text-muted-foreground">Production time</dt>
-                <dd className="text-2xl font-semibold">Days, not months</dd>
+                <dt className="text-sm text-muted-foreground">Vaccine design timeline</dt>
+                <dd className="text-2xl font-semibold">Days</dd>
               </div>
-            </dl>
+            </dl>*/}
           </div>
-          <div className="relative mx-auto w-full max-w-xl rounded-3xl border border-border bg-card/60 p-6 backdrop-blur-sm">
-            <div className="absolute -top-6 right-12 hidden h-14 w-14 rotate-12 rounded-xl border border-accent/60 bg-accent/10 md:block" />
-            <div className="absolute -bottom-8 left-10 hidden h-16 w-16 -rotate-6 rounded-full border border-primary/40 bg-primary/10 md:block" />
-            <figure className="relative flex flex-col gap-4">
+          <div className="mx-auto w-full max-w-2xl space-y-6">
+            <figure className="relative rounded-3xl border border-border bg-card/60 p-8 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="absolute -top-6 right-12 hidden h-14 w-14 rotate-12 rounded-xl border border-accent/60 bg-accent/10 md:block" />
+              <div className="absolute -bottom-8 left-10 hidden h-16 w-16 -rotate-6 rounded-full border border-primary/40 bg-primary/10 md:block" />
+
               <img
-                src='https://static.igem.wiki/teams/5649/homegraphics/jar-of-snacks-2.webp'
+                src='https://static.igem.wiki/teams/5649/svg/4step-min.svg'
                 alt="Four illustrated steps showing the Snaccine workflow from phage to immune response"
-              />
-              <figcaption className="text-sm text-muted-foreground">
-                Our vaccine will be delivered in ready-to-use capsules
+                className="mx-auto w-full" 
+              />{/*drop-shadow-lg*/}
+              <figcaption className="text-sm text-muted-foreground text-center mt-4">
+                caption here?
               </figcaption>
             </figure>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6">
-        <div className="space-y-4 text-center">
-          <AccentLine className="mx-auto" />
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Why Snaccine changes the playbook</h2>
-          <p className="mx-auto max-w-3xl text-base text-muted-foreground">
-            Influenza devastates poultry industries and endangers public health worldwide. Snaccine tackles the twin
-            challenges of rapid mutation and fragile logistics with a platform built for accessibility and speed.
-          </p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {featureHighlights.map((feature) => (
-            <article
-              key={feature.title}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card/70 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-brand/0 via-brand/0 to-brand/5 opacity-0 transition group-hover:opacity-100" />
-              <div className="relative space-y-3">
-                <h3 className="text-xl font-semibold text-primary">{feature.title}</h3>
-                <p className="text-base text-muted-foreground">{feature.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-section/60 py-16">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 sm:px-6 lg:flex-row lg:items-center">
-          <div className="flex-1 space-y-4">
-            <AccentLine />
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Four steps from phage to protection</h2>
-            <p className="text-base text-muted-foreground">
-              Engineered bacteriophages enter the gut, replicate their instructions inside a safe host microbe, package
-              mRNA into protective MS2 virus-like particles, and deliver antigens to the immune system. Each stage is
-              designed to be modular, letting us swap payloads or targeting strategies as new threats emerge.
-            </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center">
               <Link
-                to="/results"
-                className="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent"
+                to="/description"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 hover:-translate-y-1 hover:shadow-lg"
               >
-                Review our experimental data
+                learn more &rarr;
               </Link>
               <Link
-                to="/human-practices"
-                className="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent"
+                to="/members"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-border px-6 py-3 text-base font-semibold text-foreground transition hover:border-accent hover:text-accent hover:-translate-y-1 hover:shadow-lg"
               >
-                Explore human practices
+                meet the team &rarr;
               </Link>
             </div>
           </div>
-          <div className="flex-1">
-            <img
-              src='https://static.igem.wiki/teams/5649/svg/4step-min.svg'
-              alt="Four illustrated steps showing the Snaccine workflow from phage to immune response"
-              className="mx-auto w-full max-w-xl drop-shadow-lg"
-            />
-          </div>
         </div>
       </section>
-
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-24 sm:px-6">
+      
+      <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6">
         <div className="space-y-4 text-center">
-          <AccentLine className="mx-auto" />
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Jump into the details</h2>
-          <p className="mx-auto max-w-3xl text-base text-muted-foreground">
-            From wet lab notebooks to inclusive design, our documentation captures the story of Snaccine. Pick a page
-            to start exploring.
+          <h2 className="text-6xl font-semibold tracking-tight">about avian influenza</h2>
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-balance">
+            Bird flu, specifically Highly Pathogenic Avian Influenza H5N1 (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds across Europe.
+            The main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
           </p>
+          
+          <AccentLine className="mx-auto" />
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {quickLinks.map((link) => (
-            <Link
-              key={link.title}
-              to={link.to}
-              className="group flex h-full flex-col justify-between rounded-2xl border border-border bg-card/80 p-6 shadow-sm transition hover:-translate-y-1 hover:border-accent hover:shadow-lg"
-            >
+
+        <div className="relative overflow-hidden rounded-3xl">
+          <img
+            src="https://static.igem.wiki/teams/5649/images/imagegoeshere.jpg"
+            alt="Don't know what to put here (has to be Creative Commons, not disturbing)"
+            className="w-full h-96 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <p className="text-lg font-semibold">
+              lowercase title which goes over image
+            </p>
+            <p className="text-sm opacity-90 mt-2">
+              blah blah text below
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border border-border bg-card p-6 text-center">
+            <div className="mb-4 text-4xl font-bold text-primary">+29%</div>
+            <h3 className="mb-2 text-lg font-semibold">Egg prices since 2022</h3>
+            <p className="text-sm text-muted-foreground text-balance">
+              Egg price inflation in the Netherlands, Jan 2022 &ndash; Aug 2025 <Link to="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83131NED/table?ts=1759710766335" className="text-primary hover:underline"> (CBS)</Link>
+            </p>
+          </div>
+          
+          <div className="rounded-2xl border border-border bg-card p-6 text-center">
+            <div className="mb-4 text-4xl font-bold text-primary">1264</div>
+            <h3 className="mb-2 text-lg font-semibold">Wild bird cases</h3>
+            <p className="text-sm text-muted-foreground text-balance">
+              HPAI detections in wild birds, 24 European countries, Oct 2024 – June 2025 <Link to="/human-practices" className="text-primary hover:underline"> (ECDC)</Link>
+            </p>
+          </div>
+          
+          <div className="rounded-2xl border border-border bg-card p-6 text-center">
+            <div className="mb-4 text-4xl font-bold text-destructive">8M</div>
+            <h3 className="mb-2 text-lg font-semibold">Birds culled in four months</h3>
+            <p className="text-sm text-muted-foreground text-balance">
+              Birds killed to stop the spread of HPAI, 24 European countries, March 8 &ndash; June 6 2025
+              <Link to="/human-practices" className="text-primary hover:underline"> (EFSA)</Link>
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-border bg-card/60 px-8 py-12 backdrop-blur-sm">
+          <div className="mx-auto max-w-4xl space-y-8">
+            <h3 className="text-center text-2xl font-semibold">Current Control Methods Fall Short</h3>
+            
+            <div className="grid gap-8 md:grid-cols-2">
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-primary group-hover:text-accent">{link.title}</h3>
-                <p className="text-sm text-muted-foreground">{link.copy}</p>
+                <h4 className="text-xl font-semibold text-destructive">Mass Culling</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-destructive"></span>
+                    <span>Devastating animal welfare impact</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-destructive"></span>
+                    <span>Economic losses for farmers and government</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-destructive"></span>
+                    <span>Does nothing to prevent future outbreaks</span>
+                  </li>
+                </ul>
               </div>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent group-hover:gap-3">
-                Read more
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
-                  <line x1="5" x2="19" y1="12" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </span>
-            </Link>
-          ))}
+              
+              <div className="space-y-4">
+                <h4 className="text-xl font-semibold text-amber-600">Existing Vaccines</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-600"></span>
+                    <span>Require injection of individual chicks</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-600"></span>
+                    <span>Slow and expensive to update for new strains</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="border-t border-border pt-8 text-center">
+              <p className="text-lg text-muted-foreground">
+                The poultry industry faces an impossible choice: <strong>endure mass culling or accept prolonged outbreaks</strong>. 
+                Both options carry similar costs but devastating consequences for animal welfare and farm sustainability.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-3xl bg-gradient-to-br from-primary/20 to-transparent px-8 py-12">
+          <div className="mx-auto">
+            <div className="grid gap-4 lg:grid-cols-2 lg:items-center">
+              
+              <div className="space-y-6">
+                <img
+                  src='https://static.igem.wiki/teams/5649/homegraphics/jar-of-snacks-2.webp'
+                  alt="A jar of snack capsules representing Snaccine, one capsule is open with phages spilling out"
+                  className="w-full h-auto"
+                />
+                
+              </div>
+              <div className="mr-auto w-full max-w-md">
+                <h3 className="text-2xl font-semibold">Snaccine is the answer to HPAI outbreaks</h3>
+                <AccentLine className="mb-3" />
+                <p className="text-lg text-muted-foreground">
+                  Our platform addresses the critical gaps in current HPAI control by
+                  combining the extremely fast development timeline of mRNA vaccines with
+                  the logistical advantages of oral delivery, without the costly ultra-cold
+                  storage and transportation infrastructure.
+                </p>
+                <Link
+                to="/description"
+                className="inline-flex min-w-[20rem] items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 hover:-translate-y-1 hover:shadow-lg"
+                >
+                read more about how Snaccine works &rarr;
+              </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
