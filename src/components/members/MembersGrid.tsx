@@ -5,7 +5,7 @@ const ext = ".webp"
 
 export function MembersGrid() {
   return (
-<div className="w-full max-w-7xl mx-auto px-20 sm:px-20 lg:px-30 pt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+<div className="mx-auto flex w-full max-w-7xl flex-wrap justify-center gap-x-3 px-8 pt-8 gap-y-10">
   <MemberCard firstName="Duncan" lastName="Whyte" src={pathBase+"duncan"+ext} alt="Duncan" role="Project Leader" bio={
     <>Bing bang bee, a bio about me.
     </>
