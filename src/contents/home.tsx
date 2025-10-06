@@ -3,8 +3,8 @@ import { AccentLine } from "@/components/ui/accent-line";
 
 export function Home() {
   return (
-    <div className="flex flex-col gap-24">
-      <section className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-section via-background to-section px-6 pb-20 shadow-lg sm:px-12">
+    <div className="flex flex-col gap-6">
+      <section className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-section via-background to-section px-6 pb-5 shadow-lg sm:px-12">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div className="space-y-6 text-balance">
             <img
@@ -17,7 +17,7 @@ export function Home() {
             </p>
             <p className="max-w-2xl text-xl text-muted-foreground ml-4">
               mRNA vaccines can be developed in days, making them ideal for responding to fast-evolving viruses.
-              But unlike traditional mRNA vaccines, Snaccines can be stored at room temperature, are cheaper to produce, and can be delivered orally.
+              Unlike traditional mRNA vaccines, Snaccines can be stored at room temperature, are cheaper to produce, and can be delivered orally.
             </p>
             {/*<dl className="grid gap-6 sm:grid-cols-3">
               <div>
@@ -63,6 +63,59 @@ export function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+      
+      <section className="mx-auto flex w-full max-w-6xl px-4 sm:px-6">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 w-full">
+          <Link
+            to="/description"
+            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
+          >
+            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Project Description</h3>
+            <p className="text-sm text-muted-foreground text-balance">How Snaccine works and our scientific approach</p>
+          </Link>
+          
+          <Link
+            to="/engineering"
+            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
+          >
+            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Engineering</h3>
+            <p className="text-sm text-muted-foreground text-balance">Our design process and technical implementation</p>
+          </Link>
+          
+          <Link
+            to="/dry-lab"
+            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
+          >
+            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Dry Lab</h3>
+            <p className="text-sm text-muted-foreground text-balance">Computational modeling and bioinformatics analysis</p>
+          </Link>
+          
+          <Link
+            to="/parts"
+            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
+          >
+            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Parts</h3>
+            <p className="text-sm text-muted-foreground text-balance">BioBrick parts and genetic components</p>
+          </Link>
+          
+          <Link
+            to="/human-practices"
+            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
+          >
+            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Human Practices</h3>
+            <p className="text-sm text-muted-foreground text-balance">Stakeholder engagement and responsible innovation</p>
+          </Link>
+          
+          <Link
+            to="/members"
+            className="group rounded-2xl border border-border bg-card/60 p-4 text-center transition hover:bg-card hover:shadow-lg hover:-translate-y-1"
+          >
+            <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Our Team</h3>
+            <p className="text-sm text-muted-foreground text-balance">Meet the people behind Snaccine</p>
+          </Link>
+
         </div>
       </section>
       
