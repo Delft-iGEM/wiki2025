@@ -66,13 +66,17 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
       groups.forEach((group) => {
         const svgElement = group as SVGElement;
         svgElement.style.cursor = 'pointer';
-        svgElement.style.transition = 'opacity 0.2s';
+        svgElement.style.transition = 'all 0.3s ease';
 
         const handleMouseEnter = () => {
-          svgElement.style.opacity = '0.7';
+          svgElement.style.transform = 'scale(1.05)';
+          svgElement.style.filter = 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))';
+          svgElement.style.opacity = '0.9';
         };
 
         const handleMouseLeave = () => {
+          svgElement.style.transform = 'scale(1)';
+          svgElement.style.filter = 'none';
           svgElement.style.opacity = '1';
         };
 
