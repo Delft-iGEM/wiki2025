@@ -225,13 +225,18 @@
       background-color: white;
     }
 
+    .external-link,
+    .internal-link {
+      @apply underline text-primary;
+    } 
+
     header > div {
       h1 {
         @apply text-4xl sm:text-7xl font-bold tracking-tight text-white;
       }
 
       p {
-        @apply mt-3 text-xl text-secondary-foreground max-w-3xl;
+        @apply my-3 text-xl text-secondary-foreground max-w-3xl mb-4;
       }
     }
   }

@@ -27,9 +27,12 @@
     "remark-gfm": "^4.0.1",
     "shadcn": "^3.4.0",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.14"
+    "tailwindcss": "^4.1.14",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@types/hast": "^3.0.4",
+    "@types/mdast": "^4.0.4",
     "@types/node": "^24.7.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
