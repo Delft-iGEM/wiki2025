@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react"; // optional icon — you can replace or remove
 
-const ScrollToTopButton: React.FC = () => {
+export const ScrollTop: React.FC = () => {
   const [visible, setVisible] = useState(false);
 
   // Show button after scrolling down 300px
@@ -41,5 +41,3 @@ const ScrollToTopButton: React.FC = () => {
     </>
   );
 };
-
-export default ScrollToTopButton;
