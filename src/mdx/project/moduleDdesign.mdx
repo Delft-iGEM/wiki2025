@@ -1,0 +1,116 @@
+import { Link } from "react-router-dom";
+
+Producing an mRNA vaccine inside
+bacteria is not as simple as just putting the mRNA sequence inside the phage
+genome. Normal mRNA vaccines involve many post-processing steps which are done
+outside of the bacteria which grow the mRNA (all in WHO, 2020). We had to find
+ways to mimic these steps inside the bacteria, or to find alternatives. A big
+challenge here was the limited space we could free in T7 phages to add our synthetic DNA.
+
+First, the liposome. Though liposomes are very common in cells, there
+isn't enough space in the phage's genome to add everything necessary to
+envelop our mRNA in liposomes. That's why instead we chose the coat
+protein of the MS2 phage. The MS2 phage has a very short genome, just
+3569 nucleotides. In fact, it was the first genome ever to be sequenced.
+Its coat protein is just 510 nucleotides long. In the presence of a
+certain RNA sequence in the shape of a hairpin, 180 coat proteins come
+together to form an icosahedron 27 nm in diameter, the VLP. By adding a
+short, very positively charged peptide to the outside of the coat
+proteins, it can enter the eukaryotic cells of the gut lining. Through a
+process that is not yet fully understood, the VLP then disassembles and
+the mRNA escapes.
+
+Next, the 5' cap on mRNA. mRNA vaccines, and in fact any normal strand of mRNA
+produced by a eukaryote, start with a few heavily modified nucleotides.
+Bacteria don't make these modifications, and the machinery to do so is
+much too large to fit inside the limited space we have available in the
+T7 genome. That's why we need to tackle two of the cap's functions,
+stability against degradation and the initiation of ribosome
+translation, separately.
+
+To initiate translation, we took a leaf from the book of many eukaryotic
+viruses. They have a so-called *internal ribosome entry site* or IRES.
+IRESes are sequences of a couple hundred nucleotides which form all
+sorts of folds (secondary structures) and which allow the ribosome to
+attach to the mRNA without a proper cap.
+
+To prevent the cell from degrading the RNA at the 'beginning' (the 5'
+end), we propose using hairpin loops, as proposed and tested by
+Solodushko et al. (2025) just this February. In our proof-of-concept experiments in
+the lab, we didn't want to add too many possible points of failure, so
+we decided to forgo this step and to accept the faster degradation.
+Further research could confirm the viability of this approach.
+
+Next up is the replacement of uridine (U) with N1-methylpseudouridine
+(m<sup>1</sup>Ψ). This nucleotide, which behaves identically to U in translation,
+greatly reduces detection of the mRNA by the internal immune system of
+the cell. Bacteria do naturally have pseudouridine (Ψ), for example in
+tRNA, but there is no mechanism to replace all U with (m<sup>1</sup>)Ψ. Here
+again, we use a combination of solutions.
+
+The positively charged peptide which helps the VLP get into eukaryotic
+cells in the first place also helps destabilise the endocytosis
+membrane. This already bypasses some immune sensors like Toll-like
+receptors 7 and 8, which detect uridine-rich RNA. To fight internal
+immune sensors, we can take the exact same approach as the virus we're
+trying to stop. Influenza viruses have a protein called NS1, whose job
+it is to obstruct the immune sensor RIG-I (Heui Seo et al., 2002). This protein is short enough
+enough (693 nt) to fit into the MS2 capsid (wild-type genome: 3569 nt),
+though it does reduce space for the actual antigenic protein somewhat.
+In our lab work we didn't include the influenza NS1 protein as we
+decided to use a fluorescent protein as the payload, and also to
+simplify the proof of concept.
+
+Finally, eukaryotes generally have a long tail of just adenosine
+nucleotides at the end of mRNA transcripts to prevent degradation.
+Bacteria don't do this; in fact, they use these 'poly-A tails' to
+actively *encourage* degradation. Generally, eukaryotes add poly-A tails
+after transcription from the DNA. Since we can't do this in the bacteria
+and since eukaryotes only add this tail in the nucleus, we want to
+directly encode the poly-A tail into the engineered phage's DNA so it is
+transcribed right away. This introduces the problem of polymerase
+slippage. The two existing mRNA vaccines prefer to add this poly-A tail
+right away too, and they achieve this by putting a 10-nucleotide
+'linker' (GCAUAUGACU) inside the poly-A tail (Trepotec et al., 2019).
+
+We made a couple more modifications to our genetic code beyond those
+necessary for mRNA vaccines. Though wild MS2 phages contain only one
+copy of the coat protein (CP), most studies use two CPs fused together
+(by removing the second amino acid of the second CP, a serine). Only the
+first CP is fused with the very positive cell-penetrating peptide (CPP)
+with a GGGS linker. With only one copy, the 180 CPs with their CPPs
+might interfere with each other and not form the VLP. With one CPP-CP
+and one CP, not fused, different VLPs would have different numbers of
+CPP-CP, possibly avoiding them all together. By fusing them together
+(CPP-CP-CP), we ensure exactly 90 CPPs per VLP.
+
+We used DNA synthesis to test just the parts we want to add to the phage
+by themselves, as a plasmid. Practical issues mean that we can't
+synthesise two somewhat similar sequences in a row, which would be the
+case with the two CPs. To this end, <Link to="/contribution" className="underline">we wrote a Python program which
+can generate the two least-alike synonymous DNA sequences for a given
+amino acid sequence, as well as the least-alike DNA sequence given a
+fixed DNA sequence.</Link> We used the latter to create a functional, but in
+nucleotides dissimilar CP copy. After changing some base pairs to avoid
+restriction sites and to make our construct BioBrick RFC\[10\] and
+RFC\[1000\] compatible. We also included a His-tag in the AB loop of the
+second CP for easy purification. After the stop codon we placed two more
+redundant stop codons, similar to the Pfizer vaccine. An Esp3I site in
+between was intended to allow us easy excision of the CPP-CP-CP in case
+it didn't form, and we wanted to test just the payload mRNA on a
+eukaryote by electroporation.
+
+Like the COVID-19 vaccines, we use the 5' and 3' UTRs from human beta
+globin for the vaccine itself, both followed by a MS2 packaging signal
+hairpin ('pac site'), again slightly varied to allow easy DNA synthesis.
+Following the 5' UTR and its pac site we immediately place the IRES,
+itself directly followed by the payload, eGFP. For our plasmids which
+emulate what would be the T7's payload, we use T7 promoters and a strain
+of *E. coli* with T7 polymerase, BL21(DE3), which fortunately for our
+ends is a very common expression system in the lab.
+
+#### References
+1. World Health Organization (WHO): International Nonproprietary Names Programme. *Messenger RNA Encoding the Full-Length SARS-CoV-2 Spike Glycoprotein*; 11889; 2020.
+2. Solodushko, V., Kim, J.H. & Fouty, B. A capless hairpin-protected mRNA vaccine encoding the full-length Influenza A hemagglutinin protects mice against a lethal Influenza A infection. *Gene Ther* **32**, 349–358 (2025). https://doi-org.eur.idm.oclc.org/10.1038/s41434-025-00521-0
+3. Heui Seo, S., Hoffmann, E. & Webster, R. Lethal H5N1 influenza viruses escape host anti-viral cytokine responses. *Nat Med* **8**, 950–954 (2002). https://doi-org.eur.idm.oclc.org/10.1038/nm757
+4. Trepotec Z, Geiger J, Plank C, Aneja MK, Rudolph C. Segmented poly(A) tails significantly reduce recombination of plasmid DNA without affecting mRNA translation efficiency or half-life. *RNA* **25**, 507-518 (2019). https://doi.org/10.1261/rna.069286.118

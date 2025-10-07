@@ -1,4 +1,6 @@
 import { Content, Header, AccentLine, Dropdown } from "@/components";
+import ModDDes from "./moduleDdesign.mdx";
+
 
 <Header>
 # engineering
@@ -25,7 +27,7 @@ To achieve this, our methodology had to be **accessible**, **adaptable**, and **
 Phage selection was one of the earliest and most critical design choices. Initially, we evaluated highly stable species such as PIN1 and PIN2, which can remain viable at room temperature for extended periods (Jati et al.). However, discussions with **Prof. Stan Brouns** (TU Delft) emphasized that robust genetic characterization and engineering feasibility were more essential for our purpose. Based on this, we chose the **T7 bacteriophage**, a well-characterized model with extensive literature, established engineering methods, and reliable performance in laboratory settings.
 
 ### evaluating engineering approaches
-Many iGEM teams have explored phage genome editing. The **Bacteriophage Recombineering of Electroporated DNA (BRED)** method, used by iGEM Delft 2020 (*PHOCUS*), offers flexible site targeting through homologous recombination but suffers from low yield and labor-intensive screening \[citation\]. These limitations would hinder rapid design iteration, so we sought alternative strategies.
+Many iGEM teams have explored phage genome editing. The **Bacteriophage Recombineering of Electroporated DNA (BRED)** method, used by iGEM Delft 2020 (*PHOCUS*), offers flexible site targeting through homologous recombination but suffers from low yield and labor-intensive screening. These limitations would hinder rapid design iteration, so we sought alternative strategies.
 
 Recent studies (Levrier et al.; Vu et al.) describe **in vitro genome assembly** as a faster, more accessible alternative. These methods combine PCR amplification and DNA assembly to reconstruct full phage genomes, which can then be rebooted in host cells or cell-free systems. No iGEM team had implemented this approach before, making it an innovative opportunity to improve efficiency and modularity in phage engineering.
 
@@ -255,6 +257,12 @@ Our engineering journey in Module C was guided by the iterative **Design–Build
 
 ## **Design**
 
+The plasmid we ended up testing in the lab was only an early version.
+We later designed a more advanced construct to demonstrate modularity, but we didn't
+have the time to test it in the lab.
+To avoid too much repeated content, we focus here on the lab work and testing.
+The DNA/RNA design can be found below, under *Future Development*.
+
 ![enter image description here](https://static.igem.wiki/teams/5649/figures/engineering-module-c-image-1.webp)
 We began by designing a synthetic plasmid (pET-Kan-T7lac-mat-MS2cp) containing a T7/lac promoter, the MS2 maturase gene, the coat protein gene, and an MS2 RNA stem loop (*Figure 1*) .
 
@@ -286,14 +294,31 @@ With soluble expression established, we advanced to the next stage: concentratin
 
 ## Future development
 
-Encouraged by this  success, we began  designing the next  iteration of the system to demonstrate  modularity. In this version, we planned to encapsulate a “dummy  vaccine RNA” containing a eukaryotic  expression  machinery  inside the MS2 particles. 
+Encouraged by this success, we began designing the next iteration of the system to demonstrate
+modularity. In this version, we planned to encapsulate a “dummy vaccine RNA” containing a eukaryotic
+expression machinery inside the MS2 particles.
 
 ![enter image description here](https://static.igem.wiki/teams/5649/moduledplasmidbiorender/module-d-plasmid-biorender.webp)
-*Figure 3. Plasmid design for the next-generation MS2 system encoding a “dummy vaccine RNA” and optimized coat proteins for RNA packaging and delivery.*
+*Figure 3. Plasmid design for the next-generation MS2 system encoding a
+“dummy vaccine RNA” and optimized coat proteins for RNA packaging and delivery.*
 
-The goal of this  new design (*Figure 3*) is to express and purify the VLPs with the same validated  workflow and then expose them to eukaryotic  cells. If  successful, the uptake of VLPs and expression of the model protein would  confirm the end-to-end functionality of our platform: packaging, delivery, and expression.
+The goal of this new design (*Figure 3*) is to express and purify the VLPs with the
+same validated workflow and then expose them to eukaryotic cells.
+If successful, the uptake of VLPs and expression of the model protein
+would confirm the end-to-end functionality of our platform: packaging,
+delivery, and expression.
 
-Through this iterative process, each experiment guided the next step. Troubleshooting issues like the lysozyme interference, validating expression with sequencing checkpoints, and confirming assembly with PEG precipitation and TEM all strengthened our confidence in the system. By moving through successive rounds of design, testing, and refinement, we established a robust method for producing functional MS2 VLPs in E. coli and laid the groundwork for future iterations carrying custom vaccine payloads.
+### Design of the new plasmid
+
+<ModDDes />
+
+Through this iterative process, each experiment guided the next step.
+Troubleshooting issues like the lysozyme interference, validating expression
+with sequencing checkpoints, and confirming assembly with PEG precipitation
+and TEM all strengthened our confidence in the system. By moving through
+successive rounds of design, testing, and refinement, we established
+a robust method for producing functional MS2 VLPs in E. coli and laid
+the groundwork for future iterations carrying custom vaccine payloads.
 
 </Dropdown>
 
