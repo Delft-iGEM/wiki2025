@@ -10,4 +10,5 @@ export * from "./text/option_fork.tsx";
 export * from "./text/downstream_purification_flow.tsx";
 export * from "./text/Interactive_schematic.tsx";
 export * from "./text/scroll_top.tsx";
+export * from "./text/box.tsx";
 export { SegmentedContent } from "./SegmentedContent.tsx";
