@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { AccentLine } from "@/components/ui/accent-line";
-import { Header } from "@/components";
 
 const quickLinks = [
   {
@@ -28,15 +27,15 @@ const quickLinks = [
 
 export function Home() {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col">
       {/* --- Hero Section --- */}
-      <section className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-section via-background to-section px-6 pb-8 shadow-lg sm:px-12">
-        <div className="mx-15 grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:items-center">
+      <section className="overflow-hidden bg-gradient-to-br lg:bg-gradient-to-tr from-primary/20 via-background to-tertiary/40 px-6 pb-8 shadow-lg sm:px-12 -mt-30 pt-30">
+        <div className="mx-3 md:mx-15 grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:items-center">
           <div className="text-balance">
             <img
               src="https://static.igem.wiki/teams/5649/svg/mainlogowithsubtitle.svg"
               alt="Snaccine: a phage-based edible vaccine"
-              className="w-full max-w-2xl -ml-16 mb-0 -mt-5"
+              className="max-w-2xl"
               loading="lazy"
             />
             <p className="max-w-3xl text-2xl font-bold text-primary ml-4">
@@ -71,7 +70,7 @@ export function Home() {
               </Link>
               <Link
                 to="/members"
-                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-tertiary px-6 py-3 text-base font-semibold text-foreground transition hover:border-accent hover:text-accent hover:-translate-y-1 hover:shadow-lg"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-tertiary px-6 py-3 text-base font-semibold text-tertiary transition hover:border-accent hover:text-accent hover:-translate-y-1 hover:shadow-lg"
               >
                 meet the team &rarr;
               </Link>
@@ -79,7 +78,10 @@ export function Home() {
           </div>
         </div>
       </section>
-      <Header>
+      {/* --- Avian Influenza Section --- */}
+      <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 mt-10">
+
+
       <div className="space-y-4 text-center">
         <h2 className="text-6xl font-semibold tracking-tight">about avian influenza</h2>
         <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-balance">
@@ -89,12 +91,6 @@ export function Home() {
         
         <AccentLine className="mx-auto" />
       </div>
-      </Header>
-
-      {/* --- Avian Influenza Section --- */}
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6">
-
-
 
         <div className="relative overflow-hidden rounded-3xl" 
             style={{
@@ -147,53 +143,6 @@ export function Home() {
           </div>
         </div>
 
-        {/* --- Current Control Methods --- */}
-        <div className="rounded-3xl border border-border bg-card/60 px-8 py-12 backdrop-blur-sm">
-          <div className="mx-auto max-w-4xl space-y-8">
-            <h3 className="text-center text-2xl font-semibold">Current Control Methods Fall Short</h3>
-            
-            <div className="grid gap-8 md:grid-cols-2">
-              <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-destructive">Mass Culling</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-destructive"></span>
-                    <span>Devastating animal welfare impact</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-destructive"></span>
-                    <span>Economic losses for farmers and government</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-destructive"></span>
-                    <span>Does nothing to prevent future outbreaks</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-amber-600">Existing Vaccines</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-600"></span>
-                    <span>Require injection of individual chicks</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-600"></span>
-                    <span>Slow and expensive to update for new strains</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="border-t border-border pt-8 text-center">
-              <p className="text-lg text-muted-foreground">
-                The poultry industry faces an impossible choice: <strong>endure mass culling or accept prolonged outbreaks</strong>. 
-                Both options carry similar costs but devastating consequences for animal welfare and farm sustainability.
-              </p>
-            </div>
-          </div>
-        </div>
 
         {/* --- Snaccine Answer Section --- */}
         <div className="rounded-3xl bg-gradient-to-br from-primary/20 to-transparent px-8 py-12">
@@ -220,9 +169,9 @@ export function Home() {
                 </p>
                 <Link
                   to="/description"
-                  className="inline-flex min-w-[20rem] items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 hover:-translate-y-1 hover:shadow-lg"
+                  className="inline-flex items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/90 hover:-translate-y-1 hover:shadow-lg"
                 >
-                  read more about how Snaccine works &rarr;
+                  read how it works &rarr;
                 </Link>
               </div>
             </div>

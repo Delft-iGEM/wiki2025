@@ -280,11 +280,11 @@
   }
 
   .dropdown-group .dropdown-item {
-    @apply border border-border rounded-md overflow-hidden;
+    @apply border border-border rounded-md overflow-hidden bg-card/20 hover:bg-card/40;
   }
 
   .dropdown-group .dropdown-item .accordion-trigger {
-    @apply px-4 py-3 bg-muted/30 hover:bg-muted/50 transition-colors;
+    @apply px-4 py-3 bg-none transition-colors;
   }
 
   /* Generic pieces applied to both single and grouped items */
@@ -294,7 +294,7 @@
   }
 
   .accordion-trigger {
-    @apply flex w-full items-center gap-2 rounded-md py-2 px-4 text-left text-sm font-medium transition-all outline-none hover:underline disabled:pointer-events-none disabled:opacity-50;
+    @apply flex w-full items-center gap-2 rounded-md py-2 px-4 text-left text-sm font-medium transition-all outline-none  disabled:pointer-events-none disabled:opacity-50;
   }
 
   .accordion-content {
@@ -321,10 +321,6 @@
     @apply text-left text-base px-6 py-4 border border-border align-top;
   }
 
-  /*.comparison-table tbody tr:nth-child(even) th,
-  .comparison-table tbody tr:nth-child(even) td {
-    @apply bg-muted/20;
-  }*/
 
   .dropdown-icon {
     @apply text-muted-foreground pointer-events-none size-4 shrink-0 transition-transform duration-200 ml-2;
@@ -448,8 +444,8 @@
     --secondary-foreground-complement: oklch(
       83.17% 0.1242 227.5
     ); /* Soft Teal */
-    --tertiary: #5f8233; /* Green */
-    --muted: oklch(94.43% 0.0144 227.5); /* Card/Panel Shade */
+    --tertiary: oklch(56% 0.1 130); /* Green */
+    --muted: oklch(45% 0.1 227.5/0.1); /* Card/Panel Shade */
     --muted-foreground: oklch(38.68% 0.0728 227.5); /* Muted Deep Blue */
     --accent: oklch(79.12% 0.1261 227.5); /* Soft Teal */
     --accent-foreground: oklch(25.62% 0.047 227.5);
