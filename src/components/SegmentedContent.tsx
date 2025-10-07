@@ -66,7 +66,7 @@ export function Segments({
       <LayoutGroup>
         <div
           ref={wrapperRef}
-          className="relative flex w-full max-w-4xl flex-wrap items-center justify-center gap-2 rounded-3xl border border-white/30 bg-white/70 p-2 shadow-lg backdrop-blur-xl transition-all duration-500 dark:border-white/10 dark:bg-secondary/30"
+          className="relative flex w-full max-w-4xl flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/30 bg-popover/70 p-2 shadow-lg backdrop-blur-xl transition-all duration-500 dark:border-white/10 dark:bg-secondary/30"
         >
           {segments.map((segment) => {
             const isActive = segment === activeSegment;
@@ -78,17 +78,17 @@ export function Segments({
                 data-active={isActive}
                 onClick={() => onChange(segment)}
                 className={clsx(
-                  "relative overflow-hidden rounded-2xl px-6 py-2 text-sm font-semibold uppercase tracking-wide transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2",
+                  "relative overflow-hidden rounded-lg px-6 py-2 text-sm font-semibold uppercase tracking-wide transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2",
                   isActive
                     ? "text-white"
-                    : "text-secondary-foreground hover:text-foreground"
+                    : "text-foreground/60 hover:text-foreground"
                 )}
                 aria-pressed={isActive}
               >
                 {isActive && (
                   <motion.span
                     layoutId="segment-active-highlight"
-                    className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[var(--color-secondary)] via-[var(--color-primary)] to-[var(--color-brand)] shadow-lg"
+                    className="absolute inset-0 rounded-lg bg-gradient-to-r from-[var(--color-secondary)] via-[var(--color-primary)] to-[var(--color-brand)] shadow-lg"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -134,7 +134,7 @@ export function SegmentedContent({
   }
 
   return (
-    <section className={clsx("space-y-10", className)}>
+    <section className={clsx("space-y-5", className)}>
       <Segments
         segments={labels}
         activeSegment={activeSegment.label}
