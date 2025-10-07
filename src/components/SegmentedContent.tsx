@@ -78,7 +78,7 @@ export function Segments({
                 data-active={isActive}
                 onClick={() => onChange(segment)}
                 className={clsx(
-                  "relative overflow-hidden rounded-lg px-6 py-2 text-sm font-semibold uppercase tracking-wide transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2",
+                  "relative overflow-hidden rounded-lg px-6 py-2 text-sm font-semibold lowercase tracking-wide transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2",
                   isActive
                     ? "text-white"
                     : "text-foreground/60 hover:text-foreground hover:cursor-pointer"
