@@ -1,4 +1,4 @@
-import { Content, AccentLine, Dropdown, IHPTimeline, DownstreamPurificationFlow, OptionFork, ScrollTop, Box } from "@/components";
+import { Content, AccentLine, Dropdown, IHPTimeline, DownstreamPurificationFlow, OptionFork, ScrollTop, Box, BoxGrid } from "@/components";
 
 <style jsx global>{`
   /* Make all dropdowns on this page transparent */
@@ -81,7 +81,8 @@ Our collaboration with Prof. Stan Brouns, provided this blueprint.
 - **Core Mechanism:** To ensure the mRNA vaccine was packaged reliably, he recommended the proven biological system of the MS2 bacteriophage coat protein (MS2-CP) and its corresponding RNA hairpin loop. By engineering the T7 phage to co-express the MS2 capsids and designing our mRNA with the hairpin signal, we could leverage a well-documented mechanism for efficient encapsulation.
 
 **Pivotal Change:** <br/>
-With these components defined, we could outline an achievable proof-of-concept: demonstrating that our engineered T7 phage could lyse the _E. coli_ host and produce detectable quantities of MS2 virus-like particles (VLPs). Our results of this can be seen in the [Wet Lab documentation of Module A and Module C](./experiments). This foundational loop transformed the project from a vague ambition into an actionable experimental strategy, making all subsequent work possible.
+With these components defined, we could outline an achievable proof-of-concept: demonstrating that our engineered T7 phage could lyse the _E. coli_ host and produce detectable quantities of MS2 virus-like particles (VLPs). Our results of this can be seen in the [Wet Lab documentation of Module A and Module C](https://2025.igem.wiki/tu-delft/experiments). This foundational loop transformed the project from a vague ambition into an actionable experimental strategy, making all subsequent work possible.
+<DownstreamPurificationFlow />
 </Dropdown>
 
 <Dropdown header="Integration Loop 2: Prioritizing Biocontainment in Response to Regulatory Concerns" level={0}>
@@ -125,8 +126,28 @@ Building upon this, our second discussion applied these concepts directly to Sna
 
 **Pivotal Change:** <br/>
 Based on this input, we outlined a multi-step downstream purification process to achieve a safe and pure final product:
-!!Change this!!
-<DownstreamPurificationFlow />
+<BoxGrid> 
+<Box title = "Step 1">
+**Step 1: Clarification** <br/>
+Initial removal of large cellular debris post-lysis.
+</Box>
+<Box title = "Step 2">
+**Step 2: Nuclease Treatment** <br/>
+Degradation of residual host nucleic acids (DNA and RNA).
+</Box>
+<Box title = "Step 3">
+**Step 3: Filtration** <br/>
+A crucial step to separate the phage product from smaller impurities.
+</Box>
+<Box title = "Step 4">
+**Step 4: Anion-Exchange Chromatography** <br/>
+The primary method for robustly removing endotoxins and other protein contaminants.
+</Box>
+<Box title = "Step 5">
+**Step 5: Polishing** <br/>
+A final concentration and buffer exchange step, typically performed with Tangential Flow Filtration (TFF) or Ultrafiltration/Diafiltration (UF/DF), to prepare the final formulation. 
+</Box>
+</BoxGrid>
 
 </Dropdown>
 
