@@ -1,4 +1,5 @@
-import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem } from "@/components";
+import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem, Temperature } from "@/components";
+import { Link } from "react-router-dom";
 
 <Header>
   # protocols  
@@ -12,15 +13,17 @@ import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem } fr
     <p>Protocols and procedures for Module A research and development.</p>
     
     <DropdownGroup multiple className="mt-4">
-      <DropdownItem value="module-a-protocols" header="Q5 polymerase PCR protocol" level={1} />
-      <DropdownItem value="module-a-protocols" header="1% Agarose Gel Electrophoresis to verify DNA length" level={1} />
-      <DropdownItem value="module-a-protocols" header="T7 genome assembly" level={1} />
-      <DropdownItem value="module-a-protocols" header="Column Purification of PCR Product" level={1} />
-      <DropdownItem value="module-a-protocols" header="Heat shock transformation and rebooting of phages" level={1} />
-      <DropdownItem value="module-a-protocols" header="Preparation of electrocompetent cells" level={1} />
-      <DropdownItem value="module-a-protocols" header="T7 phage filtration" level={1} />
-      <DropdownItem value="module-a-protocols" header="T7 phage concentration" level={1} />
-      <DropdownItem value="module-a-protocols" header="T7 phage plaque assay" level={1} />
+      <DropdownItem value="module-a-protocol1" header="Q5 polymerase PCR protocol" level={1} />
+      <DropdownItem value="module-a-protocol2" header="1% Agarose Gel Electrophoresis to verify DNA length" level={1} />
+      <DropdownItem value="module-a-protocol3" header="T7 genome assembly" level={1} />
+      <DropdownItem value="module-a-protocol4" header="Column Purification of PCR Product" level={1} />
+      <DropdownItem value="module-a-protocol5" header="Heat shock transformation and rebooting of phages" level={1} />
+      <DropdownItem value="module-a-protocol6" header="Preparation of electrocompetent cells" level={1} />
+      <DropdownItem value="module-a-protocol7" header="T7 phage filtration" level={1} />
+      <DropdownItem value="module-a-protocol8" header="T7 phage concentration" level={1} />
+      <DropdownItem value="module-a-protocol9" header="T7 phage assay" level={1}>
+        See the general plaque assay protocol below for T7 bacteriophage.
+      </DropdownItem>
     </DropdownGroup>
   </Dropdown>
 
@@ -145,56 +148,7 @@ import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem } fr
         2. On ice, fill 18 capsules with 100 µL T7 stock.  
         3. Close firmly and keep chilled until use.  
       </DropdownItem>
-
-      {/* Plaque Assay General */}
-      <DropdownItem value="plaque-assay-general" header="General Phage Plaque Assay (Double-Agar Overlay)" level={1}>
-        ###### Date
-        04.07.25  
-
-        ###### Purpose
-        Standard techniques for quantifying bacteriophage titers (PFU/mL) and testing phage activity on bacterial lawns.
-
-        ---
-
-        ###### Materials
-        - LBa plates (1.5% agar)
-        - Soft/top agar (0.4–0.7% agar, molten at 55 °C)
-        - Host bacteria culture (OD₆₀₀ = 0.4–0.6)
-        - LB broth
-        - Sterile pipette tips, microtubes
-        - Phage stock solutions
-        - Water bath (55 °C)
-        - Sterile spreaders
-        - 37 °C incubator
-
-        ---
-
-        ###### Methods
-        **A. Plate & Bacterial Preparation**
-        1. Prepare LBa plates (1.5% agar).  
-        2. Melt soft/top agar (0.4–0.7%) and equilibrate to 55 °C before use.  
-        3. Mix 100 µL host bacteria with ~5 mL molten top agar and pour evenly.  
-        4. Let solidify for ~5 min.  
-
-        **B. Phage Serial Dilutions**
-        1. Dispense 180 µL LB into each dilution tube.  
-        2. Add 20 µL phage stock to the first tube (10⁻¹).  
-        3. Transfer 20 µL sequentially up to 10⁻⁶.  
-        4. Mix and change tips each time.  
-
-        **C. Spotting**
-        1. Apply ~4 µL of each dilution to the agar surface.  
-        2. Do 3 replicates per dilution.  
-        3. Let dry, then incubate inverted at 37 °C overnight.  
-
-        **D. Readout (Spot Analysis)**
-        1. Count visible plaques.  
-        2. Calculate PFU/mL using:  
-           PFU/mL = (number of plaques × dilution factor) / volume of phage dilution (mL)  
-        3. Record plaque morphology (size, clarity).  
-      </DropdownItem>
-
-      {/* Plaque Assay Stability */}
+{/* Plaque Assay Stability */}
       <DropdownItem value="plaque-assay-stability" header="Plaque Assays for Capsule & Free-Phage Stability" level={1}>
         ###### Purpose
         Quantify phage survival and release kinetics following exposure to different pH conditions.
@@ -241,22 +195,95 @@ import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem } fr
            - PFU survival after release vs free-phage controls.  
       </DropdownItem>
 
+      <DropdownItem value="module-b-protocol1" header="Plaque assay, T7 bacteriophage" level={1} >
+              See the general plaque assay protocol below for T7 bacteriophage.
+      </DropdownItem>
+
     </DropdownGroup>
-  </Dropdown>
+</Dropdown>
+
+  {/* Plaque assay for both module A and B */}
+<Dropdown value="plaque-assay" header="Plaque assay, T7 bacteriophage" level={0}>
+
+To help other iGEM teams and researchers working with bacteriophages,
+we developed an improved plaque assay protocol for T7 phages. We
+based it on <Link to="https://www.protocols.io/view/plaque-assay-kqdg35ebqv25/v1" className="underline">a protocol from iGEM Wageningen 2019.</Link>
+This protocol saves time by clever mixing, improves clarity, counts plaques slightly differently, and has a greater focus on phage contamination safety measures.
+
+> Whyte, D. (2025). Plaque assay T7 bacteriophage, double agar method. Springer Science and Business Media LLC. <Link to="https://doi.org/10.17504/protocols.io.x54v95w9ql3e/v1" className="underline">https://doi.org/10.17504/protocols.io.x54v95w9ql3e/v1</Link>
+
+
+#### Prepare a safe phage work area.
+
+1. To avoid contaminating other lab work with phages, take the required measures. Always make sure to wear gloves when working with phages. Designate a certain lab bench area for phage work. Use a special phage incubator. Prepare and maintain Virkon to decontaminate the phage area after all work. Use filter tips for pipettes, and designate pipette(s) (required range: 11 µL - 111 µL ) to remain phage-work pipettes. We recommend using fluorescent tape to mark pipettes and other phage-contaminated equipment.
+
+   Here is an example of the phage area we used.
+
+  <Dropdown value="phage-area" header="Show phage area" level={0}>
+<img
+  src="https://static.igem.wiki/teams/5649/homegraphics/phagearea.webp"
+  alt="Designated phage work area in the lab, with a dedicated incubator and clearly labeled equipment"
+  className="my-4 rounded-lg border border-gray-300 shadow-md max-w-full"
+/>
+</Dropdown>
+
+
+#### Create an *E. coli* culture
+
+2. Streak LB plate with *E. coli*, e.g. BL21(DE3) and incubate overnight at <Temperature celsius="37 °C" fahrenheit="98.6 °F" />.
+
+3. Pick a colony from this plate and use it to inoculate 3 mL of LB. Incubate this culture at <Temperature celsius="37 °C" fahrenheit="98.6 °F" /> until the OD reaches 2-3. We recommend an overnight culture.
+
+#### Prepare LBa and LBa plates
+
+4. Prepare enough plates with LB and agar, one for every dilution sample and one for the control. For a first assay, we recommend 6 samples (10⁰ to 10⁴ and a control). For assays where the rough PFU is known, you might be able to leave out some of these dilutions.
+
+5. Preheat the plates to <Temperature celsius="37 °C" fahrenheit="98.6 °F" />. Consider labelling the plates in advance.
+
+6. We recommend preparing molten soft (0.5%) agar LB at <Temperature celsius="50 °C" fahrenheit="120 °F" />, but you can also make it before it is needed. You'll need 3 mL per dilution sample, but we recommend using a bottle with more than enough and reusing whatever is left.
+
+#### Make a range dilutions, by a factor 10 each, and a control
+
+7. Prepare the required number of tubes. We recommend using 15 mL Falcon tubes, generically called Screw-top centrifuge tubes. Label these with (recommended) a combination of coloured stickers (per different T7 sample) and a marker (for different dilutions). Label the dilution samples with 0, -1, -2, etc.
+
+8. Add 100 µL of ddH2O (MilliQ) to the control. Add 100 µL of ddH2O (MilliQ) to all dilution samples except for the first dilution, labelled 0. Do not add any ddH2O to this sample.
+
+9. Enter the phage area. Using a pipette tip with filter, pipette 111 µL of the desired T7 phage sample into the sample labelled 0.
+
+10. With filter tips, pipette 11 µL from the sample labelled 0 to the next sample, -1. Mix the sample, or gently vortex it.
+
+11. Now repeat this previous step for every dilution. That is, take 11 µL from the previous dilution sample and add it to the next one. Then mix or gently vortex.
+
+12. Finally, discard 11 µL from the final sample (or leave it in and adjust the calculation at the end). Now every sample should contain 100 µL of T7, reduced in concentration by a factor of ten compared to the previous sample.
+
+#### Add the E. coli and pour the plates 25m
+
+13. Now add 200 µL of the *E. coli* culture to every dilution sample and to the control. Use filter tips. Gently mix. Wait 00:10:00 . Do not wait more than a phage replication time (rather conservatively, 00:20:00 at room temperature).
+
+14. Add 3 mL of liquid soft LB agar (LB with 0.5% agar) (<Temperature celsius="50 °C" fahrenheit="120 °F" />). Mix and quickly pour the resulting mixture on the LB plates (preheated at <Temperature celsius="37 °C" fahrenheit="98.6 °F" />). Note: this means the plates will have two layers, the first without any *E. coli* or T7 and the second with.
+
+    Incubate for at least 15 min. or more at Room temperature, to let the second layer harden. Turn the plates upside-down.
+
+15. Incubate Overnight in a specialised phage work area incubator at <Temperature celsius="37 °C" fahrenheit="98.6 °F" />.
+
+16. Find the plate with the most easily identifiable number of plaques, e.g. 10-100. Calculate the Plaque Forming Units (PFU)/mL by the following formula: PFU/mL = N × 1/Vdiluted = N × 1/DF × 1/V0.
+
+    N is the number of plaques of lysis counted on the plate (expressed as PFU).
+    
+    Vdiluted is the total volume of the original phage sample added to this plate (equal to DF × V0)
+    
+    DF is the dilution factor of this plate (i.e. 10ˣ, where x is the label 0, -1, -2, etc.)
+    
+    V0 is the volume of phage dilution of the first plate, i.e. 100 µL .
+    
+    When comparing PFU/mL, remember to take into account the strain of E. coli used.
+
+</Dropdown>
 
   {/* --- MODULE C: MS2 Capsid Expression --- */}
   <Dropdown header="MS2 Capsid Expression in E. coli" level={0}>
     <p>Comprehensive protocols for Module C including bacterial transformation, protein expression, and VLP production.</p>
   </Dropdown>
 
-  {/* --- MODULE D: Eukaryotic Uptake --- */}
-  <Dropdown header="MS2 Capsid uptake by eukaryotic cells" level={0}>
-    <p>Protocols and procedures for Module D research and development.</p>
-    <DropdownGroup multiple className="mt-4">
-      <DropdownItem value="module-d-protocols" header="Protocols for Module D" level={1}>
-        *Detailed protocols for Module D will be documented here.*
-      </DropdownItem>
-    </DropdownGroup>
-  </Dropdown>
 
 </Content>
