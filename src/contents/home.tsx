@@ -99,7 +99,7 @@ export function Home() {
               WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 0%)'
             }}>
           <img
-            src="https://static.igem.wiki/teams/5649/frontpagelogo/chicken-apoca-better.webp"
+            src="https://static.igem.wiki/teams/5649/roundicons/illustration-sans-titre-7-min.webp"
             alt="Placeholder Creative Commons chicken image"
             className="w-full h-96 object-cover"
             loading="lazy"
