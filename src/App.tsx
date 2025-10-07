@@ -11,7 +11,6 @@ import { Home } from "./contents/home.tsx";
 
 // Content components MDX
 import HumanPractices from "./mdx/hp/hp_page.mdx";
-import DryLab from "./mdx/dry_lab.mdx";
 
 
 // Team
@@ -31,6 +30,9 @@ import Parts from "./mdx/wetlab/parts.mdx";
 import Protocols from "./mdx/wetlab/protocols.mdx";
 import Safety from "./mdx/wetlab/safety.mdx";
 import Notebook from "./mdx/wetlab/notebook.mdx";
+
+//drylab
+import Model from "./mdx/model.mdx";
 
 
 
@@ -115,10 +117,10 @@ const Pages: NavItem[] = [
     ],
   },
   {
-    name: "dry lab",
-    title: "Dry Lab",
-    path: "/dry-lab",
-    component: DryLab,
+    name: "model",
+    title: "Model",
+    path: "/model",
+    component: Model,
   },
   // {
   //   name: "Dry Lab",
