@@ -9,10 +9,10 @@ how we contribute to the iGEM community, science, and the world
 
 <Content>
 
-<Dropdown header="new BioBrick parts">
+<Dropdown header="new BioBrick parts" defaultOpen>
 
 For future iGEM teams to use, as well as others in the synthetic biology community,
-we designed and characterized several new genetic parts.
+we designed and characterized several new genetic BioBrick-compatible parts.
 This composite part, for T7RNAP *E. coli* such as BL21(DE3),
 produces a eukaryotic mRNA therapeutic, encapsulated in an MS2 phage capsid (VLP).
 The eGFP payload can be replaced with any mRNA of interest, or the entire RNA can be
@@ -22,55 +22,39 @@ replaced by other RNA therapies, such as siRNA or gRNA, if the pac signal is inc
   to="/parts"
   className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 hover:-translate-y-1 hover:shadow-lg [&>p]:m-0"
 >
-  View Snaccine Parts &rarr;
+  view our BioBrick parts &rarr;
 </Link>
 
 </Dropdown>
 
-<Dropdown header="open-source molecular dynamics model">
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-
-<Link
-  to="/model"
-  className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 hover:-translate-y-1 hover:shadow-lg [&>p]:m-0"
->
-  Access Snaccine Models &rarr;
-</Link>
-
-</Dropdown>
-
-<Dropdown header="codon optimization algorithm">
+<Dropdown header="codon optimization algorithm" defaultOpen>
 
 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
 
-<a
-  href="https://gitlab.igem.org/2025/software-tools/tu-delft"
-  target="_blank"
-  rel="noopener noreferrer"
+<Link
+  to="https://gitlab.igem.org/2025/software-tools/tu-delft"
   className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 hover:-translate-y-1 hover:shadow-lg [&>p]:m-0"
 >
-  Try the Minimum Homology Codon Optimization Tool &rarr;
-</a>
+  see the minimum homology codon optimization tool &rarr;
+</Link>
 
 </Dropdown>
 
-<Dropdown header="improved plaque assay protocol">
+<Dropdown header="improved plaque assay protocol" defaultOpen>
 
-Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+To help other iGEM teams and researchers working with bacteriophages,
+we developed an improved plaque assay protocol for T7 phages. We
+based it on <Link to="https://www.protocols.io/view/plaque-assay-kqdg35ebqv25/v1" className="underline">a protocol from iGEM Wageningen 2019.</Link>
 
-https://www.protocols.io/view/plaque-assay-t7-bacteriophage-hb2wb2qff
+This protocol saves time by clever mixing, improves clarity, counts plaques slightly differently, and has a greater focus on phage contamination safety measures.
 
-DOI: dx.doi.org/10.17504/protocols.io.rm7vz91p4gx1/v1
+DOI: <Link to="https://dx.doi.org/10.17504/protocols.io.rm7vz91p4gx1/v1" className="underline">dx.doi.org/10.17504/protocols.io.rm7vz91p4gx1/v1</Link>
 
 <Link
   to="https://www.protocols.io/view/plaque-assay-t7-bacteriophage-hb2wb2qff"
   className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 hover:-translate-y-1 hover:shadow-lg [&>p]:m-0"
 >
-  View Enhanced Protocols &rarr;
+  view protocol &rarr;
 </Link>
 
 </Dropdown>
