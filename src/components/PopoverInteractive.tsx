@@ -33,9 +33,10 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
   const handleSvgClick = (e: React.MouseEvent<SVGElement>) => {
     const target = e.target as SVGElement;
 
-    // Check if the clicked element or its parent has any of our popover classes
+    // Find the closest group element with one of our popover classes
     for (const className of Object.keys(popoverContentMap)) {
-      if (target.classList.contains(className) || target.closest(`.${className}`)) {
+      const closestGroup = target.closest(`g.${className}`);
+      if (closestGroup) {
         e.stopPropagation();
         setActivePopover(className);
         return;
@@ -58,12 +59,12 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
 
     const cleanupFunctions: (() => void)[] = [];
 
-    // For each class name in the map, find all matching elements
+    // For each class name in the map, find all matching group elements
     Object.keys(popoverContentMap).forEach((className) => {
-      const elements = svg.querySelectorAll(`.${className}`);
+      const groups = svg.querySelectorAll(`g.${className}`);
 
-      elements.forEach((element) => {
-        const svgElement = element as SVGElement;
+      groups.forEach((group) => {
+        const svgElement = group as SVGElement;
         svgElement.style.cursor = 'pointer';
         svgElement.style.transition = 'opacity 0.2s';
 
@@ -75,12 +76,12 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
           svgElement.style.opacity = '1';
         };
 
-        element.addEventListener('mouseenter', handleMouseEnter);
-        element.addEventListener('mouseleave', handleMouseLeave);
+        group.addEventListener('mouseenter', handleMouseEnter);
+        group.addEventListener('mouseleave', handleMouseLeave);
 
         cleanupFunctions.push(() => {
-          element.removeEventListener('mouseenter', handleMouseEnter);
-          element.removeEventListener('mouseleave', handleMouseLeave);
+          group.removeEventListener('mouseenter', handleMouseEnter);
+          group.removeEventListener('mouseleave', handleMouseLeave);
         });
       });
     });

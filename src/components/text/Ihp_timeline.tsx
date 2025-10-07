@@ -61,7 +61,8 @@ export const IHPTimeline: React.FC = () => {
                fill="url(#prefix__i)" id="path11" />
             <path d="m 559.84,178.434 18.793,57.038 -18.793,57.04 h 28.976 l 18.797,-57.04 -18.797,-57.038 z"
                fill="url(#prefix__j)" id="path12" />
-            <g id="g32" className="prof_brouns">
+            <g id="g32" className="prof_brouns" style={{ cursor: 'pointer' }}>
+               <rect x="0" y="0" width="160" height="300" fill="transparent" />
                <image x="14.185004" y="5.6220036" width="138.48199" height="137.53101"
                   xlinkHref="https://static.igem.wiki/teams/5649/ihp/use194.webp" mask="url(#prefix__mask332)"
                   preserveAspectRatio="xMidYMid" id="image2" />
@@ -81,7 +82,8 @@ export const IHPTimeline: React.FC = () => {
                      id="tspan17">Brouns</tspan>
                </text>
             </g>
-            <g id="g33" className="dr_koster">
+            <g id="g33" className="dr_koster" style={{ cursor: 'pointer' }}>
+               <rect x="200" y="178" width="160" height="290" fill="transparent" />
                <image x="218.866" y="329.64502" width="132" height="132"
                   xlinkHref="https://static.igem.wiki/teams/5649/ihp/use198.webp" mask="url(#prefix__mask337)" id="image3" />
                <path id="grds"
@@ -100,7 +102,8 @@ export const IHPTimeline: React.FC = () => {
                      id="tspan20">Koster</tspan>
                </text>
             </g>
-            <g id="g58" className="dr_van_oosten">
+            <g id="g58" className="dr_van_oosten" style={{ cursor: 'pointer' }}>
+               <rect x="600" y="178" width="170" height="290" fill="transparent" />
                <path id="dr_van_oosten"
                   d="m 607.622,178.434 18.792,57.038 -18.792,57.04 h 79.575 l 0.069,35.771 c -37.097,0.766 -66.938,31.053 -66.938,68.333 0,37.762 30.61,68.376 68.372,68.376 37.761,0 68.374,-30.614 68.374,-68.376 0,-37.236 -29.773,-67.495 -66.808,-68.33 l -0.07,-35.775 h 58.234 l 18.797,-57.04 -18.797,-57.037 z M 688.7,334.246 c 34.519,0 62.374,27.852 62.374,62.37 0,34.52 -27.856,62.376 -62.374,62.376 -34.52,0 -62.372,-27.856 -62.372,-62.376 0,-34.519 27.852,-62.37 62.372,-62.37 z"
                   fill="url(#prefix__p)" />
@@ -120,7 +123,8 @@ export const IHPTimeline: React.FC = () => {
                      >Oosten</tspan>
                </text>
             </g>
-            <g id="g59" className="rivm_gmo">
+            <g id="g59" className="rivm_gmo" style={{ cursor: 'pointer' }}>
+               <rect x="810" y="0" width="170" height="270" fill="transparent" />
                <image x="829.27106" y="13.213007" width="129.243" height="128.25"
                   xlinkHref="https://static.igem.wiki/teams/5649/ihp/use204.webp" mask="url(#prefix__mask349)"
                   preserveAspectRatio="xMidYMid" id="image4" />
@@ -132,7 +136,8 @@ export const IHPTimeline: React.FC = () => {
                      >RIVM</tspan>
                </text>
             </g>
-            <g id="g60" className="johannis_florid">
+            <g id="g60" className="johannis_florid" style={{ cursor: 'pointer' }}>
+               <rect x="1010" y="178" width="170" height="290" fill="transparent" />
                <image x="1026.823" y="328.245" width="134.25" height="134.25"
                   xlinkHref="https://static.igem.wiki/teams/5649/ihp/use208.webp" mask="url(#prefix__mask344)" id="image5" />
                <path id="sw56"
@@ -147,7 +152,8 @@ export const IHPTimeline: React.FC = () => {
                      >Florid</tspan>
                </text>
             </g>
-            <g id="g61" className="erik_de_jonge">
+            <g id="g61" className="erik_de_jonge" style={{ cursor: 'pointer' }}>
+               <rect x="1210" y="0" width="170" height="270" fill="transparent" />
                <path id="rffse4"
                   d="m 1298.129,8.784 c -37.762,0 -68.375,30.61 -68.375,68.372 0,37.089 29.537,67.259 66.368,68.323 v 32.955 h -80.88 l 18.797,57.038 -18.797,57.04 h 140.813 l 18.793,-57.04 -18.793,-57.038 h -55.934 v -32.955 c 36.834,-1.057 66.38,-31.23 66.38,-68.323 0,-37.762 -30.614,-68.372 -68.372,-68.372 z m 0,6 c 34.515,0 62.371,27.853 62.371,62.372 0,34.519 -27.857,62.375 -62.371,62.375 -34.52,0 -62.375,-27.856 -62.375,-62.375 0,-34.519 27.855,-62.372 62.375,-62.372 z"
                   fill="url(#prefix__o)"  />
@@ -162,7 +168,8 @@ export const IHPTimeline: React.FC = () => {
                   <tspan x="1273.479" y="253.44501"  id="tspan28">Jonge</tspan>
                </text>
             </g>
-            <g id="g62" className="eline_kamerik">
+            <g id="g62" className="eline_kamerik" style={{ cursor: 'pointer' }}>
+               <rect x="1410" y="178" width="170" height="290" fill="transparent" />
                <path id="eadd"
                   d="m 1417.472,178.434 18.794,57.038 -18.794,57.04 h 77.656 v 33.757 c -37.064,0.803 -66.866,31.08 -66.866,68.336 0,37.758 30.609,68.372 68.37,68.372 37.762,0 68.377,-30.614 68.377,-68.372 0,-37.26 -29.812,-67.538 -66.88,-68.336 v -33.758 h 60.153 l 18.797,-57.04 -18.797,-57.037 z m 79.162,153.797 c 34.519,0 62.375,27.855 62.375,62.374 0,34.515 -27.856,62.372 -62.375,62.372 -34.519,0 -62.372,-27.857 -62.372,-62.372 0,-34.519 27.853,-62.374 62.372,-62.374 z"
                   fill="url(#prefix__q)" />
@@ -177,7 +184,8 @@ export const IHPTimeline: React.FC = () => {
                      id="tspan30">Kamerik</tspan>
                </text>
             </g>
-            <g id="g57" className="field_test_experts">
+            <g id="g57" className="field_test_experts" style={{ cursor: 'pointer' }}>
+               <rect x="410" y="0" width="170" height="270" fill="transparent" />
                <path id="field_test_experts"
                   d="m 484.801,6 c -37.762,0 -68.375,30.61 -68.375,68.371 0,37.089 29.537,67.26 66.368,68.324 v 35.739 h -77.717 l 18.797,57.038 -18.797,57.04 h 140.812 l 18.797,-57.04 -18.797,-57.038 h -59.097 v -35.74 c 36.837,-1.056 66.38,-31.23 66.38,-68.323 C 553.172,36.61 522.562,6 484.8,6 Z m 0,6 c 34.519,0 62.371,27.852 62.371,62.371 0,34.52 -27.853,62.375 -62.371,62.375 -34.52,0 -62.375,-27.856 -62.375,-62.375 C 422.426,39.853 450.281,12 484.801,12 Z"
                   fill="url(#prefix__r)" />
