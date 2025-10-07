@@ -448,8 +448,8 @@
     --secondary-foreground-complement: oklch(
       83.17% 0.1242 227.5
     ); /* Soft Teal */
-    --tertiary: #5f8233; /* Green */
-    --muted: oklch(94.43% 0.0144 227.5); /* Card/Panel Shade */
+    --tertiary: oklch(56.231% 0.11484 129.558); /* Green */
+    --muted: oklch(45% 0.1 227.5/0.1); /* Card/Panel Shade */
     --muted-foreground: oklch(38.68% 0.0728 227.5); /* Muted Deep Blue */
     --accent: oklch(79.12% 0.1261 227.5); /* Soft Teal */
     --accent-foreground: oklch(25.62% 0.047 227.5);
