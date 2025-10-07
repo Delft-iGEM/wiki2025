@@ -29,7 +29,7 @@ export function Home() {
   return (
     <div className="flex flex-col">
       {/* --- Hero Section --- */}
-      <section className="overflow-hidden bg-gradient-to-tr from-primary/20 via-background to-tertiary/20 px-6 pb-8 shadow-lg sm:px-12 -mt-30 pt-30">
+      <section className="overflow-hidden bg-gradient-to-br lg:bg-gradient-to-tr from-primary/20 via-background to-tertiary/40 px-6 pb-8 shadow-lg sm:px-12 -mt-30 pt-30">
         <div className="mx-3 md:mx-15 grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:items-center">
           <div className="text-balance">
             <img
