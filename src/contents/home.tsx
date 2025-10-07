@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { AccentLine } from "@/components/ui/accent-line";
-import { Header } from "@/components";
 
 const quickLinks = [
   {
