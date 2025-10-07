@@ -1,4 +1,12 @@
-import { Content, AccentLine, Dropdown, IHPTimeline, DownstreamPurificationFlow, OptionFork} from "@/components";
+import { Content, AccentLine, Dropdown, IHPTimeline, DownstreamPurificationFlow, OptionFork, ScrollTop, Box } from "@/components";
+
+<style jsx global>{`
+  /* Make all dropdowns on this page transparent */
+  .dropdown-item {
+    --dropdown-color: transparent !important;
+  }
+`}</style>
+
 
 
 <Content items="left">
@@ -7,8 +15,8 @@ import { Content, AccentLine, Dropdown, IHPTimeline, DownstreamPurificationFlow,
 
 ## **Integrated Human Practices Introduction**
 
-**"Human Practices is the study of how your work affects the world, and how the world affects your work." <br/>
-– Peter Carr, iGEM (as cited in Whitford et al., 2018, p. 986)**
+**"Human Practices is the study of how your work affects the world, and how the world affects your work."** <br/>
+**– Peter Carr, iGEM (as cited in Whitford et al., 2018, p. 986)**
 
 Our previous human practice part addressed the first part of shaping Snaccine: **understanding how our work affects the world**. 
 
@@ -22,7 +30,7 @@ Our project's development was an iterative cycle of design, consultation, and ad
 
 <Dropdown header="Stakeholder Engagement" level={0}>
 
-**1. Upstream Engagement: Navigating Regulation and Refining Science**
+#### **1. Upstream Engagement: Navigating Regulation and Refining Science**
 
 Our engagement began at the foundational level with **Prof. Dr. Stan J. J. Brouns**, an expert in phage-host interactions. We initially had broad ideas for our oral vaccine. His guidance was crucial; he highlighted the importance of using a bacterial host tailored to the gut and working with established display systems. This conversation moved our project from a general concept to a concrete plan. We settled on using the well-established _E. coli_ host and the T7 and MS2 display phages, to ensure our experimental plans were feasible.
 
@@ -32,7 +40,7 @@ To translate our lab-scale concept into a viable product, we consulted **Dr. ir.
 
 Finally, engagement with **Avian Influenza Field Test Experts** directly impacted our vaccine's design for practical surveillance. They explained the challenges of real-world HPAI vaccination and their interactions with farmers. Based on their feedback, we strategically designed our mRNA to express only the Hemagglutinin (HA) protein. This crucial decision ensures that Snaccine is compatible with existing ELISA and PCR surveillance methods, allowing it to fit into the DIVA (**D**ifferentiating **I**nfected from **V**accinated **A**nimals) diagnostic framework.
 
-**2. Midstream Engagement: Addressing Economic and Practical Realities**
+#### **2. Midstream Engagement: Addressing Economic and Practical Realities**
 
 Bridging the gap between regulation and on-the-ground application are midstream stakeholders, whose perspectives are dominated by economic viability and practical implementation.
 
@@ -40,7 +48,7 @@ Our discussions with **Erik de Jonge of AVINED**, the Dutch national trade organ
 
 Moreover, we consulted with **Eline Kamerik**, a veterinarian experienced in the poultry sector, to ensure our administration method aligned with field practices. She validated our core design choice, confirming that oral administration via drinking water is the preferred and most practical standard for poultry because it is scalable and the chicken gut is effective at absorbing vaccines. However, she also pointed out that achieving a reliable and homogenous dose is far easier in water than in feed. This led us to a new challenge: we should either prove the effectiveness of mixing Snaccine into feed or adapt the formulation for water-based delivery to ensure a consistent flock-wide result.
 
-**3. Downstream Engagement: Designing for the End-User and the Public**
+#### **3. Downstream Engagement: Designing for the End-User and the Public**
 
 The ultimate success of Snaccine depends on its acceptance by farmers, food producers, and the public. Our engagement with these downstream stakeholders directly shaped the product's final form and our communication strategy.
 
@@ -57,20 +65,21 @@ To address public perception and ensure our message was clear and accessible, we
 
 Our project evolved through a series of critical design pivots, driven by integrating feedback from multiple sources.
 
-<Dropdown header="Integration Loop 1: Grounding a Vision in Scientific Feasibility" level={0}>
+<Dropdown header="Integration Loop 1: Grounding a Vision in Scientific Feasibility" level={0} >
 
 Our project began with an ambitious vision: to create an oral mRNA vaccination platform using bacteriophages to overcome the limitations of current vaccines. First, we needed to draw up a plan for scientific feasibility.
 
 Our collaboration with Prof. Stan Brouns, provided this blueprint.
 
-**Chassis Selection:** Prof. Brouns recommended using the T7 bacteriophage, a well-characterized and robust tool for genetic engineering, with _E. coli_ as the host.
+- **Chassis Selection:** Prof. Brouns recommended using the T7 bacteriophage, a well-characterized and robust tool for genetic engineering, with _E. coli_ as the host.
 
-**Core Mechanism:** To ensure the mRNA vaccine was packaged reliably, he recommended the proven biological system of the MS2 bacteriophage coat protein (MS2-CP) and its corresponding RNA hairpin loop. By engineering the T7 phage to co-express the MS2 capsids and designing our mRNA with the hairpin signal, we could leverage a well-documented mechanism for efficient encapsulation.
+- **Core Mechanism:** To ensure the mRNA vaccine was packaged reliably, he recommended the proven biological system of the MS2 bacteriophage coat protein (MS2-CP) and its corresponding RNA hairpin loop. By engineering the T7 phage to co-express the MS2 capsids and designing our mRNA with the hairpin signal, we could leverage a well-documented mechanism for efficient encapsulation.
 
-**Pivotal Change:** With these components defined, we could outline an achievable proof-of-concept: demonstrating that our engineered T7 phage could lyse the _E. coli_ host and produce detectable quantities of MS2 virus-like particles (VLPs). Our results of this can be seen in the [Wet Lab documentation of Module A and Module C](https://2025.igem.wiki/tu-delft/experiments). This foundational loop transformed the project from a vague ambition into an actionable experimental strategy, making all subsequent work possible.
+**Pivotal Change:** <br/>
+With these components defined, we could outline an achievable proof-of-concept: demonstrating that our engineered T7 phage could lyse the _E. coli_ host and produce detectable quantities of MS2 virus-like particles (VLPs). Our results of this can be seen in the [Wet Lab documentation of Module A and Module C](https://2025.igem.wiki/tu-delft/experiments). This foundational loop transformed the project from a vague ambition into an actionable experimental strategy, making all subsequent work possible.
 </Dropdown>
 
-<Dropdown header="Iteration Loop 2: Prioritizing Biocontainment in Response to Regulatory Concerns" level={0}>
+<Dropdown header="Integration Loop 2: Prioritizing Biocontainment in Response to Regulatory Concerns" level={0}>
 
 Our initial design featured a replicative lytic phage system, which offered the advantage of high efficacy from a single, small dose through amplification in the gut. While potent, this approach raised significant biosafety questions that became the focus of a major design pivot.
 
@@ -81,25 +90,27 @@ A consultation with the GMO Office at the Dutch National Institute for Public He
 
 Confronted with this feedback, we weighed the trade-off between the single-dose efficiency of a replicative system and the superior biosafety of a non-replicative alternative. RIVM experts directly suggested a non-replicative phage that produces VLPs but cannot replicate itself as a better containment strategy. This design releases essential concerns of the replicative phage.
 
-**Pivotal Change:** After careful deliberation, our team prioritized the non-replicative phage system. This pivot, however, presented the new engineering challenge of delivering a therapeutic dose without the benefit of in-situ amplification. To address the dosage challenge, we will implement multiple administrations to ensure efficacy.
+**Pivotal Change:** ,<br/> 
+After careful deliberation, our team prioritized the non-replicative phage system. This pivot, however, presented the new engineering challenge of delivering a therapeutic dose without the benefit of in-situ amplification. To address the dosage challenge, we will implement multiple administrations to ensure efficacy.
 
 Therefore, we concluded that the benefits of inherent biocontainment, and the proactive mitigation of ecological risks were essential for responsible innovation.
 </Dropdown>
 
-<Dropdown header="Iteration Loop 3: Designing a DIVA-Compatible Vaccine for Real-World Application" level={0}>
+<Dropdown header="Integration Loop 3: Designing a DIVA-Compatible Vaccine for Real-World Application" level={0}>
 
 Initially, our project aimed to deliver a generic mRNA vaccine for Avian Influenza (AI). Through consultations with experts we discovered that the specific content of the mRNA payload was critical for adoption. The feedback from three distinct stakeholder groups converged on a single, elegant solution .
 
-1.  **The Practical Challenge:** Field trial experts raised the issue of surveillance. For any HPAI vaccination program to be viable, authorities must be able to **D**ifferentiate **I**nfected from **V**accinated **A**nimals (DIVA). DIVA is a European wide surveillance strategy, that Snaccine must be compatible with. We addressed this by limiting our vaccine to encode only the Hemagglutinin (HA) protein. This enables the use of simple diagnostic tests to distinguish vaccine-induced immunity from natural infection. In the case of a natural infection, the immune system responds with multiple proteins, while ours expresses only one. With simple PCR, and ELISA diagnostics, Snaccine can be traced.
-2.  **The Regulatory Perspective (RIVM):** Our consultation with the RIVM GMO Office highlighted a biosafety risk. The experts warned that the genetic insert itself is a key factor in a GMO's risk classification, as it is assessed based on the organism of origin. HPAI is highly pathogenic, which raises the risk classification. Choosing to express only a single, non-infectious component like the HA protein inherently lowers the product's risk profile.
-3.  **The Economic Imperative (AVINED):** Finally, Erik de Jonge from the Dutch poultry trade organization AVINED connected these points to economics, stating that international trade is the primary barrier to widespread HPAI vaccination. Trading partners will not accept poultry from vaccinated regions without a guarantee that flocks are free from active infection. This elevated the DIVA principle from a practical tool to an absolute economic necessity for farmers.
+- **The Practical Challenge:** Field trial experts raised the issue of surveillance. For any HPAI vaccination program to be viable, authorities must be able to **D**ifferentiate **I**nfected from **V**accinated **A**nimals (DIVA). DIVA is a European wide surveillance strategy, that Snaccine must be compatible with. We addressed this by limiting our vaccine to encode only the Hemagglutinin (HA) protein. This enables the use of simple diagnostic tests to distinguish vaccine-induced immunity from natural infection. In the case of a natural infection, the immune system responds with multiple proteins, while ours expresses only one. With simple PCR, and ELISA diagnostics, Snaccine can be traced.
+- **The Regulatory Perspective (RIVM):** Our consultation with the RIVM GMO Office highlighted a biosafety risk. The experts warned that the genetic insert itself is a key factor in a GMO's risk classification, as it is assessed based on the organism of origin. HPAI is highly pathogenic, which raises the risk classification. Choosing to express only a single, non-infectious component like the HA protein inherently lowers the product's risk profile.
+- **The Economic Imperative (AVINED):** Finally, Erik de Jonge from the Dutch poultry trade organization AVINED connected these points to economics, stating that international trade is the primary barrier to widespread HPAI vaccination. Trading partners will not accept poultry from vaccinated regions without a guarantee that flocks are free from active infection. This elevated the DIVA principle from a practical tool to an absolute economic necessity for farmers.
 
-**Pivotal Change:** The powerful convergence of these perspectives drove our decision to pivot from a generic mRNA vaccine to a specific design encoding only the HA protein of the Avian Influenza virus. This single change simultaneously enables DIVA surveillance, minimizes biosafety risks, and preserves international trade compatibility, ensuring a thoughtfully designed solution for real-world challenges.
+**Pivotal Change:** <br/> 
+The powerful convergence of these perspectives drove our decision to pivot from a generic mRNA vaccine to a specific design encoding only the HA protein of the Avian Influenza virus. This single change simultaneously enables DIVA surveillance, minimizes biosafety risks, and preserves international trade compatibility, ensuring a thoughtfully designed solution for real-world challenges.
 
 This strategic pivot was directly translated into our wet lab execution. Our first plasmid was engineered as a versatile backbone, with the space behind the RNA hairpin loop left open for any insert sequence. To integrate our new approach, we constructed a second plasmid. In this version, we inserted a sequence for Green Fluorescent Protein (GFP) to serve as a proof-of-concept analogue for the HA protein. You can read more on this part of our project in this Wet Lab Section.
 </Dropdown>
 
-<Dropdown header="Iteration Loop 4: Shaping a Manufacturing Strategy" level={0}>
+<Dropdown header="Integration Loop 4: Shaping a Manufacturing Strategy" level={0}>
 
 With our project's molecular biology framework established, we engaged an expert to guide the translation of our scientific design into an industrial scale. Through two iterative consultations, Dr. Ir. Luuk van Oosten, a Quality & Manufacturing specialist at Batavia Biosciences, provided the critical insights needed to shape our production strategy.
 
@@ -107,14 +118,14 @@ Our initial consultation provided a crucial introduction to the foundational pri
 
 Building upon this, our second discussion applied these concepts directly to Snaccine. We addressed the complexities of moving from laboratory to industrial volumes, particularly the "scale-up effect" (the non-linear variability in biological systems where yields and the ratio of infectious to non-infectious particles can decrease unpredictably).
 
-**Pivotal Change: From Theoretical Design to a Proactive Manufacturing Blueprint**
-
+**Pivotal Change:** <br/>
 Based on this input, we outlined a multi-step downstream purification process to achieve a safe and pure final product:
+!!Change this!!
 <DownstreamPurificationFlow />
 
 </Dropdown>
 
-<Dropdown header = "Iteration Loop 5: From a Product Concept to a User-Defined Formulation Challenge" level={0}>
+<Dropdown header = "Integration Loop 5: From a Product Concept to a User-Defined Formulation Challenge" level={0}>
 
 Our initial design centered on what we assumed was the most straightforward oral delivery method: mixing Snaccine with poultry feed. During our discussions with Luuk van Oosten, he explained that the choice between a liquid or a freeze-dried (lyophilized) powder could not be made without the knowledge of end-users. Any decision made without this knowledge would be based on a flawed assumption.
 
@@ -123,7 +134,7 @@ Therefore, we consulted directly with downstream stakeholders, whose feedback wa
 -   **The Farmer's Perspective:** Johannis Florid, a hobby farmer, highlighted a critical practical issue: chickens peck at larger items like pills or granules, making dosing unreliable. He stated that a **"powder or mix-in format for feed or water would be far more practical"** .
 -   **The Veterinarian's Verdict:** Dr. Eline Kamerik, a practicing veterinarian, confirmed this preference, stating that for mass-administered poultry products, the industry standard is drinking water, not feed. She explained that water administration is **"more reliable as every bird gets some dose"** and is simply "easier for farmers" with large flocks. Field trial specialists corroborated this, noting that water delivery is a proven method, while feed-based vaccination remains experimental.
 
-**Pivotal Insight and New Engineering Challenge:**
+**New Engineering Challenge:**
 
 We pivoted our design toward a stable, water-soluble, lyophilized powder.
 
@@ -134,108 +145,114 @@ Losing this protective encapsulation creates a design trade-off between the user
 <OptionFork 
     leftTitle = "Option 1: Develop a Protective, Water-Soluble Formulation."
     rightTitle = "Option 2: Use Inherently Acid-Stable Phages."
-     left = {
-     <>
-     <p>This would involve encapsulating our existing T7 phages in a pH-responsive, water-soluble coating. The powder would dissolve in water for easy administration, but the coating would protect the phages through the stomach and release them in the gut. This maintains our Safe-by-Design principle, as any phages shed into the environment would still be acid-labile, preventing the vaccination of non-target animals.</p>
-     </>
+    left = {
+    <>
+    <p>This would involve encapsulating our existing T7 phages in a pH-responsive, water-soluble coating. The powder would dissolve in water for easy administration, but the coating would protect the phages through the stomach and release them in the gut. This maintains our Safe-by-Design principle, as any phages shed into the environment would still be acid-labile, preventing the vaccination of non-target animals.</p>
+    </>
     }
     right = {
-     <>
+    <>
     <p> We considered selecting extremophile phages that can naturally survive low pH. While this simplifies the formulation, it would compromise a key biosafety feature. Our consultations with the RIVM GMO Office prioritized biocontainment and minimizing environmental shedding. Using an acid-stable phage would mean that off-target animals exposed to shed phages in the environment could also become vaccinated, as the phages naturally survive the stomach acid.</p>
-     </>
+    </>
     }
 />
 
 <br/>
-**Final Pivotal Change:**
+**Pivotal Change:**
 
 After weighing the options, we concluded that **Option 1 best integrates all stakeholder requirements.** It satisfies the farmer and veterinarian's need for a water-soluble powder while upholding the regulatory and ecological safety principles established earlier in our project.
 
 Therefore, our project's primary formulation goal has been further refined: **to develop a stable, lyophilized powder of micro-encapsulated T7 phages.** This demonstrates a direct and iterative response to the full spectrum of stakeholder feedback, from the farm to the regulatory office.
 </Dropdown>
 
-<Dropdown header="Iteration Loop 6: Building Two-Way Communications" level={0}>
+<Dropdown header="Integration Loop 6: Building Two-Way Communications" level={0}>
 
 Our initial communication plan was based creating public material, that balances scientific accuracy with readability. A series of insightful consultations revealed the limitations of this one-way approach and reshaped our strategy into an iterative, two-way dialogue to build public trust.
 
 -   **The Science Communicator's Advice:** Dr. Charlotte Koster advised us to move beyond simply broadcasting information and instead create an iterative feedback loop. She recommended a two-way communication approach: listening to questions and concerns of the non-expert audiences, and refining transparent communication based on their feedback.
 -   **Identifying the Channels of Trust:** Our conversations with end-users revealed how to implement this. Johannis Florid stated that he places his trust primarily in his "veterinarian and fellow farmers, rather than government authorities or complex scientific reports," which he feels do not reflect the daily reality of farm life. Eline Kamerik validated that veterinarians are a critical channel for communication and information .
 
-**Pivotal Change:** We shifted our focus from creating content to listening. We engaged with 12 members of the general public and asked for their unfiltered concerns, which included practical, and safety-oriented questions. These questions now form the structure of our Q&A. Furthermore, these materials can be designed for use by trusted intermediaries, such as veterinarians, to facilitate conversations with farmers.
+**Pivotal Change:** <br/> 
+We shifted our focus from creating content to listening. We engaged with 12 members of the general public and asked for their unfiltered concerns, which included practical, and safety-oriented questions. These questions now form the structure of our Q&A. Furthermore, these materials can be designed for use by trusted intermediaries, such as veterinarians, to facilitate conversations with farmers.
 </Dropdown>
 
 <Dropdown header="Putting Two-Way Communication into Practice" level={0}>
 
-Here we put the insights from Iteration Loop 6 into direct practice.
+Here we put the insights from Iteration Loop 6 into direct practice. The key questions we collected are organized below in an Q&A.
 
-The key questions we collected are organized below.
+### **On Performance and Logistics**
 
-**On Performance and Logistics**
+<Box>
+**Q:** How does the oral mRNA vaccine compare to other vaccines for avian flu?
 
--   How does the oral mRNA vaccine compare to other vaccines for avian flu?
+**A:** Snaccine is designed to overcome key limitations that other vaccinations face. Some of them are:  
+| Feature                   | Traditional Vaccines                                                                 | Snaccine                                                                                                                                            |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Administration            | Injection, administered in ovo (to the egg) or subcutaneously to day-old chicks                                   | Oral, mass administration. Delivered as a water-soluble powder mixed into drinking water                                                           |
+| Adaptability to New Strains | Slow to update                                                                                                    | Rapidly adaptable. As an mRNA platform, the vaccine’s genetic code can be updated in a matter of weeks to precisely match new, evolving HPAI strains |
+| Distribution & Logistics  | Requires a cold chain                                                                                              | Stable at room temperature                                                                                                                         |
 
-Snaccine is designed to overcome key limitations that other vaccinations face. Some of them are:  
-!!Add Table!!
+</Box>
+<br/>
 
+<Box>
 
-**Administration**
+**Q:** How long will it take until the birds respond to the orally administered vaccination?
 
-Individual Injection. Administered _in ovo_ (to the egg) or subcutaneously to day-old chicks 2. This method is labor-intensive and impractical for emergency mass vaccination of existing adult flocks .
+**A:** This is still unclear to us, as we are not including animals tests in our project. Based on literature review:
 
-Oral, Mass Administration. Delivered as a water-soluble powder mixed into drinking water . This aligns with standard farming practices, is easy for farmers to apply, and enables rapid vaccination of entire flocks during an outbreak .
-
-**Adaptability to New Strains**
-
-Slow to Update. Based on recombinant virus technology. Creating and validating a new HVT vector to match emerging viral strains is a complex and time-consuming biological process .
-
-Rapidly Adaptable. As an mRNA platform, the vaccine's genetic code can be updated in a matter of weeks to precisely match new, evolving HPAI strains, similar to the process used for COVID-19 vaccines .
-
-**Distribution & Logistics**
-
-Requires a Cold Chain. As a live viral vector vaccine, HVT vaccines require a continuous refrigerated "cold chain" for storage and distribution, which presents logistical challenges, especially for stockpiling .
-
-Stable at Room Temperature. Designed to be a lyophilized (freeze-dried) powder . This eliminates the need for a cold chain, making it easy and cost-effective to stockpile and deploy rapidly during an emergency .
-
--   How long will it take until the birds respond to the orally administered vaccination?
-
-This is still unclear to us, as we are not including animals tests in our project. Based on literature review:
 
 1. **Gut Release & Initial Activity:** The vaccine is consumed and becomes biologically active in the gut within approximately 2 to 4 hours (Abdi et al., 2016).
 
-2.  **Measurable Antibody Production (1–2 Weeks):** The development of a detectable antibody response, measured by tools ELISA, typically takes at least 7 to 10 days**.**
+2.  **Measurable Antibody Production (1–2 Weeks):** The development of a detectable antibody response, measured by tools ELISA, typically takes at least 7 to 10 days.
 3.  **Peak Response and Protection (2+ Weeks):** One study noted that chickens vaccinated via drinking water developed low antibody titers initially but achieved a 90% protective rate by day 34 (**Ebrahimi et al., 2020)**. Another study found that a microbeaded oral vaccine, administered via feed, gave a "delayed but enhanced and prolonged immune response" compared to conventional methods (Ola et al., 2022).
 
 In summary, the total time from consumption to a measurable immune response is not a matter of hours but rather **approximately 7 to 14 days at the earliest**, with the response maturing and strengthening over several weeks.
+</Box>
+<br/>
+<Box>
+**Q:** For how long can the vaccine be stored, and is it stable enough for precautionary stockpiling, or does it need to be produced and administered quickly in an emergency?
 
-For how long can the vaccine be stored, and is it stable enough for precautionary stockpiling, or does it need to be produced and administered quickly in an emergency?
+**A:** Freeze-drying and encapsulation will allow the phage-based vaccine to be stored for extended periods at room temperature, making it suitable for stockpiling and eliminating the need for a cold chain. Research suggests that the phages stabilized with  tryptone and trehalose were stable for 12 months at 28°C. (Xu et al., 2023)
+</Box>
+<br/>
 
-Freeze-drying and encapsulation will allow the phage-based vaccine to be stored for extended periods at room temperature, making it suitable for stockpiling and eliminating the need for a cold chain. Research suggests that the phages stabilized with  tryptone and trehalose were stable for 12 months at 28°C. (Xu et al., 2023)
+### **On Practicality and Dosing**
 
-**On Practicality and Dosing**
+<Box>
 
--   How frequently should the vaccine be administered?
+**Q:** How frequently should the vaccine be administered?
 
-Since Avian Influenza has a high mutation rate, and different strains circulate every year, a farmer could update he vaccination very year, similar to the practice done in humans. To determine, how many capsules are needed to provide immunity, we would need to learn from field trials, and simulations.
+**A:** Since Avian Influenza has a high mutation rate, and different strains circulate every year, a farmer could update he vaccination very year, similar to the practice done in humans. To determine, how many capsules are needed to provide immunity, we would need to learn from field trials, and simulations.
+</Box> 
+<br/>
+<Box>
+**Q:** How is it ensured that all birds are vaccinated when administering the vaccine in feed?
 
--   How is it ensured that all birds are vaccinated when administering the vaccine in feed?
+**A:** In other applications, such as water administration, a dye is added, which colours the beak of the birds blue upon consumption. With that, farmers can identify animals that have, or have not, been vaccinated visually.
+</Box>
+<br/>
+<Box>
+**Q:** Can an overdose occur when administering the vaccine in feed?
 
-In other applications, such as water administration, a dye is added, which colours the beak of the birds blue upon consumption. With that, farmers can identify animals that have, or have not, been vaccinated visually.
+**A:** The dosage would be adjusted to the natural feed, or water volume consumption, to get proper dosage. However, even when an animal consumes too much, an overdose shoulc not occur. The mRNA dosage, is limited by the amount of bacteria in the gut. Once all the bacteria have been turned into vaccine prodicers, they will die, and an possible overload of phages, will be excreted, as they dont have any hosts left.
+</Box>
+<br/>
+### **On Safety and Biology**
 
--   Can an overdose occur when administering the vaccine in feed?
+<Box> 
+**Q:** Can a dose of mRNA accidentally ingested by another animal lead to undesirable side effects?
 
-The dosage would be adjusted to the natural feed, or water volume consumption, to get proper dosage. However, even when an animal consumes too much, an overdose shoulc not occur. The mRNA dosage, is limited by the amount of bacteria in the gut. Once all the bacteria have been turned into vaccine prodicers, they will die, and an possible overload of phages, will be excreted, as they dont have any hosts left.
+**A:** If an animal eats the ready-for-use capsules, yes, they can be vaccinated. Per regulation, the field trials have to be performed on contained animals. However, one the capsules have been eaten by the target animals, the side products, such as excreted mRNA vaccination will be destroyed in the stomach acid of an off-target animal, as it lacks the capsule protection.
+</Box>
+<br/>
+<Box>
+**Q:** Is the mRNA vaccine absorbed into the human body through the consumption of meat, and can it cause undesirable side effects?
 
-**On Safety and Biology**
+**A:** No, a human would only be vaccinated, by consuming the original capsule itself. If the chicken has been vaccinated with Snaccine in its lifetime, the phages, and E. Coli hosts will naturally die, and/ or be excreted.
+</Box>
+<br/>
 
--   Can a dose of mRNA accidentally ingested by another animal lead to undesirable side effects?
-
-If an animal eats the ready-for-use capsules, yes, they can be vaccinated. Per regulation, the field trials have to be performed on contained animals. However, one the capsules have been eaten by the target animals, the side products, such as excreted mRNA vaccination will be destroyed in the stomach acid of an off-target animal, as it lacks the capsule protection.
-
--   Is the mRNA vaccine absorbed into the human body through the consumption of meat, and can it cause undesirable side effects?
-
-No, a human would only be vaccinated, by consuming the original capsule itself.
-
-If the chicken has been vaccinated with Snaccine in its lifetime, the phages, and E. Coli hosts will naturally die, and/ or be excreted.
 </Dropdown>
 
 <Dropdown header = "Conclusion and Reflection" level={0}>
@@ -265,3 +282,5 @@ Ultimately, the development of the Snaccine platform became a parallel journey i
 </Dropdown>
 
 </Content>
+
+<ScrollTop />
