@@ -11,4 +11,5 @@ export * from "./text/downstream_purification_flow.tsx";
 export * from "./text/Interactive_schematic.tsx";
 export * from "./text/scroll_top.tsx";
 export * from "./text/box.tsx";
+export * from "./text/box_grid.tsx";
 export { SegmentedContent } from "./SegmentedContent.tsx";

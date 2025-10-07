@@ -1,26 +1,8 @@
 "use client";
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 
-/** Toggle the white panel (border + bg) on/off */
-const SHOW_PANEL = true;
-
-type Step = {
-  key: string;
-  title: string;
-  description: string;
-  icon?: React.ReactNode;
-  titleClass?: string;
-};
-
-const STEPS: Step[] = [
-  { key: "clarification", title: "Clarification", description: "Initial removal of large cellular debris post-lysis." },
-  { key: "nuclease", title: "Nuclease Treatment", description: "Degradation of residual host nucleic acids (DNA and RNA)." },
-  { key: "filtration", title: "Filtration", description: "A crucial step to separate the phage product from smaller impurities." },
-  { key: "aex", title: "Anion-Exchange Chromatography", description: "The primary method for robustly removing endotoxins and other protein contaminants.", titleClass: "text-sm" },
-  { key: "polishing", title: "Polishing", description: "A final concentration and buffer exchange step to prepare the final formulation." },
-];
-
+/** Simple T7-ish phage drawing (unchanged shape) */
 function T7Particle({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) {
   const headR = 6 * scale;
   const tailL = 12 * scale;
@@ -36,117 +18,155 @@ function T7Particle({ x, y, scale = 1 }: { x: number; y: number; scale?: number 
   );
 }
 
-const FlowParticles = () => {
-  const lanes = 7;
-  const count = 24;
-  const particles = useMemo(
-    () =>
-      Array.from({ length: count }).map((_, i) => ({
-        id: i,
-        lane: i % lanes,
-        delay: (i % lanes) * 0.35 + (i % 3) * 0.12,
-        scale: 0.8 + ((i * 37) % 10) / 50,
-        jitter: ((i * 53) % 6) - 3,
-        speed: 7 + ((i * 29) % 30) / 10,
-      })),
-    []
-  );
+/** Icosahedral-like MS2 capsid (regular 20-gon with faint facet lines; not a star) */
+function MS2Capsid({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) {
+  const r = 5 * scale;
+  const sides = 20;
+  const verts = Array.from({ length: sides }).map((_, i) => {
+    const angle = (i * 2 * Math.PI) / sides;
+    return { x: Math.cos(angle) * r, y: Math.sin(angle) * r };
+  });
+  const points = verts.map(v => `${v.x},${v.y}`).join(" ");
 
   return (
-    <svg viewBox="0 0 900 180" className="w-full h-40 overflow-visible">
-      {particles.map((p) => (
-        <motion.g
-          key={p.id}
-          initial={{ x: -40, y: 20 + p.lane * 20 + p.jitter, opacity: 1 }}
-          animate={{ x: 940 }}
-          transition={{ duration: p.speed, repeat: Infinity, delay: p.delay, ease: "linear" }}
-        >
-          <T7Particle x={0} y={0} scale={p.scale} />
-        </motion.g>
+    <g transform={`translate(${x}, ${y})`}>
+      <polygon points={points} fill="#f59e0b" stroke="#b45309" strokeWidth={0.8} />
+      {/* subtle facet fan to suggest triangular faces */}
+      {verts.map((v, i) => (
+        <line
+          key={i}
+          x1={0}
+          y1={0}
+          x2={v.x}
+          y2={v.y}
+          stroke="#b45309"
+          strokeWidth={0.5}
+          strokeOpacity={0.35}
+        />
       ))}
-    </svg>
-  );
-};
-
-/** arrows that align 1:1 with the 5 cards */
-const StepArrows = () => (
-  <div className="absolute inset-x-6 top-[142px] grid md:grid-cols-5 gap-4 pointer-events-none">
-    {STEPS.map((s) => (
-      <svg key={s.key} viewBox="0 0 100 12" className="h-3 w-full">
-        <line x1="0" y1="6" x2="96" y2="6" stroke="#60a5fa" strokeWidth="2" />
-        <polygon points="96,2 100,6 96,10" fill="#60a5fa" />
-      </svg>
-    ))}
-  </div>
-);
-
-function StepCard({
-  step,
-  active,
-  onClick,
-}: {
-  step: Step;
-  active: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <motion.div whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 220, damping: 22 }} className="h-full">
-      <div
-        className={`relative cursor-pointer rounded-2xl border border-slate-200 bg-white p-4 h-full flex flex-col shadow-sm hover:shadow-md ${
-          active ? "ring-2 ring-sky-600" : ""
-        }`}
-        onClick={onClick}
-      >
-        <div className="pb-2">
-          <div className="flex items-center gap-2 text-slate-800 font-semibold leading-snug">
-            {step.icon && step.icon}
-            <span className={`break-words text-[0.95rem] ${step.titleClass ?? ""}`}>{step.title}</span>
-          </div>
-        </div>
-        <p className="text-sm leading-relaxed text-slate-700 mt-1 grow">{step.description}</p>
-      </div>
-    </motion.div>
+    </g>
   );
 }
 
+/** Smooth E. coli body (no tails) */
+function EColi({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) {
+  const bodyL = 18 * scale;
+  const bodyR = 8 * scale;
+  return (
+    <g transform={`translate(${x}, ${y})`}>
+      <ellipse rx={bodyL / 2} ry={bodyR / 2} fill="#84cc16" stroke="#4d7c0f" strokeWidth={1} />
+    </g>
+  );
+}
+
+/** Exported name stays the same so your imports don't change */
 export function DownstreamPurificationFlow() {
-  const [active, setActive] = useState<string>(STEPS[0].key);
+  const width = 900;
+  const height = 180;
+
+  // Gentle "float" generator
+  const makeFloaters = useMemo(() => {
+    const rand = (n: number) => Math.random() * n;
+    const base = (n: number) => Array.from({ length: n }).map((_, i) => i);
+
+    // Phages
+    const phages = base(20).map((i) => ({
+      id: `phage-${i}`,
+      x: rand(width),
+      y: rand(height),
+      dx: (Math.random() - 0.5) * 50, // drift amplitude
+      dy: (Math.random() - 0.5) * 40,
+      duration: 10 + rand(6),
+      delay: rand(2),
+      scale: 0.7 + rand(0.6),
+    }));
+
+    // E. coli
+    const eColi = base(6).map((i) => ({
+      id: `ecoli-${i}`,
+      x: rand(width),
+      y: rand(height),
+      dx: (Math.random() - 0.5) * 60,
+      dy: (Math.random() - 0.5) * 50,
+      duration: 12 + rand(6),
+      delay: rand(3),
+      scale: 0.8 + rand(0.6),
+    }));
+
+    // MS2
+    const ms2 = base(10).map((i) => ({
+      id: `ms2-${i}`,
+      x: rand(width),
+      y: rand(height),
+      dx: (Math.random() - 0.5) * 55,
+      dy: (Math.random() - 0.5) * 45,
+      duration: 9 + rand(6),
+      delay: rand(2),
+      scale: 0.6 + rand(0.6),
+    }));
+
+    return { phages, eColi, ms2 };
+  }, []);
+
+  const { phages, eColi, ms2 } = makeFloaters;
 
   return (
-    <div className="w-full mx-auto max-w-6xl p-6">
-      {/* title optional — delete if you don't want it */}
-      <div className="flex items-center justify-between flex-wrap gap-4">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Downstream Purification</h2>
-        </div>
-      </div>
+    <div className="w-full">
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-40 overflow-visible">
+        {/* Floaters: E. coli */}
+        {eColi.map((c) => (
+          <motion.g
+            key={c.id}
+            initial={{ x: c.x, y: c.y, opacity: 0.95 }}
+            animate={{ x: c.x + c.dx, y: c.y + c.dy }}
+            transition={{
+              duration: c.duration,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+              delay: c.delay,
+            }}
+          >
+            <EColi x={0} y={0} scale={c.scale} />
+          </motion.g>
+        ))}
 
-      <div className="my-6 h-px bg-slate-200" />
+        {/* Floaters: MS2 capsids */}
+        {ms2.map((m) => (
+          <motion.g
+            key={m.id}
+            initial={{ x: m.x, y: m.y, opacity: 0.95 }}
+            animate={{ x: m.x + m.dx, y: m.y + m.dy }}
+            transition={{
+              duration: m.duration,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+              delay: m.delay,
+            }}
+          >
+            <MS2Capsid x={0} y={0} scale={m.scale} />
+          </motion.g>
+        ))}
 
-      <div
-        className={[
-          "relative p-6",
-          SHOW_PANEL ? "rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden" : "",
-        ].join(" ")}
-      >
-        {/* particles */}
-        <FlowParticles />
-
-        {/* thin rule under the particles */}
-        <div className="absolute left-6 right-6 top-[146px] h-px bg-slate-200/80" />
-
-        {/* arrows aligned to cards */}
-        <StepArrows />
-
-        {/* cards */}
-        <div className="grid md:grid-cols-5 gap-4 relative mt-8 items-stretch auto-rows-fr">
-          {STEPS.map((s) => (
-            <div key={s.key} className="relative">
-              <StepCard step={s} active={active === s.key} onClick={() => setActive(s.key)} />
-            </div>
-          ))}
-        </div>
-      </div>
+        {/* Floaters: T7 phages */}
+        {phages.map((p) => (
+          <motion.g
+            key={p.id}
+            initial={{ x: p.x, y: p.y, opacity: 0.95 }}
+            animate={{ x: p.x + p.dx, y: p.y + p.dy }}
+            transition={{
+              duration: p.duration,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+              delay: p.delay,
+            }}
+          >
+            <T7Particle x={0} y={0} scale={p.scale} />
+          </motion.g>
+        ))}
+      </svg>
     </div>
   );
 }
