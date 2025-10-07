@@ -36,7 +36,7 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
 <Content items="left">
 
   {/* --- MODULE A: T7 Bacteriophage Engineering --- */}
-  <Dropdown header="T7 Bacteriophage Engineering" level={0}>
+  <Dropdown header="Engineering the phage" level={0}>
     <p>Protocols and procedures for Module A research and development.</p>
     
     <DropdownGroup multiple className="mt-4">
@@ -65,13 +65,13 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
         <A_t7PhageConcentration />
       </DropdownItem>
       <DropdownItem value="t7-phage-plaque" header="T7 phage plaque assay" level={1}>
-        <A_t7PragePlaque />
+        <DunPlaque />
       </DropdownItem>
     </DropdownGroup>
   </Dropdown>
 
   {/* --- MODULE B: Stability Testing --- */}
-  <Dropdown header="Bacteriophage Stability Testing" level={0}>
+  <Dropdown header="Testing the phage's stability" level={0}>
     <p>Protocols and procedures for Module B research and development.</p>
     
     <DropdownGroup multiple className="mt-4">
@@ -88,7 +88,7 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
         <B_phExperimentalSetup />
       </DropdownItem>
       <DropdownItem value="plaque-assay-general" header="General Phage Plaque Assay (Double-Agar Overlay)" level={1}>
-        <B_plaqueAssayGeneral />
+        <DunPlaque />
       </DropdownItem>
       <DropdownItem value="plaque-assay-stability" header="Plaque Assays for Capsule & Free-Phage Stability" level={1}>
         <B_plaqueAssayStability />
@@ -97,7 +97,7 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
   </Dropdown>
 
   {/* --- MODULE C: MS2 Capsid Expression in E. coli --- */}
-  <Dropdown header="MS2 Capsid Expression in E. coli" level={0}>
+  <Dropdown header={<div>Expressing the MS2 Capsid in <i>E. coli</i></div>} level={0}>
     <p>Comprehensive protocols for Module C including bacterial transformation, protein expression, and VLP production.</p>
     
     <DropdownGroup single className="mt-4">
