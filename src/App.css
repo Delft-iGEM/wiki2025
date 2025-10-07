@@ -17,6 +17,7 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary-foreground-complement: var(
     --secondary-foreground-complement
@@ -349,6 +350,80 @@
     @apply text-[rgb(0,200,0)] bg-black;
   }
 
+  /* Firefox-like scrollbar - auto-hide and width changes */
+  /* Standard scrollbar-* properties for Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(78.56% 0.1479 227.5) transparent;
+  }
+
+  /* Webkit scrollbar for Chrome, Edge, Safari, Vivaldi */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    transition: width 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(78.56% 0.1479 227.5 / 0.6); /* semi-transparent */
+    border-radius: 3px;
+    border: none;
+    transition: all 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(68.11% 0.1308 227.5 / 0.8); /* more visible on hover */
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: oklch(53.27% 0.1015 227.5); /* full saturation on click */
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Hover effect on entire container - widens scrollbar */
+  :hover::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  :hover::-webkit-scrollbar-thumb {
+    background: oklch(78.56% 0.1479 227.5 / 0.8);
+  }
+
+  /* Dark mode scrollbar */
+  .dark * {
+    scrollbar-color: oklch(38.68% 0.0728 227.5) transparent;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: oklch(38.68% 0.0728 227.5 / 0.6);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: oklch(68.11% 0.1308 227.5 / 0.8);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:active {
+    background: oklch(76.78% 0.1408 227.5);
+  }
+
+  .dark :hover::-webkit-scrollbar-thumb {
+    background: oklch(38.68% 0.0728 227.5 / 0.8);
+  }
+
   :root {
     /* Light theme based on provided palette */
     /* Base */
@@ -366,13 +441,14 @@
     --brand-foreground: oklch(100% 0 none);
     --primary: oklch(53.27% 0.1015 227.5); /* Medium Teal */
     --primary-foreground: oklch(100% 0 none);
-    --secondary: oklch(31.59% 0.0588 227.5); /* Deep Blue */
+    --secondary: oklch(31.59% 0.0588 227.5);
     --secondary-foreground: oklch(
       97.05% 0.0222 227.5
     ); /* very light cyan for subtle contrast */
     --secondary-foreground-complement: oklch(
       83.17% 0.1242 227.5
     ); /* Soft Teal */
+    --tertiary: #5f8233; /* Green */
     --muted: oklch(94.43% 0.0144 227.5); /* Card/Panel Shade */
     --muted-foreground: oklch(38.68% 0.0728 227.5); /* Muted Deep Blue */
     --accent: oklch(79.12% 0.1261 227.5); /* Soft Teal */

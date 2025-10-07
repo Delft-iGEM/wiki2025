@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { AccentLine } from "@/components/ui/accent-line";
+import { Header } from "@/components";
 
 const quickLinks = [
   {
@@ -35,7 +36,7 @@ export function Home() {
             <img
               src="https://static.igem.wiki/teams/5649/svg/mainlogowithsubtitle.svg"
               alt="Snaccine: a phage-based edible vaccine"
-              className="w-full max-w-2xl -ml-6 mb-0 -mt-3"
+              className="w-full max-w-2xl -ml-16 mb-0 -mt-5"
               loading="lazy"
             />
             <p className="max-w-3xl text-2xl font-bold text-primary ml-4">
@@ -44,7 +45,7 @@ export function Home() {
             <img
               src="https://static.igem.wiki/teams/5649/svg/4step-min.svg"
               alt="Four illustrated steps showing the Snaccine workflow from phage to immune response"
-              className="mx-auto w-full max-w-lg"
+              className="mx-auto w-full max-w-lg mb-2 -mt-2"
               loading="lazy"
             />
             <p className="max-w-3xl text-lg text-muted-foreground ml-4">
@@ -52,27 +53,25 @@ export function Home() {
               Unlike traditional mRNA vaccines, Snaccines can be stored at room temperature, are cheaper to produce, and can be delivered orally.
             </p>
           </div>
-          <div className="mx-auto w-full max-w-lg space-y-6 mt-20">
-            <figure className="relative rounded-3xl border border-border bg-card/60 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <div className="absolute -top-6 right-12 hidden h-14 w-14 rotate-12 rounded-xl border border-accent/60 bg-accent/10 md:block" />
-              <div className="absolute -bottom-8 left-10 hidden h-16 w-16 -rotate-6 rounded-full border border-primary/40 bg-primary/10 md:block" />
+          <div className="mx-auto w-full max-w-lg space-y-6 mt-5">
+            <figure className="relative rounded-4xl transition hover:-translate-y-1 hover:shadow-lg">
               <img
-                src="https://static.igem.wiki/teams/5649/homegraphics/jar-of-snacks-2.webp"
-                alt="A jar of snack capsules representing Snaccine, one capsule is open with phages spilling out"
-                className="w-full h-auto drop-shadow-lg"
+                src="https://static.igem.wiki/teams/5649/chickenscheme/cockledoodledoo2.webp"
+                alt="Chickens eating, with a 3D-printed Snaccine logo on the feeder"
+                className="w-full h-auto drop-shadow-lg rounded-4xl"
                 loading="lazy"
               />
             </figure>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 to="/description"
-                className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 hover:-translate-y-1 hover:shadow-lg"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-tertiary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/90 hover:-translate-y-1 hover:shadow-lg"
               >
                 learn more &rarr;
               </Link>
               <Link
                 to="/members"
-                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-border px-6 py-3 text-base font-semibold text-foreground transition hover:border-accent hover:text-accent hover:-translate-y-1 hover:shadow-lg"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-tertiary px-6 py-3 text-base font-semibold text-foreground transition hover:border-accent hover:text-accent hover:-translate-y-1 hover:shadow-lg"
               >
                 meet the team &rarr;
               </Link>
@@ -80,27 +79,31 @@ export function Home() {
           </div>
         </div>
       </section>
+      <Header>
+      <div className="space-y-4 text-center">
+        <h2 className="text-6xl font-semibold tracking-tight">about avian influenza</h2>
+        <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-balance">
+          Bird flu, specifically Highly Pathogenic Avian Influenza H5N1 (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds across the world.
+          In the Netherlands, as in most countries, the main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
+        </p>
+        
+        <AccentLine className="mx-auto" />
+      </div>
+      </Header>
 
       {/* --- Avian Influenza Section --- */}
       <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6">
-        <div className="space-y-4 text-center">
-          <h2 className="text-6xl font-semibold tracking-tight">about avian influenza</h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-balance">
-            Bird flu, specifically Highly Pathogenic Avian Influenza H5N1 (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds across Europe.
-            The main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
-          </p>
-          
-          <AccentLine className="mx-auto" />
-        </div>
+
+
 
         <div className="relative overflow-hidden rounded-3xl" 
             style={{
-              maskImage:       'linear-gradient(to bottom, transparent 0%, black 0%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 0%)'
+              maskImage:       'linear-gradient(to bottom, transparent 0%, black 20%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)'
             }}>
           <img
             src="https://static.igem.wiki/teams/5649/roundicons/illustration-sans-titre-7-min.webp"
-            alt="Placeholder Creative Commons chicken image"
+            alt="Illustrated chicken image"
             className="w-full h-96 object-cover"
             loading="lazy"
           />
@@ -202,7 +205,9 @@ export function Home() {
                   alt="A jar of snack capsules representing Snaccine, one capsule is open with phages spilling out"
                   className="w-full h-auto"
                   loading="lazy"
+                  
                 />
+                
               </div>
               <div className="mr-auto w-full max-w-md">
                 <h3 className="text-2xl font-semibold">Snaccine is the answer to HPAI outbreaks</h3>

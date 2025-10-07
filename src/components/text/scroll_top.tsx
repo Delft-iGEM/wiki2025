@@ -26,7 +26,7 @@ export const ScrollTop: React.FC = () => {
         <button
           onClick={scrollToTop}
           aria-label="Scroll to top"
-          className="fixed bottom-6 right-6 p-3 rounded-full text-white shadow-lg transition-opacity duration-300"
+          className="fixed bottom-6 right-6 p-3 rounded-full text-white shadow-lg transition-opacity duration-300 cursor-pointer"
           style={{ backgroundColor: "#00A8E8" }}
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#008CC2";

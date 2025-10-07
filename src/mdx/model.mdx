@@ -6,18 +6,17 @@ import { Content, Header, AccentLine, Dropdown } from "@/components";
 </Header>
 
 <Content items="left">
-
+<AccentLine/>
 # MD simulations to investigate the stability of MS2 VLPs
 
-<AccentLine/>
 
-<Dropdown header="Research goal and motivation" level={0}>
 
-For the purpose of inducing a robust immune response, our iGEM project aims to hijack E. coli’s cellular machinery to produce an mRNA vaccine directly in the gut of chickens. We plan to encapsulate an mRNA antigen molecule in an MS2 Virus-Like Particle (VLP). However, while MS2 VLPs have already been developed as vaccine technology 1, no testing has previously been done for their stability under the gut environment. Thus, it is crucial to have a framework to test VLP stability to ensure they can stay stable under variable conditions, both cytosolic as well as in the gut conditions.
 
-We developed this Dry Lab model with the sole goal of examining how different salt conditions and temperatures affect the structural properties of the MS2 VLP. While VLP stability could be empirically tested in the lab, such screening experiments are often time consuming and do not provide mechanistic understanding. Thus, to fully capture the complexity of the MS2 molecular structure we opted to use atomistic Molecular Dynamics (MD). Our MD platform provides a framework for better understanding the stability of MS2 VLPs and for the study of future modifications, such as Cell Penetrating Peptides (which would assist the uptake of VLPs by surrounding cells).
+The capacity for **MS2 Virus Like Particles (VLPs)** to be stable in the gut so they can be taken up by gut cells is essential for our Snaccine project. However, while MS2 VLPs have already been developed as vaccine technology (Su et al.), to the best of our knowledge no testing has previously been done for their **stability under the gut environment**. Thus, it is crucial to have a framework to their structural integrity and ensure they can stay stable under variable conditions, both in the cytosol as well as the dynamic gut conditions.
 
-</Dropdown>
+  
+
+To address this gap, we developed this modelling module with the sole goal of examining how different **salt conditions** and **temperatures** affect the structural properties of the MS2 VLP. While VLP stability could be empirically tested in the lab, such screening experiments are often time consuming and do not provide mechanistic understanding. To fully capture the complexity of the MS2 molecular structure we opted to use atomistic **Molecular Dynamics (MD)**. Our MD platform provides a framework for better understanding the stability of MS2 VLPs and for the study of future modifications, such as Cell Penetrating Peptides (which would assist the uptake of VLPs by surrounding cells).
 
 <Dropdown header="Procedure" level={0}>
 
@@ -27,8 +26,14 @@ We developed this Dry Lab model with the sole goal of examining how different sa
 
 ### Overview of the procedure
 
-We performed MD simulation on a hexamer section of an MS2 VLP that contains all relevant dimer types of the MS2 VLP. Using the **Amber** software package we parameterized our system, introducing a representative protein force field, box dimensions, solvation and initializing ion amounts for the 8 different salt concentrations we wanted to test. Following this step, we ran a standard MD production pipeline with the **GROMACS** software package which we also set up three different temperature conditions with to be tested. Using the same software we then analyzed our MD output for its RMSD, RMSF, Hydrogen bonds as well as the interaction energy between the constitutive dimers, to get insight into any structural changes observed over the conditions we tested.
->
+We performed **MD simulation** on a hexamer section of an **MS2 VLP**.  
+This section contains all relevant dimer types of the MS2 VLP.  
+
+Using the **Amber** software package, we parameterized our system by introducing a representative protein force field, box dimensions, solvation, as well as initializing ion amounts corresponding to the 8 different salt concentrations we aimed to examine.  
+
+Following this step, we ran a standard MD production pipeline with the **GROMACS** software package. At this step, we also set up the three different temperature conditions intended for testing.  
+
+Using the same software, we then analyzed our MD output for its **RMSD**, **RMSF**, **Hydrogen bonds**, as well as the **interaction energy** between the constitutive dimers, to get insight into any structural changes observed over the conditions we tested.
 
 ### General outline of implementation
 
@@ -46,29 +51,34 @@ We performed MD simulation on a hexamer section of an MS2 VLP that contains all 
 ## Description of the system
 
 The MS2 VLPs are icosahedral capsids composed of 180 monomers in three different conformations A, B or C. These monomers form dimers, either as heterodimeric AB or as homodimer CC. The presence of both AB and CC is crucial for the structure to properly self-assemble. The different dimers form regular patterns with 5-fold symmetry interactions between AB dimers and 6-fold symmetry interactions between AB and CC dimers. While a complete picture of the structural stability of this structure would only be achieved by simulating a whole VLP such a task is computationally far too demanding to capture with MD. However, since an MS2 VLP is composed of only two types of dimers with two types of dimer-dimer interactions, an informative picture of this structure’s properties can be captured in a hexamer containing two AB and one CC dimer. A hexamer like this contains 774 residues which is computationally feasible for MD.
-![alt text](https://static.igem.wiki/teams/5649/figures/ms2-vlp-with-selected-hexamer.webp)
+![alt text](https://static.igem.wiki/teams/5649/figures/death-star.webp)
 >Fig. # PyMol visualization of MS2 VLP in gree, with our hexamer section visualized in orange as cartoon
 
 Next, we specified the condition types to be tested in this module. While the gut can contain a diverse and dynamic ion content, we recognized **sodium ions** as one of the most essential ions whose concentration can vastly differ in different gut regions and different physiological states, from as high as 150 mM to as low as 30 mM [2]. Thus, we decided to screen 8 concentrations in this range: **30 mM, 40 mM, 50 mM, 60 mM, 80 mM, 100 mM, 120 mM** and **150mM** of sodium. Additionally, temperature can potentially influence the stability of VLPs and thus we decided to explore 3 relevant temperature conditions for our concept: **18°C**, which is the temperature at which we successfully induced *E. coli* to produce VLPs; **37°C**, as the optimal *E. coli* growth condition as well as the body temperature of humans; and **42°C**, the body temperature of chickens.
 
 ---
 
-## Description of the parametrization
+## Parametrization
 
 To set up the parametrization for an MD simulation of the MS2 hexamer, the **tleap** tool from AmberTools 24.8 [  ]. To model the MS2 hexamer, the **ff19SB** force field was used. The structure was solvated in a box of water, modelled with the explicit **OPC water model**  [  ], padding the hexamer with 10 Å. Different neutralizing ion amounts were added, with the 8 already described salt concentrations or 150 mM if a temperature condition was being screened. The resulting parametrized Amber files were further converted to GROMACS format using **ParmEd 4.3.0**  [  ].
 
 ---
 
-## Description of MD conditions, postprocessing
+## MD production
 
 Next, using the **GROMACS 2024.1** software suite, an MD production, post-processing and analysis were performed. All these processes were run on the Phase 2 **DelftBlue** supercomputer. As a first step of the production process, an energy minimization was carried out until a maximum force of 1000 kJ mol−1 nm−1 was reached using the **steepest descent algorithm**. In this process, equations of motion were numerically integrated with a time step of 2 fs using the **Verlet leapfrog algorithm**. Molecular coordinates were updated every 10 ps. Van der Waals and short-range electrostatic interactions were described with a cutoff of 1 nm. Additionally, to calculate long-range electrostatic interactions, we used the **particle-mesh Ewald summation** with fourth-order cubic interpolation and a grid spacing of 0.16 nm.
 
 Furthermore, the system was equilibrated for 100 ps in the **NVT ensemble**. This was achieved using the **modified Berendsen thermostat** until 300 K equilibrium temperature was reached if testing for salt conditions otherwise the corresponding 3 screening temperatures were used (315 K, 310 K or 291 K). Following this, the hexamer system was equilibrated in the **NpT ensemble** to pressure of 1 bar by implementing a **Parrinello-Rahman barostat**  [  ]. At this stage the system went through production for approximately 600 ns. During this process hydrogen bonds were constrained using the **LINCS algorithm**  [  ].
 
+---
+## Postprocessing
 To account for the periodic boundary conditions, standard for MD, the command `gmx trjconv -pbc` with the *whole* and *no_jump* options were used on the raw MD production output. Using `gmx trjconv -skip`, the processed MD were additionally compressed by a factor of 100 or 1000 for the resulting output to be used when dealing with more computationally demanding visualization or analysis.
 
-As part of analyzing the resulting MD simulation the **Root Mean Square Deviation (RMSD)** and **Hydrogen Bonds** of the total protein as well as the **Root Mean Square Fluctuations (RMSF)** of the protein-backbone atoms were all measured over the whole uncompressed MD output. Three replicate simulations for each condition tested were analyzed. Additionally, to measure the individual binding energies between dimers, the **Generalized Born and Surface Area continuum solvation** method was used through the **gmxMMPBSA** environment [  ].
+---
+## Analysis
+As part of analyzing the resulting MD simulation the **Root Mean Square Deviation (RMSD)** and **Hydrogen Bonds** of the total protein as well as the **Root Mean Square Fluctuations (RMSF)** of the protein-backbone atoms were all measured over the whole uncompressed MD output. Three replicate simulations for each condition tested were analyzed. Additionally, to measure the total binding energies between dimers (both for AB-AB and AB-CC), the **Generalized Born and Surface Area continuum solvation** method was used through the **gmxMMPBSA** environment [  ].
 
+---
 </Dropdown>
 
 <Dropdown header="Results" level={0}>
@@ -113,22 +123,20 @@ We analyzed the RMSF over all residues of the 6 MS2 protein backbone chains to s
 
 In our RMSF analysis, we observe that one of the regions with higher fluctuation levels over all chains and conditions was the **AB loop**, colored in cyan on Fig. # and represented by the first RMSF peak after the N-terminal region. These loops are of particular relevance as they face the outer side of the viral capsid and can thus be a future target for **Cell Penetrating Peptide (CPP)** insertion. A CPP insertion like this can facilitate the uptake of VLPs by gut cells and induce immune response. Exactly because of their outer location they would be expected to have higher fluctuation levels.
 
-![alt text](https://static.igem.wiki/teams/5649/figures/rmsf-salty1.webp)
+![alt text](https://static.igem.wiki/teams/5649/figures/rmsf-salty2.webp)
 >Fig. # RMSF salt #####TBD edit these figures
 
 > Fig. #
 
 Interestingly when examined over the screened temperature conditions, the AB loops showed noticeably higher fluctuations for 37°C and 42°C compared to 18°C. This is not particularly surprising as higher temperature would directly result in more thermal fluctuations and thus higher RMSF in more flexible regions of the protein. Surprisingly, however most often 42°C didn’t result in noticeably higher fluctuations than 37°C. In fact in most cases MS2 was observed to have a higher fluctuations for 37°C. In contrast however, in the B2 monomer all temperatures showed indistinguishable levels of fluctuation (see Fig.). A similar pattern, was observed for other highly fluctuating regions in the MS2 backbone.
 
-![alt text](https://static.igem.wiki/teams/5649/figures/rmsf-temp1.webp)
+![alt text](https://static.igem.wiki/teams/5649/figures/rmsf-temp2.webp)
 >Fig. # RMSF temp
 
 Somewhat similar to the temperature response, no straightforward relationship between RMSF and the salt concentration was observed. However, interestingly, 50 mM salt concentration seems to result in the highest level of fluctuation for most chains and B2 in particular. The fluctuations increase for the first three lowest salt concentrations and then begin to drop down after 50 mM, but around 80 mM again begin to steadily rise.
 
-![alt text](https://static.igem.wiki/teams/5649/figures/rmsf-ab-loop-a1.webp)
+![alt text](https://static.igem.wiki/teams/5649/figures/rmsf-ab-ab.webp)
 > Fig. AB loop region RMSF relation to salt.  
-![alt text](https://static.igem.wiki/teams/5649/figures/rmsf-ab-loop-b2.webp)
-![alt text](https://static.igem.wiki/teams/5649/figures/rmsf-ab-loop-all.webp)
 
 Another interesting observation from the RMSF plot is that a wide peak of fluctuation is observed approximately between residue 66 and 80 (marked green on Fig. #). In A and C monomers, this region surprisingly contains regularly structured beta strands with a short three amino acid beta loop in between them. However, despite the regular secondary structure of this region, it is positioned on the side of the MS2 hexamer and would take part with other MS2 hexamers in the overall VLP structure. Thus this pinpoints a limitation of our hexamer simplification, specifically for this region of the MS2 backbone. Since there are no neighboring hexamers this beta strand structure can freely move and thus has high fluctuation levels. However, in a complete VLP assembly this would not be expected as this region would interact with the same protein structure of other neighboring MS2 dimers.
 

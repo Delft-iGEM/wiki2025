@@ -29,13 +29,42 @@ interface PopoverInteractiveProps {
 
 export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children }) => {
   const [activePopover, setActivePopover] = useState<string | null>(null);
+  const scrollPositionRef = React.useRef<number>(0);
+
+  // Block body scroll when popover is open
+  React.useEffect(() => {
+    if (activePopover) {
+      // Save current scroll position
+      scrollPositionRef.current = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPositionRef.current}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Restore scroll position
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      window.scrollTo(0, scrollPositionRef.current);
+    }
+
+    return () => {
+      // Cleanup on unmount
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+    };
+  }, [activePopover]);
 
   const handleSvgClick = (e: React.MouseEvent<SVGElement>) => {
     const target = e.target as SVGElement;
 
-    // Check if the clicked element or its parent has any of our popover classes
+    // Find the closest group element with one of our popover classes
     for (const className of Object.keys(popoverContentMap)) {
-      if (target.classList.contains(className) || target.closest(`.${className}`)) {
+      const closestGroup = target.closest(`g.${className}`);
+      if (closestGroup) {
         e.stopPropagation();
         setActivePopover(className);
         return;
@@ -58,29 +87,33 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
 
     const cleanupFunctions: (() => void)[] = [];
 
-    // For each class name in the map, find all matching elements
+    // For each class name in the map, find all matching group elements
     Object.keys(popoverContentMap).forEach((className) => {
-      const elements = svg.querySelectorAll(`.${className}`);
+      const groups = svg.querySelectorAll(`g.${className}`);
 
-      elements.forEach((element) => {
-        const svgElement = element as SVGElement;
+      groups.forEach((group) => {
+        const svgElement = group as SVGElement;
         svgElement.style.cursor = 'pointer';
-        svgElement.style.transition = 'opacity 0.2s';
+        svgElement.style.transition = 'all 0.3s ease';
 
         const handleMouseEnter = () => {
-          svgElement.style.opacity = '0.7';
+          svgElement.style.transform = 'scale(1.05)';
+          svgElement.style.filter = 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))';
+          svgElement.style.opacity = '0.9';
         };
 
         const handleMouseLeave = () => {
+          svgElement.style.transform = 'scale(1)';
+          svgElement.style.filter = 'none';
           svgElement.style.opacity = '1';
         };
 
-        element.addEventListener('mouseenter', handleMouseEnter);
-        element.addEventListener('mouseleave', handleMouseLeave);
+        group.addEventListener('mouseenter', handleMouseEnter);
+        group.addEventListener('mouseleave', handleMouseLeave);
 
         cleanupFunctions.push(() => {
-          element.removeEventListener('mouseenter', handleMouseEnter);
-          element.removeEventListener('mouseleave', handleMouseLeave);
+          group.removeEventListener('mouseenter', handleMouseEnter);
+          group.removeEventListener('mouseleave', handleMouseLeave);
         });
       });
     });
@@ -113,10 +146,14 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
             <div
               className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl max-w-3xl w-full max-h-[80vh] overflow-y-auto relative pointer-events-auto"
               aria-modal="true"
+              onWheel={(e) => {
+                // Prevent event from bubbling to parent elements
+                e.stopPropagation();
+              }}
             >
               <button
                 onClick={() => setActivePopover(null)}
-                className="sticky top-0 right-0 float-right m-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors z-10"
+                className="sticky top-2 right-2 float-right p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors z-10"
                 aria-label="Close popover"
                 type="button"
               >
