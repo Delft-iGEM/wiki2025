@@ -27,15 +27,15 @@ const quickLinks = [
 
 export function Home() {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col">
       {/* --- Hero Section --- */}
-      <section className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-section via-background to-section px-6 pb-8 shadow-lg sm:px-12">
-        <div className="mx-15 grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:items-center">
+      <section className="overflow-hidden bg-gradient-to-tr from-primary/20 via-background to-tertiary/20 px-6 pb-8 shadow-lg sm:px-12 -mt-30 pt-30">
+        <div className="mx-3 md:mx-15 grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:items-center">
           <div className="text-balance">
             <img
               src="https://static.igem.wiki/teams/5649/svg/mainlogowithsubtitle.svg"
               alt="Snaccine: a phage-based edible vaccine"
-              className="w-full max-w-2xl -ml-16 mb-0 -mt-5"
+              className="max-w-2xl"
               loading="lazy"
             />
             <p className="max-w-3xl text-2xl font-bold text-primary ml-4">
@@ -70,7 +70,7 @@ export function Home() {
               </Link>
               <Link
                 to="/members"
-                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-tertiary px-6 py-3 text-base font-semibold text-foreground transition hover:border-accent hover:text-accent hover:-translate-y-1 hover:shadow-lg"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-tertiary px-6 py-3 text-base font-semibold text-tertiary transition hover:border-accent hover:text-accent hover:-translate-y-1 hover:shadow-lg"
               >
                 meet the team &rarr;
               </Link>
@@ -78,9 +78,8 @@ export function Home() {
           </div>
         </div>
       </section>
-
       {/* --- Avian Influenza Section --- */}
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6">
+      <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 mt-10">
 
 
       <div className="space-y-4 text-center">
@@ -170,7 +169,7 @@ export function Home() {
                 </p>
                 <Link
                   to="/description"
-                  className="inline-flex min-w-[20rem] items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 hover:-translate-y-1 hover:shadow-lg"
+                  className="inline-flex min-w-[20rem] items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/90 hover:-translate-y-1 hover:shadow-lg"
                 >
                   read more about how Snaccine works &rarr;
                 </Link>
