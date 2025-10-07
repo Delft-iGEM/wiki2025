@@ -117,29 +117,119 @@ export function Home() {
 
         {/* --- Stats Cards --- */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-2xl border border-border bg-card p-6 text-center">
-            <div className="mb-4 text-4xl font-bold text-primary">+29%</div>
-            <h3 className="mb-2 text-lg font-semibold">Egg prices since 2022</h3>
-            <p className="text-sm text-muted-foreground text-balance">
-              Egg price inflation in the Netherlands, Jan 2022 &ndash; Aug 2025 <Link to="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83131NED/table?ts=1759710766335" className="text-primary hover:underline"> (CBS)</Link>
-            </p>
+          {/* Card 1 */}
+          <div className="group relative h-40 cursor-pointer select-none [perspective:1200px]">
+            <div className="h-full w-full transition-transform duration-500 group-hover:-translate-y-1">
+              <div className="relative h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                {/* Front side */}
+                <div className="absolute inset-0 flex items-center justify-center rounded-2xl border border-border bg-card shadow-lg [backface-visibility:hidden]">
+                  {/* Flip indicator arrow */}
+                  <div className="absolute top-3 right-3 opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110">
+                    <svg 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      className="text-neutral-600"
+                    >
+                      <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                      <path d="M21 3v5h-5" />
+                      <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                      <path d="M3 21v-5h5" />
+                    </svg>
+                  </div>
+                  <div className="text-5xl font-bold text-primary">+29%</div>
+                </div>
+                {/* Back side */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                  <h3 className="mb-2 text-lg font-semibold">Egg prices since 2022</h3>
+                  <p className="text-sm text-muted-foreground text-balance">
+                    Egg price inflation in the Netherlands, Jan 2022 – Aug 2025 <Link to="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83131NED/table?ts=1759710766335" className="text-primary hover:underline"> (CBS)</Link>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          
-          <div className="rounded-2xl border border-border bg-card p-6 text-center">
-            <div className="mb-4 text-4xl font-bold text-primary">1264</div>
-            <h3 className="mb-2 text-lg font-semibold">Wild bird cases</h3>
-            <p className="text-sm text-muted-foreground text-balance">
-              HPAI detections in wild birds, 24 European countries, Oct 2024 – June 2025 <Link to="/human-practices" className="text-primary hover:underline"> (ECDC)</Link>
-            </p>
+
+          {/* Card 2 */}
+          <div className="group relative h-40 cursor-pointer select-none [perspective:1200px]">
+            <div className="h-full w-full transition-transform duration-500 group-hover:-translate-y-1">
+              <div className="relative h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                {/* Front side */}
+                <div className="absolute inset-0 flex items-center justify-center rounded-2xl border border-border bg-card shadow-lg [backface-visibility:hidden]">
+                  {/* Flip indicator arrow */}
+                  <div className="absolute top-3 right-3 opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110">
+                    <svg 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      className="text-neutral-600"
+                    >
+                      <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                      <path d="M21 3v5h-5" />
+                      <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                      <path d="M3 21v-5h5" />
+                    </svg>
+                  </div>
+                  <div className="text-5xl font-bold text-primary">1264</div>
+                </div>
+                {/* Back side */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                  <h3 className="mb-2 text-lg font-semibold">Wild bird cases</h3>
+                  <p className="text-sm text-muted-foreground text-balance">
+                    HPAI detections in wild birds, 24 European countries, Oct 2024 – June 2025 <Link to="/human-practices" className="text-primary hover:underline"> (ECDC)</Link>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          
-          <div className="rounded-2xl border border-border bg-card p-6 text-center">
-            <div className="mb-4 text-4xl font-bold text-destructive">8 million</div>
-            <h3 className="mb-2 text-lg font-semibold">Birds culled in four months</h3>
-            <p className="text-sm text-muted-foreground text-balance">
-              Birds killed to stop the spread of HPAI, 24 European countries, March 8 &ndash; June 6 2025
-              <Link to="/human-practices" className="text-primary hover:underline"> (EFSA)</Link>
-            </p>
+
+          {/* Card 3 */}
+          <div className="group relative h-40 cursor-pointer select-none [perspective:1200px]">
+            <div className="h-full w-full transition-transform duration-500 group-hover:-translate-y-1">
+              <div className="relative h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                {/* Front side */}
+                <div className="absolute inset-0 flex items-center justify-center rounded-2xl border border-border bg-card shadow-lg [backface-visibility:hidden]">
+                  {/* Flip indicator arrow */}
+                  <div className="absolute top-3 right-3 opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110">
+                    <svg 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      className="text-neutral-600"
+                    >
+                      <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                      <path d="M21 3v5h-5" />
+                      <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                      <path d="M3 21v-5h5" />
+                    </svg>
+                  </div>
+                  <div className="text-5xl font-bold text-destructive">8M</div>
+                </div>
+                {/* Back side */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                  <h3 className="mb-2 text-lg font-semibold">Birds culled in four months</h3>
+                  <p className="text-sm text-muted-foreground text-balance">
+                    Birds killed to stop the spread of HPAI, 24 European countries, March 8 – June 6 2025
+                    <Link to="/human-practices" className="text-primary hover:underline"> (EFSA)</Link>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
