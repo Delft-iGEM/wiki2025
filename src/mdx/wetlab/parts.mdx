@@ -9,6 +9,7 @@ biological parts and BioBricks used in our project
 ## Overview
 This section documents the biological parts used in our project.
 
+## Composite Parts
 
 <Dropdown header="MS2 Capsid" level={0}>
 
@@ -145,6 +146,105 @@ Building on this composite part, we have designed a **next-generation plasmid** 
 
 Although time constraints prevented experimental validation, the plasmid is **fully designed, ordered, and ready to use**, providing a direct roadmap for future iGEM teams. This effort demonstrates how our system can be extended into a **functional RNA delivery and expression platform** across biological kingdoms.
 
+</Dropdown>
+
+<Dropdown header="MS2 Capsid carrying RNA cargo" level={0}>
+### Design Justification & Novelty
+
+This composite part is designed as a single-plasmid system for producing and packaging an mRNA therapeutic within _E. coli_ BL21(DE3) for subsequent delivery to eukaryotic cells. The core novelty lies in its integrated approach: it co-expresses a modified MS2 coat protein and a target RNA cargo from the same plasmid. The coat protein is engineered as a fused dimer (CP-CP) incorporating a cell-penetrating HIV TAT peptide for enhanced eukaryotic cell uptake and a His-tag for purification.
+
+This system leverages the natural interaction between the MS2 coat protein and its RNA stem-loop packaging signal. By placing two MS2 stem loops on the cargo transcript, the self-assembling coat proteins are directed to form a protective icosahedral virus-like particle (VLP) specifically around the target RNA. This encapsulation shields the RNA (e.g., IRES-eGFP) from nuclease degradation, creating a stable, non-replicating delivery vehicle. The design is modular, allowing the eGFP cargo to be easily swapped for other coding sequences or therapeutic RNAs like siRNA, establishing a versatile platform for RNA delivery.
+### Construct Validation
+### Genetic Elements and Functions
+| Element                       | Function |
+|------------------------------|----------|
+| T7/lac Promoter              | An IPTG-inducible promoter that drives high-level expression of the MS2 coat protein in *E. coli* BL21(DE3). |
+| MS2 Coat Protein (TAT-CP-CP-His) | An engineered structural protein that self-assembles into an icosahedral VLP. Expressed as a fused dimer with an N-terminal HIV TAT peptide to facilitate cell penetration and a C-terminal His-tag for purification. |
+| MS2 Stem Loops (Hairpins)    | Two RNA hairpin structures on the cargo transcript that act as packaging signals, recruiting MS2 coat proteins to initiate VLP assembly around the RNA. |
+| IRES (Internal Ribosome Entry Site) | Enables cap-independent translation initiation of the mRNA cargo once inside a eukaryotic cell. |
+| eGFP (cargo example)         | A reporter gene used as the initial RNA cargo to be packaged; designed to be interchangeable with other therapeutic or functional RNAs. |
+| Human Beta Globin UTRs       | 5′ and 3′ untranslated regions flanking the cargo to support efficient and stable translation of the payload in eukaryotic cells. |
+
+### Functional Testing
+### Limitations & Iteration
+### Why This Part Is Useful for Future iGEM Teams
+-   **All-in-One RNA Production & Packaging:**  The single-plasmid design simplifies the workflow for creating RNA-filled VLPs entirely within  _E. coli_.
+-   **Modular Cargo System:**  Teams can easily replace the IRES-eGFP cassette with their own genetic circuits, mRNA vaccines, or siRNAs by ensuring the inclusion of the MS2 stem loop signals. This "plug-and-play" feature makes it highly versatile.
+-   **Built-in Delivery and Purification:**  The inclusion of the TAT peptide enhances cellular uptake, while the His-tag provides a straightforward method for purification, making downstream experiments more accessible.
+-   **Protection of RNA:**  The VLP shell protects fragile RNA molecules from degradation, increasing the likelihood of successful delivery and function in target cells.
+### Documented Protocols
+</Dropdown>
+
+## Basic Parts
+
+<Dropdown header="Custom promoter RBS" level={0}>
+### Design Justification & Novelty
+### Construct Validation
+### Genetic Elements and Functions
+### Functional Testing
+### Limitations & Iteration
+### Why This Part Is Useful for Future iGEM Teams
+### Documented Protocols
+</Dropdown>
+
+<Dropdown header="Maturation Protein" level={0}>
+### Design Justification & Novelty
+### Construct Validation
+### Genetic Elements and Functions
+### Functional Testing
+### Limitations & Iteration
+### Why This Part Is Useful for Future iGEM Teams
+### Documented Protocols
+</Dropdown>
+
+<Dropdown header="MS2 Coat Protein" level={0}>
+### Design Justification & Novelty
+### Construct Validation
+### Genetic Elements and Functions
+### Functional Testing
+### Limitations & Iteration
+### Why This Part Is Useful for Future iGEM Teams
+### Documented Protocols
+</Dropdown>
+
+<Dropdown header="EGFP" level={0}>
+### Design Justification & Novelty
+### Construct Validation
+### Genetic Elements and Functions
+### Functional Testing
+### Limitations & Iteration
+### Why This Part Is Useful for Future iGEM Teams
+### Documented Protocols
+</Dropdown>
+
+<Dropdown header="MS2 stem loop variant" level={0}>
+### Design Justification & Novelty
+### Construct Validation
+### Genetic Elements and Functions
+### Functional Testing
+### Limitations & Iteration
+### Why This Part Is Useful for Future iGEM Teams
+### Documented Protocols
+</Dropdown>
+
+<Dropdown header="Bbsl site" level={0}>
+### Design Justification & Novelty
+### Construct Validation
+### Genetic Elements and Functions
+### Functional Testing
+### Limitations & Iteration
+### Why This Part Is Useful for Future iGEM Teams
+### Documented Protocols
+</Dropdown>
+
+<Dropdown header="MS2 CP optimized" level={0}>
+### Design Justification & Novelty
+### Construct Validation
+### Genetic Elements and Functions
+### Functional Testing
+### Limitations & Iteration
+### Why This Part Is Useful for Future iGEM Teams
+### Documented Protocols
 </Dropdown>
 
 

@@ -1,5 +1,6 @@
 import { Content, Header, AccentLine, Dropdown, IHPTimeline } from "@/components";
 import DownstreamPurificationFlow from "../components/text/downstream_purification_flow";
+import OptionFork from "../components/text/option_fork";
 
 
 <Header>
@@ -295,11 +296,22 @@ innovation begins with understanding
     However, this shift from an encapsulated product to a soluble one introduces a critical engineering challenge. Our T7 phage system was initially designed for encapsulation, a method that served a dual purpose: it shielded the phages from stomach acid in the targeted animal and functioned as an elegant biosafety measure in case of environmental spread. Without encapsulation, shed phages in manure would be naturally neutralized by the gastric acid of any non-target animal, preventing unintended vaccination.
 
     Losing this protective encapsulation creates a design trade-off between the user-friendliness demanded by stakeholders and the original biocontainment. This dilemma forced us to consider two potential paths forward:
-
-    **Option 1: Develop a Protective, Water-Soluble Formulation.** This would involve encapsulating our existing T7 phages in a pH-responsive, water-soluble coating. The powder would dissolve in water for easy administration, but the coating would protect the phages through the stomach and release them the gut. This maintains our Safe-by-Design principle, as any phages shed into the environment would still be acid-labile, preventing the vaccination of non-target animals.
-
-    **Option 2: Use Inherently Acid-Stable Phages.** We considered selecting extremophile phages that can naturally survive low pH. While this simplifies the formulation, it would compromise a key biosafety feature. Our consultations with the RIVM GMO Office prioritized biocontainment and minimizing environmental shedding. Using an acid-stable phage would mean that off-target animals exposed to shed phages in the environment could also become vaccinated, as the phages naturally survive the stomach acid.
-
+    <OptionFork 
+        leftTitle = "Option 1: Develop a Protective, Water-Soluble Formulation."
+        rightTitle = "Option 2: Use Inherently Acid-Stable Phages."
+         left = {
+         <>
+         <p>This would involve encapsulating our existing T7 phages in a pH-responsive, water-soluble coating. The powder would dissolve in water for easy administration, but the coating would protect the phages through the stomach and release them in the gut. This maintains our Safe-by-Design principle, as any phages shed into the environment would still be acid-labile, preventing the vaccination of non-target animals.</p>
+         </>
+        }
+        right = {
+         <>
+        <p> We considered selecting extremophile phages that can naturally survive low pH. While this simplifies the formulation, it would compromise a key biosafety feature. Our consultations with the RIVM GMO Office prioritized biocontainment and minimizing environmental shedding. Using an acid-stable phage would mean that off-target animals exposed to shed phages in the environment could also become vaccinated, as the phages naturally survive the stomach acid.</p>
+         </>
+        }
+    />
+    
+    <br/>
     **Final Pivotal Change:**
 
     After weighing the options, we concluded that **Option 1 best integrates all stakeholder requirements.** It satisfies the farmer and veterinarian's need for a water-soluble powder while upholding the regulatory and ecological safety principles established earlier in our project.
@@ -390,7 +402,7 @@ innovation begins with understanding
     If the chicken has been vaccinated with Snaccine in its lifetime, the phages, and E. Coli hosts will naturally die, and/ or be excreted.
     </Dropdown>
 
-    <Dropdown header = "Cnclusion and Reflection" level={0}>
+    <Dropdown header = "Conclusion and Reflection" level={0}>
 
     **Limitations: The Systemic Hurdle of International Trade**
 
