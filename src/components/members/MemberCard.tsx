@@ -91,7 +91,7 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
               {role ? <div className="text-md text-neutral-500">{role}</div> : null}
             </div>
           </div>
-          <div className="row-start-1 col-start-1 flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-white p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="row-start-1 col-start-1 flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-primary/20 p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
             <div className="text-md text-muted-foreground">{bio}</div>
           </div>
         </div>
