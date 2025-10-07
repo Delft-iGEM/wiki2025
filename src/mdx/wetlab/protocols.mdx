@@ -1,53 +1,81 @@
 import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem } from "@/components";
 
-
 <Header>
- # protocols
- detailed protocols and procedures for our lab work
+  # protocols  
+  detailed protocols and procedures for our lab work
 </Header>
 
 <Content items="left">
 
+  {/* --- MODULE A: T7 Bacteriophage Engineering --- */}
   <Dropdown header="T7 Bacteriophage Engineering" level={0}>
     <p>Protocols and procedures for Module A research and development.</p>
     
     <DropdownGroup multiple className="mt-4">
-      <DropdownItem value="module-a-protocols" header="Q5 polymerase PCR protocol " level={1}>
-      </DropdownItem>
-
-      <DropdownItem value="module-a-protocols" header="1% Agarose Gel Electrophoresis to verify DNA length" level={1}>
-      </DropdownItem>
-
-      <DropdownItem value="module-a-protocols" header="T7 genome assembly" level={1}>
-      </DropdownItem>
-
-      <DropdownItem value="module-a-protocols" header="Column Purification of PCR Product" level={1}>
-      </DropdownItem>
-
-      <DropdownItem value="module-a-protocols" header="Heat shock transformation and rebooting of phages" level={1}>
-      </DropdownItem>
-
-      <DropdownItem value="module-a-protocols" header="Preparation of electrocompetent cells" level={1}>
-      </DropdownItem>
-
-      <DropdownItem value="module-a-protocols" header="T7 phage filtration" level={1}>
-      </DropdownItem>
-
-      <DropdownItem value="module-a-protocols" header="T7 phage concentration" level={1}>
-      </DropdownItem>
-
-      <DropdownItem value="module-a-protocols" header="T7 phage plaque assay " level={1}>
-      </DropdownItem>
-
-
-
+      <DropdownItem value="module-a-protocols" header="Q5 polymerase PCR protocol" level={1} />
+      <DropdownItem value="module-a-protocols" header="1% Agarose Gel Electrophoresis to verify DNA length" level={1} />
+      <DropdownItem value="module-a-protocols" header="T7 genome assembly" level={1} />
+      <DropdownItem value="module-a-protocols" header="Column Purification of PCR Product" level={1} />
+      <DropdownItem value="module-a-protocols" header="Heat shock transformation and rebooting of phages" level={1} />
+      <DropdownItem value="module-a-protocols" header="Preparation of electrocompetent cells" level={1} />
+      <DropdownItem value="module-a-protocols" header="T7 phage filtration" level={1} />
+      <DropdownItem value="module-a-protocols" header="T7 phage concentration" level={1} />
+      <DropdownItem value="module-a-protocols" header="T7 phage plaque assay" level={1} />
     </DropdownGroup>
   </Dropdown>
 
+  {/* --- MODULE B: Stability Testing --- */}
   <Dropdown header="Bacteriophage Stability Testing" level={0}>
     <p>Protocols and procedures for Module B research and development.</p>
     
     <DropdownGroup multiple className="mt-4">
+
+      {/* NEW: Temperature Stability Test */}
+      <DropdownItem value="ph-temp-stability" header="Long-Term Temperature Stability of T7 Bacteriophage" level={1}>
+        ###### Purpose
+        Evaluate T7 bacteriophage stability when stored at different temperatures over several weeks.
+
+        ---
+
+        ###### Experimental Design
+        - Temperatures tested: **4 °C (fridge)**, **~20 °C (room temperature)**, and **37 °C (incubator)**  
+        - Duration: **4 weeks total**  
+        - Each week, **three tubes** of bacteriophage stock were placed at each temperature.  
+        - This setup created samples exposed for **1, 2, 3, and 4 weeks** at each temperature.  
+        - The goal was to assess **long-term viability and stability** of T7 phages under different storage conditions.
+
+        ---
+
+        ###### Materials
+        - T7 bacteriophage stock solution  
+        - Sterile microcentrifuge tubes (labeled by temperature & week)  
+        - 4 °C refrigerator  
+        - Room temperature bench (~20 °C)  
+        - 37 °C incubator  
+        - Timer or logbook for weekly tracking  
+
+        ---
+
+        ###### Methods
+        1. Label tubes for each temperature and timepoint (e.g., *4 °C – Week 1*, *37 °C – Week 4*).  
+        2. Aliquot equal volumes of T7 phage stock into all tubes.  
+        3. Place sets of tubes into the respective temperature environments:  
+           - **4 °C:** refrigerator shelf  
+           - **20 °C:** room bench or drawer away from direct light  
+           - **37 °C:** incubator  
+        4. Each week, add **three fresh tubes** to each temperature group.  
+        5. Continue until all four weekly sets have been stored for their respective durations.  
+        6. At each week’s end, retrieve that set of tubes for downstream **plaque assay** analysis.  
+
+        ---
+
+        ###### Notes
+        - Avoid repeated freeze–thaw or temperature cycling.  
+        - Keep all tubes clearly labeled to prevent mix-ups.  
+        - Compare PFU/mL over time to determine stability trends.  
+      </DropdownItem>
+
+      {/* Acid Baths */}
       <DropdownItem value="ph-acid-baths" header="Preparation of Acid Baths (pH 1.5, 2.0, 3.0)" level={1}>
         ###### Materials
         - Clean glassware
@@ -58,20 +86,19 @@ import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem } fr
         - 1 M HCl
         - pH meter (calibrated at 4/7/10)
         - 37 °C water bath
-        - 0.22 µm filter (if storing overnight)
 
         ###### Methods
-        1. **Weigh & dissolve:** Add **0.06 g NaCl** to ~**25 mL DI water**.
-        2. **Add HCl (approximate volumes):**  
-           - pH **1.5** → **0.57 mL**  
-           - pH **2.0** → **0.18 mL**  
-           - pH **3.0** → **18 µL**  
-        3. **Adjust volume:** Bring final to **30 mL** with DI water.  
-        4. **Check pH:** Fine-tune if necessary.  
-        5. **Warm:** Place at **37 °C**, re-check pH before use.  
-        6. **Sterilize:** Filter (**0.22 µm**) if storing overnight.  
+        1. Add 0.06 g NaCl to ~25 mL DI water.  
+        2. Add HCl (approximate volumes):  
+           - pH 1.5 → 0.57 mL  
+           - pH 2.0 → 0.18 mL  
+           - pH 3.0 → 18 µL  
+        3. Bring to 30 mL with DI water.  
+        4. Check and adjust pH.  
+        5. Warm to 37 °C before use.  
       </DropdownItem>
 
+      {/* Neutral/Basic Baths */}
       <DropdownItem value="ph-neutral-basic-baths" header="Preparation of Neutral/Basic Baths (pH 6.0, 6.8, 7.4)" level={1}>
         ###### Materials
         - Clean glassware
@@ -81,233 +108,150 @@ import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem } fr
         - 0.5 M K₂HPO₄ (base stock)
         - pH meter (calibrated at 4/7/10)
         - 37 °C water bath
-        - 0.22 µm filter (prepare in advance)
 
         ###### Methods
-        1. **Combine phosphate stocks (per 30 mL, 0.05 M buffer):**  
-           - pH **6.0** → **0.175 mL K₂HPO₄** + **2.825 mL KH₂PO₄**  
-           - pH **6.8** → **0.84 mL K₂HPO₄** + **2.16 mL KH₂PO₄**  
-           - pH **7.4** → **1.825 mL K₂HPO₄** + **1.175 mL KH₂PO₄**  
-        2. Add ~**25 mL DI water**, mix gently.  
-        3. **Check pH:** Adjust with drops of acid/base stock as needed.  
-        4. **Adjust volume:** Bring to **30 mL** with DI water.  
-        5. **Warm:** Place at **37 °C**, re-check pH before use.  
-        6. **Sterilize:** Filter (**0.22 µm**) if storing overnight.  
+        1. Combine phosphate stocks (per 30 mL, 0.05 M buffer):  
+           - pH 6.0 → 0.175 mL K₂HPO₄ + 2.825 mL KH₂PO₄  
+           - pH 6.8 → 0.84 mL K₂HPO₄ + 2.16 mL KH₂PO₄  
+           - pH 7.4 → 1.825 mL K₂HPO₄ + 1.175 mL KH₂PO₄  
+        2. Add ~25 mL DI water, mix gently.  
+        3. Check and adjust pH as needed.  
+        4. Bring to 30 mL total volume.  
+        5. Warm to 37 °C before use.  
       </DropdownItem>
+
+      {/* Experimental Setup */}
+      <DropdownItem value="ph-experimental-setup" header="Experimental Setup: Capsule and Free-Phage pH Stability Test" level={1}>
+        ###### Experimental Design
+        - pH conditions: 1.5, 2.0, 3.0, 6.0, 6.8, 7.4  
+        - Replicates: 3 capsules and 3 free-phage tubes per pH  
+        - Bath volumes: 10 mL for capsules; 5 mL for free phage  
+        - Capsule payload: 100 µL T7 stock  
+
+        ---
+
+        ###### A. Warm-Up and Tube Setup 
+        1. Warm all buffer solutions to 37 °C.  
+        2. Verify pH at 37 °C; adjust if off by > 0.1 unit.  
+        3. Aliquot buffers:  
+           - Capsule baths → 10 mL into 18 tubes.  
+           - Free-phage baths → 5 mL into 18 tubes.  
+        4. Keep tubes at 37 °C.  
+
+        ---
+
+        ###### B. Capsule Filling 
+        1. Work cleanly (near flame or in hood).  
+        2. On ice, fill 18 capsules with 100 µL T7 stock.  
+        3. Close firmly and keep chilled until use.  
+      </DropdownItem>
+
+      {/* Plaque Assay General */}
+      <DropdownItem value="plaque-assay-general" header="General Phage Plaque Assay (Double-Agar Overlay)" level={1}>
+        ###### Date
+        04.07.25  
+
+        ###### Purpose
+        Standard techniques for quantifying bacteriophage titers (PFU/mL) and testing phage activity on bacterial lawns.
+
+        ---
+
+        ###### Materials
+        - LBa plates (1.5% agar)
+        - Soft/top agar (0.4–0.7% agar, molten at 55 °C)
+        - Host bacteria culture (OD₆₀₀ = 0.4–0.6)
+        - LB broth
+        - Sterile pipette tips, microtubes
+        - Phage stock solutions
+        - Water bath (55 °C)
+        - Sterile spreaders
+        - 37 °C incubator
+
+        ---
+
+        ###### Methods
+        **A. Plate & Bacterial Preparation**
+        1. Prepare LBa plates (1.5% agar).  
+        2. Melt soft/top agar (0.4–0.7%) and equilibrate to 55 °C before use.  
+        3. Mix 100 µL host bacteria with ~5 mL molten top agar and pour evenly.  
+        4. Let solidify for ~5 min.  
+
+        **B. Phage Serial Dilutions**
+        1. Dispense 180 µL LB into each dilution tube.  
+        2. Add 20 µL phage stock to the first tube (10⁻¹).  
+        3. Transfer 20 µL sequentially up to 10⁻⁶.  
+        4. Mix and change tips each time.  
+
+        **C. Spotting**
+        1. Apply ~4 µL of each dilution to the agar surface.  
+        2. Do 3 replicates per dilution.  
+        3. Let dry, then incubate inverted at 37 °C overnight.  
+
+        **D. Readout (Spot Analysis)**
+        1. Count visible plaques.  
+        2. Calculate PFU/mL using:  
+           PFU/mL = (number of plaques × dilution factor) / volume of phage dilution (mL)  
+        3. Record plaque morphology (size, clarity).  
+      </DropdownItem>
+
+      {/* Plaque Assay Stability */}
+      <DropdownItem value="plaque-assay-stability" header="Plaque Assays for Capsule & Free-Phage Stability" level={1}>
+        ###### Purpose
+        Quantify phage survival and release kinetics following exposure to different pH conditions.
+
+        ---
+
+        ###### Materials
+        - Host culture at OD₆₀₀ = 0.4–0.6
+        - LB broth, soft/top agar (0.4–0.7%)
+        - Capsule and free-phage bath samples
+        - Sterile tubes and tips
+        - LBa plates (1.5% agar)
+        - 37 °C incubator
+
+        ---
+
+        ###### Methods
+        **A. Serial Dilutions**
+        | Sample Type | Dilution Range |
+        |--------------|----------------|
+        | Release (pH 6.8–7.4) | 10⁻⁴ – 10⁻⁷ |
+        | Release (pH 6.0) | 10⁻³ – 10⁻⁶ |
+        | Acid-hold | 10⁻² – 10⁻⁵ |
+        | Free-phage acid | neat – 10⁻² |
+        | Free-phage neutral | 10⁻⁴ – 10⁻⁶ |
+
+        1. Use 180 µL LB per dilution, transfer 20 µL each step.  
+        2. Mix thoroughly.  
+
+        **B. Plating**
+        1. Mix 100 µL of each dilution with 100 µL host bacteria.  
+        2. Add to ~5 mL molten top agar (55 °C) and pour.  
+        3. Solidify (~5 min), incubate inverted at 37 °C overnight.  
+
+        ---
+
+        ###### Next Day – Readout
+        1. Count plates with 30–300 plaques.  
+        2. Calculate PFU/mL for each condition.  
+        3. Determine % survival vs input control.  
+        4. Report:
+           - Capsule integrity vs pH (% intact at 120 min).  
+           - Median release time (≥ pH 6.0).  
+           - PFU survival after release vs free-phage controls.  
+      </DropdownItem>
+
     </DropdownGroup>
   </Dropdown>
 
-  <Dropdown header="MS2 Capsid Ecpression in E. coli" level={0}>
+  {/* --- MODULE C: MS2 Capsid Expression --- */}
+  <Dropdown header="MS2 Capsid Expression in E. coli" level={0}>
     <p>Comprehensive protocols for Module C including bacterial transformation, protein expression, and VLP production.</p>
-    
-    <DropdownGroup single className="mt-4">
-      <DropdownItem value="lb-agar-plates" header="Pouring LB Agar Plates" level={1}>
-        ###### Materials
-        - Petri dishes
-        - 400 mL LB agar medium
-        - Water bath at 100 °C
-        - Water bath at 60 °C
-        - 400 µL kanamycin (50 mg/mL stock), pipette tips
-        - 70% ethanol
-        - Bunsen burner
-
-        ###### Methods
-        1. **Melt agar:** Liquefy at **100 °C**, then hold at **60 °C** until pourable.
-        2. **Sterile field:** Label plates; clean bench with **70% EtOH**; work by flame.
-        3. **Add antibiotic:** Add **400 µL** of **50 mg/mL** kanamycin to **400 mL** agar → **50 µg/mL** final; mix.
-        4. **Pour plates:** ~**20 mL** per dish; close lids; let solidify.
-      </DropdownItem>
-
-      <DropdownItem value="dna-resuspension" header="Resuspension of Dried DNA (Plasmid)" level={1}>
-        ###### Materials
-        - Ordered DNA plasmid (tube)
-        - Centrifuge
-        - Milli-Q water
-        - Spectrophotometer / Nanodrop
-
-        ###### Methods
-        1. Spin at **13,000 rpm for 20 s** to collect DNA.
-        2. Add **20 µL** Milli-Q to the bottom; flick to wet/dissolve.
-        3. Incubate **RT, 2 h**; flick again.
-        4. Verify concentration (**~50 ng/µL**) by spectrophotometer.
-      </DropdownItem>
-
-      <DropdownItem value="transformation" header="Plasmid Transformation into BL21(DE3)" level={1}>
-        ###### Materials
-        - LB + Kan (50 µg/mL) agar plates
-        - 2 mL tubes
-        - **40 µL** BL21(DE3) competent cells
-        - **1.6 µL** plasmid DNA
-        - **770 µL** SOC
-        - 42 °C water bath, 37 °C incubator/shaker
-
-        ###### Methods
-        1. On ice, mix **40 µL** cells + **1.6 µL** plasmid; incubate **30 min**.
-        2. Heat-shock **42 °C, 30 s**; place on ice **5 min**.
-        3. Add **770 µL** SOC; shake **37 °C, 150 rpm, 60 min**.
-        4. Plate **10/20/50/100 µL** and include a negative control.
-        5. Incubate inverted **37 °C, 16 h**.
-      </DropdownItem>
-
-      <DropdownItem value="glycerol-stock" header="Preparation of a Glycerol Stock (50% working)" level={1}>
-        ###### Materials
-        - **25 mL** 95% glycerol solution
-        - **31.5 mL** Milli-Q water
-        - **50 mL** flask
-
-        ###### Methods
-        1. Mix to make **56.5 mL** of **50%** glycerol.
-        2. Transfer to a flask, label with autoclave tape, **autoclave**.
-      </DropdownItem>
-
-      <DropdownItem value="kanamycin-stock" header="Preparation of 1000× Kanamycin Stock (50 mg/mL)" level={1}>
-        ###### Materials
-        - Kanamycin sulfate powder
-        - Sterile Milli-Q water
-        - 0.22 µm syringe filter
-        - Sterile 50 mL tube
-
-        ###### Methods
-        1. Dissolve **250 mg** kanamycin sulfate to **50 mL** (→ **50 mg/mL**).
-        2. Filter-sterilize (**0.22 µm**) into a sterile tube.
-        3. Aliquot (e.g., **3 mL**), label; **store −20 °C**.
-      </DropdownItem>
-
-      <DropdownItem value="iptg-induction" header="Induction with IPTG" level={1}>
-        ###### Materials
-        - **50 mL** overnight culture (BL21(DE3) + MS2 VLP plasmid)
-        - **1 L** LB + **1 mL** 1000× kanamycin
-        - **1 M** IPTG
-        - 2.5 L baffled flask, shaker/incubator
-        - OD₆₀₀ spectrophotometer & cuvettes
-
-        ###### Methods
-        1. In a **2.5 L** flask add **10 mL** ON culture; bring to **1 L** LB+Kan.
-        2. Grow **30 °C, 150 rpm** for **2–4 h**.
-        3. Monitor **OD₆₀₀** to **0.5**; remove **50 mL** for *uninduced control*.
-        4. Add **0.4 mL** **1 M IPTG**; incubate **17 °C, 150 rpm, 16 h** (control same conditions without IPTG).
-      </DropdownItem>
-
-      <DropdownItem value="harvest-lysis" header="Harvest and Lysis" level={1}>
-        ###### Materials
-        - **1 L** induced + **1 L** uninduced cultures
-        - **2 L** LB (no antibiotic)
-        - Large centrifuge bottles, 300 mL & 50 mL tubes
-        - **1 mM NaNO₃**, pH 8 (≥500 mL)
-        - PMSF (100 mM), Lysozyme (**10 mg/sample**)
-        - 0.22 µm filters, sonicator, ice
-        - SDS-PAGE loading dye
-
-        ###### Methods
-        1. Spin two rounds per culture: fill to **750 mL** with LB, **4000×g, 20 min, 4 °C**; discard supernatant.
-        2. Save **50 mL** supernatant from each (store **4 °C**).
-        3. Resuspend pellets in **200 mL** NaNO₃; adjust to **300 mL**.
-        4. Add **10 mg** lysozyme; **30 min RT**. Add **PMSF to 0.3 mM**.
-        5. **Sonicate** **3 min** (10 s on/20 s off) at **~50 W**.
-        6. Take **50 mL** total lysate from each; high-speed spin later; keep remainder **4 °C**.
-        7. **13,500×g, 20 min, 4 °C**; collect supernatant and **0.22 µm** filter.
-        8. Resuspend pellets in **50 mL** NaNO₃; store fractions **4 °C**.
-
-        _SDS-PAGE samples (example loading)_
-        | Lane | Sample                          | Load                 |
-        | ---: | -------------------------------- | -------------------- |
-        | 1    | Induced supernatant              | 10 µL + 2.5 µL dye   |
-        | 2    | Control supernatant              | 10 µL + 2.5 µL dye   |
-        | 3    | Induced total lysate             | 10 µL + 2.5 µL dye   |
-        | 4    | Control total lysate             | 10 µL + 2.5 µL dye   |
-        | 5    | Induced pellet                   | 10 µL + 2.5 µL dye   |
-        | 6    | Control pellet                   | 10 µL + 2.5 µL dye   |
-        | 7    | Induced pre-lysis supernatant    | 10 µL + 2.5 µL dye   |
-        | 8    | Control pre-lysis supernatant    | 10 µL + 2.5 µL dye   |
-      </DropdownItem>
-
-      <DropdownItem value="sds-page-prep" header="SDS-PAGE Sample Preparation" level={1}>
-        ###### Materials
-        - 4× SDS buffer
-        - Samples (supernatant, pellet, total lysate)
-        - Milli-Q water
-        - DTT
-
-        ###### Prepare (examples)
-        - **Induced supernatant:** 3.333 µL 4× buffer + 1.27 µL sample + 8.73 µL H₂O + 3.333 µL DTT  
-        - **Uninduced supernatant:** 3.333 µL buffer + 1.6 µL sample + 8.4 µL H₂O + 3.333 µL DTT  
-        - **Induced pellet:** 3.333 µL buffer + 10 µL sample + 3.333 µL DTT  
-        - **Uninduced pellet:** 3.333 µL buffer + 1.2 µL sample + 8.8 µL H₂O + 3.333 µL DTT  
-        - **Total lysate (induced):** 3.333 µL buffer + 10 µL sample + 3.333 µL DTT  
-        - **Total lysate (uninduced):** 3.333 µL buffer + 10 µL sample + 3.333 µL DTT  
-
-        **Heat all samples at 95 °C for 5 min.**
-      </DropdownItem>
-
-      <DropdownItem value="sds-page-gel" header="Loading & Running SDS-PAGE Gel" level={1}>
-        ###### Materials
-        - Precast SDS-PAGE gel (e.g., Bio-Rad 4568021)
-        - Electrophoresis cell
-        - 1× Tris-Glycine-SDS running buffer
-        - Protein ladder
-
-        ###### Methods
-        1. Mount gel; remove bottom tape; assemble in gel box.  
-           Fill inner chamber to top and outer to "2 gels" line with running buffer.
-        2. Load **5 µL** ladder and samples (record lane map).
-        3. Run **180 V for 30 min**.
-      </DropdownItem>
-
-      <DropdownItem value="coomassie-staining" header="Coomassie Staining & Imaging" level={1}>
-        ###### Materials
-        - Coomassie Brilliant Blue R-250 stain
-        - Destain (MeOH/AcOH/H₂O)
-        - Tray/rocker
-        - Imaging system
-
-        ###### Methods
-        1. Stain **1–2 h** (or overnight) with gentle rocking.
-        2. Destain, changing solution every **30–60 min** until background clears (**~2–6 h**).
-        3. Rinse **15–30 min** in water; image; store gel hydrated at **4 °C**.
-      </DropdownItem>
-
-      <DropdownItem value="peg-precipitation" header="PEG Precipitation of MS2 VLPs" level={1}>
-        ###### Materials
-        - PEG-6000, NaCl
-        - 0.45 µm & 0.22 µm filters
-        - Centrifuge (≥10,000×g)
-        - Fresh buffer (e.g., **400 mM NaNO₃**)
-
-        ###### Methods
-        1. Filter VLP suspension through **0.45 µm**.
-        2. Add PEG/NaCl to **10% PEG** + **0.5 M NaCl**  
-           *(for 30 mL: 3 g PEG 6000 + 0.88 g NaCl)*.
-        3. Incubate **4 °C, 18 h**; spin **10,000×g, 1 h, 4 °C**.
-        4. Resuspend pellet in **1/10** initial volume buffer; filter **0.22 µm**; store **4 °C**.
-      </DropdownItem>
-
-      <DropdownItem value="tem-imaging" header="TEM Imaging of MS2 VLPs" level={1}>
-        ###### Materials
-        - Induced & uninduced VLPs
-        - Carbon-coated copper grids (400-mesh)
-        - Milli-Q water; **1–2%** uranyl acetate (negative stain)
-        - Glow-discharge unit
-        - TEM (80–120 kV), tweezers, dust-free drying box
-
-        ###### Grid Preparation
-        1. Glow-discharge grids **60 s** in air; store dust-free.
-
-        ###### Sample & Stain
-        1. Place **3 µL** sample on Parafilm; place grid (carbon side down) **60 s**; blot.
-        2. Float on **10 µL** **2%** uranyl acetate **60 s**; wick; air-dry.
-        3. Repeat for uninduced sample.
-
-        ###### Imaging
-        1. Load grid; operate TEM at **~100 kV** (bright-field).
-        2. Optimize apertures & astigmatism; focus on thin stain film.
-        3. Capture overviews (**10–20k×**) and details (**50–100k×**) for both samples.
-      </DropdownItem>
-    </DropdownGroup>
   </Dropdown>
 
-  <Dropdown header="MS2 Capsid take up by eukaryotic cells" level={0}>
+  {/* --- MODULE D: Eukaryotic Uptake --- */}
+  <Dropdown header="MS2 Capsid uptake by eukaryotic cells" level={0}>
     <p>Protocols and procedures for Module D research and development.</p>
-    
     <DropdownGroup multiple className="mt-4">
       <DropdownItem value="module-d-protocols" header="Protocols for Module D" level={1}>
         *Detailed protocols for Module D will be documented here.*
