@@ -349,6 +349,80 @@
     @apply text-[rgb(0,200,0)] bg-black;
   }
 
+  /* Firefox-like scrollbar - auto-hide and width changes */
+  /* Standard scrollbar-* properties for Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(78.56% 0.1479 227.5) transparent;
+  }
+
+  /* Webkit scrollbar for Chrome, Edge, Safari, Vivaldi */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    transition: width 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(78.56% 0.1479 227.5 / 0.6); /* semi-transparent */
+    border-radius: 3px;
+    border: none;
+    transition: all 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(68.11% 0.1308 227.5 / 0.8); /* more visible on hover */
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: oklch(53.27% 0.1015 227.5); /* full saturation on click */
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Hover effect on entire container - widens scrollbar */
+  :hover::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  :hover::-webkit-scrollbar-thumb {
+    background: oklch(78.56% 0.1479 227.5 / 0.8);
+  }
+
+  /* Dark mode scrollbar */
+  .dark * {
+    scrollbar-color: oklch(38.68% 0.0728 227.5) transparent;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: oklch(38.68% 0.0728 227.5 / 0.6);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: oklch(68.11% 0.1308 227.5 / 0.8);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:active {
+    background: oklch(76.78% 0.1408 227.5);
+  }
+
+  .dark :hover::-webkit-scrollbar-thumb {
+    background: oklch(38.68% 0.0728 227.5 / 0.8);
+  }
+
   :root {
     /* Light theme based on provided palette */
     /* Base */
