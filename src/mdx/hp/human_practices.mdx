@@ -1,0 +1,157 @@
+import { Content, AccentLine, Dropdown } from "@/components";
+
+<Content items="left">
+
+<AccentLine/>
+## **Human Practices Introduction**
+
+**"Human Practices is the study of how your work affects the world, and how the world affects your work."**<br/>
+– Peter Carr, iGEM (as cited in Whitford et al., 2018, p. 986)
+
+
+For Snaccine, Human Practices (HP) means designing with accountability to the real world. This principle guided our project choice and continues to shape our design through ongoing, integrated Human Practices (iHP) cycles.
+
+We began by analyzing the challenges posed by avian influenza and its current countermeasures. Our project is grounded in the philosophy of **Responsible Research and Innovation (RRI)**, which calls for collective stewardship of science through anticipation, reflexivity, inclusion, and responsiveness (Stilgoe et al., 2013). To operationalize this philosophy, we applied two complementary methodologies:
+
+1.  **Value Sensitive Design (VSD):** To put the RRI principles of _inclusion_ and _reflexivity_ into practice, we used VSD to systematically identify our stakeholders and map their diverse values and concerns onto our project's design.
+2.  **Safe-by-Design (SbD):** To address the RRI principle of _anticipation_, we used the SbD framework to proactively identify technological risks, assess their likelihood, and develop robust containment plans.
+
+This Human Practices section lays our foundational groundwork, addressing the first half of the iGEM ethos: understanding **how our work affects the world**. It presents the theoretical frameworks of Responsible Research and Innovation, Safe-by-Design, and Value Sensitive Design that guided our project. Therewith, we have addressed the first part of our cycle:
+![Human Practices Cycle](https://static.igem.wiki/teams/5649/hp/snaccine-cycle-hp.webp)
+
+The following Integrated Human Practices section completes this cycle by documenting the second half: **how the world affects our work**. It shows how we acted on our foundation by engaging stakeholders and translating their insights into pivotal design changes.
+
+<Dropdown header="Background" level={0}>
+
+**1. The Scale of the HPAI Crisis**
+
+Highly Pathogenic Avian Influenza (HPAI) circulates in Europe year-round, with peak activity from November to February due to the migration and overwintering of wild birds. Long-term data show that outbreaks in both wild and domestic birds are persistent and follow concrete yearly patterns (Opata et al., 2025).
+
+The latest quarterly report from the European Food Safety Authority (EFSA) and the European Centre for Disease Prevention and Control (ECDC) compiles surveillance data. In the current epidemiological year (Oct 2024 – June 2025), 598 HPAI cases in poultry and 1,264 in wild birds have been reported across 24 European countries, predominantly of the H5N1 strain. During March–June 2025, 85% of EU poultry outbreaks occurred in Hungary and Poland, clustered in high-production regions where EFSA identified secondary spread as the key driver. At the same time, zoonotic spillovers, with cases in foxes, otters, and even a first-ever detection in sheep in the UK, highlight the virus's potential to cross species barriers (EFSA & ECDC, 2025). While molecular analyses show the risk of human transmission remains low for the general public, it is low-to-moderate for people with occupational exposure, like farmers and veterinarians. Among others, these are directly affected stakeholders and end-users of Snaccine.
+
+**2. Current Control Measures: An Untenable Trade-Off**
+
+European outbreak control against HPAI currently relies on culling and establishing strict movement-control zones. Between March and June 2025, approximately 8 million birds were culled in response to only 365 detections (EFSA, ECDC, 2025). Independent modeling shows a consistent trade-off: pre-emptive culling can shorten an outbreak but increases the number of farms depopulated, while emergency vaccination may save birds but prolong the outbreak's duration (Backer et al., 2015). With similar overall costs, the decision is no longer a simple economic choice but a trade-off between animal welfare, logistics, and the speed of ending the outbreak. Therefore, our HP focus is on finding a preventive solution.
+
+**3. The Vaccine Gap: Why Existing Technology Isn't the Answer**
+
+While vaccination is an existing alternative to culling, current options don't fully solve the HPAI problem. A 2023 EFSA vaccination assessment pointed out a critical flaw: their inability to be fully efficacious in stopping virus transmission. Since then, two new vaccines have been authorized EU-wide. However, both are based on the same Herpesvirus of Turkey (HVT) vector technology and face the same limitations.
+
+First, current vaccines are administered in ovo (to the egg in the hatchery) or subcutaneously (by injection) to one-day-old chicks, making mass application during an emergency impractical. Second, data on how long immunity lasts is often incomplete. Most importantly, the live HVT vector platform requires constant updating to keep pace with the virus's evolution, and minimize antigenic distance, a costly and inefficient process. Therefore, vaccinations have not met EFSA's 2023 criteria yet.
+
+**4. Our Solution: Bridging the Gap with the Snaccine Platform**
+
+To address these gaps, we propose Snaccine. An ideal vaccine should be:
+
+-   Transmission-blocking
+-   Rapidly updatable to counter new strains
+-   Suitable for mass application
+-   Practical for distribution without a constant cold chain
+
+Snaccine is designed to meet these needs through its modular design, compatibility with oral delivery, and rapid redesign capabilities.
+
+Introducing a novel Genetically Modified Organism (GMO) platform like Snaccine requires navigating a complex landscape of scientific, regulatory, and social challenges. To ensure our project is grounded in real-world needs and responsibilities, we built our strategy around a deep engagement with the key stakeholders.
+</Dropdown>
+
+<Dropdown header="Methodological Framework" level={0}>
+
+From the start, our project was guided by a clear philosophy of responsible innovation. To put this philosophy into practice, we integrated two key methodologies: Value Sensitive Design to align our project with human values, and Safe-by-Design to proactively manage its risks. This section outlines the theoretical groundwork that formed our stakeholder engagement.
+
+**1. Responsible Research and Innovation (RRI): Our Guiding Philosophy**
+
+**"Responsible innovation means taking care of the future through collective stewardship of science and innovation in the present" 
+-(Stilgoe et al., 2013, p. 1570)**
+
+Our project is grounded in the four pillars RRI: anticipation, reflexivity, inclusion, and responsiveness (Stilgoe et al., 2013). These principles guided us by continuously questioning: _Are we looking far enough ahead? Are we challenging our own biases? Have we included the right voices? And are we prepared to change course based on what we learn?_
+
+To translate these principles from theory into practice, we mapped each pillar to a core aspect of our project:
+
+-   **Anticipation**, which entails proactively identifying real-world hurdles. This pillar challenged us to foresee future challenges. Our assessment of risk in SbD became the primary source for this. It allowed us to address critical biosafety issues like environmental shedding (RIVM), potential impacts on the farm microbiome, and international trade acceptance (Erik de Jonge from AVINED).
+-   **Reflexivity** means critically questioning our own assumptions as scientists. This required us to acknowledge that science is not value-neutral. We actively questioned whether our technical definition of "effectiveness" would align with the practical realities of a farmer (Johannis Florid). This reflexive process guided our stakeholder mapping and forced us to view the project through multiple lenses, and weigh benefits and limitations against one another.
+-   **Inclusion** emphasizes engaging a broad range of stakeholders. This principle drove us to counteract the common imbalance where end-user perspectives are drowned out by industry and regulatory voices (Owen et al., 2012). We involved farmers and veterinarians in our Human Practices work (Johannis Florid, Erik de Jonge, Eline Kamerik). This extended to our public outreach, where we adapted our communication strategy to a broader audience (Charlotte Koster).
+-   **Responsiveness** ensures our project learns and adapts. We integrated new information from stakeholders to align Snaccine with real needs. The integration process is reflected in the Integrated Human Practices Section.
+
+**2. Value Sensitive Design (VSD): Aligning Technology with Human Values**
+
+VSD is a methodology used to proactively incorporate human values into the design of technology. Our VSD process was iterative and began with a thorough analysis of the HPAI crisis and current countermeasures, as described above. From this, we identified key gaps where Snaccine could provide value. We used this initial overview for comprehensive stakeholder mapping, anticipate their values and concerns regarding Snaccine.
+
+This process revealed a complex landscape of intersecting and sometimes conflicting values:
+
+-   **Farmers** value animal welfare and autonomy, seeking to avoid the emotional toll of culling, but are constrained by the economic realities of market access and trade regulations.
+-   **Regulators** prioritize public health, biosafety, and environmental protection. They particularly prevent unintended consequences from GMO release.
+-   **The Poultry Industry** is driven by economic viability and cost-efficiency, requiring solutions that are scalable, affordable, and do not disrupt international trade.
+-   **The Public** values food safety, transparency, and sustainable farming practices.
+
+Our engagement activities were structured to meet established criteria for high-quality public participation, such as ensuring early involvement to allow feedback to shape our project's trajectory before key decisions were made (Rowe & Frewer, 2000).
+
+**3. Safe-by-Design (SbD): Designing for Responsibility Under Uncertainty**
+
+Given that Snaccine is a GMO-based technology intended for environmental deployment, a robust safety framework is essential. We treated safety as a shared responsibility, following the framework of van de Poel and Robaey (2017). This means allocating responsibility among all actors.
+
+We structured our safety analysis around five types of uncertainty, a method that helps move beyond known risks to address the "unknowns" inherent in novel biotechnology (van de Poel & Robaey, 2017):
+
+-   **Risk**, which are known failures with estimable likelihood (Known Unknowns): This includes predictable hazards like **phage shedding** and inadvertent **exposure of non-target hosts**. Our conversation with the RIVM established that a comparative risk assessment against existing vaccines, like HVT, would be a crucial component of a future Environmental Risk Assessment (ERA), aligning with Dutch GMO regulations. In a hypothetical application case, our controls include animal containment, waste inactivation protocols, and testing for residues. To establish mitigation of foreseeable risks in our actual practice, we used strict contained-use lab practices, which are described in our Safety Section.
+-   **Scenario Uncertainty**, in which we know what could go wrong, but not its likelihood (Unknown Probabilities): This category covers events where the failure mode is understood but its probability, and concrete outcome is difficult to calculate. A key example for Snaccine is the potential for it to **escape its biocontainment**. Our response is to build in multiple, independent safety barriers, such as restricting phage activity to the gut as much as possible via host specificity, analogous to using host-restricted viruses like HVT.
+-   **Ignorance**, in which the consequences themselves are unpredictable (Unknown Unknowns): This challenging category involves events with fundamentally unpredictable outcomes. We mapped the evolutionary potential of our system to this uncertainly. For Snaccine, this includes **recombination** with wild phages and **Horizontal Gene Transfer** (HGT). We restrict our platform to lytic phages to reduce this probability. Furthermore, the emergence of **bacterial resistance** to replicative phages is inevitable (Antoine et al., 2025), but the subsequent long-term ecological changes to the gut microbiome are unpredictable. In direct response, we propose the use of a non-replicative phage. These foundational design choices are robust mitigations as preventing phage propagation fundamentally limits the potential for recombination and removes the sustained evolutionary pressure that drives resistance. The extensive comparison of replicative versus non-replicative systems are detailed in our Integrated Human Practices section.
+-   **Indeterminacy**, in which the outcomes depend on human action (Human Action): The ultimate safety and effectiveness of Snaccine are not determined by its biological design alone, but by the actions of its human users. This includes correct administration on the farm and, the ongoing maintenance of biosecurity protocols (EFSA, ECDC, 2025). A foreseeable misuse is relying on vaccination to reduce transmission while maintaining high-density housing conditions that compromise welfare. Rather than attempting to "design out" this human element, an approach that can be counterproductive, we have adopted a strategy of designing for shared responsibility (van de Poel & Robaey, 2017). This approach recognizes that end-users are essential partners in achieving safety with practical knowledge that designers lack. We put this into practice through the development of user-centric materials (Charlotte Koster). Based on direct feedback from stakeholders, this includes simple leaflets with pictograms, and precise dosing instructions with measuring scoops (Johannis Florid). By actively managing indeterminacy this way, we aim to ensure Snaccine supports and enhances responsible farming.
+-   **Normative Ambiguity**, in which the "right" course of action depends on which values are prioritized (Value Conflicts): Snaccine sits amid competing values. Because culling and (emergency/preventive) vaccination have comparable costs (Backer et al., 2015), non-economic values become prominent. The central conflict we have identified is productivity vs. animal welfare. A key concern is that Snaccine could be misused as a "technofix" to sustain high-density housing. In such a scenario, the vaccine would treat the symptoms of disease outbreaks, while masking the root cause of poor husbandry. There is no single "correct" balance, so our Safe-by-Design stance is to make trade-offs explicit and to document our rationale. The aim is for Snaccine to support ethical, sustainable production rather than enable practices misaligned with its preventative-welfare purpose.
+</Dropdown>
+
+<Dropdown header="Stakeholder Mapping" level={0}>
+**1. Upstream Stakeholders: Policy, Regulation, and Foundational Science**
+
+Navigating the regulatory landscape proved to be a primary challenge for the Snaccine project, largely due to its identity as a hybrid platform combining a genetically modified bacteriophage and an _in-situ_ mRNA vaccine. As no single European Union guideline is designed to assess such a product, market authorization would require a case-by-case assessment pieced together from multiple frameworks.
+
+This complex regulatory environment includes:
+
+-   The **Veterinary Medicinal Product (VMP) Regulation** (EU) 2019/6, which provides the legal basis. (European Parliament and Council of the European Union, 2019)
+-   The **EMA's Phage Therapy Guideline**, which informs manufacturing and safety but must be adapted, as Snaccine is excluded from the considered applications. (European Medicines Agency, 2023)
+-   **mRNA Vaccine Principles**, which set quality standards for mRNA purity and integrity that must be re-contextualized for production within the gut. (European Medicines Agency, 2025)
+-   **The GMO Directive**, a parallel framework mandating a comprehensive Environmental Risk Assessment (ERA) focused on hazards like shedding, persistence, and horizontal gene transfer.
+
+To address this uncertainty, we engaged directly with regulatory and scientific experts. A consultation with the Dutch GMO Office at the National Institute for Public Health and the Environment (RIVM) identified environmental phage shedding as the principal hazard. They advised us to perform a comparative ERA, benchmarking Snaccine against an existing Herpesvirus of Turkey (HVT) vaccine to ground the assessment in a real-world context. Further discussions with manufacturing specialist Dr. Luuk van Oosten of Batavia Biosciences provided critical guidance on meeting Good Manufacturing Practice (GMP) standards, ensuring genetic stability, and developing a downstream purification process to address regulatory expectations for product purity and safety.
+
+**2. Midstream Stakeholders: Industry, Production, and Implementation**
+
+Midstream stakeholders, including national trade organizations and veterinarians bridge the gap between policy and on-the-ground application. Our engagement revealed that their perspectives are dominated by two interconnected challenges: trade barriers and the practical burdens of surveillance.
+
+-   **Trade and Market Acceptance:** Our discussions with Erik de Jonge from AVINED, the Dutch trade organization for the poultry sector, revealed that international trade compatibility is the greatest obstacle to adopting new Avian Influenza vaccines. The uncertain reaction of non-EU trading partners to products from vaccinated animals creates immense economic risk, accounting for an estimated "90% of the vaccination hurdle". This reality was underscored by the trade restrictions France faced after starting its own duck vaccination program, making any new vaccine a high-stakes decision for the poultry sector.
+-   **DIVA Surveillance Strategy:** The requirement to **D**ifferentiate **I**nfected from **V**accinated **A**nimals (DIVA) is a non-negotiable condition for maintaining disease monitoring and trade status. While mandated by upstream regulators, the implementation falls to midstream stakeholders and represents a significant practical and financial burden. A DIVA-compatible strategy requires intensive surveillance, including weekly checks and monthly veterinarian visits, adding substantial operational costs and logistical pressure for producers.
+
+**3. Downstream Stakeholders: End-Users and the Public**
+
+The ultimate success of Snaccine depends on its acceptance by farmers, food producers, and the public. Our engagement with this group highlighted three key factors driving adoption: practicality, trust, and transparent communication.
+
+-   **Practicality and Usability:** For farmers, any new product must integrate seamlessly into existing agricultural workflows. A recurring theme was the preference for mass administration through feed or water over labor-intensive individual injections. Veterinarian Eline Kamerik confirmed that administration via drinking water is the industry standard for poultry. This was echoed by farmer Johannis Florid, who noted that a pill format would be impractical as chickens would crush it, making a "powder or mix-in" format far more sensible.
+-   **Trust and Communication Channels:** The source of information is as important as the message itself. Mr. Florid stated that he trusts his "veterinarian and fellow farmers" for advice, not "government authorities or complex scientific reports". This insight shaped our communication strategy, emphasizing the need for clear materials like leaflets that specify dosage, mixing instructions, and potential side effects, delivered through these trusted channels.
+-   **Consumer and Public Perception:** Given the public sensitivity surrounding GMOs in the food chain, proactive and transparent communication is essential. Based on advice from science communicator Dr. Charlotte Koster, our strategy focuses on providing the large, "undecided public" with balanced and accessible information about the technology's benefits and remaining uncertainties, rather than trying to convince skeptics. This approach is vital for building broader public trust and acceptance.
+</Dropdown>
+
+<Dropdown header="References" level={0}>
+
+Antoine, C., Mackay, D., Midtlyng, P., Kleppen, H. P., Palić, D., Pirnay, J.-P., Thiry, D., & Thiry, E. (2025). Bacteriophage-based veterinary products: Aligning regulatory framework and development challenges for market integration. _Biologicals_, _91_, 101847. [https://doi.orgorg/10.1016/j.biologicals.2025.101847](https://doi.orgorg/10.1016/j.biologicals.2025.101847)
+
+European Food Safety Authority (EFSA), & European Centre for Disease Prevention and Control (ECDC). (2025a). Avian influenza overview March–June 2025. _EFSA Journal_, _23_(7), e9520. [https://doi.org/10.2903/j.efsa.2025.9520](https://doi.org/10.2903/j.efsa.2025.9520)
+
+European Food Safety Authority (EFSA), European Centre for Disease Prevention and Control (ECDC), & European Union Reference Laboratory for Avian Influenza (EURL). (2025b). Avian influenza overview March–June 2025. _EFSA Journal_, _23_(7), e9520. [https://doi.org/10.2903/j.efsa.2025.9520](https://doi.org/10.2903/j.efsa.2025.9520)
+
+European Medicines Agency. (2023). _Guideline on quality, safety and efficacy of veterinary medicinal products specifically designed for phage therapy_ (EMA/CVMP/NTWP/32862/2022).
+
+European Medicines Agency. (2025). _Guideline on the quality aspects of mRNA vaccines_ (EMA/CHMP/BWP/82416/2025).
+
+European Parliament & Council of the European Union. (2019). Regulation (EU) 2019/6 of the European Parliament and of the Council of 11 December 2018 on veterinary medicinal products and repealing Directive 2001/82/EC. _Official Journal of the European Union, L 4_, 43–167.
+
+Opata, M. R., Lavarello-Schettini, A., Semenza, J. C., & Rocklöv, J. (2025). Predictiveness and drivers of highly pathogenic avian influenza outbreaks in Europe. _Scientific Reports_, _15_, 20286. [https://doi.org/10.1038/s41598-025-04624-x](https://doi.org/10.1038/s41598-025-04624-x)
+
+Owen, R., Macnaghten, P., & Stilgoe, J. (2012). Responsible research and innovation: From science in society to science for society, with society. _Science and Public Policy_, _39_(6), 751–760. [https://doi.org/10.1093/scipol/scs093](https://doi.org/10.1093/scipol/scs093)
+
+Rowe, G., & Frewer, L. J. (2000). Public participation methods: A framework for evaluation. _Science, Technology, & Human Values_, _25_(1), 3–29.
+
+Stilgoe, J., Owen, R., & Macnaghten, P. (2013). Developing a framework for responsible innovation. _Research Policy_, _42_(9), 1568–1580.
+
+Whitford, C. M., Lübke, N.-C., & Rückert, C. (2018). Synthetic biology ethics at iGEM: iGEMer perspectives. _Trends in Biotechnology_, _36_(10), 985–987. [https://doi.org/10.1016/j.tibtech.2018.06.004](https://doi.org/10.1016/j.tibtech.2018.06.004)
+
+World Health Organization. (2025, September 30). _Bacteriophages and their use in combating antimicrobial resistance_. WHO/Europe. [https://www.who.int/europe/news-room/fact-sheets/item/bacteriophages-and-their-use-in-combating-antimicrobial-resistance](https://www.who.int/europe/news-room/fact-sheets/item/bacteriophages-and-their-use-in-combating-antimicrobial-resistance)
+</Dropdown>
+
+</Content>

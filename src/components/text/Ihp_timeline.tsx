@@ -1,5 +1,5 @@
 import React from 'react';
-import { PopoverInteractive } from './PopoverInteractive';
+import { PopoverInteractive } from '../PopoverInteractive';
 
 export const IHPTimeline: React.FC = () => {
    return (

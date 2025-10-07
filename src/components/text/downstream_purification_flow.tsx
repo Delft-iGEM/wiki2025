@@ -109,7 +109,7 @@ function StepCard({
   );
 }
 
-export default function DownstreamPurificationFlow() {
+export function DownstreamPurificationFlow() {
   const [active, setActive] = useState<string>(STEPS[0].key);
 
   return (

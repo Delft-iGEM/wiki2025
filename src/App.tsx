@@ -10,7 +10,7 @@ import { Footer } from "./components/basic/Footer";
 import { Home } from "./contents/home.tsx";
 
 // Content components MDX
-import HumanPractices from "./mdx/human_practices.mdx";
+import HumanPractices from "./mdx/hp/hp_page.mdx";
 import DryLab from "./mdx/dry_lab.mdx";
 
 

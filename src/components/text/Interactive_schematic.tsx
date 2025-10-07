@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InteractiveSchematic: React.FC = () => {
+export const InteractiveSchematic: React.FC = () => {
    return (
       <svg className='h-full w-full' viewBox="0 0 960 672" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
          <defs>
@@ -441,5 +441,3 @@ const InteractiveSchematic: React.FC = () => {
       </svg>
    );
 };
-
-export default InteractiveSchematic;

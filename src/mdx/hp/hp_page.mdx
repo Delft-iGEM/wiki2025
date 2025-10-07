@@ -1,0 +1,21 @@
+import { Header, SegmentedContent } from "@/components";
+import HumanPractices from "./human_practices.mdx";
+import IntegratedHumanPractices from "./integrated_human_practices.mdx";
+
+<Header>
+# human practices
+innovation begins with understanding
+</Header>
+
+<SegmentedContent
+    segments={[
+        {
+            label: "Human Practices",
+            content: <HumanPractices />,
+        },
+        {
+            label: "Integrated Human Practices",
+            content: <IntegratedHumanPractices />,
+        },
+    ]}
+/>
