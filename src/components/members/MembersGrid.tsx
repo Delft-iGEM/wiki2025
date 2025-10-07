@@ -1,12 +1,19 @@
+import { useState } from "react";
 import MemberCard from "./MemberCard"
 
 const pathBase= "https://static.igem.wiki/teams/5649/membersq/"
 const ext = ".webp"
 
 export function MembersGrid() {
+  const [openCardId, setOpenCardId] = useState<string | null>(null);
+
+  const handleCardToggle = (cardId: string) => {
+    setOpenCardId((prev) => (prev === cardId ? null : cardId));
+  };
+
   return (
 <div className="mx-auto flex w-full max-w-7xl flex-wrap justify-center gap-x-3 px-8 pt-8 gap-y-10">
-  <MemberCard firstName="Duncan" lastName="Whyte" src={pathBase+"duncan"+ext} alt="Duncan" role="Project Leader" bio={
+  <MemberCard firstName="Duncan" lastName="Whyte" src={pathBase+"duncan"+ext} alt="Duncan" role="Project Leader" isFlipped={openCardId === "duncan"} onToggle={() => handleCardToggle("duncan")} bio={
     <>
     <div className="flex items-center gap-2">
       <ScotlandFlag className="w-5 h-3" />
@@ -17,7 +24,7 @@ export function MembersGrid() {
     <br />
     </>
   } />
-  <MemberCard firstName="Zofia" lastName="Wojciechowicz" src={pathBase+"zofia"+ext} alt="Zofia" role="Finance and Outreach Manager" bio={
+  <MemberCard firstName="Zofia" lastName="Wojciechowicz" src={pathBase+"zofia"+ext} alt="Zofia" role="Finance and Outreach Manager" isFlipped={openCardId === "zofia"} onToggle={() => handleCardToggle("zofia")} bio={
     <>
     <div className="flex items-center gap-2">
       <PolandFlag className="w-5 h-3" />
@@ -25,7 +32,7 @@ export function MembersGrid() {
     </div>
     </>
   } flipped />
-  <MemberCard firstName="Tessa" lastName="Ernst" src={pathBase+"tessa"+ext} alt="Tessa" role="Human Practices Manager" bio={
+  <MemberCard firstName="Tessa" lastName="Ernst" src={pathBase+"tessa"+ext} alt="Tessa" role="Human Practices Manager" isFlipped={openCardId === "tessa"} onToggle={() => handleCardToggle("tessa")} bio={
     <>
     <div className="flex items-center gap-2">
       <GermanyFlag className="w-5 h-3" />
@@ -33,7 +40,7 @@ export function MembersGrid() {
     </div>
     </>
   } />
-  <MemberCard firstName="Krzysztof" lastName="Zabłocki" src={pathBase+"krzysztof"+ext} alt="Krzysztof" role="Wet Lab Manager" bio={
+  <MemberCard firstName="Krzysztof" lastName="Zabłocki" src={pathBase+"krzysztof"+ext} alt="Krzysztof" role="Wet Lab Manager" isFlipped={openCardId === "krzysztof"} onToggle={() => handleCardToggle("krzysztof")} bio={
     <>
     <div className="flex items-center gap-2">
       <PolandFlag className="w-5 h-3" />
@@ -41,7 +48,7 @@ export function MembersGrid() {
     </div>
     </>
   } flipped />
-  <MemberCard firstName="Viktor" lastName="Gilin" src={pathBase+"viktor"+ext} alt="Viktor" role="Dry Lab Manager" bio={
+  <MemberCard firstName="Viktor" lastName="Gilin" src={pathBase+"viktor"+ext} alt="Viktor" role="Dry Lab Manager" isFlipped={openCardId === "viktor"} onToggle={() => handleCardToggle("viktor")} bio={
     <>
     <div className="flex items-center gap-2">
       <BulgariaFlag className="w-5 h-3" />
@@ -49,7 +56,7 @@ export function MembersGrid() {
     </div>
     </>
   } />
-  <MemberCard firstName="Franciszek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role="Graphical design and wiki illustrations" bio={
+  <MemberCard firstName="Franciszek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role="Graphical design and wiki illustrations" isFlipped={openCardId === "franek"} onToggle={() => handleCardToggle("franek")} bio={
     <>
     <div className="flex items-center gap-2">
       <PolandFlag className="w-5 h-3" />

@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 
 type Props = Readonly<{
   firstName: string;
@@ -8,26 +8,14 @@ type Props = Readonly<{
   bio: React.ReactNode;
   alt?: string;
   flipped?: boolean;
+  isFlipped: boolean;
+  onToggle: () => void;
 }>;
 
-export default function MemberCard({ firstName, lastName, role, src, bio, alt, flipped }: Props) {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const handlePointerEnter = useCallback((event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "touch") {
-      setIsFlipped(true);
-    }
-  }, []);
-
-  const handlePointerLeave = useCallback((event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "touch") {
-      setIsFlipped(false);
-    }
-  }, []);
-
+export default function MemberCard({ firstName, lastName, role, src, bio, alt, flipped, isFlipped, onToggle }: Props) {
   const handleToggle = useCallback(() => {
-    setIsFlipped((prev) => !prev);
-  }, []);
+    onToggle();
+  }, [onToggle]);
 
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -44,11 +32,8 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
   return (
     <div
       className="group relative mx-auto h-[27rem] w-[20rem] flex-none cursor-pointer select-none [perspective:1200px]"
-      onPointerEnter={handlePointerEnter}
-      onPointerLeave={handlePointerLeave}
       onClick={handleToggle}
       onKeyDown={handleKeyDown}
-      role="button"
       tabIndex={0}
       aria-pressed={isBackVisible}
     >
