@@ -79,7 +79,11 @@ export function Home() {
           </div>
         </div>
       </section>
-      <Header>
+
+      {/* --- Avian Influenza Section --- */}
+      <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6">
+
+
       <div className="space-y-4 text-center">
         <h2 className="text-6xl font-semibold tracking-tight">about avian influenza</h2>
         <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-balance">
@@ -89,12 +93,6 @@ export function Home() {
         
         <AccentLine className="mx-auto" />
       </div>
-      </Header>
-
-      {/* --- Avian Influenza Section --- */}
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6">
-
-
 
         <div className="relative overflow-hidden rounded-3xl" 
             style={{
@@ -147,53 +145,6 @@ export function Home() {
           </div>
         </div>
 
-        {/* --- Current Control Methods --- */}
-        <div className="rounded-3xl border border-border bg-card/60 px-8 py-12 backdrop-blur-sm">
-          <div className="mx-auto max-w-4xl space-y-8">
-            <h3 className="text-center text-2xl font-semibold">Current Control Methods Fall Short</h3>
-            
-            <div className="grid gap-8 md:grid-cols-2">
-              <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-destructive">Mass Culling</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-destructive"></span>
-                    <span>Devastating animal welfare impact</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-destructive"></span>
-                    <span>Economic losses for farmers and government</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-destructive"></span>
-                    <span>Does nothing to prevent future outbreaks</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="space-y-4">
-                <h4 className="text-xl font-semibold text-amber-600">Existing Vaccines</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-600"></span>
-                    <span>Require injection of individual chicks</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-600"></span>
-                    <span>Slow and expensive to update for new strains</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="border-t border-border pt-8 text-center">
-              <p className="text-lg text-muted-foreground">
-                The poultry industry faces an impossible choice: <strong>endure mass culling or accept prolonged outbreaks</strong>. 
-                Both options carry similar costs but devastating consequences for animal welfare and farm sustainability.
-              </p>
-            </div>
-          </div>
-        </div>
 
         {/* --- Snaccine Answer Section --- */}
         <div className="rounded-3xl bg-gradient-to-br from-primary/20 to-transparent px-8 py-12">
