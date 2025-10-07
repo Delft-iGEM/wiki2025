@@ -280,11 +280,11 @@
   }
 
   .dropdown-group .dropdown-item {
-    @apply border border-border rounded-md overflow-hidden;
+    @apply border border-border rounded-md overflow-hidden bg-card/20 hover:bg-card/40;
   }
 
   .dropdown-group .dropdown-item .accordion-trigger {
-    @apply px-4 py-3 bg-muted/30 hover:bg-muted/50 transition-colors;
+    @apply px-4 py-3 bg-none transition-colors;
   }
 
   /* Generic pieces applied to both single and grouped items */
@@ -294,7 +294,7 @@
   }
 
   .accordion-trigger {
-    @apply flex w-full items-center gap-2 rounded-md py-2 px-4 text-left text-sm font-medium transition-all outline-none hover:underline disabled:pointer-events-none disabled:opacity-50;
+    @apply flex w-full items-center gap-2 rounded-md py-2 px-4 text-left text-sm font-medium transition-all outline-none  disabled:pointer-events-none disabled:opacity-50;
   }
 
   .accordion-content {
@@ -321,10 +321,6 @@
     @apply text-left text-base px-6 py-4 border border-border align-top;
   }
 
-  /*.comparison-table tbody tr:nth-child(even) th,
-  .comparison-table tbody tr:nth-child(even) td {
-    @apply bg-muted/20;
-  }*/
 
   .dropdown-icon {
     @apply text-muted-foreground pointer-events-none size-4 shrink-0 transition-transform duration-200 ml-2;
