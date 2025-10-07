@@ -81,7 +81,7 @@ export function Segments({
                   "relative overflow-hidden rounded-lg px-6 py-2 text-sm font-semibold uppercase tracking-wide transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2",
                   isActive
                     ? "text-white"
-                    : "text-foreground/60 hover:text-foreground"
+                    : "text-foreground/60 hover:text-foreground hover:cursor-pointer"
                 )}
                 aria-pressed={isActive}
               >
