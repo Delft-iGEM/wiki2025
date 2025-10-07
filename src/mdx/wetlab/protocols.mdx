@@ -1,4 +1,4 @@
-import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem } from "@/components";
+import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem, Temperature } from "@/components";
 import A_q5pcr from "./protocols/A/q5pcr.mdx";
 import A_agarose from "./protocols/A/agarose.mdx";
 import A_genome from "./protocols/A/genome.mdx";
@@ -26,7 +26,7 @@ import C_sdsPageGel from "./protocols/C/sds-page-gel.mdx";
 import C_coomassieStaining from "./protocols/C/coomassie-staining.mdx";
 import C_pegPrecipitation from "./protocols/C/peg-precipitation.mdx";
 import C_temImaging from "./protocols/C/tem-imaging.mdx";
-import D_moduleDProtocols from "./protocols/D/module-d-protocols.mdx";
+import DunPlaque from "./protocols/duncans_plaques.mdx";
 
 <Header>
   # protocols  
@@ -140,15 +140,8 @@ import D_moduleDProtocols from "./protocols/D/module-d-protocols.mdx";
     </DropdownGroup>
   </Dropdown>
 
-  {/* --- MODULE D: MS2 Capsid Uptake by Eukaryotic Cells --- */}
-  <Dropdown header="MS2 Capsid take up by eukaryotic cells" level={0}>
-    <p>Protocols and procedures for Module D research and development.</p>
-    
-    <DropdownGroup multiple className="mt-4">
-      <DropdownItem value="module-d-protocols" header="Protocols for Module D" level={1}>
-        <D_moduleDProtocols />
-      </DropdownItem>
-    </DropdownGroup>
-  </Dropdown>
+<Dropdown value="plaque-assay" header="Plaque assay, T7 bacteriophage" level={0}>
+<DunPlaque />
+</Dropdown>
 
 </Content>
