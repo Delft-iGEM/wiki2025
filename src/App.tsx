@@ -5,6 +5,8 @@ import { useEffect, useMemo } from "react";
 import { Navbar } from "./components/basic/Navbar";
 import { NotFound } from "./components/NotFound";
 import { Footer } from "./components/basic/Footer";
+import { ScrollTop } from "./components";
+
 
 // Content components TSX
 import { Home } from "./contents/home.tsx";
@@ -242,6 +244,7 @@ function App() {
           ))}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ScrollTop />
       </main>
       <Footer />
     </>
