@@ -169,9 +169,9 @@ export function Home() {
                 </p>
                 <Link
                   to="/description"
-                  className="inline-flex min-w-[20rem] items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/90 hover:-translate-y-1 hover:shadow-lg"
+                  className="inline-flex items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/90 hover:-translate-y-1 hover:shadow-lg"
                 >
-                  read more about how Snaccine works &rarr;
+                  read how it works &rarr;
                 </Link>
               </div>
             </div>
