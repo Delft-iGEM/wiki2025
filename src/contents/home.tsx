@@ -171,36 +171,49 @@ export function Home() {
       {/* --- Avian Influenza Section --- */}
       <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 mt-10">
 
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div className="space-y-4 text-center lg:text-left">
+            <h2 className="text-6xl font-semibold tracking-tight">about avian influenza</h2>
+            <p className="mx-auto lg:mx-0 max-w-2xl text-lg text-muted-foreground">
+              Bird flu, specifically Highly Pathogenic Avian Influenza H5N1 (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds across the world.
 
-      <div className="space-y-4 text-center">
-        <h2 className="text-6xl font-semibold tracking-tight">about avian influenza</h2>
-        <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-balance">
-          Bird flu, specifically Highly Pathogenic Avian Influenza H5N1 (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds across the world.
-          In the Netherlands, as in most countries, the main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
-        </p>
-        
-        <AccentLine className="mx-auto" />
-      </div>
+            </p>
+            
+            <AccentLine className="mx-auto lg:mx-0" />
+          </div>
+          
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src="https://static.igem.wiki/teams/5649/teamphotos/small-chicks-picture-with-snaccine-logo.webp"
+              alt="Small chicks with Snaccine logo"
+              className="w-full max-w-xl h-auto rounded-2xl shadow-lg"
+              loading="lazy"
+            />
+          </div>
+        </div>
 
-        <div className="relative overflow-hidden rounded-3xl" 
+
+        <div className="relative overflow-hidden rounded-b-3xl" 
             style={{
-              maskImage:       'linear-gradient(to bottom, transparent 0%, black 20%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)'
+              maskImage:       'linear-gradient(to bottom, transparent 0%, black 40%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 40%)'
             }}>
           <img
-            src="https://static.igem.wiki/teams/5649/roundicons/illustration-sans-titre-7-min.webp"
-            alt="Illustrated chicken image"
-            className="w-full h-96 object-cover"
+            src="https://static.igem.wiki/teams/5649/teamphotos/bofkippen2.webp"
+            alt="Image of chickens in a farm setting, a coop in the background"
+            className="w-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-          <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-            <p className="text-lg font-semibold">
-              Avian Influenza (Bird Flu) outbreaks are increasing in frequency and severity across Europe.
+          <div className="absolute bottom-0 left-0 right-0 px-8 text-white">
+            <p className="text-lg opacity-90 max-w-lg font-semibold ml-auto text-right text-shadow-lg">
+              In the Netherlands, as in most countries, the main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
             </p>
             <p className="text-sm opacity-90 mt-2">
-              Illustration
+              The Netherlands has the highest poultry density in Europe. CITATIOTN!!!!!
+              also super high export percentage: https://zootecnicainternational.com/focus-on/netherlands-leading-country-european-egg-poultry-meat-exports/
+              something something something
             </p>
           </div>
         </div>
@@ -272,6 +285,29 @@ export function Home() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="relative overflow-hidden rounded-3xl" 
+            style={{
+              maskImage:       'linear-gradient(to bottom, transparent 0%, black 20%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)'
+            }}>
+          <img
+            src="https://static.igem.wiki/teams/5649/roundicons/illustration-sans-titre-7-min.webp"
+            alt="Illustrated chicken image"
+            className="w-full h-96 object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent" />
+
+          <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <p className="text-lg font-semibold">
+              Avian Influenza (Bird Flu) outbreaks are increasing in frequency and severity across Europe.
+            </p>
+            <p className="text-sm opacity-90 mt-2">
+              Illustration
+            </p>
           </div>
         </div>
 
