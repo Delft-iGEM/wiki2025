@@ -1,18 +1,24 @@
 import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem, Temperature } from "@/components";
+
+{/* Imports module A */}
 import A_q5pcr from "./protocols/A/q5pcr.mdx";
 import A_agarose from "./protocols/A/agarose.mdx";
 import A_genome from "./protocols/A/genome.mdx";
 import A_pcrPurification from "./protocols/A/pcr-purification.mdx";
 import A_heatShock from "./protocols/A/heat-shock.mdx";
 import A_cells from "./protocols/A/cells.mdx";
+import A_electroporation from "./protocols/A/electroporation.mdx";
 import A_t7PhareFiltration from "./protocols/A/t7-phage-filtration.mdx";
 import A_t7PhageConcentration from "./protocols/A/t7-phage-concentration.mdx";
+
+{/* Imports module B */}
 import B_phTempStability from "./protocols/B/ph-temp-stability.mdx";
 import B_phAcidBaths from "./protocols/B/ph-acid-baths.mdx";
 import B_phNeutralBasicBaths from "./protocols/B/ph-neutral-basic-baths.mdx";
 import B_phExperimentalSetup from "./protocols/B/ph-experimental-setup.mdx";
-import B_plaqueAssayGeneral from "./protocols/B/plaque-assay-general.mdx";
 import B_plaqueAssayStability from "./protocols/B/plaque-assay-stability.mdx";
+
+{/* Imports module C */}
 import C_lbAgarPlates from "./protocols/C/lb-agar-plates.mdx";
 import C_dnaResuspension from "./protocols/C/dna-resuspension.mdx";
 import C_transformation from "./protocols/C/transformation.mdx";
@@ -56,6 +62,9 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
       </DropdownItem>
       <DropdownItem value="cells" header="Preparation of electrocompetent cells" level={1}>
         <A_cells />
+      </DropdownItem>
+      <DropdownItem value="electroporation" header="Transformation through electroporation for T7 phage reboot" level={1}>
+        <A_electroporation />
       </DropdownItem>
       <DropdownItem value="t7-phage-filtration" header="T7 phage filtration" level={1}>
         <A_t7PhareFiltration />
