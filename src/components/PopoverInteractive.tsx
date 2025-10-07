@@ -29,6 +29,34 @@ interface PopoverInteractiveProps {
 
 export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children }) => {
   const [activePopover, setActivePopover] = useState<string | null>(null);
+  const scrollPositionRef = React.useRef<number>(0);
+
+  // Block body scroll when popover is open
+  React.useEffect(() => {
+    if (activePopover) {
+      // Save current scroll position
+      scrollPositionRef.current = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPositionRef.current}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Restore scroll position
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      window.scrollTo(0, scrollPositionRef.current);
+    }
+
+    return () => {
+      // Cleanup on unmount
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+    };
+  }, [activePopover]);
 
   const handleSvgClick = (e: React.MouseEvent<SVGElement>) => {
     const target = e.target as SVGElement;
@@ -118,6 +146,10 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
             <div
               className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl max-w-3xl w-full max-h-[80vh] overflow-y-auto relative pointer-events-auto"
               aria-modal="true"
+              onWheel={(e) => {
+                // Prevent event from bubbling to parent elements
+                e.stopPropagation();
+              }}
             >
               <button
                 onClick={() => setActivePopover(null)}
