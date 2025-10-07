@@ -83,6 +83,7 @@ As part of analyzing the resulting MD simulation the **Root Mean Square Deviatio
 
 <Dropdown header="Results" level={0}>
 
+
 ### Visualization and overview
 
 After postprocessing and down sampling our MD trajectory, we were able to visualize it using the **VMD 1.9.4** software. We aligned the backbone over the time of the simulation, so translational motion of the protein is not shown, and colored with different colors as *NewCartoon* all the different fragments of the protein. Based on observations we were able to recognize that the structure is relatively stable and doesn’t dissociate over the 600 ns timespan of our simulation. Nevertheless, to validate the structural stability of our system we further examined 4 different quantities — **Root Mean Square Deviation (RMSD)**, **Hydrogen bond count**, **backbone Root Mean Square Fluctuation (RMSF)** and **total interaction energy** between the constitutive dimers in the hexamer structure, to get insight into any structural changes observed over the conditions we tested.
@@ -144,14 +145,43 @@ Another interesting observation from the RMSF plot is that a wide peak of fluctu
 
 ### Dimer-dimer energy measurement
 
-To gain more insight regarding the interaction energy between individual monomers we additionally performed interaction energy measurement, using **gmxMMPBSA**. We tried to measure this energy for both the AB–AB as well as the AB–CC interaction over all examined salt and temperature conditions. … *(TBD)*
-
-![alt text](https://static.igem.wiki/teams/5649/figures/dimer-dimer-interactions-overview.webp)
+To gain more direct insight into what is the influence of our tested conditions on the stability of this hexamer structure we measured the interaction energy between individual dimers of the hexamer. Thus this quantity directly reflects how stable the interaction is between dimers. To measure this we used the **gmxMMPBSA** environment. We measured the total free energy for both the AB–AB as well as the AB–CC interaction over all examined salt and temperature conditions.
+![alt text](https://static.igem.wiki/teams/5649/figures/overview-interaction.webp)
 >Fig. # Overview of interaction energies tested (TBD)
 
-![alt text](https://static.igem.wiki/teams/5649/figures/.webp)
->Fig. # Results
+Surprisingly, the lowest interaction energy between AB dimers was measured to be for 37$^\circ$C and not for 42$^\circ$C. While, the underlying mechanistic reason for this observation is still unclear, this might potentially suggest that the body temperature of birds could have a destabilizing effect on VLPs. On the other hand,  the response of the AB-AB interaction energy to changing salt conditions was also elusive. While a general trendline of increasing total free energy is observed a surprising local minima is observed around 100mM. However, considering that gut conditons including chicken gut conditions can have sodium concentration as high as 150 this suggests again a significant challange for Snaccine which should not be overlooked. 
 
+
+>Fig. # Overview of interaction energies tested. 
+
+
+![alt text](https://static.igem.wiki/teams/5649/figures/mmpbsa-multi-panel1.webp)
+
+>Fig. AB-AB interaction Energy for different salt concentration and temperature. 
+
+
+Based on our current data, the simulated gut conditions appear to exert a destabilizing effect on the MS2 VLP structure. However, a more detailed energetic analysis — particularly at the residue level — is required to identify specific regions or interactions driving this instability. This residue-scale approach will constitute the next step in our analysis.  
+Despite the observed destabilization, the robustness of MS2 VLPs can likely be enhanced through rational design strategies. Future work could explore capsid mutations that improve inter-dimer interactions, enhance hydrophobic packing so an increases tolerance to salt variation is achieved. In particular peptide insertions should also further be studied with our framework to study how they would further influence the stability of VLPs.  
 </Dropdown>
+<Dropdown header="Conclusion and Future Outlook" level={0}>
+### **Conclusion**
 
+With our MD MS2 platform, we established a computational framework to evaluate how **temperature** and **salt concentration** influence the **structural properties of MS2 VLPs**.
+
+  
+ Our simulations aligned with the already expected structural properties of the MS2 protein and additionally revealed that the MS2 hexamer remain globally stable across all tested conditions, based on their observed trajectory, bonds and residual fluctuations. However, we also showed evidence for potential desablizing effects at ** salt levels ≥100 mM** and at high temperatures as **42 °C** both relevant for the avian gut condition. 
+
+Thus we succesfully created a structural stability framework and already were able to gain insight towards what could be the next steps in the development of our Snaccine concept. 
+
+---
+
+### **Future Outlook**
+
+Building on our platform, our next steps include:
+
+1. **Residue-level free energy decomposition** using MMPBSA and normal-mode analysis to pinpoint specific amino acids driving destabilization.  
+2. **In silico mutagenesis and peptide-insertion screening**, testing how different protein m**Cell-Penetrating Peptides (CPPs)** or stabilizing linker residues influence structural integrity.  
+3. **Full-capsid coarse-grained simulations**. While our model still provides important structural insight, our framework could be feeded into a coarse grain MD of the complete VLP and study the strcutural properties of the complete VLP
+4. **Experimental validation** As we succsfully managed to produce our own VLPs a logical next step is to measure the degradation level of VLPs when exposed to different conditions and compare them to our MD results. 
+</Dropdown>
 </Content>
