@@ -153,7 +153,7 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
             >
               <button
                 onClick={() => setActivePopover(null)}
-                className="sticky top-0 right-0 float-right m-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors z-10"
+                className="sticky top-2 right-2 float-right p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors z-10"
                 aria-label="Close popover"
                 type="button"
               >
