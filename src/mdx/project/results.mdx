@@ -8,59 +8,65 @@ results and findings from our wetlab experiments
 <Content items="left">
 
 
-# introduction
 
-The following results present the first experimental outcomes from the **Snaccine** platform, organized around key proof-of-concept milestones. Each module of the workflow addresses a distinct challenge—ranging from phage genome engineering and stability testing to virus-like particle (VLP) expression, delivery, and immunogenicity—but together they converge on the central goal of creating a flexible and accessible RNA vaccine design system.
+**Introduction**
 
-In this section, we highlight representative findings that validate critical steps of the platform, including successful expression and assembly of MS2 VLPs in *E. coli* and the establishment of a novel *in vitro* phage engineering pipeline. These results provide both technical validation of our approach and a foundation for later modules focused on functional delivery and immune testing.
+![enter image description here](https://static.igem.wiki/teams/5649/results/chicken-modules-overview.webp)
 
----
-
+The following  results  showcase the first  experimental  outcomes from the Snaccine platform, organized  around  key proof-of-concept  milestones. Each module of our  workflow  addresses a distinct challenge - ranging from phage  genome engineering and stability  testing to VLP expression, delivery, and immunogenicity - but together  they  converge on the central goal of creating a flexible and accessible RNA vaccine design system. In this  section, we highlight  representative  findings  that  validate  critical  steps of the platform, including  successful  expression and assembly of MS2 virus-like  particles in E. coli and the establishment of a novel in vitro phage engineering pipeline. These  results  provide  both  technical  validation of our  approach and a foundation for the later  modules  that  extend  toward  functional  delivery and immune  testing.
 
 <Dropdown header="MS2 capsid expression in E. coli" level={0}>
 
-As a first step, we tested a synthetic DNA construct encoding the **MS2 coat protein** under an inducible promoter. This plasmid served as an intermediate stage before transitioning to phage engineering, allowing us to confirm the functionality of our DNA design in a simpler system. The construct was designed to mimic the intended phage modification by driving production of MS2 VLPs in *E. coli*.
+![enter image description here](https://static.igem.wiki/teams/5649/results/chicken-modules-overview.webp)
 
-Transformed *E. coli* cells were induced for protein expression, and VLP production was verified via **SDS–PAGE** (to confirm coat protein expression) and **TEM** (to visualize assembled particles). The bacteria successfully synthesized MS2 coat protein subunits, which folded correctly and assembled into uniform, non-aggregated VLPs. This marks a major milestone for the Snaccine platform, demonstrating successful VLP production in a bacterial system.
+While  optimizing  methods to engineer  bacteriophages (Module A), we also  focused on testing  our  synthetic DNA construct in a plasmid form before  advancing to phage engineering.  This  strategy  allowed  us to verify  that  our **DNA design functions as intended  before  integrating  it  into the more  complex  phage system**. The plasmid was designed to partially  **mimic the effect  that  our  modified  phages**  would  have in the final  vaccine by **driving the production of MS2 virus-like  particles (VLPs) in E. coli**. If  our  construct was designed  correctly, the bacteria  should  produce MS2 VLPs  that  are  correctly  folded and do not aggregate.
+
+![enter image description here](https://static.igem.wiki/teams/5649/results/vlp-complex-and-assembly.webp)
+
+Our engineering journey in Module C was guided by the iterative **Design–Build–Test–Learn**  cycle, where  each  experimental run informed the next. Rather  than  being a linear  process, the development of our MS2 VLP expression system unfolded in multiple  rounds of design refinement, troubleshooting, and protocol  adjustment.
+
+## **Design**
+
+![enter image description here](https://static.igem.wiki/teams/5649/figures/engineering-module-c-image-1.webp)
+We began by designing a synthetic plasmid (pET-Kan-T7lac-mat-MS2cp) containing a T7/lac promoter, the MS2 maturase gene, the coat protein gene, and an MS2 RNA stem loop (*Figure 1*) .
 
 
+![enter image description here](https://static.igem.wiki/teams/5649/results/module-c-plasmid-schematic.webp)
 
-### SDS–PAGE analysis of MS2 expression
+****Figure 1***. Schematic of the pET-Kan-T7lac-mat-MS2cp plasmid showing the MS2 stem loop, maturase, and coat protein genes under T7/lac control.*
 
-To confirm expression of the MS2 coat protein following transformation, we performed SDS–PAGE analysis. This method denatures proteins and separates them by molecular weight, enabling detection of the coat protein at its expected size of **13.7 kDa**. While this technique does not confirm correct folding or assembly, it provides direct evidence of expression.
-![alt text](https://static.igem.wiki/teams/5649/figures/sds-page-2.webp)
-**Figure 1.** *SDS–PAGE analysis of MS2 coat protein expression.*  
-*Lane 1: Induced supernatant, Lane 2: Uninduced supernatant, Lane 3: Induced pellet, Lane 4: Uninduced pellet*  
+This construct represented the foundation of our vaccine platform. Alongside the plasmid design, we prepared a detailed workflow for expression and validation, including IPTG induction in E. coli BL21(DE3), cell lysis, SDS-PAGE analysis, PEG precipitation, and TEM imaging. Before moving into experiments, we presented this design to an external protein expression expert, whose advice proved crucial: they emphasized the importance of long, low-temperature inductions to favor solubility and suggested sequencing plasmid DNA from early cultures to confirm construct integrity.
 
-A clear band at ~13.7 kDa confirms expression of the MS2 coat protein.
+Based on this feedback, we refined our expression plan to use 0.4 mM IPTG at 17 °C for 16 hours, and we added a plasmid isolation and sequencing checkpoint to ensure that mutations or cloning errors would not confound downstream experiments.
 
-The SDS–PAGE results clearly demonstrate successful induction of the MS2 coat protein. A strong band at ~14 kDa appears in the induced supernatant (lane 1), absent in the uninduced control (lane 2), confirming IPTG-dependent expression. The localization of the protein in the supernatant suggests that most of it remains soluble rather than aggregating into inclusion bodies—an encouraging result indicating proper folding.
+## Build and Test
 
-In the induced pellet fraction (lane 3), faint bands appear across a range of molecular weights, consistent with cell debris and aggregated proteins, with only a small proportion of coat protein detected. The uninduced pellet (lane 4) lacks any band at ~14 kDa, confirming the absence of expression without induction.
 
-The comparison between induced and uninduced samples confirms that IPTG induction successfully triggers coat protein synthesis. The high intensity of the induced band suggests robust expression levels, though background host proteins are also visible.
+![enter image description here](https://static.igem.wiki/teams/5649/figures/engineering-module-c-image-3.webp)
+With these refinements, we expressed the construct for the first time and analyzed the lysates by SDS-PAGE. At this stage, our lysis protocol combined enzymatic digestion with lysozyme and mechanical disruption by sonication. The gel, however, produced confusing results: a strong band appeared at ~14  kDa across all lanes, including the negative control (*Figure 2*).
+![enter image description here](https://static.igem.wiki/teams/5649/figures/sds-page-1.webp)
+***Figure 2.** SDS-PAGE analysis of initial MS2 expression showing a strong ~14 kDa band in all samples, including the negative control. The band likely corresponds to lysozyme from the lysis buffer, overlapping with the expected size of the MS2 coat protein.*
 
-A faint band in the induced pellet fraction (~14 kDa) may indicate a small portion of insoluble MS2 protein, potentially from aggregated or incompletely released VLPs. Optimization of expression parameters—such as IPTG concentration, induction time, and temperature—could clarify this point. Additionally, refining lysis protocols (e.g., enzymatic lysis or optimized sonication) could help differentiate between incomplete lysis and genuine aggregation. While lysozyme was avoided due to its similar molecular weight, combining it with complementary detection methods such as Western blotting could yield additional insight.
+After some troubleshooting, we discovered the problem - lysozyme itself has a [molecular weight](https://www.thermofisher.com/order/catalog/product/89833?ef_id=e5070d01f51d176f577865d097762a69:G:s&s_kwcid=AL!3652!10!77378333109598!!!!2329177945372041!!471275954!1238051176326156&cid=bid_sap_prp_r01_co_cp1362_pjt0000_bid00000_0se_bng_dy_pur_con&msclkid=e5070d01f51d176f577865d097762a69) (14.3 kDa) that overlapped with the expected signal from MS2 proteins (13.7kDa). In effect, the lysis enzyme was masking our target. This realization was a turning point: we adjusted the protocol to exclude lysozyme and rely solely on sonication for cell disruption, ensuring that no extraneous proteins would interfere with analysis.
 
----
+## Learn and Iterate
 
-### TEM imaging of MS2 VLPs
+![enter image description here](https://static.igem.wiki/teams/5649/figures/engineering-module-c-image-2.webp)
+Repeating the experiment with this improved protocol gave a clear outcome. After Bradford normalization to equalize protein content across samples, SDS-PAGE revealed a distinct band at 13.7 kDa  - the expected size of the MS2 coat protein. Importantly, this band appeared only in the induced supernatant fraction, not in the uninduced controls or pellet fractions. This result confirmed that our construct was functional and that the protein was expressed in a soluble, folded form rather than aggregating into inclusion bodies.
+![enter image description here](https://static.igem.wiki/teams/5649/figures/engineering-module-c-image-4.webp)
+With soluble expression established, we advanced to the next stage: concentrating, purifying,  and validating the VLP assemblies. Using PEG precipitation, we concentrated the soluble proteins into a visible pellet, selectively enriching for assembled capsids while leaving background proteins in solution. This pellet was resuspended and analyzed by TEM. The negative-stain micrographs revealed discrete spherical particles approximately 27 nm in diameter, consistent with the expected morphology of MS2 VLPs. This provided strong evidence that our engineered coat proteins not only expressed but also self-assembled into virus-like particles.
 
-Having confirmed expression via SDS–PAGE, we next performed **Transmission Electron Microscopy (TEM)** to visualize VLP assembly. TEM imaging of the purified induced fraction revealed numerous uniform spherical particles with diameters of **25–30 nm**, consistent with the expected size of MS2 VLPs. Image averaging revealed the characteristic **icosahedral symmetry** of MS2 capsids, confirming correct assembly rather than random aggregation.
+## Future development
 
-![alt text](https://static.igem.wiki/teams/5649/figures/tem-image-of-ms2-vlps.webp)
-![alt text](https://static.igem.wiki/teams/5649/figures/class-average-induced.webp)
-**Figure 2.** *(a) TEM image of purified MS2 VLPs showing uniform spherical particles (~25–30 nm). (b) TEM class-average image highlighting icosahedral geometry characteristic of MS2 capsids.*
+Encouraged by this  success, we began  designing the next  iteration of the system to demonstrate  modularity. In this version, we planned to encapsulate a “dummy  vaccine RNA” containing a eukaryotic  expression  machinery  inside the MS2 particles. 
 
-These results provide critical structural validation: the MS2 coat proteins not only expressed and remained soluble but also self-assembled into complete, correctly folded VLPs. Together, the SDS–PAGE and TEM results confirm functional expression and structural integrity of recombinant MS2 particles.
+![enter image description here](https://static.igem.wiki/teams/5649/moduledplasmidbiorender/module-d-plasmid-biorender.webp)
+*Figure 3. Plasmid design for the next-generation MS2 system encoding a “dummy vaccine RNA” and optimized coat proteins for RNA packaging and delivery.*
 
----
+The goal of this  new design (*Figure 3*) is to express and purify the VLPs with the same validated  workflow and then expose them to eukaryotic  cells. If  successful, the uptake of VLPs and expression of the model protein would  confirm the end-to-end functionality of our platform: packaging, delivery, and expression.
 
-### future outlook
+Through this iterative process, each experiment guided the next step. Troubleshooting issues like the lysozyme interference, validating expression with sequencing checkpoints, and confirming assembly with PEG precipitation and TEM all strengthened our confidence in the system. By moving through successive rounds of design, testing, and refinement, we established a robust method for producing functional MS2 VLPs in E. coli and laid the groundwork for future iterations carrying custom vaccine payloads.
 
-We have successfully demonstrated bacterial production of properly folded MS2 VLPs incorporating a small RNA stem–loop to trigger assembly. The next step will involve engineering a plasmid containing **functional RNA cargo**—for example, an mRNA sequence encoding GFP or a therapeutic target such as an H5N1 vaccine insert. These constructs will test whether MS2 VLPs can efficiently **package, protect, and transport RNA** molecules, and whether encapsulated RNA affects capsid folding or stability. Systematic exploration of these factors will determine the suitability of recombinant MS2 VLPs as customizable RNA delivery platforms.
-
----
 </Dropdown>
 
 <Dropdown header="bacteriophage engineering" level={0}>
