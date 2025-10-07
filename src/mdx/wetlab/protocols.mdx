@@ -1,5 +1,32 @@
 import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem, Temperature } from "@/components";
-import { Link } from "react-router-dom";
+import A_q5pcr from "./protocols/A/q5pcr.mdx";
+import A_agarose from "./protocols/A/agarose.mdx";
+import A_genome from "./protocols/A/genome.mdx";
+import A_pcrPurification from "./protocols/A/pcr-purification.mdx";
+import A_heatShock from "./protocols/A/heat-shock.mdx";
+import A_cells from "./protocols/A/cells.mdx";
+import A_t7PhareFiltration from "./protocols/A/t7-phage-filtration.mdx";
+import A_t7PhageConcentration from "./protocols/A/t7-phage-concentration.mdx";
+import A_t7PragePlaque from "./protocols/A/t7-phage-plaque.mdx";
+import B_phTempStability from "./protocols/B/ph-temp-stability.mdx";
+import B_phAcidBaths from "./protocols/B/ph-acid-baths.mdx";
+import B_phNeutralBasicBaths from "./protocols/B/ph-neutral-basic-baths.mdx";
+import B_phExperimentalSetup from "./protocols/B/ph-experimental-setup.mdx";
+import B_plaqueAssayGeneral from "./protocols/B/plaque-assay-general.mdx";
+import B_plaqueAssayStability from "./protocols/B/plaque-assay-stability.mdx";
+import C_lbAgarPlates from "./protocols/C/lb-agar-plates.mdx";
+import C_dnaResuspension from "./protocols/C/dna-resuspension.mdx";
+import C_transformation from "./protocols/C/transformation.mdx";
+import C_glycerolStock from "./protocols/C/glycerol-stock.mdx";
+import C_kanamycinStock from "./protocols/C/kanamycin-stock.mdx";
+import C_iptgInduction from "./protocols/C/iptg-induction.mdx";
+import C_harvestLysis from "./protocols/C/harvest-lysis.mdx";
+import C_sdsPagePrep from "./protocols/C/sds-page-prep.mdx";
+import C_sdsPageGel from "./protocols/C/sds-page-gel.mdx";
+import C_coomassieStaining from "./protocols/C/coomassie-staining.mdx";
+import C_pegPrecipitation from "./protocols/C/peg-precipitation.mdx";
+import C_temImaging from "./protocols/C/tem-imaging.mdx";
+import DunPlaque from "./protocols/duncans_plaques.mdx";
 
 <Header>
   # protocols  
@@ -13,16 +40,32 @@ import { Link } from "react-router-dom";
     <p>Protocols and procedures for Module A research and development.</p>
     
     <DropdownGroup multiple className="mt-4">
-      <DropdownItem value="module-a-protocol1" header="Q5 polymerase PCR protocol" level={1} />
-      <DropdownItem value="module-a-protocol2" header="1% Agarose Gel Electrophoresis to verify DNA length" level={1} />
-      <DropdownItem value="module-a-protocol3" header="T7 genome assembly" level={1} />
-      <DropdownItem value="module-a-protocol4" header="Column Purification of PCR Product" level={1} />
-      <DropdownItem value="module-a-protocol5" header="Heat shock transformation and rebooting of phages" level={1} />
-      <DropdownItem value="module-a-protocol6" header="Preparation of electrocompetent cells" level={1} />
-      <DropdownItem value="module-a-protocol7" header="T7 phage filtration" level={1} />
-      <DropdownItem value="module-a-protocol8" header="T7 phage concentration" level={1} />
-      <DropdownItem value="module-a-protocol9" header="T7 phage assay" level={1}>
-        See the general plaque assay protocol below for T7 bacteriophage.
+      <DropdownItem value="q5pcr" header="Q5 polymerase PCR protocol" level={1} >
+        <A_q5pcr />
+      </DropdownItem>
+      <DropdownItem value="agarose" header="1% Agarose Gel Electrophoresis to verify DNA length" level={1}>
+        <A_agarose />
+      </DropdownItem>
+      <DropdownItem value="genome" header="T7 genome assembly" level={1}>
+        <A_genome />
+      </DropdownItem>
+      <DropdownItem value="pcr-purification" header="Column Purification of PCR Product" level={1}>
+        <A_pcrPurification />
+      </DropdownItem>
+      <DropdownItem value="heat-shock" header="Heat shock transformation and rebooting of phages" level={1}>
+        <A_heatShock />
+      </DropdownItem>
+      <DropdownItem value="cells" header="Preparation of electrocompetent cells" level={1}>
+        <A_cells />
+      </DropdownItem>
+      <DropdownItem value="t7-phage-filtration" header="T7 phage filtration" level={1}>
+        <A_t7PhareFiltration />
+      </DropdownItem>
+      <DropdownItem value="t7-phage-concentration" header="T7 phage concentration" level={1}>
+        <A_t7PhageConcentration />
+      </DropdownItem>
+      <DropdownItem value="t7-phage-plaque" header="T7 phage plaque assay" level={1}>
+        <A_t7PragePlaque />
       </DropdownItem>
     </DropdownGroup>
   </Dropdown>
@@ -32,258 +75,73 @@ import { Link } from "react-router-dom";
     <p>Protocols and procedures for Module B research and development.</p>
     
     <DropdownGroup multiple className="mt-4">
-
-      {/* NEW: Temperature Stability Test */}
       <DropdownItem value="ph-temp-stability" header="Long-Term Temperature Stability of T7 Bacteriophage" level={1}>
-        ###### Purpose
-        Evaluate T7 bacteriophage stability when stored at different temperatures over several weeks.
-
-        ---
-
-        ###### Experimental Design
-        - Temperatures tested: **4 °C (fridge)**, **~20 °C (room temperature)**, and **37 °C (incubator)**  
-        - Duration: **4 weeks total**  
-        - Each week, **three tubes** of bacteriophage stock were placed at each temperature.  
-        - This setup created samples exposed for **1, 2, 3, and 4 weeks** at each temperature.  
-        - The goal was to assess **long-term viability and stability** of T7 phages under different storage conditions.
-
-        ---
-
-        ###### Materials
-        - T7 bacteriophage stock solution  
-        - Sterile microcentrifuge tubes (labeled by temperature & week)  
-        - 4 °C refrigerator  
-        - Room temperature bench (~20 °C)  
-        - 37 °C incubator  
-        - Timer or logbook for weekly tracking  
-
-        ---
-
-        ###### Methods
-        1. Label tubes for each temperature and timepoint (e.g., *4 °C – Week 1*, *37 °C – Week 4*).  
-        2. Aliquot equal volumes of T7 phage stock into all tubes.  
-        3. Place sets of tubes into the respective temperature environments:  
-           - **4 °C:** refrigerator shelf  
-           - **20 °C:** room bench or drawer away from direct light  
-           - **37 °C:** incubator  
-        4. Each week, add **three fresh tubes** to each temperature group.  
-        5. Continue until all four weekly sets have been stored for their respective durations.  
-        6. At each week’s end, retrieve that set of tubes for downstream **plaque assay** analysis.  
-
-        ---
-
-        ###### Notes
-        - Avoid repeated freeze–thaw or temperature cycling.  
-        - Keep all tubes clearly labeled to prevent mix-ups.  
-        - Compare PFU/mL over time to determine stability trends.  
+        <B_phTempStability />
       </DropdownItem>
-
-      {/* Acid Baths */}
       <DropdownItem value="ph-acid-baths" header="Preparation of Acid Baths (pH 1.5, 2.0, 3.0)" level={1}>
-        ###### Materials
-        - Clean glassware
-        - DI water
-        - 50 mL tubes / small flasks
-        - Analytical balance
-        - 0.2% NaCl solution (2.0 g/L → 0.06 g/30 mL)
-        - 1 M HCl
-        - pH meter (calibrated at 4/7/10)
-        - 37 °C water bath
-
-        ###### Methods
-        1. Add 0.06 g NaCl to ~25 mL DI water.  
-        2. Add HCl (approximate volumes):  
-           - pH 1.5 → 0.57 mL  
-           - pH 2.0 → 0.18 mL  
-           - pH 3.0 → 18 µL  
-        3. Bring to 30 mL with DI water.  
-        4. Check and adjust pH.  
-        5. Warm to 37 °C before use.  
+        <B_phAcidBaths />
       </DropdownItem>
-
-      {/* Neutral/Basic Baths */}
       <DropdownItem value="ph-neutral-basic-baths" header="Preparation of Neutral/Basic Baths (pH 6.0, 6.8, 7.4)" level={1}>
-        ###### Materials
-        - Clean glassware
-        - DI water
-        - 50 mL tubes / bottles
-        - 0.5 M KH₂PO₄ (acid stock)
-        - 0.5 M K₂HPO₄ (base stock)
-        - pH meter (calibrated at 4/7/10)
-        - 37 °C water bath
-
-        ###### Methods
-        1. Combine phosphate stocks (per 30 mL, 0.05 M buffer):  
-           - pH 6.0 → 0.175 mL K₂HPO₄ + 2.825 mL KH₂PO₄  
-           - pH 6.8 → 0.84 mL K₂HPO₄ + 2.16 mL KH₂PO₄  
-           - pH 7.4 → 1.825 mL K₂HPO₄ + 1.175 mL KH₂PO₄  
-        2. Add ~25 mL DI water, mix gently.  
-        3. Check and adjust pH as needed.  
-        4. Bring to 30 mL total volume.  
-        5. Warm to 37 °C before use.  
+        <B_phNeutralBasicBaths />
       </DropdownItem>
-
-      {/* Experimental Setup */}
       <DropdownItem value="ph-experimental-setup" header="Experimental Setup: Capsule and Free-Phage pH Stability Test" level={1}>
-        ###### Experimental Design
-        - pH conditions: 1.5, 2.0, 3.0, 6.0, 6.8, 7.4  
-        - Replicates: 3 capsules and 3 free-phage tubes per pH  
-        - Bath volumes: 10 mL for capsules; 5 mL for free phage  
-        - Capsule payload: 100 µL T7 stock  
-
-        ---
-
-        ###### A. Warm-Up and Tube Setup 
-        1. Warm all buffer solutions to 37 °C.  
-        2. Verify pH at 37 °C; adjust if off by > 0.1 unit.  
-        3. Aliquot buffers:  
-           - Capsule baths → 10 mL into 18 tubes.  
-           - Free-phage baths → 5 mL into 18 tubes.  
-        4. Keep tubes at 37 °C.  
-
-        ---
-
-        ###### B. Capsule Filling 
-        1. Work cleanly (near flame or in hood).  
-        2. On ice, fill 18 capsules with 100 µL T7 stock.  
-        3. Close firmly and keep chilled until use.  
+        <B_phExperimentalSetup />
       </DropdownItem>
-{/* Plaque Assay Stability */}
+      <DropdownItem value="plaque-assay-general" header="General Phage Plaque Assay (Double-Agar Overlay)" level={1}>
+        <B_plaqueAssayGeneral />
+      </DropdownItem>
       <DropdownItem value="plaque-assay-stability" header="Plaque Assays for Capsule & Free-Phage Stability" level={1}>
-        ###### Purpose
-        Quantify phage survival and release kinetics following exposure to different pH conditions.
-
-        ---
-
-        ###### Materials
-        - Host culture at OD₆₀₀ = 0.4–0.6
-        - LB broth, soft/top agar (0.4–0.7%)
-        - Capsule and free-phage bath samples
-        - Sterile tubes and tips
-        - LBa plates (1.5% agar)
-        - 37 °C incubator
-
-        ---
-
-        ###### Methods
-        **A. Serial Dilutions**
-        | Sample Type | Dilution Range |
-        |--------------|----------------|
-        | Release (pH 6.8–7.4) | 10⁻⁴ – 10⁻⁷ |
-        | Release (pH 6.0) | 10⁻³ – 10⁻⁶ |
-        | Acid-hold | 10⁻² – 10⁻⁵ |
-        | Free-phage acid | neat – 10⁻² |
-        | Free-phage neutral | 10⁻⁴ – 10⁻⁶ |
-
-        1. Use 180 µL LB per dilution, transfer 20 µL each step.  
-        2. Mix thoroughly.  
-
-        **B. Plating**
-        1. Mix 100 µL of each dilution with 100 µL host bacteria.  
-        2. Add to ~5 mL molten top agar (55 °C) and pour.  
-        3. Solidify (~5 min), incubate inverted at 37 °C overnight.  
-
-        ---
-
-        ###### Next Day – Readout
-        1. Count plates with 30–300 plaques.  
-        2. Calculate PFU/mL for each condition.  
-        3. Determine % survival vs input control.  
-        4. Report:
-           - Capsule integrity vs pH (% intact at 120 min).  
-           - Median release time (≥ pH 6.0).  
-           - PFU survival after release vs free-phage controls.  
+        <B_plaqueAssayStability />
       </DropdownItem>
-
-      <DropdownItem value="module-b-protocol1" header="Plaque assay, T7 bacteriophage" level={1} >
-              See the general plaque assay protocol below for T7 bacteriophage.
-      </DropdownItem>
-
     </DropdownGroup>
-</Dropdown>
-
-  {/* Plaque assay for both module A and B */}
-<Dropdown value="plaque-assay" header="Plaque assay, T7 bacteriophage" level={0}>
-
-To help other iGEM teams and researchers working with bacteriophages,
-we developed an improved plaque assay protocol for T7 phages. We
-based it on <Link to="https://www.protocols.io/view/plaque-assay-kqdg35ebqv25/v1" className="underline">a protocol from iGEM Wageningen 2019.</Link>
-This protocol saves time by clever mixing, improves clarity, counts plaques slightly differently, and has a greater focus on phage contamination safety measures.
-
-> Whyte, D. (2025). Plaque assay T7 bacteriophage, double agar method. Springer Science and Business Media LLC. <Link to="https://doi.org/10.17504/protocols.io.x54v95w9ql3e/v1" className="underline">https://doi.org/10.17504/protocols.io.x54v95w9ql3e/v1</Link>
-
-
-#### Prepare a safe phage work area.
-
-1. To avoid contaminating other lab work with phages, take the required measures. Always make sure to wear gloves when working with phages. Designate a certain lab bench area for phage work. Use a special phage incubator. Prepare and maintain Virkon to decontaminate the phage area after all work. Use filter tips for pipettes, and designate pipette(s) (required range: 11 µL - 111 µL ) to remain phage-work pipettes. We recommend using fluorescent tape to mark pipettes and other phage-contaminated equipment.
-
-   Here is an example of the phage area we used.
-
-  <Dropdown value="phage-area" header="Show phage area" level={0}>
-<img
-  src="https://static.igem.wiki/teams/5649/homegraphics/phagearea.webp"
-  alt="Designated phage work area in the lab, with a dedicated incubator and clearly labeled equipment"
-  className="my-4 rounded-lg border border-gray-300 shadow-md max-w-full"
-/>
-</Dropdown>
-
-
-#### Create an *E. coli* culture
-
-2. Streak LB plate with *E. coli*, e.g. BL21(DE3) and incubate overnight at <Temperature celsius="37 °C" fahrenheit="98.6 °F" />.
-
-3. Pick a colony from this plate and use it to inoculate 3 mL of LB. Incubate this culture at <Temperature celsius="37 °C" fahrenheit="98.6 °F" /> until the OD reaches 2-3. We recommend an overnight culture.
-
-#### Prepare LBa and LBa plates
-
-4. Prepare enough plates with LB and agar, one for every dilution sample and one for the control. For a first assay, we recommend 6 samples (10⁰ to 10⁴ and a control). For assays where the rough PFU is known, you might be able to leave out some of these dilutions.
-
-5. Preheat the plates to <Temperature celsius="37 °C" fahrenheit="98.6 °F" />. Consider labelling the plates in advance.
-
-6. We recommend preparing molten soft (0.5%) agar LB at <Temperature celsius="50 °C" fahrenheit="120 °F" />, but you can also make it before it is needed. You'll need 3 mL per dilution sample, but we recommend using a bottle with more than enough and reusing whatever is left.
-
-#### Make a range dilutions, by a factor 10 each, and a control
-
-7. Prepare the required number of tubes. We recommend using 15 mL Falcon tubes, generically called Screw-top centrifuge tubes. Label these with (recommended) a combination of coloured stickers (per different T7 sample) and a marker (for different dilutions). Label the dilution samples with 0, -1, -2, etc.
-
-8. Add 100 µL of ddH2O (MilliQ) to the control. Add 100 µL of ddH2O (MilliQ) to all dilution samples except for the first dilution, labelled 0. Do not add any ddH2O to this sample.
-
-9. Enter the phage area. Using a pipette tip with filter, pipette 111 µL of the desired T7 phage sample into the sample labelled 0.
-
-10. With filter tips, pipette 11 µL from the sample labelled 0 to the next sample, -1. Mix the sample, or gently vortex it.
-
-11. Now repeat this previous step for every dilution. That is, take 11 µL from the previous dilution sample and add it to the next one. Then mix or gently vortex.
-
-12. Finally, discard 11 µL from the final sample (or leave it in and adjust the calculation at the end). Now every sample should contain 100 µL of T7, reduced in concentration by a factor of ten compared to the previous sample.
-
-#### Add the E. coli and pour the plates 25m
-
-13. Now add 200 µL of the *E. coli* culture to every dilution sample and to the control. Use filter tips. Gently mix. Wait 00:10:00 . Do not wait more than a phage replication time (rather conservatively, 00:20:00 at room temperature).
-
-14. Add 3 mL of liquid soft LB agar (LB with 0.5% agar) (<Temperature celsius="50 °C" fahrenheit="120 °F" />). Mix and quickly pour the resulting mixture on the LB plates (preheated at <Temperature celsius="37 °C" fahrenheit="98.6 °F" />). Note: this means the plates will have two layers, the first without any *E. coli* or T7 and the second with.
-
-    Incubate for at least 15 min. or more at Room temperature, to let the second layer harden. Turn the plates upside-down.
-
-15. Incubate Overnight in a specialised phage work area incubator at <Temperature celsius="37 °C" fahrenheit="98.6 °F" />.
-
-16. Find the plate with the most easily identifiable number of plaques, e.g. 10-100. Calculate the Plaque Forming Units (PFU)/mL by the following formula: PFU/mL = N × 1/Vdiluted = N × 1/DF × 1/V0.
-
-    N is the number of plaques of lysis counted on the plate (expressed as PFU).
-    
-    Vdiluted is the total volume of the original phage sample added to this plate (equal to DF × V0)
-    
-    DF is the dilution factor of this plate (i.e. 10ˣ, where x is the label 0, -1, -2, etc.)
-    
-    V0 is the volume of phage dilution of the first plate, i.e. 100 µL .
-    
-    When comparing PFU/mL, remember to take into account the strain of E. coli used.
-
-</Dropdown>
-
-  {/* --- MODULE C: MS2 Capsid Expression --- */}
-  <Dropdown header="MS2 Capsid Expression in E. coli" level={0}>
-    <p>Comprehensive protocols for Module C including bacterial transformation, protein expression, and VLP production.</p>
   </Dropdown>
 
+  {/* --- MODULE C: MS2 Capsid Expression in E. coli --- */}
+  <Dropdown header="MS2 Capsid Expression in E. coli" level={0}>
+    <p>Comprehensive protocols for Module C including bacterial transformation, protein expression, and VLP production.</p>
+    
+    <DropdownGroup single className="mt-4">
+      <DropdownItem value="lb-agar-plates" header="Pouring LB Agar Plates" level={1}>
+        <C_lbAgarPlates />
+      </DropdownItem>
+      <DropdownItem value="dna-resuspension" header="Resuspension of Dried DNA (Plasmid)" level={1}>
+        <C_dnaResuspension />
+      </DropdownItem>
+      <DropdownItem value="transformation" header="Plasmid Transformation into BL21(DE3)" level={1}>
+        <C_transformation />
+      </DropdownItem>
+      <DropdownItem value="glycerol-stock" header="Preparation of a Glycerol Stock (50% working)" level={1}>
+        <C_glycerolStock />
+      </DropdownItem>
+      <DropdownItem value="kanamycin-stock" header="Preparation of 1000× Kanamycin Stock (50 mg/mL)" level={1}>
+        <C_kanamycinStock />
+      </DropdownItem>
+      <DropdownItem value="iptg-induction" header="Induction with IPTG" level={1}>
+        <C_iptgInduction />
+      </DropdownItem>
+      <DropdownItem value="harvest-lysis" header="Harvest and Lysis" level={1}>
+        <C_harvestLysis />
+      </DropdownItem>
+      <DropdownItem value="sds-page-prep" header="SDS-PAGE Sample Preparation" level={1}>
+        <C_sdsPagePrep />
+      </DropdownItem>
+      <DropdownItem value="sds-page-gel" header="Loading & Running SDS-PAGE Gel" level={1}>
+        <C_sdsPageGel />
+      </DropdownItem>
+      <DropdownItem value="coomassie-staining" header="Coomassie Staining & Imaging" level={1}>
+        <C_coomassieStaining />
+      </DropdownItem>
+      <DropdownItem value="peg-precipitation" header="PEG Precipitation of MS2 VLPs" level={1}>
+        <C_pegPrecipitation />
+      </DropdownItem>
+      <DropdownItem value="tem-imaging" header="TEM Imaging of MS2 VLPs" level={1}>
+        <C_temImaging />
+      </DropdownItem>
+    </DropdownGroup>
+  </Dropdown>
+
+<Dropdown value="plaque-assay" header="Plaque assay, T7 bacteriophage" level={0}>
+<DunPlaque />
+</Dropdown>
 
 </Content>
