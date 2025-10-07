@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 
 type Props = Readonly<{
   firstName: string;
@@ -8,26 +8,14 @@ type Props = Readonly<{
   bio: React.ReactNode;
   alt?: string;
   flipped?: boolean;
+  isFlipped: boolean;
+  onToggle: () => void;
 }>;
 
-export default function MemberCard({ firstName, lastName, role, src, bio, alt, flipped }: Props) {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const handlePointerEnter = useCallback((event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "touch") {
-      setIsFlipped(true);
-    }
-  }, []);
-
-  const handlePointerLeave = useCallback((event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "touch") {
-      setIsFlipped(false);
-    }
-  }, []);
-
+export default function MemberCard({ firstName, lastName, role, src, bio, alt, flipped, isFlipped, onToggle }: Props) {
   const handleToggle = useCallback(() => {
-    setIsFlipped((prev) => !prev);
-  }, []);
+    onToggle();
+  }, [onToggle]);
 
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -44,11 +32,8 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
   return (
     <div
       className="group relative mx-auto h-[27rem] w-[20rem] flex-none cursor-pointer select-none [perspective:1200px]"
-      onPointerEnter={handlePointerEnter}
-      onPointerLeave={handlePointerLeave}
       onClick={handleToggle}
       onKeyDown={handleKeyDown}
-      role="button"
       tabIndex={0}
       aria-pressed={isBackVisible}
     >
@@ -91,7 +76,7 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
               {role ? <div className="text-md text-neutral-500">{role}</div> : null}
             </div>
           </div>
-          <div className="row-start-1 col-start-1 flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-white p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="row-start-1 col-start-1 flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-primary/20 p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
             <div className="text-md text-muted-foreground">{bio}</div>
           </div>
         </div>
