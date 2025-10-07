@@ -17,6 +17,7 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
+  --color-secondary-old: var(--secondary-old);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary-foreground-complement: var(
     --secondary-foreground-complement
@@ -440,7 +441,8 @@
     --brand-foreground: oklch(100% 0 none);
     --primary: oklch(53.27% 0.1015 227.5); /* Medium Teal */
     --primary-foreground: oklch(100% 0 none);
-    --secondary: oklch(31.59% 0.0588 227.5); /* Deep Blue */
+    --secondary: #5f8233; /* Green */
+    --secondary-old: oklch(31.59% 0.0588 227.5);
     --secondary-foreground: oklch(
       97.05% 0.0222 227.5
     ); /* very light cyan for subtle contrast */
