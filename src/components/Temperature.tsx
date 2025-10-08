@@ -85,12 +85,12 @@ export const Temperature: React.FC<TemperatureProps> = ({
     >
       <span className="inline-grid">
         <span
-          className={`col-start-1 row-start-1 whitespace-nowrap transition-opacity duration-200 ${showAlternate ? 'opacity-0' : 'opacity-100'}`}
+          className={`col-start-1 row-start-1 whitespace-nowrap transition-opacity duration-200 flex items-center justify-center ${showAlternate ? 'opacity-0' : 'opacity-100'}`}
         >
           {primaryTemp}
         </span>
         <span
-          className={`col-start-1 row-start-1 whitespace-nowrap transition-opacity duration-200 ${showAlternate ? 'opacity-100' : 'opacity-0'}`}
+          className={`col-start-1 row-start-1 whitespace-nowrap transition-opacity duration-200 flex items-center justify-center ${showAlternate ? 'opacity-100' : 'opacity-0'}`}
         >
           {alternateTemp}
         </span>
