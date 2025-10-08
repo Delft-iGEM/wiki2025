@@ -8,223 +8,69 @@ experimental design and methodology for our wetlab work
 
 <Content items="left">
 
-To build the **Snaccine** platform, we split our experimental workflow into parallel modules. This modular approach allows us to answer specific scientific questions independently, while also creating interlinked pipelines where progress in one module accelerates development in others. By doing so, we can optimize efficiency, reduce dependencies, and generate reliable data at different stages of **phage engineering, stability testing, VLP production, delivery, and immunogenicity**.
 
-![alt text](https://static.igem.wiki/teams/5649/figures/experiments-timeline-1.webp)
+## Introduction
+To build the Snaccine platform, we split our experimental workflow into parallel modules. This modular approach allows us to answer specific scientific questions independently, while also creating interlinked pipelines where progress in one module accelerates development in others. By doing so, we can optimize efficiency, reduce dependencies, and generate reliable data at different stages of phage engineering, stability testing, VLP production, delivery, and immunogenicity.
 
-Each module has a distinct focus:
+![enter image description here](https://static.igem.wiki/teams/5649/figures/experiments-module-overview.webp)
 
+**T7 Genome Engineering**
+This module aims to establish  an accessible workflow for engineering the genome of the T7 phage. We applied a novel _in vitro_ genome engineering workflow inspired by recent literature to insert a fluorescent reporter gene (mCherry) downstream of gene 10, testing both assembly efficiency and phage viability.  The aim of this module's experiments is to validate a faster, selection-free genome modification strategy that can support iterative phage vaccine development.
+<Dropdown header= "Module A: Phage Engineering" level={0}>
+**PCR primer design**
+PCR primer sequences for both T7 phage genome production as well as screening of DNA products were designed with SnapGene3. Primer sequences for Wild Type Assembly were taken from Levrier et al.¹  Screening PCR primers were designed to have a melting temperature of ~60 °C and a G or C 3’ end [Fig. example GA primer], which supports a more stable initiation of DNA replication [ref. needed]. To insert the mCherry gene into the T7 genome, we designed primer sets that amplified the mCherry insert and the flanking T7 genomic fragments, such that the resulting fragments shared identical overlapping sequences at their ends [Figure mCherry PCR product]. In addition, the primers for the mCherry insert and its homologous T7 genomic fragments were designed to include an orthogonal homologous sequence (oho), which minimizes any unintended homology to the T7 genome. After the primers were designed, they were ordered already dissolved in water with a concentration of 100 μM that was further diluted to 10 μM to be used for PCR.
 
-### **Module A – T7 Genome Engineering**
-Genome engineering of phages is at the core of Snaccine. Thus in this module we explored a novel **in-vitro T7 genome engineering** pipeline to align the aims of producing engineered phages with our goals of accessible and adaptable bird flu vaccine platform. We examined an approach based on **PCR** of T7 genomic fragments and **Genome Assembly** techniques for a **rapid and flexible engineering of phages**. Hence, this technique presents great potential for introducing our engineered MS2 gene together with an antigen mRNA. We successfully produced such phage fragments and attempted to produce an engineered T7 phage genome containing mCherry gene. Furthermore, to analyze phage production has been rebooted we performed **plaque assays** to screen for propagating phages.
+**Q5 PCR**
+A modified protocol for Q5® High-Fidelity 2X Master Mix⁵ was implemented to produce our T7 genome assembly fragments, in particular for the wild-type and mCherry insertion genomes. As a starting DNA material, 1 μL of T7 bacteriophage solution (~0.7 PFU/μL) was used per 50 μL total PCR reaction volume. Primer and Q5 Master Mix amounts were selected following NEB guidelines. Additionally, the NEB Tm calculator4 was used to estimate the annealing temperatures of primers with the DNA strands to devise a PCR cycle procedure.)
 
----
-<Dropdown header="VLP Production in bacteria - experiments" level={0}>
+**1% Agarose Gel Electrophoresis for DNA to verify DNA length**
+For screening DNA products, 1% agarose gel electrophoresis was performed. A 1× TAE buffer (Tris Acetate Ethylenediaminetetraacetic acid buffer) was used for the agarose gel as well as the electrophoresis buffer. Electrophoresis was run for 1 h at 100 V with a power supply. SYBR Safe was used to stain DNA, while NEB Purple Gel Loading Dye was used for loading DNA samples into the gel wells. After electrophoresis, gels were analyzed
 
-  #### **PCR Primer Design**
-  PCR primer sequences for both T7 phage genome production and screening of DNA products were designed with **SnapGene³**.  
-  - Primer sequences for Wild Type Assembly were taken from *Levrier et al.*¹  
-  - Screening PCR primers were designed with a melting temperature of ~60 °C and a G/C 3’ end, which supports a more stable initiation of DNA replication (*ref. needed*).  
-  - To insert the **mCherry** gene into the T7 genome, we designed primer sets that amplified the mCherry insert and flanking T7 genomic fragments with identical overlapping sequences at their ends.  
-  - Primers included an **orthogonal homologous sequence (oho)** to minimize unintended homology to the T7 genome.  
-  - Primers were ordered dissolved in water (100 μM), then diluted to 10 μM for PCR use.  
+**T7 genome assembly**
+The NEBuilder® HiFi DNA Assembly kit⁶ was used to assemble the T7 genome. Equimolar amounts of each fragment of the assembly were calculated with the NEBuilder Protocol Calculator following the maximizing NEB guidelines (with 4.15 nM and 6.25 nM, respectively, in the insert and wild-type assembly). On the table below, A, B, C, D, Coho1, Coho2, and oho1_mCherry_oho2 represent the different genomic DNA fragments obtained with PCR. The volumes shown here have been determined based on the measured DNA concentration of our fragments (see Results for more details)
 
+**Column precipitation of PCR products**
+PCR products were purified using the NEB Monarch Spin PCR cleanup kit⁷. This procedure relies on DNA from a PCR product binding to a selection column using a binding buffer and washing away any residual molecules, such as oligos and enzymes, from the mixture using a washing buffer. Finally, the purified DNA is eluted with a specialized elution buffer.
 
+**Heat shock transformation and rebooting of phages**
+A modified version of the NEB transformation protocol was used in an attempt to reboot T7 phages with BL21 DE3 cells.  The main difference from the standard procedure is a longer outgrowth with SOC and directly transferring the cell outgrowth to a liquid LB medium with more inoculated E. coli for an overnight growth, instead of plating the cells.
 
-  #### **Q5 PCR**
-  A modified protocol for **Q5® High-Fidelity 2X Master Mix⁵** was used to produce T7 genome assembly fragments (wild-type and mCherry insertion genomes).  
-  - Starting DNA: 1 μL of T7 bacteriophage solution (~0.7 PFU/μL) per 50 μL PCR reaction.  
-  - Primer and master mix ratios followed NEB guidelines.  
-  - **NEB Tm calculator⁴** was used to estimate primer annealing temperatures for PCR cycling design.  
+**Electrocompetent cells preparation**
+A standard electrocompetent cell preparation procedure based on the protocol by Baricklab 10 was used to make BL21 (DE3) cells electrocompetent.
 
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
+**Transformation through electroporation for T7 phage reboot**
+A standard electroporation transformation protocol was followed based on the protocol by Baricklab 10 to reboot T7 phage production using BL21 (DE3) cells. Again, the main change in the procedure was a longer SOC outgrowth followed by a transfer of the cell mixture to a liquid LB medium together with more inoculated cells.
 
-  #### **1% Agarose Gel Electrophoresis for DNA**
-  Used to verify DNA length.  
-  - 1× TAE buffer was used for gel and electrophoresis.  
-  - Run: 1 h at 100 V.  
-  - **SYBR Safe** for DNA staining and **NEB Purple Gel Loading Dye** for sample loading.  
-  - Gels were analyzed after electrophoresis.  
+**T7 phage filtration**
+This procedure aims to filter out rebooted T7 phages from their E. coli host cells. This ensures that the phage solution does not contain any bacterial cells, while at the same time ensuring that phages that have not yet lysed their E. coli are released.
 
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
+**T7 phage concentration**
+This procedure aims to increase the concentration of T7 bacteriophages by accumulating them on a protein purification filter. In this way, if a lower-yielding production has been performed, the presence of low-concentration phages can still be confirmed.
 
-  #### **T7 Genome Assembly**
-  The **NEBuilder® HiFi DNA Assembly Kit⁶** was used to assemble the T7 genome.  
-  - Equimolar fragment amounts were calculated using the **NEBuilder Protocol Calculator**.  
-  - Fragments: A, B, C, D, Coho1, Coho2, and oho1_mCherry_oho2.  
-  - Concentrations and volumes were determined based on DNA measurements (see *Results*).  
-
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  #### **Column Precipitation of PCR Products**
-  PCR products were purified using the **NEB Monarch Spin PCR Cleanup Kit⁷**, which:  
-  1. Binds DNA to a selection column.  
-  2. Washes away oligos and enzymes.  
-  3. Elutes purified DNA with a specialized buffer.  
-
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  #### **Heat Shock Transformation and Phage Reboot**
-  A modified **NEB transformation protocol** was used to reboot T7 phages in **BL21(DE3)** cells.  
-  - Main change: longer SOC outgrowth followed by transfer to **liquid LB medium** for overnight culture instead of plating.  
-
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  #### **Electrocompetent Cell Preparation**
-  **BL21(DE3)** cells were made electrocompetent following the **Baricklab protocol¹⁰**.  
-
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  #### **Transformation via Electroporation**
-  Standard **electroporation** protocol (Baricklab¹⁰) used to reboot T7 phage production.  
-  - Main change: longer SOC outgrowth followed by transfer to **liquid LB** medium.  
-
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  #### **T7 Phage Filtration**
-  Filtration step removes **E. coli** host cells from the rebooted T7 phage solution, ensuring a pure phage stock.  
-
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  #### **T7 Phage Concentration**
-  Phages were concentrated using a **protein purification filter**, enabling detection even from low-yield productions.  
-
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  #### **T7 Phage Plaque Assay**
-  Used to test phage presence and quantify concentration.  
-  - *E. coli* cells are plated in 0.6% LB agarose.  
-  - Phage solution is added.  
-  - Empty spots (plaques) indicate phage-induced cell lysis and spread.  
-
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
+**T7 phage plaque assay**
+To test the presence of phages and quantify their concentration, we performed plaque assays. This method relies on plating a homogenous layer of cells in a 0.6% LB agarose and, at the same time, introducing a phage solution with the cells. If phages are present, they will result in empty spots on the E. coli layer, referred to as plaques, which signify dying bacterial cells and phage spread.
 
 </Dropdown>
 
-### **Module B – Storage & Stability**
-In this module, we explore how T7 behaves in environments that mimic **food storage** or the **gastrointestinal tract**.  
-- **B1:** Tests viability across conditions of temperature for prolonged time to simulate storage.  
-- **B2:** Investigates survival in simulated gastric and intestinal fluids, revealing whether protective coatings are required for oral delivery.  
-Both depend on plaque assay techniques from Module A1.  
-
-<Dropdown header="Phage storage and stability testing" level={0}>
-
-  #### **1. Long-Term Temperature Stability**
-  To simulate **food storage environments**, we evaluated how T7 phages remain viable when stored at different temperatures for several weeks.  
-  - **Conditions tested:** 4 °C (refrigeration), ~20 °C (room temperature), and 37 °C (body temperature).  
-  - Each week, fresh samples were incubated at these temperatures for up to **4 weeks**, followed by **plaque assay quantification** to determine residual infectivity.  
-  - This experiment reveals the optimal storage temperature and expected shelf life of T7-based products.  
-
-
-  #### **2. Preparation of Simulated Gastric and Intestinal Baths**
-  To mimic **gastrointestinal environments**, we prepared a series of **acidic (pH 1.5–3.0)** and **neutral/basic (pH 6.0–7.4)** buffer systems.  
-  - Acidic buffers were made using **NaCl** and **HCl** to reproduce stomach-like conditions.  
-  - Neutral and basic phosphate buffers simulated intestinal fluids.  
-  - All solutions were equilibrated to **37 °C** prior to testing.  
-  These prepared baths formed the basis for subsequent pH stability assays.  
-
-
-  #### **3. Capsule and Free-Phage pH Stability Test**
-  Using the prepared pH baths, we assessed the protective potential of **encapsulation** versus **free phage exposure**.  
-  - Each pH condition (1.5–7.4) included **triplicate capsules** containing 100 µL of T7 stock and **triplicate free-phage controls**.  
-  - Capsules and free phages were incubated at **37 °C** to replicate physiological conditions.  
-  - At defined time points, samples were collected for **plaque assay** analysis to quantify surviving phages.  
-  This experiment models the digestive journey of orally delivered phages.  
-
-
-  #### **4. Plaque Assay Analysis**
-  Stability across conditions was quantified using the **double-agar overlay plaque assay**.  
-  - Phage titers (PFU/mL) were measured for both capsule and free-phage samples.  
-  - Results were expressed as **percent survival relative to input controls**, allowing direct comparison between storage and gastrointestinal simulations.  
-  - Key outcomes included capsule integrity, median release time, and phage survival efficiency.  
-
-  ---
-  [Full experimental protocols available here](https://2025.igem.wiki/tu-delft/protocols)
-
+**Storage & Stability**
+In this module, we explore how T7 behaves in environments that mimic food storage or the gastrointestinal tract. We store T7 phages at different temperatures (4°C, 20°C and 37°C) for different times. As well as we test phage stability in the chicken gut pH conditions.
+<Dropdown header= "Module B: Storage & Stability" level={0}>
 </Dropdown>
 
-
-### **Module C – VLP Production with Plasmid**
-This module tests whether *E. coli* can express and assemble **MS2 virus-like particles (VLPs)** from a synthetic plasmid under T7 promoter control.  
-Expression and folding are confirmed by **SDS-PAGE** and **TEM imaging**. Successful results validate our plasmid design and establish a foundation for transferring VLP production into engineered phages.  
+**MS2 Capsid Production in e. coli**
+This module tests whether E. coli can express and assemble MS2 virus-like particles (VLPs) from a synthetic plasmid under T7 promoter control. Expression and folding are confirmed by SDS-PAGE and TEM imaging. Successful results validate our plasmid design and establish a foundation for transferring VLP production into engineered phages.
 
 
-<Dropdown header="VLP Production in bacteria - experiments" level={0}>
+**VLP Delivery to Mammalian Cells**
+In this module, we designed a new plasmid encoding MS2 capsids that encapsulate an RNA cargo (such as eGFP) — serving as a model for the final vaccine RNA. The goal will be to test whether these RNA-loaded capsids can deliver genetic material into mammalian cells.
+Following expression and purification using the same optimized workflow established in the previous module (MS2 Capsid Production in _E. coli_), the purified VLPs will be applied to mammalian cell cultures. Uptake and expression will then be evaluated by monitoring fluorescence, as successful delivery and translation of the eGFP RNA cargo would result in visibly green, fluorescent cells.
 
-  #### **1. Plasmid Design and Construction**
-  We engineered a plasmid construct **(pET-Kan-T7lac-mat-MS2cp)** encoding the MS2 maturase fused to the coat protein under a **T7 promoter**.  
-  This construct validates expression of **MS2 virus-like particles (VLPs)** in *E. coli*.  
 
-  **Figure 1.** Plasmid map of our engineered construct (pET-Kan-T7lac-mat-MS2cp) showing promoter, maturase, coat protein, and MS2 RNA stem loop.  
-  **Figure 2.** Linear schematic of the synthetic insert prior to backbone insertion.  
 
-  #### **2. Transformation into BL21(DE3) Cells**
-  The construct was introduced into **BL21(DE3)** cells, enabling T7-driven expression.  
-  Successful transformants were selected on **kanamycin plates** for downstream studies.  
 
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-  #### **3. Protein Expression Induction**
-  Cultures were induced with **IPTG** under various concentrations and temperatures.  
-  Optimal condition: **0.4 mM IPTG**, **17 °C**, **16 h** — yielding soluble VLP expression and minimal aggregation.  
 
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-  #### **4. Harvest and Lysis**
-  Cells were harvested and lysed via **sonication**.  
-  Soluble **MS2 VLP proteins** were detected in the supernatant; uninduced and pellet fractions showed no expression.  
 
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  #### **5. SDS-PAGE Gel Electrophoresis**
-  Induced and uninduced fractions were analyzed via SDS-PAGE.  
-  A **13.7 kDa band** corresponding to the MS2 coat protein was observed, confirming soluble expression.  
-
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  #### **6. PEG Precipitation of VLPs**
-  **PEG precipitation** was used to selectively enrich assembled VLPs from soluble fractions, preparing them for structural analysis.  
-
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  #### **7. TEM Imaging**
-  Purified particles were imaged using **Transmission Electron Microscopy (TEM)** with negative staining.  
-  Micrographs revealed **icosahedral VLPs (~27 nm)**, confirming correct assembly.  
-
-  !!!!!!!!!!add link to protocol!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  #### **8. TEM Average Projection**
-  To obtain an average projection of MS2 VLPs and confirm geometry, we used the **RELION** software package. 
-  
-</Dropdown>
-
-### **Module D – VLP Delivery to Mammalian Cells**
-VLPs from Module C will be tested for their ability to deliver genetic cargo into **eukaryotic cells**.  
-This step will evaluate uptake efficiency and expression, bridging microbial engineering with mammalian immunology.  
-
----
-
-### **Module AC – Phage/VLP Co-Production**
-This integrative module combines Modules A and C by equipping engineered T7 phages with VLP cargo genes.  
-The goal is to demonstrate that phage infection can drive bacterial production of VLPs with packaged mRNA, confirming that the two modular strategies can converge into a single workflow.  
-
----
-
-### **Module E – Immunogenicity Assays**
-With purified VLPs (and eventually phage-driven VLPs), we will assess immune responses.  
-- **E1:** Investigates whether antigen-presenting cells (APCs) mature upon exposure.  
-- **E2:** Examines cytokine and chemokine release, ensuring safety by defining tolerable doses and identifying risks of unwanted inflammation.  
-
----
-
-### **Module F – Vaccine Extension (Bird Flu Case Study)**
-Finally, we apply insights from all modules to design a practical vaccine candidate against **avian influenza**.  
-This demonstrates the translational potential of Snaccine beyond proof-of-concept, addressing manufacturability, safety, and immunogenicity.  
-
-By progressing through these modules in parallel, we create a **flexible and scalable experimental platform**.  
-
----
- 
-<InteractiveSchematic />
+<InteractiveSchematic/>
 </Content>
-

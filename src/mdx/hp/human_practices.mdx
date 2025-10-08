@@ -1,13 +1,13 @@
 import { Content, AccentLine, Dropdown} from "@/components";
 
-<style jsx global>{`
-  /* Make all dropdowns on this page transparent */
-  .dropdown-item {
-    --dropdown-color: transparent !important;
-  }
-`}</style>
-
-
+<div
+  style={{
+    
+    '--section': 'transparent',
+    
+    '--dropdown-color': 'transparent',
+  }}
+>
 <Content items="left">
 
 <AccentLine/>
@@ -25,9 +25,17 @@ We began by analyzing the challenges posed by avian influenza and its current co
 2.  **Safe-by-Design (SbD):** To address the RRI principle of _anticipation_, we used the SbD framework to proactively identify technological risks, assess their likelihood, and develop robust containment plans.
 
 This Human Practices section lays our foundational groundwork, addressing the first half of the iGEM ethos: understanding **how our work affects the world**. It presents the theoretical frameworks of Responsible Research and Innovation, Safe-by-Design, and Value Sensitive Design that guided our project. Therewith, we have addressed the first part of our cycle:
-![Human Practices Cycle](https://static.igem.wiki/teams/5649/hp/snaccine-cycle-hp.webp)
-Figure 1:The Human Practice Cycle
 
+<figure style={{ textAlign: 'center' }}>
+  <img
+    src="https://static.igem.wiki/teams/5649/hp/snaccine-cycle-hp.webp"
+    alt="The Human Practice Cycle"
+    width="700"
+    style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }}
+  />
+  <figcaption><em>Figure 1: The Human Practice Cycle</em></figcaption>
+</figure>
+<br/>
 The following Integrated Human Practices section completes this cycle by documenting the second half: **how the world affects our work**. It shows how we acted on our foundation by engaging stakeholders and translating their insights into pivotal design changes.
 
 <Dropdown header="Background" level={0}>
@@ -60,9 +68,16 @@ To address these gaps, we propose Snaccine. An ideal vaccine should be:
 Snaccine is designed to meet these needs through its modular design, compatibility with oral delivery, and rapid redesign capabilities.
 
 Introducing a novel Genetically Modified Organism (GMO) platform like Snaccine requires navigating a complex landscape of scientific, regulatory, and social challenges. To ensure our project is grounded in real-world needs and responsibilities, we built our strategy around a deep engagement with the key stakeholders.
-![Chickens and Snaccine](https://static.igem.wiki/teams/5649/teamphotos/chicken-feed-image-small.webp)
-Figure 2: Chickens from our stakeholder Johannis Florid
 
+<figure style={{ textAlign: 'center' }}>
+  <img
+    src="https://static.igem.wiki/teams/5649/hp/chickens-cropped-1.webp"
+    alt="Chickens and Snaccine"
+    width="500"
+    style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }}
+  />
+  <figcaption><em>Figure 2: Chickens of our stakeholder Johannis Florid</em></figcaption>
+</figure>
 
 </Dropdown>
 
@@ -116,10 +131,20 @@ We structured our safety analysis around five types of uncertainty, a method tha
 
 <Dropdown header="Stakeholder Mapping" level={0}>
 
-![Stakeholder Mapping](https://static.igem.wiki/teams/5649/hp/stakeholder-mapping-downstream-upstream-schematic.webp)
-Figure 3: Stakeholder mapping from Upstream to Downstream
 
-**1. Upstream Stakeholders: Policy, Regulation, and Foundational Science**
+<figure style={{ textAlign: 'center' }}>
+  <img
+    src="https://static.igem.wiki/teams/5649/hp/stakeholder-mapping-downstream-upstream-schematic.webp"
+    alt="Stakeholder Map"
+    width="700"
+    style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }}
+  />
+  <figcaption><em>Figure 2: Stakeholder Mapping from Upstream to Downstream</em></figcaption>
+</figure>
+<br/>
+
+**1. Upstream Stakeholders: Policy, R
+egulation, and Foundational Science**
 
 Navigating the regulatory landscape proved to be a primary challenge for the Snaccine project, largely due to its identity as a hybrid platform combining a genetically modified bacteriophage and an _in-situ_ mRNA vaccine. As no single European Union guideline is designed to assess such a product, market authorization would require a case-by-case assessment pieced together from multiple frameworks.
 
@@ -176,3 +201,4 @@ World Health Organization. (2025, September 30). _Bacteriophages and their use i
 </Dropdown>
 
 </Content>
+</div>

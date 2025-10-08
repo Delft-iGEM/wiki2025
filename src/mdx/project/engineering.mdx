@@ -1,6 +1,4 @@
 import { Content, Header, AccentLine, Dropdown } from "@/components";
-import ModDDes from "./moduleDdesign.mdx";
-
 
 <Header>
 # engineering
@@ -27,7 +25,7 @@ To achieve this, our methodology had to be **accessible**, **adaptable**, and **
 Phage selection was one of the earliest and most critical design choices. Initially, we evaluated highly stable species such as PIN1 and PIN2, which can remain viable at room temperature for extended periods (Jati et al.). However, discussions with **Prof. Stan Brouns** (TU Delft) emphasized that robust genetic characterization and engineering feasibility were more essential for our purpose. Based on this, we chose the **T7 bacteriophage**, a well-characterized model with extensive literature, established engineering methods, and reliable performance in laboratory settings.
 
 ### evaluating engineering approaches
-Many iGEM teams have explored phage genome editing. The **Bacteriophage Recombineering of Electroporated DNA (BRED)** method, used by iGEM Delft 2020 (*PHOCUS*), offers flexible site targeting through homologous recombination but suffers from low yield and labor-intensive screening. These limitations would hinder rapid design iteration, so we sought alternative strategies.
+Many iGEM teams have explored phage genome editing. The **Bacteriophage Recombineering of Electroporated DNA (BRED)** method, used by iGEM Delft 2020 (*PHOCUS*), offers flexible site targeting through homologous recombination but suffers from low yield and labor-intensive screening \[citation\]. These limitations would hinder rapid design iteration, so we sought alternative strategies.
 
 Recent studies (Levrier et al.; Vu et al.) describe **in vitro genome assembly** as a faster, more accessible alternative. These methods combine PCR amplification and DNA assembly to reconstruct full phage genomes, which can then be rebooted in host cells or cell-free systems. No iGEM team had implemented this approach before, making it an innovative opportunity to improve efficiency and modularity in phage engineering.
 
@@ -237,9 +235,122 @@ After PCR optimization (adjusted annealing temperatures and polymerases), all fr
 <Dropdown header="phage stability testing" level={0}>
 
 ### overview
-This module will evaluate environmental and storage stability of the engineered phage formulations (e.g., temperature, pH, and GI-tract mimic conditions), define acceptable operating windows, and inform formulation choices for field deployment. *(Content to be added.)*
+Understanding the stability of our **T7 bacteriophage** is essential for developing a reliable oral vaccine platform.  
+This module explores how environmental factors such as **temperature**, **pH**, and **encapsulation** affect phage viability during storage and simulated gut passage.  
+
+We framed this work within the **Design–Build–Test–Learn (DBTL)** cycle to evaluate stability and guide formulation strategies for Snaccine.
+
+---
+
+### design — defining the challenge
+For an oral phage vaccine to be effective, the phage must survive both **storage** and **gastrointestinal transit**.  
+We identified two main stability challenges:
+
+1. **Temperature sensitivity:** Phages are biological entities whose viability can decline quickly outside optimal conditions.  
+2. **Acidic stress:** The stomach’s low pH can inactivate most phages before they reach the intestine.
+
+Our goal was to evaluate how long T7 remains viable under different storage conditions and whether encapsulation could protect it in acidic environments.
+
+---
+
+### build — constructing the test systems
+To address both challenges, we developed two complementary assays:
+
+1. **Storage Stability Assay**  
+   Equal aliquots of wild-type T7 were stored at **4 °C**, **room temperature (~20 °C)**, and **37 °C** for up to four weeks.  
+   Each week, samples were removed and analyzed by plaque assay to measure the number of infectious particles (PFU/mL).
+
+2. **Gut-like pH and Capsule Stability Assay**  
+   Buffers were prepared at **pH 1.5, 2.0, 3.0, 6.0, 6.8, and 7.4** to mimic stomach and intestinal conditions.  
+   Phages were tested in two formats:  
+   - **Free phage suspension**  
+   - **Encapsulated phage** using **Lonza Capsugel® capsules** filled with 100 µL of T7 stock  
+
+   All reactions were incubated at **37 °C** to simulate physiological temperature.
+
+> *Encapsulation allowed us to evaluate whether simple capsule enclosures could shield T7 from low-pH inactivation and release it later under neutral conditions.*
+
+<div className="flex flex-col gap-4 items-center mt-4 mb-6">
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-01-11-16.webp"
+    alt="Capsule and pH stability testing setup"
+    className="rounded-2xl shadow-md w-full max-w-2xl"
+  />
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-01-11-16-1.webp"
+    alt="Capsule setup close-up"
+    className="rounded-2xl shadow-md w-full max-w-2xl"
+  />
+  <p className="text-sm text-gray-600 italic text-center">
+    Experimental setup showing the encapsulated phage exposure under gut-like pH conditions.
+  </p>
+</div>
+
+---
+
+### test — evaluating phage viability
+The **pH and encapsulation assay** was fully prepared but could not be completed successfully.  
+Although plaque assays for these samples failed, the setup was validated and documented, creating a foundation that future iGEM teams can directly reuse and improve.  
+This iteration provided valuable insights into experimental coordination, sample timing, and workflow reproducibility.
+
+The **storage stability assay** was successfully completed.  
+Plaque assays showed that **T7 remained most stable when stored at 4 °C**, producing clear plaques even after one month.  
+**Room temperature samples** maintained moderate viability for several days to weeks, while **incubated samples (37 °C)** lost activity rapidly.  
+These results confirm that refrigeration offers the best preservation conditions, though short-term room-temperature handling remains feasible.
+
+<div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2 mb-4">
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-00-16-11-2.webp"
+    alt="Plaque assay plate 1"
+    className="rounded-xl shadow-sm w-full"
+  />
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-00-16-11-1.webp"
+    alt="Plaque assay plate 2"
+    className="rounded-xl shadow-sm w-full"
+  />
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-00-16-11.webp"
+    alt="Plaque assay plate 3"
+    className="rounded-xl shadow-sm w-full"
+  />
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-00-16-12.webp"
+    alt="Plaque assay plate 4"
+    className="rounded-xl shadow-sm w-full"
+  />
+</div>
+<p className="text-sm text-gray-600 italic text-center mb-6">
+  Successful plaque assays from the storage stability experiment showing T7 phage viability testing.
+</p>
+
+---
+
+### learn — reflections and next steps
+Even though the pH and encapsulation tests did not yield viable plaques, this work provided critical learning outcomes for future experimentation.  
+We established clear protocols for capsule handling, exposure timing, and pH testing, which future iGEM teams can replicate or refine.  
+
+From the completed storage study, we learned that:  
+- **Cold storage (4 °C)** provides the highest long-term stability for T7.  
+- **Room temperature** allows limited short-term handling.  
+- **High temperatures (37 °C)** lead to rapid inactivation, emphasizing the need for stabilization strategies such as **lyophilization** or **protective excipients**.
+
+These insights complete our DBTL cycle, showing both what works and what still needs optimization in phage stability testing.
+
+---
+
+### conclusion
+Although not every experiment succeeded, our team achieved a validated and transparent workflow for assessing phage stability.  
+The storage results clearly demonstrate optimal conditions for T7 preservation, while the failed pH and encapsulation assays highlight common challenges future iGEM teams can learn from.  
+By documenting both successes and setbacks, we ensure that our work contributes meaningful knowledge to the iGEM community and helps future teams design stronger, more reliable phage-based systems.
 
 </Dropdown>
+
+
+
+
+
+
 
 ---
 
@@ -256,12 +367,6 @@ While  optimizing  methods to engineer  bacteriophages (Module A), we also  focu
 Our engineering journey in Module C was guided by the iterative **Design–Build–Test–Learn**  cycle, where  each  experimental run informed the next. Rather  than  being a linear  process, the development of our MS2 VLP expression system unfolded in multiple  rounds of design refinement, troubleshooting, and protocol  adjustment.
 
 ## **Design**
-
-The plasmid we ended up testing in the lab was only an early version.
-We later designed a more advanced construct to demonstrate modularity, but we didn't
-have the time to test it in the lab.
-To avoid too much repeated content, we focus here on the lab work and testing.
-The DNA/RNA design can be found below, under *Future Development*.
 
 ![enter image description here](https://static.igem.wiki/teams/5649/figures/engineering-module-c-image-1.webp)
 We began by designing a synthetic plasmid (pET-Kan-T7lac-mat-MS2cp) containing a T7/lac promoter, the MS2 maturase gene, the coat protein gene, and an MS2 RNA stem loop (*Figure 1*) .
@@ -292,36 +397,16 @@ Repeating the experiment with this improved protocol gave a clear outcome. After
 ![enter image description here](https://static.igem.wiki/teams/5649/figures/engineering-module-c-image-4.webp)
 With soluble expression established, we advanced to the next stage: concentrating, purifying,  and validating the VLP assemblies. Using PEG precipitation, we concentrated the soluble proteins into a visible pellet, selectively enriching for assembled capsids while leaving background proteins in solution. This pellet was resuspended and analyzed by TEM. The negative-stain micrographs revealed discrete spherical particles approximately 27 nm in diameter, consistent with the expected morphology of MS2 VLPs. This provided strong evidence that our engineered coat proteins not only expressed but also self-assembled into virus-like particles.
 
-## Design of the new plasmid
+## Future development
 
-Encouraged by this success, we began designing the next iteration of the system to demonstrate
-modularity. In this version, we planned to encapsulate a “dummy vaccine RNA” containing a eukaryotic
-expression machinery inside the MS2 particles.
+Encouraged by this  success, we began  designing the next  iteration of the system to demonstrate  modularity. In this version, we planned to encapsulate a “dummy  vaccine RNA” containing a eukaryotic  expression  machinery  inside the MS2 particles. 
 
 ![enter image description here](https://static.igem.wiki/teams/5649/moduledplasmidbiorender/module-d-plasmid-biorender.webp)
-*Figure 3. Plasmid design for the next-generation MS2 system encoding a
-“dummy vaccine RNA” and optimized coat proteins for RNA packaging and delivery.*
+*Figure 3. Plasmid design for the next-generation MS2 system encoding a “dummy vaccine RNA” and optimized coat proteins for RNA packaging and delivery.*
 
-The goal of this new design (*Figure 3*) is to express and purify the VLPs with the
-same validated workflow and then expose them to eukaryotic cells.
-If successful, the uptake of VLPs and expression of the model protein
-would confirm the end-to-end functionality of our platform: packaging,
-delivery, and expression.
+The goal of this  new design (*Figure 3*) is to express and purify the VLPs with the same validated  workflow and then expose them to eukaryotic  cells. If  successful, the uptake of VLPs and expression of the model protein would  confirm the end-to-end functionality of our platform: packaging, delivery, and expression.
 
-<ModDDes />
-
-### Build
-
-Though we ordered and received the plasmid, we sadly did not have time to test it in the lab.
-Our Engineering Cycle for this module, the plasmid module, ends there.
-
-Through this iterative process, each experiment guided the next step.
-Troubleshooting issues like the lysozyme interference, validating expression
-with sequencing checkpoints, and confirming assembly with PEG precipitation
-and TEM all strengthened our confidence in the system. By moving through
-successive rounds of design, testing, and refinement, we established
-a robust method for producing functional MS2 VLPs in E. coli and laid
-the groundwork for future iterations carrying custom vaccine payloads.
+Through this iterative process, each experiment guided the next step. Troubleshooting issues like the lysozyme interference, validating expression with sequencing checkpoints, and confirming assembly with PEG precipitation and TEM all strengthened our confidence in the system. By moving through successive rounds of design, testing, and refinement, we established a robust method for producing functional MS2 VLPs in E. coli and laid the groundwork for future iterations carrying custom vaccine payloads.
 
 </Dropdown>
 
