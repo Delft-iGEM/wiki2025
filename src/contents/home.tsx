@@ -287,7 +287,7 @@ export function Home() {
         </div>
       </section>
 
-        <div className="relative overflow-hidden rounded-3xl" 
+        <div className="relative overflow-hidden mb-5" 
             style={{
               maskImage:       'linear-gradient(to bottom, transparent 0%, black 20%)',
               WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)'
@@ -298,14 +298,11 @@ export function Home() {
             className="w-full h-96 object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-transparent/20 via-black/10 to-transparent" />
 
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
             <p className="text-lg font-semibold">
               Avian Influenza (Bird Flu) outbreaks are increasing in frequency and severity across Europe.
-            </p>
-            <p className="text-sm opacity-90 mt-2">
-              Illustration
             </p>
           </div>
         </div>
