@@ -156,10 +156,10 @@
     }
 
     table {
-      @apply text-left text-sm text-black;
+      @apply text-left text-sm text-black rounded-md overflow-hidden;
     }
     th {
-      @apply py-1 px-2 bg-amber-100;
+      @apply py-1 px-2 bg-secondary text-white;
     }
     td {
       @apply py-1 px-2;
