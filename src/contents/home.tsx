@@ -287,6 +287,7 @@ export function Home() {
             </div>
           </div>
         </div>
+      </section>
 
         <div className="relative overflow-hidden rounded-3xl" 
             style={{
@@ -349,7 +350,20 @@ export function Home() {
             ))}
           </div>
         </section>
-      </section>
+
+        <section className="w-full relative overflow-hidden -mb-16" 
+            style={{
+              maskImage:       'linear-gradient(to bottom, transparent 0%, black 15%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%)'
+            }}>
+            <img
+              src="https://static.igem.wiki/teams/5649/teamphotos/team-picture-with-franek.webp"
+              alt="Team picture of the six Snaccine team members"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+        </section>
+      
     </div>
   );
 }
