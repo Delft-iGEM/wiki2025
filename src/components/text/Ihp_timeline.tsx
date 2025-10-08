@@ -4,7 +4,7 @@ import { PopoverInteractive } from '../PopoverInteractive';
 export const IHPTimeline: React.FC = () => {
    return (
       <PopoverInteractive>
-         <svg className="h-full w-full font-semibold fill-secondary-foreground text-2xl" viewBox="0 0 1620.004 466.121" version="1.1" id="svg32" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
+         <svg className="h-full w-full font-semibold fill-secondary-foreground text-2xl overflow-visible" viewBox="0 0 1620.004 466.121" version="1.1" id="svg32" xmlns="http://www.w3.org/2000/svg">
             <style>
                {`
                   .prof_brouns, .dr_koster, .dr_van_oosten, .rivm_gmo, 

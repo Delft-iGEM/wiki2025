@@ -13,55 +13,36 @@ export function MembersGrid() {
 
   return (
 <div className="mx-auto flex w-full max-w-7xl flex-wrap justify-center gap-x-3 px-8 pt-8 gap-y-10">
-  <MemberCard firstName="Duncan" lastName="Whyte" src={pathBase+"duncan"+ext} alt="Duncan" role="Project Leader" isFlipped={openCardId === "duncan"} onToggle={() => handleCardToggle("duncan")} bio={
+  <MemberCard firstName="Duncan" lastName="Whyte" src={pathBase+"duncan"+ext} alt="Duncan" role="Project Leader" flags={<><ScotlandFlag className="w-5 h-3" /><NetherlandsFlag className="w-5 h-3" /></>} isFlipped={openCardId === "duncan"} onToggle={() => handleCardToggle("duncan")} bio={
     <>
-    <div className="flex items-center gap-2">
-      <ScotlandFlag className="w-5 h-3" />
-      <NetherlandsFlag className="w-5 h-3" />
-      <span>Nanobiology BSc student</span>
-      Bing bang bee, something about me
-    </div>
+    <span>Nanobiology BSc student</span>
     <br />
+    Bing bang bee, something about me
     </>
   } />
-  <MemberCard firstName="Zofia" lastName="Wojciechowicz" src={pathBase+"zofia"+ext} alt="Zofia" role="Finance and Outreach Manager" isFlipped={openCardId === "zofia"} onToggle={() => handleCardToggle("zofia")} bio={
+  <MemberCard firstName="Zofia" lastName="Wojciechowicz" src={pathBase+"zofia"+ext} alt="Zofia" role="Finance and Outreach Manager" flags={<PolandFlag className="w-5 h-3" />} isFlipped={openCardId === "zofia"} onToggle={() => handleCardToggle("zofia")} bio={
     <>
-    <div className="flex items-center gap-2">
-      <PolandFlag className="w-5 h-3" />
-      <span>Nanobiology BSc student</span>
-    </div>
+    Nanobiology BSc student
     </>
   } flipped />
-  <MemberCard firstName="Tessa" lastName="Ernst" src={pathBase+"tessa"+ext} alt="Tessa" role="Human Practices Manager" isFlipped={openCardId === "tessa"} onToggle={() => handleCardToggle("tessa")} bio={
+  <MemberCard firstName="Tessa" lastName="Ernst" src={pathBase+"tessa"+ext} alt="Tessa" role="Human Practices Manager" flags={<GermanyFlag className="w-5 h-3" />} isFlipped={openCardId === "tessa"} onToggle={() => handleCardToggle("tessa")} bio={
     <>
-    <div className="flex items-center gap-2">
-      <GermanyFlag className="w-5 h-3" />
-      <span>Nanobiology BSc student</span>
-    </div>
+    Nanobiology BSc student
     </>
   } />
-  <MemberCard firstName="Krzysztof" lastName="Zabłocki" src={pathBase+"krzysztof"+ext} alt="Krzysztof" role="Wet Lab Manager" isFlipped={openCardId === "krzysztof"} onToggle={() => handleCardToggle("krzysztof")} bio={
+  <MemberCard firstName="Krzysztof" lastName="Zabłocki" src={pathBase+"krzysztof"+ext} alt="Krzysztof" role="Wet Lab Manager" flags={<PolandFlag className="w-5 h-3" />} isFlipped={openCardId === "krzysztof"} onToggle={() => handleCardToggle("krzysztof")} bio={
     <>
-    <div className="flex items-center gap-2">
-      <PolandFlag className="w-5 h-3" />
-      <span>Nanobiology BSc student</span>
-    </div>
+    Nanobiology BSc student
     </>
   } flipped />
-  <MemberCard firstName="Viktor" lastName="Gilin" src={pathBase+"viktor"+ext} alt="Viktor" role="Dry Lab Manager" isFlipped={openCardId === "viktor"} onToggle={() => handleCardToggle("viktor")} bio={
+  <MemberCard firstName="Viktor" lastName="Gilin" src={pathBase+"viktor"+ext} alt="Viktor" role="Dry Lab Manager" flags={<BulgariaFlag className="w-5 h-3" />} isFlipped={openCardId === "viktor"} onToggle={() => handleCardToggle("viktor")} bio={
     <>
-    <div className="flex items-center gap-2">
-      <BulgariaFlag className="w-5 h-3" />
-      <span>Nanobiology BSc student</span>
-    </div>
+    Nanobiology BSc student
     </>
   } />
-  <MemberCard firstName="Franciszek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role=" Wiki and Graphic Design Manager" isFlipped={openCardId === "franek"} onToggle={() => handleCardToggle("franek")} bio={
+  <MemberCard firstName="Franciszek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role="Graphical design and wiki illustrations" flags={<PolandFlag className="w-5 h-3" />} isFlipped={openCardId === "franek"} onToggle={() => handleCardToggle("franek")} bio={
     <>
-    <div className="flex items-center gap-2">
-      <PolandFlag className="w-5 h-3" />
-      <span>Nanobiology BSc student</span>
-    </div>
+    Nanobiology BSc student
     </>
   } flipped />
 </div>)

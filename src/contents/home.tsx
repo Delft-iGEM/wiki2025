@@ -143,7 +143,7 @@ export function Home() {
             </p>
           </div>
           <div className="mx-auto w-full max-w-lg space-y-6 mt-5">
-            <figure className="relative rounded-4xl transition hover:-translate-y-1 hover:shadow-lg">
+            <figure className="relative rounded-4xl transition hover:shadow-lg">
               <img
                 src="https://static.igem.wiki/teams/5649/chickenscheme/cockledoodledoo2.webp"
                 alt="Chickens eating, with a 3D-printed Snaccine logo on the feeder"
@@ -154,13 +154,13 @@ export function Home() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 to="/description"
-                className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-tertiary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/90 hover:-translate-y-1 hover:shadow-lg"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-tertiary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/90 hover:shadow-lg duration-300"
               >
                 learn more &rarr;
               </Link>
               <Link
                 to="/members"
-                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-tertiary px-6 py-3 text-base font-semibold text-tertiary transition hover:border-accent hover:text-accent hover:-translate-y-1 hover:shadow-lg"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-tertiary px-6 py-3 text-base font-semibold text-tertiary transition hover:border-tertiary/70 hover:text-tertiary/70 hover:shadow-lg duration-300"
               >
                 meet the team &rarr;
               </Link>
@@ -279,7 +279,7 @@ export function Home() {
                 </p>
                 <Link
                   to="/description"
-                  className="inline-flex items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/90 hover:-translate-y-1 hover:shadow-lg"
+                  className="inline-flex items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/80 "
                 >
                   read how it works &rarr;
                 </Link>
