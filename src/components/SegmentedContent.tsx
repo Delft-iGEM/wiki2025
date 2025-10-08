@@ -38,19 +38,7 @@ export function Segments({
 }: SegmentsProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!wrapperRef.current) {
-      return;
-    }
-
-    const activeButton = wrapperRef.current.querySelector<HTMLButtonElement>(
-      "[data-active='true']"
-    );
-
-    if (activeButton) {
-      activeButton.focus({ preventScroll: true });
-    }
-  }, [activeSegment]);
+  
 
   return (
     <div
