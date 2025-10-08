@@ -1,0 +1,112 @@
+import { Content, Header, AccentLine, Dropdown } from "@/components";
+import { Temperature } from "@/components/Temperature";
+
+<Content items="left">
+
+# storage and stability of T7 bacteriophage
+
+### overview
+Understanding the stability of our **T7 bacteriophage** is essential for developing a reliable oral vaccine platform.  
+We wanted to explore how environmental factors such as **temperature**, **pH**, and **encapsulation** affect phage viability during storage and simulated gut passage.  
+
+We framed this work within the **Design–Build–Test–Learn (DBTL)** cycle to evaluate stability and guide formulation strategies for Snaccine.
+
+---
+
+### design — defining the challenge
+For an oral phage vaccine to be effective, the phage must survive both **storage**, **transport** (as a vaccine), and **gastrointestinal transit**.  
+We identified two main stability challenges:
+
+1. **Temperature sensitivity:** Phages are biological entities whose viability can decline quickly outside optimal conditions.
+Though we want the final product to use other phages, we wanted to test T7 to establish a base protocol for testing phage stability.
+2. **Acidic stress:** The low pH of the stomach (in the chicken's case, it is called the gizzard) can inactivate most phages before they reach the intestine. This, for at least one implementation of our vaccine,
+is a good thing: phages which leak into the environment won't survive the stomach, but encapsulated phages (pill) can.
+
+Our goal was to evaluate how long T7 remains viable under different storage conditions and whether encapsulation could protect it in acidic environments.
+
+---
+
+### build — constructing the test systems
+To address both challenges, we developed two complementary assays:
+
+1. **Storage Stability Assay**  
+   Equal aliquots of wild-type T7 were stored at <Temperature celsius="4°C" fahrenheit="39°F" />, **room temperature** (<Temperature celsius="~20°C" fahrenheit="~68°F" />), and <Temperature celsius="37°C" fahrenheit="99°F" /> for up to four weeks.  
+   Samples were removed and analyzed by plaque assay to measure the number of infectious particles (PFU/mL) left.
+
+2. **Gut-like pH and Capsule Stability Assay**  
+   Buffers were prepared at **pH 1.5, 2.0, 3.0, 6.0, 6.8, and 7.4** to mimic stomach and intestinal conditions.  
+   Phages were tested in two formats:  
+   - **Free phage suspension**  
+   - **Encapsulated phage** using **Lonza Capsugel® capsules** filled with 100 µL of T7 stock  
+
+> *Encapsulation allowed us to evaluate whether simple capsule enclosures could shield T7 from low-pH inactivation and release it later under neutral conditions.*
+
+<div className="flex flex-col gap-4 items-center mt-4 mb-6">
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-01-11-16.webp"
+    alt="Capsule and pH stability testing setup"
+    className="rounded-2xl shadow-md w-full max-w-2xl"
+  />
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-01-11-16-1.webp"
+    alt="Capsule setup close-up"
+    className="rounded-2xl shadow-md w-full max-w-2xl"
+  />
+  <p className="text-sm text-gray-600 italic text-center">
+    Experimental setup showing the encapsulated phage exposure under gut-like pH conditions.
+  </p>
+</div>
+
+---
+
+### test — evaluating phage viability
+Practice assays, to perfect the protocol, speed up plaque assays, and ensure reproducibility, were performed first.
+These worked and gave us confidence to proceed with the real experiments.
+
+To our dismay, the Storage and Stability plaque assays all showed no colonies, even on the control (the fridge samples, which worked before).
+We never managed to determine the cause, as our lab work was cut short by the end of the summer holidays and the start of the new academic year,
+which meant we couldn't use our lab anymore to give way to class practicals. We never got to the pH and encapsulation tests.
+
+This means we have no results beyond the test assays (which at least prove that storing in the fridge works).
+
+<div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2 mb-4">
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-00-16-11-2.webp"
+    alt="Plaque assay plate 1"
+    className="rounded-xl shadow-sm w-full"
+  />
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-00-16-11-1.webp"
+    alt="Plaque assay plate 2"
+    className="rounded-xl shadow-sm w-full"
+  />
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-00-16-11.webp"
+    alt="Plaque assay plate 3"
+    className="rounded-xl shadow-sm w-full"
+  />
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-00-16-12.webp"
+    alt="Plaque assay plate 4"
+    className="rounded-xl shadow-sm w-full"
+  />
+</div>
+<p className="text-sm text-gray-600 italic text-center mb-6">
+  Some quick images of successful test plaque assays. On a darker background (no image) we managed to estimate
+  a phage concentration of roughly 100 Plaque-Forming Units (PFU) per 100 &mu;L.
+</p>
+
+---
+
+### learn — reflections and next steps
+Even though the assay did not yield viable plaques, this work provided critical learning outcomes for future experimentation.  
+We established clear protocols for capsule handling, exposure timing, and pH testing, which future iGEM teams can replicate or refine.  
+
+---
+
+### conclusion
+Although only initial practice experiments succeeded, our team achieved a validated and transparent workflow for assessing phage stability.  
+By documenting both successes and setbacks, we ensure that our work contributes meaningful knowledge to the iGEM community and helps future teams design stronger, more reliable phage-based systems.
+
+</Content>
+
