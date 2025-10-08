@@ -41,8 +41,8 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
 <Content items="left">
 
   {/* --- MODULE A: T7 Bacteriophage Engineering --- */}
-  <Dropdown header="Engineering the phage" level={0}>
-    <p>Protocols and procedures for Module A research and development.</p>
+  ### T7 Bacteriophage Engineering
+  Protocols and procedures for Module A research and development.
     
     <DropdownGroup multiple className="mt-4">
       <DropdownItem value="q5pcr" header="Q5 polymerase PCR protocol" level={1} >
@@ -76,11 +76,11 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
         <DunPlaque />
       </DropdownItem>
     </DropdownGroup>
-  </Dropdown>
+  
 
   {/* --- MODULE B: Stability Testing --- */}
-  <Dropdown header="Testing the phage's stability" level={0}>
-    <p>Protocols and procedures for Module B research and development.</p>
+  ### Phage stability testing
+  Protocols and procedures for Module B research and development.
     
     <DropdownGroup multiple className="mt-4">
       <DropdownItem value="ph-temp-stability" header="Long-Term Temperature Stability of T7 Bacteriophage" level={1}>
@@ -102,11 +102,11 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
         <B_plaqueAssayStability/>
       </DropdownItem>
     </DropdownGroup>
-  </Dropdown>
+  
 
   {/* --- MODULE C: MS2 Capsid Expression in E. coli --- */}
-  <Dropdown header={<div>Expressing the MS2 Capsid in <i>E. coli</i></div>} level={0}>
-    <p>Comprehensive protocols for Module C including bacterial transformation, protein expression, and VLP production.</p>
+  ### MS2 Capsid Expression in E. coli
+  Comprehensive protocols for Module C including bacterial transformation, protein expression, and VLP production.
     
     <DropdownGroup single className="mt-4">
       <DropdownItem value="lb-agar-plates" header="Pouring LB Agar Plates" level={1}>
@@ -146,10 +146,13 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
         <C_temImaging />
       </DropdownItem>
     </DropdownGroup>
-  </Dropdown>
+  
+### Improved plaque assay protocol
 
-<Dropdown value="plaque-assay" header="Plaque assay, T7 bacteriophage" level={0}>
-<DunPlaque />
-</Dropdown>
+<DropdownGroup single className="mt-4">
+      <DropdownItem value="plaque-assay" header="Plaque assay, T7 bacteriophage" level={1}>
+        <C_lbAgarPlates />
+      </DropdownItem>
+</DropdownGroup>
 
 </Content>

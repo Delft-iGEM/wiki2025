@@ -43,9 +43,9 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
           className={`relative h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] ${isBackVisible ? "shadow-xl [transform:rotateY(180deg)]" : ""}`}
         >
           {/* Front side */}
-          <div className={`absolute inset-0 flex h-full w-full flex-col items-center gap-3 rounded-2xl p-4 shadow-lg [backface-visibility:hidden] transition-opacity duration-200 ${isBackVisible ? 'opacity-0 pointer-events-none delay-0' : 'opacity-100 delay-300'}`}>
+          <div className={`absolute inset-0 flex h-full w-full flex-col items-center gap-3 rounded-2xl p-4 shadow-lg [backface-visibility:hidden]`}>
             {/* Flip indicator arrow */}
-            <div className="absolute top-3 right-3 opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110">
+            <div className={`absolute top-3 right-3 opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110`}>
               <svg 
                 width="20" 
                 height="20" 
@@ -73,16 +73,16 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
             />
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 text-xl">
-                {flags && <div className="flex gap-1">{flags}</div>}
                 <div>
                   <span className="font-semibold">{firstName}</span> {lastName}
                 </div>
+                {flags && <div className="flex">{flags}</div>}
               </div>
               {role ? <div className="text-md text-neutral-500">{role}</div> : null}
             </div>
           </div>
           {/* Back side */}
-          <div className={`absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-primary/20 p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] transition-opacity duration-300 ${isBackVisible ? 'opacity-100 delay-100' : 'opacity-0 pointer-events-none delay-0'}`}>
+          <div className={`absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-primary/20 p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]`}>
             <div className="text-md text-muted-foreground">{bio}</div>
           </div>
         </div>
