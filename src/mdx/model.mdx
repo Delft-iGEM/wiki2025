@@ -1,4 +1,5 @@
 import { Content, Header, AccentLine, Dropdown } from "@/components";
+import { Temperature } from "@/components/Temperature";
 
 <Header>
 
@@ -74,7 +75,7 @@ The MS2 VLPs are icosahedral capsids composed of 180 monomers in three different
   </figure>
 </div>
 
-Next, we specified the condition types to be tested in this module. While the gut can contain a diverse and dynamic ion content, we recognized **sodium ions** as one of the most essential ions whose concentration can vastly differ in different gut regions and different physiological states, from as high as 150 mM to as low as 30 mM [2]. Thus, we decided to screen 8 concentrations in this range: **30 mM, 40 mM, 50 mM, 60 mM, 80 mM, 100 mM, 120 mM** and **150mM** of sodium. Additionally, temperature can potentially influence the stability of VLPs and thus we decided to explore 3 relevant temperature conditions for our concept: **18°C**, which is the temperature at which we successfully induced *E. coli* to produce VLPs; **37°C**, as the optimal *E. coli* growth condition as well as the body temperature of humans; and **42°C**, the body temperature of chickens.
+Next, we specified the condition types to be tested in this module. While the gut can contain a diverse and dynamic ion content, we recognized **sodium ions** as one of the most essential ions whose concentration can vastly differ in different gut regions and different physiological states, from as high as 150 mM to as low as 30 mM [2]. Thus, we decided to screen 8 concentrations in this range: **30 mM, 40 mM, 50 mM, 60 mM, 80 mM, 100 mM, 120 mM** and **150mM** of sodium. Additionally, temperature can potentially influence the stability of VLPs and thus we decided to explore 3 relevant temperature conditions for our concept: <Temperature celsius="18°C" fahrenheit="64°F" />, which is the temperature at which we successfully induced *E. coli* to produce VLPs; <Temperature celsius="37°C" fahrenheit="99°F" />, as the optimal *E. coli* growth condition as well as the body temperature of humans; and <Temperature celsius="42°C" fahrenheit="108°F" />, the body temperature of chickens.
 
 ---
 
@@ -132,7 +133,7 @@ For all conditions a plateau was reached in the first 200 ns while already in th
 
 ### Hydrogen bonds
 
-We analyzed the total number of hydrogen bonds formed in the structure. We visualized this quantity through a histogram that shows the distribution of the number of hydrogen bonds from the whole timespan of the MD simulation. Not surprisingly all of them follow a Gaussian distribution. For most salt conditions no apparent changes were observed. However, interestingly for the lowest concentration of 30 mM a noticeably lower mean peak was observed. On the other hand, the temperature showed visible effect on the hydrogen bond distribution. While 37°C and 42°C showed relatively similar distributions, the 18°C noticeably shifted the peak of the Gaussian to the right. This reflects more persistent hydrogen bond formation as expected when thermal fluctuations are less present.
+We analyzed the total number of hydrogen bonds formed in the structure. We visualized this quantity through a histogram that shows the distribution of the number of hydrogen bonds from the whole timespan of the MD simulation. Not surprisingly all of them follow a Gaussian distribution. For most salt conditions no apparent changes were observed. However, interestingly for the lowest concentration of 30 mM a noticeably lower mean peak was observed. On the other hand, the temperature showed visible effect on the hydrogen bond distribution. While <Temperature celsius="37°C" fahrenheit="99°F" /> and <Temperature celsius="42°C" fahrenheit="108°F" /> showed relatively similar distributions, the <Temperature celsius="18°C" fahrenheit="64°F" /> noticeably shifted the peak of the Gaussian to the right. This reflects more persistent hydrogen bond formation as expected when thermal fluctuations are less present.
 
 <figure style={{ textAlign: 'center' }}>
   <img
@@ -185,7 +186,7 @@ In our RMSF analysis, we observe that one of the regions with higher fluctuation
   <figcaption><em>Figure 7: RMSF plots for different salt conditions. a) Coloured PyMol structure of an MS2 hexamer as a reference. b) RMSF plot chain A1 and c) B2.</em></figcaption>
 </figure> 
 
-Interestingly when examined over the screened temperature conditions, the AB loops showed noticeably higher fluctuations for 37°C and 42°C compared to 18°C. This is not particularly surprising as higher temperature would directly result in more thermal fluctuations and thus higher RMSF in more flexible regions of the protein. Surprisingly, however most often 42°C didn't result in noticeably higher fluctuations than 37°C. In fact in most cases MS2 was observed to have a higher fluctuations for 37°C. In contrast however, in the B2 monomer all temperatures showed indistinguishable levels of fluctuation (see Fig.). A similar pattern, was observed for other highly fluctuating regions in the MS2 backbone.
+Interestingly when examined over the screened temperature conditions, the AB loops showed noticeably higher fluctuations for <Temperature celsius="37°C" fahrenheit="99°F" /> and <Temperature celsius="42°C" fahrenheit="108°F" /> compared to <Temperature celsius="18°C" fahrenheit="64°F" />. This is not particularly surprising as higher temperature would directly result in more thermal fluctuations and thus higher RMSF in more flexible regions of the protein. Surprisingly, however most often <Temperature celsius="42°C" fahrenheit="108°F" /> didn't result in noticeably higher fluctuations than <Temperature celsius="37°C" fahrenheit="99°F" />. In fact in most cases MS2 was observed to have a higher fluctuations for <Temperature celsius="37°C" fahrenheit="99°F" />. In contrast however, in the B2 monomer all temperatures showed indistinguishable levels of fluctuation (see Fig.). A similar pattern, was observed for other highly fluctuating regions in the MS2 backbone.
 
 <figure style={{ textAlign: 'center' }}>
   <img
