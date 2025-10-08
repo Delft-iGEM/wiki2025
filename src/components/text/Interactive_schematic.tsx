@@ -5,17 +5,17 @@ export const InteractiveSchematic: React.FC = () => {
    return (
       <PopoverInteractive>
          <svg viewBox="0 0 1152.731 543.244" xmlns="http://www.w3.org/2000/svg" className="h-full w-full font-semibold text-xs overflow-visible border py-5 px-10 rounded-3xl bg-white">
-            <style>
-               {`
-     
-                  .step1, .step2, .step4, .step5, .step7, .step8, .step9, .step10 {
-                     transition: transform 0.35s ease, filter 0.35s ease, opacity 0.35s ease;
-                  }
-                  .step1:hover, .step2:hover, .step4:hover, .step5:hover, .step7:hover, .step8:hover, .step9:hover, .step10:hover {
-                     transform: translateY(-10px);
-                  }
-               `}
-            </style>
+               <style>
+                  {`
+        
+                     .step1, .step2, .step4, .step5, .step7, .step8, .step9, .step10 {
+                        transition: transform 0.35s ease, filter 0.35s ease, opacity 0.35s ease;
+                     }
+                     .step1:hover, .step2:hover, .step4:hover, .step5:hover, .step7:hover, .step8:hover, .step9:hover, .step10:hover {
+                        transform: translateY(-10px);
+                     }
+                  `}
+               </style>
             <defs>
                <mask maskUnits="userSpaceOnUse" x="0" y="0" width="1" height="1" id="prefix__q">
                   <image width="1" height="1" preserveAspectRatio="none"
