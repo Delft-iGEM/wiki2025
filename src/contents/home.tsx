@@ -31,7 +31,7 @@ function StatCard({
   number, 
   title, 
   description,
-  numberColor = "text-primary" 
+  numberColor = "text-tertiary" 
 }: {
   number: string;
   title: string;
@@ -80,7 +80,7 @@ function StatCard({
       <div className={`h-full w-full transition-transform duration-500 group-hover:-translate-y-1 ${isFlipped ? "-translate-y-1" : ""}`}>
         <div className={`relative h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] ${isFlipped ? "shadow-xl [transform:rotateY(180deg)]" : ""} group-hover:[transform:rotateY(180deg)]`}>
           {/* Front side */}
-          <div className="absolute inset-0 flex items-center justify-center rounded-2xl border border-border bg-card shadow-lg [backface-visibility:hidden]">
+          <div className="absolute inset-0 flex items-center justify-center rounded-2xl border border-tertiary bg-card shadow-lg [backface-visibility:hidden]">
             {/* Flip indicator arrow */}
             <div className="absolute top-3 right-3 opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110">
               <svg 
@@ -103,7 +103,7 @@ function StatCard({
             <div className={`text-5xl font-bold ${numberColor}`}>{number}</div>
           </div>
           {/* Back side */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl border border-tertiary bg-card p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
             <h3 className="mb-2 text-lg font-semibold">{title}</h3>
             <div className="text-sm text-muted-foreground text-balance">
               {description}
