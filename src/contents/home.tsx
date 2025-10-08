@@ -27,11 +27,11 @@ const quickLinks = [
 ];
 
 // StatCard component with click/touch functionality
-function StatCard({ 
-  number, 
-  title, 
+function StatCard({
+  number,
+  title,
   description,
-  numberColor = "text-tertiary" 
+  numberColor = "text-tertiary"
 }: {
   number: string;
   title: string;
@@ -67,7 +67,7 @@ function StatCard({
   );
 
   return (
-    <div 
+    <div
       className="group relative h-40 cursor-pointer select-none [perspective:1200px]"
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
@@ -83,14 +83,14 @@ function StatCard({
           <div className="absolute inset-0 flex items-center justify-center rounded-2xl border border-tertiary bg-card shadow-lg [backface-visibility:hidden]">
             {/* Flip indicator arrow */}
             <div className="absolute top-3 right-3 opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110">
-              <svg 
-                width="16" 
-                height="16" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
                 strokeLinejoin="round"
                 className="text-neutral-600"
               >
@@ -169,7 +169,10 @@ export function Home() {
         </div>
       </section>
       {/* --- Avian Influenza Section --- */}
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 mt-10">
+
+      
+
+      <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 pt-10 pb-24">
 
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div className="space-y-4 text-center lg:text-left">
@@ -178,10 +181,10 @@ export function Home() {
               Bird flu, specifically Highly Pathogenic Avian Influenza H5N1 (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds across the world.
 
             </p>
-            
+
             <AccentLine className="mx-auto lg:mx-0" />
           </div>
-          
+
           <div className="flex justify-center lg:justify-end">
             <img
               src="https://static.igem.wiki/teams/5649/teamphotos/small-chicks-picture-with-snaccine-logo.webp"
@@ -191,34 +194,13 @@ export function Home() {
             />
           </div>
         </div>
+      </section>
 
-
-        <div className="relative overflow-hidden rounded-b-3xl" 
-            style={{
-              maskImage:       'linear-gradient(to bottom, transparent 0%, black 40%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 40%)'
-            }}>
-          <img
-            src="https://static.igem.wiki/teams/5649/teamphotos/chickens-with-flowers-for-home-page.avif"
-            alt="Image of chickens in a farm setting, a coop in the background"
-            className="w-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-
-          <div className="absolute bottom-0 left-0 right-0 px-8 text-white">
-            <p className="text-lg opacity-90 max-w-lg font-semibold ml-auto text-right text-shadow-lg">
-              In the Netherlands, as in most countries, the main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
-            </p>
-            <p className="text-sm opacity-90 mt-2">
-              The Netherlands has the highest poultry density in Europe. 
-            </p>
-          </div>
-        </div>
+      <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-24 sm:px-6 ">
 
         {/* --- Stats Cards --- */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <StatCard 
+          <StatCard
             number="+29%"
             title="Egg prices since 2022"
             description={
@@ -227,8 +209,8 @@ export function Home() {
               </>
             }
           />
-          
-          <StatCard 
+
+          <StatCard
             number="1264"
             title="Wild bird cases"
             description={
@@ -237,8 +219,8 @@ export function Home() {
               </>
             }
           />
-          
-          <StatCard 
+
+          <StatCard
             number="8M"
             title="Birds culled in four months"
             description={
@@ -250,7 +232,33 @@ export function Home() {
             numberColor="text-destructive"
           />
         </div>
+      </section>
 
+      <section className="relative overflow-hidden mb-5 -mt-140 -z-10"
+        style={{
+          maskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)'
+        }}>
+        <img
+          src="https://static.igem.wiki/teams/5649/teamphotos/chickens-with-flowers-for-home-page.avif"
+          alt="Image of chickens in a farm setting, a coop in the background"
+          className="w-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+
+        <div className="absolute bottom-20 left-0 right-0 px-8 text-white text-center">
+          <p className="text-lg opacity-90 max-w-lg font-semibold mx-auto text-shadow-4xl">
+            In the Netherlands, as in most countries, the main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
+          </p>
+          <p className="text-sm opacity-90 mt-2">
+            The Netherlands has the highest poultry density in Europe.
+          </p>
+        </div>
+      </section>
+
+
+      <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-24 sm:px-6">
 
         {/* --- Snaccine Answer Section --- */}
         <div className="rounded-3xl bg-gradient-to-br from-primary/20 to-transparent px-8 py-12">
@@ -262,9 +270,9 @@ export function Home() {
                   alt="A jar of snack capsules representing Snaccine, one capsule is open with phages spilling out"
                   className="w-full h-auto"
                   loading="lazy"
-                  
+
                 />
-                
+
               </div>
               <div className="mr-auto w-full max-w-md">
                 <h3 className="text-2xl font-semibold">Snaccine is the answer to HPAI outbreaks</h3>
@@ -287,78 +295,78 @@ export function Home() {
         </div>
       </section>
 
-        <div className="relative overflow-hidden mb-5" 
-            style={{
-              maskImage:       'linear-gradient(to bottom, transparent 0%, black 20%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)'
-            }}>
-          <img
-            src="https://static.igem.wiki/teams/5649/roundicons/illustration-sans-titre-7-min.webp"
-            alt="Illustrated chicken image"
-            className="w-full h-96 object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-transparent/20 via-black/10 to-transparent" />
+      <section className="relative overflow-hidden mb-5"
+        style={{
+          maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)'
+        }}>
+        <img
+          src="https://static.igem.wiki/teams/5649/roundicons/illustration-sans-titre-7-min.webp"
+          alt="Illustrated chicken image"
+          className="w-full h-96 object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent/20 via-black/10 to-transparent" />
 
-          <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-            <p className="text-lg font-semibold">
-              Avian Influenza (Bird Flu) outbreaks are increasing in frequency and severity across Europe.
-            </p>
-          </div>
+        <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+          <p className="text-lg font-semibold">
+            Avian Influenza (Bird Flu) outbreaks are increasing in frequency and severity across Europe.
+          </p>
+        </div>
+      </section>
+
+      {/* --- Quick Links Section (updated) --- */}
+      <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-24 sm:px-6">
+        <div className="space-y-4 text-center">
+          <AccentLine className="mx-auto" />
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Jump into the details
+          </h2>
+          <p className="mx-auto max-w-3xl text-base text-muted-foreground">
+            From wet lab notebooks to inclusive design, our documentation captures the story of Snaccine.
+            Pick a page to start exploring.
+          </p>
         </div>
 
-        {/* --- Quick Links Section (updated) --- */}
-        <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-24 sm:px-6">
-          <div className="space-y-4 text-center">
-            <AccentLine className="mx-auto" />
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              Jump into the details
-            </h2>
-            <p className="mx-auto max-w-3xl text-base text-muted-foreground">
-              From wet lab notebooks to inclusive design, our documentation captures the story of Snaccine.
-              Pick a page to start exploring.
-            </p>
-          </div>
+        <div className="grid gap-6 lg:grid-cols-3">
+          {quickLinks.map((link) => (
+            <Link
+              key={link.title}
+              to={link.to}
+              className="group relative flex h-full flex-col justify-between rounded-2xl border border-border bg-card/80 p-6 pt-20 shadow-sm transition hover:-translate-y-1 hover:border-accent hover:shadow-lg"
+            >
+              <img
+                src={link.image}
+                alt={link.title}
+                className={`absolute left-1/2 -translate-x-1/2 object-contain transition-transform duration-300 ${link.iconStyle}`}
+              />
+              <div className="space-y-4 text-center mt-12">
+                <h3 className="text-xl font-semibold text-primary group-hover:text-accent">
+                  {link.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">{link.copy}</p>
+              </div>
+              <span className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-semibold text-accent group-hover:gap-3">
+                Read more →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            {quickLinks.map((link) => (
-              <Link
-                key={link.title}
-                to={link.to}
-                className="group relative flex h-full flex-col justify-between rounded-2xl border border-border bg-card/80 p-6 pt-20 shadow-sm transition hover:-translate-y-1 hover:border-accent hover:shadow-lg"
-              >
-                <img
-                  src={link.image}
-                  alt={link.title}
-                  className={`absolute left-1/2 -translate-x-1/2 object-contain transition-transform duration-300 ${link.iconStyle}`}
-                />
-                <div className="space-y-4 text-center mt-12">
-                  <h3 className="text-xl font-semibold text-primary group-hover:text-accent">
-                    {link.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{link.copy}</p>
-                </div>
-                <span className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-semibold text-accent group-hover:gap-3">
-                  Read more →
-                </span>
-              </Link>
-            ))}
-          </div>
-        </section>
+      <section className="w-full relative overflow-hidden -mb-16"
+        style={{
+          maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%)'
+        }}>
+        <img
+          src="https://static.igem.wiki/teams/5649/teamphotos/team-picture-with-franek.webp"
+          alt="Team picture of the six Snaccine team members"
+          className="w-full h-auto"
+          loading="lazy"
+        />
+      </section>
 
-        <section className="w-full relative overflow-hidden -mb-16" 
-            style={{
-              maskImage:       'linear-gradient(to bottom, transparent 0%, black 15%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%)'
-            }}>
-            <img
-              src="https://static.igem.wiki/teams/5649/teamphotos/team-picture-with-franek.webp"
-              alt="Team picture of the six Snaccine team members"
-              className="w-full h-auto"
-              loading="lazy"
-            />
-        </section>
-      
     </div>
   );
 }
