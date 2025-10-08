@@ -226,6 +226,11 @@ function App() {
 
   const title = currentPath in pathMapping ? pathMapping[currentPath].title : "Not Found";
 
+  // root aware scroll
+  useEffect(() => {
+    if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname, location.hash]);
+
   useEffect(() => {
     document.title = `${title || ""} | ${import.meta.env.VITE_TEAM_NAME} - iGEM ${import.meta.env.VITE_TEAM_YEAR}`;
   }, [title]);

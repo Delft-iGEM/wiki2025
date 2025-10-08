@@ -12,4 +12,5 @@ export * from "./text/Interactive_schematic.tsx";
 export * from "./text/scroll_top.tsx";
 export * from "./text/box.tsx";
 export * from "./text/box_grid.tsx";
+export * from "./text/hover_pic";
 export { SegmentedContent } from "./SegmentedContent.tsx";

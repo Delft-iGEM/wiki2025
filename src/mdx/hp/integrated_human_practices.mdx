@@ -1,14 +1,13 @@
-import { Content, AccentLine, Dropdown, IHPTimeline, DownstreamPurificationFlow, OptionFork, ScrollTop, Box, BoxGrid } from "@/components";
+import { Content, AccentLine, Dropdown, IHPTimeline, DownstreamPurificationFlow, OptionFork, ScrollTop, Box, BoxGrid, HoverPic } from "@/components";
 
-<style jsx global>{`
-  /* Make all dropdowns on this page transparent */
-  .dropdown-item {
-    --dropdown-color: transparent !important;
-  }
-`}</style>
-
-
-
+<div
+  style={{
+    
+    '--section': 'transparent',
+    
+    '--dropdown-color': 'transparent',
+  }}
+>
 <Content items="left">
 
 <AccentLine/>
@@ -26,9 +25,18 @@ This Integrated Human Practices section is the story of the second, crucial part
 
 Our project's development was an iterative cycle of design, consultation, and adaptation. Therewith, we have addressed the second part of our cycle:
 
-![Integrated Human Practices Cycle](https://static.igem.wiki/teams/5649/hp/snaccine-cycle-ihp.webp)
-
+<figure style={{ textAlign: 'center' }}>
+  <img
+    src="https://static.igem.wiki/teams/5649/hp/snaccine-cycle-ihp.webp"
+    alt="Diagram of the Integrated Human Practice Cycle"
+    width="700"
+    style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }}
+  />
+  <figcaption><em>Figure 1: The Integrated Human Practices Cycle</em></figcaption>
+</figure>
 <br/>
+
+
 <Dropdown header="Stakeholder Engagement" level={0}>
 
 #### **1. Upstream Engagement: Navigating Regulation and Refining Science**
@@ -64,13 +72,17 @@ To address public perception and ensure our message was clear and accessible, we
 
 <IHPTimeline />
 <br/>
+<p style={{ textAlign: 'center', width: '100%', display: 'block', margin: '0 auto', textAlignLast: 'center' }}>
+  <em>Figure 2: Interactive Timeline of Stakeholder Engagement</em>
+</p>
+<br/>
 <br/>
 
-## **Our Project's Design Pivots**
+## **Design Pivots**
 
 Our project evolved through a series of critical design pivots, driven by integrating feedback from multiple sources.
 
-<Dropdown header="Integration Loop 1: Grounding a Vision in Scientific Feasibility" level={0} >
+<Dropdown header="Integration Loop 1: Scientific Feasibility" level={0} >
 
 Our project began with an ambitious vision: to create an oral mRNA vaccination platform using bacteriophages to overcome the limitations of current vaccines. First, we needed to draw up a plan for scientific feasibility.
 
@@ -85,14 +97,14 @@ With these components defined, we could outline an achievable proof-of-concept: 
 <DownstreamPurificationFlow />
 </Dropdown>
 
-<Dropdown header="Integration Loop 2: Prioritizing Biocontainment in Response to Regulatory Concerns" level={0}>
+<Dropdown header="Integration Loop 2: Biocontainment" level={0}>
 
 Our initial design featured a replicative lytic phage system, which offered the advantage of high efficacy from a single, small dose through amplification in the gut. While potent, this approach raised significant biosafety questions that became the focus of a major design pivot.
 
 A consultation with the GMO Office at the Dutch National Institute for Public Health and the Environment (RIVM) reshaped our approach. The experts' primary concerns were:
 
--   **Environmental Shedding:** RIVM clarified that our entire system (the engineered T7 phage, the _E. coli_ host, and the resulting mRNA-loaded VLPs) would be regulated as a single GMO. The key drawback of our replicative design was that biologically active phages would be continuously shed into the environment. Shedding primarily occurs from the manure, which includes traces of Snaccine, and will be spread through wind, water and other animals.
--   **Regulatory Burden:** This persistence would require a complex Environmental Risk Assessment (ERA) from administration to manure. For field trials, this would necessitate impractical biocontainment measures like absolute containment of the animals, and their side products, and a destroy all policy after completing the field trial.
+- **Environmental Shedding:** RIVM clarified that our entire system (the engineered T7 phage, the _E. coli_ host, and the resulting mRNA-loaded VLPs) would be regulated as a single GMO. The key drawback of our replicative design was that biologically active phages would be continuously shed into the environment. Shedding primarily occurs from the manure, which includes traces of Snaccine, and will be spread through wind, water and other animals.<br/><br/>
+- **Regulatory Burden:** This persistence would require a complex Environmental Risk Assessment (ERA) from administration to manure. For field trials, this would necessitate impractical biocontainment measures like absolute containment of the animals, and their side products, and a destroy all policy after completing the field trial.<br/>
 
 Confronted with this feedback, we weighed the trade-off between the single-dose efficiency of a replicative system and the superior biosafety of a non-replicative alternative. RIVM experts directly suggested a non-replicative phage that produces VLPs but cannot replicate itself as a better containment strategy. This design releases essential concerns of the replicative phage.
 
@@ -102,21 +114,24 @@ After careful deliberation, our team prioritized the non-replicative phage syste
 Therefore, we concluded that the benefits of inherent biocontainment, and the proactive mitigation of ecological risks were essential for responsible innovation.
 </Dropdown>
 
-<Dropdown header="Integration Loop 3: Designing a DIVA-Compatible Vaccine for Real-World Application" level={0}>
+<Dropdown header="Integration Loop 3: DIVA-Compatibility" level={0}>
 
 Initially, our project aimed to deliver a generic mRNA vaccine for Avian Influenza (AI). Through consultations with experts we discovered that the specific content of the mRNA payload was critical for adoption. The feedback from three distinct stakeholder groups converged on a single, elegant solution .
 
-- **The Practical Challenge:** Field trial experts raised the issue of surveillance. For any HPAI vaccination program to be viable, authorities must be able to **D**ifferentiate **I**nfected from **V**accinated **A**nimals (DIVA). DIVA is a European wide surveillance strategy, that Snaccine must be compatible with. We addressed this by limiting our vaccine to encode only the Hemagglutinin (HA) protein. This enables the use of simple diagnostic tests to distinguish vaccine-induced immunity from natural infection. In the case of a natural infection, the immune system responds with multiple proteins, while ours expresses only one. With simple PCR, and ELISA diagnostics, Snaccine can be traced.
-- **The Regulatory Perspective (RIVM):** Our consultation with the RIVM GMO Office highlighted a biosafety risk. The experts warned that the genetic insert itself is a key factor in a GMO's risk classification, as it is assessed based on the organism of origin. HPAI is highly pathogenic, which raises the risk classification. Choosing to express only a single, non-infectious component like the HA protein inherently lowers the product's risk profile.
-- **The Economic Imperative (AVINED):** Finally, Erik de Jonge from the Dutch poultry trade organization AVINED connected these points to economics, stating that international trade is the primary barrier to widespread HPAI vaccination. Trading partners will not accept poultry from vaccinated regions without a guarantee that flocks are free from active infection. This elevated the DIVA principle from a practical tool to an absolute economic necessity for farmers.
+- **The Practical Challenge:** Field trial experts raised the issue of surveillance. For any HPAI vaccination program to be viable, authorities must be able to **D**ifferentiate **I**nfected from **V**accinated **A**nimals (DIVA). DIVA is a European wide surveillance strategy, that Snaccine must be compatible with. We addressed this by limiting our vaccine to encode only the Hemagglutinin (HA) protein. This enables the use of simple diagnostic tests to distinguish vaccine-induced immunity from natural infection. In the case of a natural infection, the immune system responds with multiple proteins, while ours expresses only one. With simple PCR, and ELISA diagnostics, Snaccine can be traced.<br/><br/>
+- **The Regulatory Perspective (RIVM):** Our consultation with the RIVM GMO Office highlighted a biosafety risk. The experts warned that the genetic insert itself is a key factor in a GMO's risk classification, as it is assessed based on the organism of origin. HPAI is highly pathogenic, which raises the risk classification. Choosing to express only a single, non-infectious component like the HA protein inherently lowers the product's risk profile.<br/><br/>
+- **The Economic Imperative (AVINED):** Finally, Erik de Jonge from the Dutch poultry trade organization AVINED connected these points to economics, stating that international trade is the primary barrier to widespread HPAI vaccination. Trading partners will not accept poultry from vaccinated regions without a guarantee that flocks are free from active infection. This elevated the DIVA principle from a practical tool to an absolute economic necessity for farmers.<br/>
 
 **Pivotal Change:** <br/> 
-The powerful convergence of these perspectives drove our decision to pivot from a generic mRNA vaccine to a specific design encoding only the HA protein of the Avian Influenza virus. This single change simultaneously enables DIVA surveillance, minimizes biosafety risks, and preserves international trade compatibility, ensuring a thoughtfully designed solution for real-world challenges.
-
-This strategic pivot was directly translated into our wet lab execution. Our first plasmid was engineered as a versatile backbone, with the space behind the RNA hairpin loop left open for any insert sequence. To integrate our new approach, we constructed a second plasmid. In this version, we inserted a sequence for Green Fluorescent Protein (GFP) to serve as a proof-of-concept analogue for the HA protein. You can read more on this part of our project in this Wet Lab Section.
+The convergence of these perspectives drove our decision to pivot from a generic mRNA vaccine to a specific design encoding only the HA protein of the Avian Influenza virus. This single change simultaneously enables DIVA surveillance, minimizes biosafety risks, and preserves international trade compatibility, ensuring a thoughtfully designed solution for real-world challenges. <br/><br/>
+This strategic pivot was directly translated into our wet lab execution. 
+Our <HoverPic src="https://static.igem.wiki/teams/5649/hp/module-c-plasmid-schematic.webp" alt="Plasmid schematic" placement="top" width={600}>first plasmid</HoverPic> 
+was engineered as a versatile backbone, with the space behind the RNA hairpin loop left open for any insert sequence. 
+To integrate our new approach, we constructed a <HoverPic src="https://static.igem.wiki/teams/5649/hp/module-d-plasmid-schematic.webp" alt="Second plasmid schematic" placement="top" width={900}> second plasmid </HoverPic>. 
+In this version, we inserted a sequence for Enhanced Green Fluorescent Protein (EGFP) to serve as a proof-of-concept analogue for the HA protein. You can read more on this part of our project in this Wet Lab Section.
 </Dropdown>
 
-<Dropdown header="Integration Loop 4: Shaping a Manufacturing Strategy" level={0}>
+<Dropdown header="Integration Loop 4: Manufacturing Strategy" level={0}>
 
 With our project's molecular biology framework established, we engaged an expert to guide the translation of our scientific design into an industrial scale. Through two iterative consultations, Dr. Ir. Luuk van Oosten, a Quality & Manufacturing specialist at Batavia Biosciences, provided the critical insights needed to shape our production strategy.
 
@@ -151,14 +166,14 @@ A final concentration and buffer exchange step, typically performed with Tangent
 
 </Dropdown>
 
-<Dropdown header = "Integration Loop 5: From a Product Concept to a User-Defined Formulation Challenge" level={0}>
+<Dropdown header = "Integration Loop 5: Formulation Challenge" level={0}>
 
 Our initial design centered on what we assumed was the most straightforward oral delivery method: mixing Snaccine with poultry feed. During our discussions with Luuk van Oosten, he explained that the choice between a liquid or a freeze-dried (lyophilized) powder could not be made without the knowledge of end-users. Any decision made without this knowledge would be based on a flawed assumption.
 
 Therefore, we consulted directly with downstream stakeholders, whose feedback was clearly pointing toward a new design direction.
 
--   **The Farmer's Perspective:** Johannis Florid, a hobby farmer, highlighted a critical practical issue: chickens peck at larger items like pills or granules, making dosing unreliable. He stated that a **"powder or mix-in format for feed or water would be far more practical"** .
--   **The Veterinarian's Verdict:** Dr. Eline Kamerik, a practicing veterinarian, confirmed this preference, stating that for mass-administered poultry products, the industry standard is drinking water, not feed. She explained that water administration is **"more reliable as every bird gets some dose"** and is simply "easier for farmers" with large flocks. Field trial specialists corroborated this, noting that water delivery is a proven method, while feed-based vaccination remains experimental.
+- **The Farmer's Perspective:** Johannis Florid, a hobby farmer, highlighted a critical practical issue: chickens peck at larger items like pills or granules, making dosing unreliable. He stated that a **"powder or mix-in format for feed or water would be far more practical"** .<br/><br/>
+- **The Veterinarian's Verdict:** Dr. Eline Kamerik, a practicing veterinarian, confirmed this preference, stating that for mass-administered poultry products, the industry standard is drinking water, not feed. She explained that water administration is **"more reliable as every bird gets some dose"** and is simply "easier for farmers" with large flocks. Field trial specialists corroborated this, noting that water delivery is a proven method, while feed-based vaccination remains experimental.<br/>
 
 **New Engineering Challenge:**
 
@@ -166,7 +181,7 @@ We pivoted our design toward a stable, water-soluble, lyophilized powder.
 
 However, this shift from an encapsulated product to a soluble one introduces a critical engineering challenge. Our T7 phage system was initially designed for encapsulation, a method that served a dual purpose: it shielded the phages from stomach acid in the targeted animal and functioned as an elegant biosafety measure in case of environmental spread. Without encapsulation, shed phages in manure would be naturally neutralized by the gastric acid of any non-target animal, preventing unintended vaccination.
 
-Losing this protective encapsulation creates a design trade-off between the user-friendliness demanded by stakeholders and the original biocontainment. This dilemma forced us to consider two potential paths forward:
+Losing this protective encapsulation creates a design trade-off between the user-friendliness demanded by stakeholders and the original biocontainment. This dilemma forced us to consider two potential paths forward.
 
 <OptionFork 
     leftTitle = "Option 1: Develop a Protective, Water-Soluble Formulation."
@@ -191,18 +206,18 @@ After weighing the options, we concluded that **Option 1 best integrates all sta
 Therefore, our project's primary formulation goal has been further refined: **to develop a stable, lyophilized powder of micro-encapsulated T7 phages.** This demonstrates a direct and iterative response to the full spectrum of stakeholder feedback, from the farm to the regulatory office.
 </Dropdown>
 
-<Dropdown header="Integration Loop 6: Building Two-Way Communications" level={0}>
+<Dropdown header="Integration Loop 6: Communication" level={0}>
 
 Our initial communication plan was based creating public material, that balances scientific accuracy with readability. A series of insightful consultations revealed the limitations of this one-way approach and reshaped our strategy into an iterative, two-way dialogue to build public trust.
 
--   **The Science Communicator's Advice:** Dr. Charlotte Koster advised us to move beyond simply broadcasting information and instead create an iterative feedback loop. She recommended a two-way communication approach: listening to questions and concerns of the non-expert audiences, and refining transparent communication based on their feedback.
--   **Identifying the Channels of Trust:** Our conversations with end-users revealed how to implement this. Johannis Florid stated that he places his trust primarily in his "veterinarian and fellow farmers, rather than government authorities or complex scientific reports," which he feels do not reflect the daily reality of farm life. Eline Kamerik validated that veterinarians are a critical channel for communication and information .
+- **The Science Communicator's Advice:** Dr. Charlotte Koster advised us to move beyond simply broadcasting information and instead create an iterative feedback loop. She recommended a two-way communication approach: listening to questions and concerns of the non-expert audiences, and refining transparent communication based on their feedback.<br/><br/>
+- **Identifying the Channels of Trust:** Our conversations with end-users revealed how to implement this. Johannis Florid stated that he places his trust primarily in his "veterinarian and fellow farmers, rather than government authorities or complex scientific reports," which he feels do not reflect the daily reality of farm life. Eline Kamerik validated that veterinarians are a critical channel for communication and information .
 
 **Pivotal Change:** <br/> 
 We shifted our focus from creating content to listening. We engaged with 12 members of the general public and asked for their unfiltered concerns, which included practical, and safety-oriented questions. These questions now form the structure of our Q&A. Furthermore, these materials can be designed for use by trusted intermediaries, such as veterinarians, to facilitate conversations with farmers.
 </Dropdown>
 
-<Dropdown header="Putting Two-Way Communication into Practice" level={0}>
+<Dropdown header="Communication in Practice" level={0}>
 
 Here we put the insights from Iteration Loop 6 into direct practice. The key questions we collected are organized below in an Q&A.
 
@@ -297,16 +312,29 @@ This realization reframes the future trajectory of the Snaccine project. For lar
 
 HPAI was a case study to showcase the core capabilities of the Snaccine platform:
 
--   **Long-term stability** through lyophilization.
--   **Large-scale administration** via drinking water.
--   **Ease of oral delivery**, aligning with industry practices.
--   **Rapid epidemic intervention** without a cold chain.
+- **Long-term stability** through lyophilization. <br/><br/>
+- **Large-scale administration** via drinking water.<br/><br/>
+- **Ease of oral delivery**, aligning with industry practices.<br/><br/>
+- **Rapid epidemic intervention** without a cold chain.
 
 However, the true power of this platform lies in its inherent **modularity**. The bacteriophage, the bacterial host, and the mRNA insert can be adapted. This makes Snaccine a versatile vaccination platform.
 
 Ultimately, the development of the Snaccine platform became a parallel journey in developing our own framework as responsible innovators. The future of this technology depends not only on the science we engineer into it, but on the dialogue, trust, and ethical stewardship we build around it.
 </Dropdown>
 
+<Dropdown header="References" level={0}>
+Abdi, R. D., Amsalu, K., Merera, O., Asfaw, Y., Gelaye, E., Yami, M., & Sori, T. (2016). Serological response and protection level evaluation in chickens exposed to grains coated with I2 Newcastle disease virus for effective oral vaccination of village chickens. _BMC Veterinary Research_, _12_(1), 150. [https://doi.org/10.1186/s12917-016-0785-6](https://doi.org/10.1186/s12917-016-0785-6)
+
+Ebrahimi, M. M., Zadeh, S. L., Momayez, R., & Peighambari, S. M. (2020). Comparison of the impact of different administration routes on the efficacy of a thermoresistant Newcastle disease vaccine in chickens. _Viral Immunology_, _33_(4), 317–322. [https://doi.org/10.1089/vim.2019.0125](https://doi.org/10.1089/vim.2019.0125)
+
+Ola, O., Jarikre, T. A., Adeniran, G., Okunlola, D. O., Ogundipe, G., Omotainse, S. O., Takeet, M. I., & Olugbogi, E. I. (2022). Evaluation of oral phytogenic microbeaded Newcastle disease vaccine delivery in indigenous chicken. _Journal of Immunoassay and Immunochemistry_, _43_(1), 74–85. [https://doi.org/10.1080/15321819.2020.1868001](https://doi.org/10.1080/15321819.2020.1868001)
+
+Whitford, C. M., Lübke, N.-C., & Rückert, C. (2018). Synthetic biology ethics at iGEM: iGEMer perspectives. _Trends in Biotechnology_, _36_(10), 985–987. [https://doi.org/10.1016/j.tibtech.2018.06.004](https://doi.org/10.1016/j.tibtech.2018.06.004)
+
+Xu, Z., Liu, X., Li, Y., Cheng, Y., Tao, J., Tian, Y., & Wang, H. (2023). Shelf-life prediction and storage stability of Aeromonas bacteriophage vB_AsM_ZHF. _Virus Research_, _323_, 198947. [https://doi.org/10.1016/j.virusres.2022.198947](https://doi.org/10.1016/j.virusres.2022.198947)
+</Dropdown>
+
 </Content>
+</div>
 
 <ScrollTop />

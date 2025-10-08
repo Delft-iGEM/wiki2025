@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 
+const STYLE_ELEMENT_ID = 'popover-interactive-styles';
+const SVG_NS = 'http://www.w3.org/2000/svg';
+const INTERACTIVE_STYLE = `
+.popover-interactive__target {
+  cursor: pointer;
+  transition: transform 0.35s ease, filter 0.35s ease, opacity 0.35s ease;
+}
+.popover-interactive__target.popover-interactive__hover {
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.18));
+  opacity: 0.96;
+}
+`;
+
 // Import all stakeholder MDX files
 import ProfBrouns from '@/mdx/stakeholders/prof_brouns.mdx';
 import FieldTestExperts from '@/mdx/stakeholders/field_test_experts.mdx';
@@ -10,6 +23,16 @@ import RivmGmo from '@/mdx/stakeholders/rivm_gmo.mdx';
 import JohannisFlorid from '@/mdx/stakeholders/johannis_florid.mdx';
 import ElineKamerik from '@/mdx/stakeholders/eline_kamerik.mdx';
 import ErikDeJonge from '@/mdx/stakeholders/erik_de_jonge.mdx';
+
+//import steps MDX files
+import Step1 from '@/mdx/steps/step1.mdx';
+import Step2 from '@/mdx/steps/step2.mdx';
+import Step3 from '@/mdx/steps/step3.mdx';
+import Step4 from '@/mdx/steps/step4.mdx';
+import Step5 from '@/mdx/steps/step5.mdx';
+import Step8 from '@/mdx/steps/step8.mdx';
+import Step9 from '@/mdx/steps/step9.mdx';
+import Step10 from '@/mdx/steps/step10.mdx';
 
 // Mapping of class names to their corresponding MDX content
 const popoverContentMap: Record<string, React.FC> = {
@@ -21,15 +44,25 @@ const popoverContentMap: Record<string, React.FC> = {
   'johannis_florid': JohannisFlorid,
   'eline_kamerik': ElineKamerik,
   'erik_de_jonge': ErikDeJonge,
+  'step1': Step1,
+  'step2': Step2,
+  'step3': Step3,
+  'step4': Step4,
+  'step5': Step5,
+  'step8': Step8,
+  'step9': Step9,
+  'step10': Step10,
+
 };
 
 interface PopoverInteractiveProps {
-  children: React.ReactElement;
+  children: React.ReactElement<React.SVGProps<SVGSVGElement>>;
 }
 
 export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children }) => {
   const [activePopover, setActivePopover] = useState<string | null>(null);
   const scrollPositionRef = React.useRef<number>(0);
+  const svgRef = React.useRef<SVGSVGElement | null>(null);
 
   // Block body scroll when popover is open
   React.useEffect(() => {
@@ -58,7 +91,7 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
     };
   }, [activePopover]);
 
-  const handleSvgClick = (e: React.MouseEvent<SVGElement>) => {
+  const handleSvgClick = (e: React.MouseEvent<SVGSVGElement>) => {
     const target = e.target as SVGElement;
 
     // Find the closest group element with one of our popover classes
@@ -73,16 +106,37 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
   };
 
   // Clone the SVG and add click handlers
-  const enhancedChildren = React.cloneElement(children as React.ReactElement<{ onClick?: (e: React.MouseEvent<SVGElement>) => void; style?: React.CSSProperties }>, {
-    onClick: handleSvgClick,
+  const existingOnClick = children.props.onClick;
+
+  const enhancedChildren = React.cloneElement(children, {
+    onClick: (event: React.MouseEvent<SVGSVGElement>) => {
+      handleSvgClick(event);
+      existingOnClick?.(event);
+    },
     style: {
       ...(children.props as { style?: React.CSSProperties }).style,
     },
+    ref: svgRef,
   });
+
+  // Inject shared hover styles once
+  React.useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const existing = document.getElementById(STYLE_ELEMENT_ID);
+    if (existing && existing instanceof HTMLStyleElement) {
+      existing.textContent = INTERACTIVE_STYLE;
+      return;
+    }
+
+    const styleElement = document.createElement('style');
+    styleElement.id = STYLE_ELEMENT_ID;
+    styleElement.textContent = INTERACTIVE_STYLE;
+    document.head.appendChild(styleElement);
+  }, []);
 
   // Add hover effects and cursor to interactive elements
   React.useEffect(() => {
-    const svg = document.querySelector('svg');
+    const svg = svgRef.current;
     if (!svg) return;
 
     const cleanupFunctions: (() => void)[] = [];
@@ -92,20 +146,42 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
       const groups = svg.querySelectorAll(`g.${className}`);
 
       groups.forEach((group) => {
-        const svgElement = group as SVGElement;
-        svgElement.style.cursor = 'pointer';
-        svgElement.style.transition = 'all 0.3s ease';
+        if (!(group instanceof SVGGraphicsElement)) {
+          return;
+        }
+
+        const svgElement = group as SVGGraphicsElement;
+
+        svgElement.classList.add('popover-interactive__target');
+
+        const hasRectSibling = Array.from(svgElement.children).some((child) => child.nodeName.toLowerCase() === 'rect');
+
+        if (!hasRectSibling && 'getBBox' in svgElement) {
+          try {
+            const bbox = svgElement.getBBox();
+            if (bbox.width > 0 && bbox.height > 0) {
+              const padding = Math.max(Math.min(bbox.width, bbox.height) * 0.05, 8);
+              const rect = document.createElementNS(SVG_NS, 'rect');
+              rect.setAttribute('x', (bbox.x - padding).toString());
+              rect.setAttribute('y', (bbox.y - padding).toString());
+              rect.setAttribute('width', (bbox.width + padding * 2).toString());
+              rect.setAttribute('height', (bbox.height + padding * 2).toString());
+              rect.setAttribute('fill', 'transparent');
+              rect.setAttribute('pointer-events', 'all');
+              rect.setAttribute('data-popover-hitbox', 'true');
+              svgElement.insertBefore(rect, svgElement.firstChild);
+            }
+          } catch {
+            // Silently ignore groups that cannot provide a bounding box
+          }
+        }
 
         const handleMouseEnter = () => {
-          svgElement.style.transform = 'scale(1.05)';
-          svgElement.style.filter = 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))';
-          svgElement.style.opacity = '0.9';
+          svgElement.classList.add('popover-interactive__hover');
         };
 
         const handleMouseLeave = () => {
-          svgElement.style.transform = 'scale(1)';
-          svgElement.style.filter = 'none';
-          svgElement.style.opacity = '1';
+          svgElement.classList.remove('popover-interactive__hover');
         };
 
         group.addEventListener('mouseenter', handleMouseEnter);
@@ -114,6 +190,8 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
         cleanupFunctions.push(() => {
           group.removeEventListener('mouseenter', handleMouseEnter);
           group.removeEventListener('mouseleave', handleMouseLeave);
+          svgElement.classList.remove('popover-interactive__hover');
+          svgElement.classList.remove('popover-interactive__target');
         });
       });
     });
@@ -121,7 +199,7 @@ export const PopoverInteractive: React.FC<PopoverInteractiveProps> = ({ children
     return () => {
       cleanupFunctions.forEach(cleanup => cleanup());
     };
-  }, []);
+  }, [children]);
 
   const ContentComponent = activePopover ? popoverContentMap[activePopover] : null;
 

@@ -1,13 +1,13 @@
 import { Content, AccentLine, Dropdown} from "@/components";
 
-<style jsx global>{`
-  /* Make all dropdowns on this page transparent */
-  .dropdown-item {
-    --dropdown-color: transparent !important;
-  }
-`}</style>
-
-
+<div
+  style={{
+    
+    '--section': 'transparent',
+    
+    '--dropdown-color': 'transparent',
+  }}
+>
 <Content items="left">
 
 <AccentLine/>
@@ -25,8 +25,17 @@ We began by analyzing the challenges posed by avian influenza and its current co
 2.  **Safe-by-Design (SbD):** To address the RRI principle of _anticipation_, we used the SbD framework to proactively identify technological risks, assess their likelihood, and develop robust containment plans.
 
 This Human Practices section lays our foundational groundwork, addressing the first half of the iGEM ethos: understanding **how our work affects the world**. It presents the theoretical frameworks of Responsible Research and Innovation, Safe-by-Design, and Value Sensitive Design that guided our project. Therewith, we have addressed the first part of our cycle:
-![Human Practices Cycle](https://static.igem.wiki/teams/5649/hp/snaccine-cycle-hp.webp)
 
+<figure style={{ textAlign: 'center' }}>
+  <img
+    src="https://static.igem.wiki/teams/5649/hp/snaccine-cycle-hp.webp"
+    alt="The Human Practice Cycle"
+    width="700"
+    style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }}
+  />
+  <figcaption><em>Figure 1: The Human Practice Cycle</em></figcaption>
+</figure>
+<br/>
 The following Integrated Human Practices section completes this cycle by documenting the second half: **how the world affects our work**. It shows how we acted on our foundation by engaging stakeholders and translating their insights into pivotal design changes.
 
 <Dropdown header="Background" level={0}>
@@ -59,7 +68,16 @@ To address these gaps, we propose Snaccine. An ideal vaccine should be:
 Snaccine is designed to meet these needs through its modular design, compatibility with oral delivery, and rapid redesign capabilities.
 
 Introducing a novel Genetically Modified Organism (GMO) platform like Snaccine requires navigating a complex landscape of scientific, regulatory, and social challenges. To ensure our project is grounded in real-world needs and responsibilities, we built our strategy around a deep engagement with the key stakeholders.
-![Chickens and Snaccine](https://static.igem.wiki/teams/5649/hp/chickens-cropped.webp)
+
+<figure style={{ textAlign: 'center' }}>
+  <img
+    src="https://static.igem.wiki/teams/5649/hp/chickens-cropped-1.webp"
+    alt="Chickens and Snaccine"
+    width="500"
+    style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }}
+  />
+  <figcaption><em>Figure 2: Chickens of our stakeholder Johannis Florid</em></figcaption>
+</figure>
 
 </Dropdown>
 
@@ -69,17 +87,17 @@ From the start, our project was guided by a clear philosophy of responsible inno
 
 **1. Responsible Research and Innovation (RRI): Our Guiding Philosophy**
 
-**"Responsible innovation means taking care of the future through collective stewardship of science and innovation in the present" 
--(Stilgoe et al., 2013, p. 1570)**
+**"Responsible innovation means taking care of the future through collective stewardship of science and innovation in the present"** <br/>
+-(Stilgoe et al., 2013, p. 1570)
 
 Our project is grounded in the four pillars RRI: anticipation, reflexivity, inclusion, and responsiveness (Stilgoe et al., 2013). These principles guided us by continuously questioning: _Are we looking far enough ahead? Are we challenging our own biases? Have we included the right voices? And are we prepared to change course based on what we learn?_
 
 To translate these principles from theory into practice, we mapped each pillar to a core aspect of our project:
 
--   **Anticipation**, which entails proactively identifying real-world hurdles. This pillar challenged us to foresee future challenges. Our assessment of risk in SbD became the primary source for this. It allowed us to address critical biosafety issues like environmental shedding (RIVM), potential impacts on the farm microbiome, and international trade acceptance (Erik de Jonge from AVINED).
--   **Reflexivity** means critically questioning our own assumptions as scientists. This required us to acknowledge that science is not value-neutral. We actively questioned whether our technical definition of "effectiveness" would align with the practical realities of a farmer (Johannis Florid). This reflexive process guided our stakeholder mapping and forced us to view the project through multiple lenses, and weigh benefits and limitations against one another.
--   **Inclusion** emphasizes engaging a broad range of stakeholders. This principle drove us to counteract the common imbalance where end-user perspectives are drowned out by industry and regulatory voices (Owen et al., 2012). We involved farmers and veterinarians in our Human Practices work (Johannis Florid, Erik de Jonge, Eline Kamerik). This extended to our public outreach, where we adapted our communication strategy to a broader audience (Charlotte Koster).
--   **Responsiveness** ensures our project learns and adapts. We integrated new information from stakeholders to align Snaccine with real needs. The integration process is reflected in the Integrated Human Practices Section.
+- **Anticipation**, which entails proactively identifying real-world hurdles. This pillar challenged us to foresee future challenges. Our assessment of risk in SbD became the primary source for this. It allowed us to address critical biosafety issues like environmental shedding (RIVM), potential impacts on the farm microbiome, and international trade acceptance (Erik de Jonge from AVINED).<br/> <br/>
+- **Reflexivity** means critically questioning our own assumptions as scientists. This required us to acknowledge that science is not value-neutral. We actively questioned whether our technical definition of "effectiveness" would align with the practical realities of a farmer (Johannis Florid). This reflexive process guided our stakeholder mapping and forced us to view the project through multiple lenses, and weigh benefits and limitations against one another.<br/><br/>
+- **Inclusion** emphasizes engaging a broad range of stakeholders. This principle drove us to counteract the common imbalance where end-user perspectives are drowned out by industry and regulatory voices (Owen et al., 2012). We involved farmers and veterinarians in our Human Practices work (Johannis Florid, Erik de Jonge, Eline Kamerik). This extended to our public outreach, where we adapted our communication strategy to a broader audience (Charlotte Koster).<br/><br/>
+- **Responsiveness** ensures our project learns and adapts. We integrated new information from stakeholders to align Snaccine with real needs. The integration process is reflected in the Integrated Human Practices Section. <br/><br/>
 
 **2. Value Sensitive Design (VSD): Aligning Technology with Human Values**
 
@@ -87,10 +105,10 @@ VSD is a methodology used to proactively incorporate human values into the desig
 
 This process revealed a complex landscape of intersecting and sometimes conflicting values:
 
--   **Farmers** value animal welfare and autonomy, seeking to avoid the emotional toll of culling, but are constrained by the economic realities of market access and trade regulations.
--   **Regulators** prioritize public health, biosafety, and environmental protection. They particularly prevent unintended consequences from GMO release.
--   **The Poultry Industry** is driven by economic viability and cost-efficiency, requiring solutions that are scalable, affordable, and do not disrupt international trade.
--   **The Public** values food safety, transparency, and sustainable farming practices.
+- **Farmers** value animal welfare and autonomy, seeking to avoid the emotional toll of culling, but are constrained by the economic realities of market access and trade regulations. <br/> <br/>
+- **Regulators** prioritize public health, biosafety, and environmental protection. They particularly prevent unintended consequences from GMO release.<br/> <br/>
+- **The Poultry Industry** is driven by economic viability and cost-efficiency, requiring solutions that are scalable, affordable, and do not disrupt international trade.<br/> <br/>
+- **The Public** values food safety, transparency, and sustainable farming practices.<br/>
 
 Our engagement activities were structured to meet established criteria for high-quality public participation, such as ensuring early involvement to allow feedback to shape our project's trajectory before key decisions were made (Rowe & Frewer, 2000).
 
@@ -113,18 +131,29 @@ We structured our safety analysis around five types of uncertainty, a method tha
 
 <Dropdown header="Stakeholder Mapping" level={0}>
 
-![Stakeholder Mapping](https://static.igem.wiki/teams/5649/hp/hp-stakeholder-mapping.webp)
 
-**1. Upstream Stakeholders: Policy, Regulation, and Foundational Science**
+<figure style={{ textAlign: 'center' }}>
+  <img
+    src="https://static.igem.wiki/teams/5649/hp/stakeholder-mapping-downstream-upstream-schematic.webp"
+    alt="Stakeholder Map"
+    width="700"
+    style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }}
+  />
+  <figcaption><em>Figure 2: Stakeholder Mapping from Upstream to Downstream</em></figcaption>
+</figure>
+<br/>
+
+**1. Upstream Stakeholders: Policy, R
+egulation, and Foundational Science**
 
 Navigating the regulatory landscape proved to be a primary challenge for the Snaccine project, largely due to its identity as a hybrid platform combining a genetically modified bacteriophage and an _in-situ_ mRNA vaccine. As no single European Union guideline is designed to assess such a product, market authorization would require a case-by-case assessment pieced together from multiple frameworks.
 
 This complex regulatory environment includes:
 
--   The **Veterinary Medicinal Product (VMP) Regulation** (EU) 2019/6, which provides the legal basis. (European Parliament and Council of the European Union, 2019)
--   The **EMA's Phage Therapy Guideline**, which informs manufacturing and safety but must be adapted, as Snaccine is excluded from the considered applications. (European Medicines Agency, 2023)
--   **mRNA Vaccine Principles**, which set quality standards for mRNA purity and integrity that must be re-contextualized for production within the gut. (European Medicines Agency, 2025)
--   **The GMO Directive**, a parallel framework mandating a comprehensive Environmental Risk Assessment (ERA) focused on hazards like shedding, persistence, and horizontal gene transfer.
+- The **Veterinary Medicinal Product (VMP) Regulation** (EU) 2019/6, which provides the legal basis. (European Parliament and Council of the European Union, 2019) <br/><br/>
+- The **EMA's Phage Therapy Guideline**, which informs manufacturing and safety but must be adapted, as Snaccine is excluded from the considered applications. (European Medicines Agency, 2023)<br/><br/>
+- **mRNA Vaccine Principles**, which set quality standards for mRNA purity and integrity that must be re-contextualized for production within the gut. (European Medicines Agency, 2025)<br/><br/>
+- **The GMO Directive**, a parallel framework mandating a comprehensive Environmental Risk Assessment (ERA) focused on hazards like shedding, persistence, and horizontal gene transfer.<br/>
 
 To address this uncertainty, we engaged directly with regulatory and scientific experts. A consultation with the Dutch GMO Office at the National Institute for Public Health and the Environment (RIVM) identified environmental phage shedding as the principal hazard. They advised us to perform a comparative ERA, benchmarking Snaccine against an existing Herpesvirus of Turkey (HVT) vaccine to ground the assessment in a real-world context. Further discussions with manufacturing specialist Dr. Luuk van Oosten of Batavia Biosciences provided critical guidance on meeting Good Manufacturing Practice (GMP) standards, ensuring genetic stability, and developing a downstream purification process to address regulatory expectations for product purity and safety.
 
@@ -132,16 +161,16 @@ To address this uncertainty, we engaged directly with regulatory and scientific 
 
 Midstream stakeholders, including national trade organizations and veterinarians bridge the gap between policy and on-the-ground application. Our engagement revealed that their perspectives are dominated by two interconnected challenges: trade barriers and the practical burdens of surveillance.
 
--   **Trade and Market Acceptance:** Our discussions with Erik de Jonge from AVINED, the Dutch trade organization for the poultry sector, revealed that international trade compatibility is the greatest obstacle to adopting new Avian Influenza vaccines. The uncertain reaction of non-EU trading partners to products from vaccinated animals creates immense economic risk, accounting for an estimated "90% of the vaccination hurdle". This reality was underscored by the trade restrictions France faced after starting its own duck vaccination program, making any new vaccine a high-stakes decision for the poultry sector.
--   **DIVA Surveillance Strategy:** The requirement to **D**ifferentiate **I**nfected from **V**accinated **A**nimals (DIVA) is a non-negotiable condition for maintaining disease monitoring and trade status. While mandated by upstream regulators, the implementation falls to midstream stakeholders and represents a significant practical and financial burden. A DIVA-compatible strategy requires intensive surveillance, including weekly checks and monthly veterinarian visits, adding substantial operational costs and logistical pressure for producers.
+- **Trade and Market Acceptance:** Our discussions with Erik de Jonge from AVINED, the Dutch trade organization for the poultry sector, revealed that international trade compatibility is the greatest obstacle to adopting new Avian Influenza vaccines. The uncertain reaction of non-EU trading partners to products from vaccinated animals creates immense economic risk, accounting for an estimated "90% of the vaccination hurdle". This reality was underscored by the trade restrictions France faced after starting its own duck vaccination program, making any new vaccine a high-stakes decision for the poultry sector.<br/><br/>
+- **DIVA Surveillance Strategy:** The requirement to **D**ifferentiate **I**nfected from **V**accinated **A**nimals (DIVA) is a non-negotiable condition for maintaining disease monitoring and trade status. While mandated by upstream regulators, the implementation falls to midstream stakeholders and represents a significant practical and financial burden. A DIVA-compatible strategy requires intensive surveillance, including weekly checks and monthly veterinarian visits, adding substantial operational costs and logistical pressure for producers.<br/><br/>
 
 **3. Downstream Stakeholders: End-Users and the Public**
 
 The ultimate success of Snaccine depends on its acceptance by farmers, food producers, and the public. Our engagement with this group highlighted three key factors driving adoption: practicality, trust, and transparent communication.
 
--   **Practicality and Usability:** For farmers, any new product must integrate seamlessly into existing agricultural workflows. A recurring theme was the preference for mass administration through feed or water over labor-intensive individual injections. Veterinarian Eline Kamerik confirmed that administration via drinking water is the industry standard for poultry. This was echoed by farmer Johannis Florid, who noted that a pill format would be impractical as chickens would crush it, making a "powder or mix-in" format far more sensible.
--   **Trust and Communication Channels:** The source of information is as important as the message itself. Mr. Florid stated that he trusts his "veterinarian and fellow farmers" for advice, not "government authorities or complex scientific reports". This insight shaped our communication strategy, emphasizing the need for clear materials like leaflets that specify dosage, mixing instructions, and potential side effects, delivered through these trusted channels.
--   **Consumer and Public Perception:** Given the public sensitivity surrounding GMOs in the food chain, proactive and transparent communication is essential. Based on advice from science communicator Dr. Charlotte Koster, our strategy focuses on providing the large, "undecided public" with balanced and accessible information about the technology's benefits and remaining uncertainties, rather than trying to convince skeptics. This approach is vital for building broader public trust and acceptance.
+- **Practicality and Usability:** For farmers, any new product must integrate seamlessly into existing agricultural workflows. A recurring theme was the preference for mass administration through feed or water over labor-intensive individual injections. Veterinarian Eline Kamerik confirmed that administration via drinking water is the industry standard for poultry. This was echoed by farmer Johannis Florid, who noted that a pill format would be impractical as chickens would crush it, making a "powder or mix-in" format far more sensible.<br/><br/>
+- **Trust and Communication Channels:** The source of information is as important as the message itself. Mr. Florid stated that he trusts his "veterinarian and fellow farmers" for advice, not "government authorities or complex scientific reports". This insight shaped our communication strategy, emphasizing the need for clear materials like leaflets that specify dosage, mixing instructions, and potential side effects, delivered through these trusted channels.<br/><br/>
+- **Consumer and Public Perception:** Given the public sensitivity surrounding GMOs in the food chain, proactive and transparent communication is essential. Based on advice from science communicator Dr. Charlotte Koster, our strategy focuses on providing the large, "undecided public" with balanced and accessible information about the technology's benefits and remaining uncertainties, rather than trying to convince skeptics. This approach is vital for building broader public trust and acceptance.<br/><br/>
 </Dropdown>
 
 <Dropdown header="References" level={0}>
@@ -172,3 +201,4 @@ World Health Organization. (2025, September 30). _Bacteriophages and their use i
 </Dropdown>
 
 </Content>
+</div>

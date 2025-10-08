@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 
 type Props = Readonly<{
   firstName: string;
@@ -8,26 +8,15 @@ type Props = Readonly<{
   bio: React.ReactNode;
   alt?: string;
   flipped?: boolean;
+  isFlipped: boolean;
+  onToggle: () => void;
+  flags?: React.ReactNode;
 }>;
 
-export default function MemberCard({ firstName, lastName, role, src, bio, alt, flipped }: Props) {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const handlePointerEnter = useCallback((event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "touch") {
-      setIsFlipped(true);
-    }
-  }, []);
-
-  const handlePointerLeave = useCallback((event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "touch") {
-      setIsFlipped(false);
-    }
-  }, []);
-
+export default function MemberCard({ firstName, lastName, role, src, bio, alt, flipped, isFlipped, onToggle, flags }: Props) {
   const handleToggle = useCallback(() => {
-    setIsFlipped((prev) => !prev);
-  }, []);
+    onToggle();
+  }, [onToggle]);
 
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -44,19 +33,17 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
   return (
     <div
       className="group relative mx-auto h-[27rem] w-[20rem] flex-none cursor-pointer select-none [perspective:1200px]"
-      onPointerEnter={handlePointerEnter}
-      onPointerLeave={handlePointerLeave}
       onClick={handleToggle}
       onKeyDown={handleKeyDown}
-      role="button"
       tabIndex={0}
       aria-pressed={isBackVisible}
     >
       <div className={`h-full w-full transition-transform duration-500 group-hover:-translate-y-3 ${isBackVisible ? "-translate-y-3" : ""}`}>
         <div
-          className={`relative grid h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] ${isBackVisible ? "shadow-xl [transform:rotateY(180deg)]" : ""}`}
+          className={`relative h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] ${isBackVisible ? "shadow-xl [transform:rotateY(180deg)]" : ""}`}
         >
-          <div className="row-start-1 col-start-1 flex h-full w-full flex-col items-center gap-3 rounded-2xl p-4 shadow-lg  [backface-visibility:hidden]">
+          {/* Front side */}
+          <div className={`absolute inset-0 flex h-full w-full flex-col items-center gap-3 rounded-2xl p-4 shadow-lg [backface-visibility:hidden] transition-opacity duration-200 ${isBackVisible ? 'opacity-0 pointer-events-none delay-0' : 'opacity-100 delay-300'}`}>
             {/* Flip indicator arrow */}
             <div className="absolute top-3 right-3 opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110">
               <svg 
@@ -85,13 +72,17 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
               loading="lazy"
             />
             <div className="text-center">
-              <div className="text-xl">
-                <span className="font-semibold">{firstName}</span> {lastName}
+              <div className="flex items-center justify-center gap-2 text-xl">
+                {flags && <div className="flex gap-1">{flags}</div>}
+                <div>
+                  <span className="font-semibold">{firstName}</span> {lastName}
+                </div>
               </div>
               {role ? <div className="text-md text-neutral-500">{role}</div> : null}
             </div>
           </div>
-          <div className="row-start-1 col-start-1 flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-white p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          {/* Back side */}
+          <div className={`absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-primary/20 p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] transition-opacity duration-300 ${isBackVisible ? 'opacity-100 delay-100' : 'opacity-0 pointer-events-none delay-0'}`}>
             <div className="text-md text-muted-foreground">{bio}</div>
           </div>
         </div>
