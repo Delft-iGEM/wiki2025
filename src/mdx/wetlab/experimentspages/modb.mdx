@@ -1,7 +1,49 @@
-import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem,InteractiveSchematic } from "@/components";
+import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem,InteractiveSchematic, Temperature } from "@/components";
 
 <Content items="left">
-## Storage & Stability
+
+# module B: storage & stability
+
 In this module, we explore how T7 behaves in environments that mimic food storage or the gastrointestinal tract. We store T7 phages at different temperatures (4°C, 20°C and 37°C) for different times. As well as we test phage stability in the chicken gut pH conditions.
+
+For an oral phage vaccine to be effective, the phage must survive both **storage**, **transport** (as a vaccine), and **gastrointestinal transit**.  
+We identified two main stability challenges:
+
+1. **Temperature sensitivity:** Phages are biological entities whose viability can decline quickly outside optimal conditions.
+Though we want the final product to use other phages, we wanted to test T7 to establish a base protocol for testing phage stability.
+2. **Acidic stress:** The low pH of the stomach (in the chicken's case, it is called the gizzard) can inactivate most phages before they reach the intestine. This, for at least one implementation of our vaccine,
+is a good thing: phages which leak into the environment won't survive the stomach, but encapsulated phages (pill) can.
+
+Our goal was to evaluate how long T7 remains viable under different storage conditions and whether encapsulation could protect it in acidic environments.
+
+### Experiments:
+
+1. **Storage Stability Assay**  
+   Equal aliquots of wild-type T7 were stored at <Temperature celsius="4°C" fahrenheit="39°F" />, **room temperature** (<Temperature celsius="~20°C" fahrenheit="~68°F" />), and <Temperature celsius="37°C" fahrenheit="99°F" /> for up to four weeks.  
+   Samples were removed and analyzed by plaque assay to measure the number of infectious particles (PFU/mL) left.
+
+2. **Gut-like pH and Capsule Stability Assay**  
+   Buffers were prepared at **pH 1.5, 2.0, 3.0, 6.0, 6.8, and 7.4** to mimic stomach and intestinal conditions.  
+   Phages were tested in two formats:  
+   - **Free phage suspension**  
+   - **Encapsulated phage** using **Lonza Capsugel® capsules** filled with 100 µL of T7 stock  
+
+> *Encapsulation allowed us to evaluate whether simple capsule enclosures could shield T7 from low-pH inactivation and release it later under neutral conditions.*
+
+<div className="flex flex-col gap-4 items-center mt-4 mb-6">
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-01-11-16.webp"
+    alt="Capsule and pH stability testing setup"
+    className="rounded-2xl shadow-md w-full max-w-2xl"
+  />
+  <img
+    src="https://static.igem.wiki/teams/5649/protocolb/whatsapp-image-2025-10-08-at-01-11-16-1.webp"
+    alt="Capsule setup close-up"
+    className="rounded-2xl shadow-md w-full max-w-2xl"
+  />
+  <p className="text-sm text-gray-600 italic text-center">
+    Experimental setup showing the encapsulated phage exposure under gut-like pH conditions.
+  </p>
+</div>
 
 </Content>

@@ -18,6 +18,7 @@ interface SegmentedContentProps {
   readonly title?: string;
   readonly className?: string;
   readonly segmentsClassName?: string;
+  readonly allowUppercase?: boolean;
 }
 
 
@@ -27,6 +28,7 @@ interface SegmentsProps {
   readonly onChange: (segment: string) => void;
   readonly className?: string;
   readonly title?: string;
+  readonly allowUppercase?: boolean;
 }
 
 export function Segments({
@@ -35,6 +37,7 @@ export function Segments({
   onChange,
   className = "",
   title,
+  allowUppercase = false,
 }: SegmentsProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -67,7 +70,8 @@ export function Segments({
                 data-active={isActive}
                 onClick={() => onChange(segment)}
                 className={clsx(
-                  "relative overflow-hidden rounded-lg px-6 py-2 text-sm font-semibold lowercase tracking-wide transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2",
+                  "relative overflow-hidden rounded-lg px-6 py-2 text-sm font-semibold tracking-wide transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2",
+                  !allowUppercase && "lowercase",
                   isActive
                     ? "text-white"
                     : "text-foreground/60 hover:text-foreground hover:cursor-pointer"
@@ -98,6 +102,7 @@ export function SegmentedContent({
   title,
   className,
   segmentsClassName,
+  allowUppercase = false,
 }: SegmentedContentProps) {
   const labels = useMemo(() => segments.map((segment) => segment.label), [segments]);
 
@@ -141,6 +146,7 @@ export function SegmentedContent({
         onChange={setActiveLabel}
         className={segmentsClassName}
         title={title}
+        allowUppercase={allowUppercase}
       />
       <div className="relative w-full overflow-hidden">
         <AnimatePresence mode="wait">
