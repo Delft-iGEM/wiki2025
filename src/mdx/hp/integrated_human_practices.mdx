@@ -41,6 +41,7 @@ Our project's development was an iterative cycle of design, consultation, and ad
 
 <Dropdown header="Stakeholder Engagement" level={0}>
 
+<Box>
 #### **1. Upstream Engagement: Navigating Regulation and Refining Science**
 
 Our engagement began at the foundational level with **Prof. Dr. Stan J. J. Brouns**, an expert in phage-host interactions. We initially had broad ideas for our oral vaccine. His guidance was crucial; he highlighted the importance of using a bacterial host tailored to the gut and working with established display systems. This conversation moved our project from a general concept to a concrete plan. We settled on using the well-established _E. coli_ host and the T7 and MS2 display phages, to ensure our experimental plans were feasible.
@@ -50,7 +51,9 @@ With a viable scientific plan, we turned to regulatory and manufacturing hurdles
 To translate our lab-scale concept into a viable product, we consulted **Dr. ir. Luuk van Oosten**, a Quality Control Scientist and QC CMC lead at Batavia Bioscience. He introduced us to the complexities of Good Manufacturing Practices (GMP), genetic stability, and scale-up variability. His input prompted us to outline a specific downstream purification process to ensure product purity, particularly focusing on removing endotoxins.
 
 Finally, engagement with **Avian Influenza Field Test Experts** directly impacted our vaccine's design for practical surveillance. They explained the challenges of real-world HPAI vaccination and their interactions with farmers. Based on their feedback, we strategically designed our mRNA to express only the Hemagglutinin (HA) protein. This crucial decision ensures that Snaccine is compatible with existing ELISA and PCR surveillance methods, allowing it to fit into the DIVA (**D**ifferentiating **I**nfected from **V**accinated **A**nimals) diagnostic framework.
-
+</Box>
+<br/>
+<Box>
 #### **2. Midstream Engagement: Addressing Economic and Practical Realities**
 
 Bridging the gap between regulation and on-the-ground application are midstream stakeholders, whose perspectives are dominated by economic viability and practical implementation.
@@ -58,7 +61,9 @@ Bridging the gap between regulation and on-the-ground application are midstream 
 Our discussions with **Erik de Jonge of AVINED**, the Dutch national trade organization for the poultry sector showed us that international trade is a crucial bottleneck. He estimated that trade concerns account for "90% of the vaccination hurdle," a point underscored by the trade restrictions France faced after starting its own duck vaccination program. He also highlighted the significant financial and logistical pressure of DIVA surveillance for vaccinated flocks, which includes weekly testing and monthly veterinarian visits. This stark feedback grounded our project in the reality that technical efficacy is irrelevant without market acceptance.
 
 Moreover, we consulted with **Eline Kamerik**, a veterinarian experienced in the poultry sector, to ensure our administration method aligned with field practices. She validated our core design choice, confirming that oral administration via drinking water is the preferred and most practical standard for poultry because it is scalable and the chicken gut is effective at absorbing vaccines. However, she also pointed out that achieving a reliable and homogenous dose is far easier in water than in feed. This led us to a new challenge: we should either prove the effectiveness of mixing Snaccine into feed or adapt the formulation for water-based delivery to ensure a consistent flock-wide result.
-
+</Box>
+<br/>
+<Box>
 #### **3. Downstream Engagement: Designing for the End-User and the Public**
 
 The ultimate success of Snaccine depends on its acceptance by farmers, food producers, and the public. Our engagement with these downstream stakeholders directly shaped the product's final form and our communication strategy.
@@ -68,6 +73,8 @@ Our most direct end-user feedback came from **Johannis Floris**, a farmer managi
 Johannis also pointed us to the trust and information chain. He relies on his veterinarian and fellow farmers for advice, not "government authorities or complex scientific reports". This reinforced our plan to disseminate information through trusted channels, such as veterinary endorsements, to build credibility.
 
 To address public perception and ensure our message was clear and accessible, we consulted with science communicator **Dr. Charlotte Koster**. She advised us to frame Snaccine within a clear storytelling arc and to segment our audience, focusing our efforts on providing "proper information" to the large, undecided group of the public that is open to hearing both the pros and cons. She also recommended a two-way communication approach. Taking her advice, we implemented an iterative feedback loop to test public perception. We interviewed 12 members of the general public from diverse backgrounds about their views on Snaccine and what questions it raised. We collected those questions and provide clear answers in the Iteration Loop 6 of our iHP section.
+</Box>
+
 </Dropdown>
 
 <br/>
@@ -83,6 +90,7 @@ To address public perception and ensure our message was clear and accessible, we
 
 <Dropdown header="Integration Loop 1: Scientific Feasibility" level={0} >
 
+<Box>
 Our project began with an ambitious vision: to create an oral mRNA vaccination platform using bacteriophages to overcome the limitations of current vaccines. First, we needed to draw up a plan for scientific feasibility.
 
 Our collaboration with Prof. Stan Brouns, provided this blueprint.
@@ -94,10 +102,13 @@ Our collaboration with Prof. Stan Brouns, provided this blueprint.
 **Pivotal Change:** <br/>
 With these components defined, we could outline an achievable proof-of-concept: demonstrating that our engineered T7 phage could lyse the _E. coli_ host and produce detectable quantities of MS2 virus-like particles (VLPs). Our results of this can be seen in the [Wet Lab documentation of Module A and Module C](https://2025.igem.wiki/tu-delft/experiments). This foundational loop transformed the project from a vague ambition into an actionable experimental strategy, making all subsequent work possible.
 <DownstreamPurificationFlow />
+</Box>
+
 </Dropdown>
 
 <Dropdown header="Integration Loop 2: Biocontainment" level={0}>
 
+<Box>
 Our initial design featured a replicative lytic phage system, which offered the advantage of high efficacy from a single, small dose through amplification in the gut. While potent, this approach raised significant biosafety questions that became the focus of a major design pivot.
 
 A consultation with the GMO Office at the Dutch National Institute for Public Health and the Environment (RIVM) reshaped our approach. The experts' primary concerns were:
@@ -111,10 +122,12 @@ Confronted with this feedback, we weighed the trade-off between the single-dose 
 After careful deliberation, our team prioritized the non-replicative phage system. This pivot, however, presented the new engineering challenge of delivering a therapeutic dose without the benefit of in-situ amplification. To address the dosage challenge, we will implement multiple administrations to ensure efficacy.
 
 Therefore, we concluded that the benefits of inherent biocontainment, and the proactive mitigation of ecological risks were essential for responsible innovation.
+
+</Box>
 </Dropdown>
 
 <Dropdown header="Integration Loop 3: DIVA-Compatibility" level={0}>
-
+<Box>
 Initially, our project aimed to deliver a generic mRNA vaccine for Avian Influenza (AI). Through consultations with experts we discovered that the specific content of the mRNA payload was critical for adoption. The feedback from three distinct stakeholder groups converged on a single, elegant solution .
 
 - **The Practical Challenge:** Field trial experts raised the issue of surveillance. For any HPAI vaccination program to be viable, authorities must be able to **D**ifferentiate **I**nfected from **V**accinated **A**nimals (DIVA). DIVA is a European wide surveillance strategy, that Snaccine must be compatible with. We addressed this by limiting our vaccine to encode only the Hemagglutinin (HA) protein. This enables the use of simple diagnostic tests to distinguish vaccine-induced immunity from natural infection. In the case of a natural infection, the immune system responds with multiple proteins, while ours expresses only one. With simple PCR, and ELISA diagnostics, Snaccine can be traced.<br/><br/>
@@ -128,10 +141,12 @@ Our <HoverPic src="https://static.igem.wiki/teams/5649/hp/module-c-plasmid-schem
 was engineered as a versatile backbone, with the space behind the RNA hairpin loop left open for any insert sequence. 
 To integrate our new approach, we constructed a <HoverPic src="https://static.igem.wiki/teams/5649/hp/module-d-plasmid-schematic.webp" alt="Second plasmid schematic" placement="top" width={900}> second plasmid </HoverPic>. 
 In this version, we inserted a sequence for Enhanced Green Fluorescent Protein (EGFP) to serve as a proof-of-concept analogue for the HA protein. You can read more on this part of our project in this Wet Lab Section.
+</Box>
 </Dropdown>
 
 <Dropdown header="Integration Loop 4: Manufacturing Strategy" level={0}>
 
+<Box>
 With our project's molecular biology framework established, we engaged an expert to guide the translation of our scientific design into an industrial scale. Through two iterative consultations, Dr. Ir. Luuk van Oosten, a Quality Control Scientist and QC CMC lead at Batavia Biosciences, provided the critical insights needed to shape our production strategy.
 
 Our initial consultation provided a crucial introduction to the foundational principles of Good Manufacturing Practices (GMP) and the regulatory landscape governing vaccine production. Luuk van Oosten highlighted the importance of downstream processing. He specified that the most critical step for ensuring product purity would be the removal of endotoxins (LPS) released during the lysis of the _E. coli_ host.
@@ -162,11 +177,13 @@ The primary method for robustly removing endotoxins and other protein contaminan
 A final concentration and buffer exchange step, typically performed with Tangential Flow Filtration (TFF) or Ultrafiltration/Diafiltration (UF/DF), to prepare the final formulation. 
 </Box>
 </BoxGrid>
+</Box>
 
 </Dropdown>
 
 <Dropdown header = "Integration Loop 5: Formulation Challenge" level={0}>
 
+<Box>
 Our initial design centered on what we assumed was the most straightforward oral delivery method: mixing Snaccine with poultry feed. During our discussions with Dr. Luuk van Oosten, he explained that the choice between a liquid or a freeze-dried (lyophilized) powder could not be made without the knowledge of end-users and regulatory requirements. Any decision made without this knowledge would be based on a big assumption.
 
 Therefore, we consulted directly with downstream stakeholders, whose feedback was clearly pointing toward a new design direction.
@@ -203,10 +220,13 @@ Losing this protective encapsulation creates a design trade-off between the user
 After weighing the options, we concluded that **Option 1 best integrates all stakeholder requirements.** It satisfies the farmer and veterinarian's need for a water-soluble powder while upholding the regulatory and ecological safety principles established earlier in our project.
 
 Therefore, our project's primary formulation goal has been further refined: **to develop a stable, lyophilized powder of micro-encapsulated T7 phages.** This demonstrates a direct and iterative response to the full spectrum of stakeholder feedback, from the farm to the regulatory office.
+</Box>
+
 </Dropdown>
 
 <Dropdown header="Integration Loop 6: Communication" level={0}>
 
+<Box>
 Our initial communication plan was based creating public material, that balances scientific accuracy with readability. A series of insightful consultations revealed the limitations of this one-way approach and reshaped our strategy into an iterative, two-way dialogue to build public trust.
 
 - **The Science Communicator's Advice:** Dr. Charlotte Koster advised us to move beyond simply broadcasting information and instead create an iterative feedback loop. She recommended a two-way communication approach: listening to questions and concerns of the non-expert audiences, and refining transparent communication based on their feedback.<br/><br/>
@@ -214,6 +234,8 @@ Our initial communication plan was based creating public material, that balances
 
 **Pivotal Change:** <br/> 
 We shifted our focus from creating content to listening. We engaged with 12 members of the general public and asked for their unfiltered concerns, which included practical, and safety-oriented questions. These questions now form the structure of our Q&A. Furthermore, these materials can be designed for use by trusted intermediaries, such as veterinarians, to facilitate conversations with farmers.
+</Box>
+
 </Dropdown>
 
 <Dropdown header="Communication in Practice" level={0}>
@@ -297,6 +319,7 @@ In summary, the total time from consumption to a measurable immune response is n
 
 <Dropdown header = "Conclusion and Reflection" level={0}>
 
+<Box>
 **Limitations: The Systemic Hurdle of International Trade**
 
 However, this stakeholder engagement also uncovered a limitation that transcends the technical pivots of our project. We learned from the poultry trade organization AVINED that the primary obstacle to widespread Avian Influenza vaccination is not the efficacy of the vaccine, but international trade.
@@ -319,6 +342,7 @@ HPAI was a case study to showcase the core capabilities of the Snaccine platform
 However, the true power of this platform lies in its inherent **modularity**. The bacteriophage, the bacterial host, and the mRNA insert can be adapted. This makes Snaccine a versatile vaccination platform.
 
 Ultimately, the development of the Snaccine platform became a parallel journey in developing our own framework as responsible innovators. The future of this technology depends not only on the science we engineer into it, but on the dialogue, trust, and ethical stewardship we build around it.
+</Box>
 </Dropdown>
 
 <Dropdown header="References" level={0}>
