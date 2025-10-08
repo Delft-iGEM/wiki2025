@@ -199,7 +199,7 @@ export function Home() {
               WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 40%)'
             }}>
           <img
-            src="https://static.igem.wiki/teams/5649/teamphotos/bofkippen2.webp"
+            src="https://static.igem.wiki/teams/5649/teamphotos/chickens-with-flowers-for-home-page.avif"
             alt="Image of chickens in a farm setting, a coop in the background"
             className="w-full object-cover"
             loading="lazy"
@@ -211,9 +211,7 @@ export function Home() {
               In the Netherlands, as in most countries, the main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
             </p>
             <p className="text-sm opacity-90 mt-2">
-              The Netherlands has the highest poultry density in Europe. CITATIOTN!!!!!
-              also super high export percentage: https://zootecnicainternational.com/focus-on/netherlands-leading-country-european-egg-poultry-meat-exports/
-              something something something
+              The Netherlands has the highest poultry density in Europe. 
             </p>
           </div>
         </div>
@@ -289,7 +287,7 @@ export function Home() {
         </div>
       </section>
 
-        <div className="relative overflow-hidden rounded-3xl" 
+        <div className="relative overflow-hidden mb-5" 
             style={{
               maskImage:       'linear-gradient(to bottom, transparent 0%, black 20%)',
               WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)'
@@ -300,14 +298,11 @@ export function Home() {
             className="w-full h-96 object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-transparent/20 via-black/10 to-transparent" />
 
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
             <p className="text-lg font-semibold">
               Avian Influenza (Bird Flu) outbreaks are increasing in frequency and severity across Europe.
-            </p>
-            <p className="text-sm opacity-90 mt-2">
-              Illustration
             </p>
           </div>
         </div>

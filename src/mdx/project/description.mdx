@@ -2,6 +2,7 @@ import { Content, Header, AccentLine, Dropdown, Temperature, SegmentedContent } 
 import Abstract from "./descriptionpages/abstract.mdx"
 import Detailed from "./descriptionpages/detailed.mdx"
 import Idea from "./descriptionpages/idea.mdx"
+import Why from "./descriptionpages/why.mdx"
 
 <Header>
 # description
@@ -11,17 +12,21 @@ an introduction to our project
 <SegmentedContent
 	segments={[
 		{
-			label: "Abstract",
+			label: "abstract",
 			content: <Abstract />,
 		},
 		{
-			label: "Idea",
+			label: "idea",
 			content: <Idea />,
 			defaultActive: true,
 		},
 		{
-			label: "Detailed Description",
+			label: "detailed design",
 			content: <Detailed />,
+		},
+		{
+			label: "why?",
+			content: <Why />,
 		},
 	]}
 />

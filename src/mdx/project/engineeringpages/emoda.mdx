@@ -1,6 +1,7 @@
 import { Content, Header, AccentLine, Dropdown } from "@/components";
 import { Temperature } from "@/components/Temperature";
 
+<FootnotesProvider>
 <Content items="left">
 
 # phage engineering
@@ -146,8 +147,11 @@ With our available resources we were not able to reboot phages. To improve our p
 
 ---
 
-*¹ Levrier et al., 2022*  
-*² Vu et al., 2023*
+<FootnoteDefinition noteKey="vu2025">J. Vu, et al., “Homology-Based Enzymatic Assembly of Modular T7 Phage Genome,” 2025.04.24.650493 Preprint at https://doi.org/10.1101/2025.04.24.650493 (2025).</FootnoteDefinition>
 
+<FootnoteDefinition noteKey="levrier2024">A. Levrier, et al., “PHEIGES: all-cell-free phage synthesis and selection from engineered genomes,” Nature Communications 15, 2223 (2024).</FootnoteDefinition>
 
+<FootnotesList title="References"/>
 </Content>
+
+</FootnotesProvider>

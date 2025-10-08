@@ -21,7 +21,7 @@ function T7Particle({ x, y, scale = 1 }: { x: number; y: number; scale?: number 
 /** Icosahedral-like MS2 capsid (regular 20-gon with faint facet lines; not a star) */
 function MS2Capsid({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) {
   const r = 5 * scale;
-  const sides = 20;
+  const sides = 10;
   const verts = Array.from({ length: sides }).map((_, i) => {
     const angle = (i * 2 * Math.PI) / sides;
     return { x: Math.cos(angle) * r, y: Math.sin(angle) * r };
@@ -50,8 +50,8 @@ function MS2Capsid({ x, y, scale = 1 }: { x: number; y: number; scale?: number }
 
 /** Smooth E. coli body (no tails) */
 function EColi({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) {
-  const bodyL = 18 * scale;
-  const bodyR = 8 * scale;
+  const bodyL = 50 * scale;
+  const bodyR = 25 * scale;
   return (
     <g transform={`translate(${x}, ${y})`}>
       <ellipse rx={bodyL / 2} ry={bodyR / 2} fill="#84cc16" stroke="#4d7c0f" strokeWidth={1} />

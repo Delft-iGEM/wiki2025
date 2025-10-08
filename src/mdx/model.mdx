@@ -1,5 +1,6 @@
-import { Content, Header, AccentLine, Dropdown } from "@/components";
+
 import { Temperature } from "@/components/Temperature";
+import { Content, Header, AccentLine, Dropdown, FootnotesProvider, Footnote, FootnotesList, FootnoteDefinition  } from "@/components";
 
 <Header>
 
@@ -7,6 +8,7 @@ import { Temperature } from "@/components/Temperature";
 MS2 VLP stability analysis
 </Header>
 
+<FootnotesProvider>
 <Content items="left">
 <AccentLine/>
 # MD simulations to investigate the stability of MS2 VLPs
@@ -81,13 +83,13 @@ Next, we specified the condition types to be tested in this module. While the gu
 
 ## Parametrization
 
-To set up the parametrization for an MD simulation of the MS2 hexamer, the **tleap** tool from AmberTools 24.8 [  ]. To model the MS2 hexamer, the **ff19SB** force field was used. The structure was solvated in a box of water, modelled with the explicit **OPC water model**  [  ], padding the hexamer with 10 Å. Different neutralizing ion amounts were added, with the 8 already described salt concentrations or 150 mM if a temperature condition was being screened. The resulting parametrized Amber files were further converted to GROMACS format using **ParmEd 4.3.0**  [  ].
+To set up the parametrization for an MD simulation of the MS2 hexamer, the **tleap** tool from AmberTools 24.8<Footnote noteKey="amber-tools" /> was used. To model the MS2 hexamer, the **ff19SB** force field <Footnote noteKey="ff19SB" /> was used. The structure was solvated in a box of water, modelled with the explicit **OPC water model**<Footnote noteKey="opc-water" />, padding the hexamer with 10 Å. Different neutralizing ion amounts were added, with the 8 already described salt concentrations or 150 mM if a temperature condition was being screened. The resulting parametrized Amber files were further converted to GROMACS format using **ParmEd 4.3.0**<Footnote noteKey="sampl5-engines"/>.
 
 ---
 
 ## MD production
 
-Next, using the **GROMACS 2024.1** software suite, an MD production, post-processing and analysis were performed. All these processes were run on the Phase 2 **DelftBlue** supercomputer. As a first step of the production process, an energy minimization was carried out until a maximum force of 1000 kJ mol−1 nm−1 was reached using the **steepest descent algorithm**. In this process, equations of motion were numerically integrated with a time step of 2 fs using the **Verlet leapfrog algorithm**. Molecular coordinates were updated every 10 ps. Van der Waals and short-range electrostatic interactions were described with a cutoff of 1 nm. Additionally, to calculate long-range electrostatic interactions, we used the **particle-mesh Ewald summation** with fourth-order cubic interpolation and a grid spacing of 0.16 nm.
+Next, using the **GROMACS 2024.1** <Footnote noteKey="gromacs-2015"/> software suite, an MD production, post-processing and analysis were performed. All these processes were run on the Phase 2 **DelftBlue** supercomputer. As a first step of the production process, an energy minimization was carried out until a maximum force of 1000 kJ mol−1 nm−1 was reached using the **steepest descent algorithm**. In this process, equations of motion were numerically integrated with a time step of 2 fs using the **Verlet leapfrog algorithm**. Molecular coordinates were updated every 10 ps. Van der Waals and short-range electrostatic interactions were described with a cutoff of 1 nm. Additionally, to calculate long-range electrostatic interactions, we used the **particle-mesh Ewald summation** with fourth-order cubic interpolation and a grid spacing of 0.16 nm.
 
 Furthermore, the system was equilibrated for 100 ps in the **NVT ensemble**. This was achieved using the **modified Berendsen thermostat** until 300 K equilibrium temperature was reached if testing for salt conditions otherwise the corresponding 3 screening temperatures were used (315 K, 310 K or 291 K). Following this, the hexamer system was equilibrated in the **NpT ensemble** to pressure of 1 bar by implementing a **Parrinello-Rahman barostat**  [  ]. At this stage the system went through production for approximately 600 ns. During this process hydrogen bonds were constrained using the **LINCS algorithm**  [  ].
 
@@ -106,12 +108,16 @@ As part of analyzing the resulting MD simulation the **Root Mean Square Deviatio
 
 
 ### Visualization and overview
-
-After postprocessing and down sampling our MD trajectory, we were able to visualize it using the **VMD 1.9.4** software. We aligned the backbone over the time of the simulation, so translational motion of the protein is not shown, and colored with different colors as *NewCartoon* all the different fragments of the protein. Based on observations we were able to recognize that the structure is relatively stable and doesn’t dissociate over the 600 ns timespan of our simulation. Nevertheless, to validate the structural stability of our system we further examined 4 different quantities — **Root Mean Square Deviation (RMSD)**, **Hydrogen bond count**, **backbone Root Mean Square Fluctuation (RMSF)** and **total interaction energy** between the constitutive dimers in the hexamer structure, to get insight into any structural changes observed over the conditions we tested.
-
-{/*TBD this is the video link to be embedded:<iframe title="TU-Delft: MS2 MD movie 2 (short) (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/6v5aZJDh5x8jFNMBEmUnXH?loop=1&amp;autoplay=1&amp;muted=1" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>*/}
-
----
+ <div>
+<iframe 
+  src="https://video.igem.org/videos/embed/6v5aZJDh5x8jFNMBEmUnXH?loop=1&autoplay=1&muted=1"
+  width="600"
+  height="330"
+  frameBorder="0"
+  allowFullScreen
+  style={{ display: 'block', margin: '0 auto' }}
+></iframe>
+</div>
 
 ### RMSD
 
@@ -352,6 +358,43 @@ Building on our platform, our next steps include:
 
 
 </Dropdown>
+<FootnoteDefinition noteKey="ambertools">D. A. Case, H. M. Aktulga, K. Belfon, et al., “AmberTools,” Journal of Chemical Information and Modeling 63, no. 20 (2023): 6183–6191.</FootnoteDefinition>
 
+<FootnoteDefinition noteKey="opc-water">S. Izadi, R. Anandakrishnan, and A. V. Onufriev, “Building Water Models: A Different Approach,” Journal of Physical Chemistry Letters 5, no. 21 (2014): 3863–3871.</FootnoteDefinition>
 
+<FootnoteDefinition noteKey="lj-type-ion">P. Li, L. F. Song, and K. M. Merz, “Parameterization of Highly Charged Metal Ions Using the 12-6-4 LJ-Type Nonbonded Model in Explicit Water,” Journal of Physical Chemistry B 119, no. 3 (2015): 883–895.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="ff19sb">C. Tian, K. Kasavajhala, K. A. A. Belfon, et al., “ff19SB: Amino-Acid-Specific Protein Backbone Parameters Trained Against Quantum Mechanics Energy Surfaces in Solution,” Journal of Chemical Theory and Computation 16, no. 1 (2020): 528–552.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="bsc0-nucleic-acids">M. Zgarbová, M. Otyepka, J. Poner, et al., “Refinement of the Cornell et al. Nucleic Acids Force Field Based on Reference Quantum Chemical Calculations of Glycosidic Torsion Profiles,” Journal of Chemical Theory and Computation 7, no. 9 (2011): 2886–2902.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="rna-protein-polarizability">H. Baltrukevich and P. Bartos, “RNA–Protein Complexes and Force Field Polarizability,” Frontiers in Chemistry 11 (2023): 1217506.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="sampl5-engines">M. R. Shirts, C. Klein, J. M. Swails, et al., “Lessons Learned From Comparing Molecular Dynamics Engines on the SAMPL5 Dataset,” Journal of Computer-Aided Molecular Design 31, no. 1 (2017): 147–161.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="gromacs-1995">H. Berendsen, D. Van Der Spoel, and R. Van Drunen, “GROMACS: A Message-Passing Parallel Molecular Dynamics Implementation,” Computer Physics Communications 91, no. 1–3 (1995): 43–56.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="gromacs-2001">E. Lindahl, B. Hess, and D. Van Der Spoel, “GROMACS 3.0: A Package for Molecular Simulation and Trajectory Analysis,” Journal of Molecular Modeling 7, no. 8 (2001): 306–317.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="gromacs-2005">D. Van Der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark, and H. J. C. Berendsen, “GROMACS: Fast, Flexible, and Free,” Journal of Computational Chemistry 26, no. 16 (2005): 1701–1718.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="gromacs-2008">B. Hess, C. Kutzner, D. Van Der Spoel, and E. Lindahl, “GROMACS 4: Algorithms for Highly Efficient, Load-Balanced, and Scalable Molecular Simulation,” Journal of Chemical Theory and Computation 4, no. 3 (2008): 435–447.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="gromacs-2013">S. Pronk, S. Páll, R. Schulz, et al., “GROMACS 4.5: A High-Throughput and Highly Parallel Open Source Molecular Simulation Toolkit,” Bioinformatics 29, no. 7 (2013): 845–854.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="gromacs-2015">M. J. Abraham, T. Murtola, R. Schulz, et al., “GROMACS: High Performance Molecular Simulations Through Multi-Level Parallelism From Laptops to Supercomputers,” SoftwareX 1-2 (2015): 19–25.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="exascale-challenges">S. Markidis and E. Laure, eds., *Solving Software Challenges for Exascale: International Conference on Exascale Applications and Software, EASC 2014, Stockholm, Sweden, April 2–3, 2014, Revised Selected Papers* (Lecture Notes in Computer Science), vol. 8759 (Springer International Publishing, 2015).</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="delftblue">Delft High Performance Centre (DHPC), *DelftBlue Supercomputer (Phase 2)* (2024).</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="pme-ewald">T. Darden, D. York, and L. Pedersen, “Particle Mesh Ewald: An N Log(N) Method for Ewald Sums in Large Systems,” Journal of Chemical Physics 98, no. 12 (1993): 10089–10092.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="parrinello-rahman">M. Parrinello and A. Rahman, “Polymorphic Transitions in Single Crystals: A New Molecular Dynamics Method,” Journal of Applied Physics 52, no. 12 (1981): 7182–7190.</FootnoteDefinition>
+
+<FootnoteDefinition noteKey="lincs">B. Hess, H. Bekker, H. J. C. Berendsen, and J. G. E. M. Fraaije, “LINCS: A Linear Constraint Solver for Molecular Simulations,” Journal of Computational Chemistry 18, no. 12 (1997): 1463–1472.</FootnoteDefinition>
+
+<FootnotesList title="References"/>
 </Content>
+
+</FootnotesProvider>
