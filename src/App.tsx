@@ -235,10 +235,50 @@ function App() {
       return;
     }
 
+    const openAccordionItem = (item: HTMLElement) => {
+      if (item.getAttribute("data-state") === "open") return;
+
+      item
+        .querySelector<HTMLElement>("[data-radix-accordion-trigger]")
+        ?.click();
+    };
+
+    const openDropdownPath = (element: HTMLElement) => {
+      const items: HTMLElement[] = [];
+      const initial = element.matches("[data-radix-accordion-item]")
+        ? element
+        : element.closest("[data-radix-accordion-item]");
+
+      let current: HTMLElement | null = initial instanceof HTMLElement ? initial : null;
+
+      while (current) {
+        items.push(current);
+
+        const parentElement = current.parentElement;
+        if (!parentElement) break;
+
+        const next = parentElement.closest("[data-radix-accordion-item]");
+        current = next instanceof HTMLElement ? next : null;
+      }
+
+      // Open from outermost to innermost so descendants mount before we trigger them.
+      for (let index = items.length - 1; index >= 0; index -= 1) {
+        openAccordionItem(items[index]);
+      }
+    };
+
     const scrollToTarget = () => {
       const target = document.getElementById(hash);
       if (!target) return false;
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      if (target instanceof HTMLElement) {
+        openDropdownPath(target);
+
+        window.requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+
       return true;
     };
 
@@ -247,7 +287,7 @@ function App() {
     let attempts = 0;
     const intervalId = window.setInterval(() => {
       attempts += 1;
-      if (scrollToTarget() || attempts > 10) {
+      if (scrollToTarget() || attempts > 20) {
         window.clearInterval(intervalId);
       }
     }, 50);

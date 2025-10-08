@@ -42,6 +42,8 @@ export type DropdownItemProps = {
   readonly children: React.ReactNode;
   /** Stable value for the item */
   readonly value: string;
+  /** Optional anchor id applied to the item root */
+  readonly id?: string;
   /** Nesting level (0-3) for hierarchical styling */
   readonly level?: 0 | 1 | 2 | 3;
   /** CSS variable for dropdown background color (e.g., "--section") */
@@ -148,6 +150,7 @@ export function DropdownItem({
   header,
   children,
   value,
+  id,
   level = 0,
   color = "--section",
   border,
@@ -159,6 +162,7 @@ export function DropdownItem({
 
   return (
     <AccordionPrimitive.Item
+      id={id}
       value={value}
       className={cn("dropdown-item", `dropdown-level-${level}`)}
       style={itemStyle}

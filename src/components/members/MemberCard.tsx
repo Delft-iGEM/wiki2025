@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import { Link } from "react-router-dom";
 
 type Props = Readonly<{
   firstName: string;
@@ -82,9 +83,15 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
             </div>
           </div>
           {/* Back side */}
-          <div className={`absolute inset-0 flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-primary/20 p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]`}>
-            <div className="text-md text-muted-foreground">{bio}</div>
+          <div className={`absolute inset-0 flex h-full w-full flex-col items-center gap-3 rounded-2xl bg-primary/20 p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]`}>
+            <div className="flex flex-1 items-center justify-center">
+              <div className="text-md text-muted-foreground">{bio}</div>
+            </div>
+            <small className="mt-auto">
+              <Link className="internal-link" to="../attributions">Review my project tasks & contributions</Link>
+            </small>
           </div>
+          
         </div>
       </div>
     </div>

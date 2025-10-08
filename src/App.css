@@ -224,11 +224,6 @@
       background-color: white;
     }
 
-    .external-link,
-    .internal-link {
-      @apply underline text-primary;
-    }
-
     header > div {
       h1 {
         @apply text-4xl sm:text-7xl font-bold tracking-tight text-white;
@@ -239,7 +234,11 @@
       }
     }
   }
-
+  .external-link,
+  .internal-link {
+    @apply underline text-primary;
+  }
+  
   .footnotes {
     @apply mt-8 border-t border-border pt-4;
   }
