@@ -56,7 +56,7 @@ export function MembersGrid() {
     </div>
     </>
   } />
-  <MemberCard firstName="Franciszek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role="Graphical design and wiki illustrations" isFlipped={openCardId === "franek"} onToggle={() => handleCardToggle("franek")} bio={
+  <MemberCard firstName="Franciszek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role=" Wiki and Graphic Design Manager" isFlipped={openCardId === "franek"} onToggle={() => handleCardToggle("franek")} bio={
     <>
     <div className="flex items-center gap-2">
       <PolandFlag className="w-5 h-3" />
