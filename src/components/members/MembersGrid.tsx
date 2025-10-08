@@ -48,7 +48,7 @@ export function MembersGrid() {
   <a className="font-semibold text-primary underline" href="https://www.linkedin.com/in/viktor-gilin-630100376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">Viktor Gilin - LinkedIn profile</a>
     </>
   } />
-  <MemberCard firstName="Franciszek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role="Graphical design and wiki illustrations" isFlipped={openCardId === "franek"} onToggle={() => handleCardToggle("franek")} bio={
+  <MemberCard firstName="Franciszek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role="Wiki and Graphic Design Manager" isFlipped={openCardId === "franek"} onToggle={() => handleCardToggle("franek")} bio={
     <>
     <span>Nanobiology BSc student</span>
     <br />
