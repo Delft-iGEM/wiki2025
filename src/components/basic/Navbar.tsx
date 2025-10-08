@@ -150,7 +150,7 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
                       <DropdownMenuTrigger asChild>
                         <button
                           type="button"
-                          className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                          className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:cursor-pointer"
                           aria-haspopup="menu"
                           aria-expanded={desktopDropdownOpen === pageIndex}
                         >
