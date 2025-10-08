@@ -37,7 +37,7 @@ export function MembersGrid() {
   } flipped />
   <MemberCard firstName="Viktor" lastName="Gilin" src={pathBase+"viktor"+ext} alt="Viktor" role="Dry Lab Manager" flags={<BulgariaFlag className="w-5 h-3" />} isFlipped={openCardId === "viktor"} onToggle={() => handleCardToggle("viktor")} bio={
     <>
-    Nanobiology BSc student
+    Nanobiology MSc student
     </>
   } />
   <MemberCard firstName="Franciszek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role="Graphical design and wiki illustrations" flags={<PolandFlag className="w-5 h-3" />} isFlipped={openCardId === "franek"} onToggle={() => handleCardToggle("franek")} bio={
