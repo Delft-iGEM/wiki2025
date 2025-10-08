@@ -13,4 +13,5 @@ export * from "./text/scroll_top.tsx";
 export * from "./text/box.tsx";
 export * from "./text/box_grid.tsx";
 export * from "./text/hover_pic";
+export { default as IntegrationFlowInteractive } from "./text/IntegrationFlowInteractive";
 export { SegmentedContent } from "./SegmentedContent.tsx";
