@@ -279,7 +279,7 @@ export function Home() {
                 </p>
                 <Link
                   to="/description"
-                  className="inline-flex items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/90 hover:-translate-y-1 hover:shadow-lg"
+                  className="inline-flex items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/80 "
                 >
                   read how it works &rarr;
                 </Link>
