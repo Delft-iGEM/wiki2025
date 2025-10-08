@@ -12,9 +12,22 @@ type Props = Readonly<{
   isFlipped: boolean;
   onToggle: () => void;
   flags?: React.ReactNode;
+  linkedinUrl?: string;
 }>;
 
-export default function MemberCard({ firstName, lastName, role, src, bio, alt, flipped, isFlipped, onToggle, flags }: Props) {
+export default function MemberCard({
+  firstName,
+  lastName,
+  role,
+  src,
+  bio,
+  alt,
+  flipped,
+  isFlipped,
+  onToggle,
+  flags,
+  linkedinUrl,
+}: Props) {
   const handleToggle = useCallback(() => {
     onToggle();
   }, [onToggle]);
@@ -39,22 +52,28 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
       tabIndex={0}
       aria-pressed={isBackVisible}
     >
-      <div className={`h-full w-full transition-transform duration-500 group-hover:-translate-y-3 ${isBackVisible ? "-translate-y-3" : ""}`}>
+      <div
+        className={`h-full w-full transition-transform duration-500 group-hover:-translate-y-3 ${
+          isBackVisible ? "-translate-y-3" : ""
+        }`}
+      >
         <div
-          className={`relative h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] ${isBackVisible ? "shadow-xl [transform:rotateY(180deg)]" : ""}`}
+          className={`relative h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] ${
+            isBackVisible ? "shadow-xl [transform:rotateY(180deg)]" : ""
+          }`}
         >
           {/* Front side */}
-          <div className={`absolute inset-0 flex h-full w-full flex-col items-center gap-3 rounded-2xl p-4 shadow-lg [backface-visibility:hidden]`}>
+          <div className="absolute inset-0 flex h-full w-full flex-col items-center gap-3 rounded-2xl bg-white p-4 shadow-lg [backface-visibility:hidden]">
             {/* Flip indicator arrow */}
-            <div className={`absolute top-3 right-3 opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110`}>
-              <svg 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
+            <div className="absolute top-3 right-3 opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
                 strokeLinejoin="round"
                 className="text-neutral-600"
               >
@@ -64,12 +83,15 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
                 <path d="M3 21v-5h5" />
               </svg>
             </div>
+
             <img
               src={src}
               alt={alt ?? `${firstName} ${lastName}`}
               width={640}
               height={640}
-              className={`${flipped ? "hex-avatar-flipped" : "hex-avatar"} h-70 w-70 flex-shrink-0 object-cover`}
+              className={`${
+                flipped ? "hex-avatar-flipped" : "hex-avatar"
+              } h-70 w-70 flex-shrink-0 object-cover rounded-xl`}
               loading="lazy"
             />
             <div className="text-center">
@@ -79,19 +101,46 @@ export default function MemberCard({ firstName, lastName, role, src, bio, alt, f
                 </div>
                 {flags && <div className="flex">{flags}</div>}
               </div>
-              {role ? <div className="text-md text-neutral-500">{role}</div> : null}
+              {role ? (
+                <div className="text-md text-neutral-500">{role}</div>
+              ) : null}
             </div>
           </div>
+
           {/* Back side */}
-          <div className={`absolute inset-0 flex h-full w-full flex-col items-center gap-3 rounded-2xl bg-primary/20 p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]`}>
-            <div className="flex flex-1 items-center justify-center">
-              <div className="text-md text-muted-foreground">{bio}</div>
+          <div className="absolute inset-0 flex h-full w-full flex-col items-center rounded-2xl bg-white p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+            {/* Move the bio text up */}
+            <div className="mt-6 text-md text-neutral-700 leading-relaxed">
+              {bio}
             </div>
-            <small className="mt-auto">
-              <Link className="internal-link" to="../attributions">Review my project tasks & contributions</Link>
-            </small>
+
+            {/* Centered LinkedIn logo */}
+            {linkedinUrl && (
+              <a
+                href={linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${firstName} ${lastName} LinkedIn`}
+                className="flex flex-1 items-center justify-center"
+              >
+                <img
+                  src="https://static.igem.wiki/teams/5649/linkedinlogo/li-in-bug.avif"
+                  alt="LinkedIn Logo"
+                  width={56}
+                  height={56}
+                  className="h-14 w-14 object-contain transition-transform duration-300 hover:scale-110"
+                />
+              </a>
+            )}
+
+            {/* Contribution link at bottom */}
+            <Link
+              className="text-sm text-blue-600 hover:underline mt-auto"
+              to="../attributions"
+            >
+              Review my project tasks & contributions
+            </Link>
           </div>
-          
         </div>
       </div>
     </div>
