@@ -35,7 +35,7 @@ const SBD_RISKS = [
   { key: "normative-ambiguity",  label: "Normative Ambiguity",  color: "#fff9db", stroke: "#e67700", def: "Conflicting values" },
 ];
 
-/* ===================== Stakeholders (left) ===================== */
+
 const DEFAULT_STAKEHOLDERS: Stakeholder[] = [
   { id: "brouns",      name: "Prof. Brouns",         subtitle: "Phage–host expert", href: "#prof-brouns" },
   { id: "rivm",        name: "RIVM GMO Office",      subtitle: "Regulator",         href: "#rivm-gmo" },
@@ -43,26 +43,27 @@ const DEFAULT_STAKEHOLDERS: Stakeholder[] = [
   { id: "avined",      name: "AVINED",               subtitle: "Poultry sector",     href: "#avined" },
   { id: "farmer",      name: "Johannis Florid",      subtitle: "Farmer",             href: "#johannis-florid" },
   { id: "kamerik",     name: "Dr. Eline Kamerik",    subtitle: "Veterinarian",       href: "#eline-kamerik" },
-  { id: "koster",      name: "Dr. Charlotte Koster", subtitle: "SciComm",            href: "#dr-koster" },
+  { id: "koster",      name: "Dr. Charlotte Koster", subtitle: "Science Communication",            href: "#dr-koster" },
   { id: "van-oosten",  name: "Dr. Luuk van Oosten",  subtitle: "Manufacturing",      href: "#dr-van-oosten" },
-  { id: "erik",        name: "Erik de Jonge",        subtitle: "Ecologist",          href: "#erik-de-jonge" },
+  { id: "erik",        name: "Erik de Jonge",        subtitle: "Poultry Sector",          href: "#erik-de-jonge" },
 ];
 
-/* ===================== Fixed mappings ===================== */
-/* RRI mapping (as previously set) */
+
+
 const RRI_MAPPING: Record<string, string[] | null> = {
-  "van-oosten": ["responsiveness"],
-  "koster": ["inclusion"],
-  "kamerik": ["inclusion"],
-  "avined": ["anticipation"],
-  "farmer": ["reflexivity", "inclusion"],
-  "field": ["reflexivity"],
-  "rivm": ["anticipation"],
-  "brouns": ["anticipation"],
-  "erik": ["reflexivity"], // reasonable default; adjust if you want
+  "brouns": ["anticipation", "reflexivity"],           // Prof. Stan Brouns
+  "field": ["anticipation", "responsiveness"],         // Avian Influenza Field Test Experts
+  "koster": ["inclusion", "reflexivity"],              // Dr. Charlotte Koster
+  "van-oosten": ["anticipation", "responsiveness"],    // Dr. ir. Luuk van Oosten
+  "rivm": ["anticipation", "reflexivity"],             // RIVM (GMO Office)
+  "farmer": ["inclusion", "responsiveness"],           // Johannis Florid
+  "kamerik": ["inclusion", "responsiveness"],          // Eline Kamerik
+  "erik": ["anticipation", "reflexivity"],             // Erik de Jonge
+  "avined": ["anticipation", "reflexivity"],           // AVINED
 };
 
-/* SbD mapping (YOUR new requests) */
+
+
 const SBD_MAPPING: Record<string, string[] | null> = {
   "brouns": ["ignorance"],
   "field": ["scenario-uncertainty"],
