@@ -226,9 +226,33 @@ function App() {
 
   const title = currentPath in pathMapping ? pathMapping[currentPath].title : "Not Found";
 
-  // root aware scroll
+  // root aware scroll and hash-based anchor navigation
   useEffect(() => {
-    if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    const hash = location.hash.replace("#", "");
+
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      return;
+    }
+
+    const scrollToTarget = () => {
+      const target = document.getElementById(hash);
+      if (!target) return false;
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      return true;
+    };
+
+    if (scrollToTarget()) return;
+
+    let attempts = 0;
+    const intervalId = window.setInterval(() => {
+      attempts += 1;
+      if (scrollToTarget() || attempts > 10) {
+        window.clearInterval(intervalId);
+      }
+    }, 50);
+
+    return () => window.clearInterval(intervalId);
   }, [location.pathname, location.hash]);
 
   useEffect(() => {
