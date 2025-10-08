@@ -15,6 +15,18 @@ The Engineering section describes how we applied the iGEM Design–Build–Test�
 By dividing the project into parallel yet interconnected modules, we were able to iterate rapidly, troubleshoot effectively, and leverage progress in one area to accelerate development in others. This section outlines the rationale behind our design choices, the technical challenges encountered, and the engineering strategies that guided us toward our overarching goal: building a flexible RNA vaccine platform capable of adapting to fast-evolving viral threats such as avian influenza.
 
 <Dropdown header="phage genome engineering" level={0}>
+Phage engineering was an essential aspect of our project. To achieve a suitable phage engineering pipeline, we were guided by the iterative **Design-Build-Test-Learn** process. Along the way, we had many discussions with experts, explored, studied existing techniques, and troubleshooted multiple experiments. This whole process is recorded in this section.  
+
+## General structure
+
+1. Phage engineering context, ideation, and development  
+2. Challenges of phage engineering technology and alignment with project goals  
+3. Research goals of this module  
+4. Engineering cycle and challenges of phage engineering  
+
+---
+
+<Dropdown header="Phage engineering ideation and development (Engineering Cycle 0)" level={0}>
 ## why do we need phage engineering?
 
 In our project **Snaccine**, we aimed to engineer bacteriophages so they can be administered orally as an avian influenza vaccine.  
@@ -55,7 +67,7 @@ Based on the advice of Dr Ana Rita Costa, we opted for an alternative to cell-fr
 
 ---
 
-<Dropdown header="The challenges of phage engineering" level={0}>
+<Dropdown header="The challenges of phage engineering (Engineering Cycle 1)" level={0}>
 
 ### Initial PCR procedure (Engineering cycle 1)
 Initially, we attempted to produce the T7 genome by implementing the primer sequences described by Levrier et al. [link to oligo table]. We examined both a wild type (wt) and a minimized (mini) version of the genome. The PCR procedure was performed following standard Q5 polymerase protocol, with the one major difference being the extension of the first melting step to 5 min. This is needed when using T7 phages as a source of DNA [see protocol]. We split all reaction tubes into two thermocycler protocols, which best matched their extension time and annealing temperature (see Fig #). After further visualizing our PCR samples with 1% agarose gel electrophoresis (1% AGE), we confirmed that all of our T7 genome fragments were produced (see Fig. #).  
@@ -94,7 +106,7 @@ While initially considered as an option, gene 4.3 was eventually recognized to b
 
 </Dropdown>
 
-![alt text](https://static.igem.wiki/teams/5649/figures/SnapA.webp)
+![alt text](https://static.igem.wiki/teams/5649/figures/snapa.webp)
 >Fig. #Snapgene visualization of (top) a C1-mCherry-C2 insertion construct through the use of oho sequences and (bottom) a map of the gene 10 with the intedned insertion site for mCherry. 
 
 
@@ -124,12 +136,13 @@ After we performed assembly reaction both for a wt genome and one with mCherry i
 ![alt text](https://static.igem.wiki/teams/5649/figures/wt-and-insertassembly.webp)
 
 Nevertheless, based on results from Vu et al., we recognized that even nonassembled genome fragments can be assembled by E. coli's machinery and reboot phage production. Thus, we also performed a modified heat shock transformation procedure for phage production reboot (see Experiments). However, we didn't observe any phage rebooting from our plaque assay. However, our transformation positive control, from a transformation with denatured T7 phages(which have been denatured by heating to 95 °C for 5 min.) also showed negative results. Thus,  we recognized that the transformation procedure itself would be our first choice for improvement. 
+![alt text](https://static.igem.wiki/teams/5649/figures/plaquea.webp)
+>Fig. Photo of plaque assay results for screening phage reboot production.From all petri plates only the T7 phage positive control (top right) contains plaques. All the other samples show no plaques.
 ### LEARN
 We contacted Dr. Ana Rita Costa, and she advised us to use electroporation instead for transforming E. coli, as electroporation can produce bigger holes in the cell envelope of electrocompetent E. coli. Additionally, due to our low count of plaques in our T7 plaque assay positive control, she advised us to increase the concentration of our phage stock by using protein purification filters. 
 </Dropdown>
-<Dropdown header="Troubleshooting phage reboot (Engineering cycle 4)" level={0}>
-
-We further contacted Dr. Ana Rita Costa, and she advised us that perhaps then we should try electroporation. We also tried it as well and it didn’t work either. The plaque assay procedure worked. .
+<Dropdown header="Troubleshooting phage reboot (The beginning of Engineering cycle 4)" level={0}>
+We further attempted an electroporation transformation procedure and the products from this procedure were further concentrated to ensure high enough concentration of phages. Nevertheless the results from this final plaque assays were again inconclusive.
 
 </Dropdown>
 
@@ -137,7 +150,7 @@ We further contacted Dr. Ana Rita Costa, and she advised us that perhaps then we
 
 <Dropdown header="Future outlook" level={0}>
 
-While with our available resources we were not able to reboot phages, our procedure. First, we should. Vu et al used 0.05 and did not maximize; perhaps the higher concentration could actually not help, so this needs to be tested. Additionally, we recognized that a certain complementarity in fact exists between
+While with our available resources we were not able to reboot phages,. To improve our procedure we could try to follow the nonmaximized concentrations for Assembly done by Vu et al for their assembly as, while NEB guidelines suggest that this mode should ensure higher effiiciency.Additionally, due to our negative results of our positive control, further troubleshooting attempts need to be performed independently on the transformation procedure itself from the assembly, to first validate one. Finally, redesigning the primers to include orthogonal homologous sequences could further ensure there exists no complementarity with unintended regions of the genome which could potentially prevent the genome assembly. 
 
 </Dropdown>
 
