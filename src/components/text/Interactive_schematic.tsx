@@ -4,14 +4,14 @@ import { PopoverInteractive } from '../PopoverInteractive';
 export const InteractiveSchematic: React.FC = () => {
    return (
       <PopoverInteractive>
-         <svg viewBox="0 0 1152.731 543.244" xmlns="http://www.w3.org/2000/svg" className="h-full w-full font-semibold text-xs overflow-visible">
+         <svg viewBox="0 0 1152.731 543.244" xmlns="http://www.w3.org/2000/svg" className="h-full w-full font-semibold text-xs overflow-visible border py-5 px-10 rounded-3xl bg-white">
             <style>
                {`
      
-                  .step1, .step2, .step3, .step4, .step5, .step8, .step9, .step10 {
+                  .step1, .step2, .step4, .step5, .step7, .step8, .step9, .step10 {
                      transition: transform 0.35s ease, filter 0.35s ease, opacity 0.35s ease;
                   }
-                  .step1:hover, .step2:hover, .step3:hover, .step4:hover, .step5:hover, .step8:hover, .step9:hover, .step10:hover {
+                  .step1:hover, .step2:hover, .step4:hover, .step5:hover, .step7:hover, .step8:hover, .step9:hover, .step10:hover {
                      transform: translateY(-10px);
                   }
                `}
@@ -392,7 +392,7 @@ export const InteractiveSchematic: React.FC = () => {
                   <image width="1" height="1" preserveAspectRatio="none" mask="url(#prefix__t)"
                      transform="matrix(34.08 0 0 34.24 331.68 154.08)"
                      href="https://static.igem.wiki/teams/5649/platraimages/img-015-c9df814abc28.webp" /><text x="324.483"
-                        y="125.236">Overnight culture of</text><text x="324.483" y="141.236">transformed e. coli</text><text
+                        y="125.236">Overnight culture of</text><text x="324.483" y="141.236">transformed E. coli</text><text
                            fill="#d15472" x="335.932" y="201.163">16h</text>
                   <path
                      d="M348.617 161.242a.425.425 0 00-.402.557v8.404h.79v-8.369a.425.425 0 00-.388-.592zm7.596 9.42a.424.424 0 00-.063.002.424.424 0 00-.203.074h-6.279v.791h6.48v-.01a.424.424 0 00.463-.437.424.424 0 00-.398-.42z" />
