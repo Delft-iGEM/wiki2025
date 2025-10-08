@@ -1,7 +1,7 @@
 import { Content, Header, AccentLine, Dropdown, Temperature, SegmentedContent } from "@/components";
 import Abstract from "./descriptionpages/abstract.mdx"
 import Detailed from "./descriptionpages/detailed.mdx"
-import MainDescription from "./descriptionpages/maindescription.mdx"
+import Idea from "./descriptionpages/idea.mdx"
 
 <Header>
 # description
@@ -16,7 +16,8 @@ an introduction to our project
 		},
 		{
 			label: "Idea",
-			content: <MainDescription />,
+			content: <Idea />,
+			defaultActive: true,
 		},
 		{
 			label: "Detailed Description",
