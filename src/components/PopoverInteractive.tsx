@@ -11,6 +11,16 @@ import JohannisFlorid from '@/mdx/stakeholders/johannis_florid.mdx';
 import ElineKamerik from '@/mdx/stakeholders/eline_kamerik.mdx';
 import ErikDeJonge from '@/mdx/stakeholders/erik_de_jonge.mdx';
 
+//import steps MDX files
+import Step1 from '@/mdx/steps/step1.mdx';
+import Step2 from '@/mdx/steps/step2.mdx';
+import Step3 from '@/mdx/steps/step3.mdx';
+import Step4 from '@/mdx/steps/step4.mdx';
+import Step5 from '@/mdx/steps/step5.mdx';
+import Step8 from '@/mdx/steps/step8.mdx';
+import Step9 from '@/mdx/steps/step9.mdx';
+import Step10 from '@/mdx/steps/step10.mdx';
+
 // Mapping of class names to their corresponding MDX content
 const popoverContentMap: Record<string, React.FC> = {
   'prof_brouns': ProfBrouns,
@@ -21,6 +31,15 @@ const popoverContentMap: Record<string, React.FC> = {
   'johannis_florid': JohannisFlorid,
   'eline_kamerik': ElineKamerik,
   'erik_de_jonge': ErikDeJonge,
+  'step1': Step1,
+  'step2': Step2,
+  'step3': Step3,
+  'step4': Step4,
+  'step5': Step5,
+  'step8': Step8,
+  'step9': Step9,
+  'step10': Step10,
+
 };
 
 interface PopoverInteractiveProps {
