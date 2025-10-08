@@ -416,7 +416,6 @@
   pre *::selection {
     @apply text-[rgb(0,200,0)] bg-black;
   }
-
   /* Firefox-like scrollbar - auto-hide and width changes */
   /* Standard scrollbar-* properties for Firefox */
   * {

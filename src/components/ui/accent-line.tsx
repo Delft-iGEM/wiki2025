@@ -10,7 +10,7 @@ export function AccentLine({ className, alt }: AccentLineProps) {
     <div
       className={cn(
         "my-0.5 h-2 w-[20%] rounded-full bg-gradient-to-r",
-        alt ? "bg-gradient-to-r from-tertiary to-transparent" : "from-brand via-primary to-secondary",
+        alt ? "bg-gradient-to-r from-tertiary to-green-900" : "from-brand via-primary to-secondary",
         className,
       )}
     />

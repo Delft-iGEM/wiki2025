@@ -171,89 +171,90 @@ export function Home() {
       {/* --- Avian Influenza Section --- */}
 
       
+    
+      {/* Avian Influenza Section with Background Image */}
+      <section className="relative w-full overflow-hidden">
+        {/* Full-width background image */}
+        <div className="absolute inset-0 w-full h-full"
+          style={{
+            maskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)'
+          }}>
+          <img
+            src="https://static.igem.wiki/teams/5649/teamphotos/chickens-with-flowers-for-home-page.avif"
+            alt="Image of chickens in a farm setting, a coop in the background"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        </div>
 
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 pt-10 pb-24">
+        {/* Content overlay */}
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 pt-10 pb-10">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+            <div className="space-y-4 text-center lg:text-left">
+              <h2 className="text-6xl font-semibold tracking-tight">about avian influenza</h2>
+              <p className="mx-auto lg:mx-0 max-w-2xl text-lg text-foreground drop-shadow-black drop-shadow-2xl/100 text-shadow-white text-shadow-lg/50">
+                Bird flu, specifically Highly Pathogenic Avian Influenza H5N1 (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds around the world.
+              </p>
 
-        <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
-          <div className="space-y-4 text-center lg:text-left">
-            <h2 className="text-6xl font-semibold tracking-tight">about avian influenza</h2>
-            <p className="mx-auto lg:mx-0 max-w-2xl text-lg text-muted-foreground">
-              Bird flu, specifically Highly Pathogenic Avian Influenza H5N1 (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds across the world.
+              <AccentLine alt className="mx-auto lg:mx-0" />
+            </div>
 
-            </p>
-
-            <AccentLine className="mx-auto lg:mx-0" />
+            <div className="flex justify-center lg:justify-end">
+              <img
+                src="https://static.igem.wiki/teams/5649/teamphotos/small-chicks-picture-with-snaccine-logo.webp"
+                alt="Small chicks with Snaccine logo"
+                className="w-full max-w-xl h-auto rounded-2xl shadow-lg"
+                loading="lazy"
+              />
+            </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
-            <img
-              src="https://static.igem.wiki/teams/5649/teamphotos/small-chicks-picture-with-snaccine-logo.webp"
-              alt="Small chicks with Snaccine logo"
-              className="w-full max-w-xl h-auto rounded-2xl shadow-lg"
-              loading="lazy"
+          {/* --- Stats Cards --- */}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <StatCard
+              number="+29%"
+              title="Egg prices since 2022"
+              description={
+                <>
+                  Egg price inflation in the Netherlands, Jan 2022 – Aug 2025 <Link to="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83131NED/table?ts=1759710766335" className="text-primary hover:underline"> (CBS)</Link>
+                </>
+              }
+            />
+
+            <StatCard
+              number="1264"
+              title="Wild bird cases"
+              description={
+                <>
+                  HPAI detections in wild birds, 24 European countries, Oct 2024 – June 2025 <Link to="/human-practices" className="text-primary hover:underline"> (ECDC)</Link>
+                </>
+              }
+            />
+
+            <StatCard
+              number="8M"
+              title="Birds culled in four months"
+              description={
+                <>
+                  Birds killed to stop the spread of HPAI, 24 European countries, March 8 – June 6 2025
+                  <Link to="/human-practices" className="text-primary hover:underline"> (EFSA)</Link>
+                </>
+              }
+              numberColor="text-destructive"
             />
           </div>
-        </div>
-      </section>
 
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-24 sm:px-6 ">
-
-        {/* --- Stats Cards --- */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <StatCard
-            number="+29%"
-            title="Egg prices since 2022"
-            description={
-              <>
-                Egg price inflation in the Netherlands, Jan 2022 – Aug 2025 <Link to="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83131NED/table?ts=1759710766335" className="text-primary hover:underline"> (CBS)</Link>
-              </>
-            }
-          />
-
-          <StatCard
-            number="1264"
-            title="Wild bird cases"
-            description={
-              <>
-                HPAI detections in wild birds, 24 European countries, Oct 2024 – June 2025 <Link to="/human-practices" className="text-primary hover:underline"> (ECDC)</Link>
-              </>
-            }
-          />
-
-          <StatCard
-            number="8M"
-            title="Birds culled in four months"
-            description={
-              <>
-                Birds killed to stop the spread of HPAI, 24 European countries, March 8 – June 6 2025
-                <Link to="/human-practices" className="text-primary hover:underline"> (EFSA)</Link>
-              </>
-            }
-            numberColor="text-destructive"
-          />
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden mb-5 -mt-140 -z-10"
-        style={{
-          maskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)'
-        }}>
-        <img
-          src="https://static.igem.wiki/teams/5649/teamphotos/chickens-with-flowers-for-home-page.avif"
-          alt="Image of chickens in a farm setting, a coop in the background"
-          className="w-full object-cover"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-
-        <div className="absolute bottom-20 left-0 right-0 px-8 text-white text-center">
-          <p className="text-lg opacity-90 max-w-lg font-semibold mx-auto text-shadow-4xl">
-            In the Netherlands, as in most countries, the main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
-          </p>
-          <p className="text-sm opacity-90 mt-2">
-            The Netherlands has the highest poultry density in Europe.
-          </p>
+          {/* Text overlay at bottom */}
+          <div className="text-white text-center mt-8">
+            <p className="text-lg opacity-90 max-w-lg font-semibold mx-auto drop-shadow-2xl/100 text-shadow-lg/50">
+              In the Netherlands, as in most countries, the main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
+            </p>
+            <p className="text-sm opacity-90 mt-2">
+              The Netherlands has the highest poultry density in Europe.
+            </p>
+          </div>
         </div>
       </section>
 
