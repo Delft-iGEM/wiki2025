@@ -10,6 +10,7 @@ import clsx from "clsx";
 interface SegmentDefinition {
   readonly label: string;
   readonly content: ReactNode;
+  readonly defaultActive?: boolean;
 }
 
 interface SegmentedContentProps {
@@ -37,19 +38,7 @@ export function Segments({
 }: SegmentsProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!wrapperRef.current) {
-      return;
-    }
-
-    const activeButton = wrapperRef.current.querySelector<HTMLButtonElement>(
-      "[data-active='true']"
-    );
-
-    if (activeButton) {
-      activeButton.focus({ preventScroll: true });
-    }
-  }, [activeSegment]);
+  
 
   return (
     <div
@@ -112,7 +101,13 @@ export function SegmentedContent({
 }: SegmentedContentProps) {
   const labels = useMemo(() => segments.map((segment) => segment.label), [segments]);
 
-  const [activeLabel, setActiveLabel] = useState(() => labels[0] ?? "");
+  const [activeLabel, setActiveLabel] = useState(() => {
+    const defaultSegment = segments.find((segment) => segment.defaultActive);
+    if (defaultSegment) {
+      return defaultSegment.label;
+    }
+    return labels[0] ?? "";
+  });
 
   useEffect(() => {
     if (labels.length === 0) {
@@ -120,9 +115,14 @@ export function SegmentedContent({
     }
 
     if (!labels.includes(activeLabel)) {
-      setActiveLabel(labels[0]);
+      const defaultSegment = segments.find((segment) => segment.defaultActive);
+      if (defaultSegment) {
+        setActiveLabel(defaultSegment.label);
+      } else {
+        setActiveLabel(labels[0]);
+      }
     }
-  }, [activeLabel, labels]);
+  }, [activeLabel, labels, segments]);
 
   const activeSegment = useMemo(
     () => segments.find((segment) => segment.label === activeLabel) ?? segments[0],
