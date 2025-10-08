@@ -35,34 +35,31 @@ const SBD_RISKS = [
   { key: "normative-ambiguity",  label: "Normative Ambiguity",  color: "#fff9db", stroke: "#e67700", def: "Conflicting values" },
 ];
 
-
+/* ===================== Default stakeholders ===================== */
 const DEFAULT_STAKEHOLDERS: Stakeholder[] = [
   { id: "brouns",      name: "Prof. Brouns",         subtitle: "Phage–host expert", href: "#prof-brouns" },
   { id: "rivm",        name: "RIVM GMO Office",      subtitle: "Regulator",         href: "#rivm-gmo" },
   { id: "field",       name: "Field Trial Experts",  subtitle: "Surveillance",      href: "#field-test-experts" },
-  { id: "avined",      name: "AVINED",               subtitle: "Poultry sector",     href: "#avined" },
-  { id: "farmer",      name: "Johannis Florid",      subtitle: "Farmer",             href: "#johannis-florid" },
-  { id: "kamerik",     name: "Dr. Eline Kamerik",    subtitle: "Veterinarian",       href: "#eline-kamerik" },
-  { id: "koster",      name: "Dr. Charlotte Koster", subtitle: "Science Communication",            href: "#dr-koster" },
+  { id: "avined",      name: "AVINED",               subtitle: "Poultry sector",    href: "#avined" },
+  { id: "farmer",      name: "Johannis Florid",      subtitle: "Farmer",            href: "#johannis-florid" },
+  { id: "kamerik",     name: "Dr. Eline Kamerik",    subtitle: "Veterinarian",      href: "#eline-kamerik" },
+  { id: "koster",      name: "Dr. Charlotte Koster", subtitle: "Science Communication", href: "#dr-koster" },
   { id: "van-oosten",  name: "Dr. Luuk van Oosten",  subtitle: "Manufacturing",      href: "#dr-van-oosten" },
-  { id: "erik",        name: "Erik de Jonge",        subtitle: "Poultry Sector",          href: "#erik-de-jonge" },
+  { id: "erik",        name: "Erik de Jonge",        subtitle: "Poultry Sector",    href: "#erik-de-jonge" },
 ];
 
-
-
+/* ===================== Mappings ===================== */
 const RRI_MAPPING: Record<string, string[] | null> = {
-  "brouns": ["anticipation", "reflexivity"],           // Prof. Stan Brouns
-  "field": ["anticipation", "responsiveness"],         // Avian Influenza Field Test Experts
-  "koster": ["inclusion", "reflexivity"],              // Dr. Charlotte Koster
-  "van-oosten": ["anticipation", "responsiveness"],    // Dr. ir. Luuk van Oosten
-  "rivm": ["anticipation", "reflexivity"],             // RIVM (GMO Office)
-  "farmer": ["inclusion", "responsiveness"],           // Johannis Florid
-  "kamerik": ["inclusion", "responsiveness"],          // Eline Kamerik
-  "erik": ["anticipation", "reflexivity"],             // Erik de Jonge
-  "avined": ["anticipation", "reflexivity"],           // AVINED
+  "brouns": ["anticipation", "reflexivity"],
+  "field": ["anticipation", "responsiveness"],
+  "koster": ["inclusion", "reflexivity"],
+  "van-oosten": ["anticipation", "responsiveness"],
+  "rivm": ["anticipation", "reflexivity"],
+  "farmer": ["inclusion", "responsiveness"],
+  "kamerik": ["inclusion", "responsiveness"],
+  "erik": ["anticipation", "reflexivity"],
+  "avined": ["anticipation", "reflexivity"],
 };
-
-
 
 const SBD_MAPPING: Record<string, string[] | null> = {
   "brouns": ["ignorance"],
@@ -187,12 +184,13 @@ export default function IntegrationFlowInteractive({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Columns: equal card heights, vertical space distributed
+  // ==== Layout styles (fixed to avoid outward stretch/clipping) ====
   const colStyle: React.CSSProperties = {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
-    gap: 0,
+    justifyContent: "flex-start", // no "space-between"
+    alignItems: "stretch",
+    gap: 12,                      // consistent vertical spacing
     height: "100%",
   };
 
@@ -206,6 +204,7 @@ export default function IntegrationFlowInteractive({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    boxSizing: "border-box",
   };
 
   const rightCardStyle = (stroke: string, fill: string): React.CSSProperties => ({
@@ -218,13 +217,16 @@ export default function IntegrationFlowInteractive({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
+    boxSizing: "border-box",
   });
 
   // Legend (definitions only, show only items currently used)
   const usedLegend = useMemo(() => {
     const pool = domain === "RRI" ? RRI_PILLARS : SBD_RISKS;
     const used = new Set(usedRightKeys);
-    return pool.filter(p => used.has(p.key)).map(p => ({ key: p.key, def: p.def, color: p.color, stroke: p.stroke }));
+    return pool
+      .filter(p => used.has(p.key))
+      .map(p => ({ key: p.key, def: p.def, color: p.color, stroke: p.stroke }));
   }, [domain, usedRightKeys]);
 
   return (
@@ -236,15 +238,18 @@ export default function IntegrationFlowInteractive({
         gridTemplateColumns: "1fr 1fr", // LEFT stakeholders, RIGHT nodes
         columnGap: `${columnGapRem}rem`,
         rowGap: "1rem",
-        alignItems: "stretch",
+        alignItems: "start",
+        padding: "12px", // inner padding ensures arrowheads never hit the edge
         minHeight:
-          Math.max(stakeholders.length, rightNodes.length) * (boxHeight + 16),
+          Math.max(stakeholders.length, rightNodes.length) * (boxHeight + 12) + 24,
+        boxSizing: "border-box",
+        overflow: "visible",
       }}
       className={className}
     >
       {/* LEFT — stakeholders */}
       <div ref={leftColRef} style={colStyle}>
-        <h3 style={{ margin: "0 0 0.75rem 0" }}>{leftTitle}</h3>
+        <h3 style={{ margin: "0 0 0.5rem 0" }}>{leftTitle}</h3>
         {stakeholders.map((s) => (
           <a
             key={`L-${s.id}`}
@@ -269,7 +274,7 @@ export default function IntegrationFlowInteractive({
             display: "flex",
             alignItems: "center",
             gap: 12,
-            marginBottom: 12,
+            marginBottom: 4,
           }}
         >
           <h3 style={{ margin: 0 }}>
@@ -316,7 +321,7 @@ export default function IntegrationFlowInteractive({
         ))}
 
         {/* Legend: definitions only, only used items */}
-        <div style={{ marginTop: 12 }}>
+        <div style={{ marginTop: 4 }}>
           <h4 style={{ margin: "0 0 6px 0" }}>Legend</h4>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
             {usedLegend.map((l) => (
