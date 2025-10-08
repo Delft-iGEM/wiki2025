@@ -77,57 +77,58 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
       </DropdownItem>
 
       <DropdownItem value = "Oligo Table" header = "Oligo Table" level={1}>
-      | Number | Name | Length |
-      |---:|---|---:|
-      | 1 | `1-A-asm-T7A-s` | 18 |
-      | 2 | `2-A-asm-T7A-as` | 20 |
-      | 3 | `3-A-asm-T7B-s` | 20 |
-      | 4 | `4-A-asm-T7B-as` | 20 |
-      | 5 | `5-A-asm-T7C-s` | 20 |
-      | 6 | `6-A-asm-T7C-as` | 20 |
-      | 7 | `7-A-asm-T7D-s` | 20 |
-      | 8 | `8-A-asm-T7D-as` | 18 |
-      | 9 | `9-A-asm-T7mini-A-s` | 20 |
-      | 10 | `10-A-asm-T7mini-A-24-as` | 40 |
-      | 11 | `11-A-asm-T7mini-B-24-s` | 38 |
-      | 12 | `12-A-asm-T7mini-B-21-as` | 40 |
-      | 13 | `13-A-asm-T7mini-C-21-s` | 40 |
-      | 14 | `14-A-asm-T7mini-C-23-as` | 40 |
-      | 15 | `15-A-asm-T7mini-D-23-s` | 40 |
-      | 16 | `16-A-asm-T7mini-D-as` | 18 |
-      | 17 | `17-A-asm-T7mini-E-s` | 20 |
-      | 18 | `18-A-asm-T7mini-E-as` | 20 |
-      | 19 | `19-A-asm-T7mini-F-s` | 20 |
-      | 20 | `20-A-asm-T7mini-F-as` | 20 |
-      | 29 | `29-A-asm-T7mini-D-oho1-as` | 80 |
-      | 30 | `30-A-asm-T7mini-D-oho2-s` | 81 |
-      | 31 | `31-A-asm-gp10-oho1-as` | 90 |
-      | 32 | `32-A-asm-gp10-oho2-s` | 80 |
-      | 33 | `33-A-ins-T7p-oho1-s` | 90 |
-      | 34 | `34-A-ins-T7t-oho2-as` | 89 |
-      | 35 | `35-A-asm-T7mini-C-oho1-as` | 80 |
-      | 36 | `36-A-asm-T7mini-D-oho2-s` | 80 |
-      | 37 | `37-A-GA_test_AB-as` | 25 |
-      | 38 | `38-A-GA_test_AB-s` | 25 |
-      | 39 | `39-A-GA_test_BC-as` | 25 |
-      | 40 | `40-A-GA_test_BC-s` | 25 |
-      | 41 | `41-A-GA_test_CD-as` | 25 |
-      | 42 | `42-A-GA_test_CD-s` | 27 |
-      | 43 | `43-A-GA_test_mAB-as` | 25 |
-      | 44 | `44-A-GA_test_mAB-s` | 25 |
-      | 45 | `45-A-GA_test_mBC-as` | 28 |
-      | 46 | `46-A-GA_test_mBC-s` | 24 |
-      | 47 | `47-A-GA_test_mCD-as` | 24 |
-      | 48 | `48-A-GA_test_mCD-s` | 28 |
-      | 49 | `49-A-GA_test_mDE-as` | 26 |
-      | 50 | `50-A-GA_test_mDE-s` | 28 |
-      | 51 | `51-A-GA_test_mEF-as` | 25 |
-      | 52 | `52-A-GA_test_mEF-s` | 26 |
-      | 53 | `53-A-GA_test_oho1-as` | 25 |
-      | 54 | `54-A-GA_test_oho1-s` | 25 |
-      | 55 | `55-A-GA_test_oho2-as` | 23 |
-      | 56 | `56-A-GA_test_oho2-s` | 25 |
-      </DropdownItem>
+        | Number | Name | Length | Sequence |
+        |---:|---|---:|---|
+        | 1 | `1-A-asm-T7A-s` | 18 | TCTCACAGTGTACGGACC |
+        | 2 | `2-A-asm-T7A-as` | 20 | ATCTATCAAAGGGGACCTCC |
+        | 3 | `3-A-asm-T7B-s` | 20 | ACCTGCTGAGTGGATAAAGG |
+        | 4 | `4-A-asm-T7B-as` | 20 | TCGCATCCAAGTCTGCATAG |
+        | 5 | `5-A-asm-T7C-s` | 20 | TAGCCTCTAAGCTCATGCTG |
+        | 6 | `6-A-asm-T7C-as` | 20 | CGTCCGTAGATGAACTTAGG |
+        | 7 | `7-A-asm-T7D-s` | 20 | AAACGAGTCCGAGAGAAACG |
+        | 8 | `8-A-asm-T7D-as` | 18 | AGGGACACAGAGAGACAC |
+        | 9 | `9-A-asm-T7mini-A-s` | 20 | tctcacagtgtacggaccta |
+        | 10 | `10-A-asm-T7mini-A-24-as` | 40 | GCCGTGTAAAATGACGCATTtcataaaggccactcttgcg |
+        | 11 | `11-A-asm-T7mini-B-24-s` | 38 | AATGCGTCATTTTACACGGCacgatgcgtacatcaagc |
+        | 12 | `12-A-asm-T7mini-B-21-as` | 40 | CGGTGCTTTTGCGTGATATTtgtggtctccctttagtgag |
+        | 13 | `13-A-asm-T7mini-C-21-s` | 40 | AATATCACGCAAAAGCACCGaacagctgagggtaaacagc |
+        | 14 | `14-A-asm-T7mini-C-23-as` | 40 | CGCGCTAATAGCTTTGCATTaacttctcgtagtcgtctgg |
+        | 15 | `15-A-asm-T7mini-D-23-s` | 40 | AATGCAAAGCTATTAGCGCGcaatcgttgccgataagacc |
+        | 16 | `16-A-asm-T7mini-D-as` | 18 | ATGAACAGGCCGATAACG |
+        | 17 | `17-A-asm-T7mini-E-s` | 20 | AGGTGAGGGTAATGTCAAGG |
+        | 18 | `18-A-asm-T7mini-E-as` | 20 | ACGTGAGGAACGTAAGTACC |
+        | 19 | `19-A-asm-T7mini-F-s` | 20 | AAGGCTGTGAGTATCTTCCC |
+        | 20 | `20-A-asm-T7mini-F-as` | 20 | AGGGACACAGAGAGACACTC |
+        | 29 | `29-A-asm-T7mini-D-oho1-as` | 80 | CAGAGGCCTAAGAGTGCTTTGTACTGTATGGCTCCGGTTTGGAATGTTTGCCACGTGTTTAACTTCTCGTAGTCGTCTGG |
+        | 30 | `30-A-asm-T7mini-D-oho2-s` | 81 | AAAGGGGCCGTCAATATCAGAAATAAGACGACGACCCTCGAACGATGATGCTCACTCTCGGCAATCGTTGCCGATAAGACC |
+        | 31 | `31-A-asm-gp10-oho1-as` | 90 | CAGAGGCCTAAGAGTGCTTTGTACTGTATGGCTCCGGTTTGGAATGTTTGCCACGTGTTTttactccactttgaaaaccactgcaccagc |
+        | 32 | `32-A-asm-gp10-oho2-s` | 80 | AAAGGGGCCGTCAATATCAGAAATAAGACGACGACCCTCGAACGATGATGCTCACTCTCGaaccttaacgccagcacagg |
+        | 33 | `33-A-ins-T7p-oho1-s` | 90 | AAACACGTGGCAAACATTCCAAACCGGAGCCATACAGTACAAAGCACTCTTAGGCCTCTGGAAATTAATACGACTCACTATAGGGAGACC |
+        | 34 | `34-A-ins-T7t-oho2-as` | 89 | CGAGAGTGAGCATCATCGTTCGAGGGTCGTCGTCTTATTTCTGATATTGACGGCCCCTTTCAAAAAACCCCTCAAGACCCGTTTAGAGG |
+        | 35 | `35-A-asm-T7mini-C-oho1-as` | 80 | CAGAGGCCTAAGAGTGCTTTGTACTGTATGGCTCCGGTTTGGAATGTTTGCCACGTGTTTAACTTCTCGTAGTCGTCTGG |
+        | 36 | `36-A-asm-T7mini-D-oho2-s` | 80 | AAAGGGGCCGTCAATATCAGAAATAAGACGACGACCCTCGAACGATGATGCTCACTCTCGGCAATCGTTGCCGATAAGAC |
+        | 37 | `37-A-GA_test_AB-as` | 25 | TCGCTTGATGATAAAGTGGTATCCC |
+        | 38 | `38-A-GA_test_AB-s` | 25 | TCGAGTATGAAGAGTGGAAAGTGCC |
+        | 39 | `39-A-GA_test_BC-as` | 25 | CGACCGTAGGATTCACCATCTAGTC |
+        | 40 | `40-A-GA_test_BC-s` | 25 | CACCTTACGCTTGGAACTCCAAAGG |
+        | 41 | `41-A-GA_test_CD-as` | 25 | AGCCATAGGTGACTTAGCAACATCC |
+        | 42 | `42-A-GA_test_CD-s` | 27 | CGGATTTTAAGGATATGCCAGTCAACG |
+        | 43 | `43-A-GA_test_mAB-as` | 25 | GGCTAACTCCAGAGCTTCGTCTAGG |
+        | 44 | `44-A-GA_test_mAB-s` | 25 | CGTGACATCTTAGAGTCGGACTTCG |
+        | 45 | `45-A-GA_test_mBC-as` | 28 | TTGTAAGTCATTGGTTTACCTCCTGAGG |
+        | 46 | `46-A-GA_test_mBC-s` | 24 | CGACGATAAAGGTAAGTTCGACGC |
+        | 47 | `47-A-GA_test_mCD-as` | 24 | TCTCGGTTCAATTGCAACTTTGCC |
+        | 48 | `48-A-GA_test_mCD-s` | 28 | TTTCTATTACTGACCTACGTGGTTCTGG |
+        | 49 | `49-A-GA_test_mDE-as` | 26 | CGTTATGCCTTCCTCAATGTTGAACG |
+        | 50 | `50-A-GA_test_mDE-s` | 28 | AAGCAAATATAATGAGAACATCGAGGGC |
+        | 51 | `51-A-GA_test_mEF-as` | 25 | CATGGAGTTCCTTGAGTTCCTTAGC |
+        | 52 | `52-A-GA_test_mEF-s` | 26 | CAATGAGTTCATCGGTCCTATGATGC |
+        | 53 | `53-A-GA_test_oho1-as` | 25 | CTCCTTGATGATGGCCATGTTATCC |
+        | 54 | `54-A-GA_test_oho1-s` | 25 | CGGCTCTGACCAAGAACTATGTTCC |
+        | 55 | `55-A-GA_test_oho2-as` | 23 | CGTCACCTTCCAGCGTTGATACC |
+        | 56 | `56-A-GA_test_oho2-s` | 25 | GCAATAACTAGCATAACCCCTTGGG |
+</DropdownItem>
+
 
     </DropdownGroup>
   
