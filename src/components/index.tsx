@@ -17,3 +17,4 @@ export * from "./text/hover_text";
 export { default as IntegrationFlowInteractive } from "./text/IntegrationFlowInteractive";
 export { SegmentedContent } from "./SegmentedContent.tsx";
 export * from "./Footnotes";
+export { default as ComparisonTable } from "./ComparisonTable";

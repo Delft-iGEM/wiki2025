@@ -17,27 +17,35 @@ export function MembersGrid() {
     <>
     <span>Nanobiology BSc student</span>
     <br />
-    Bing bang bee, something about me
+  <a className="font-semibold text-primary underline" href="https://www.linkedin.com/in/duncan-whyte-455327325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">Duncan Whyte - LinkedIn profile</a>
     </>
   } />
   <MemberCard firstName="Zofia" lastName="Wojciechowicz" src={pathBase+"zofia"+ext} alt="Zofia" role="Finance and Outreach Manager" flags={<PolandFlag className="w-5 h-3" />} isFlipped={openCardId === "zofia"} onToggle={() => handleCardToggle("zofia")} bio={
     <>
-    Nanobiology BSc student
+    <span>Nanobiology BSc student</span>
+    <br />
+  <a className="font-semibold text-primary underline" href="https://www.linkedin.com/in/zofia-wojciechowicz-793131341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">Zofia Wojciechowicz - LinkedIn profile</a>
     </>
   } flipped />
   <MemberCard firstName="Tessa" lastName="Ernst" src={pathBase+"tessa"+ext} alt="Tessa" role="Human Practices Manager" flags={<GermanyFlag className="w-5 h-3" />} isFlipped={openCardId === "tessa"} onToggle={() => handleCardToggle("tessa")} bio={
     <>
-    Nanobiology BSc student
+    <span>Nanobiology BSc student</span>
+    <br />
+  <a className="font-semibold text-primary underline" href="https://www.linkedin.com/in/tessa-e-2314b2322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">Tessa Ernst - LinkedIn profile</a>
     </>
   } />
   <MemberCard firstName="Krzysztof" lastName="Zabłocki" src={pathBase+"krzysztof"+ext} alt="Krzysztof" role="Wet Lab Manager" flags={<PolandFlag className="w-5 h-3" />} isFlipped={openCardId === "krzysztof"} onToggle={() => handleCardToggle("krzysztof")} bio={
     <>
-    Nanobiology BSc student
+    <span>Nanobiology BSc student</span>
+    <br />
+  <a className="font-semibold text-primary underline" href="https://www.linkedin.com/in/krzysztof-zab%C5%82ocki-58776a26b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">Krzysztof Zabłocki - LinkedIn profile</a>
     </>
   } flipped />
   <MemberCard firstName="Viktor" lastName="Gilin" src={pathBase+"viktor"+ext} alt="Viktor" role="Dry Lab Manager" flags={<BulgariaFlag className="w-5 h-3" />} isFlipped={openCardId === "viktor"} onToggle={() => handleCardToggle("viktor")} bio={
     <>
-    Nanobiology MSc student
+    <span>Nanobiology MSc student</span>
+    <br />
+  <a className="font-semibold text-primary underline" href="https://www.linkedin.com/in/viktor-gilin-630100376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">Viktor Gilin - LinkedIn profile</a>
     </>
   } />
   <MemberCard firstName="Franciszek" lastName="Koliński" src={pathBase+"franek"+ext} alt="Franek" role="Graphical design and wiki illustrations" flags={<PolandFlag className="w-5 h-3" />} isFlipped={openCardId === "franek"} onToggle={() => handleCardToggle("franek")} bio={
