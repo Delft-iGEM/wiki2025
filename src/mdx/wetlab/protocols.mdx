@@ -41,8 +41,8 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
 <Content items="left">
 
   {/* --- MODULE A: T7 Bacteriophage Engineering --- */}
-  <Dropdown header="Engineering the phage" level={0}>
-    <p>Protocols and procedures for Module A research and development.</p>
+  ### T7 Bacteriophage Engineering
+  Protocols and procedures for Module A research and development.
     
     <DropdownGroup multiple className="mt-4">
       <DropdownItem value="q5pcr" header="Q5 polymerase PCR protocol" level={1} >
@@ -75,12 +75,66 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
       <DropdownItem value="t7-phage-plaque" header="T7 phage plaque assay" level={1}>
         <DunPlaque />
       </DropdownItem>
+
+      <DropdownItem value = "Oligo Table" header = "Oligo Table" level={1}>
+      | Number | Name | Length |
+      |---:|---|---:|
+      | 1 | `1-A-asm-T7A-s` | 18 |
+      | 2 | `2-A-asm-T7A-as` | 20 |
+      | 3 | `3-A-asm-T7B-s` | 20 |
+      | 4 | `4-A-asm-T7B-as` | 20 |
+      | 5 | `5-A-asm-T7C-s` | 20 |
+      | 6 | `6-A-asm-T7C-as` | 20 |
+      | 7 | `7-A-asm-T7D-s` | 20 |
+      | 8 | `8-A-asm-T7D-as` | 18 |
+      | 9 | `9-A-asm-T7mini-A-s` | 20 |
+      | 10 | `10-A-asm-T7mini-A-24-as` | 40 |
+      | 11 | `11-A-asm-T7mini-B-24-s` | 38 |
+      | 12 | `12-A-asm-T7mini-B-21-as` | 40 |
+      | 13 | `13-A-asm-T7mini-C-21-s` | 40 |
+      | 14 | `14-A-asm-T7mini-C-23-as` | 40 |
+      | 15 | `15-A-asm-T7mini-D-23-s` | 40 |
+      | 16 | `16-A-asm-T7mini-D-as` | 18 |
+      | 17 | `17-A-asm-T7mini-E-s` | 20 |
+      | 18 | `18-A-asm-T7mini-E-as` | 20 |
+      | 19 | `19-A-asm-T7mini-F-s` | 20 |
+      | 20 | `20-A-asm-T7mini-F-as` | 20 |
+      | 29 | `29-A-asm-T7mini-D-oho1-as` | 80 |
+      | 30 | `30-A-asm-T7mini-D-oho2-s` | 81 |
+      | 31 | `31-A-asm-gp10-oho1-as` | 90 |
+      | 32 | `32-A-asm-gp10-oho2-s` | 80 |
+      | 33 | `33-A-ins-T7p-oho1-s` | 90 |
+      | 34 | `34-A-ins-T7t-oho2-as` | 89 |
+      | 35 | `35-A-asm-T7mini-C-oho1-as` | 80 |
+      | 36 | `36-A-asm-T7mini-D-oho2-s` | 80 |
+      | 37 | `37-A-GA_test_AB-as` | 25 |
+      | 38 | `38-A-GA_test_AB-s` | 25 |
+      | 39 | `39-A-GA_test_BC-as` | 25 |
+      | 40 | `40-A-GA_test_BC-s` | 25 |
+      | 41 | `41-A-GA_test_CD-as` | 25 |
+      | 42 | `42-A-GA_test_CD-s` | 27 |
+      | 43 | `43-A-GA_test_mAB-as` | 25 |
+      | 44 | `44-A-GA_test_mAB-s` | 25 |
+      | 45 | `45-A-GA_test_mBC-as` | 28 |
+      | 46 | `46-A-GA_test_mBC-s` | 24 |
+      | 47 | `47-A-GA_test_mCD-as` | 24 |
+      | 48 | `48-A-GA_test_mCD-s` | 28 |
+      | 49 | `49-A-GA_test_mDE-as` | 26 |
+      | 50 | `50-A-GA_test_mDE-s` | 28 |
+      | 51 | `51-A-GA_test_mEF-as` | 25 |
+      | 52 | `52-A-GA_test_mEF-s` | 26 |
+      | 53 | `53-A-GA_test_oho1-as` | 25 |
+      | 54 | `54-A-GA_test_oho1-s` | 25 |
+      | 55 | `55-A-GA_test_oho2-as` | 23 |
+      | 56 | `56-A-GA_test_oho2-s` | 25 |
+      </DropdownItem>
+
     </DropdownGroup>
-  </Dropdown>
+  
 
   {/* --- MODULE B: Stability Testing --- */}
-  <Dropdown header="Testing the phage's stability" level={0}>
-    <p>Protocols and procedures for Module B research and development.</p>
+  ### Phage stability testing
+  Protocols and procedures for Module B research and development.
     
     <DropdownGroup multiple className="mt-4">
       <DropdownItem value="ph-temp-stability" header="Long-Term Temperature Stability of T7 Bacteriophage" level={1}>
@@ -102,11 +156,11 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
         <B_plaqueAssayStability/>
       </DropdownItem>
     </DropdownGroup>
-  </Dropdown>
+  
 
   {/* --- MODULE C: MS2 Capsid Expression in E. coli --- */}
-  <Dropdown header={<div>Expressing the MS2 Capsid in <i>E. coli</i></div>} level={0}>
-    <p>Comprehensive protocols for Module C including bacterial transformation, protein expression, and VLP production.</p>
+  ### MS2 Capsid Expression in E. coli
+  Comprehensive protocols for Module C including bacterial transformation, protein expression, and VLP production.
     
     <DropdownGroup single className="mt-4">
       <DropdownItem value="lb-agar-plates" header="Pouring LB Agar Plates" level={1}>
@@ -146,10 +200,13 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
         <C_temImaging />
       </DropdownItem>
     </DropdownGroup>
-  </Dropdown>
+  
+### Improved plaque assay protocol
 
-<Dropdown value="plaque-assay" header="Plaque assay, T7 bacteriophage" level={0}>
-<DunPlaque />
-</Dropdown>
+<DropdownGroup single className="mt-4">
+      <DropdownItem value="plaque-assay" header="Plaque assay, T7 bacteriophage" level={1}>
+        <C_lbAgarPlates />
+      </DropdownItem>
+</DropdownGroup>
 
 </Content>

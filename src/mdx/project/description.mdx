@@ -1,242 +1,27 @@
-import { Content, Header, AccentLine, Dropdown, Temperature } from "@/components";
-import ModDDes from "./moduleDdesign.mdx";
-
+import { Content, Header, AccentLine, Dropdown, Temperature, SegmentedContent } from "@/components";
+import Abstract from "./descriptionpages/abstract.mdx"
+import Detailed from "./descriptionpages/detailed.mdx"
+import Idea from "./descriptionpages/idea.mdx"
 
 <Header>
 # description
 an introduction to our project
 </Header>
 
-
-<Content items="left">
-
-<span className="space-y-1">
-A single vaccine against all types of flu.
-
-A vaccine against a new virus, done in a week.
-
-A vaccine against allergies, or diabetes, or even cancer.
-</span>
-
-Since the successful debut of mRNA vaccines in the COVID-19 pandemic,
-ambitious predictions have been made about its potential.
-But the mRNA vaccine rollout also laid bare many drawbacks. The vaccines
-are kept at <Temperature celsius="−20 °C to −80 °C" fahrenheit="−4 °F to −112 °F" />. This made it hard to transport them to remote
-or less-developed regions. mRNA vaccines are more expensive to produce, too.
-And the logistical challenge of injecting everyone came at great cost.
-
-As a solution, we present *Snaccine*, a new type of vaccine which uses
-bacteriophages to hijack gut bacteria to produce armoured mRNA.
-
-<Dropdown header="abstract" level={0}>
-
-<img
-	src='https://static.igem.wiki/teams/5649/svg/4step-min.svg'
-	alt="Diagram showing the four-step Snaccine workflow"
-	className="w-full max-w-2xl pb-4 mx-auto"
+<SegmentedContent
+	segments={[
+		{
+			label: "Abstract",
+			content: <Abstract />,
+		},
+		{
+			label: "Idea",
+			content: <Idea />,
+			defaultActive: true,
+		},
+		{
+			label: "Detailed Description",
+			content: <Detailed />,
+		},
+	]}
 />
-
-{/*<div className="md:mx-8 md:p-6">*/}
-*Snaccine* is a novel type of vaccine, ideal for vaccinating chickens
-against avian influenza (bird flu). Genetically edited bacteriophages
-are taken orally, in a stomach acid-resistant pill. They reproduce
-inside gut bacteria, while also producing RNA packaged within armour,
-an MS2 VLP with cell-penetrating peptides. The armoured RNA enters
-(eukaryotic) host cells and works like an mRNA vaccine. It tricks the
-cell into producing an antigen. This antigen is detected by the immune
-system and teaches it to recognise and fight the original pathogen.
-Snaccines share the same advantages mRNA technology has over
-traditional vaccines. But where typical mRNA vaccines have to be kept
-in freezers, *Snaccines* can be stored and transported at room
-temperature. Together with their cheaper production and oral
-administration, *Snaccine* is an ideal technology for fighting bird
-flu.
-
-{/*</div>*/}
-</Dropdown>
-
-<img
-	src="https://static.igem.wiki/teams/5649/chickenscheme/chicken-scheme.webp"
-	alt="Diagram showing the Snaccine workflow in chickens, from capsule to immune response"
-	className="pb-4 mb-4 bg-white rounded-lg shadow-md"
-/>
-
-<Dropdown header="what are bacteriophages?" level={0}>
-
-Bacteriophages, or phages, are viruses which infect bacteria. There are
-more phages in the world than all other organisms combined. There is
-great diversity among phages, but the best known are ones that look like
-little moon landers with geometric heads like the one in our logo.
-
-In the lab, we use a species of phage called T7, which was isolated from
-sewers in 1945 and infects *E. coli* bacteria. The 'armour' we use for
-our mRNA is the coat of a smaller phage called MS2. Since this armour
-isn't a full phage by itself, it's called a *virus-like particle* or
-*VLP*.
-
-Phages attack bacteria, and they can be used to fight bacterial
-infections in humans. This 'phage therapy' is used in Russia, Georgia,
-and Poland, and in experimental settings in other countries. It's a
-possible solution to the growing problem of drug-resistant bacteria.
-
-Vaccines based on phages aren't a new idea. After the Nobel
-Prize-winning discovery of how to engineer phages to display peptides on
-their surface, many studies investigated the idea of using phages (or
-VLPs) to masquerade as a human virus. None of these are approved
-anywhere, as of yet. Our method is different still: the (infectious)
-phages in turn produce an mRNA vaccine.
-
-</Dropdown>
-
-<Dropdown header="mRNA vaccines: a recap" level={0}>
-
-Most traditional vaccines contain the targeted virus, or a part of it.
-Your body recognises the foreign material and your immune system learns
-to recognise and to fight it. When the real virus tries to infect you,
-your immune system will be primed to quickly take it out.
-
-mRNA vaccines instead trick your own body into making a part of the
-virus. If DNA is the grand blueprint for an organism, mRNA or 'messenger
-RNA' is a photocopy of part of it. This photocopy is handed to the
-ribosomes, the builders of the cell. In the case of the existing mRNA
-vaccines, this injected mRNA hijacks your cell to make the
-characteristic 'spikes' of the coronavirus. After their production, the
-body recognises them as foreign material, and rest proceeds similarly to
-traditional vaccines.
-
-The mRNA, packaged within a membrane called a liposome, starts with a
-short cap made of two (modified) nucleotides allowing it to be read and
-keeping it from being degraded. It is followed by a 'prologue' called
-the 5' UTR, and then the nucleotides AUG. These tell the ribosome to
-start building the following spike protein, with a short flag telling
-the cell to dump the protein outside the cell. Finally, after an
-'epilogue' called the 3' UTR, a very long sequence of A's protects the
-mRNA from being degraded from this end.\[b\]
-
-The adaptability of this method allowed Moderna to design its vaccine in
-just two days after the SARS-CoV-2 genome was put online. It then takes
-only a couple weeks to produce the encapsulated mRNA. Also, since the
-mRNA only contains a (non-infectious) part of the virus, there is no
-risk of the vaccine infecting the patient. Some traditional vaccines,
-such as inactivated or attenuated vaccines, can lead the patient to
-spread a vaccine-derived virus, such as with the poliovirus vaccine.
-With mRNA vaccines, this is impossible.
-
-</Dropdown>
-
-## caveats of mRNA vaccines
-
-Despite all the advantages, mRNA vaccines come with some big caveats.
-
-The liposomes are much less stable than traditional vaccines, and have
-to be kept very cold. The Pfizer vaccine has to be kept at <Temperature celsius="−60 °C" fahrenheit="−76 °F" />,
-though it can be kept at regular freezer temperatures for the last two weeks,
-and the Moderna vaccine has to be kept at <Temperature celsius="−20 °C" fahrenheit="−4 °F" />.
-Many developing and/or remote regions do not have the 'cold chain'
-necessary to transport and store vaccines at these temperatures. Doing
-that is quite costly, and also an obstacle to using mRNA vaccines to
-combat bird flu.
-
-The first mRNA vaccines have proven quite costly so far. Traditional
-vaccines are usually a virus in some form, and can be grown in a cell
-culture. mRNA vaccines are made by transforming bacteria, growing them,
-and harvesting (and purifying) the mRNA. The mRNA then undergoes
-chemical steps, such as the creation of the cap, the replacement of all
-uridine nucleotides with N1-methylpseudouridine and the packaging of the
-mRNA inside liposomes. This makes governments choose the cheaper option
-of killing all birds on an infected farm instead.
-
-<table className="comparison-table">
-	<thead>
-	<tr className="header">
-	<th className="toprowcell text-sm md:text-xl" style={{textAlign: "left", fontWeight: "bold"}}>advantages</th>
-	<th className="toprowcell text-sm md:text-base">traditional</th>
-	<th className="toprowcell text-sm md:text-base">mRNA</th>
-	<th className="toprowcell text-sm md:text-xl text-primary" style={{fontWeight: "bold"}}>snaccine</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td className="advantagecell text-sm md:text-base">Development</td>
-	<td className="redcell text-sm md:text-base">Years</td>
-	<td colSpan="2" className="greencell text-sm md:text-base">Days</td>
-	</tr>
-	<tr>
-	<td className="advantagecell text-sm md:text-base">Infection risk</td>
-	<td className="redcell text-sm md:text-base">Some</td>
-	<td colSpan="2" className="greencell text-sm md:text-base">None</td>
-	</tr>
-	<tr>
-	<td className="advantagecell text-sm md:text-base">Storage & transport</td>
-	<td className="orangecell text-sm md:text-base">Mostly fridge</td>
-	<td className="redcell text-sm md:text-base">Ultra-cold</td>
-	<td className="greencell text-sm md:text-base">Room temperature</td>
-	</tr>
-	<tr>
-	<td className="advantagecell text-sm md:text-base">Production cost</td>
-	<td className="orangecell text-sm md:text-base">Some low</td>
-	<td className="redcell text-sm md:text-base">High</td>
-	<td className="greencell text-sm md:text-base">Low</td>
-	</tr>
-	<tr>
-	<td className="advantagecell text-sm md:text-base">Administration</td>
-	<td className="orangecell text-sm md:text-base">Some oral</td>
-	<td className="redcell text-sm md:text-base">Injection</td>
-	<td className="greencell text-sm md:text-base">Oral, at home</td>
-	</tr>
-	</tbody>
-</table>
-
-
-<h2 className="text-secondary">we present</h2>
-
-
-<img
-	src='https://static.igem.wiki/teams/5649/svg/mainlogowithsubtitle.svg'
-	alt="Snaccine: a phage-based edible vaccine"
-	className="w-full max-w-lg mr-auto -mt-10 -ml-13 z-30"
-/>
-
-This is where our vaccine comes in.
-
-At heart Snaccines are mRNA
-vaccines, but the factory is inside the gut.
-
-Phages can be chosen to specifically infect one strain of bacteria
-in the gut of one animal. This prevents the modified genetic code
-spreading into the wild. Though the lab-friendly phage we used in our
-proof of concept, T7, isn't stable for long outside of a fridge, there
-are many varieties of phages which can survive at room temperature or
-above.
-
-Most phages can't survive the low pH of the chicken's 'gizzard', its
-second stomach, which is actually an advantage. Phages released from one
-chicken wouldn't be able to spread to another, but phages inside a pill
-go through the gizzard without a problem.
-
-The presence of lots of phages and lots of lysed (destroyed) bacteria in
-the gut would trigger the immune system. This too is actually an
-advantage. Many vaccines include so-called 'adjuvants' to trigger the
-immune system on purpose, but here that comes for free with the phages.
-This strengthened immune response makes the vaccine more effective.
-
-As Snaccines are taken as pills, they are much more practical to
-administer. For chickens in specific, the capsules could be added to their
-feed or to their water supply. Against human viruses, Snaccines could be
-sold at pharmacies or delivered by mail.
-
-## the challenges of producing mRNA vaccines *in vivo*
-
-{/*<img src="https://static.igem.wiki/teams/5649/figures/moduled-final-map.webp" />*/}
-<img src="https://static.igem.wiki/teams/5649/moduledplasmidbiorender/module-d-plasmid-biorender.webp" />
-<p className="text-sm text-muted-foreground pl-2 border-l-2">A diagram of the phage's payload, the vaccine-producing DNA. Segment lengths not to scale.</p>
-
-Phages can be grown in bacterial cultures and then filtered out. This
-requires fewer chemical processing steps than mRNA vaccines, and saves a
-lot on cost.
-
-But where did those processing steps go?
-
-<ModDDes />
-
-</Content>

@@ -10,6 +10,7 @@ import clsx from "clsx";
 interface SegmentDefinition {
   readonly label: string;
   readonly content: ReactNode;
+  readonly defaultActive?: boolean;
 }
 
 interface SegmentedContentProps {
@@ -37,19 +38,7 @@ export function Segments({
 }: SegmentsProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!wrapperRef.current) {
-      return;
-    }
-
-    const activeButton = wrapperRef.current.querySelector<HTMLButtonElement>(
-      "[data-active='true']"
-    );
-
-    if (activeButton) {
-      activeButton.focus({ preventScroll: true });
-    }
-  }, [activeSegment]);
+  
 
   return (
     <div
@@ -66,7 +55,7 @@ export function Segments({
       <LayoutGroup>
         <div
           ref={wrapperRef}
-          className="relative flex w-full max-w-4xl flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/30 bg-popover/70 p-2 shadow-lg backdrop-blur-xl transition-all duration-500 dark:border-white/10 dark:bg-secondary/30"
+          className="relative flex max-w-4xl flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/30 bg-popover/70 p-2 shadow-lg backdrop-blur-xl transition-all duration-500 dark:border-white/10 dark:bg-secondary/30"
         >
           {segments.map((segment) => {
             const isActive = segment === activeSegment;
@@ -112,7 +101,13 @@ export function SegmentedContent({
 }: SegmentedContentProps) {
   const labels = useMemo(() => segments.map((segment) => segment.label), [segments]);
 
-  const [activeLabel, setActiveLabel] = useState(() => labels[0] ?? "");
+  const [activeLabel, setActiveLabel] = useState(() => {
+    const defaultSegment = segments.find((segment) => segment.defaultActive);
+    if (defaultSegment) {
+      return defaultSegment.label;
+    }
+    return labels[0] ?? "";
+  });
 
   useEffect(() => {
     if (labels.length === 0) {
@@ -120,9 +115,14 @@ export function SegmentedContent({
     }
 
     if (!labels.includes(activeLabel)) {
-      setActiveLabel(labels[0]);
+      const defaultSegment = segments.find((segment) => segment.defaultActive);
+      if (defaultSegment) {
+        setActiveLabel(defaultSegment.label);
+      } else {
+        setActiveLabel(labels[0]);
+      }
     }
-  }, [activeLabel, labels]);
+  }, [activeLabel, labels, segments]);
 
   const activeSegment = useMemo(
     () => segments.find((segment) => segment.label === activeLabel) ?? segments[0],
@@ -134,7 +134,7 @@ export function SegmentedContent({
   }
 
   return (
-    <section className={clsx("space-y-5", className)}>
+    <section className={clsx("space-y-5 mt-5", className)}>
       <Segments
         segments={labels}
         activeSegment={activeSegment.label}
