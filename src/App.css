@@ -148,7 +148,7 @@
     }
 
     li {
-      @apply ml-4;
+      @apply ml-4 text-base;
     }
 
     blockquote {
