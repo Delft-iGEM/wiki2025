@@ -60,7 +60,11 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
   };
 
   return (
-  <nav className="fixed top-0 inset-x-0 z-50 border-b-2 border-border bg-popover/70 backdrop-blur" style={{ overflowAnchor: "none" }}>
+  <nav
+    id="site-navbar"
+    className="fixed top-0 inset-x-0 z-50 border-b-2 border-border bg-popover/70 backdrop-blur"
+    style={{ overflowAnchor: "none" }}
+  >
       <div className="max-container">
         <div className="flex h-15 items-center justify-between">
           {/* Brand */}

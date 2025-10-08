@@ -14,10 +14,10 @@ To build the Snaccine platform, we split our experimental workflow into parallel
 
 ![enter image description here](https://static.igem.wiki/teams/5649/figures/experiments-module-overview.webp)
 
-**T7 Genome Engineering**
+## T7 Genome Engineering
 This module aims to establish  an accessible workflow for engineering the genome of the T7 phage. We applied a novel _in vitro_ genome engineering workflow inspired by recent literature to insert a fluorescent reporter gene (mCherry) downstream of gene 10, testing both assembly efficiency and phage viability.  The aim of this module's experiments is to validate a faster, selection-free genome modification strategy that can support iterative phage vaccine development.
-<Dropdown header= "Module A: Phage Engineering" level={0}>
-**PCR primer design**
+<Dropdown header={<h4 className="py-0 font-normal">Module A: Phage Engineering</h4>} level={0}>
+PCR primer design**
 PCR primer sequences for both T7 phage genome production as well as screening of DNA products were designed with SnapGene3. Primer sequences for Wild Type Assembly were taken from Levrier et al.¹  Screening PCR primers were designed to have a melting temperature of ~60 °C and a G or C 3’ end [Fig. example GA primer], which supports a more stable initiation of DNA replication [ref. needed]. To insert the mCherry gene into the T7 genome, we designed primer sets that amplified the mCherry insert and the flanking T7 genomic fragments, such that the resulting fragments shared identical overlapping sequences at their ends [Figure mCherry PCR product]. In addition, the primers for the mCherry insert and its homologous T7 genomic fragments were designed to include an orthogonal homologous sequence (oho), which minimizes any unintended homology to the T7 genome. After the primers were designed, they were ordered already dissolved in water with a concentration of 100 μM that was further diluted to 10 μM to be used for PCR.
 
 **Q5 PCR**
@@ -52,25 +52,20 @@ To test the presence of phages and quantify their concentration, we performed pl
 
 </Dropdown>
 
-**Storage & Stability**
+## Storage & Stability
 In this module, we explore how T7 behaves in environments that mimic food storage or the gastrointestinal tract. We store T7 phages at different temperatures (4°C, 20°C and 37°C) for different times. As well as we test phage stability in the chicken gut pH conditions.
-<Dropdown header= "Module B: Storage & Stability" level={0}>
+<Dropdown header= {<h4 className="py-0 font-normal">Module B: Storage & Stability</h4>} level={0}>
 </Dropdown>
 
-**MS2 Capsid Production in e. coli**
-This module tests whether E. coli can express and assemble MS2 virus-like particles (VLPs) from a synthetic plasmid under T7 promoter control. Expression and folding are confirmed by SDS-PAGE and TEM imaging. Successful results validate our plasmid design and establish a foundation for transferring VLP production into engineered phages.
-
-
-**VLP Delivery to Mammalian Cells**
-In this module, we designed a new plasmid encoding MS2 capsids that encapsulate an RNA cargo (such as eGFP) — serving as a model for the final vaccine RNA. The goal will be to test whether these RNA-loaded capsids can deliver genetic material into mammalian cells.
-Following expression and purification using the same optimized workflow established in the previous module (MS2 Capsid Production in _E. coli_), the purified VLPs will be applied to mammalian cell cultures. Uptake and expression will then be evaluated by monitoring fluorescence, as successful delivery and translation of the eGFP RNA cargo would result in visibly green, fluorescent cells.
-
-
-
-
-
+## MS2 Capsid Production in *E. coli*
+This module tests whether *E. coli* can express and assemble MS2 virus-like particles (VLPs) from a synthetic plasmid under T7 promoter control. Expression and folding are confirmed by SDS-PAGE and TEM imaging. Successful results validate our plasmid design and establish a foundation for transferring VLP production into engineered phages.
 
 
 
 <InteractiveSchematic/>
+
+## VLP Delivery to Mammalian Cells
+In this module, we designed a new plasmid encoding MS2 capsids that encapsulate an RNA cargo (such as eGFP) — serving as a model for the final vaccine RNA. The goal will be to test whether these RNA-loaded capsids can deliver genetic material into mammalian cells.
+Following expression and purification using the same optimized workflow established in the previous module (MS2 Capsid Production in _E. coli_), the purified VLPs will be applied to mammalian cell cultures. Uptake and expression will then be evaluated by monitoring fluorescence, as successful delivery and translation of the eGFP RNA cargo would result in visibly green, fluorescent cells.
+
 </Content>

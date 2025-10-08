@@ -57,60 +57,66 @@ Such constructs would allow us to test whether MS2 VLPs can efficiently package,
 
 <Dropdown header="bacteriophage engineering" level={0}>
 
-A key goal of Snaccine is to develop an **accessible and modular phage engineering pipeline**. Current phage modification tools are often laborious or limited to specific genome loci. To overcome these constraints, we implemented a novel *in vitro* engineering method based on **PCR amplification and genome assembly**, inspired by the work of Levrier *et al.* and Vu *et al.*. This method provides high efficiency while relying primarily on standard molecular biology techniques.
-
----
-
-### proof-of-concept: engineering an insertion
+### Proof-of-Concept: Engineering an Insertion
 
 #### PCR of T7 Phage Fragments
 
-The first step involved PCR amplification of **T7 phage genome fragments**, preparing both a **wild-type genome** and a variant with an **mCherry gene insertion** downstream of gene 10 (within fragment C, subdivided into C1 and C2). The wild-type genome served as a control to validate the assembly process independently of inserted sequences.
+To establish a proof-of-concept for our T7 phage engineering strategy, we aimed to insert an **mCherry gene downstream of gene 10**, a region known for high expression levels. This site was chosen based on literature and expert advice, as it allows for efficient expression while maintaining phage viability. As a control, we also amplified the **wild-type (WT)** T7 genome without any insertions.
 
-To ensure site-specific insertion, we incorporated **50 bp homology arms** into the PCR primers. For the mCherry insertion, primers also introduced **orthogonal homologous sequences (oho)** to minimize unintended recombination with the T7 genome. This design enables selection for correct assembly, as no viable genome can form without successful integration of exogenous DNA.
+We began by amplifying **T7 genome fragments (A–D)** using **Q5 polymerase**, alongside a variant in which fragment C was subdivided into **C1 and C2** to allow for the insertion of the **mCherry** gene. To enable site-specific insertion, all primers contained **50 bp homology arms**, and for the mCherry construct, we incorporated **orthogonal homologous sequences (oho1/oho2)**. These orthogonal regions minimized unwanted recombination with the native T7 genome and ensured that only correctly assembled genomes would produce viable phages.
 
-**Figure 3.**  
-*Upper panel:* Diagram of (a) wild-type T7 genome fragments and (b) T7 genome with mCherry insertion.  
-*Lower panel:* Agarose gel confirmation of PCR amplification for T7 genome fragments (A, B, C, D, C1, C2) and mCherry gene. Lane 1: NEB 1 kb+ ladder.
+> ![alt text](https://static.igem.wiki/teams/5649/figures/first-pcr.webp)  
+> **Figure 3.**  
+> *Upper panel:* Diagram of (a) wild-type T7 genome fragments and (b) T7 genome with mCherry insertion.  
+> *Lower panel:* Agarose gel confirmation of PCR amplification for T7 genome fragments (A, B, C, D, C1, C2) and mCherry gene. Lane 1: NEB 1 kb+ ladder.
 
-Following the approach of Levrier *et al.*, the T7 genome was divided into four main fragments (A–D). For the wild-type genome, primer sequences were based on established designs, while primers for mCherry, C1, and C2 fragments were modified to include *oho1* and *oho2* sequences. All fragments were amplified using **Q5 polymerase**.
-
-As the template, we used intact T7 phages rather than isolated DNA, extending the initial denaturation step to 5 minutes to release genomic DNA. Successful amplification was confirmed by **1% agarose gel electrophoresis (AGE)**.
-
----
-
-### genome assembly and screening
-
-PCR fragments were column-purified, quantified, and combined at equimolar concentrations in a **commercial genome assembly mix**. Assembly success was screened by PCR targeting junction regions between fragments. Product size varied depending on the region amplified.
-
-**Figure 4.**  
-*AGE visualization of assembled genome fragments.*  
-Most fragments assembled successfully, though some junctions—particularly between A/B and C1/mCherry—did not yield products, suggesting incomplete assembly at those sites.
+Instead of purifying phage DNA beforehand, we followed the approach of Levrier *et al.*, using **intact T7 phages** as a PCR template with an extended 5-minute initial denaturation step to release genomic DNA. All fragments amplified successfully and were visualized on **1% agarose gel electrophoresis (AGE)**, confirming that our PCR design worked efficiently despite the long primers required for the orthogonal arms.
 
 ---
 
-### transformation and infection
+### Genome Assembly and Screening
 
-Despite incomplete assembly, we proceeded with **transformation** to test whether *E. coli* cellular machinery could complete assembly *in vivo*. Following Levrier *et al.*, even partially assembled genomes can be repaired post-transformation via homologous recombination.
+Next, we combined the PCR-amplified fragments in a **commercial DNA assembly mix** to reconstruct the complete phage genome *in vitro*. Each fragment was first purified and quantified to ensure equimolar ratios during assembly. To evaluate the assembly’s success, we performed **junction-specific PCRs** targeting overlapping regions between neighboring fragments (e.g., A–B, B–C, C–D). The expected product sizes differed depending on which junction was tested.
 
-A modified **BL21 heat-shock transformation** was performed using standard NEB guidelines. After outgrowth, samples were incubated in LB with additional *E. coli* to support phage propagation. No antibiotics were added due to the lack of resistance markers. The following day, supernatants were centrifuged, filtered, and analyzed via **plaque assay**.
+> ![alt text](https://static.igem.wiki/teams/5649/figures/assembly-gel-and-overview.webp)  
+> **Figure 4.**  
+> *AGE visualization of assembled genome fragments.*  
+> Most junctions produced products of the expected sizes, confirming partial assembly of the genome. However, certain junctions—particularly **A/B** and **C1/mCherry**—did not yield PCR products, suggesting that the assembly at those sites remained incomplete.
 
-**Figure 5.**  
-*Plaque assay results for control and experimental samples.*
-
-While the T7 control showed positive plaque formation, no plaques were observed in the engineered samples, suggesting unsuccessful reboot. To improve efficiency, we next attempted **electroporation**, which enables uptake of larger DNA fragments. However, this also did not yield conclusive results, indicating the need for further optimization.
+While full-length genome assembly was not achieved in this attempt, the strong amplification of other junctions demonstrated that the technique was functional and that fragment annealing occurred for a significant portion of the genome. This partial success validated the overall **compatibility of the T7 fragments and insert design**, and highlighted specific points for optimization—especially around long repetitive regions and fragments with orthogonal overlaps.
 
 ---
 
-## summary
+### Transformation and Infection
 
-In this phase, we established two major components of the Snaccine workflow:
+Following the **Design–Build–Test–Learn** cycle, we decided to test whether *E. coli* could naturally complete the assembly of partially joined fragments *in vivo*. Literature suggested that even incomplete genomes can undergo recombination after transformation, restoring viable phages under the right conditions (Levrier *et al.*).
 
-1. **MS2 VLP Module:** Demonstrated successful bacterial expression, solubility, and self-assembly of MS2 VLPs.  
-2. **Phage Engineering Module:** Developed and tested a modular *in vitro* T7 phage engineering pipeline, showing promise but requiring optimization for full genome assembly and reboot efficiency.
+We first performed a **modified BL21 heat-shock transformation**, introducing the assembled genome directly into competent *E. coli* cells without any antibiotic selection, as our constructs contained no resistance markers. The cells were allowed to recover in rich LB medium and incubated overnight with additional *E. coli* to promote phage propagation. The following day, cultures were centrifuged, filtered, and analyzed using a **plaque assay** to detect the presence of viable phages.
 
-Together, these results validate key steps toward building an accessible RNA vaccine design system integrating phage engineering, VLP production, and RNA delivery.
+> ![alt text](https://static.igem.wiki/teams/5649/figures/plaquea.webp)
+> **Figure 5.**  
+> *Plaque assay results for control and experimental samples.*  
+> Clear plaques were observed only in the **wild-type control**, confirming the assay’s functionality. In contrast, no plaques appeared for the mCherry-engineered samples, indicating that **no viable recombinant phages were produced** during this round.
 
+Given the potential size and complexity of the assembled DNA (~40 kb), we suspected that standard transformation might have limited efficiency. To improve uptake, we repeated the experiment using **electroporation**, a technique capable of introducing large DNA molecules into cells more effectively. Despite this improvement, plaque assays again showed no visible plaques, suggesting that additional optimization is required—possibly in the assembly or transformation stages.
+
+---
+
+### Reflection and Outlook
+
+Although we did not yet obtain functional engineered phages, this proof-of-concept experiment validated several essential steps of our engineering framework:
+
+- **PCR amplification of large genomic fragments** from intact T7 phages was achieved successfully using our extended-denaturation protocol.  
+- **DNA assembly reactions** produced multiple correctly joined junctions, showing that the design of our homology regions was viable.  
+- **Screening methods** effectively distinguished between successful and incomplete assemblies, providing a clear foundation for iterative troubleshooting.  
+
+The lack of plaques indicates that further refinement is needed in either the assembly efficiency or the transformation step. Future experiments will focus on:
+
+1. **Optimizing homology arm length and overlap composition** to improve full-genome assembly yield.  
+2. **Testing DNA concentration effects** during the assembly mix, as literature (e.g., Vu *et al.*) suggests that higher DNA input may not always correlate with improved results.  
+3. **Implementing electroporation protocols optimized for large DNA fragments**, potentially coupled with recombination-proficient *E. coli* strains.  
+
+Despite not yielding viable phages yet, this module **established a solid experimental framework** for *in vitro* T7 phage genome engineering. With the considerations that multiple studies such as Levrier et al and Vu et al have already confirmed this phage engineering method to work in their context, suggests that with further troubleshooting and iterative refinement of the procedure, a phage engineering pipeline can be achieved which would allow the rapid engineering of phages. 
 </Dropdown>
 
 </Content>

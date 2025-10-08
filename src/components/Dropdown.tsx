@@ -37,7 +37,7 @@ export type DropdownGroupProps = {
 
 export type DropdownItemProps = {
   /** Header shown in the collapsed/expanded bar */
-  readonly header: string;
+  readonly header: React.ReactNode;
   /** Contents rendered when expanded */
   readonly children: React.ReactNode;
   /** Stable value for the item */

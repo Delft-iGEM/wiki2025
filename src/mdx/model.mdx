@@ -46,7 +46,7 @@ Using the same software, we then analyzed our MD output for its **RMSD**, **RMSF
 6. Analyze simulation (e.g., RMSD, RMSF, H-bonds, Energy)
 
 ![alt text](https://static.igem.wiki/teams/5649/figures/overview-dry-lab.webp)
-
+Fig. # Overview of our MD procedure
 ---
 
 ## Description of the system
@@ -111,11 +111,16 @@ We analyzed the total number of hydrogen bonds formed in the structure. We visua
 
 #####to make figures collapsable as they are quite big
 >![alt text](https://static.igem.wiki/teams/5649/figures/hbonds-histo-salt-overlay.webp)*
+>Fig. # Hydrogen bond Distribution Salt Overlay
+
+
+<dropdown header="Expand to see separate salt conditions" level={0}>
 ![alt text](https://static.igem.wiki/teams/5649/figures/hbonds-histo-salt.webp)
-Fig. # Hbond Distribution Salt
+Fig. # Separate Hbond Distribution histograms for each salt condition 
+</dropdown>
 
 >![alt text](https://static.igem.wiki/teams/5649/figures/hbonds-histo-temp.webp)
->Fig. # Hbond distribution temperature
+>Fig. # Hbond distribution histograms for each temperature condition and overlay
 
 ---
 
@@ -126,19 +131,17 @@ We analyzed the RMSF over all residues of the 6 MS2 protein backbone chains to s
 In our RMSF analysis, we observe that one of the regions with higher fluctuation levels over all chains and conditions was the **AB loop**, colored in cyan on Fig. # and represented by the first RMSF peak after the N-terminal region. These loops are of particular relevance as they face the outer side of the viral capsid and can thus be a future target for **Cell Penetrating Peptide (CPP)** insertion. A CPP insertion like this can facilitate the uptake of VLPs by gut cells and induce immune response. Exactly because of their outer location they would be expected to have higher fluctuation levels.
 
 ![alt text](https://static.igem.wiki/teams/5649/figures/rmsf-salty2.webp)
->Fig. # RMSF salt #####TBD edit these figures
-
-> Fig. #
+>Fig. # RMSF plots for different salt conditions. a) Coloured PyMol structure of an MS2 hexamer as a refference. b) RMSF plot chain  A1 and c) B2. 
 
 Interestingly when examined over the screened temperature conditions, the AB loops showed noticeably higher fluctuations for 37°C and 42°C compared to 18°C. This is not particularly surprising as higher temperature would directly result in more thermal fluctuations and thus higher RMSF in more flexible regions of the protein. Surprisingly, however most often 42°C didn’t result in noticeably higher fluctuations than 37°C. In fact in most cases MS2 was observed to have a higher fluctuations for 37°C. In contrast however, in the B2 monomer all temperatures showed indistinguishable levels of fluctuation (see Fig.). A similar pattern, was observed for other highly fluctuating regions in the MS2 backbone.
 
 ![alt text](https://static.igem.wiki/teams/5649/figures/rmsf-temp2.webp)
->Fig. # RMSF temp
+>Fig. # RMSF plots for different temperature conditions. a) RMSF plot chain  B2 and b) C1.
 
 Somewhat similar to the temperature response, no straightforward relationship between RMSF and the salt concentration was observed. However, interestingly, 50 mM salt concentration seems to result in the highest level of fluctuation for most chains and B2 in particular. The fluctuations increase for the first three lowest salt concentrations and then begin to drop down after 50 mM, but around 80 mM again begin to steadily rise.
 
 ![alt text](https://static.igem.wiki/teams/5649/figures/rmsf-ab-ab.webp)
-> Fig. AB loop region RMSF relation to salt.  
+> Fig. Plot of RMSF average over the AB loop region (11-17 residues) against salt concentration.
 
 Another interesting observation from the RMSF plot is that a wide peak of fluctuation is observed approximately between residue 66 and 80 (marked green on Fig. #). In A and C monomers, this region surprisingly contains regularly structured beta strands with a short three amino acid beta loop in between them. However, despite the regular secondary structure of this region, it is positioned on the side of the MS2 hexamer and would take part with other MS2 hexamers in the overall VLP structure. Thus this pinpoints a limitation of our hexamer simplification, specifically for this region of the MS2 backbone. Since there are no neighboring hexamers this beta strand structure can freely move and thus has high fluctuation levels. However, in a complete VLP assembly this would not be expected as this region would interact with the same protein structure of other neighboring MS2 dimers.
 
@@ -148,17 +151,19 @@ Another interesting observation from the RMSF plot is that a wide peak of fluctu
 
 To gain more direct insight into what is the influence of our tested conditions on the stability of this hexamer structure we measured the interaction energy between individual dimers of the hexamer. Thus this quantity directly reflects how stable the interaction is between dimers. To measure this we used the **gmxMMPBSA** environment. We measured the total free energy for both the AB–AB as well as the AB–CC interaction over all examined salt and temperature conditions.
 ![alt text](https://static.igem.wiki/teams/5649/figures/overview-interaction.webp)
->Fig. # Overview of interaction energies tested (TBD)
+>Fig. # Overview of total interaction energies tested. 1. AB-AB interaction 2. AB-CC interaction. 
 
 Surprisingly, the lowest interaction energy between AB dimers was measured to be for 37$^\circ$C and not for 42$^\circ$C. While, the underlying mechanistic reason for this observation is still unclear, this might potentially suggest that the body temperature of birds could have a destabilizing effect on VLPs. On the other hand,  the response of the AB-AB interaction energy to changing salt conditions was also elusive. While a general trendline of increasing total free energy is observed a surprising local minima is observed around 100mM. However, considering that gut conditons including chicken gut conditions can have sodium concentration as high as 150 this suggests again a significant challange for Snaccine which should not be overlooked. 
 
 
+Such pattern was not observed for the AB-CC interaction energy. In the case of AB-CC interaction energy no apparant relation is observed for the temperature. For the salt conditions a very low energy is observed for 40mM. However, for the rest of the conditions no much difference is observed.
+
 >Fig. # Overview of interaction energies tested. 
 
 
-![alt text](https://static.igem.wiki/teams/5649/figures/mmpbsa-multi-panel1.webp)
+![alt text](https://static.igem.wiki/teams/5649/figures/mmpbsa.webp)
 
->Fig. AB-AB interaction Energy for different salt concentration and temperature. 
+>Fig. AB-AB (top) and AB-CC (bottom) interaction Energy for different salt concentrations (left) and temperature(right). 
 
 
 Based on our current data, the simulated gut conditions appear to exert a destabilizing effect on the MS2 VLP structure. However, a more detailed energetic analysis — particularly at the residue level — is required to identify specific regions or interactions driving this instability. This residue-scale approach will constitute the next step in our analysis.  
