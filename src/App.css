@@ -81,7 +81,6 @@
   }
 
   .hex-avatar-flipped {
-
     -webkit-clip-path: polygon(
       58.68241% 0.75961%,
       96.98463% 32.89899%,
@@ -228,7 +227,7 @@
     .external-link,
     .internal-link {
       @apply underline text-primary;
-    } 
+    }
 
     header > div {
       h1 {
@@ -238,6 +237,75 @@
       p {
         @apply my-3 text-xl text-secondary-foreground max-w-3xl mb-4;
       }
+    }
+  }
+
+  .footnotes {
+    @apply mt-8 border-t border-border pt-4;
+  }
+
+  .footnotes h3 {
+    @apply mb-3 text-lg font-semibold tracking-wide;
+  }
+
+  .footnotes ol {
+    @apply list-decimal space-y-3 pl-6;
+  }
+
+  .footnote-item {
+    @apply ml-0 pl-0 text-sm leading-relaxed;
+    scroll-margin-top: 6rem;
+  }
+
+  .footnote-item__content {
+    @apply text-base;
+  }
+
+  .footnote-ref,
+  .footnote-backref {
+    @apply inline-flex items-center justify-center rounded-sm px-1 text-xs font-semibold text-primary transition-colors;
+  }
+
+  .footnote-ref {
+    @apply align-super;
+    scroll-margin-top: 6rem;
+  }
+
+  .footnote-backref {
+    @apply text-sm;
+  }
+
+  .footnote-ref:hover,
+  .footnote-backref:hover {
+    @apply text-primary/80;
+  }
+
+  .footnote-ref:focus-visible,
+  .footnote-backref:focus-visible {
+    @apply outline-none ring-2 ring-offset-1 ring-primary;
+  }
+
+  .footnote-flash {
+    animation: footnote-flash 0.85s ease-out;
+  }
+  @keyframes footnote-flash {
+    0% {
+      background-color: rgba(7, 144, 200, 0.28);
+      box-shadow: 0 0 0 0 rgba(7, 144, 200, 0.25);
+    }
+    60% {
+      background-color: rgba(7, 144, 200, 0.14);
+      box-shadow: 0 0 0 8px rgba(7, 144, 200, 0);
+    }
+    100% {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .footnote-flash {
+      animation: none;
     }
   }
 
@@ -325,7 +393,6 @@
   .comparison-table td {
     @apply text-left text-base px-6 py-4 border border-border align-top;
   }
-
 
   .dropdown-icon {
     @apply text-muted-foreground pointer-events-none size-4 shrink-0 transition-transform duration-200 ml-2;

@@ -1,9 +1,12 @@
+import { FootnotesProvider, Footnote, FootnotesList, FootnoteDefinition } from "@/components";
+
+<FootnotesProvider>
 
 **Materials**
 
--   NEBuilder® HiFi DNA Assembly Kit8
+-   NEBuilder® HiFi DNA Assembly Kit
 -   DNA fragments (wild-type and mCherry insertion fragments)
--   NEBuilder Calculator9
+-   NEBuilder Calculator
 -   Thermocycler (capable of 50 °C)
 
 **Procedure**
@@ -32,11 +35,15 @@
 | A | 1.3 µl | 0.083 pmoles |
 | B | 1.1 µl | 0.083 pmoles |
 | D | 0.8 µl | 0.083 pmoles |
-| Coho1 |  0.3 µl *| 0.083 pmoles |
+| Coho1 |  0.3 µl <Footnote noteKey="insert-assembly-dilution" /> | 0.083 pmoles |
 | Coho2 | 0.5 µl | 0.083 pmoles |
-| oho1_mCherry_oho2 |  0.2 µl *| 0.083 pmoles |
+| oho1_mCherry_oho2 |  0.2 µl <Footnote noteKey="insert-assembly-dilution" /> | 0.083 pmoles |
 | Deionized H₂O | 5.9 µl | --- |
 | NEBuilder HiFi DNA Assembly Master Mix | 10.0 µl | --- |
 | Total | 20.0 µl | 0.500 pmoles |
 
-<small>*volumes after dilution</small>
+	<FootnoteDefinition noteKey="insert-assembly-dilution">Volumes measured after dilution.</FootnoteDefinition>
+<div className="pt-20">
+<FootnotesList title="Remarks"/>
+</div>
+</FootnotesProvider>
