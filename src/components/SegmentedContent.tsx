@@ -66,7 +66,7 @@ export function Segments({
       <LayoutGroup>
         <div
           ref={wrapperRef}
-          className="relative flex w-full max-w-4xl flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/30 bg-popover/70 p-2 shadow-lg backdrop-blur-xl transition-all duration-500 dark:border-white/10 dark:bg-secondary/30"
+          className="relative flex max-w-4xl flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/30 bg-popover/70 p-2 shadow-lg backdrop-blur-xl transition-all duration-500 dark:border-white/10 dark:bg-secondary/30"
         >
           {segments.map((segment) => {
             const isActive = segment === activeSegment;
@@ -134,7 +134,7 @@ export function SegmentedContent({
   }
 
   return (
-    <section className={clsx("space-y-5", className)}>
+    <section className={clsx("space-y-5 mt-5", className)}>
       <Segments
         segments={labels}
         activeSegment={activeSegment.label}
