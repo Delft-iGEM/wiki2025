@@ -134,8 +134,6 @@ For all conditions a plateau was reached in the first 200 ns while already in th
 
 We analyzed the total number of hydrogen bonds formed in the structure. We visualized this quantity through a histogram that shows the distribution of the number of hydrogen bonds from the whole timespan of the MD simulation. Not surprisingly all of them follow a Gaussian distribution. For most salt conditions no apparent changes were observed. However, interestingly for the lowest concentration of 30 mM a noticeably lower mean peak was observed. On the other hand, the temperature showed visible effect on the hydrogen bond distribution. While 37°C and 42°C showed relatively similar distributions, the 18°C noticeably shifted the peak of the Gaussian to the right. This reflects more persistent hydrogen bond formation as expected when thermal fluctuations are less present.
 
-#####to make figures collapsable as they are quite big
-
 <figure style={{ textAlign: 'center' }}>
   <img
     src="https://static.igem.wiki/teams/5649/figures/hbonds-histo-salt-overlay.webp"
@@ -218,7 +216,7 @@ Another interesting observation from the RMSF plot is that a wide peak of fluctu
 ### Interaction energy measurement
 
 
-To gain more direct insight into what is the influence of our tested conditions on the stability of this hexamer structure, we measured the interaction energy between individual dimers of the hexamer. Thus, this quantity directly reflects how stable the interaction is between dimers. To measure this, we used the **gmxMMPBSA** environment. We measured the total free energy for both the AB–AB as well as the AB–CC interaction over all examined salt and temperature conditions.
+To gain more direct insight into what is the influence of our tested conditions on the stability of this hexamer structure, we measured the interaction energy between individual dimers of the hexamer. The average of the measured energy was taken for 2 or 3 replicate trajectories. Thus, this quantity directly reflects how stable the interaction is between dimers. To measure this, we used the **gmxMMPBSA** environment. We measured the total free energy for both the AB–AB as well as the AB–CC interaction over all examined salt and temperature conditions.
 
   
 
@@ -262,8 +260,7 @@ style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}
 
   
 
-Over the measured temperatures and salt conditions both for AB-AB and AB-CC there was no observed trendline. The total free energy remained in the range of -30 which suggests that indeed VLPs would remain stable in the conditions range we tested.
-
+Over the measured temperatures and salt concentrations, the  AB-CC interaction energy was observed to be relatively stable with no evident trend lines. However, a trendline is observed for the AB-AB interaction energy with a slight increase with increasing salt concentration or temperature. This suggests that there could be a slight destabilizing effect when VLPs are exposed to chicken body temperature or higher. However, further per-residue energy measurement would need to be performed to gain more insight as to what kind of mechanism is resulting in this observed behaviour. 
   
 <figure  style={{ textAlign:  'center' }}>
 
@@ -273,7 +270,7 @@ Over the measured temperatures and salt conditions both for AB-AB and AB-CC ther
 
   
 
-src="https://static.igem.wiki/teams/5649/figures/mmpbsa.webp"
+src="https://static.igem.wiki/teams/5649/figures/mmpbsa-finalish.webp"
 
   
 
@@ -302,11 +299,8 @@ style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}
   
   
 
-Based on our current data, the simulated gut conditions appear to exert a destabilizing effect on the MS2 VLP structure. However, a more detailed energetic analysis — particularly at the residue level — is required to identify specific regions or interactions driving this instability. This residue-scale approach will constitute the next step in our analysis.
 
-  
 
-Despite the observed destabilization, the robustness of MS2 VLPs can likely be enhanced through rational design strategies. Future work could explore capsid mutations that improve inter-dimer interactions, enhance hydrophobic packing so and increase tolerance to salt variation. In particular, peptide insertions should also be further studied with our framework to study how they would further influence the stability of VLPs.
 
 </Dropdown>
 
@@ -323,7 +317,12 @@ With our MD MS2 platform, we established a computational framework to evaluate h
 
   
 
-Our simulations aligned with the already expected structural properties of the MS2 protein and additionally revealed that the MS2 hexamer remains globally stable across all tested conditions, based on their observed trajectory, bonds, and residual fluctuations. .......
+Our simulations aligned with the already expected structural properties of the MS2 protein and additionally revealed that the MS2 hexamer remains globally stable across all tested conditions, based on its observed trajectory, bonds, and residual fluctuations. However, based on our interaction energy measurements between AB dimers, the simulated chicken gut conditions could have a potential destabilizing effect on the MS2 VLP structure, specifically from the AB-AB interaction. However, a more detailed energetic analysis — particularly at the residue level — is required to identify specific regions or interactions driving this instability. This residue-scale approach will constitute the next step in our analysis. In addition, no such relation was observed for the more energetically favourable AB-CC interactions, which could potentially provide enough support for the VLPs to remain stable even for suboptimal conditions for the AB-AB interaction. 
+
+  
+
+The robustness of MS2 VLPs can likely be enhanced through rational design strategies, and this would only be possible with a clear structural understanding that platforms like ours can provide. Future work could explore capsid mutations that improve inter-dimer interactions, enhance hydrophobic packing so and increase tolerance to salt variation. In particular, peptide insertions should also be further studied with our framework to study how they would further influence the stability of VLPs.
+
 
 Thus, we successfully created a structural stability framework and were already able to gain insight into what could be the next steps in the development of our Snaccine concept.
 
@@ -348,7 +347,8 @@ Building on our platform, our next steps include:
 
 3.  **Full-capsid coarse-grained simulations**. While our model still provides important structural insight, our framework could be fed into a coarse-grained MD of the complete VLP, and study the structural properties of the complete VLP
 
-4.  **Experimental validation** As we successfully managed to produce our own VLPs a logical next step is to measure the degradation level of VLPs when exposed to different conditions and compare them to our MD results.
+4.  **Experimental validation** As we successfully managed to produce our own VLPs, a logical next step is to measure the degradation level of VLPs when exposed to different conditions and compare them to our MD results.
+
 
 </Dropdown>
 
