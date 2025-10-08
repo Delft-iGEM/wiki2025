@@ -1,4 +1,5 @@
 ﻿import { Content, Header, AccentLine } from "@/components";
+import { Link } from "react-router-dom";
 
 export const sponsors = [
     {
@@ -182,12 +183,10 @@ supporting innovation in synthetic biology
                 <>
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {companies.map((sponsor, index) => (
-                            <a
+                            <Link
                                 key={`c-${index}`}
                                 href={sponsor.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group relative overflow-hidden flex flex-col items-center p-8 bg-card rounded-3xl border border-border transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:border-primary/30 hover:bg-gradient-to-br hover:from-primary/5 hover:to-accent/5"
+                                className="group relative overflow-hidden flex flex-col items-center p-8 bg-card 2xl hover:-translate-y-3 hover:border-primary/30 hover:bg-gradient-to-br hover:from-primary/5 hover:to-accent/5"
                             >
                                 <div className="absolute -top-6 -right-6 h-20 w-20 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12"></div>
                                 <div className="absolute -bottom-4 -left-4 h-12 w-12 rounded-full bg-gradient-to-br from-accent/10 to-primary/10 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12"></div>
@@ -213,7 +212,7 @@ supporting innovation in synthetic biology
                                         </svg>
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
                         ))}
                     </div>
 
@@ -223,11 +222,9 @@ supporting innovation in synthetic biology
 
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                         {donors.map((sponsor, index) => (
-                            <a
+                            <Link
                                 key={`d-${index}`}
-                                href={sponsor.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                to={sponsor.url}
                                 className="group relative overflow-hidden flex flex-row items-center w-full p-6 bg-muted rounded-lg border border-border/30 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
                             >
                                 {/* Subtle decorative accent */}
@@ -252,7 +249,7 @@ supporting innovation in synthetic biology
                                     <h3 className="font-semibold text-xl group-hover:text-primary transition-colors duration-200">{sponsor.name}</h3>
                                     <p className="text-base text-muted-foreground leading-relaxed">{sponsor.description}</p>
                                 </div>
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </>
