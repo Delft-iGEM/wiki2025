@@ -106,6 +106,14 @@
     @apply w-full max-w-7xl mx-auto px-6 sm:px-20 lg:px-60;
   }
 
+  .htitle {
+    @apply text-4xl sm:text-7xl py-4 font-bold tracking-tight text-white;
+  }
+
+  .hsubtitle {
+    @apply my-3 text-xl text-secondary-foreground max-w-3xl mb-4;
+  }
+
   #container {
     h1 {
       @apply text-5xl font-bold pt-4 pb-4;
@@ -238,7 +246,7 @@
   .internal-link {
     @apply underline text-primary;
   }
-  
+
   .footnotes {
     @apply mt-8 border-t border-border pt-4;
   }
@@ -406,6 +414,8 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scrollbar-width: thin;
+    scrollbar-color: oklch(78.56% 0.1479 227.5) transparent;
   }
   body {
     @apply bg-background text-foreground pt-15 font-family-montserrat;
@@ -415,12 +425,6 @@
   }
   pre *::selection {
     @apply text-[rgb(0,200,0)] bg-black;
-  }
-  /* Firefox-like scrollbar - auto-hide and width changes */
-  /* Standard scrollbar-* properties for Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: oklch(78.56% 0.1479 227.5) transparent;
   }
 
   /* Webkit scrollbar for Chrome, Edge, Safari, Vivaldi */

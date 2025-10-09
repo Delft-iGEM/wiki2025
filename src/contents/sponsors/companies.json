@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Applied Sciences",
+    "url": "https://www.tudelft.nl/as",
+    "logo": "applied-sciences-logo.webp",
+    "description": "The Faculty of Applied Sciences' main ambition is to contribute to resolving the major social challenges of our time through its teaching and research. These challenges include a secure, safe, clean and efficient energy supply, health (e.g. effective medicines), security of food supply, green economy/bio-economy, safety and security (also in terms of information transfer) and innovation. The faculty aims to be among the best in the world in a number of research areas."
+  },
+  {
+    "name": "Biotechnology Department",
+    "url": "https://www.tudelft.nl/bt",
+    "logo": "bt-department-logo.webp",
+    "description": "The Department of Biotechnology engages in internationally leading, groundbreaking research and education programs in industrial and environmental biotechnology. The Department of Biotechnology covers the fields of biocatalysis, bioprocess engineering, cell systems engineering, environmental biotechnology, industrial microbiology, and biotechnology and society, thereby combining fundamental research, engineering, and design. These fields are all directed toward biotechnological process innovations."
+  },
+  {
+    "name": "Bionanoscience Department",
+    "url": "https://www.tudelft.nl/bn",
+    "logo": "bn-department-logo.webp",
+    "description": "The Department of Bionanoscience at TU Delft focuses on understanding the molecular foundations of life through cutting-edge research in biophysics, synthetic biology, and nanotechnology. By combining physics, biology, and engineering, the department aims to unravel complex biological systems and design innovative biotechnological solutions."
+  },
+  {
+    "name": "Snapmaker",
+    "url": "https://www.snapmaker.com",
+    "logo": "snapmaker-logo.svg",
+    "description": "Snapmaker is a technology company best known for its modular, multifunctional desktop fabrication machines. Their 3-in-1 devices combine 3D printing, laser engraving, and CNC carving into one system, allowing users to switch toolheads quickly. Snapmaker's hardware is all-metal and designed to be extendable, and they offer accompanying software (Luban) to control all functions in a unified workflow."
+  },
+  {
+    "name": "Integrated DNA Technologies",
+    "url": "https://www.idtdna.com",
+    "logo": "idt-logo.svg",
+    "description": "IDT is a supplier of nucleic acids for the life science industry. IDT's primary business is the manufacturing of high-quality, custom DNA and RNA oligonucleotides. They granted us with the gene fragments necessary for our research."
+  },
+  {
+    "name": "SnapGene",
+    "url": "https://www.snapgene.com",
+    "logo": "snapgene-logo.svg",
+    "description": "SnapGene is the first molecular biology software that is easier to use than pen and paper. Now every DNA construct made in our lab can be documented in a rich electronic format. Thanks to the free SnapGene Viewer, the files can be shared with our colleagues around the world!"
+  },
+  {
+    "name": "Twist Bioscience",
+    "url": "https://www.twistbioscience.com",
+    "logo": "twist-biosciences-logo.webp",
+    "description": "Twist Bioscience is a biotech company in South San Francisco that produces high-quality synthetic DNA using a silicon-based platform. Its technology supports research, healthcare, and industrial applications, enabling faster innovation in areas like drug discovery and diagnostics."
+  },
+  {
+    "name": "Planet Bio",
+    "url": "https://www.planet-b.io",
+    "logo": "planet-bio-logo.webp",
+    "description": "Planet B.io is a non-profit open innovation hub located at the Biotech Campus Delft that supports industrial and food biotechnology ventures. It provides lab and office spaces, shared facilities, and access to a network of partnersstartups, corporates, knowledge institutions, and investorsto help biotech companies scale up. Its mission is to accelerate the transition to a sustainable, bio-based, and circular society by fostering impactful biotech innovation."
+  },
+  {
+    "name": "Promega",
+    "url": "https://www.promega.com",
+    "logo": "promega-logo.webp",
+    "description": "Promega is an American company and a global leader in providing innovation and technical solutions to the life science industry. The company portfolio includes the fields of genomics, protein analysis and expression, cellular analysis, drug discovery and genetic identity."
+  },
+  {
+    "name": "Capsugel Lonza",
+    "url": "https://www.lonza.com",
+    "logo": "capsugel-lonza-logo.webp",
+    "description": "Capsugel Lonza is part of Lonza Group, a global leader in the life sciences industry. The company specializes in advanced capsule delivery solutions and dosage form technologies for pharmaceuticals and nutrition products. With expertise in formulation and manufacturing, Capsugel Lonza helps bring innovative, high-quality healthcare products to market efficiently and safely."
+  }
+]

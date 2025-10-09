@@ -10,6 +10,8 @@ import { ScrollTop } from "./components";
 
 // Content components TSX
 import { Home } from "./contents/home.tsx";
+import Sponsors from "./contents/sponsors/sponsors.tsx";
+
 
 // Content components MDX
 import HumanPractices from "./mdx/hp/hp_page.mdx";
@@ -18,7 +20,6 @@ import HumanPractices from "./mdx/hp/hp_page.mdx";
 // Team
 import Members from "./mdx/team/members.mdx";
 import Attributions from "./contents/attributions.tsx";
-import Sponsors from "./mdx/team/sponsors.mdx";
 
 //Project
 import Description from "./mdx/project/description.mdx";
@@ -124,71 +125,12 @@ const Pages: NavItem[] = [
     path: "/model",
     component: Model,
   },
-  // {
-  //   name: "Dry Lab",
-  //   folder: [
-  //     {
-  //       name: "Model",
-  //       title: "Model",
-  //       path: "/model",
-  //       component: Model,
-  //     },
-  //     {
-  //       name: "Software",
-  //       title: "Software",
-  //       path: "/software",
-  //       component: Software,
-  //     },
-  //     {
-  //       name: "Hardware",
-  //       title: "Hardware",
-  //       path: "/hardware",
-  //       component: Hardware,
-  //     },
-  //   ],
-  // },
   {
     name: "human practices",
     title: "Human Practices",
     path: "/human-practices",
     component: HumanPractices,
   },
-  // {
-  //   name: "Engagement",
-  //   folder: [
-  //     {
-  //       name: "Entrepreneurship",
-  //       title: "Entrepreneurship",
-  //       path: "/entrepreneurship",
-  //       component: Entrepreneurship,
-  //     },
-  //     {
-  //       name: "Human Practices",
-  //       title: "Human Practices",
-  //       path: "/human-practices",
-  //       component: HumanPractices,
-  //     },
-  //     {
-  //       name: "Education",
-  //       title: "Education",
-  //       path: "/education",
-  //       component: Education,
-  //     },
-  //     {
-  //       name: "Inclusivity",
-  //       title: "Diversity and Inclusion",
-  //       path: "/inclusivity",
-  //       component: Inclusivity,
-  //     },
-  //     {
-  //       name: "Sustainability",
-  //       title: "Sustainability",
-  //       path: "/sustainability",
-  //       component: Sustainability,
-  //     },
-  //   ],
-  // },
-
   {
     name: "team",
     folder: [{
@@ -208,7 +150,8 @@ const Pages: NavItem[] = [
       title: "Our Sponsors",
       path: "/sponsors",
       component: Sponsors,
-    },],
+    },
+  ],
   },
 ];
 
