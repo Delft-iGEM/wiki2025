@@ -1,58 +1,114 @@
-import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem,InteractiveSchematic } from "@/components";
 
-<Content items="left">
+import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem,InteractiveSchematic } from  "@/components";
+
+  
+
+<Content  items="left">
+
+  
 
 # phage engineering
 
-This module aims to establish  an accessible workflow for engineering the genome of the T7 phage.
+  
+
+This module aims to establish an accessible workflow for engineering the genome of the T7 phage.
+
+  
 
 We applied a novel _in vitro_ genome engineering workflow inspired by recent literature to insert a fluorescent reporter gene (mCherry) downstream of gene 10, testing both assembly efficiency and phage viability.
 
+  
+
 The aim of this module's experiments is to validate a faster, selection-free genome modification strategy that can support iterative phage vaccine development.
+
+  
 
 ## PCR primer design
 
-PCR primer sequences for both T7 phage genome production as well as screening of DNA products were designed with SnapGene3. Primer sequences for Wild Type Assembly were taken from Levrier et al.¹  Screening PCR primers were designed to have a melting temperature of ~60 °C and a G or C 3’ end [Fig. example GA primer], which supports a more stable initiation of DNA replication [ref. needed]. To insert the mCherry gene into the T7 genome, we designed primer sets that amplified the mCherry insert and the flanking T7 genomic fragments, such that the resulting fragments shared identical overlapping sequences at their ends [Figure mCherry PCR product]. In addition, the primers for the mCherry insert and its homologous T7 genomic fragments were designed to include an orthogonal homologous sequence (oho), which minimizes any unintended homology to the T7 genome. After the primers were designed, they were ordered already dissolved in water with a concentration of 100 μM that was further diluted to 10 μM to be used for PCR.
+  
+
+PCR primer sequences for both T7 phage genome production as well as screening of DNA products were designed with SnapGene. Primer sequences for Wild Type Assembly were taken from Levrier et al. Screening PCR primers were designed to have a melting temperature of ~60 °C and a G or C 3’ end, which supports a more stable initiation of DNA replication. To insert the mCherry gene into the T7 genome, we designed primer sets that amplified the mCherry insert and the flanking T7 genomic fragments, such that the resulting fragments shared identical overlapping sequences at their ends. In addition, the primers for the mCherry insert and its homologous T7 genomic fragments were designed to include an orthogonal homologous sequence (oho), which minimizes any unintended homology to the T7 genome. After the primers were designed, they were ordered already dissolved in water with a concentration of 100 μM that was further diluted to 10 μM to be used for PCR.
+
+  
 
 ## Q5 PCR
 
-A modified protocol for Q5® High-Fidelity 2X Master Mix⁵ was implemented to produce our T7 genome assembly fragments, in particular for the wild-type and mCherry insertion genomes. As a starting DNA material, 1 μL of T7 bacteriophage solution (~0.7 PFU/μL) was used per 50 μL total PCR reaction volume. Primer and Q5 Master Mix amounts were selected following NEB guidelines. Additionally, the NEB Tm calculator4 was used to estimate the annealing temperatures of primers with the DNA strands to devise a PCR cycle procedure.)
+  
+
+A modified protocol for Q5® High-Fidelity 2X Master Mix was implemented to produce our T7 genome assembly fragments, in particular for the wild-type and mCherry insertion genomes. As a starting DNA material, 1 μL of T7 bacteriophage solution (~0.7 PFU/μL) was used per 50 μL total PCR reaction volume. Primer and Q5 Master Mix amounts were selected following NEB guidelines. Additionally, the NEB Tm calculator4 was used to estimate the annealing temperatures of primers with the DNA strands to devise a PCR cycle procedure.
+
+  
 
 ## 1% Agarose Gel Electrophoresis for DNA to verify DNA length
 
-For screening DNA products, 1% agarose gel electrophoresis was performed. A 1× TAE buffer (Tris Acetate Ethylenediaminetetraacetic acid buffer) was used for the agarose gel as well as the electrophoresis buffer. Electrophoresis was run for 1 h at 100 V with a power supply. SYBR Safe was used to stain DNA, while NEB Purple Gel Loading Dye was used for loading DNA samples into the gel wells. After electrophoresis, gels were analyzed
+  
+
+For screening DNA products, 1% agarose gel electrophoresis was performed. A 1× TAE buffer (Tris Acetate Ethylenediaminetetraacetic acid buffer) was used for the agarose gel as well as the electrophoresis buffer. Electrophoresis was run for 1 h at 100 V with a power supply. SYBR Safe was used to stain DNA, while NEB Purple Gel Loading Dye was used for loading DNA samples into the gel wells. 
+  
 
 ## T7 genome assembly
 
-The NEBuilder® HiFi DNA Assembly kit⁶ was used to assemble the T7 genome. Equimolar amounts of each fragment of the assembly were calculated with the NEBuilder Protocol Calculator following the maximizing NEB guidelines (with 4.15 nM and 6.25 nM, respectively, in the insert and wild-type assembly). On the table below, A, B, C, D, Coho1, Coho2, and oho1_mCherry_oho2 represent the different genomic DNA fragments obtained with PCR. The volumes shown here have been determined based on the measured DNA concentration of our fragments (see Results for more details)
+  
+
+The NEBuilder® HiFi DNA Assembly kit was used to assemble the T7 genome. Equimolar amounts of each fragment of the assembly were calculated with the NEBuilder Protocol Calculator following the maximizing NEB guidelines (with 4.15 nM and 6.25 nM, respectively, in the insert and wild-type assembly). On the table below, A, B, C, D, Coho1, Coho2, and oho1_mCherry_oho2 represent the different genomic DNA fragments obtained with PCR. The volumes shown here have been determined based on the measured DNA concentration of our fragments (see Results for more details)
+
+  
 
 ## Column precipitation of PCR products
 
-PCR products were purified using the NEB Monarch Spin PCR cleanup kit⁷. This procedure relies on DNA from a PCR product binding to a selection column using a binding buffer and washing away any residual molecules, such as oligos and enzymes, from the mixture using a washing buffer. Finally, the purified DNA is eluted with a specialized elution buffer.
+  
+
+PCR products were purified using the NEB Monarch Spin PCR cleanup kit. This procedure relies on DNA from a PCR product binding to a selection column using a binding buffer and washing away any residual molecules, such as oligos and enzymes, from the mixture using a washing buffer. Finally, the purified DNA is eluted with a specialized elution buffer.
+
+  
 
 ## Heat shock transformation and rebooting of phages
 
-A modified version of the NEB transformation protocol was used in an attempt to reboot T7 phages with BL21 DE3 cells.  The main difference from the standard procedure is a longer outgrowth with SOC and directly transferring the cell outgrowth to a liquid LB medium with more inoculated E. coli for an overnight growth, instead of plating the cells.
+  
+
+A modified version of the NEB transformation protocol was used in an attempt to reboot T7 phages with BL21 DE3 cells. The main difference from the standard procedure is a longer outgrowth with SOC and directly transferring the cell outgrowth to a liquid LB medium with more inoculated E. coli for an overnight growth, instead of plating the cells.
+
+  
 
 ## Electrocompetent cells preparation
 
+  
+
 A standard electrocompetent cell preparation procedure based on the protocol by Baricklab 10 was used to make BL21 (DE3) cells electrocompetent.
+
+  
 
 ## Transformation through electroporation for T7 phage reboot
 
-A standard electroporation transformation protocol was followed based on the protocol by Baricklab 10 to reboot T7 phage production using BL21 (DE3) cells. Again, the main change in the procedure was a longer SOC outgrowth followed by a transfer of the cell mixture to a liquid LB medium together with more inoculated cells.
+  
+
+A standard electroporation transformation protocol was followed based on the protocol by Baricklab to reboot T7 phage production using BL21 (DE3) cells. Again, the main change in the procedure was a longer SOC outgrowth followed by a transfer of the cell mixture to a liquid LB medium together with more inoculated cells.
+
+  
 
 ## T7 phage filtration
 
+  
+
 This procedure aims to filter out rebooted T7 phages from their E. coli host cells. This ensures that the phage solution does not contain any bacterial cells, while at the same time ensuring that phages that have not yet lysed their E. coli are released.
+
+  
 
 ## T7 phage concentration
 
+  
+
 This procedure aims to increase the concentration of T7 bacteriophages by accumulating them on a protein purification filter. In this way, if a lower-yielding production has been performed, the presence of low-concentration phages can still be confirmed.
+
+  
 
 ## T7 phage plaque assay
 
+  
+
 To test the presence of phages and quantify their concentration, we performed plaque assays. This method relies on plating a homogenous layer of cells in a 0.6% LB agarose and, at the same time, introducing a phage solution with the cells. If phages are present, they will result in empty spots on the E. coli layer, referred to as plaques, which signify dying bacterial cells and phage spread.
 
+  
+  
 
 </Content>
