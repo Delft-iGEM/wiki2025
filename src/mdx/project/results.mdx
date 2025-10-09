@@ -1,10 +1,11 @@
-import { Content, Header, AccentLine, Dropdown} from "@/components";
+import { Content, Header, AccentLine, Dropdown, FootnotesProvider, Footnote, FootnotesList, FootnoteDefinition } from "@/components";
 
 <Header>
 # results
 results and findings from our wetlab experiments
 </Header>
 
+<FootnotesProvider>
 <Content items="left">
 
 
@@ -28,7 +29,7 @@ For our first step, we focused on testing our synthetic DNA construct- encoding 
 
 ![enter image description here](https://static.igem.wiki/teams/5649/results/vlp-complex-and-assembly.webp)
 
->***Figure 2.** Structure and assembly of the MS2 Capsid*
+>***Figure 2.** Structure and assembly of the MS2 Capsid. Figure adapted from Stockley et al.<Footnote noteKey="stockley2016" /> *
 
 We transformed E. coli with the plasmid, induced protein expression, and confirmed VLP production using SDS–PAGE to detect coat-protein expression and TEM to visualize intact assembled particles. These experiments showed that the bacteria successfully synthesized the MS2 coat protein subunits, which then folded correctly and assembled into complete, non-aggregated VLPs. This successful outcome marks a major step forward for our project and highlights the potential of our vaccine platform.
 
@@ -90,7 +91,7 @@ We began by amplifying **T7 genome fragments (A–D)** using **Q5 polymerase**, 
 > *Upper panel:* Diagram of (a) wild-type T7 genome fragments and (b) T7 genome with mCherry insertion.  
 > *Lower panel:* Agarose gel confirmation of PCR amplification for T7 genome fragments (A, B, C, D, C1, C2) and mCherry gene. Lane 1: NEB 1 kb+ ladder.
 
-Instead of purifying phage DNA beforehand, we followed the approach of Levrier *et al.*, using **intact T7 phages** as a PCR template with an extended 5-minute initial denaturation step to release genomic DNA. All fragments amplified successfully and were visualized on **1% agarose gel electrophoresis (AGE)**, confirming that our PCR design worked efficiently despite the long primers required for the orthogonal arms.
+Instead of purifying phage DNA beforehand, we followed the approach of Levrier *et al.*<Footnote noteKey="levrier2024" />, using **intact T7 phages** as a PCR template with an extended 5-minute initial denaturation step to release genomic DNA. All fragments amplified successfully and were visualized on **1% agarose gel electrophoresis (AGE)**, confirming that our PCR design worked efficiently despite the long primers required for the orthogonal arms.
 
 ---
 
@@ -109,7 +110,7 @@ While full-length genome assembly was not achieved in this attempt, the strong a
 
 ### Transformation and Infection
 
-Following the **Design–Build–Test–Learn** cycle, we decided to test whether *E. coli* could naturally complete the assembly of partially joined fragments *in vivo*. Literature suggested that even incomplete genomes can undergo recombination after transformation, restoring viable phages under the right conditions (Levrier *et al.*).
+Following the **Design–Build–Test–Learn** cycle, we decided to test whether *E. coli* could naturally complete the assembly of partially joined fragments *in vivo*. Literature suggested that even incomplete genomes can undergo recombination after transformation, restoring viable phages under the right conditions (Levrier *et al.*<Footnote noteKey="levrier2024" />).
 
 We first performed a **modified BL21 heat-shock transformation**, introducing the assembled genome directly into competent *E. coli* cells without any antibiotic selection, as our constructs contained no resistance markers. The cells were allowed to recover in rich LB medium and incubated overnight with additional *E. coli* to promote phage propagation. The following day, cultures were centrifuged, filtered, and analyzed using a **plaque assay** to detect the presence of viable phages.
 
@@ -133,10 +134,18 @@ Although we did not yet obtain functional engineered phages, this proof-of-conce
 The lack of plaques indicates that further refinement is needed in either the assembly efficiency or the transformation step. Future experiments will focus on:
 
 1. **Optimizing homology arm length and overlap composition** to improve full-genome assembly yield.  
-2. **Testing DNA concentration effects** during the assembly mix, as literature (e.g., Vu *et al.*) suggests that higher DNA input may not always correlate with improved results.  
+2. **Testing DNA concentration effects** during the assembly mix, as literature (e.g., Vu *et al.*<Footnote noteKey="vu2025" />) suggests that higher DNA input may not always correlate with improved results.  
 3. **Implementing electroporation protocols optimized for large DNA fragments**, potentially coupled with recombination-proficient *E. coli* strains.  
 
-Despite not yielding viable phages yet, this module **established a solid experimental framework** for *in vitro* T7 phage genome engineering. With the considerations that multiple studies such as Levrier et al and Vu et al have already confirmed this phage engineering method to work in their context, suggests that with further troubleshooting and iterative refinement of the procedure, a phage engineering pipeline can be achieved which would allow the rapid engineering of phages. 
+Despite not yielding viable phages yet, this module **established a solid experimental framework** for *in vitro* T7 phage genome engineering. With the considerations that multiple studies such as Levrier et al<Footnote noteKey="levrier2024" /> and Vu et al<Footnote noteKey="vu2025" /> have already confirmed this phage engineering method to work in their context, suggests that with further troubleshooting and iterative refinement of the procedure, a phage engineering pipeline can be achieved which would allow the rapid engineering of phages. 
 </Dropdown>
 
+ 
+<FootnoteDefinition noteKey="stockley2016">Stockley, P. G. et al. Bacteriophage MS2 genomic RNA encodes an assembly instruction manual for its capsid. Bacteriophage 6, e1157666 (2016).</FootnoteDefinition>
+<FootnoteDefinition noteKey="levrier2024">A. Levrier, et al., “PHEIGES: all-cell-free phage synthesis and selection from engineered genomes,” Nature Communications 15, 2223 (2024).</FootnoteDefinition>
+<FootnoteDefinition noteKey="vu2025">J. Vu, et al., “Homology-Based Enzymatic Assembly of Modular T7 Phage Genome,” 2025.04.24.650493 Preprint at https://doi.org/10.1101/2025.04.24.650493 (2025).</FootnoteDefinition>
+
+<FootnotesList title="References"/>
 </Content>
+
+</FootnotesProvider>
