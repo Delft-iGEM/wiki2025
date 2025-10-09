@@ -1,203 +1,678 @@
-import { Content, Header, AccentLine, Dropdown, FootnotesProvider, FootnoteDefinition, Footnote, FootnotesList } from "@/components";
-import { Temperature } from "@/components/Temperature";
+
+  
+
+import { Content, Header, AccentLine, Dropdown, FootnotesProvider, FootnoteDefinition, Footnote, FootnotesList } from  "@/components";
+
+  
+
+import { Temperature } from  "@/components/Temperature";
+
+  
+
+  
 
 <FootnotesProvider>
-<Content items="left">
+
+  
+
+<Content  items="left">
+
+  
+
+  
 
 # phage engineering
 
-Phage engineering was an essential aspect of our project. To achieve a suitable phage engineering pipeline, we were guided by the iterative **Design-Build-Test-Learn** process. Along the way, we had many discussions with experts, explored, studied existing techniques, and troubleshooted multiple experiments. This whole process is recorded in this section.  
+  
+
+  
+
+Phage engineering was an essential aspect of our project. To achieve a suitable phage engineering pipeline, we were guided by the iterative **Design-Build-Test-Learn** process. Along the way, we had many discussions with experts, explored, studied existing techniques, and troubleshooted multiple experiments. This whole process is recorded in this section.
+
+  
+
+  
 
 ## general structure
 
-1. Phage engineering context, ideation, and development  
-2. Challenges of phage engineering technology and alignment with project goals  
-3. Research goals of this module  
-4. Engineering cycle and challenges of phage engineering  
+  
+
+  
+
+1. Phage engineering context, ideation, and development
+
+  
+
+2. Challenges of phage engineering technology and alignment with project goals
+
+  
+
+3. Research goals of this module
+
+  
+
+4. Engineering cycle and challenges of phage engineering
+
+  
+
+  
 
 ---
 
-<Dropdown header="Phage engineering ideation and development (Engineering Cycle 0)" level={0}>
+  
+
+  
+
+<Dropdown  header="Phage engineering ideation and development (Engineering Cycle 0)"  level={0}>
+
+  
+
 ## why do we need phage engineering?
 
-In our project **Snaccine**, we aimed to engineer bacteriophages so they can be administered orally as an avian influenza vaccine.  
-Our phage vaccine concept works by hijacking the natural gut microbiome to produce antigen mRNA encapsulated in an **MS2 Virus-like Particle (VLP)**.  
+  
 
-The main goals of this technology are to tackle the rapid development of bird flu outbreaks, which currently make this virus challenging to vaccinate against. Hence, at an initial stage of our project, we envisioned our phage production process to reflect these specific needs of Snaccine.  
+  
+
+In our project **Snaccine**, we aimed to engineer bacteriophages so they can be administered orally as an avian influenza vaccine.
+
+  
+
+Our phage vaccine concept works by hijacking the natural gut microbiome to produce antigen mRNA encapsulated in an **MS2 Virus-like Particle (VLP)**.
+
+  
+
+  
+
+The main goals of this technology are to tackle the rapid development of bird flu outbreaks, which currently make this virus challenging to vaccinate against. Hence, at an initial stage of our project, we envisioned our phage production process to reflect these specific needs of Snaccine.
+
+  
+
+  
 
 Our methodology had to be:
-- Accessible  
-- Provide engineering flexibility  
-- Efficient enough so vaccine modifications can keep pace with the rapid bird flu evolution  
+
+  
+
+- Accessible
+
+  
+
+- Provide engineering flexibility
+
+  
+
+- Efficient enough so vaccine modifications can keep pace with the rapid bird flu evolution
+
+  
+
+  
 
 ### Choosing the right phage
-First, the type of phage was one of the major choices we had to establish. Initially, we opted for phage species that have been recognized to have great stability properties. Such a characteristic can be invaluable for a more accessible storage of our vaccine. Such candidates included phages like PIN1 and PIN2 described in Jati et al<Footnote noteKey="jati2025"/>, which showed no noticeable degradation when stored at room temperature for one year. However, after contacting Prof. Stan Brouns, an expert in bacteriophages, we recognized bacteriophage engineering capacity and existing genome characterization as more crucial aspects needed to sufficiently engineer a vaccine vector. Hence, we instead chose to work with the T7 bacteriophage, one of the most well-characterized DNA bacteriophages with decades of engineering history, experience that can make our vaccine more accessible with regard to design and production.  
+
+  
+
+First, the type of phage was one of the major choices we had to establish. Initially, we opted for phage species that have been recognized to have great stability properties. Such a characteristic can be invaluable for a more accessible storage of our vaccine. Such candidates included phages like PIN1 and PIN2 described in Jati et al<Footnote  noteKey="jati2025"/>, which showed no noticeable degradation when stored at room temperature for one year. However, after contacting Prof. Stan Brouns, an expert in bacteriophages, we recognized bacteriophage engineering capacity and existing genome characterization as more crucial aspects needed to sufficiently engineer a vaccine vector. Hence, we instead chose to work with the T7 bacteriophage, one of the most well-characterized DNA bacteriophages with decades of engineering history, experience that can make our vaccine more accessible with regard to design and production.
+
+  
+
+  
 
 ### Choosing the right engineering approach
-Multiple iGEM teams have already implemented a plethora of phage engineering techniques. One of the most well-established techniques for phage engineering is Bacteriophage Recombineering with Electroporated DNA (BRED), successfully implemented by the Delft iGEM team PHOCUS in 2020. BRED relies on homologous recombination and hence provides a great amount of freedom over where the T7 genome can be engineered. Thus, our team contacted their former team members to gain a better understanding of this technique. Discussions during this meeting made us acknowledge that BRED has a notoriously low yield and thus requires a labour-intensive and iterative selection procedure to effectively produce modified phages [cite], a challenge the PHOCUS team experienced first-hand. Thus, we began researching alternative methods that can provide a more easily accessible approach, focusing on methods with minimal selection procedures that could slow down our design pipeline.  
 
-<div style={{ borderLeft: '4px solid #ccc', paddingLeft: '16px', marginBottom: '24px' }}>
-	<figure style={{ textAlign: 'center' }}>
-		<img src="https://static.igem.wiki/teams/5649/figures/bred.webp" alt="bred" width="700" style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }} />
-        <figcaption><em>Figure 1: BRED method illustration made by the 2020 iGEM team PHOCUS </em></figcaption>
-	</figure>
+  
+
+Multiple iGEM teams have already implemented a plethora of phage engineering techniques. One of the most well-established techniques for phage engineering is Bacteriophage Recombineering with Electroporated DNA (BRED), successfully implemented by the Delft iGEM team PHOCUS in 2020. BRED relies on homologous recombination and hence provides a great amount of freedom over where the T7 genome can be engineered. Thus, our team contacted their former team members to gain a better understanding of this technique. Discussions during this meeting made us acknowledge that BRED has a notoriously low yield and thus requires a labour-intensive and iterative selection procedure to effectively produce modified phages, a challenge the PHOCUS team experienced first-hand. Thus, we began researching alternative methods that can provide a more easily accessible approach, focusing on methods with minimal selection procedures that could slow down our design pipeline.
+
+  
+
+  
+
+<div  style={{ borderLeft:  '4px solid #ccc', paddingLeft:  '16px', marginBottom:  '24px' }}>
+
+  
+
+<figure  style={{ textAlign:  'center' }}>
+
+  
+
+<img  src="https://static.igem.wiki/teams/5649/figures/bred.webp"  alt="bred"  width="700"  style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}  />
+
+  
+
+<figcaption><em>Figure 1: BRED method illustration made by the 2020 iGEM team PHOCUS </em></figcaption>
+
+  
+
+</figure>
+
+  
+
 </div>
 
-In vitro techniques present many advantages over traditional recombinant technology. They can generate phages with much higher efficiency without the presence of non-engineered phages, unlike recombinant methods like BRED, where most produced phages lack intended modification. Some of them have already been commercialized, like the T7Select system, which was used by the 2022 Mingdao iGEM team PHACCINE, who, similar to us, used it in a phage vaccine technology. T7Select relies on a simple and highly efficient ligation of the insert at an engineered restriction site in the gene 10 of T7, which allows for short peptide display insertions. However, this system is very limited to peptide presentation on the T7 phage capsid and thus not compatible with introducing full genes as needed in our RNA antigen VLP concept.  
+  
 
-Recent studies, such as Levrier et al<Footnote noteKey="levrier2024"/> and Vu et al<Footnote noteKey="vu2025"/>, have shown the potential of using Polymerase Chain Reaction (PCR) and in vitro complete genome assembly to produce viable engineered phage genomes, an engineering approach previously not implemented by any other iGEM team. Levrier et al<Footnote noteKey="levrier2024"/> particularly showed the promise of using Cell Free Systems such as TXTL to further increase phage production efficiency. Thus, because of the rapid total time of this engineering approach in combination with its technical accessibility and engineering flexibility that DNA assembly can provide, we decided to examine this novel method ourselves.
+  
 
-<div style={{ borderLeft: '4px solid #ccc', paddingLeft: '16px', marginBottom: '24px' }}>
-	<figure style={{ textAlign: 'center' }}>
-		<img src="https://static.igem.wiki/teams/5649/figures/pheiges.avif" alt="pheiges" width="600" style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }} />
-        <figcaption><em>Figure 2: The in-vitro phage reboot production strategy of the method proposed in Levrier et al.<Footnote noteKey="levrier2024"/> </em></figcaption>
-	</figure>
+In vitro techniques present many advantages over traditional recombinant technology. They can generate phages with much higher efficiency without the presence of non-engineered phages, unlike recombinant methods like BRED, where most produced phages lack intended modification. Some of them have already been commercialized, like the T7Select system, which was used by the 2022 Mingdao iGEM team PHACCINE, who, similar to us, used it in a phage vaccine technology. T7Select relies on a simple and highly efficient ligation of the insert at an engineered restriction site in the gene 10 of T7, which allows for short peptide display insertions. However, this system is very limited to peptide presentation on the T7 phage capsid and thus not compatible with introducing full genes as needed in our RNA antigen VLP concept.
+
+  
+
+  
+
+Recent studies, such as Levrier et al<Footnote  noteKey="levrier2024"/> and Vu et al<Footnote  noteKey="vu2025"/>, have shown the potential of using Polymerase Chain Reaction (PCR) and in vitro complete genome assembly to produce viable engineered phage genomes, an engineering approach previously not implemented by any other iGEM team. Levrier et al<Footnote  noteKey="levrier2024"/> particularly showed the promise of using Cell Free Systems such as TXTL to further increase phage production efficiency. Thus, because of the rapid total time of this engineering approach in combination with its technical accessibility and engineering flexibility that DNA assembly can provide, we decided to examine this novel method ourselves.
+
+  
+
+  
+
+<div  style={{ borderLeft:  '4px solid #ccc', paddingLeft:  '16px', marginBottom:  '24px' }}>
+
+  
+
+<figure  style={{ textAlign:  'center' }}>
+
+  
+
+<img  src="https://static.igem.wiki/teams/5649/figures/pheiges.avif"  alt="pheiges"  width="600"  style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}  />
+
+  
+
+<figcaption><em>Figure 2: The in-vitro phage reboot production strategy of the method proposed in Levrier et al.<Footnote  noteKey="levrier2024"/>  </em></figcaption>
+
+  
+
+</figure>
+
+  
+
 </div>
 
+  
 
+  
 
 ---
+
+  
+
+  
 
 ### Implementation of our phage engineering approach (Engineering cycle 1: Design)
 
-To get a more technical understanding of how to implement this novel phage engineering approach ourselves, as well as to better understand its challenges, we contacted Dr. Ana Rita Costa from Stan Broun’s Group and Dr. Sam van Beljouw, a researcher from Basel University with experience working with TXTL. Based on our meetings with both of them, we learned that, while TXTL provides much higher efficiency and control, such systems are often expensive, while very challenging to fine-tune if developed in-house. This makes cell-free systems undesirable in the context of our project.  
+  
 
-Based on the advice of Dr Ana Rita Costa, we opted for an alternative to cell-free systems and decided to directly transform bacteria with an in vitro assembled genome to reboot phage production. More specifically, we opted for using the transformation of competent BL21 (DE3) as a standard protein expression cell line, which is already commonly used for phage production. A similar approach was also implemented in the more recent study by Vu et al<Footnote noteKey="vu2025"/>, which further supports our choice of transformation over using the Cell Free System, due to the inaccessibility of the technology.  
+  
+
+To get a more technical understanding of how to implement this novel phage engineering approach ourselves, as well as to better understand its challenges, we contacted Dr. Ana Rita Costa from Stan Broun’s Group and Dr. Sam van Beljouw, a researcher from Basel University with experience working with TXTL. Based on our meetings with both of them, we learned that, while TXTL provides much higher efficiency and control, such systems are often expensive, and very challenging to fine-tune if developed in-house. This makes cell-free systems undesirable in the context of our project.
+
+  
+
+  
+
+Based on the advice of Dr Ana Rita Costa, we opted for an alternative to cell-free systems and decided to directly transform bacteria with an in vitro assembled genome to reboot phage production. More specifically, we opted for using the transformation of competent BL21 (DE3) as a standard protein expression cell line, which is already commonly used for phage production. A similar approach was also implemented in the more recent study by Vu et al<Footnote  noteKey="vu2025"/>, which further supports our choice of transformation over using the Cell Free System, due to the inaccessibility of the technology.
+
+  
+
+  
 
 </Dropdown>
 
+  
+
+  
+
 ---
 
-<Dropdown header="The challenges of phage engineering (Engineering Cycle 1)" level={0}>
+  
+
+  
+
+<Dropdown  header="The challenges of phage engineering (Engineering Cycle 1)"  level={0}>
+
+  
+
+  
 
 ### Initial PCR procedure (Engineering cycle 1)
-Initially, we attempted to produce the T7 genome by implementing the primer sequences described by Levrier et al<Footnote noteKey="levrier2024"/>. [link to oligo table]. We examined both a wild type (wt) and a minimized (mini) version of the genome. The PCR procedure was performed following standard Q5 polymerase protocol, with the one major difference being the extension of the first melting step to 5 min. This is needed when using T7 phages as a source of DNA [see protocol]. We split all reaction tubes into two thermocycler protocols, which best matched their extension time and annealing temperature (see Fig #). After further visualizing our PCR samples with 1% agarose gel electrophoresis (1% AGE), we confirmed that all of our T7 genome fragments were produced (see Fig. #).  
 
-<div style={{ borderLeft: '4px solid #ccc', paddingLeft: '16px', marginBottom: '24px' }}>
-	<figure style={{ textAlign: 'center' }}>
-		<img src="https://static.igem.wiki/teams/5649/figures/first-pcr.webp" alt="first-pcr" width="600" style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }} />
-        <figcaption><em>Figure 3: 1% AGE visualization of T7 phage genomic fragments, produced using PCR. Lanes wA to wD: wild-type fragments; mA to mF: minimized genome fragments.</em></figcaption>
-	</figure>
+  
+
+Initially, we attempted to produce the T7 genome by implementing the primer sequences described by Levrier et al<Footnote  noteKey="levrier2024"/>. We examined both a wild type (wt) and a minimized (mini) version of the genome. The PCR procedure was performed following standard Q5 polymerase protocol, with the one major difference being the extension of the first melting step to 5 min. This is needed when using T7 phages as a source of DNA (see protocols). We split all reaction tubes into two thermocycler protocols, which best matched their extension time and annealing temperatures. After further visualizing our PCR samples with 1% agarose gel electrophoresis (1% AGE), we confirmed that all of our T7 genome fragments were produced (see Fig. 3).
+
+  
+
+  
+
+<div  style={{ borderLeft:  '4px solid #ccc', paddingLeft:  '16px', marginBottom:  '24px' }}>
+
+  
+
+<figure  style={{ textAlign:  'center' }}>
+
+  
+
+<img  src="https://static.igem.wiki/teams/5649/figures/first-pcr.webp"  alt="first-pcr"  width="600"  style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}  />
+
+  
+
+<figcaption><em>Figure 3: 1% AGE visualization of T7 phage genomic fragments, produced using PCR. Lanes wA to wD: wild-type fragments; mA to mF: minimized genome fragments.</em></figcaption>
+
+  
+
+</figure>
+
+  
+
 </div>
+
+  
+
+  
 
 ### Initial assembly of the T7 genome (Engineering cycle 1)
-#### BUILD
-As we confirmed the success of our PCR procedure, we attempted to assemble both a wt and mini T7 genome using the NEB Hi Fi Assembly kit (see protocols). This method relies on enzymatically digesting DNA strand ends, annealing homologous DNA ends, and ligating them, all in one procedure. Beforehand, we purified our DNA with the NEB Monarch PCR clean-up kit. However, due to the use of only 50 μL PCR reaction volume, we obtained a DNA concentration in the range of 30–60 ng/μL, which was suboptimal following NEB guidelines for the assembly. Nevertheless, we performed a Hi Fi assembly with maximal equimolar amounts possible for a reaction volume of 20 μL.  
 
-<div style={{ borderLeft: '4px solid #ccc', paddingLeft: '16px', marginBottom: '24px' }}>
-	<figure style={{ textAlign: 'center' }}>
-		<img src="https://static.igem.wiki/teams/5649/figures/ambitious-assembly.webp" alt="ambitious-assembly" width="600" style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }} />
-        <figcaption><em>Figure 4: 0.7% AGE of assembly products. Lane 1: lambda phage genome reference; Lane 2/3: wild type and minimized T7 genome assemblies.</em></figcaption>
-	</figure>
+  
+
+#### BUILD
+
+  
+
+As we confirmed the success of our PCR procedure, we attempted to assemble both a wt and mini T7 genome using the NEB Hi Fi Assembly kit (see protocols). This method relies on enzymatically digesting DNA strand ends, annealing homologous DNA ends, and ligating them, all in one procedure. Beforehand, we purified our DNA with the NEB Monarch PCR clean-up kit. However, due to the use of only 50 μL PCR reaction volume, we obtained a DNA concentration in the range of 30–60 ng/μL, which was suboptimal following NEB guidelines for the assembly. Nevertheless, we performed a Hi Fi assembly with maximal equimolar amounts possible for a reaction volume of 20 μL.
+
+  
+
+  
+
+<div  style={{ borderLeft:  '4px solid #ccc', paddingLeft:  '16px', marginBottom:  '24px' }}>
+
+  
+
+<figure  style={{ textAlign:  'center' }}>
+
+  
+
+<img  src="https://static.igem.wiki/teams/5649/figures/ambitious-assembly.webp"  alt="ambitious-assembly"  width="600"  style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}  />
+
+  
+
+<figcaption><em>Figure 4: 0.7% AGE of assembly products. Lane 1: lambda phage genome reference; Lane 2/3: wild type and minimized T7 genome assemblies.</em></figcaption>
+
+  
+
+</figure>
+
+  
+
 </div>
-#### TEST 
-Next, after the assembly reaction, to confirm the presence of assembled genomic DNA, we used the sense primers of our A segments and the antisense primers from the last fragment (D in wt and F in mini) in a PCR reaction to amplify any present genomic DNA. To amplify long DNA as the T7 genome with a size of ~40 kb, we relied on the RepliQua PCR kit, which has high enough processivity for such a large DNA, based on the guidelines of the kit. Then we visualized the product of this PCR using 0.7% AGE (see fig.) Unfortunately, the PCR reaction showed no clear visible bands, suggesting that no complete genomes were present.
- 
+
+  
+
+#### TEST
+
+  
+
+Next, after the assembly reaction, to confirm the presence of assembled genomic DNA, we used the sense primers of our A segments and the antisense primers from the last fragment (D in wt and F in mini) in a PCR reaction to amplify any present genomic DNA. To amplify long DNA as the T7 genome with a size of ~40 kb, we relied on the RepliQua PCR kit, which has high enough processivity for such a large DNA, based on the guidelines of the kit. Then we visualized the product of this PCR using 0.7% AGE (Fig. 4) Unfortunately, the PCR reaction showed no clear visible bands, suggesting that no complete genomes were present.
+
+  
+
 #### LEARN
+
+  
+
 We reflected on our procedure to further modify it based on our experience, literature, and feedback from experts. After talking with Ing. Esengül Yildirim and Dr. Theo van Laar, we recognized the bigger challenge genomic DNA actually is, both in regards to general treatment as pipetting, as well as PCR efficiency. While RepliQua should be expected to work even with larger-sized DNA as the T7 genome, such PCRs are very uncommon and challenging to implement. Additionally, further precaution is needed when pipetting such DNA samples due to the risk of shearing the DNA at this length scale. Based on advice by Theo van Laar, we began cutting the tip of our pipette tips to ensure the water flow through the tip is not so high that it can damage the DNA.
 
-Additionally, based on advice from Ing. Esengül Yildirim, as well as on the procedure implemented in Vu et al<Footnote noteKey="vu2025"/>, we further modified our screening procedure. We designed PCR primers (see Experiments) for amplifying the middle regions between genomic fragments so that the successful assembly between individual fragments can be validated. With this method, a standard Q5 polymerase would only be needed, and visualizing such PCR products would require easier-to-handle 1% AGE. Additionally, this screening provides more specific information about which fragments are not being assembled if partial assembly occurs.
+  
+
+  
+
+Additionally, based on advice from Ing. Esengül Yildirim, as well as on the procedure implemented in Vu et al<Footnote  noteKey="vu2025"/>, we further modified our screening procedure. We designed PCR primers (see Experiments) for amplifying the middle regions between genomic fragments so that the successful assembly between individual fragments can be validated. With this method, a standard Q5 polymerase would only be needed, and visualizing such PCR products would require easier-to-handle 1% AGE. Additionally, this screening provides more specific information about which fragments are not being assembled if partial assembly occurs.
+
+  
+
+  
 
 Another aspect we decided to change based on our experience was to scale up our initial production PCRs 3-fold to ensure a high amount of DNA, while additionally decreasing elution volume to further increase the concentration of available. In this way, we aimed to use the maximum protocol parameters from our assembly kit guidelines.
 
+  
+
+  
+
 </Dropdown>
+
+  
+
+  
 
 ---
 
-<Dropdown header="Engineering insertion, troubleshooting new PCRs (Engineering cycle 2)" level={0}>
+  
+
+  
+
+<Dropdown  header="Engineering insertion, troubleshooting new PCRs (Engineering cycle 2)"  level={0}>
+
+  
+
+  
 
 ### DESIGN
-Two different sites, gene 4.3 and gene 10, were considered for introducing exogenous DNA. The 4.3 site was the preferred one by the iGEM team PHOCUS, while gene 10 by the iGEM team Mingdao. For the gene 10 insertion, the standard genome was chosen, and to introduce DNA into gene 10, we split the C fragment (where the gene is located) into two smaller fragments, C1 and C2, between which we would introduce exogenous DNA.  On the other hand, for gene 4.3, a substitution was considered in place of the region containing gene 4.3 that is removed in our minimized genome.  Thus, exogenous DNA was planned to be introduced exogenous DNA between fragment mC and mD from the minimized genome.
 
-<Dropdown header="The case of gene 4.3" level={1}>
+  
 
-While initially considered as an option, gene 4.3 was eventually recognized to be incompatible with our system. It is a non-crucial gene of T7, which makes it an attractive target for recombinant engineering. That is exactly why the Phocus iGEM team chose this region in the first place. However, since gene 4.3 is an early gene, it cannot rely on the T7 phage DNA polymerase, as these genes have not been produced yet. Thus, even if we introduce a T7 promoter, any gene added to this region of the T7 genome would not be expressed at a high enough level. This was further confirmed in Levrier et al.<Footnote noteKey="levrier2024"/>, where they showed that insertions resulted in lower expression levels. 
+Two different sites, gene 4.3 and gene 10, were considered for introducing exogenous DNA. The 4.3 site was the preferred one by the iGEM team PHOCUS, while gene 10 by the iGEM team Mingdao. For the gene 10 insertion, the standard genome was chosen, and to introduce DNA into gene 10, we split the C fragment (where the gene is located) into two smaller fragments, C1 and C2, between which we would introduce exogenous DNA. On the other hand, for gene 4.3, a substitution was considered in place of the region containing gene 4.3 that is removed in our minimized genome. Thus, exogenous DNA was planned to be introduced exogenous DNA between fragment mC and mD from the minimized genome.
+
+  
+
+  
+
+<Dropdown  header="The case of gene 4.3"  level={1}>
+
+  
+
+  
+
+While initially considered as an option, gene 4.3 was eventually recognized to be incompatible with our system. It is a non-crucial gene of T7, which makes it an attractive target for recombinant engineering. That is exactly why the Phocus iGEM team chose this region in the first place. However, since gene 4.3 is an early gene, it cannot rely on the T7 phage DNA polymerase, as these genes have not been produced yet. Thus, even if we introduce a T7 promoter, any gene added to this region of the T7 genome would not be expressed at a high enough level. This was further confirmed in Levrier et al.<Footnote  noteKey="levrier2024"/>, where they showed that insertions resulted in lower expression levels.
+
+  
+
+  
 
 </Dropdown>
 
-<div style={{ borderLeft: '4px solid #ccc', paddingLeft: '16px', marginBottom: '24px' }}>
-	<figure style={{ textAlign: 'center' }}>
-		<img src="https://static.igem.wiki/teams/5649/figures/snapa.webp" alt="snapa" width="800" style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }} />
-        <figcaption><em>Figure 5: Snapgene visualization of C1-mCherry-C2 insertion construct and gene 10 insertion site for mCherry.</em></figcaption>
-	</figure>
+  
+
+  
+
+<div  style={{ borderLeft:  '4px solid #ccc', paddingLeft:  '16px', marginBottom:  '24px' }}>
+
+  
+
+<figure  style={{ textAlign:  'center' }}>
+
+  
+
+<img  src="https://static.igem.wiki/teams/5649/figures/snapa.webp"  alt="snapa"  width="800"  style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}  />
+
+  
+
+<figcaption><em>Figure 5: Snapgene visualization of C1-mCherry-C2 insertion construct and gene 10 insertion site for mCherry.</em></figcaption>
+
+  
+
+</figure>
+
+  
+
 </div>
 
+  
 
-For the exogenous DNA insert, we chose to use mCherry, as its expression can be easily reported and was already available in our lab inside a pRSET B plasmid vector. For this purpose, PCR primers were designed for amplifying both the mCherry gene and the genomic fragments between which the insertion would occur. These primers were made based on the orthogonal homologous sequences (ohos) described in Levrier et al<Footnote noteKey="levrier2024"/> and developed in Subramanian et al. These ohos were used together with ~20 bp from each side of the insertion or, correspondingly, from the exogenous DNA side for the primer design.  
+  
+
+For the exogenous DNA insert, we chose to use mCherry, as its expression can be easily reported and was already available in our lab inside a pRSET B plasmid vector. For this purpose, PCR primers were designed for amplifying both the mCherry gene and the genomic fragments between which the insertion would occur. These primers were made based on the orthogonal homologous sequences (ohos) described in Levrier et al<Footnote  noteKey="levrier2024"/> and developed in Subramanian et al. These ohos were used together with ~20 bp from each side of the insertion or, correspondingly, from the exogenous DNA side for the primer design.
+
+  
+
+  
 
 ### BUILD, TEST and LEARN
-After designing our insertion PCR primers, we again performed PCR using Q5 polymerase to confirm we can produce our modified phage genomic fragments as well as our mCherry gene.  While some of our PCR products were successfully validated through 1% AGE, (C1 and mCherry), C2 and both mini fragments were not produced.
 
-<div style={{ borderLeft: '4px solid #ccc', paddingLeft: '16px', marginBottom: '24px' }}>
-	<figure style={{ textAlign: 'center' }}>
-		<img src="https://static.igem.wiki/teams/5649/figures/insert-almost-there-q5.webp" alt="insert-almost-there-q5" width="600" style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }} />
-        <figcaption><em>Figure 6: 1% AGE visualization of Q5 PCR products for mCherry insertion. Lanes: C1, C2, mCoho1, mDoho2, mCh.</em></figcaption>
-	</figure>
+  
+
+After designing our insertion PCR primers, we again performed PCR using Q5 polymerase to confirm that we can produce our modified phage genomic fragments as well as our mCherry gene. While some of our PCR products were successfully validated through 1% AGE (C1 and mCherry), C2, and both mini fragments were not produced.
+
+  
+
+  
+
+<div  style={{ borderLeft:  '4px solid #ccc', paddingLeft:  '16px', marginBottom:  '24px' }}>
+
+  
+
+<figure  style={{ textAlign:  'center' }}>
+
+  
+
+<img  src="https://static.igem.wiki/teams/5649/figures/insert-almost-there-q5.webp"  alt="insert-almost-there-q5"  width="600"  style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}  />
+
+  
+
+<figcaption><em>Figure 6: 1% AGE visualization of Q5 PCR products for mCherry insertion. Lanes: C1, C2, mCoho1, mDoho2, mCh.</em></figcaption>
+
+  
+
+</figure>
+
+  
+
 </div>
 
-To assess whether the reason for the unsuccessful PCR was the primer design or the inoptimal annealing temperature, we additionally performed a PCR with the RepliQua polymerase, which can optimally amplify DNA even for non-optimal annealing temperature. This additional screening succesfully confirmed that both C1 and C2 were produced and from the mini fragments only mCoho1 was succesfully produced. Since we recognized that both C1 and C2 can be produced with the currently available primers we  again performed PCR using Q5 but this time we decreased our melting temperature by 1C from what the NEB guidelines recommend and we were succesfully able to confirm succesful production of boht C1 and C2 (see Fig #). 
-<div style={{ borderLeft: '4px solid #ccc', paddingLeft: '16px', marginBottom: '24px' }}>
-	<figure style={{ textAlign: 'center' }}>
-		<img src="https://static.igem.wiki/teams/5649/figures/insert-repliqua.webp" alt="insert-repliqua" width="600" style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }} />
-        <figcaption><em>Figure 7: 1% AGE visualization of RepliQua PCR products for mCherry insertion. Labels as in previous figure.</em></figcaption>
-	</figure>
+  
+
+  
+
+To assess whether the reason for the unsuccessful PCR was the primer design or the inoptimal annealing temperature, we additionally performed a PCR with the RepliQua polymerase, which can optimally amplify DNA even for non-optimal annealing temperatures. This additional screening successfully confirmed that both C1 and C2 were produced, and from the mini fragments, only mCoho1 was successfully produced. Since we recognized that both C1 and C2 can be produced with the currently available primers, we again performed PCR using Q5, but this time we decreased our melting temperature by 1 °C from what the NEB guidelines recommend, and we were successfully able to confirm successful production of both C1 and C2 (see Fig. 8)
+
+  
+
+<div  style={{ borderLeft:  '4px solid #ccc', paddingLeft:  '16px', marginBottom:  '24px' }}>
+
+  
+
+<figure  style={{ textAlign:  'center' }}>
+
+  
+
+<img  src="https://static.igem.wiki/teams/5649/figures/insert-repliqua.webp"  alt="insert-repliqua"  width="600"  style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}  />
+
+  
+
+<figcaption><em>Figure 7: 1% AGE visualization of RepliQua PCR products for mCherry insertion. Labels are equivalent to the ones in FIgure 6.</em></figcaption>
+
+  
+
+</figure>
+
+  
+
 </div>
+
+  
+
+  
 
 </Dropdown>
+
+  
+
 ---
 
+  
 
-<Dropdown header="Scaled up PCR and new assembly procedure (Engineering cycle 3)" level={0}>
+  
+
+<Dropdown  header="Scaled up PCR and new assembly procedure (Engineering cycle 3)"  level={0}>
+
+  
+
 ### BUILD AND TEST
-Based on what we learned from Engineering cycle 1 regarding PCR scaling and DNA purification, as well as from Engineering cycle 2, about PCR annealing temperatures, a new scaled up PCR was performed to assemble a WT Phage genome with an insert, downstream from gene 10. We succesfully produced all needed fragments (see Results) and thus we attempted to perform Hi-Fi Genome Assembly.
 
-<div style={{ borderLeft: '4px solid #ccc', paddingLeft: '16px', marginBottom: '24px' }}>
-	<figure style={{ textAlign: 'center' }}>
-		<img src="https://static.igem.wiki/teams/5649/figures/scaled-pcr-wt-and-insert.webp" alt="scaled-pcr-wt-and-insert" width="600" style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }} />
-        <figcaption><em>Figure 8: Scaled up PCR products for WT phage genome with insert.</em></figcaption>
-	</figure>
+  
+
+Based on what we learned from Engineering cycle 1 regarding PCR scaling and DNA purification, as well as from Engineering cycle 2, about PCR annealing temperatures, a new scaled-up PCR was performed to assemble a WT Phage genome with an insert, downstream from gene 10. We successfully produced all needed fragments (see Results) and thus we attempted to perform Hi-Fi Genome Assembly.
+
+  
+
+  
+
+<div  style={{ borderLeft:  '4px solid #ccc', paddingLeft:  '16px', marginBottom:  '24px' }}>
+
+  
+
+<figure  style={{ textAlign:  'center' }}>
+
+  
+
+<img  src="https://static.igem.wiki/teams/5649/figures/scaled-pcr-wt-and-insert.webp"  alt="scaled-pcr-wt-and-insert"  width="600"  style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}  />
+
+  
+
+<figcaption><em>Figure 8: Scaled up PCR products for WT phage genome with insert. Rightmost lane labels as L contain NEB 1kb+ DNA ladder. Lanes labelled from A-D contain wild-type T7 fragment A to D. Lanes C1 and C2 contain the split C fragment with oho arms for the insertion of the mCherry gene. The lane labeled with mCh contains the mCherry gene fragment.  </em></figcaption>
+
+  
+
+</figure>
+
+  
+
 </div>
 
-After we performed assembly reaction both for a wt genome and one with mCherry insertion, we performed an assembly screening PCR (see Fig. #). While some of the fragments were assembled succesfully, there was evidence for fragments A and B as well as fragments C1 and mCherry not being assembled. 
-<div style={{ borderLeft: '4px solid #ccc', paddingLeft: '16px', marginBottom: '24px' }}>
-	<figure style={{ textAlign: 'center' }}>
-		<img src="https://static.igem.wiki/teams/5649/figures/assembly-gel-and-overview.webp" alt="assembly-gel-and-overview" width="600" style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }} />
-        <figcaption><em>Figure 9: Assembly gel and overview of fragment assembly results.</em></figcaption>
-	</figure>
+  
+
+  
+
+After we performed assembly reaction both for a wt genome and one with mCherry insertion, we performed an assembly screening PCR (see Fig. 9). While some of the fragments were assembled successfully, there was evidence for fragments A and B, as well as fragments C1 and mCherry, not being assembled.
+
+  
+
+<div  style={{ borderLeft:  '4px solid #ccc', paddingLeft:  '16px', marginBottom:  '24px' }}>
+
+  
+
+<figure  style={{ textAlign:  'center' }}>
+
+  
+
+<img  src="https://static.igem.wiki/teams/5649/figures/assembly-gel-and-overview.webp"  alt="assembly-gel-and-overview"  width="600"  style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}  />
+
+  
+
+<figcaption><em>Figure 9: 1% AGE of Hi Fi assembly screening PCR. The rightmost lane was loaded with the 1kb+ NEB DNA ladder. The remaining lanes were loaded with PCR products testing for DNA regions between corresponding fragments.  </em></figcaption>
+
+  
+
+</figure>
+
+  
+
 </div>
 
-Nevertheless, based on results from Vu et al<Footnote noteKey="vu2025"/>, we recognized that even nonassembled genome fragments can be assembled by E. coli's machinery and reboot phage production. Thus, we also performed a modified heat shock transformation procedure for phage production reboot (see Experiments). However, we didn't observe any phage rebooting from our plaque assay. However, our transformation positive control, from a transformation with denatured T7 phages(which have been denatured by heating to <Temperature celsius="95°C" fahrenheit="203°F" /> for 5 min.) also showed negative results. Thus,  we recognized that the transformation procedure itself would be our first choice for improvement. 
-<div style={{ borderLeft: '4px solid #ccc', paddingLeft: '16px', marginBottom: '24px' }}>
-	<figure style={{ textAlign: 'center' }}>
-		<img src="https://static.igem.wiki/teams/5649/figures/plaquea.webp" alt="plaquea" width="600" style={{ display: 'inline-block', maxWidth: '100%', height: 'auto' }} />
-        <figcaption><em>Figure 10: Plaque assay results for phage reboot production. Only T7 phage positive control shows plaques.</em></figcaption>
-	</figure>
+  
+
+  
+
+Nevertheless, based on results from Vu et al<Footnote  noteKey="vu2025"/>, we recognized that even nonassembled genome fragments can be assembled by E. coli's machinery and reboot phage production. Thus, we also performed a modified heat shock transformation procedure for phage production reboot (see Experiments). However, we didn't observe any phage rebooting from our plaque assay. However, our transformation positive control, from a transformation with denatured T7 phages(which have been denatured by heating to <Temperature  celsius="95°C"  fahrenheit="203°F"  /> for 5 min.) also showed negative results. Thus, we recognized that the transformation procedure itself would be our first choice for improvement.
+
+  
+
+<div  style={{ borderLeft:  '4px solid #ccc', paddingLeft:  '16px', marginBottom:  '24px' }}>
+
+  
+
+<figure  style={{ textAlign:  'center' }}>
+
+  
+
+<img  src="https://static.igem.wiki/teams/5649/figures/plaquea.webp"  alt="plaquea"  width="600"  style={{ display:  'inline-block', maxWidth:  '100%', height:  'auto' }}  />
+
+  
+
+<figcaption><em>Figure 10: Plaque assay results for phage reboot production. Only the T7 phage positive control (top-right) shows plaques. Top-Left: Insert T7 assembly product, Middle left: Negative control, Middle right: T7 genome positive control, Bottom-right: Wild Type T7 Assembly. Bottom left: Empty agar plate. </em></figcaption>
+
+  
+
+</figure>
+
+  
+
 </div>
+
+  
+
 ### LEARN
-We contacted Dr. Ana Rita Costa, and she advised us to use electroporation instead for transforming E. coli, as electroporation can produce bigger holes in the cell envelope of electrocompetent E. coli. Additionally, due to our low count of plaques in our T7 plaque assay positive control, she advised us to increase the concentration of our phage stock by using protein purification filters. 
-</Dropdown>
-<Dropdown header="Troubleshooting phage reboot (The beginning of Engineering cycle 4)" level={0}>
-We further attempted an electroporation transformation procedure and the products from this procedure were further concentrated to ensure high enough concentration of phages. Nevertheless the results from this final plaque assays were again inconclusive.
+
+  
+
+We contacted Dr. Ana Rita Costa, and she advised us to use electroporation instead for transforming E. coli, as electroporation can produce bigger holes in the cell envelope of electrocompetent E. coli. Additionally, due to our low count of plaques in our T7 plaque assay positive control, she advised us to increase the concentration of our phage stock by using protein purification filters.
+
+  
 
 </Dropdown>
+
+  
+
+<Dropdown  header="Troubleshooting phage reboot (The beginning of Engineering cycle 4)"  level={0}>
+
+  
+
+We further attempted an electroporation transformation procedure, and the products from this procedure were further concentrated to ensure a high enough concentration of phages. Nevertheless, the results from this final plaque assay were again inconclusive.
+
+  
+
+  
+
+</Dropdown>
+
+  
+
+  
 
 ---
 
-<Dropdown header="Future outlook" level={0}>
+  
 
-With our available resources we were not able to reboot phages. To improve our procedure we could try to follow the nonmaximized concentrations for Assembly done by Vu et al<Footnote noteKey="vu2025"/> for their assembly as, while NEB guidelines suggest that this mode should ensure higher effiiciency.Additionally, due to our negative results of our positive control, further troubleshooting attempts need to be performed independently on the transformation procedure itself from the assembly, to first validate one. Finally, redesigning the primers to include orthogonal homologous sequences could further ensure there exists no complementarity with unintended regions of the genome which could potentially prevent the genome assembly. 
+  
+
+<Dropdown  header="Future outlook"  level={0}>
+
+  
+
+  
+
+With our available resources, we were not able to reboot phages. To improve our procedure, we could try to follow the nonmaximized concentrations for Assembly done by Vu et al<Footnote  noteKey="vu2025"/> for their assembly, as NEB guidelines suggest that this mode should ensure higher efficiency. Additionally, due to the negative results of our positive control, further troubleshooting attempts need to be performed independently on the transformation procedure itself, from the assembly, to first validate one. Finally, redesigning the primers to include orthogonal homologous sequences could further ensure that there exists no complementarity with unintended regions of the genome, which could potentially prevent the genome assembly.
+
+  
+
+  
 
 </Dropdown>
 
+  
+
+  
+
 ---
 
-<FootnoteDefinition noteKey="vu2025">J. Vu, et al., “Homology-Based Enzymatic Assembly of Modular T7 Phage Genome,” 2025.04.24.650493 Preprint at https://doi.org/10.1101/2025.04.24.650493 (2025).</FootnoteDefinition>
+  
 
-<FootnoteDefinition noteKey="levrier2024">A. Levrier, et al., “PHEIGES: all-cell-free phage synthesis and selection from engineered genomes,” Nature Communications 15, 2223 (2024).</FootnoteDefinition>
+  
 
-<FootnoteDefinition noteKey="jati2025">Jati, A. et al. Highly stable bacteriophages PIN1 and PIN2 have hallmarks of flagellotropic phages but infect immotile bacteria. npj Viruses 3, 56 (2025).</FootnoteDefinition>
+<FootnoteDefinition  noteKey="vu2025">J. Vu, et al., “Homology-Based Enzymatic Assembly of Modular T7 Phage Genome,” 2025.04.24.650493 Preprint at https://doi.org/10.1101/2025.04.24.650493 (2025).</FootnoteDefinition>
 
-<FootnotesList title="References"/>
+  
+
+  
+
+<FootnoteDefinition  noteKey="levrier2024">A. Levrier, et al., “PHEIGES: all-cell-free phage synthesis and selection from engineered genomes,” Nature Communications 15, 2223 (2024).</FootnoteDefinition>
+
+  
+
+  
+
+<FootnoteDefinition  noteKey="jati2025">Jati, A. et al. Highly stable bacteriophages PIN1 and PIN2 have hallmarks of flagellotropic phages but infect immotile bacteria. npj Viruses 3, 56 (2025).</FootnoteDefinition>
+
+  
+
+  
+
+<FootnotesList  title="References"/>
+
+  
+
 </Content>
+
+  
+
+  
 
 </FootnotesProvider>
