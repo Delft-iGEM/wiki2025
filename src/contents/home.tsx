@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { AccentLine } from "@/components/ui/accent-line";
 import { useCallback, useState } from "react";
+import { gridImport } from "@/lib/utils";
 
 function StatCard({
   number,
@@ -163,98 +164,98 @@ export function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
         </div>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 pt-10 pb-10">
-          <div className="flex flex-col lg:flex-row-reverse gap-8 lg:items-center">
-            <div className="flex justify-center lg:justify-end">
-              <img
-                src="https://static.igem.wiki/teams/5649/teamphotos/small-chicks-picture-with-snaccine-logo.webp"
-                alt="Small chicks with Snaccine logo"
-                className="w-full max-w-xl h-auto rounded-2xl shadow-lg"
-                loading="lazy"
+          <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 pt-10 pb-10">
+            <div className="flex flex-col lg:flex-row-reverse gap-8 lg:items-center">
+              <div className="flex justify-center lg:justify-end">
+                <img
+                  src="https://static.igem.wiki/teams/5649/teamphotos/small-chicks-picture-with-snaccine-logo.webp"
+                  alt="Small chicks with Snaccine logo"
+                  className="w-full max-w-xl h-auto rounded-2xl shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+              <div className="space-y-4 text-center lg:text-left">
+                <h2 className="text-6xl font-semibold tracking-tight">
+                  about avian influenza
+                </h2>
+                <p className="mx-auto lg:mx-0 max-w-2xl text-lg text-foreground text-shadow-white text-shadow-lg/50">
+                  Bird flu, specifically Highly Pathogenic Avian Influenza H5N1
+                  (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds around the
+                  world.
+                </p>
+                <AccentLine alt className="mx-auto lg:mx-0" />
+              </div>
+            </div>
+
+            {/* --- Stats Cards --- */}
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <StatCard
+                number="+29%"
+                title="Egg prices since 2022"
+                description={
+                  <>
+                    Egg price inflation in the Netherlands, Jan 2022 – Aug 2025{" "}
+                    <Link
+                      to="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83131NED/table?ts=1759710766335"
+                      className="text-primary hover:underline"
+                    >
+                      (CBS)
+                    </Link>
+                  </>
+                }
+              />
+
+              <StatCard
+                number="1264"
+                title="Wild bird cases"
+                description={
+                  <>
+                    HPAI detections in wild birds, 24 European countries, Oct 2024
+                    – June 2025{" "}
+                    <Link
+                      to="/human-practices"
+                      className="text-primary hover:underline"
+                    >
+                      (ECDC)
+                    </Link>
+                  </>
+                }
+              />
+
+              <StatCard
+                number="8M"
+                title="Birds culled in four months"
+                description={
+                  <>
+                    Birds killed to stop the spread of HPAI, 24 European countries,
+                    March 8 – June 6 2025{" "}
+                    <Link
+                      to="/human-practices"
+                      className="text-primary hover:underline"
+                    >
+                      (EFSA)
+                    </Link>
+                  </>
+                }
+                numberColor="text-destructive"
               />
             </div>
-            <div className="space-y-4 text-center lg:text-left">
-              <h2 className="text-6xl font-semibold tracking-tight">
-                about avian influenza
-              </h2>
-              <p className="mx-auto lg:mx-0 max-w-2xl text-lg text-foreground text-shadow-white text-shadow-lg/50">
-                Bird flu, specifically Highly Pathogenic Avian Influenza H5N1
-                (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds around the
-                world.
+
+            <div className="text-white text-center mt-0 md:mt-30 lg:mt-90 mb-0">
+              <p className="text-lg opacity-100 max-w-lg font-semibold mx-auto drop-shadow-2xl bg-black/30 backdrop-blur-xs rounded px-6 py-4 mb-10">
+                In the Netherlands, as in most countries, the main control measure
+                for poultry farms is mass preventative killing (culling) of the
+                entire flock.
               </p>
-              <AccentLine alt className="mx-auto lg:mx-0" />
+              <Link
+                to="/human-practices"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-tertiary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/60 hover:-translate-y-1 backdrop-blur-sm hover:shadow-lg duration-300"
+              >
+                see how our work can make an impact &rarr;
+              </Link>
             </div>
           </div>
-
-          {/* --- Stats Cards --- */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <StatCard
-              number="+29%"
-              title="Egg prices since 2022"
-              description={
-                <>
-                  Egg price inflation in the Netherlands, Jan 2022 – Aug 2025{" "}
-                  <Link
-                    to="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83131NED/table?ts=1759710766335"
-                    className="text-primary hover:underline"
-                  >
-                    (CBS)
-                  </Link>
-                </>
-              }
-            />
-
-            <StatCard
-              number="1264"
-              title="Wild bird cases"
-              description={
-                <>
-                  HPAI detections in wild birds, 24 European countries, Oct 2024
-                  – June 2025{" "}
-                  <Link
-                    to="/human-practices"
-                    className="text-primary hover:underline"
-                  >
-                    (ECDC)
-                  </Link>
-                </>
-              }
-            />
-
-            <StatCard
-              number="8M"
-              title="Birds culled in four months"
-              description={
-                <>
-                  Birds killed to stop the spread of HPAI, 24 European countries,
-                  March 8 – June 6 2025{" "}
-                  <Link
-                    to="/human-practices"
-                    className="text-primary hover:underline"
-                  >
-                    (EFSA)
-                  </Link>
-                </>
-              }
-              numberColor="text-destructive"
-            />
-          </div>
-
-          <div className="text-white text-center mt-0 md:mt-30 lg:mt-90 mb-0">
-            <p className="text-lg opacity-100 max-w-lg font-semibold mx-auto drop-shadow-2xl bg-black/30 backdrop-blur-xs rounded-lg px-6 py-4 mb-10">
-              In the Netherlands, as in most countries, the main control measure
-              for poultry farms is mass preventative killing (culling) of the
-              entire flock.
-            </p>
-            <Link
-              to="/human-practices"
-              className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-tertiary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/60 hover:-translate-y-1 backdrop-blur-sm hover:shadow-lg duration-300"
-            >
-              see how our work can make an impact &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
 
       {/* --- Snaccine Section --- */}
       <div className="relative bg-gradient-to-t from-blue-50 to-primary/10 pt-100 -mt-100 pb-16 px-6 shadow-lg md:rounded-3xl">
@@ -267,11 +268,11 @@ export function Home() {
               declaring war on bird flu
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Our platform addresses the critical gaps in current HPAI control by
-              combining the extremely fast development timeline of mRNA vaccines
-              with the logistical advantages of oral delivery, without the costly
-              ultra-cold storage and transportation infrastructure.
-            </p>
+                Our platform addresses the critical gaps in current HPAI control by
+                combining the extremely fast development timeline of mRNA vaccines
+                with the logistical advantages of oral delivery, without the costly
+                ultra-cold storage and transportation infrastructure.
+              </p>
             <div className="flex justify-center lg:justify-start gap-4">
               <Link
                 to="/engineering"
@@ -309,53 +310,58 @@ export function Home() {
       </section>
 
       {/* --- Centered Quick Links Cards --- */}
-      <section className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center gap-10 px-4 py-32 sm:px-6">
-        {/* Text moved above cards */}
-        <p className="text-center text-2xl font-bold text-muted-foreground mb-6">
-          Jump to these sections
-        </p>
+      {(() => {
+        if (!gridImport()) return (null);
+        return (
+          <section className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center gap-10 px-4 py-32 sm:px-6">
+            {/* Text moved above cards */}
+            <p className="text-center text-2xl font-bold text-muted-foreground mb-6">
+              Jump to these sections
+            </p>
 
-        <div className="grid gap-12 lg:grid-cols-3 items-center justify-items-center">
-          {[
-            {
-              title: "Project Description",
-              to: "/description",
-              image:
-                "https://static.igem.wiki/teams/5649/roundicons/humanpracticesnew.webp",
-              iconStyle: "h-48 w-48",
-            },
-            {
-              title: "Engineering Success",
-              to: "/engineering",
-              image:
-                "https://static.igem.wiki/teams/5649/roundicons/engineeringnew.webp",
-              iconStyle: "h-48 w-48",
-            },
-            {
-              title: "Meet the Team",
-              to: "/members",
-              image:
-                "https://static.igem.wiki/teams/5649/roundicons/teamnew.webp",
-              iconStyle: "h-48 w-48 rotate-3 -translate-y-2",
-            },
-          ].map((link) => (
-            <Link
-              key={link.title}
-              to={link.to}
-              className="group relative flex flex-col items-center justify-center rounded-2xl border border-border bg-card/80 p-8 shadow-sm transition hover:-translate-y-1 hover:border-accent hover:shadow-lg h-80 w-full max-w-sm"
-            >
-              <img
-                src={link.image}
-                alt={link.title}
-                className={`object-contain transition-transform duration-300 ${link.iconStyle}`}
-              />
-              <h3 className="text-xl font-semibold text-primary mt-6 group-hover:text-accent text-center">
-                {link.title}
-              </h3>
-            </Link>
-          ))}
-        </div>
-      </section>
+            <div className="grid gap-12 lg:grid-cols-3 items-center justify-items-center">
+              {[
+                {
+                  title: "Project Description",
+                  to: "/description",
+                  image:
+                    "https://static.igem.wiki/teams/5649/roundicons/humanpracticesnew.webp",
+                  iconStyle: "h-48 w-48",
+                },
+                {
+                  title: "Engineering Success",
+                  to: "/engineering",
+                  image:
+                    "https://static.igem.wiki/teams/5649/roundicons/engineeringnew.webp",
+                  iconStyle: "h-48 w-48",
+                },
+                {
+                  title: "Meet the Team",
+                  to: "/members",
+                  image:
+                    "https://static.igem.wiki/teams/5649/roundicons/teamnew.webp",
+                  iconStyle: "h-48 w-48 rotate-3 -translate-y-2",
+                },
+              ].map((link) => (
+                <Link
+                  key={link.title}
+                  to={link.to}
+                  className="group relative flex flex-col items-center justify-center rounded-2xl border border-border bg-card/80 p-8 shadow-sm transition hover:-translate-y-1 hover:border-accent hover:shadow-lg h-80 w-full max-w-sm"
+                >
+                  <img
+                    src={link.image}
+                    alt={link.title}
+                    className={`object-contain transition-transform duration-300 ${link.iconStyle}`}
+                  />
+                  <h3 className="text-xl font-semibold text-primary mt-6 group-hover:text-accent text-center">
+                    {link.title}
+                  </h3>
+                </Link>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
     </div>
   );
 }
