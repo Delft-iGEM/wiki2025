@@ -2,29 +2,6 @@ import { Link } from "react-router-dom";
 import { AccentLine } from "@/components/ui/accent-line";
 import { useCallback, useState } from "react";
 
-const quickLinks = [
-  {
-    title: "Project Description",
-    copy: "Dive into the science behind Snaccine and the engineering choices that make it possible.",
-    to: "/description",
-    image: "https://static.igem.wiki/teams/5649/roundicons/humanpracticesnew.webp", // swapped image
-    iconStyle: "h-44 w-44 -translate-y-22 scale-105",
-  },
-  {
-    title: "Engineering Success",
-    copy: "See how we iterated on our designs, validated parts, and built a robust experimental framework.",
-    to: "/engineering",
-    image: "https://static.igem.wiki/teams/5649/roundicons/engineeringnew.webp",
-    iconStyle: "h-43 w-43 -translate-y-23",
-  },
-  {
-    title: "Meet the Team",
-    copy: "Get to know the multidisciplinary group of students making Snaccine a reality.",
-    to: "/members",
-    image: "https://static.igem.wiki/teams/5649/roundicons/teamnew.webp",
-    iconStyle: "h-45 w-45 -translate-y-20 rotate-6",
-  },
-];
 
 // StatCard component with click/touch functionality
 function StatCard({
@@ -80,7 +57,7 @@ function StatCard({
       <div className={`h-full w-full transition-transform duration-500 group-hover:-translate-y-1 ${isFlipped ? "-translate-y-1" : ""}`}>
         <div className={`relative h-full w-full rounded-2xl transition-transform duration-300 [transform-style:preserve-3d] ${isFlipped ? "shadow-xl [transform:rotateY(180deg)]" : ""} group-hover:[transform:rotateY(180deg)]`}>
           {/* Front side */}
-          <div className="absolute inset-0 flex items-center justify-center rounded-2xl border border-tertiary bg-card shadow-lg [backface-visibility:hidden]">
+          <div className="absolute inset-0 flex items-center justify-center rounded-2xl border border-tertiary bg-card/30 backdrop-blur-xs md:bg-card shadow-lg [backface-visibility:hidden]">
             {/* Flip indicator arrow */}
             <div className="absolute top-3 right-3 opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110">
               <svg
@@ -103,7 +80,7 @@ function StatCard({
             <div className={`text-5xl font-bold ${numberColor}`}>{number}</div>
           </div>
           {/* Back side */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl border border-tertiary bg-card p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl border border-tertiary bg-card/70 backdrop-blur-xs md:bg-card p-6 text-center shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
             <h3 className="mb-2 text-lg font-semibold">{title}</h3>
             <div className="text-sm text-muted-foreground text-balance">
               {description}
@@ -154,13 +131,13 @@ export function Home() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 to="/description"
-                className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-tertiary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/90 hover:shadow-lg duration-300"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-tertiary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/90 hover:shadow-lg hover:-translate-y-1 duration-300"
               >
                 learn more &rarr;
               </Link>
               <Link
                 to="/members"
-                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-tertiary px-6 py-3 text-base font-semibold text-tertiary transition hover:border-tertiary/70 hover:text-tertiary/70 hover:shadow-lg duration-300"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full border border-tertiary px-6 py-3 text-base font-semibold text-tertiary transition hover:border-tertiary/70 hover:text-tertiary/70 hover:shadow-lg hover:-translate-y-1 duration-300"
               >
                 meet the team &rarr;
               </Link>
@@ -177,39 +154,39 @@ export function Home() {
         {/* Full-width background image */}
         <div className="absolute inset-0 w-full h-full"
           style={{
-            maskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)'
+            maskImage: 'linear-gradient(to bottom, transparent 0%, black 60%, black 90%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 60%, black 90%, transparent 100%)'
           }}>
           <img
-            src="https://static.igem.wiki/teams/5649/teamphotos/chickens-with-flowers-for-home-page.avif"
+            src="https://static.igem.wiki/teams/5649/teamphotos/chickentable.avif"
             alt="Image of chickens in a farm setting, a coop in the background"
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
         </div>
 
         {/* Content overlay */}
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 pt-10 pb-10">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div className="space-y-4 text-center lg:text-left">
-              <h2 className="text-6xl font-semibold tracking-tight">about avian influenza</h2>
-              <p className="mx-auto lg:mx-0 max-w-2xl text-lg text-foreground drop-shadow-black drop-shadow-2xl/100 text-shadow-white text-shadow-lg/50">
-                Bird flu, specifically Highly Pathogenic Avian Influenza H5N1 (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds around the world.
-              </p>
+            <div className="flex flex-col lg:flex-row-reverse gap-8 lg:items-center">
 
-              <AccentLine alt className="mx-auto lg:mx-0" />
-            </div>
-
-            <div className="flex justify-center lg:justify-end">
-              <img
+              <div className="flex justify-center lg:justify-end">
+                <img
                 src="https://static.igem.wiki/teams/5649/teamphotos/small-chicks-picture-with-snaccine-logo.webp"
                 alt="Small chicks with Snaccine logo"
                 className="w-full max-w-xl h-auto rounded-2xl shadow-lg"
                 loading="lazy"
-              />
+                />
+              </div>
+              <div className="space-y-4 text-center lg:text-left">
+                <h2 className="text-6xl font-semibold tracking-tight">about avian influenza</h2>
+                <p className="mx-auto lg:mx-0 max-w-2xl text-lg text-foreground text-shadow-white text-shadow-lg/50">
+                Bird flu, specifically Highly Pathogenic Avian Influenza H5N1 (HPAI&nbsp;A/H5N1), poses an ongoing threat to birds around the world.
+                </p>
+
+                <AccentLine alt className="mx-auto lg:mx-0" />
+              </div>
             </div>
-          </div>
 
           {/* --- Stats Cards --- */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -247,119 +224,64 @@ export function Home() {
           </div>
 
           {/* Text overlay at bottom */}
-          <div className="text-white text-center mt-8 mb-24">
-            <p className="text-lg opacity-100 max-w-lg font-semibold mx-auto drop-shadow-2xl bg-black/30 backdrop-blur-xs rounded-lg px-6 py-4">
+          <div className="text-white text-center mt-0 md:mt-30 lg:mt-90 mb-0">
+            <p className="text-lg opacity-100 max-w-lg font-semibold mx-auto drop-shadow-2xl bg-black/30 backdrop-blur-xs rounded-lg px-6 py-4 mb-10">
               In the Netherlands, as in most countries, the main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
             </p>
-            <p className="text-sm opacity-90 mt-2 line-through">
-              The Netherlands has the highest poultry density in Europe.
-            </p>
+            <Link
+                to="/human-practices"
+                className="inline-flex min-w-[10rem] items-center justify-center rounded-full bg-tertiary px-6 py-3 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-tertiary/60 hover:tr hover:-translate-y-1 backdrop-blur-sm hover:shadow-lg duration-300"
+              >
+                see how our work can make an impact &rarr;
+            </Link>
           </div>
         </div>
       </section>
-
-
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-24 sm:px-6">
-
-        {/* --- Snaccine Answer Section --- */}
-        <div className="rounded-3xl bg-gradient-to-br from-primary/20 to-transparent px-8 py-12">
-          <div className="mx-auto">
-            <div className="grid gap-4 lg:grid-cols-2 lg:items-center">
-              <div className="space-y-6">
-                <img
-                  src="https://static.igem.wiki/teams/5649/homegraphics/jar-of-snacks-2.webp"
-                  alt="A jar of snack capsules representing Snaccine, one capsule is open with phages spilling out"
-                  className="w-full h-auto"
-                  loading="lazy"
-
-                />
-
-              </div>
-              <div className="mr-auto w-full max-w-md">
-                <h3 className="text-2xl font-semibold">Snaccine is the answer to HPAI outbreaks</h3>
-                <AccentLine className="mb-3" />
-                <p className="text-lg text-muted-foreground">
-                  Our platform addresses the critical gaps in current HPAI control by
-                  combining the extremely fast development timeline of mRNA vaccines with
-                  the logistical advantages of oral delivery, without the costly ultra-cold
-                  storage and transportation infrastructure.
-                </p>
-                <Link
-                  to="/description"
-                  className="inline-flex items-center justify-center rounded-full bg-primary px-12 py-6 text-base font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/80 "
-                >
-                  read how it works &rarr;
-                </Link>
-              </div>
+      
+      {/* --- Completely Redesigned Snaccine Section --- */}
+      <div className="relative bg-gradient-to-t from-blue-50 to-primary/10 pt-100 -mt-100 pb-16 px-6 shadow-lg md:rounded-3xl">
+        <div className="absolute inset-0 -z-10 opacity-20">
+          <div className="bg-gradient-to-br from-primary/30 to-transparent w-full h-full rounded-3xl" />
+        </div>
+        <div className="mx-auto grid gap-12 lg:grid-cols-2 lg:items-center max-w-7xl">
+          {/* Text Section */}
+          <div className="space-y-8 text-center lg:text-left">
+            <h2 className="text-5xl font-extrabold text-primary tracking-tight">
+              declaring war on bird flu
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Our platform addresses the critical gaps in current HPAI control by combining the extremely fast development timeline of mRNA vaccines with the logistical advantages of oral delivery, without the costly ultra-cold storage and transportation infrastructure.
+            </p>
+            <div className="flex justify-center lg:justify-start gap-4">
+              <Link
+                to="/engineering"
+                className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-primary-foreground shadow-md transition-transform duration-300 hover:scale-105 hover:bg-primary/90"
+              >
+                our description &rarr;
+              </Link>
+              <Link
+                to="/engineering"
+                className="inline-flex items-center justify-center rounded-full border border-primary px-8 py-4 text-lg font-semibold text-primary transition-transform duration-300 hover:scale-105 hover:bg-primary/10"
+              >
+                our engineering cycle &rarr;
+              </Link>
             </div>
           </div>
+
+          {/* Image Section */}
+          <div className="flex justify-center">
+            <img
+              src="https://static.igem.wiki/teams/5649/homegraphics/jar-of-snacks-2.webp"
+              alt="A jar of snack capsules representing Snaccine, one capsule is open with phages spilling out"
+              className="w-full max-w-lg rounded-2xl shadow-xl bg-background border duration-300"
+              loading="lazy"
+            />
+          </div>
         </div>
-      </section>
+      </div>
 
-      <section className="relative overflow-hidden mb-5"
-        style={{
-          maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)'
-        }}>
-        <img
-          src="https://static.igem.wiki/teams/5649/roundicons/illustration-sans-titre-7-min.webp"
-          alt="Illustrated chicken image"
-          className="w-full h-96 object-cover"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent/20 via-black/10 to-transparent" />
-
-        <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-          <p className="text-lg font-semibold">
-            Avian Influenza (Bird Flu) outbreaks are increasing in frequency and severity across Europe.
-          </p>
-        </div>
-      </section>
-
-      {/* --- Quick Links Section (updated) --- */}
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-24 sm:px-6">
-        <div className="space-y-4 text-center">
-          <AccentLine className="mx-auto" />
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            Jump into the details
-          </h2>
-          <p className="mx-auto max-w-3xl text-base text-muted-foreground">
-            From wet lab notebooks to inclusive design, our documentation captures the story of Snaccine.
-            Pick a page to start exploring.
-          </p>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-3">
-          {quickLinks.map((link) => (
-            <Link
-              key={link.title}
-              to={link.to}
-              className="group relative flex h-full flex-col justify-between rounded-2xl border border-border bg-card/80 p-6 pt-20 shadow-sm transition hover:-translate-y-1 hover:border-accent hover:shadow-lg"
-            >
-              <img
-                src={link.image}
-                alt={link.title}
-                className={`absolute left-1/2 -translate-x-1/2 object-contain transition-transform duration-300 ${link.iconStyle}`}
-              />
-              <div className="space-y-4 text-center mt-12">
-                <h3 className="text-xl font-semibold text-primary group-hover:text-accent">
-                  {link.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">{link.copy}</p>
-              </div>
-              <span className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-semibold text-accent group-hover:gap-3">
-                Read more →
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="w-full relative overflow-hidden -mb-16"
-        style={{
-          maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%)'
-        }}>
+      
+      <section className="w-full relative overflow-hidden -mb-16 -z-10 md:-mt-10">
         <img
           src="https://static.igem.wiki/teams/5649/teamphotos/team-picture-with-franek.webp"
           alt="Team picture of the six Snaccine team members"
@@ -367,6 +289,7 @@ export function Home() {
           loading="lazy"
         />
       </section>
+
 
     </div>
   );
