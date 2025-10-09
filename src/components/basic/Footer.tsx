@@ -10,7 +10,22 @@ export function Footer() {
   const teamSlug = stringToSlug(teamName);
 
   return (
-    <footer className="bg-gradient-to-t from-accent-foreground  to-secondary text-secondary-foreground mt-16">
+    <footer
+      className="relative text-secondary-foreground mt-16"
+      style={{
+        backgroundImage: `
+          linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.85)
+          ),
+          url('https://static.igem.wiki/teams/5649/roundicons/illustration-sans-titre-7-min.webp')
+        `,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        boxShadow: "inset 0 0 80px rgba(0,0,0,0.7)",
+      }}
+    >
       <div className="max-container py-12">
         {/* Main footer content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-8">
@@ -81,10 +96,6 @@ export function Footer() {
                 .
               </p>
             </div>
-            {/*<div className="flex space-x-6">
-              <FooterLink href="./safety-and-security">Safety</FooterLink>
-              <FooterLink href="./attributions">Attributions</FooterLink>
-            </div>*/}
           </div>
           <div className="text-sm text-secondary-foreground opacity-80">
             <p>
