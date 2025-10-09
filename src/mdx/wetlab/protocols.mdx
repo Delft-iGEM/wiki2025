@@ -13,10 +13,6 @@ import A_t7PhageConcentration from "./protocols/A/t7-phage-concentration.mdx";
 
 {/* Imports module B */}
 import B_phTempStability from "./protocols/B/ph-temp-stability.mdx";
-import B_phAcidBaths from "./protocols/B/ph-acid-baths.mdx";
-import B_phNeutralBasicBaths from "./protocols/B/ph-neutral-basic-baths.mdx";
-import B_phExperimentalSetup from "./protocols/B/ph-experimental-setup.mdx";
-import B_plaqueAssayStability from "./protocols/B/plaque-assay-stability.mdx";
 
 {/* Imports module C */}
 import C_lbAgarPlates from "./protocols/C/lb-agar-plates.mdx";
@@ -141,20 +137,8 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
       <DropdownItem id="ph-temp-stability" value="ph-temp-stability" header="Long-Term Temperature Stability of T7 Bacteriophage" level={1}>
         <B_phTempStability />
       </DropdownItem>
-      <DropdownItem id="ph-acid-baths" value="ph-acid-baths" header="Preparation of Acid Baths (pH 1.5, 2.0, 3.0)" level={1}>
-        <B_phAcidBaths />
-      </DropdownItem>
-      <DropdownItem id="ph-neutral-basic-baths" value="ph-neutral-basic-baths" header="Preparation of Neutral/Basic Baths (pH 6.0, 6.8, 7.4)" level={1}>
-        <B_phNeutralBasicBaths />
-      </DropdownItem>
-      <DropdownItem id="ph-experimental-setup" value="ph-experimental-setup" header="Experimental Setup: Capsule and Free-Phage pH Stability Test" level={1}>
-        <B_phExperimentalSetup />
-      </DropdownItem>
-      <DropdownItem id="plaque-assay-general" value="plaque-assay-general" header="General Phage Plaque Assay (Double-Agar Overlay)" level={1}>
+      <DropdownItem id="plaqueAssay" value="plaque-assay-general" header="General Phage Plaque Assay (Double-Agar Overlay)" level={1}>
         <DunPlaque />
-      </DropdownItem>
-      <DropdownItem id="plaque-assay-stability" value="plaque-assay-stability" header="Plaque Assays for Capsule & Free-Phage Stability" level={1}>
-        <B_plaqueAssayStability/>
       </DropdownItem>
     </DropdownGroup>
   
@@ -206,7 +190,7 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
 ### Improved plaque assay protocol 
 
 <DropdownGroup single className="mt-4">
-      <DropdownItem id="plaqueAssay" value="plaqueAssay" header="Plaque assay, T7 bacteriophage" level={1}>
+      <DropdownItem id="plaqueAssay-outside" value="plaqueAssay" header="Plaque assay, T7 bacteriophage" level={1}>
                 <DunPlaque />
       </DropdownItem>
 </DropdownGroup>
