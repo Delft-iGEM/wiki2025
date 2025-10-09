@@ -13,10 +13,6 @@ import A_t7PhageConcentration from "./protocols/A/t7-phage-concentration.mdx";
 
 {/* Imports module B */}
 import B_phTempStability from "./protocols/B/ph-temp-stability.mdx";
-import B_phAcidBaths from "./protocols/B/ph-acid-baths.mdx";
-import B_phNeutralBasicBaths from "./protocols/B/ph-neutral-basic-baths.mdx";
-import B_phExperimentalSetup from "./protocols/B/ph-experimental-setup.mdx";
-import B_plaqueAssayStability from "./protocols/B/plaque-assay-stability.mdx";
 
 {/* Imports module C */}
 import C_lbAgarPlates from "./protocols/C/lb-agar-plates.mdx";
@@ -45,38 +41,38 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
   Protocols and procedures for Module A research and development.
     
     <DropdownGroup multiple className="mt-4">
-      <DropdownItem value="q5pcr" header="Q5 polymerase PCR protocol" level={1} >
+      <DropdownItem id="q5pcr" value="q5pcr" header="Q5 polymerase PCR protocol" level={1} >
         <A_q5pcr />
       </DropdownItem>
-      <DropdownItem value="agarose" header="1% Agarose Gel Electrophoresis to verify DNA length" level={1}>
+      <DropdownItem id="agarose" value="agarose" header="1% Agarose Gel Electrophoresis to verify DNA length" level={1}>
         <A_agarose />
       </DropdownItem>
-      <DropdownItem value="genome" header="T7 genome assembly" level={1}>
+      <DropdownItem id="genome" value="genome" header="T7 genome assembly" level={1}>
         <A_genome />
       </DropdownItem>
-      <DropdownItem value="pcr-purification" header="Column Purification of PCR Product" level={1}>
+      <DropdownItem id="pcr-purification" value="pcr-purification" header="Column Purification of PCR Product" level={1}>
         <A_pcrPurification />
       </DropdownItem>
-      <DropdownItem value="heat-shock" header="Heat shock transformation and rebooting of phages" level={1}>
+      <DropdownItem id="heat-shock" value="heat-shock" header="Heat shock transformation and rebooting of phages" level={1}>
         <A_heatShock />
       </DropdownItem>
-      <DropdownItem value="cells" header="Preparation of electrocompetent cells" level={1}>
+      <DropdownItem id="cells" value="cells" header="Preparation of electrocompetent cells" level={1}>
         <A_cells />
       </DropdownItem>
-      <DropdownItem value="electroporation" header="Transformation through electroporation for T7 phage reboot" level={1}>
+      <DropdownItem id="electroporation" value="electroporation" header="Transformation through electroporation for T7 phage reboot" level={1}>
         <A_electroporation />
       </DropdownItem>
-      <DropdownItem value="t7-phage-filtration" header="T7 phage filtration" level={1}>
+      <DropdownItem id="t7-phage-filtration" value="t7-phage-filtration" header="T7 phage filtration" level={1}>
         <A_t7PhareFiltration />
       </DropdownItem>
-      <DropdownItem value="t7-phage-concentration" header="T7 phage concentration" level={1}>
+      <DropdownItem id="t7-phage-concentration" value="t7-phage-concentration" header="T7 phage concentration" level={1}>
         <A_t7PhageConcentration />
       </DropdownItem>
-      <DropdownItem value="t7-phage-plaque" header="T7 phage plaque assay" level={1}>
+      <DropdownItem id="t7-phage-plaque" value="t7-phage-plaque" header="T7 phage plaque assay" level={1}>
         <DunPlaque />
       </DropdownItem>
 
-      <DropdownItem value = "Oligo Table" header = "Oligo Table" level={1}>
+      <DropdownItem id="Oligo Table" value="Oligo Table" header="Oligo Table" level={1}>
         | Number | Name | Length | Sequence |
         |---:|---|---:|---|
         | 1 | `1-A-asm-T7A-s` | 18 | TCTCACAGTGTACGGACC |
@@ -138,23 +134,11 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
   Protocols and procedures for Module B research and development.
     
     <DropdownGroup multiple className="mt-4">
-      <DropdownItem value="ph-temp-stability" header="Long-Term Temperature Stability of T7 Bacteriophage" level={1}>
+      <DropdownItem id="ph-temp-stability" value="ph-temp-stability" header="Long-Term Temperature Stability of T7 Bacteriophage" level={1}>
         <B_phTempStability />
       </DropdownItem>
-      <DropdownItem value="ph-acid-baths" header="Preparation of Acid Baths (pH 1.5, 2.0, 3.0)" level={1}>
-        <B_phAcidBaths />
-      </DropdownItem>
-      <DropdownItem value="ph-neutral-basic-baths" header="Preparation of Neutral/Basic Baths (pH 6.0, 6.8, 7.4)" level={1}>
-        <B_phNeutralBasicBaths />
-      </DropdownItem>
-      <DropdownItem value="ph-experimental-setup" header="Experimental Setup: Capsule and Free-Phage pH Stability Test" level={1}>
-        <B_phExperimentalSetup />
-      </DropdownItem>
-      <DropdownItem value="plaque-assay-general" header="General Phage Plaque Assay (Double-Agar Overlay)" level={1}>
+      <DropdownItem id="plaqueAssay" value="plaque-assay-general" header="General Phage Plaque Assay (Double-Agar Overlay)" level={1}>
         <DunPlaque />
-      </DropdownItem>
-      <DropdownItem value="plaque-assay-stability" header="Plaque Assays for Capsule & Free-Phage Stability" level={1}>
-        <B_plaqueAssayStability/>
       </DropdownItem>
     </DropdownGroup>
   
@@ -164,40 +148,40 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
   Comprehensive protocols for Module C including bacterial transformation, protein expression, and VLP production.
     
     <DropdownGroup single className="mt-4">
-      <DropdownItem value="lb-agar-plates" header="Pouring LB Agar Plates" level={1}>
+      <DropdownItem id="lb-agar-plates" value="lb-agar-plates" header="Pouring LB Agar Plates" level={1}>
         <C_lbAgarPlates />
       </DropdownItem>
-      <DropdownItem value="dna-resuspension" header="Resuspension of Dried DNA (Plasmid)" level={1}>
+      <DropdownItem id="dna-resuspension" value="dna-resuspension" header="Resuspension of Dried DNA (Plasmid)" level={1}>
         <C_dnaResuspension />
       </DropdownItem>
-      <DropdownItem value="transformation" header="Plasmid Transformation into BL21(DE3)" level={1}>
+      <DropdownItem id="transformation" value="transformation" header="Plasmid Transformation into BL21(DE3)" level={1}>
         <C_transformation />
       </DropdownItem>
-      <DropdownItem value="glycerol-stock" header="Preparation of a Glycerol Stock (50% working)" level={1}>
+      <DropdownItem id="glycerol-stock" value="glycerol-stock" header="Preparation of a Glycerol Stock (50% working)" level={1}>
         <C_glycerolStock />
       </DropdownItem>
-      <DropdownItem value="kanamycin-stock" header="Preparation of 1000× Kanamycin Stock (50 mg/mL)" level={1}>
+      <DropdownItem id="kanamycin-stock" value="kanamycin-stock" header="Preparation of 1000× Kanamycin Stock (50 mg/mL)" level={1}>
         <C_kanamycinStock />
       </DropdownItem>
-      <DropdownItem value="iptg-induction" header="Induction with IPTG" level={1}>
+      <DropdownItem id="iptg-induction" value="iptg-induction" header="Induction with IPTG" level={1}>
         <C_iptgInduction />
       </DropdownItem>
-      <DropdownItem value="harvest-lysis" header="Harvest and Lysis" level={1}>
+      <DropdownItem id="harvest-lysis" value="harvest-lysis" header="Harvest and Lysis" level={1}>
         <C_harvestLysis />
       </DropdownItem>
-      <DropdownItem value="sds-page-prep" header="SDS-PAGE Sample Preparation" level={1}>
+      <DropdownItem id="sds-page-prep" value="sds-page-prep" header="SDS-PAGE Sample Preparation" level={1}>
         <C_sdsPagePrep />
       </DropdownItem>
-      <DropdownItem value="sds-page-gel" header="Loading & Running SDS-PAGE Gel" level={1}>
+      <DropdownItem id="sds-page-gel" value="sds-page-gel" header="Loading & Running SDS-PAGE Gel" level={1}>
         <C_sdsPageGel />
       </DropdownItem>
-      <DropdownItem value="coomassie-staining" header="Coomassie Staining & Imaging" level={1}>
+      <DropdownItem id="coomassie-staining" value="coomassie-staining" header="Coomassie Staining & Imaging" level={1}>
         <C_coomassieStaining />
       </DropdownItem>
-      <DropdownItem value="peg-precipitation" header="PEG Precipitation of MS2 VLPs" level={1}>
+      <DropdownItem id="peg-precipitation" value="peg-precipitation" header="PEG Precipitation of MS2 VLPs" level={1}>
         <C_pegPrecipitation />
       </DropdownItem>
-      <DropdownItem value="tem-imaging" header="TEM Imaging of MS2 VLPs" level={1}>
+      <DropdownItem id="tem-imaging" value="tem-imaging" header="TEM Imaging of MS2 VLPs" level={1}>
         <C_temImaging />
       </DropdownItem>
     </DropdownGroup>
@@ -206,7 +190,7 @@ import DunPlaque from "./protocols/duncans_plaques.mdx";
 ### Improved plaque assay protocol 
 
 <DropdownGroup single className="mt-4">
-      <DropdownItem id="plaque-assay" value="plaqueAssay" header="Plaque assay, T7 bacteriophage" level={1}>
+      <DropdownItem id="plaqueAssay-outside" value="plaqueAssay" header="Plaque assay, T7 bacteriophage" level={1}>
                 <DunPlaque />
       </DropdownItem>
 </DropdownGroup>

@@ -78,7 +78,7 @@ function StatCard({
       aria-pressed={isFlipped}
     >
       <div className={`h-full w-full transition-transform duration-500 group-hover:-translate-y-1 ${isFlipped ? "-translate-y-1" : ""}`}>
-        <div className={`relative h-full w-full rounded-2xl transition-transform duration-500 group-hover:shadow-xl [transform-style:preserve-3d] ${isFlipped ? "shadow-xl [transform:rotateY(180deg)]" : ""} group-hover:[transform:rotateY(180deg)]`}>
+        <div className={`relative h-full w-full rounded-2xl transition-transform duration-300 [transform-style:preserve-3d] ${isFlipped ? "shadow-xl [transform:rotateY(180deg)]" : ""} group-hover:[transform:rotateY(180deg)]`}>
           {/* Front side */}
           <div className="absolute inset-0 flex items-center justify-center rounded-2xl border border-tertiary bg-card shadow-lg [backface-visibility:hidden]">
             {/* Flip indicator arrow */}
@@ -173,7 +173,7 @@ export function Home() {
       
     
       {/* Avian Influenza Section with Background Image */}
-      <section className="relative w-full overflow-hidden">
+      <section className="relative w-full overflow-hidden mb-10">
         {/* Full-width background image */}
         <div className="absolute inset-0 w-full h-full"
           style={{
@@ -186,7 +186,7 @@ export function Home() {
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
         </div>
 
         {/* Content overlay */}
@@ -247,11 +247,11 @@ export function Home() {
           </div>
 
           {/* Text overlay at bottom */}
-          <div className="text-white text-center mt-8">
-            <p className="text-lg opacity-90 max-w-lg font-semibold mx-auto drop-shadow-2xl/100 text-shadow-lg/50">
+          <div className="text-white text-center mt-8 mb-24">
+            <p className="text-lg opacity-100 max-w-lg font-semibold mx-auto drop-shadow-2xl bg-black/30 backdrop-blur-xs rounded-lg px-6 py-4">
               In the Netherlands, as in most countries, the main control measure for poultry farms is mass preventative killing (culling) of the entire flock.
             </p>
-            <p className="text-sm opacity-90 mt-2">
+            <p className="text-sm opacity-90 mt-2 line-through">
               The Netherlands has the highest poultry density in Europe.
             </p>
           </div>
