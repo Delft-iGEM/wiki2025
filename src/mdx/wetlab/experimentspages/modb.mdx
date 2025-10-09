@@ -6,13 +6,16 @@ import { Content, Header, AccentLine, Dropdown, DropdownGroup, DropdownItem,Inte
 
 In this module, we explore how T7 behaves in environments that mimic food storage or the gastrointestinal tract. We store T7 phages at different temperatures (4°C, 20°C and 37°C) for different times. As well as we test phage stability in the chicken gut pH conditions.
 
+Though we want the final product to use other phages, we wanted to test T7 to establish a procedure for testing phage stability.
+
 For an oral phage vaccine to be effective, the phage must survive both **storage**, **transport** (as a vaccine), and **gastrointestinal transit**.  
 We identified two main stability challenges:
 
 1. **Temperature sensitivity:** Phages are biological entities whose viability can decline quickly outside optimal conditions.
-Though we want the final product to use other phages, we wanted to test T7 to establish a base protocol for testing phage stability.
 2. **Acidic stress:** The low pH of the stomach (in the chicken's case, it is called the gizzard) can inactivate most phages before they reach the intestine. This, for at least one implementation of our vaccine,
 is a good thing: phages which leak into the environment won't survive the stomach, but encapsulated phages (pill) can.
+
+We cannot just measure the phage concentration left. We need to know exactly how many viable, infectious phages are left. We do this using a [plaque assay](./protocols#plaqueAssay).
 
 Our goal was to evaluate how long T7 remains viable under different storage conditions and whether encapsulation could protect it in acidic environments.
 
@@ -41,9 +44,6 @@ Our goal was to evaluate how long T7 remains viable under different storage cond
     alt="Capsule setup close-up"
     className="rounded-2xl shadow-md w-full max-w-2xl"
   />
-  <p className="text-sm text-gray-600 italic text-center">
-    Experimental setup showing the encapsulated phage exposure under gut-like pH conditions.
-  </p>
 </div>
 
 </Content>
