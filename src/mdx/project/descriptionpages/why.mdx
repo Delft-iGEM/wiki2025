@@ -1,7 +1,8 @@
-import { Content } from "@/components";
+import { Content, Dropdown, AccentLine} from "@/components";
+
 
 <Content items="left">
-
+<AccentLine />
 <span id="why"></span>
 
 
@@ -22,10 +23,11 @@ You can find more about our the problem we address and the potential impact of o
 
 <br/><br/>
 
-References: 
+<Dropdown header="References" level={0}>
 
 Baker, Z. R., Zhang, Y., Zhang, H., Lu, T. K., & Collins, J. J. (2025). Sustained in situ protein production and release in the mammalian gut by an engineered bacteriophage. _Nature Biotechnology_. [https://doi.org/10.1038/s41587-025-02570-7](https://doi.org/10.1038/s41587-025-02570-7)
 
 European Food Safety Authority (EFSA), European Centre for Disease Prevention and Control (ECDC), & European Union Reference Laboratory for Avian Influenza (EURL). (2025). Avian influenza overview March–June 2025. _EFSA Journal, 23_(7), e9520. [https://doi.org/10.2903/j.efsa.2025.9520](https://doi.org/10.2903/j.efsa.2025.9520)
+</Dropdown>
 
 </Content>
