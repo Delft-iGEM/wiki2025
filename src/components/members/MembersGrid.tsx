@@ -39,6 +39,15 @@ export function MembersGrid() {
             <br />
             <Link
               className="external-link inline-flex items-center gap-2"
+              to="https://dwhyte.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Website
+            </Link>
+            <br />
+            <Link
+              className="external-link inline-flex items-center gap-2"
               to="https://www.linkedin.com/in/duncan-whyte-455327325"
               target="_blank"
               rel="noopener noreferrer"
@@ -109,6 +118,15 @@ export function MembersGrid() {
             <br />
             <Link
               className="external-link inline-flex items-center gap-2"
+              to="https://zamkorus.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Website
+            </Link>
+            <br />
+            <Link
+              className="external-link inline-flex items-center gap-2"
               to="https://www.linkedin.com/in/krzysztof-zab%C5%82ocki-58776a26b"
               target="_blank"
               rel="noopener noreferrer"
@@ -147,7 +165,7 @@ export function MembersGrid() {
         firstName="Franciszek"
         lastName="Koliński"
         src={`${pathBase}franek${ext}`}
-        role="Discussion in progress.."
+        role="Graphic designer and wiki illustrator"
         isFlipped={openCardId === "franek"}
         onToggle={() => handleCardToggle("franek")}
         bio={
