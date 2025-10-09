@@ -235,6 +235,13 @@ function App() {
       return;
     }
 
+    // Check if this is a SegmentedContent hash (common segment names)
+    const segmentedContentHashes = ['abstract', 'idea', 'detailed design', 'why', 'why?', 'emoda', 'emodb', 'emodc'];
+    if (segmentedContentHashes.includes(hash)) {
+      // Let SegmentedContent handle this hash, don't scroll
+      return;
+    }
+
     const openAccordionItem = (item: HTMLElement) => {
       if (item.getAttribute("data-state") === "open") return;
 
@@ -266,6 +273,8 @@ function App() {
         openAccordionItem(items[index]);
       }
     };
+
+    
 
     const scrollToTarget = () => {
       const target = document.getElementById(hash);

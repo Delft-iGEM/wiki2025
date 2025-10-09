@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 
 import { useEffect, useRef,useMemo, useState  } from "react";
 import { LayoutGroup, motion , AnimatePresence} from "framer-motion";
+import { useLocation } from "react-router-dom";
 import clsx from "clsx";
 
 
@@ -104,15 +105,30 @@ export function SegmentedContent({
   segmentsClassName,
   allowUppercase = false,
 }: SegmentedContentProps) {
+  const location = useLocation();
   const labels = useMemo(() => segments.map((segment) => segment.label), [segments]);
 
   const [activeLabel, setActiveLabel] = useState(() => {
+    // Check for hash first
+    const hash = window.location.hash.replace("#", "");
+    if (hash && segments.some(segment => segment.label === hash)) {
+      return hash;
+    }
+    
     const defaultSegment = segments.find((segment) => segment.defaultActive);
     if (defaultSegment) {
       return defaultSegment.label;
     }
-    return labels[0] ?? "";
+    return segments[0]?.label ?? "";
   });
+
+  // Handle hash-based segment activation
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (hash && labels.includes(hash)) {
+      setActiveLabel(hash);
+    }
+  }, [location.hash, labels]);
 
   useEffect(() => {
     if (labels.length === 0) {
@@ -143,7 +159,11 @@ export function SegmentedContent({
       <Segments
         segments={labels}
         activeSegment={activeSegment.label}
-        onChange={setActiveLabel}
+        onChange={(label) => {
+          setActiveLabel(label);
+          // Update URL hash when segment changes
+          window.history.replaceState(null, "", `#${label}`);
+        }}
         className={segmentsClassName}
         title={title}
         allowUppercase={allowUppercase}
