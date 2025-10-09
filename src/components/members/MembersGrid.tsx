@@ -165,7 +165,7 @@ export function MembersGrid() {
         firstName="Franciszek"
         lastName="Koliński"
         src={`${pathBase}franek${ext}`}
-        role="Graphic designer and Wiki illustrator"
+        role="Graphic designer and wiki illustrator"
         isFlipped={openCardId === "franek"}
         onToggle={() => handleCardToggle("franek")}
         bio={
