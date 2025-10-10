@@ -26,7 +26,7 @@ export const ScrollTop: React.FC = () => {
         <button
           onClick={scrollToTop}
           aria-label="Scroll to top"
-          className="fixed bottom-6 right-6 p-3 rounded-full text-white shadow-lg transition-opacity duration-300 cursor-pointer print:hidden bg-brand hover:bg-primary"
+          className="fixed bottom-6 right-6 z-50 p-3 rounded-full text-white shadow-lg transition-opacity duration-300 cursor-pointer print:hidden bg-brand hover:bg-primary"
         >
           <ArrowUp size={20} />
         </button>
