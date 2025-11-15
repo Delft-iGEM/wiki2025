@@ -69,7 +69,7 @@ export function Navbar({ pages }: { readonly pages: NavItem[] }) {
         <div className="flex h-15 items-center justify-between">
           {/* Brand */}
           <Link
-            to="/../tu-delft/"
+            to="/"
             className="text-base font-semibold tracking-wide text-foreground hover:text-primary"
             onClick={closeMobile}
           >
