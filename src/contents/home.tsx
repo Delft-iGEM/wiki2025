@@ -307,55 +307,6 @@ export function Home() {
           loading="lazy"
         />
       </section>
-
-      {/* --- Centered Quick Links Cards --- */}
-      <section className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center gap-10 px-4 py-32 sm:px-6">
-        {/* Text moved above cards */}
-        <p className="text-center text-2xl font-bold text-muted-foreground mb-6">
-          Jump to these sections
-        </p>
-
-        <div className="grid gap-12 lg:grid-cols-3 items-center justify-items-center">
-          {[
-            {
-              title: "Project Description",
-              to: "/description",
-              image:
-                "https://static.igem.wiki/teams/5649/roundicons/humanpracticesnew.webp",
-              iconStyle: "h-48 w-48",
-            },
-            {
-              title: "Engineering Success",
-              to: "/engineering",
-              image:
-                "https://static.igem.wiki/teams/5649/roundicons/engineeringnew.webp",
-              iconStyle: "h-48 w-48",
-            },
-            {
-              title: "Meet the Team",
-              to: "/members",
-              image:
-                "https://static.igem.wiki/teams/5649/roundicons/teamnew.webp",
-              iconStyle: "h-48 w-48 rotate-3 -translate-y-2",
-            },
-          ].map((link) => (
-            <Link
-              key={link.title}
-              to={link.to}
-              className="group relative flex flex-col items-center justify-center rounded-2xl border border-border bg-card/80 p-8 shadow-sm transition hover:-translate-y-1 hover:border-accent hover:shadow-lg h-80 w-full max-w-sm"
-            >
-              <img
-                src={link.image}
-                alt={link.title}
-                className={`object-contain transition-transform duration-300 ${link.iconStyle}`}
-              />
-              <h3 className="text-xl font-semibold text-primary mt-6 group-hover:text-accent text-center">
-                {link.title}
-              </h3>
-            </Link>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }

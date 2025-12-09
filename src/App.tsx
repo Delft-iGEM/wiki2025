@@ -20,6 +20,7 @@ import HumanPractices from "./mdx/hp/hp_page.mdx";
 // Team
 import Members from "./mdx/team/members.mdx";
 import Attributions from "./contents/attributions.tsx";
+import Awards from "./contents/awards.tsx";
 
 //Project
 import Description from "./mdx/project/description.mdx";
@@ -151,7 +152,13 @@ const Pages: NavItem[] = [
       path: "/sponsors",
       component: Sponsors,
     },
-  ],
+    ],
+  },
+  {
+    name: "awards",
+    title: "Awards",
+    path: "/awards",
+    component: Awards,
   },
 ];
 
@@ -217,7 +224,7 @@ function App() {
       }
     };
 
-    
+
 
     const scrollToTarget = () => {
       const target = document.getElementById(hash);
